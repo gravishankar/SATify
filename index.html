@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAT Practice Pro - Master Your SAT Preparation</title>
+    <meta name="description" content="Comprehensive SAT practice platform with progress tracking, adaptive learning, and detailed explanations">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- MathJax for mathematical expressions -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="logo-large">📚</div>
+            <h2>SAT Practice Pro</h2>
+            <div class="loading-spinner"></div>
+            <p>Loading your personalized practice experience...</p>
+        </div>
+    </div>
+
+    <!-- Authentication Modal -->
+    <div id="authModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="authTitle">Welcome to SAT Practice Pro</h2>
+                <button class="modal-close" id="closeAuth">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="loginForm" class="auth-form">
+                    <form id="loginFormElement">
+                        <div class="form-group">
+                            <label for="loginEmail">Email</label>
+                            <input type="email" id="loginEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" id="loginPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign In</button>
+                        <p class="auth-switch">Don't have an account? <a href="#" id="showSignup">Sign up</a></p>
+                    </form>
+                </div>
+                <div id="signupForm" class="auth-form hidden">
+                    <form id="signupFormElement">
+                        <div class="form-group">
+                            <label for="signupName">Full Name</label>
+                            <input type="text" id="signupName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupEmail">Email</label>
+                            <input type="email" id="signupEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPassword">Password</label>
+                            <input type="password" id="signupPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="targetScore">Target SAT Score</label>
+                            <select id="targetScore">
+                                <option value="1200">1200+</option>
+                                <option value="1300">1300+</option>
+                                <option value="1400" selected>1400+</option>
+                                <option value="1500">1500+</option>
+                                <option value="1600">1600</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Create Account</button>
+                        <p class="auth-switch">Already have an account? <a href="#" id="showLogin">Sign in</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="logo">📚</span>
+                <span class="brand-text">SAT Practice Pro</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#dashboard" class="nav-link active" data-page="dashboard">
+                    <span class="nav-icon">🏠</span>
+                    Dashboard
+                </a>
+                <a href="#practice" class="nav-link" data-page="practice">
+                    <span class="nav-icon">📝</span>
+                    Practice
+                </a>
+                <a href="#test" class="nav-link" data-page="test">
+                    <span class="nav-icon">⏱️</span>
+                    Timed Test
+                </a>
+                <a href="#progress" class="nav-link" data-page="progress">
+                    <span class="nav-icon">📊</span>
+                    Progress
+                </a>
+                <a href="#review" class="nav-link" data-page="review">
+                    <span class="nav-icon">⭐</span>
+                    Review
+                </a>
+            </div>
+            <div class="nav-user">
+                <div class="user-info" id="userInfo">
+                    <span id="userName">Guest</span>
+                    <button class="btn-user-menu" id="userMenuBtn">▼</button>
+                    <div class="user-menu hidden" id="userMenu">
+                        <a href="#settings">Settings</a>
+                        <a href="#" id="logoutBtn">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Dashboard Page -->
+        <div id="dashboardPage" class="page active">
+            <div class="container">
+                <div class="welcome-section">
+                    <h1>Welcome back, <span id="welcomeName">Student</span>!</h1>
+                    <p class="subtitle">Continue your SAT preparation journey</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">📈</div>
+                        <div class="stat-content">
+                            <h3 id="totalQuestions">0</h3>
+                            <p>Questions Completed</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-content">
+                            <h3 id="accuracyRate">0%</h3>
+                            <p>Accuracy Rate</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🔥</div>
+                        <div class="stat-content">
+                            <h3 id="currentStreak">0</h3>
+                            <p>Day Streak</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-content">
+                            <h3 id="estimatedScore">1200</h3>
+                            <p>Estimated Score</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="dashboard-section">
+                        <h2>Quick Practice</h2>
+                        <div class="quick-actions">
+                            <button class="action-btn" id="continuePractice">
+                                <span class="action-icon">▶️</span>
+                                <div>
+                                    <h3>Continue Practice</h3>
+                                    <p>Pick up where you left off</p>
+                                </div>
+                            </button>
+                            <button class="action-btn" id="weakAreas">
+                                <span class="action-icon">💪</span>
+                                <div>
+                                    <h3>Work on Weak Areas</h3>
+                                    <p>Focus on improvement areas</p>
+                                </div>
+                            </button>
+                            <button class="action-btn" id="timedPractice">
+                                <span class="action-icon">⏰</span>
+                                <div>
+                                    <h3>Timed Practice</h3>
+                                    <p>Simulate test conditions</p>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-section">
+                        <h2>Performance Overview</h2>
+                        <div class="performance-chart">
+                            <canvas id="performanceChart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-section">
+                        <h2>Recent Activity</h2>
+                        <div class="activity-list" id="recentActivity">
+                            <!-- Activity items will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Practice Page -->
+        <div id="practicePage" class="page">
+            <div class="container">
+                <div class="practice-header">
+                    <h1>Practice Mode</h1>
+                    <div class="practice-controls">
+                        <button class="btn" id="practiceSettings">⚙️ Settings</button>
+                        <button class="btn" id="practiceHints">💡 Hints</button>
+                    </div>
+                </div>
+
+                <div class="practice-content">
+                    <div class="question-panel">
+                        <div class="question-header">
+                            <div class="question-info">
+                                <span class="question-number">Question <span id="currentQuestionNum">1</span> of <span id="totalQuestionsCount">10</span></span>
+                                <span class="question-type" id="questionType">Math</span>
+                                <span class="difficulty-badge" id="difficultyBadge">Medium</span>
+                            </div>
+                            <div class="question-controls">
+                                <button class="btn-icon" id="bookmarkBtn" title="Bookmark">⭐</button>
+                                <button class="btn-icon" id="flagBtn" title="Flag for review">🚩</button>
+                            </div>
+                        </div>
+
+                        <div class="question-content" id="questionContent">
+                            <!-- Question content will be loaded here -->
+                        </div>
+
+                        <div class="answer-choices" id="answerChoices">
+                            <!-- Answer choices will be loaded here -->
+                        </div>
+
+                        <div class="question-actions">
+                            <button class="btn btn-secondary" id="prevQuestion">← Previous</button>
+                            <button class="btn btn-primary" id="submitAnswer">Submit Answer</button>
+                            <button class="btn btn-secondary" id="nextQuestion">Next →</button>
+                        </div>
+                    </div>
+
+                    <div class="explanation-panel hidden" id="explanationPanel">
+                        <div class="explanation-header">
+                            <h3>Explanation</h3>
+                            <button class="btn-close" id="closeExplanation">×</button>
+                        </div>
+                        <div class="explanation-content" id="explanationContent">
+                            <!-- Explanation will be loaded here -->
+                        </div>
+                        <div class="explanation-actions">
+                            <button class="btn btn-secondary" id="practiceMore">Practice More</button>
+                            <button class="btn btn-primary" id="nextAfterExplanation">Continue</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Other pages will be added similarly -->
+        <div id="testPage" class="page">
+            <div class="container">
+                <h1>Timed Test Mode</h1>
+                <p>Coming soon - Full SAT simulation with timing</p>
+            </div>
+        </div>
+
+        <div id="progressPage" class="page">
+            <div class="container">
+                <h1>Progress Analytics</h1>
+                <p>Detailed performance tracking and insights</p>
+            </div>
+        </div>
+
+        <div id="reviewPage" class="page">
+            <div class="container">
+                <h1>Review & Study</h1>
+                <p>Review bookmarked and flagged questions</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast Notifications -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/practice.js"></script>
+    <script src="js/analytics.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
