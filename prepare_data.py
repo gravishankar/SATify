@@ -83,22 +83,23 @@ def normalize(x:dict)->dict:
   # Extract content from nested structure if present
   content = x.get("content", {})
   
-  # Get question stem - combine stimulus and stem for full question
+  # Get question stem from various possible locations
   stimulus = content.get("stimulus", "")
   stem = content.get("stem", "")
+  prompt = content.get("prompt", "")  # Alternative location for math questions
   
   # For Reading & Writing, stimulus is the main passage, stem is the question
-  # For Math, stem contains the full question
+  # For Math, stem or prompt contains the full question
   if stimulus and stem:
     stem_html = stimulus + "\n" + stem
   else:
-    stem_html = stimulus or stem or x.get("stem_html", "")
+    stem_html = stimulus or stem or prompt or x.get("stem_html", "")
   
   # Handle different question types
   choices = None
   correct_choice_index = None
   
-  # Check if this is a multiple choice question
+  # Check if this is a multiple choice question (Reading & Writing)
   answer_options = content.get("answerOptions", [])
   if answer_options:
     # This is a Reading & Writing multiple choice question
@@ -114,12 +115,19 @@ def normalize(x:dict)->dict:
           correct_choice_index = i
           break
   elif content.get("keys"):
-    # This is a Math question with numerical answers
+    # This is a Math question with numerical answers (format 1)
     math_keys = content.get("keys", [])
     if isinstance(math_keys, list) and len(math_keys) > 0:
       # For math questions, show the acceptable answer formats as "choices"
       choices = [f"Numerical answer (e.g., {key.strip()})" for key in math_keys[:3]]
       correct_choice_index = 0  # Any of the formats is correct
+  elif content.get("answer"):
+    # This is a Math question with numerical answer (format 2)
+    answer = content.get("answer", "")
+    if answer:
+      # Show the answer as a numerical input format
+      choices = [f"Numerical answer (e.g., {str(answer).strip()})"]
+      correct_choice_index = 0
   
   # Get explanation from various locations  
   explanation = (x.get("explanation_html") or 
