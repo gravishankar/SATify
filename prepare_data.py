@@ -125,9 +125,49 @@ def normalize(x:dict)->dict:
     # This is a Math question with numerical answer (format 2)
     answer = content.get("answer", "")
     if answer:
-      # Show the answer as a numerical input format
-      choices = [f"Numerical answer (e.g., {str(answer).strip()})"]
-      correct_choice_index = 0
+      # Handle different answer formats
+      if isinstance(answer, dict):
+        # Complex answer format - extract from multiple choice or correct_choice
+        if answer.get("choices"):
+          # Multiple choice format - extract choices
+          mc_choices = answer.get("choices", {})
+          if isinstance(mc_choices, dict):
+            choices = []
+            correct_choice = answer.get("correct_choice", "a")
+            for key, choice_data in mc_choices.items():
+              if isinstance(choice_data, dict) and "body" in choice_data:
+                # Extract text from HTML body, removing HTML tags and entities
+                import re
+                import html
+                body_text = choice_data["body"]
+                # Remove HTML tags
+                clean_text = re.sub(r'<[^>]+>', '', body_text)
+                # Decode HTML entities
+                clean_text = html.unescape(clean_text)
+                # Clean up whitespace and empty content
+                clean_text = clean_text.strip()
+                # Skip empty or meaningless choices
+                if clean_text and clean_text not in ['', ' ', '&nbsp;', '\u00a0']:
+                  choices.append(clean_text)
+                if key == correct_choice:
+                  correct_choice_index = len(choices) - 1
+            
+            if not choices:
+              # Fallback to simple numerical format
+              choices = ["Numerical answer"]
+              correct_choice_index = 0
+          else:
+            choices = ["Numerical answer"]
+            correct_choice_index = 0
+        else:
+          # Try to extract a simple numerical value from the dict
+          choices = ["Numerical answer"]
+          correct_choice_index = 0
+      else:
+        # Simple answer format - use as numerical example
+        clean_answer = str(answer).strip()
+        choices = [f"Numerical answer (e.g., {clean_answer})"]
+        correct_choice_index = 0
   
   # Get explanation from various locations  
   explanation = (x.get("explanation_html") or 
