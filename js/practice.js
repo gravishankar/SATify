@@ -138,13 +138,17 @@ class SATPractice {
             this.toggleTopicSelection(e.target.value === 'specific');
         });
 
-        // Populate topics
-        this.populateTopics();
+        // Topics will be populated when practice settings are shown
     }
 
     populateTopics() {
         const topicSelect = document.getElementById('topicFilter');
-        if (!topicSelect) return;
+        if (!topicSelect || !this.app.questions) return;
+
+        // Clear existing options except the first one (All Topics)
+        while (topicSelect.children.length > 1) {
+            topicSelect.removeChild(topicSelect.lastChild);
+        }
 
         const topics = new Set();
         this.app.questions.forEach(q => {
@@ -162,6 +166,8 @@ class SATPractice {
     }
 
     showPracticeSettings() {
+        // Populate topics when showing settings (ensures questions are loaded)
+        this.populateTopics();
         document.getElementById('practiceSettingsModal').classList.remove('hidden');
     }
 
