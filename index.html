@@ -18,6 +18,22 @@
             tex: {
                 inlineMath: [['$', '$'], ['\\(', '\\)']],
                 displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            mml: {
+                displayMath: [['math', 'math']],
+                inlineMath: [['math', 'math']]
+            },
+            options: {
+                processHtmlClass: 'tex2jax_process|mathjax_process',
+                ignoreHtmlClass: 'tex2jax_ignore|mathjax_ignore'
+            },
+            startup: {
+                ready() {
+                    MathJax.startup.defaultReady();
+                    window.reprocessMathJax = function() {
+                        MathJax.typesetPromise();
+                    };
+                }
             }
         };
     </script>
