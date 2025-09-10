@@ -118,9 +118,9 @@ def normalize(x:dict)->dict:
     # This is a Math question with numerical answers (format 1)
     math_keys = content.get("keys", [])
     if isinstance(math_keys, list) and len(math_keys) > 0:
-      # For math questions, show the acceptable answer formats as "choices"
-      choices = [f"Numerical answer (e.g., {key.strip()})" for key in math_keys[:3]]
-      correct_choice_index = 0  # Any of the formats is correct
+      # For grid-in questions, don't create fake choices - leave empty for proper UI
+      choices = None
+      correct_choice_index = None
   elif content.get("answer"):
     # This is a Math question with numerical answer (format 2)
     answer = content.get("answer", "")
@@ -153,21 +153,20 @@ def normalize(x:dict)->dict:
                   correct_choice_index = len(choices) - 1
             
             if not choices:
-              # Fallback to simple numerical format
-              choices = ["Numerical answer"]
-              correct_choice_index = 0
+              # Fallback for grid-in questions
+              choices = None
+              correct_choice_index = None
           else:
-            choices = ["Numerical answer"]
-            correct_choice_index = 0
+            choices = None
+            correct_choice_index = None
         else:
-          # Try to extract a simple numerical value from the dict
-          choices = ["Numerical answer"]
-          correct_choice_index = 0
+          # Grid-in question with simple answer
+          choices = None
+          correct_choice_index = None
       else:
-        # Simple answer format - use as numerical example
-        clean_answer = str(answer).strip()
-        choices = [f"Numerical answer (e.g., {clean_answer})"]
-        correct_choice_index = 0
+        # Simple answer format - this is a grid-in question
+        choices = None
+        correct_choice_index = None
   
   # Get explanation from various locations  
   explanation = (x.get("explanation_html") or 
