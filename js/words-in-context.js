@@ -66,10 +66,19 @@ class WordsInContextPractice {
             this.hideStrategyModal();
         });
 
-        // Answer choice selection
+        // Answer choice selection - handle both click and touch events
         document.addEventListener('click', (e) => {
-            if (e.target.matches('.wic-choice')) {
-                this.selectChoice(e.target);
+            if (e.target.closest('.wic-choice')) {
+                e.preventDefault();
+                this.selectChoice(e.target.closest('.wic-choice'));
+            }
+        });
+
+        // Add touch event handling for mobile
+        document.addEventListener('touchend', (e) => {
+            if (e.target.closest('.wic-choice')) {
+                e.preventDefault();
+                this.selectChoice(e.target.closest('.wic-choice'));
             }
         });
     }
@@ -119,14 +128,24 @@ class WordsInContextPractice {
         document.getElementById('wicPrevQuestion').disabled = this.currentQuestionIndex === 0;
         document.getElementById('wicNextQuestion').disabled = this.currentQuestionIndex === this.questions.length - 1;
 
-        // Reset submit button
+        // Reset submit button and clear selection
         document.getElementById('wicSubmitAnswer').disabled = true;
+        this.selectedChoice = null;
+
+        // Clear any existing selections
+        document.querySelectorAll('.wic-choice').forEach(choice => {
+            choice.classList.remove('selected', 'correct', 'incorrect');
+        });
 
         // Hide explanation panel
         document.getElementById('wicExplanationPanel').classList.add('hidden');
     }
 
     selectChoice(choiceElement) {
+        if (!choiceElement) return;
+
+        console.log('Selecting choice:', choiceElement.getAttribute('data-choice-index'));
+
         // Remove previous selection
         document.querySelectorAll('.wic-choice').forEach(choice => {
             choice.classList.remove('selected');
@@ -135,13 +154,32 @@ class WordsInContextPractice {
         // Add selection to clicked choice
         choiceElement.classList.add('selected');
 
+        // Store selected element for reference
+        this.selectedChoice = choiceElement;
+
         // Enable submit button
-        document.getElementById('wicSubmitAnswer').disabled = false;
+        const submitBtn = document.getElementById('wicSubmitAnswer');
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            console.log('Submit button enabled');
+        }
+
+        // Add visual feedback
+        console.log('Choice selected, classes:', choiceElement.className);
     }
 
     submitAnswer() {
-        const selectedChoice = document.querySelector('.wic-choice.selected');
+        console.log('Submit answer called');
+
+        // Try to get selected choice, use stored reference as fallback
+        let selectedChoice = document.querySelector('.wic-choice.selected');
+        if (!selectedChoice && this.selectedChoice) {
+            selectedChoice = this.selectedChoice;
+            console.log('Using stored selection:', selectedChoice);
+        }
+
         if (!selectedChoice) {
+            console.log('No choice selected');
             this.showToast('Please select an answer', 'warning');
             return;
         }
@@ -149,6 +187,8 @@ class WordsInContextPractice {
         const selectedIndex = parseInt(selectedChoice.getAttribute('data-choice-index'));
         const question = this.questions[this.currentQuestionIndex];
         const isCorrect = selectedIndex === question.correct_choice_index;
+
+        console.log('Submitting answer:', { selectedIndex, isCorrect });
 
         // Store user answer
         this.userAnswers[this.currentQuestionIndex] = {

@@ -441,6 +441,11 @@ body {
   border-radius: 0.5rem;
   cursor: pointer;
   transition: var(--transition);
+  /* Mobile touch improvements */
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
 .choice:hover {
@@ -1194,6 +1199,34 @@ body {
     background: var(--border-color);
     border-radius: 2px;
     margin: 0 auto 1rem auto;
+  }
+
+  /* Mobile choice improvements */
+  .choice {
+    padding: 1.25rem;
+    margin-bottom: 0.75rem;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+  }
+
+  .choice-letter {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.1rem;
+    margin-right: 1.25rem;
+  }
+
+  .choice-content {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  /* Mobile button improvements */
+  .question-actions .btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+    min-height: 48px;
   }
 }
 
