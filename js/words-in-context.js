@@ -218,12 +218,22 @@ class WordsInContextPractice {
         document.getElementById('strategyStep4').textContent = strategy.step4;
         document.getElementById('strategyStep5').textContent = strategy.step5;
 
-        // Show modal
-        document.getElementById('strategyModal').classList.remove('hidden');
+        // Show modal with side panel animation
+        const modal = document.getElementById('strategyModal');
+        modal.classList.remove('hidden');
+        // Use setTimeout to trigger CSS transition
+        setTimeout(() => {
+            modal.classList.add('show');
+        }, 10);
     }
 
     hideStrategyModal() {
-        document.getElementById('strategyModal').classList.add('hidden');
+        const modal = document.getElementById('strategyModal');
+        modal.classList.remove('show');
+        // Wait for animation to complete before hiding
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 300);
     }
 
     nextQuestion() {

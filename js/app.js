@@ -19,9 +19,10 @@ class SATApp {
         try {
             await this.loadQuestions();
             this.setupEventListeners();
+            this.setupMobileNavigation();
             this.checkAuth();
             this.hideLoading();
-            
+
             // Initialize analytics
             if (window.SATAnalytics) {
                 window.SATAnalytics.init(this);
@@ -668,6 +669,56 @@ class SATApp {
 
     hideLoading() {
         document.getElementById('loadingScreen').classList.add('hidden');
+    }
+
+    setupMobileNavigation() {
+        // Add hamburger menu functionality for mobile
+        const navContainer = document.querySelector('.nav-container');
+        const navMenu = document.querySelector('.nav-menu');
+
+        // Create hamburger button
+        const hamburgerBtn = document.createElement('button');
+        hamburgerBtn.className = 'hamburger-btn';
+        hamburgerBtn.innerHTML = '☰';
+        hamburgerBtn.style.display = 'none';
+
+        // Add click handler
+        hamburgerBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+            hamburgerBtn.innerHTML = navMenu.classList.contains('open') ? '✕' : '☰';
+        });
+
+        // Close menu when clicking nav links
+        navMenu.addEventListener('click', (e) => {
+            if (e.target.classList.contains('nav-link')) {
+                navMenu.classList.remove('open');
+                hamburgerBtn.innerHTML = '☰';
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navContainer.contains(e.target) && navMenu.classList.contains('open')) {
+                navMenu.classList.remove('open');
+                hamburgerBtn.innerHTML = '☰';
+            }
+        });
+
+        // Insert hamburger button
+        navContainer.appendChild(hamburgerBtn);
+
+        // Show/hide hamburger button based on screen size
+        const checkScreenSize = () => {
+            if (window.innerWidth <= 768) {
+                hamburgerBtn.style.display = 'block';
+            } else {
+                hamburgerBtn.style.display = 'none';
+                navMenu.classList.remove('open');
+            }
+        };
+
+        window.addEventListener('resize', checkScreenSize);
+        checkScreenSize();
     }
 }
 
