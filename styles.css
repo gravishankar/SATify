@@ -732,6 +732,234 @@ body {
   }
 }
 
+/* Words in Context Styles */
+.wic-choice {
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.wic-choice:hover {
+  background-color: #f1f5f9;
+  border-color: var(--primary-color);
+}
+
+.wic-choice.selected {
+  background-color: #dbeafe;
+  border-color: var(--primary-color);
+}
+
+.wic-choice.correct {
+  background-color: #dcfce7;
+  border-color: var(--success-color);
+}
+
+.wic-choice.incorrect {
+  background-color: #fee2e2;
+  border-color: var(--danger-color);
+}
+
+/* Strategy Modal Styles */
+.strategy-modal {
+  max-width: 700px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.strategy-content {
+  margin-bottom: 2rem;
+}
+
+.strategy-pattern {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--primary-color);
+}
+
+.strategy-pattern h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.strategy-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.strategy-step {
+  background: white;
+  padding: 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.strategy-step:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-1px);
+}
+
+.strategy-step h4 {
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.strategy-step h4::before {
+  content: "🎯";
+  font-size: 1rem;
+}
+
+.strategy-step:nth-child(1) h4::before { content: "🔍"; }
+.strategy-step:nth-child(2) h4::before { content: "🌉"; }
+.strategy-step:nth-child(3) h4::before { content: "🎯"; }
+.strategy-step:nth-child(4) h4::before { content: "❌"; }
+.strategy-step:nth-child(5) h4::before { content: "✅"; }
+
+.strategy-step p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.strategy-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Answer result styles */
+.answer-result {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.answer-result.correct {
+  background-color: #dcfce7;
+  border: 1px solid var(--success-color);
+  color: #166534;
+}
+
+.answer-result.incorrect {
+  background-color: #fee2e2;
+  border: 1px solid var(--danger-color);
+  color: #991b1b;
+}
+
+.answer-result h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Difficulty badge enhancements */
+.difficulty-badge.e {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.difficulty-badge.m {
+  background-color: var(--warning-color);
+  color: white;
+}
+
+.difficulty-badge.h {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+/* Toast notifications */
+.toast {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin: 0.5rem 0;
+  box-shadow: var(--shadow-lg);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 400px;
+}
+
+.toast.show {
+  transform: translateX(0);
+}
+
+.toast-success {
+  border-left: 4px solid var(--success-color);
+}
+
+.toast-error {
+  border-left: 4px solid var(--danger-color);
+}
+
+.toast-warning {
+  border-left: 4px solid var(--warning-color);
+}
+
+.toast-info {
+  border-left: 4px solid var(--primary-color);
+}
+
+#toastContainer {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10000;
+}
+
+/* Strategy button styling */
+#wicStrategyBtn {
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#wicStrategyBtn:hover {
+  background: linear-gradient(135deg, #6d28d9, #9333ea);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Responsive strategy modal */
+@media (max-width: 768px) {
+  .strategy-modal {
+    max-width: 95vw;
+    margin: 1rem;
+  }
+
+  .strategy-steps {
+    gap: 1rem;
+  }
+
+  .strategy-step {
+    padding: 1rem;
+  }
+
+  .strategy-actions {
+    flex-direction: column;
+  }
+}
+
 /* Dark mode support (future enhancement) */
 @media (prefers-color-scheme: dark) {
   :root {

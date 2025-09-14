@@ -1,0 +1,282 @@
+[
+  {
+    "uId": "f6e632fb-wic-001",
+    "questionId": "f6e632fb",
+    "module": "reading-writing",
+    "primary_class_cd_desc": "Words in Context",
+    "skill_cd": "WIC",
+    "skill_desc": "Words in Context",
+    "difficulty": "M",
+    "score_band_range_cd": 5,
+    "stem_html": "<p>Researcher Haesung Jung led a 2020 study showing that individual acts of kindness can <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> prosocial behavior across a larger group. Jung and her team found that bystanders who witness a helpful act become more likely to offer help to someone else, and in doing so, can inspire still others to act.</p><p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "choices": [
+      "<p>require</p>",
+      "<p>remember</p>",
+      "<p>foster</p>",
+      "<p>discourage</p>"
+    ],
+    "correct_choice_index": 2,
+    "explanation_html": "<p>Choice C is the best answer because it most logically completes the text's discussion of Jung's research showing how acts of kindness can spread prosocial behavior to others.</p>",
+    "question_type": "mcq",
+    "strategy": {
+      "pattern": "PROCESS_RESULT",
+      "step1": "Context Bubble → Study results need logical outcome. Pattern: PROCESS_RESULT.",
+      "step2": "Bridge Word → 'promote'.",
+      "step3": "Cluster → Cause/Effect.",
+      "step4": "Eliminate choices: require (–), remember (–), discourage (contradicts positive result). Test 'foster': matches study outcome.",
+      "step5": "Verification → 'foster' logically follows from study findings."
+    }
+  },
+  {
+    "uId": "c6da512f-wic-002",
+    "questionId": "c6da512f",
+    "module": "reading-writing",
+    "primary_class_cd_desc": "Words in Context",
+    "skill_cd": "WIC",
+    "skill_desc": "Words in Context",
+    "difficulty": "H",
+    "score_band_range_cd": 6,
+    "stem_html": "<p>While scholars believe many Mesoamerican cities influenced each other, direct evidence of such influence is difficult to ascertain. However, recent excavations in a sector of Tikal (Guatemala) unearthed a citadel that shows <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Teotihuacán (Mexico) architecture—including a near replica of a famed Teotihuacán temple—providing tangible evidence of outside influence in portions of Tikal.</p><p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "choices": [
+      "<p>refinements of</p>",
+      "<p>precursors of</p>",
+      "<p>commonalities with</p>",
+      "<p>animosities toward</p>"
+    ],
+    "correct_choice_index": 2,
+    "explanation_html": "<p>Choice C is the best answer because it most logically completes the text's discussion of archaeological evidence showing similarities between Tikal and Teotihuacán architecture.</p>",
+    "question_type": "mcq",
+    "strategy": {
+      "pattern": "CONTRAST",
+      "step1": "Context Bubble → However signals opposite relationship. Pattern: CONTRAST.",
+      "step2": "Bridge Word → 'opposite'.",
+      "step3": "Cluster → Opposition/Change.",
+      "step4": "Eliminate choices: refinements of (fails contrast), precursors of (fails contrast), animosities toward (fails contrast). Test 'commonalities with': provides required contrast.",
+      "step5": "Verification → 'commonalities with' completes the contrast relationship."
+    }
+  },
+  {
+    "uId": "123cf5db-wic-003",
+    "questionId": "123cf5db",
+    "module": "reading-writing",
+    "primary_class_cd_desc": "Words in Context",
+    "skill_cd": "WIC",
+    "skill_desc": "Words in Context",
+    "difficulty": "H",
+    "score_band_range_cd": 6,
+    "stem_html": "<p>The work of Kiowa painter T.C. Cannon derives its power in part from the tension among his <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> influences: classic European portraiture, with its realistic treatment of faces; the American pop art movement, with its vivid colors; and flatstyle, the intertribal painting style that rejects the effect of depth typically achieved through shading and perspective.</p><p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "choices": [
+      "<p>complementary</p>",
+      "<p>unknown</p>",
+      "<p>disparate</p>",
+      "<p>interchangeable</p>"
+    ],
+    "correct_choice_index": 2,
+    "explanation_html": "<p>Choice C is the best answer because it most logically completes the text's discussion of T.C. Cannon's diverse artistic influences that create tension in his work.</p>",
+    "question_type": "mcq",
+    "strategy": {
+      "pattern": "TENSION_DETAIL",
+      "step1": "Context Bubble → Tension + colon introduces conflicting influences. Pattern: TENSION_DETAIL.",
+      "step2": "Bridge Word → 'different'.",
+      "step3": "Cluster → Difference/Variety.",
+      "step4": "Eliminate choices: complementary (contradicts tension), unknown (–), interchangeable (contradicts tension). Test 'disparate': creates necessary tension.",
+      "step5": "Verification → 'disparate' perfectly creates tension between different influences."
+    }
+  },
+  {
+    "uId": "dd415de8-wic-004",
+    "questionId": "dd415de8",
+    "module": "reading-writing",
+    "primary_class_cd_desc": "Words in Context",
+    "skill_cd": "WIC",
+    "skill_desc": "Words in Context",
+    "difficulty": "M",
+    "score_band_range_cd": 5,
+    "stem_html": "<p>Seminole/Muscogee director Sterlin Harjo <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> television's tendency to situate Native characters in the distant past: this rejection is evident in his series Reservation Dogs, which revolves around teenagers who dress in contemporary styles and whose dialogue is laced with current slang.</p><p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "choices": [
+      "<p>repudiates</p>",
+      "<p>proclaims</p>",
+      "<p>foretells</p>",
+      "<p>recants</p>"
+    ],
+    "correct_choice_index": 0,
+    "explanation_html": "<p>Choice A is the best answer because it most logically completes the text's discussion of Sterlin Harjo's rejection of outdated Native character portrayals.</p>",
+    "question_type": "mcq",
+    "strategy": {
+      "pattern": "EVIDENCE_DETAIL",
+      "step1": "Context Bubble → Colon/examples define the blank. Pattern: EVIDENCE_DETAIL.",
+      "step2": "Bridge Word → 'define'.",
+      "step3": "Cluster → Definition/Specification.",
+      "step4": "Eliminate choices: proclaims (–), foretells (–), recants (–). Test 'repudiates': fits evidence provided.",
+      "step5": "Verification → 'repudiates' perfectly fits the evidence pattern."
+    }
+  },
+  {
+    "uId": "9c97cc5d-wic-005",
+    "questionId": "9c97cc5d",
+    "module": "reading-writing",
+    "primary_class_cd_desc": "Words in Context",
+    "skill_cd": "WIC",
+    "skill_desc": "Words in Context",
+    "difficulty": "H",
+    "score_band_range_cd": 6,
+    "stem_html": "<p>Political blogs with conspicuous ideological alignments became an integral component of US media in the early 2000s. While some commentators lauded this development, asserting that such blogs had a welcome transparency missing from traditional news, less <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> observers countered that such blogs tended to ideological extremes that exacerbated political polarization to problematic levels.</p><p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "choices": [
+      "<p>sanguine</p>",
+      "<p>recalcitrant</p>",
+      "<p>misanthropic</p>",
+      "<p>earnest</p>"
+    ],
+    "correct_choice_index": 0,
+    "explanation_html": "<p>Choice A is the best answer because it most logically completes the text's discussion of contrasting views about political blogs.</p>",
+    "question_type": "mcq",
+    "strategy": {
+      "pattern": "CONTRAST",
+      "step1": "Context Bubble → While signals opposite relationship. Pattern: CONTRAST.",
+      "step2": "Bridge Word → 'opposite'.",
+      "step3": "Cluster → Opposition/Change.",
+      "step4": "Eliminate choices: recalcitrant (fails contrast), misanthropic (fails contrast), earnest (fails contrast). Test 'sanguine': provides required contrast.",
+      "step5": "Verification → 'sanguine' completes the contrast relationship."
+    }
+  },
+  {
+    "uId": "e3d3d5f1-wic-006",
+    "questionId": "e3d3d5f1",
+    "module": "reading-writing",
+    "primary_class_cd_desc": "Words in Context",
+    "skill_cd": "WIC",
+    "skill_desc": "Words in Context",
+    "difficulty": "M",
+    "score_band_range_cd": 4,
+    "stem_html": "<p>Critics have asserted that fine art and fashion rarely <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in a world where artists create timeless works for exhibition and designers periodically produce new styles for the public to buy. Luiseño/Shoshone-Bannock beadwork artist and designer Jamie Okuma challenges this view: her work can be seen in the Metropolitan Museum of Art and purchased through her online boutique.</p><p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "choices": [
+      "<p>prevail</p>",
+      "<p>succumb</p>",
+      "<p>diverge</p>",
+      "<p>intersect</p>"
+    ],
+    "correct_choice_index": 3,
+    "explanation_html": "<p>Choice D is the best answer because it most logically completes the text's discussion of the relationship between fine art and fashion.</p>",
+    "question_type": "mcq",
+    "strategy": {
+      "pattern": "EVIDENCE_DETAIL",
+      "step1": "Context Bubble → Colon/examples define the blank. Pattern: EVIDENCE_DETAIL.",
+      "step2": "Bridge Word → 'define'.",
+      "step3": "Cluster → Definition/Specification.",
+      "step4": "Eliminate choices: prevail (–), succumb (–), diverge (–). Test 'intersect': fits evidence provided.",
+      "step5": "Verification → 'intersect' perfectly fits the evidence pattern."
+    }
+  },
+  {
+    "uId": "67a1f442-wic-007",
+    "questionId": "67a1f442",
+    "module": "reading-writing",
+    "primary_class_cd_desc": "Words in Context",
+    "skill_cd": "WIC",
+    "skill_desc": "Words in Context",
+    "difficulty": "M",
+    "score_band_range_cd": 5,
+    "stem_html": "<p>Despite how <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> they may seem on first glance, the works of the philosopher Georg Hegel have proven to be quite influential. Readers who manage to penetrate Hegel's frustratingly dense prose often find that his thrillingly original and profound ideas wind up shaping their own thinking.</p><p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "choices": [
+      "<p>authoritative</p>",
+      "<p>opaque</p>",
+      "<p>empirical</p>",
+      "<p>facile</p>"
+    ],
+    "correct_choice_index": 1,
+    "explanation_html": "<p>Choice B is the best answer because it most logically completes the text's discussion of Georg Hegel's challenging but influential works.</p>",
+    "question_type": "mcq",
+    "strategy": {
+      "pattern": "CONTRAST",
+      "step1": "Context Bubble → Despite signals opposite relationship. Pattern: CONTRAST.",
+      "step2": "Bridge Word → 'opposite'.",
+      "step3": "Cluster → Opposition/Change.",
+      "step4": "Eliminate choices: authoritative (fails contrast), empirical (fails contrast), facile (fails contrast). Test 'opaque': provides required contrast.",
+      "step5": "Verification → 'opaque' completes the contrast relationship."
+    }
+  },
+  {
+    "uId": "267f8986-wic-008",
+    "questionId": "267f8986",
+    "module": "reading-writing",
+    "primary_class_cd_desc": "Words in Context",
+    "skill_cd": "WIC",
+    "skill_desc": "Words in Context",
+    "difficulty": "E",
+    "score_band_range_cd": 3,
+    "stem_html": "<p>For her 2021 art installation Anthem, Wu Tsang joined forces with singer and composer Beverly Glenn-Copeland to produce a piece that critics found truly <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>: they praised Tsang for creatively transforming a museum rotunda into a dynamic exhibit by projecting filmed images of Glenn-Copeland onto a massive 84-foot curtain and filling the space with the sounds of his and other voices singing.</p><p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "choices": [
+      "<p>restrained</p>",
+      "<p>inventive</p>",
+      "<p>inexplicable</p>",
+      "<p>mystifying</p>"
+    ],
+    "correct_choice_index": 1,
+    "explanation_html": "<p>Choice B is the best answer because it most logically completes the text's discussion of Wu Tsang's creative art installation.</p>",
+    "question_type": "mcq",
+    "strategy": {
+      "pattern": "EVALUATION",
+      "step1": "Context Bubble → Evaluative context requires matching tone. Pattern: EVALUATION.",
+      "step2": "Bridge Word → 'positive'.",
+      "step3": "Cluster → Judgment/Assessment.",
+      "step4": "Eliminate choices: restrained (–), inexplicable (–), mystifying (–). Test 'inventive': matches evaluative tone.",
+      "step5": "Verification → 'inventive' matches the evaluative context."
+    }
+  },
+  {
+    "uId": "4b2c5fbe-wic-009",
+    "questionId": "4b2c5fbe",
+    "module": "reading-writing",
+    "primary_class_cd_desc": "Words in Context",
+    "skill_cd": "WIC",
+    "skill_desc": "Words in Context",
+    "difficulty": "E",
+    "score_band_range_cd": 3,
+    "stem_html": "<p>The creation of Lotte Reiniger's 1926 animated film The Adventures of Prince Achmed was <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> process. Over the course of three years, Reiniger and her collaborators painstakingly made more than 250,000 individual images of hand-cut paper silhouettes and repeatedly had to invent entirely new methods and tools to create the special effects Reiniger envisioned.</p><p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "choices": [
+      "<p>a haphazard</p>",
+      "<p>a contentious</p>",
+      "<p>an ineffectual</p>",
+      "<p>an arduous</p>"
+    ],
+    "correct_choice_index": 3,
+    "explanation_html": "<p>Choice D is the best answer because it most logically completes the text's discussion of the challenging process of creating the animated film.</p>",
+    "question_type": "mcq",
+    "strategy": {
+      "pattern": "EVIDENCE_DETAIL",
+      "step1": "Context Bubble → Colon/examples define the blank. Pattern: EVIDENCE_DETAIL.",
+      "step2": "Bridge Word → 'define'.",
+      "step3": "Cluster → Definition/Specification.",
+      "step4": "Eliminate choices: a haphazard (–), a contentious (–), an ineffectual (–). Test 'an arduous': fits evidence provided.",
+      "step5": "Verification → 'an arduous' perfectly fits the evidence pattern."
+    }
+  },
+  {
+    "uId": "651e7f7c-wic-010",
+    "questionId": "651e7f7c",
+    "module": "reading-writing",
+    "primary_class_cd_desc": "Words in Context",
+    "skill_cd": "WIC",
+    "skill_desc": "Words in Context",
+    "difficulty": "M",
+    "score_band_range_cd": 4,
+    "stem_html": "<p>The güiro, a musical instrument traditionally made from a dried and hollowed gourd, is thought to have originated with the Taíno people of Puerto Rico. Players use a wooden stick to scrape along ridges cut into the side of the gourd, creating sounds that are highly <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>: the sounds produced by güiros can differ based on the distance between the ridges, the types of strokes the player uses, and the thickness of the gourd.</p><p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "choices": [
+      "<p>overlooked</p>",
+      "<p>powerful</p>",
+      "<p>routine</p>",
+      "<p>variable</p>"
+    ],
+    "correct_choice_index": 3,
+    "explanation_html": "<p>Choice D is the best answer because it most logically completes the text's discussion of the diverse sounds the güiro can produce.</p>",
+    "question_type": "mcq",
+    "strategy": {
+      "pattern": "EVIDENCE_DETAIL",
+      "step1": "Context Bubble → Colon/examples define the blank. Pattern: EVIDENCE_DETAIL.",
+      "step2": "Bridge Word → 'define'.",
+      "step3": "Cluster → Definition/Specification.",
+      "step4": "Eliminate choices: overlooked (–), powerful (–), routine (–). Test 'variable': fits evidence provided.",
+      "step5": "Verification → 'variable' perfectly fits the evidence pattern."
+    }
+  }
+]

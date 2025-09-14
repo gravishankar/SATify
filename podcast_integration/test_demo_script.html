@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAT Podcast Generator Demo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .question-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .passage {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .choices {
+            display: grid;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .choice {
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #e9ecef;
+        }
+        
+        .choice.correct {
+            background: #d4edda;
+            border-left-color: #28a745;
+        }
+        
+        .podcast-btn {
+            background: #7c3aed;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        
+        .podcast-btn:hover {
+            background: #6d28d9;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+        }
+        
+        .modal.show {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        .script-display {
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .tutor-line {
+            font-weight: bold;
+            color: #2563eb;
+            margin: 15px 0 5px 0;
+        }
+        
+        .student-line {
+            color: #059669;
+            margin: 5px 0 15px 20px;
+        }
+        
+        .metadata {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .audio-controls {
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+        
+        .play-btn, .stop-btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .stop-btn {
+            background: #dc2626;
+        }
+        
+        .demo-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .demo-header h1 {
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+        
+        .demo-header p {
+            color: #6b7280;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-header">
+        <h1>SAT Words in Context Podcast Generator</h1>
+        <p>Click the strategy button to see how it works!</p>
+    </div>
+
+    <!-- Sample Question 1 -->
+    <div class="question-card">
+        <div class="passage">
+            Researcher Haesung Jung led a 2020 study showing that individual acts of kindness can <strong>______</strong> prosocial behavior across a larger group. Jung and her team found that bystanders who witness a helpful act become more likely to offer help to someone else, and in doing so, can inspire still others to act.
+        </div>
+        
+        <div class="choices">
+            <div class="choice">A. require</div>
+            <div class="choice">B. remember</div>
+            <div class="choice correct">C. foster</div>
+            <div class="choice">D. discourage</div>
+        </div>
+        
+        <button class="podcast-btn" onclick="showPodcast(1)">🎧 Strategy Breakdown</button>
+    </div>
+
+    <!-- Sample Question 2 -->
+    <div class="question-card">
+        <div class="passage">
+            The work of Kiowa painter T.C. Cannon derives its power in part from the tension among his <strong>______</strong> influences: classic European portraiture, with its realistic treatment of faces; the American pop art movement, with its vivid colors; and flatstyle, the intertribal painting style that rejects the effect of depth typically achieved through shading and perspective.
+        </div>
+        
+        <div class="choices">
+            <div class="choice">A. complementary</div>
+            <div class="choice">B. unknown</div>
+            <div class="choice correct">C. disparate</div>
+            <div class="choice">D. interchangeable</div>
+        </div>
+        
+        <button class="podcast-btn" onclick="showPodcast(2)">🎧 Strategy Breakdown</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="podcastModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Strategy Breakdown</h3>
+                <button class="close-btn" onclick="closePodcast()">&times;</button>
+            </div>
+            <div class="script-display" id="scriptContent"></div>
+            <div class="audio-controls">
+                <button id="playBtn" class="play-btn" onclick="playAudio()">🎧 Play Strategy Audio</button>
+                <button id="stopBtn" class="stop-btn" onclick="stopAudio()" style="display: none;">⏹ Stop Audio</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample podcast scripts
+        const podcastScripts = {
+            1: `
+                <div class="tutor-line">TUTOR: What does this study show us?</div>
+                <div class="student-line">STUDENT: That kindness spreads to others.</div>
+                <div class="tutor-line">TUTOR: Right. So kindness does what to prosocial behavior?</div>
+                <div class="student-line">STUDENT: It promotes or encourages it.</div>
+                <div class="tutor-line">TUTOR: Exactly. Check choice A - "require"?</div>
+                <div class="student-line">STUDENT: Kindness doesn't require behavior, it just influences it.</div>
+                <div class="tutor-line">TUTOR: Choice D - "discourage"?</div>
+                <div class="student-line">STUDENT: That's the opposite - the study shows kindness spreads.</div>
+                <div class="tutor-line">TUTOR: Perfect. "Foster" means to encourage growth. Why does this work?</div>
+                <div class="student-line">STUDENT: The study shows kindness helps prosocial behavior grow and spread!</div>
+                <div class="tutor-line">TUTOR: Exactly. Key pattern: Study results need logical outcomes.</div>
+                <div class="metadata">Strategy: PROCESS_RESULT | Duration: ~60 seconds</div>
+            `,
+            2: `
+                <div class="tutor-line">TUTOR: What's the key signal in this passage?</div>
+                <div class="student-line">STUDENT: "tension"?</div>
+                <div class="tutor-line">TUTOR: Right. What does tension tell us we need?</div>
+                <div class="student-line">STUDENT: Different things that create conflict.</div>
+                <div class="tutor-line">TUTOR: Exactly. Predict a simple word.</div>
+                <div class="student-line">STUDENT: "different"?</div>
+                <div class="tutor-line">TUTOR: Perfect. Now check red flags. Choice A - "complementary"?</div>
+                <div class="student-line">STUDENT: Complementary contradicts tension.</div>
+                <div class="tutor-line">TUTOR: Choice D - "interchangeable"?</div>
+                <div class="student-line">STUDENT: Interchangeable things don't create tension.</div>
+                <div class="tutor-line">TUTOR: That leaves C - "disparate". Why does this work?</div>
+                <div class="student-line">STUDENT: Different types create tension, making work distinctive!</div>
+                <div class="tutor-line">TUTOR: Perfect. Key pattern: Tension requires difference.</div>
+                <div class="metadata">Strategy: TENSION_DETAIL | Duration: ~60 seconds</div>
+            `
+        };
+
+        let currentAudio = null;
+
+        function showPodcast(questionNumber) {
+            const modal = document.getElementById('podcastModal');
+            const scriptContent = document.getElementById('scriptContent');
+            
+            scriptContent.innerHTML = podcastScripts[questionNumber];
+            modal.classList.add('show');
+        }
+
+        function closePodcast() {
+            const modal = document.getElementById('podcastModal');
+            modal.classList.remove('show');
+            stopAudio();
+        }
+
+        function playAudio() {
+            if ('speechSynthesis' in window) {
+                const scriptContent = document.getElementById('scriptContent');
+                const text = scriptContent.textContent
+                    .replace(/TUTOR:/g, '')
+                    .replace(/STUDENT:/g, '')
+                    .replace(/Strategy:.*$/, '');
+
+                currentAudio = new SpeechSynthesisUtterance(text);
+                currentAudio.rate = 1.1;
+                currentAudio.pitch = 1.0;
+                
+                currentAudio.onstart = () => {
+                    document.getElementById('playBtn').style.display = 'none';
+                    document.getElementById('stopBtn').style.display = 'inline-block';
+                };
+                
+                currentAudio.onend = () => {
+                    document.getElementById('playBtn').style.display = 'inline-block';
+                    document.getElementById('stopBtn').style.display = 'none';
+                };
+                
+                speechSynthesis.speak(currentAudio);
+            }
+        }
+
+        function stopAudio() {
+            if (currentAudio) {
+                speechSynthesis.cancel();
+                document.getElementById('playBtn').style.display = 'inline-block';
+                document.getElementById('stopBtn').style.display = 'none';
+            }
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('podcastModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePodcast();
+            }
+        });
+    </script>
+</body>
+</html>
