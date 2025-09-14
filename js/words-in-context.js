@@ -119,6 +119,9 @@ class WordsInContextPractice {
         document.getElementById('wicPrevQuestion').disabled = this.currentQuestionIndex === 0;
         document.getElementById('wicNextQuestion').disabled = this.currentQuestionIndex === this.questions.length - 1;
 
+        // Reset submit button
+        document.getElementById('wicSubmitAnswer').disabled = true;
+
         // Hide explanation panel
         document.getElementById('wicExplanationPanel').classList.add('hidden');
     }

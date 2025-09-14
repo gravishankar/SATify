@@ -463,6 +463,45 @@ body {
   background-color: #fef2f2;
 }
 
+.choice-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: var(--border-color);
+  border-radius: 50%;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.choice {
+  display: flex;
+  align-items: flex-start;
+}
+
+.choice-content {
+  flex: 1;
+  line-height: 1.5;
+}
+
+.choice.selected .choice-letter {
+  background: var(--primary-color);
+  color: white;
+}
+
+.choice.correct .choice-letter {
+  background: var(--success-color);
+  color: white;
+}
+
+.choice.incorrect .choice-letter {
+  background: var(--danger-color);
+  color: white;
+}
+
 .question-actions {
   padding: 1.5rem 2rem;
   background: #f8fafc;
@@ -571,6 +610,45 @@ body {
 
 .modal-body {
   padding: 2rem;
+}
+
+/* Authentication Modal - ensure it stays as centered modal */
+#authModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000; /* Higher than strategy modal */
+  transition: var(--transition);
+}
+
+#authModal.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#authModal .modal-content {
+  background: var(--surface-color);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-lg);
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+#authModal .modal-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Forms */
@@ -814,13 +892,22 @@ body {
   transition: transform 0.3s ease;
   z-index: 1000;
   overflow-y: auto;
+  /* Override default modal styles */
+  opacity: 1;
+  visibility: visible;
 }
 
 .strategy-modal.show {
   transform: translateX(0);
 }
 
-.modal-content {
+.strategy-modal.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+}
+
+.strategy-modal .modal-content {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -831,6 +918,7 @@ body {
   max-height: none;
   margin: 0;
   width: 100%;
+  position: relative;
 }
 
 .strategy-content {
@@ -839,22 +927,25 @@ body {
   overflow-y: auto;
 }
 
-.modal-header {
+.strategy-modal .modal-header {
   padding: 1.5rem;
   border-bottom: 1px solid var(--border-color);
   background: var(--bg-color);
   position: sticky;
   top: 0;
   z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.modal-header h2 {
+.strategy-modal .modal-header h2 {
   margin: 0;
   font-size: 1.25rem;
   color: var(--text-primary);
 }
 
-.modal-close {
+.strategy-modal .modal-close {
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -865,7 +956,7 @@ body {
   transition: var(--transition);
 }
 
-.modal-close:hover {
+.strategy-modal .modal-close:hover {
   background: var(--border-color);
   color: var(--text-primary);
 }
@@ -1053,6 +1144,8 @@ body {
     transform: translateY(100%);
     top: auto;
     bottom: 0;
+    right: 0;
+    left: 0;
     height: 70vh;
     border-left: none;
     border-top: 1px solid var(--border-color);
@@ -1061,6 +1154,10 @@ body {
 
   .strategy-modal.show {
     transform: translateY(0);
+  }
+
+  .strategy-modal.hidden {
+    transform: translateY(100%);
   }
 
   .strategy-steps {
