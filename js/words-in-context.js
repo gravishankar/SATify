@@ -117,9 +117,13 @@ class WordsInContextPractice {
             const choiceDiv = document.createElement('div');
             choiceDiv.className = 'choice wic-choice';
             choiceDiv.setAttribute('data-choice-index', index);
+
+            // Clean up choice content - remove HTML tags if present
+            const cleanChoice = choice.replace(/<[^>]*>/g, '').trim();
+
             choiceDiv.innerHTML = `
                 <div class="choice-letter">${String.fromCharCode(65 + index)}</div>
-                <div class="choice-content">${choice}</div>
+                <div class="choice-content">${cleanChoice}</div>
             `;
             choicesContainer.appendChild(choiceDiv);
         });
