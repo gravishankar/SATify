@@ -96,6 +96,12 @@ class CreatorStudio {
             this.resetForm();
         });
 
+        // Clear storage button (for debugging)
+        document.getElementById('clearStorageBtn')?.addEventListener('click', () => {
+            console.log('Clear Storage button clicked');
+            this.clearLessonStorage();
+        });
+
         // Content editing
         document.getElementById('lessonTitle')?.addEventListener('input', () => {
             this.validateAndPreview();
@@ -718,6 +724,9 @@ class CreatorStudio {
             return;
         }
 
+        // Migrate lesson data if needed
+        this.migrateLessonData();
+
         // Show confirmation dialog
         const confirmed = await this.showPublishConfirmation();
         if (!confirmed) return;
@@ -740,6 +749,50 @@ class CreatorStudio {
         } catch (error) {
             console.error('Publishing failed:', error);
             this.showNotification(`Publishing failed: ${error.message}`, 'error');
+        }
+    }
+
+    migrateLessonData() {
+        // Check if lesson needs migration from old format
+        if (!this.currentLesson.domain_id && this.currentLesson.domain) {
+            console.log('Migrating lesson from old format...');
+
+            const domainId = this.currentLesson.domain;
+            const skillId = this.currentLesson.skill;
+
+            if (this.satTaxonomy && domainId && skillId) {
+                const domain = this.satTaxonomy.reading_writing.domains[domainId];
+                const skill = domain?.skills[skillId];
+
+                if (domain && skill) {
+                    this.currentLesson.domain_id = domainId;
+                    this.currentLesson.domain_title = domain.title;
+                    this.currentLesson.skill_id = skillId;
+                    this.currentLesson.skill_title = skill.title;
+
+                    // Remove old properties
+                    delete this.currentLesson.domain;
+                    delete this.currentLesson.skill;
+
+                    console.log('Lesson migrated successfully:', {
+                        domain_id: this.currentLesson.domain_id,
+                        domain_title: this.currentLesson.domain_title,
+                        skill_id: this.currentLesson.skill_id,
+                        skill_title: this.currentLesson.skill_title
+                    });
+                } else {
+                    console.error('Could not find domain/skill in taxonomy for migration');
+                }
+            }
+        }
+
+        // Ensure we have the required fields, even if migration failed
+        if (!this.currentLesson.domain_id || !this.currentLesson.skill_id) {
+            console.error('Missing domain/skill data, using defaults');
+            this.currentLesson.domain_id = this.currentLesson.domain_id || 'unknown';
+            this.currentLesson.domain_title = this.currentLesson.domain_title || 'Unknown Domain';
+            this.currentLesson.skill_id = this.currentLesson.skill_id || 'unknown';
+            this.currentLesson.skill_title = this.currentLesson.skill_title || 'Unknown Skill';
         }
     }
 
@@ -1066,6 +1119,16 @@ git push origin main</pre>
         document.getElementById('learningObjectives').value = '';
         document.getElementById('domainInfo').innerHTML = '';
         document.getElementById('skillInfo').innerHTML = '';
+    }
+
+    clearLessonStorage() {
+        if (confirm('This will delete all saved lessons from browser storage. Are you sure?')) {
+            localStorage.removeItem('creator_studio_lessons');
+            this.currentLesson = null;
+            this.showLessonCreation();
+            this.showNotification('All lesson storage cleared', 'info');
+            console.log('Lesson storage cleared');
+        }
     }
 
     populateDomainsGrid() {
