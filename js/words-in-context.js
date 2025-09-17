@@ -273,9 +273,11 @@ class WordsInContextPractice {
     }
 
     showStrategyBreakdown() {
+        console.log('Strategy breakdown clicked, currentQuestionIndex:', this.currentQuestionIndex);
         const question = this.questions[this.currentQuestionIndex];
         if (!question) {
-            this.showToast('No question available', 'error');
+            console.log('No question available for strategy');
+            this.showToast('Please start practice first to see strategy breakdown', 'info');
             return;
         }
 
