@@ -699,26 +699,293 @@ class CreatorStudio {
         this.showNotification(`Lesson saved to browser storage (${lessons.length} total lessons)`, 'success');
     }
 
-    publishLesson() {
+    async publishLesson() {
         if (!this.validateCurrentLesson()) {
             this.showNotification('Please fix validation errors before publishing', 'error');
             return;
         }
 
-        this.currentLesson.status = 'published';
-        this.currentLesson.published_at = new Date().toISOString();
-        this.saveLesson();
+        // Show confirmation dialog
+        const confirmed = await this.showPublishConfirmation();
+        if (!confirmed) return;
 
-        console.log('Lesson published:', this.currentLesson);
+        try {
+            // Update lesson metadata
+            this.currentLesson.status = 'published';
+            this.currentLesson.published_at = new Date().toISOString();
+            this.currentLesson.author = window.roleManager?.getCurrentRole() || 'instructor';
 
-        // Show detailed publishing info
-        this.showNotification(`Lesson "${this.currentLesson.title}" published to browser storage! Available for students.`, 'success');
+            // Save to localStorage first
+            this.saveLesson();
 
-        // TODO: Future integrations
-        console.log('Publishing destinations (future):');
-        console.log('- GitHub repository for version control');
-        console.log('- Content delivery network (CDN)');
-        console.log('- Learning management system (LMS)');
+            // Publish to GitHub
+            await this.publishToGitHub();
+
+            this.showNotification(`Lesson "${this.currentLesson.title}" published successfully to GitHub!`, 'success');
+            console.log('Lesson published to GitHub:', this.currentLesson);
+
+        } catch (error) {
+            console.error('Publishing failed:', error);
+            this.showNotification(`Publishing failed: ${error.message}`, 'error');
+        }
+    }
+
+    async showPublishConfirmation() {
+        return new Promise((resolve) => {
+            const modal = document.createElement('div');
+            modal.className = 'modal-overlay';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Publish Lesson to GitHub</h3>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Lesson:</strong> ${this.currentLesson.title}</p>
+                        <p><strong>Domain:</strong> ${this.currentLesson.domain_title}</p>
+                        <p><strong>Skill:</strong> ${this.currentLesson.skill_title}</p>
+                        <p><strong>Slides:</strong> ${this.currentLesson.slides.length}</p>
+                        <br>
+                        <p>This will commit the lesson to the GitHub repository and make it available to students.</p>
+                        <br>
+                        <label for="commitMessage">Commit Message:</label>
+                        <input type="text" id="commitMessage" class="form-control"
+                               value="Add lesson: ${this.currentLesson.title}" placeholder="Enter commit message">
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" id="cancelPublish">Cancel</button>
+                        <button class="btn btn-primary" id="confirmPublish">Publish to GitHub</button>
+                    </div>
+                </div>
+            `;
+
+            document.body.appendChild(modal);
+
+            document.getElementById('cancelPublish').onclick = () => {
+                document.body.removeChild(modal);
+                resolve(false);
+            };
+
+            document.getElementById('confirmPublish').onclick = () => {
+                const commitMessage = document.getElementById('commitMessage').value.trim();
+                this.currentLesson.commitMessage = commitMessage || `Add lesson: ${this.currentLesson.title}`;
+                document.body.removeChild(modal);
+                resolve(true);
+            };
+
+            // Close on backdrop click
+            modal.onclick = (e) => {
+                if (e.target === modal) {
+                    document.body.removeChild(modal);
+                    resolve(false);
+                }
+            };
+        });
+    }
+
+    async publishToGitHub() {
+        // Generate filename
+        const domainId = this.currentLesson.domain_id;
+        const skillId = this.currentLesson.skill_id;
+        const lessonName = this.generateFilename(this.currentLesson.title);
+        const filename = `${lessonName}.json`;
+        const filepath = `lessons/${domainId}/${skillId}/${filename}`;
+
+        // Prepare lesson data for GitHub
+        const lessonData = {
+            ...this.currentLesson,
+            created_at: this.currentLesson.created_at || new Date().toISOString(),
+            updated_at: new Date().toISOString(),
+            version: "1.0",
+            format_version: "creator_studio_v1"
+        };
+
+        // Update manifest
+        const updatedManifest = await this.updateManifest(lessonData, filepath);
+
+        // Commit to GitHub
+        await this.commitToGitHub(
+            this.currentLesson.commitMessage,
+            lessonData,
+            filepath,
+            updatedManifest
+        );
+    }
+
+    generateFilename(title) {
+        return title
+            .toLowerCase()
+            .replace(/[^a-z0-9\s-]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-')
+            .replace(/^-|-$/g, '');
+    }
+
+    async writeFileToLocalProject(filepath, content) {
+        // Create a server endpoint request to write the file
+        try {
+            const response = await fetch('/api/write-lesson', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    filepath: filepath,
+                    content: content
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error(`Failed to write file: ${response.statusText}`);
+            }
+
+            return await response.json();
+        } catch (error) {
+            // Fallback: download the file for manual placement
+            console.log('Server endpoint not available, preparing file for download');
+            this.downloadFile(filepath, content);
+            throw new Error('Server endpoint not available - file prepared for download');
+        }
+    }
+
+    downloadFile(filepath, content) {
+        const blob = new Blob([content], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filepath.split('/').pop();
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+
+    async updateManifest(lessonData, filepath) {
+        try {
+            // Read current manifest
+            const manifestResponse = await fetch('lessons/manifest.json');
+            let manifest;
+
+            if (manifestResponse.ok) {
+                manifest = await manifestResponse.json();
+            } else {
+                // Create new manifest if it doesn't exist
+                manifest = {
+                    version: "1.0",
+                    lastUpdated: new Date().toISOString(),
+                    totalLessons: 0,
+                    lessons: {}
+                };
+            }
+
+            // Add lesson to manifest
+            const lessonId = `${lessonData.domain_id}_${lessonData.skill_id}_${this.generateFilename(lessonData.title)}`;
+            manifest.lessons[lessonId] = {
+                id: lessonId,
+                title: lessonData.title,
+                domain_id: lessonData.domain_id,
+                domain_title: lessonData.domain_title,
+                skill_id: lessonData.skill_id,
+                skill_title: lessonData.skill_title,
+                author: lessonData.author,
+                created_at: lessonData.created_at,
+                updated_at: lessonData.updated_at,
+                published_at: lessonData.published_at,
+                status: lessonData.status,
+                filepath: filepath,
+                slide_count: lessonData.slides.length,
+                learning_objectives_count: lessonData.learning_objectives.length
+            };
+
+            manifest.totalLessons = Object.keys(manifest.lessons).length;
+            manifest.lastUpdated = new Date().toISOString();
+
+            return manifest;
+
+        } catch (error) {
+            console.error('Error updating manifest:', error);
+            throw new Error('Failed to update lessons manifest');
+        }
+    }
+
+    async commitToGitHub(message, lessonData, filepath, updatedManifest) {
+        try {
+            console.log('Committing lesson to GitHub...');
+
+            // Create a backend API call to handle the git operations
+            const response = await fetch('/api/commit-lesson', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    message: message,
+                    lessonData: lessonData,
+                    filepath: filepath,
+                    manifest: updatedManifest
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error(`API error: ${response.statusText}`);
+            }
+
+            const result = await response.json();
+            console.log('GitHub commit successful:', result);
+            return result;
+
+        } catch (error) {
+            console.log('API endpoint not available, using manual approach...');
+
+            // Fallback: prepare files for manual commit
+            this.downloadFile(filepath, JSON.stringify(lessonData, null, 2));
+            this.downloadFile('lessons/manifest.json', JSON.stringify(updatedManifest, null, 2));
+
+            // Show user instructions
+            this.showManualCommitInstructions(filepath, message);
+
+            throw new Error('API not available - files prepared for manual commit');
+        }
+    }
+
+    showManualCommitInstructions(filepath, message) {
+        const modal = document.createElement('div');
+        modal.className = 'modal-overlay';
+        modal.innerHTML = `
+            <div class="modal-content" style="max-width: 600px;">
+                <div class="modal-header">
+                    <h3>Manual GitHub Commit Required</h3>
+                </div>
+                <div class="modal-body">
+                    <p>The lesson files have been downloaded. Please follow these steps:</p>
+                    <ol>
+                        <li>Place the lesson file in: <code>${filepath}</code></li>
+                        <li>Place the manifest.json in: <code>lessons/manifest.json</code></li>
+                        <li>Open terminal in your project directory</li>
+                        <li>Run these commands:</li>
+                    </ol>
+                    <pre style="background: #f5f5f5; padding: 10px; border-radius: 4px; overflow-x: auto;">
+git add ${filepath} lessons/manifest.json
+git commit -m "${message}"
+git push origin main</pre>
+                    <p><small>Future versions will automate this process.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="closeInstructions">I'll do this manually</button>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(modal);
+
+        document.getElementById('closeInstructions').onclick = () => {
+            document.body.removeChild(modal);
+        };
+
+        modal.onclick = (e) => {
+            if (e.target === modal) {
+                document.body.removeChild(modal);
+            }
+        };
     }
 
     loadTemplate(templateId) {

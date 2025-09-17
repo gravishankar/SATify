@@ -1,0 +1,37 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2025-01-17T00:00:00Z",
+  "totalLessons": 0,
+  "lessons": {},
+  "domains": {
+    "information_and_ideas": {
+      "title": "Information and Ideas",
+      "skills": {
+        "command_of_evidence": "Command of Evidence",
+        "inferences": "Inferences",
+        "central_ideas_and_details": "Central Ideas and Details"
+      }
+    },
+    "craft_and_structure": {
+      "title": "Craft and Structure",
+      "skills": {
+        "words_in_context": "Words in Context",
+        "text_structure_and_purpose": "Text Structure and Purpose"
+      }
+    },
+    "expression_of_ideas": {
+      "title": "Expression of Ideas",
+      "skills": {
+        "rhetorical_synthesis": "Rhetorical Synthesis",
+        "transitions": "Transitions"
+      }
+    },
+    "standard_english_conventions": {
+      "title": "Standard English Conventions",
+      "skills": {
+        "boundaries": "Boundaries",
+        "form_structure_and_sense": "Form, Structure, and Sense"
+      }
+    }
+  }
+}
