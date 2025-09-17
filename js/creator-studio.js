@@ -770,10 +770,15 @@ class CreatorStudio {
             this.saveLesson();
 
             // Try to publish to GitHub (will fallback gracefully if server not available)
-            await this.publishToGitHub();
+            const result = await this.publishToGitHub();
 
-            this.showNotification(`Lesson "${this.currentLesson.title}" published successfully to GitHub!`, 'success');
-            console.log('Lesson published to GitHub:', this.currentLesson);
+            if (result.method === 'github-actions') {
+                this.showNotification(`Lesson "${this.currentLesson.title}" ready for GitHub publishing. Follow the instructions in the modal.`, 'info');
+                console.log('Lesson prepared for GitHub Actions publishing:', this.currentLesson);
+            } else {
+                this.showNotification(`Lesson "${this.currentLesson.title}" published successfully to GitHub!`, 'success');
+                console.log('Lesson published to GitHub:', this.currentLesson);
+            }
 
         } catch (error) {
             console.error('Publishing failed:', error);
@@ -1015,42 +1020,150 @@ class CreatorStudio {
 
     async commitToGitHub(message, lessonData, filepath, updatedManifest) {
         try {
-            console.log('Committing lesson to GitHub...');
+            console.log('Publishing lesson via GitHub Actions...');
 
-            // Create a backend API call to handle the git operations
-            const response = await fetch('/api/commit-lesson', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    message: message,
-                    lessonData: lessonData,
-                    filepath: filepath,
-                    manifest: updatedManifest
-                })
-            });
+            // Try server-side API first (if available)
+            try {
+                const response = await fetch('/api/commit-lesson', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message: message,
+                        lessonData: lessonData,
+                        filepath: filepath,
+                        manifest: updatedManifest
+                    })
+                });
 
-            if (!response.ok) {
-                throw new Error(`API error: ${response.statusText}`);
+                if (response.ok) {
+                    const result = await response.json();
+                    console.log('Server-side GitHub commit successful:', result);
+                    return result;
+                }
+            } catch (serverError) {
+                console.log('Server API not available, using GitHub Actions approach...');
             }
 
-            const result = await response.json();
-            console.log('GitHub commit successful:', result);
-            return result;
+            // Fallback to GitHub Actions approach
+            await this.publishViaGitHubActions(message, lessonData, filepath, updatedManifest);
+            return { success: true, method: 'github-actions' };
 
         } catch (error) {
-            console.log('API endpoint not available, using manual approach...');
+            console.log('GitHub Actions not available, using manual approach...');
 
-            // Fallback: prepare files for manual commit
+            // Final fallback: prepare files for manual commit
             this.downloadFile(filepath, JSON.stringify(lessonData, null, 2));
             this.downloadFile('lessons/manifest.json', JSON.stringify(updatedManifest, null, 2));
 
             // Show user instructions
             this.showManualCommitInstructions(filepath, message);
 
-            throw new Error('API not available - files prepared for manual commit');
+            throw new Error('Automatic publishing not available - files prepared for manual commit');
         }
+    }
+
+    async publishViaGitHubActions(message, lessonData, filepath, updatedManifest) {
+        try {
+            // Get repository info from current URL or default
+            const repoOwner = 'gravishankar'; // You can make this configurable
+            const repoName = 'sat-practice-pro';
+
+            // Create GitHub issue to trigger the action
+            const issueTitle = `Publish Lesson: ${lessonData.title}`;
+            const issueBody = `
+## Creator Studio Lesson Publishing Request
+
+**Lesson Title:** ${lessonData.title}
+**Domain:** ${lessonData.domain_title} (${lessonData.domain_id})
+**Skill:** ${lessonData.skill_title} (${lessonData.skill_id})
+**Author:** ${lessonData.author}
+**Commit Message:** ${message}
+
+### Lesson Data
+\`\`\`json
+${JSON.stringify(lessonData, null, 2)}
+\`\`\`
+
+### Manifest Data
+\`\`\`manifest
+${JSON.stringify(updatedManifest, null, 2)}
+\`\`\`
+
+---
+*This issue was automatically created by Creator Studio to publish a lesson.*
+            `.trim();
+
+            // For GitHub Pages deployment, we'll show instructions to create the issue manually
+            // In a more advanced setup, you could use GitHub API with a token
+            this.showGitHubActionsInstructions(issueTitle, issueBody, repoOwner, repoName);
+
+        } catch (error) {
+            console.error('Error setting up GitHub Actions publishing:', error);
+            throw error;
+        }
+    }
+
+    showGitHubActionsInstructions(issueTitle, issueBody, repoOwner, repoName) {
+        const modal = document.createElement('div');
+        modal.className = 'modal-overlay';
+        modal.innerHTML = `
+            <div class="modal-content" style="max-width: 700px; max-height: 80vh; overflow-y: auto;">
+                <div class="modal-header">
+                    <h3>🚀 Publish Lesson via GitHub Actions</h3>
+                </div>
+                <div class="modal-body">
+                    <p>Your lesson is ready to publish! Follow these simple steps:</p>
+
+                    <h4>Step 1: Create GitHub Issue</h4>
+                    <p>Click the button below to create a GitHub issue that will automatically publish your lesson:</p>
+                    <a href="https://github.com/${repoOwner}/${repoName}/issues/new?title=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(issueBody)}&labels=creator-studio-lesson"
+                       target="_blank" class="btn btn-primary" style="display: inline-block; margin: 10px 0;">
+                        📝 Create GitHub Issue to Publish
+                    </a>
+
+                    <h4>Step 2: Wait for Automation</h4>
+                    <p>GitHub Actions will automatically:</p>
+                    <ul>
+                        <li>Create the lesson file in the correct location</li>
+                        <li>Update the manifest</li>
+                        <li>Commit everything to the repository</li>
+                        <li>Close the issue when complete</li>
+                    </ul>
+
+                    <p><strong>No manual git commands needed!</strong> The entire process is automated.</p>
+
+                    <details style="margin-top: 20px;">
+                        <summary style="cursor: pointer; font-weight: bold;">📋 Manual Issue Creation (if button doesn't work)</summary>
+                        <div style="margin-top: 10px;">
+                            <p><strong>Title:</strong></p>
+                            <input type="text" readonly value="${issueTitle}" style="width: 100%; padding: 5px; margin-bottom: 10px;">
+
+                            <p><strong>Labels:</strong> creator-studio-lesson</p>
+
+                            <p><strong>Body:</strong></p>
+                            <textarea readonly style="width: 100%; height: 150px; padding: 5px; font-family: monospace; font-size: 12px;">${issueBody}</textarea>
+                        </div>
+                    </details>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" id="closeGitHubInstructions">I've created the issue</button>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(modal);
+
+        document.getElementById('closeGitHubInstructions').onclick = () => {
+            document.body.removeChild(modal);
+        };
+
+        modal.onclick = (e) => {
+            if (e.target === modal) {
+                document.body.removeChild(modal);
+            }
+        };
     }
 
     showManualCommitInstructions(filepath, message) {

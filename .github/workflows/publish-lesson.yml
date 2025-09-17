@@ -1,0 +1,152 @@
+name: Publish Creator Studio Lesson
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  publish-lesson:
+    if: contains(github.event.issue.labels.*.name, 'creator-studio-lesson')
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+
+    - name: Parse lesson data from issue
+      id: parse-lesson
+      run: |
+        # Extract lesson data from issue body
+        echo "Parsing lesson data from issue #${{ github.event.issue.number }}"
+
+        # Create a temporary file with the issue body
+        echo '${{ github.event.issue.body }}' > issue_body.txt
+
+        # Extract lesson JSON (between ```json and ```)
+        sed -n '/```json/,/```/p' issue_body.txt | sed '1d;$d' > lesson_data.json
+
+        # Extract manifest JSON
+        sed -n '/```manifest/,/```/p' issue_body.txt | sed '1d;$d' > manifest_data.json
+
+        # Parse lesson metadata
+        LESSON_TITLE=$(cat lesson_data.json | jq -r '.title')
+        DOMAIN_ID=$(cat lesson_data.json | jq -r '.domain_id')
+        SKILL_ID=$(cat lesson_data.json | jq -r '.skill_id')
+
+        # Generate filename
+        FILENAME=$(echo "$LESSON_TITLE" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9 ]//g' | tr ' ' '-' | sed 's/--*/-/g' | sed 's/^-\|-$//g')
+        FILEPATH="lessons/${DOMAIN_ID}/${SKILL_ID}/${FILENAME}.json"
+
+        echo "lesson_title=$LESSON_TITLE" >> $GITHUB_OUTPUT
+        echo "domain_id=$DOMAIN_ID" >> $GITHUB_OUTPUT
+        echo "skill_id=$SKILL_ID" >> $GITHUB_OUTPUT
+        echo "filename=$FILENAME" >> $GITHUB_OUTPUT
+        echo "filepath=$FILEPATH" >> $GITHUB_OUTPUT
+
+    - name: Create lesson directory
+      run: |
+        mkdir -p "lessons/${{ steps.parse-lesson.outputs.domain_id }}/${{ steps.parse-lesson.outputs.skill_id }}"
+
+    - name: Write lesson file
+      run: |
+        cp lesson_data.json "${{ steps.parse-lesson.outputs.filepath }}"
+        echo "Lesson file created at: ${{ steps.parse-lesson.outputs.filepath }}"
+
+    - name: Update manifest
+      run: |
+        # Update the manifest with new lesson
+        if [ -f "lessons/manifest.json" ]; then
+          cp lessons/manifest.json manifest_backup.json
+        else
+          echo '{"version":"1.0","lastUpdated":"","totalLessons":0,"lessons":{}}' > lessons/manifest.json
+        fi
+
+        # Use manifest_data.json if provided, otherwise update existing
+        if [ -s manifest_data.json ]; then
+          cp manifest_data.json lessons/manifest.json
+        else
+          # Update existing manifest (fallback logic)
+          jq --arg timestamp "$(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)" \
+             --arg filepath "${{ steps.parse-lesson.outputs.filepath }}" \
+             --slurpfile lesson lesson_data.json \
+             '.lastUpdated = $timestamp |
+              .totalLessons = (.totalLessons + 1) |
+              .lessons[$lesson[0].id] = {
+                id: $lesson[0].id,
+                title: $lesson[0].title,
+                domain_id: $lesson[0].domain_id,
+                domain_title: $lesson[0].domain_title,
+                skill_id: $lesson[0].skill_id,
+                skill_title: $lesson[0].skill_title,
+                author: $lesson[0].author,
+                created_at: $lesson[0].created_at,
+                updated_at: $lesson[0].updated_at,
+                published_at: $lesson[0].published_at,
+                status: $lesson[0].status,
+                filepath: $filepath,
+                slide_count: ($lesson[0].slides | length),
+                learning_objectives_count: ($lesson[0].learning_objectives | length)
+              }' lessons/manifest.json > temp_manifest.json
+          mv temp_manifest.json lessons/manifest.json
+        fi
+
+    - name: Commit and push lesson
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "Creator Studio Bot"
+
+        git add "${{ steps.parse-lesson.outputs.filepath }}" lessons/manifest.json
+        git commit -m "Add lesson: ${{ steps.parse-lesson.outputs.lesson_title }}
+
+        Published via Creator Studio
+        Domain: ${{ steps.parse-lesson.outputs.domain_id }}
+        Skill: ${{ steps.parse-lesson.outputs.skill_id }}
+
+        🤖 Generated with Creator Studio
+
+        Co-Authored-By: Creator Studio Bot <action@github.com>"
+
+        git push
+
+    - name: Comment on issue with success
+      uses: actions/github-script@v7
+      with:
+        script: |
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: `✅ **Lesson Published Successfully!**
+
+            **📚 Lesson:** ${{ steps.parse-lesson.outputs.lesson_title }}
+            **📁 Location:** \`${{ steps.parse-lesson.outputs.filepath }}\`
+            **🏷️ Domain:** ${{ steps.parse-lesson.outputs.domain_id }}
+            **🎯 Skill:** ${{ steps.parse-lesson.outputs.skill_id }}
+
+            The lesson has been added to the repository and is now available to students.
+
+            [View Lesson File](${{ github.server_url }}/${{ github.repository }}/blob/main/${{ steps.parse-lesson.outputs.filepath }})
+            [View Updated Manifest](${{ github.server_url }}/${{ github.repository }}/blob/main/lessons/manifest.json)`
+          });
+
+    - name: Close issue
+      uses: actions/github-script@v7
+      with:
+        script: |
+          github.rest.issues.update({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            state: 'closed'
+          });
+
+    - name: Clean up temporary files
+      run: |
+        rm -f issue_body.txt lesson_data.json manifest_data.json manifest_backup.json
