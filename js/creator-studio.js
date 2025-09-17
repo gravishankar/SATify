@@ -14,11 +14,23 @@ class CreatorStudio {
     }
 
     async init() {
+        console.log('Creator Studio init() called');
+
+        console.log('Step 1: Loading SAT taxonomy...');
         await this.loadSATTaxonomy();
+
+        console.log('Step 2: Setting up event listeners...');
         this.setupEventListeners();
+
+        console.log('Step 3: Populating domain dropdown...');
         this.populateDomainDropdown();
+
+        console.log('Step 4: Populating domains grid...');
         this.populateDomainsGrid();
+
+        console.log('Step 5: Initializing validation framework...');
         this.initializeValidationFramework();
+
         console.log('Creator Studio initialized successfully');
     }
 
@@ -49,16 +61,28 @@ class CreatorStudio {
         });
 
         // Domain selection
-        document.getElementById('domainSelect')?.addEventListener('change', (e) => {
-            console.log('Domain changed:', e.target.value);
-            this.onDomainChange(e.target.value);
-        });
+        const domainSelect = document.getElementById('domainSelect');
+        if (domainSelect) {
+            domainSelect.addEventListener('change', (e) => {
+                console.log('Domain changed:', e.target.value);
+                this.onDomainChange(e.target.value);
+            });
+            console.log('Domain select event listener attached');
+        } else {
+            console.error('Domain select element not found for event listener');
+        }
 
         // Skill selection
-        document.getElementById('skillSelect')?.addEventListener('change', (e) => {
-            console.log('Skill changed:', e.target.value);
-            this.onSkillChange(e.target.value);
-        });
+        const skillSelect = document.getElementById('skillSelect');
+        if (skillSelect) {
+            skillSelect.addEventListener('change', (e) => {
+                console.log('Skill changed:', e.target.value);
+                this.onSkillChange(e.target.value);
+            });
+            console.log('Skill select event listener attached');
+        } else {
+            console.error('Skill select element not found for event listener');
+        }
 
         // Create lesson button
         document.getElementById('createLessonBtn')?.addEventListener('click', () => {
@@ -111,20 +135,40 @@ class CreatorStudio {
     }
 
     populateDomainDropdown() {
-        if (!this.satTaxonomy) return;
+        console.log('Populating domain dropdown...');
+        console.log('SAT taxonomy available:', !!this.satTaxonomy);
+
+        if (!this.satTaxonomy) {
+            console.error('SAT taxonomy not loaded');
+            return;
+        }
 
         const domainSelect = document.getElementById('domainSelect');
-        if (!domainSelect) return;
+        if (!domainSelect) {
+            console.error('Domain select element not found');
+            return;
+        }
 
-        const domains = this.satTaxonomy.reading_writing.domains;
-        domainSelect.innerHTML = '<option value="">Select a domain...</option>';
+        console.log('Domain select element found');
 
-        Object.values(domains).forEach(domain => {
-            const option = document.createElement('option');
-            option.value = domain.id;
-            option.textContent = domain.title;
-            domainSelect.appendChild(option);
-        });
+        try {
+            const domains = this.satTaxonomy.reading_writing.domains;
+            console.log('Available domains:', Object.keys(domains));
+
+            domainSelect.innerHTML = '<option value="">Select a domain...</option>';
+
+            Object.values(domains).forEach(domain => {
+                const option = document.createElement('option');
+                option.value = domain.id;
+                option.textContent = domain.title;
+                domainSelect.appendChild(option);
+                console.log('Added domain option:', domain.title);
+            });
+
+            console.log('Domain dropdown populated successfully');
+        } catch (error) {
+            console.error('Error populating domain dropdown:', error);
+        }
     }
 
     onDomainChange(domainId) {
@@ -784,17 +828,50 @@ class CreatorStudio {
     }
 }
 
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('Creator Studio DOM loaded, checking permissions...');
+// Initialize Creator Studio - called when DOM is ready and role manager is initialized
+function initializeCreatorStudio() {
+    console.log('Checking Creator Studio access...');
     console.log('Role manager exists:', !!window.roleManager);
     console.log('Has permission:', window.roleManager?.hasPermission('access_creator_studio'));
+
+    // Clean up existing instance
+    if (window.creatorStudio) {
+        console.log('Cleaning up existing Creator Studio instance');
+        window.creatorStudio = null;
+    }
 
     // Check role access before initializing
     if (window.roleManager && window.roleManager.hasPermission('access_creator_studio')) {
         console.log('Initializing Creator Studio...');
-        window.creatorStudio = new CreatorStudio(window.satApp);
+        // Wait for satApp to be ready
+        if (window.satApp) {
+            window.creatorStudio = new CreatorStudio(window.satApp);
+        } else {
+            // Wait a bit for satApp to initialize
+            setTimeout(() => {
+                if (window.satApp) {
+                    window.creatorStudio = new CreatorStudio(window.satApp);
+                } else {
+                    console.error('SATApp not available for Creator Studio initialization');
+                }
+            }, 500);
+        }
     } else {
         console.log('Access denied: Creator Studio requires instructor role');
     }
+}
+
+// Listen for role changes to reinitialize Creator Studio
+window.addEventListener('roleChanged', (event) => {
+    console.log('Role changed, reinitializing Creator Studio...', event.detail);
+    initializeCreatorStudio();
+});
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Creator Studio DOM loaded, waiting for role manager...');
+    // Wait a bit for role manager to be fully initialized
+    setTimeout(() => {
+        initializeCreatorStudio();
+    }, 300);
 });
