@@ -38,6 +38,10 @@ class WordsInContextPractice {
             }
         });
 
+        // Strategy icon button (🎯 in question controls)
+        document.getElementById('wicStrategyBtn')?.addEventListener('click', () => {
+            this.showStrategyBreakdown();
+        });
 
         // Learn This Concept button
         document.getElementById('wicLearnConcept')?.addEventListener('click', () => {
