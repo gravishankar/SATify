@@ -99,6 +99,19 @@ class RoleManager {
         if (userMenuRole) {
             userMenuRole.textContent = this.isInstructor() ? 'Instructor Mode' : 'Student Mode';
         }
+
+        // Update settings page toggle button
+        const settingsToggle = document.getElementById('roleToggle');
+        if (settingsToggle) {
+            settingsToggle.textContent = `Switch to ${this.isInstructor() ? 'Student' : 'Instructor'}`;
+            settingsToggle.onclick = () => this.toggleRole();
+        }
+
+        // Update navigation toggle button
+        const navToggle = document.getElementById('navRoleToggle');
+        if (navToggle) {
+            navToggle.textContent = `Switch to ${this.isInstructor() ? 'Student' : 'Instructor'}`;
+        }
     }
 
     // Check permissions for specific actions
@@ -129,31 +142,36 @@ class RoleManager {
 
     // Initialize role-based features after DOM load
     initializeRoleFeatures() {
+        console.log('Initializing role features...');
+
         // Add role toggle button for development
         this.addRoleToggleButton();
 
         // Set up Creator Studio access
         this.setupCreatorStudioAccess();
+
+        console.log('Role features initialized');
     }
 
     // Add development role toggle button
     addRoleToggleButton() {
-        if (document.getElementById('roleToggle')) {
-            console.log('Role toggle already exists');
-            return; // Already exists
+        // Check if nav toggle already exists
+        if (document.getElementById('navRoleToggle')) {
+            console.log('Navigation role toggle already exists');
+            return;
         }
 
-        console.log('Creating role toggle button...');
+        console.log('Creating navigation role toggle button...');
         const roleToggle = document.createElement('button');
-        roleToggle.id = 'roleToggle';
+        roleToggle.id = 'navRoleToggle';
         roleToggle.className = 'role-toggle-btn';
         roleToggle.textContent = `Switch to ${this.isInstructor() ? 'Student' : 'Instructor'}`;
         roleToggle.addEventListener('click', () => {
-            console.log('Role toggle clicked');
+            console.log('Navigation role toggle clicked');
             this.toggleRole();
         });
 
-        // Add to navigation or create floating button
+        // Add to navigation
         const nav = document.querySelector('.nav-menu');
         console.log('Navigation menu found:', !!nav);
         if (nav) {
