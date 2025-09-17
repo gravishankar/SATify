@@ -1118,7 +1118,7 @@ ${JSON.stringify(updatedManifest, null, 2)}
 
                     <h4>Step 1: Create GitHub Issue</h4>
                     <p>Click the button below to create a GitHub issue that will automatically publish your lesson:</p>
-                    <a href="https://github.com/${repoOwner}/${repoName}/issues/new?title=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(issueBody)}&labels=creator-studio-lesson"
+                    <a href="https://github.com/${repoOwner}/${repoName}/issues/new?title=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(issueBody)}&labels=${encodeURIComponent('creator-studio-lesson,auto-publish')}"
                        target="_blank" class="btn btn-primary" style="display: inline-block; margin: 10px 0;">
                         📝 Create GitHub Issue to Publish
                     </a>
@@ -1133,6 +1133,11 @@ ${JSON.stringify(updatedManifest, null, 2)}
                     </ul>
 
                     <p><strong>No manual git commands needed!</strong> The entire process is automated.</p>
+
+                    <div style="background: #f8f9fa; padding: 10px; border-radius: 4px; margin: 10px 0; border-left: 4px solid #007bff;">
+                        <strong>📌 Important:</strong> Make sure the issue has the <code>creator-studio-lesson</code> label.
+                        If the label doesn't appear automatically, add it manually in the GitHub issue form.
+                    </div>
 
                     <details style="margin-top: 20px;">
                         <summary style="cursor: pointer; font-weight: bold;">📋 Manual Issue Creation (if button doesn't work)</summary>

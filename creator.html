@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Creator - SAT Practice Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .creator-interface {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--bg-color);
+            min-height: 100vh;
+        }
+
+        .creator-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .creator-tools {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .editor-panel {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .preview-panel {
+            background: var(--surface-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .json-editor {
+            width: 100%;
+            height: 500px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 1rem;
+            resize: vertical;
+        }
+
+        .creator-actions {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .preview-iframe {
+            width: 100%;
+            height: 400px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+
+        .topic-selector {
+            margin-bottom: 1rem;
+        }
+
+        .topic-selector select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+
+        .validation-result {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+
+        .validation-success {
+            background: #dcfce7;
+            border: 1px solid var(--success-color);
+            color: #166534;
+        }
+
+        .validation-error {
+            background: #fee2e2;
+            border: 1px solid var(--danger-color);
+            color: #991b1b;
+        }
+
+        .template-section {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+
+        .slide-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .slide-type-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slide-type-card:hover {
+            box-shadow: var(--shadow);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="creator-interface">
+        <div class="creator-header">
+            <h1>📚 Content Creator Interface</h1>
+            <p>Create and edit SAT lesson topics for the Learn interface</p>
+            <a href="index.html" class="btn btn-secondary">← Back to SAT Practice Pro</a>
+        </div>
+
+        <div class="creator-tools">
+            <div class="editor-panel">
+                <h2>JSON Editor</h2>
+
+                <div class="topic-selector">
+                    <label for="topicSelect">Select Topic:</label>
+                    <select id="topicSelect">
+                        <option value="new">Create New Topic</option>
+                        <option value="craft-and-structure">Craft and Structure</option>
+                        <!-- More topics will be added dynamically -->
+                    </select>
+                </div>
+
+                <div class="creator-actions">
+                    <button id="loadTopic" class="btn btn-primary">Load Topic</button>
+                    <button id="validateJSON" class="btn btn-secondary">Validate JSON</button>
+                    <button id="previewTopic" class="btn btn-success">Preview</button>
+                    <button id="downloadJSON" class="btn btn-info">Download</button>
+                </div>
+
+                <textarea id="jsonEditor" class="json-editor" placeholder="Paste your topic JSON here or load an existing topic..."></textarea>
+
+                <div id="validationResult" class="validation-result" style="display: none;"></div>
+            </div>
+
+            <div class="preview-panel">
+                <h2>Live Preview</h2>
+                <p>Click "Preview" to see how your topic will look in the Learn interface</p>
+
+                <div id="previewContainer">
+                    <p style="text-align: center; color: var(--text-secondary); margin: 2rem 0;">
+                        💡 Preview will appear here after you click "Preview"
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="template-section">
+            <h2>📋 Slide Type Templates</h2>
+            <p>Click on any slide type to insert a template into your JSON</p>
+
+            <div class="slide-types">
+                <div class="slide-type-card" data-type="intro">
+                    <h3>🎯 Intro Slide</h3>
+                    <p>Introduces the concept with key points</p>
+                </div>
+
+                <div class="slide-type-card" data-type="explanation">
+                    <h3>⚠️ Explanation Slide</h3>
+                    <p>Explains what makes the topic tricky</p>
+                </div>
+
+                <div class="slide-type-card" data-type="strategy">
+                    <h3>📋 Strategy Slide</h3>
+                    <p>Step-by-step strategy breakdown</p>
+                </div>
+
+                <div class="slide-type-card" data-type="example">
+                    <h3>❓ Example Slide</h3>
+                    <p>Practice question with choices</p>
+                </div>
+
+                <div class="slide-type-card" data-type="walkthrough">
+                    <h3>💡 Walkthrough Slide</h3>
+                    <p>Step-by-step solution explanation</p>
+                </div>
+
+                <div class="slide-type-card" data-type="completion">
+                    <h3>🎉 Completion Slide</h3>
+                    <p>Wrap-up with practice button</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/topic-loader.js"></script>
+    <script>
+        class ContentCreatorInterface {
+            constructor() {
+                this.topicLoader = new TopicLoader();
+                this.currentTopicData = null;
+                this.init();
+            }
+
+            init() {
+                this.setupEventListeners();
+                this.loadTemplateContent();
+            }
+
+            setupEventListeners() {
+                document.getElementById('loadTopic').addEventListener('click', () => this.loadTopic());
+                document.getElementById('validateJSON').addEventListener('click', () => this.validateJSON());
+                document.getElementById('previewTopic').addEventListener('click', () => this.previewTopic());
+                document.getElementById('downloadJSON').addEventListener('click', () => this.downloadJSON());
+
+                document.querySelectorAll('.slide-type-card').forEach(card => {
+                    card.addEventListener('click', (e) => {
+                        const type = e.currentTarget.getAttribute('data-type');
+                        this.insertSlideTemplate(type);
+                    });
+                });
+            }
+
+            async loadTopic() {
+                const topicId = document.getElementById('topicSelect').value;
+
+                if (topicId === 'new') {
+                    this.loadNewTopicTemplate();
+                    return;
+                }
+
+                try {
+                    const topic = await this.topicLoader.loadTopic(topicId);
+                    if (topic) {
+                        document.getElementById('jsonEditor').value = JSON.stringify(topic, null, 2);
+                        this.showValidationResult('Topic loaded successfully!', 'success');
+                    }
+                } catch (error) {
+                    this.showValidationResult(`Error loading topic: ${error.message}`, 'error');
+                }
+            }
+
+            loadNewTopicTemplate() {
+                const template = {
+                    "id": "new-topic-id",
+                    "title": "New Topic Title",
+                    "subtitle": "Brief description",
+                    "category": "Reading & Writing",
+                    "difficulty": "medium",
+                    "estimatedTime": "8-10 minutes",
+                    "description": "Detailed description of what students will learn.",
+                    "slides": [
+                        {
+                            "id": "intro",
+                            "type": "intro",
+                            "layout": "two-column",
+                            "title": "What's Tested",
+                            "content": {
+                                "left": {
+                                    "icon": "🎯",
+                                    "text": "Main concept explanation"
+                                },
+                                "right": {
+                                    "type": "key-point",
+                                    "title": "Key Insight:",
+                                    "text": "Important takeaway for students"
+                                }
+                            }
+                        }
+                    ],
+                    "metadata": {
+                        "version": "1.0",
+                        "lastUpdated": new Date().toISOString().split('T')[0],
+                        "createdBy": "Content Creator",
+                        "reviewedBy": "",
+                        "tags": [],
+                        "prerequisites": [],
+                        "nextTopics": []
+                    }
+                };
+
+                document.getElementById('jsonEditor').value = JSON.stringify(template, null, 2);
+                this.showValidationResult('New topic template loaded', 'success');
+            }
+
+            validateJSON() {
+                const jsonText = document.getElementById('jsonEditor').value;
+
+                try {
+                    const parsed = JSON.parse(jsonText);
+
+                    // Basic validation
+                    const required = ['id', 'title', 'slides'];
+                    const missing = required.filter(field => !parsed[field]);
+
+                    if (missing.length > 0) {
+                        throw new Error(`Missing required fields: ${missing.join(', ')}`);
+                    }
+
+                    if (!Array.isArray(parsed.slides) || parsed.slides.length === 0) {
+                        throw new Error('Slides must be a non-empty array');
+                    }
+
+                    this.currentTopicData = parsed;
+                    this.showValidationResult(`✅ Valid JSON! ${parsed.slides.length} slides found`, 'success');
+
+                } catch (error) {
+                    this.showValidationResult(`❌ JSON Error: ${error.message}`, 'error');
+                }
+            }
+
+            previewTopic() {
+                if (!this.validateJSON() || !this.currentTopicData) {
+                    this.showValidationResult('Please fix JSON errors before previewing', 'error');
+                    return;
+                }
+
+                // Create a mini lesson preview
+                const slidesHTML = this.topicLoader.generateSlidesHTML(this.currentTopicData);
+                const previewHTML = `
+                    <div style="border: 1px solid #ccc; border-radius: 8px; overflow: hidden;">
+                        <div style="background: linear-gradient(135deg, #7c3aed, #a855f7); color: white; padding: 1rem; text-align: center;">
+                            <h3 style="margin: 0;">${this.currentTopicData.title}</h3>
+                            <p style="margin: 0.5rem 0 0 0; opacity: 0.9;">${this.currentTopicData.slides.length} slides</p>
+                        </div>
+                        <div style="height: 300px; overflow: auto; background: #f8fafc;">
+                            ${slidesHTML}
+                        </div>
+                    </div>
+                `;
+
+                document.getElementById('previewContainer').innerHTML = previewHTML;
+            }
+
+            downloadJSON() {
+                if (!this.validateJSON() || !this.currentTopicData) {
+                    this.showValidationResult('Please fix JSON errors before downloading', 'error');
+                    return;
+                }
+
+                const jsonString = JSON.stringify(this.currentTopicData, null, 2);
+                const blob = new Blob([jsonString], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `${this.currentTopicData.id}.json`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+
+                this.showValidationResult('✅ File downloaded successfully!', 'success');
+            }
+
+            insertSlideTemplate(type) {
+                const templates = {
+                    intro: {
+                        "id": "slide-id",
+                        "type": "intro",
+                        "layout": "two-column",
+                        "title": "Slide Title",
+                        "content": {
+                            "left": {
+                                "icon": "🎯",
+                                "text": "Main explanation"
+                            },
+                            "right": {
+                                "type": "key-point",
+                                "title": "Key Insight:",
+                                "text": "Important information"
+                            }
+                        }
+                    },
+                    strategy: {
+                        "id": "strategy-steps",
+                        "type": "strategy",
+                        "layout": "centered",
+                        "title": "Strategy Steps",
+                        "content": {
+                            "icon": "📋",
+                            "steps": [
+                                {
+                                    "number": 1,
+                                    "text": "Step 1 description"
+                                },
+                                {
+                                    "number": 2,
+                                    "text": "Step 2 description"
+                                }
+                            ]
+                        }
+                    }
+                    // Add more templates as needed
+                };
+
+                const template = templates[type];
+                if (template) {
+                    const currentValue = document.getElementById('jsonEditor').value;
+                    const templateText = JSON.stringify(template, null, 2);
+
+                    // Insert at cursor position or append
+                    document.getElementById('jsonEditor').value = currentValue + '\n\n' + templateText;
+                    this.showValidationResult(`${type} template inserted`, 'success');
+                }
+            }
+
+            showValidationResult(message, type) {
+                const resultDiv = document.getElementById('validationResult');
+                resultDiv.textContent = message;
+                resultDiv.className = `validation-result validation-${type}`;
+                resultDiv.style.display = 'block';
+
+                // Auto-hide success messages
+                if (type === 'success') {
+                    setTimeout(() => {
+                        resultDiv.style.display = 'none';
+                    }, 3000);
+                }
+
+                return type === 'success';
+            }
+
+            loadTemplateContent() {
+                // Load the template file content for reference
+                fetch('data/topics/_template.json')
+                    .then(response => response.text())
+                    .then(text => {
+                        console.log('Template loaded for reference');
+                    })
+                    .catch(error => {
+                        console.log('Template file not found - using built-in templates');
+                    });
+            }
+        }
+
+        // Initialize the content creator interface
+        document.addEventListener('DOMContentLoaded', () => {
+            new ContentCreatorInterface();
+        });
+    </script>
+</body>
+</html>

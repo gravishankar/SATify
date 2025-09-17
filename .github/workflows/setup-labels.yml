@@ -1,0 +1,56 @@
+name: Setup Creator Studio Labels
+
+on:
+  workflow_dispatch:
+
+jobs:
+  setup-labels:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
+    steps:
+    - name: Create creator-studio-lesson label
+      uses: actions/github-script@v7
+      with:
+        script: |
+          try {
+            await github.rest.issues.createLabel({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: 'creator-studio-lesson',
+              color: '1f77b4',
+              description: 'Lesson publishing request from Creator Studio'
+            });
+            console.log('✅ Created creator-studio-lesson label');
+          } catch (error) {
+            if (error.status === 422) {
+              console.log('ℹ️ Label already exists');
+            } else {
+              console.error('❌ Error creating label:', error);
+              throw error;
+            }
+          }
+
+          // Also create some other useful labels
+          const labels = [
+            { name: 'auto-publish', color: '0e8a16', description: 'Automatically published content' },
+            { name: 'lesson-published', color: '0e8a16', description: 'Lesson has been successfully published' }
+          ];
+
+          for (const label of labels) {
+            try {
+              await github.rest.issues.createLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                ...label
+              });
+              console.log(`✅ Created ${label.name} label`);
+            } catch (error) {
+              if (error.status === 422) {
+                console.log(`ℹ️ Label ${label.name} already exists`);
+              } else {
+                console.log(`⚠️ Could not create ${label.name} label:`, error.message);
+              }
+            }
+          }
