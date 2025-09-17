@@ -351,16 +351,29 @@ class CreatorStudio {
 
         console.log('All validation passed, creating lesson...');
 
+        // Get domain and skill details from taxonomy
+        const domain = this.satTaxonomy.reading_writing.domains[domainId];
+        const skill = domain.skills[skillId];
+
         this.currentLesson = {
             id: this.generateLessonId(),
-            domain: domainId,
-            skill: skillId,
+            domain_id: domainId,
+            domain_title: domain.title,
+            skill_id: skillId,
+            skill_title: skill.title,
             title: title,
             learning_objectives: objectives.split('\n').filter(obj => obj.trim()),
             slides: [],
             created_at: new Date().toISOString(),
             status: 'draft'
         };
+
+        console.log('Lesson created with:', {
+            domain_id: this.currentLesson.domain_id,
+            domain_title: this.currentLesson.domain_title,
+            skill_id: this.currentLesson.skill_id,
+            skill_title: this.currentLesson.skill_title
+        });
 
         this.showLessonEditor();
         this.addDefaultSlides();
