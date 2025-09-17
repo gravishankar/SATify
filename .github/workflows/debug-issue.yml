@@ -52,17 +52,33 @@ jobs:
           }
 
           // Comment on the issue with debug info
+          const labels = context.payload.issue.labels.map(l => l.name).join(', ');
+          const hasJson = !!jsonMatch;
+          const hasManifest = !!manifestMatch;
+          let lessonTitle = 'Not found';
+
+          if (jsonMatch) {
+            try {
+              const parsed = JSON.parse(jsonMatch[1]);
+              lessonTitle = parsed.title || 'Not found';
+            } catch (e) {
+              lessonTitle = 'Parse error';
+            }
+          }
+
+          const body = `🔍 **Debug Results**
+
+**Labels detected:** ${labels}
+**JSON block found:** ${hasJson ? '✅ Yes' : '❌ No'}
+**Manifest block found:** ${hasManifest ? '✅ Yes' : '❌ No'}
+
+${hasJson ? `**Extracted lesson title:** ${lessonTitle}` : '**Issue:** No JSON block detected in issue body'}
+
+This debug workflow ran successfully. If you see this comment, the workflow trigger is working.`;
+
           await github.rest.issues.createComment({
             issue_number: context.issue.number,
             owner: context.repo.owner,
             repo: context.repo.repo,
-            body: `🔍 **Debug Results**
-
-**Labels detected:** ${context.payload.issue.labels.map(l => l.name).join(', ')}
-**JSON block found:** ${!!jsonMatch ? '✅ Yes' : '❌ No'}
-**Manifest block found:** ${!!manifestMatch ? '✅ Yes' : '❌ No'}
-
-${jsonMatch ? `**Extracted lesson title:** ${JSON.parse(jsonMatch[1]).title || 'Not found'}` : '**Issue:** No JSON block detected in issue body'}
-
-This debug workflow ran successfully. If you see this comment, the workflow trigger is working.`
+            body: body
           });
