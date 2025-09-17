@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "lastUpdated": "2025-09-17T20:41:19.628Z",
-  "totalLessons": 1,
+  "lastUpdated": "2025-09-17T23:34:15.030Z",
+  "totalLessons": 2,
   "lessons": {
     "information_and_ideas_inferences_inference-strategy": {
       "id": "information_and_ideas_inferences_inference-strategy",
@@ -17,6 +17,22 @@
       "status": "published",
       "filepath": "lessons/information_and_ideas/inferences/inference-strategy.json",
       "slide_count": 2,
+      "learning_objectives_count": 3
+    },
+    "craft_and_structure_text_structure_and_purpose_test-structure-and-purpose": {
+      "id": "craft_and_structure_text_structure_and_purpose_test-structure-and-purpose",
+      "title": "Test Structure and Purpose",
+      "domain_id": "craft_and_structure",
+      "domain_title": "Craft and Structure",
+      "skill_id": "text_structure_and_purpose",
+      "skill_title": "Text Structure and Purpose",
+      "author": "instructor",
+      "created_at": "2025-09-17T23:33:55.491Z",
+      "updated_at": "2025-09-17T23:34:15.025Z",
+      "published_at": "2025-09-17T23:34:15.024Z",
+      "status": "published",
+      "filepath": "lessons/craft_and_structure/text_structure_and_purpose/test-structure-and-purpose.json",
+      "slide_count": 3,
       "learning_objectives_count": 3
     }
   },
