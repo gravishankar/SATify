@@ -985,7 +985,7 @@ class CreatorStudio {
             console.log('Committing lesson to GitHub...');
 
             // Create a backend API call to handle the git operations
-            const response = await fetch('http://localhost:3001/api/commit-lesson', {
+            const response = await fetch('/api/commit-lesson', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
