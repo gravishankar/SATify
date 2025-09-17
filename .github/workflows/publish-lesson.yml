@@ -27,26 +27,58 @@ jobs:
     - name: Parse lesson data from issue
       id: parse-lesson
       run: |
-        # Extract lesson data from issue body
+        set -e  # Exit on any error
         echo "Parsing lesson data from issue #${{ github.event.issue.number }}"
 
         # Create a temporary file with the issue body
-        echo '${{ github.event.issue.body }}' > issue_body.txt
+        cat > issue_body.txt << 'EOF'
+        ${{ github.event.issue.body }}
+        EOF
+
+        echo "Issue body saved, checking for JSON blocks..."
+        cat issue_body.txt
 
         # Extract lesson JSON (between ```json and ```)
-        sed -n '/```json/,/```/p' issue_body.txt | sed '1d;$d' > lesson_data.json
+        if grep -q '```json' issue_body.txt; then
+          echo "Found JSON block, extracting..."
+          sed -n '/```json/,/```/p' issue_body.txt | sed '1d;$d' > lesson_data.json
+          echo "Extracted JSON content:"
+          cat lesson_data.json
+        else
+          echo "ERROR: No ```json block found in issue body"
+          exit 1
+        fi
 
         # Extract manifest JSON
-        sed -n '/```manifest/,/```/p' issue_body.txt | sed '1d;$d' > manifest_data.json
+        if grep -q '```manifest' issue_body.txt; then
+          echo "Found manifest block, extracting..."
+          sed -n '/```manifest/,/```/p' issue_body.txt | sed '1d;$d' > manifest_data.json
+        else
+          echo "No manifest block found, will update existing manifest"
+          echo "{}" > manifest_data.json
+        fi
 
-        # Parse lesson metadata
-        LESSON_TITLE=$(cat lesson_data.json | jq -r '.title')
-        DOMAIN_ID=$(cat lesson_data.json | jq -r '.domain_id')
-        SKILL_ID=$(cat lesson_data.json | jq -r '.skill_id')
+        # Validate JSON
+        if ! jq empty lesson_data.json; then
+          echo "ERROR: Invalid lesson JSON"
+          exit 1
+        fi
+
+        # Parse lesson metadata with error checking
+        LESSON_TITLE=$(jq -r '.title // "untitled"' lesson_data.json)
+        DOMAIN_ID=$(jq -r '.domain_id // "unknown"' lesson_data.json)
+        SKILL_ID=$(jq -r '.skill_id // "unknown"' lesson_data.json)
+
+        echo "Parsed data:"
+        echo "  Title: $LESSON_TITLE"
+        echo "  Domain: $DOMAIN_ID"
+        echo "  Skill: $SKILL_ID"
 
         # Generate filename
         FILENAME=$(echo "$LESSON_TITLE" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9 ]//g' | tr ' ' '-' | sed 's/--*/-/g' | sed 's/^-\|-$//g')
         FILEPATH="lessons/${DOMAIN_ID}/${SKILL_ID}/${FILENAME}.json"
+
+        echo "Generated filepath: $FILEPATH"
 
         echo "lesson_title=$LESSON_TITLE" >> $GITHUB_OUTPUT
         echo "domain_id=$DOMAIN_ID" >> $GITHUB_OUTPUT
