@@ -1,0 +1,68 @@
+name: Debug Issue Processing
+
+on:
+  issues:
+    types: [opened, labeled]
+
+jobs:
+  debug-issue:
+    if: contains(github.event.issue.labels.*.name, 'creator-studio-lesson')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+
+    steps:
+    - name: Debug issue information
+      uses: actions/github-script@v7
+      with:
+        script: |
+          console.log('=== ISSUE DEBUG INFO ===');
+          console.log('Issue number:', context.issue.number);
+          console.log('Issue title:', context.payload.issue.title);
+          console.log('Issue labels:', context.payload.issue.labels.map(l => l.name));
+          console.log('Event action:', context.payload.action);
+          console.log('=== ISSUE BODY ===');
+          console.log(context.payload.issue.body);
+          console.log('=== END ISSUE BODY ===');
+
+          // Test JSON extraction
+          const issueBody = context.payload.issue.body;
+          const jsonMatch = issueBody.match(/```json\n([\s\S]*?)\n```/);
+          const manifestMatch = issueBody.match(/```manifest\n([\s\S]*?)\n```/);
+
+          console.log('=== JSON EXTRACTION TEST ===');
+          console.log('JSON found:', !!jsonMatch);
+          if (jsonMatch) {
+            console.log('JSON content:', jsonMatch[1]);
+            try {
+              const parsed = JSON.parse(jsonMatch[1]);
+              console.log('JSON parsed successfully');
+              console.log('Title:', parsed.title);
+              console.log('Domain ID:', parsed.domain_id);
+              console.log('Skill ID:', parsed.skill_id);
+            } catch (e) {
+              console.log('JSON parse error:', e.message);
+            }
+          }
+
+          console.log('Manifest found:', !!manifestMatch);
+          if (manifestMatch) {
+            console.log('Manifest content:', manifestMatch[1]);
+          }
+
+          // Comment on the issue with debug info
+          await github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: `🔍 **Debug Results**
+
+**Labels detected:** ${context.payload.issue.labels.map(l => l.name).join(', ')}
+**JSON block found:** ${!!jsonMatch ? '✅ Yes' : '❌ No'}
+**Manifest block found:** ${!!manifestMatch ? '✅ Yes' : '❌ No'}
+
+${jsonMatch ? `**Extracted lesson title:** ${JSON.parse(jsonMatch[1]).title || 'Not found'}` : '**Issue:** No JSON block detected in issue body'}
+
+This debug workflow ran successfully. If you see this comment, the workflow trigger is working.`
+          });
