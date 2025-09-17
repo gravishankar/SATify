@@ -1,0 +1,42 @@
+name: Test Lesson Publishing
+
+on:
+  issues:
+    types: [opened, labeled]
+
+jobs:
+  debug-issue:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+    - name: Debug issue information
+      uses: actions/github-script@v7
+      with:
+        script: |
+          console.log('Issue created or labeled');
+          console.log('Issue number:', context.issue.number);
+          console.log('Issue title:', context.payload.issue.title);
+          console.log('Issue labels:', context.payload.issue.labels.map(l => l.name));
+          console.log('Event action:', context.payload.action);
+
+          // Check if this is a Creator Studio lesson
+          const hasLabel = context.payload.issue.labels.some(label =>
+            label.name === 'creator-studio-lesson'
+          );
+
+          console.log('Has creator-studio-lesson label:', hasLabel);
+
+          if (hasLabel) {
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '🔍 **Debug Info**\n\nGitHub Actions detected your Creator Studio lesson! The workflow is working.\n\nIssue labels: ' + context.payload.issue.labels.map(l => l.name).join(', ')
+            });
+          } else {
+            console.log('No creator-studio-lesson label found. Available labels:',
+              context.payload.issue.labels.map(l => l.name));
+          }
