@@ -139,13 +139,18 @@
                     <span class="nav-icon">💭</span>
                     Words in Context
                 </a>
+                <a href="#creatorStudio" class="nav-link" data-page="creatorStudio" style="display: none;">
+                    <span class="nav-icon">🛠️</span>
+                    Creator Studio
+                </a>
             </div>
             <div class="nav-user">
                 <div class="user-info" id="userInfo">
                     <span id="userName">Guest</span>
                     <button class="btn-user-menu" id="userMenuBtn">▼</button>
                     <div class="user-menu hidden" id="userMenu">
-                        <a href="#settings">Settings</a>
+                        <div id="userMenuRole" class="role-indicator">Student Mode</div>
+                        <a href="#settings" data-page="settings">Settings</a>
                         <a href="#" id="logoutBtn">Logout</a>
                     </div>
                 </div>
@@ -324,7 +329,7 @@
                     <div class="lesson-header">
                         <button id="backToSkills" class="btn btn-ghost">← Back to Skills</button>
                         <div class="lesson-progress-header">
-                            <h2 id="lessonTitle">Craft and Structure</h2>
+                            <h2 id="skillPageTitle">Craft and Structure</h2>
                             <div class="lesson-progress-bar">
                                 <div class="lesson-progress-fill" style="width: 16.67%"></div>
                             </div>
@@ -638,6 +643,317 @@
                 </div>
             </div>
         </div>
+        <!-- Creator Studio Page -->
+        <div id="creatorStudioPage" class="page">
+            <div class="studio-container">
+                <!-- Header -->
+                <div class="studio-header">
+                    <div class="header-content">
+                        <h1 class="studio-title">Creator Studio</h1>
+                        <p class="studio-subtitle">Build College Board-aligned SAT Reading & Writing lessons</p>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn-primary" id="createNewLessonBtn">
+                            <span class="icon">+</span>
+                            New Lesson
+                        </button>
+                        <button class="btn-secondary" id="viewLibraryBtn">
+                            <span class="icon">📚</span>
+                            Lesson Library
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="studio-main">
+                    <!-- Lesson Creation Panel -->
+                    <div class="studio-section" id="lessonCreation">
+                        <div class="section-header">
+                            <h2>Create New Lesson</h2>
+                            <p>Build structured, standards-aligned content for SAT preparation</p>
+                        </div>
+
+                        <div class="creation-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="domainSelect" class="form-label">Content Domain</label>
+                                    <select id="domainSelect" class="form-select">
+                                        <option value="">Select domain...</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="skillSelect" class="form-label">Skill Focus</label>
+                                    <select id="skillSelect" class="form-select">
+                                        <option value="">Select skill...</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div id="domainInfo" class="info-panel"></div>
+                            <div id="skillInfo" class="info-panel"></div>
+
+                            <div class="form-group">
+                                <label for="lessonTitle" class="form-label">Lesson Title</label>
+                                <input type="text" id="lessonTitle" class="form-input" placeholder="e.g., Context Clues and Vocabulary">
+                                <div id="lessonTitleValidation" class="validation-message"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="learningObjectives" class="form-label">Learning Objectives</label>
+                                <textarea id="learningObjectives" class="form-textarea" rows="4" placeholder="Enter learning objectives (one per line)"></textarea>
+                                <div id="learningObjectivesValidation" class="validation-message"></div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn-primary" id="createLessonBtn">Create Lesson</button>
+                                <button type="button" class="btn-secondary" id="resetFormBtn">Reset Form</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lesson Editor Panel (Hidden Initially) -->
+                    <div class="studio-section hidden" id="lessonEditor">
+                        <div class="section-header">
+                            <h2 id="lessonEditorTitle">Lesson Editor</h2>
+                            <div class="editor-controls">
+                                <button class="btn-outline" id="togglePreview">Show Preview</button>
+                                <button class="btn-primary" id="saveLesson">Save</button>
+                                <button class="btn-success" id="publishLesson">Publish</button>
+                            </div>
+                        </div>
+
+                        <div class="editor-content">
+                            <div class="slides-panel">
+                                <div class="panel-header">
+                                    <h3>Lesson Slides</h3>
+                                    <select id="slideTypeSelect" class="form-select-small">
+                                        <option value="introduction">Introduction</option>
+                                        <option value="concept">Concept</option>
+                                        <option value="strategy">Strategy</option>
+                                        <option value="example">Example</option>
+                                        <option value="summary">Summary</option>
+                                    </select>
+                                    <button class="btn-small" id="addSlideBtn">Add Slide</button>
+                                </div>
+                                <div class="slides-container" id="slidesContainer">
+                                    <div id="slidesList" class="slides-list"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Preview Panel (Hidden Initially) -->
+                    <div class="studio-section hidden" id="previewPanel">
+                        <div class="section-header">
+                            <h2>Live Preview</h2>
+                            <button class="btn-outline" id="closePreviewBtn">Close</button>
+                        </div>
+                        <div id="previewContent" class="preview-content"></div>
+                    </div>
+
+                    <!-- Slide Editor Modal -->
+                    <div id="slideEditor" class="modal-overlay hidden">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3>Edit Slide</h3>
+                                <button class="modal-close" id="closeSlideEditor">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="slideEditorContent"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Domain Overview -->
+                    <div class="studio-section" id="domainOverview">
+                        <div class="section-header">
+                            <h2>SAT Reading & Writing Framework</h2>
+                            <p>College Board content domains and assessment targets</p>
+                        </div>
+                        <div class="domains-grid" id="domainsGrid">
+                            <!-- Populated by JavaScript -->
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Lesson Editor (Initially Hidden) -->
+                <div class="lesson-editor hidden" id="lessonEditor">
+                    <div class="editor-header">
+                        <h2 id="editorTitle">Create New Lesson</h2>
+                        <div class="editor-actions">
+                            <button class="btn btn-secondary" id="previewLesson">
+                                <span class="btn-icon">👁️</span>
+                                Preview
+                            </button>
+                            <button class="btn btn-success" id="saveLesson">
+                                <span class="btn-icon">💾</span>
+                                Save Lesson
+                            </button>
+                            <button class="btn btn-outline" id="cancelEditor">
+                                <span class="btn-icon">❌</span>
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Basic Lesson Information -->
+                    <div class="editor-section">
+                        <h3>📋 Lesson Information</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="oldLessonTitle">Lesson Title</label>
+                                <input type="text" id="oldLessonTitle" class="form-input" placeholder="e.g., Words in Context: Determining Meaning">
+                            </div>
+                            <div class="form-group">
+                                <label for="lessonDomain">Domain</label>
+                                <select id="lessonDomain" class="form-select">
+                                    <option value="">Select Domain</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="lessonSkill">Skill</label>
+                                <select id="lessonSkill" class="form-select">
+                                    <option value="">Select Skill</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="lessonDifficulty">Difficulty Level</label>
+                                <select id="lessonDifficulty" class="form-select">
+                                    <option value="beginner">Beginner</option>
+                                    <option value="intermediate">Intermediate</option>
+                                    <option value="advanced">Advanced</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lessonDescription">Description</label>
+                            <textarea id="lessonDescription" class="form-textarea" rows="3" placeholder="Brief description of what students will learn"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Learning Objectives -->
+                    <div class="editor-section">
+                        <h3>🎯 Learning Objectives</h3>
+                        <div class="objectives-list" id="objectivesList"></div>
+                        <button class="btn btn-outline" id="addObjective">
+                            <span class="btn-icon">➕</span>
+                            Add Learning Objective
+                        </button>
+                    </div>
+
+                    <!-- Strategy Steps -->
+                    <div class="editor-section">
+                        <h3>📋 Strategy Steps</h3>
+                        <p class="section-description">Define the step-by-step strategy students will learn</p>
+                        <div class="strategy-steps-list" id="strategyStepsList"></div>
+                        <button class="btn btn-outline" id="addStrategyStep">
+                            <span class="btn-icon">➕</span>
+                            Add Strategy Step
+                        </button>
+                    </div>
+
+                    <!-- Lesson Slides -->
+                    <div class="editor-section">
+                        <h3>📑 Lesson Slides</h3>
+                        <div class="slides-list" id="slidesList"></div>
+                        <div class="slide-actions">
+                            <button class="btn btn-outline" id="addSlide">
+                                <span class="btn-icon">➕</span>
+                                Add Slide
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preview Panel (Initially Hidden) -->
+                <div class="preview-panel hidden" id="previewPanel">
+                    <div class="preview-header">
+                        <h2>👁️ Lesson Preview</h2>
+                        <button class="btn btn-secondary" id="closePreview">Close Preview</button>
+                    </div>
+                    <div class="preview-content" id="previewContent"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Page -->
+        <div id="settingsPage" class="page">
+            <div class="container">
+                <div class="settings-header">
+                    <h1>⚙️ Settings</h1>
+                    <p class="subtitle">Customize your SAT Practice Pro experience</p>
+                </div>
+
+                <div class="settings-grid">
+                    <div class="settings-section">
+                        <h2>👤 Account & Role</h2>
+                        <div class="setting-item">
+                            <label>Current Role:</label>
+                            <div id="roleIndicator" class="role-badge student">👨‍🎓 Student</div>
+                        </div>
+                        <div class="setting-item">
+                            <label>Role Toggle (Development Mode):</label>
+                            <button id="roleToggle" class="role-toggle-btn">Switch to Instructor</button>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h2>🎯 Practice Preferences</h2>
+                        <div class="setting-item">
+                            <label for="defaultDifficulty">Default Question Difficulty:</label>
+                            <select id="defaultDifficulty">
+                                <option value="all">All Levels</option>
+                                <option value="easy">Easy</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <label for="autoStrategy">Show Strategy Breakdown:</label>
+                            <select id="autoStrategy">
+                                <option value="manual" selected>Manual (Click to Show)</option>
+                                <option value="auto">Automatic After Wrong Answer</option>
+                                <option value="always">Always Visible</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h2>🔔 Notifications</h2>
+                        <div class="setting-item">
+                            <label>
+                                <input type="checkbox" id="successNotifications" checked>
+                                Success notifications
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <label>
+                                <input type="checkbox" id="progressReminders" checked>
+                                Daily progress reminders
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h2>🎨 Appearance</h2>
+                        <div class="setting-item">
+                            <label for="themeSelect">Theme:</label>
+                            <select id="themeSelect">
+                                <option value="light" selected>Light</option>
+                                <option value="dark">Dark</option>
+                                <option value="auto">Auto (System)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-actions">
+                    <button class="btn btn-primary" id="saveSettings">Save Settings</button>
+                    <button class="btn btn-secondary" id="resetSettings">Reset to Defaults</button>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- Toast Notifications -->
@@ -696,6 +1012,10 @@
     <script src="js/words-in-context.js"></script>
     <script src="js/topic-loader.js"></script>
     <script src="js/learn-page.js"></script>
+
+    <!-- Creator Studio Scripts (Instructor Only) -->
+    <script src="js/role-manager.js"></script>
+    <script src="js/creator-studio.js"></script>
     
     <!-- Service Worker Registration -->
     <script>

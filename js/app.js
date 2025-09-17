@@ -594,6 +594,18 @@ class SATApp {
             e.preventDefault();
             this.logout();
         });
+
+        // Settings navigation - handle any link with data-page attribute
+        document.addEventListener('click', (e) => {
+            const link = e.target.closest('[data-page]');
+            if (link) {
+                e.preventDefault();
+                const page = link.dataset.page;
+                this.showPage(page);
+                // Close user menu if it was opened
+                document.getElementById('userMenu').classList.add('hidden');
+            }
+        });
         
         // Quick actions
         document.getElementById('continuePractice')?.addEventListener('click', () => {

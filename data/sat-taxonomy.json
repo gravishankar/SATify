@@ -1,0 +1,168 @@
+{
+  "reading_writing": {
+    "title": "SAT Reading & Writing",
+    "description": "Comprehensive framework for SAT Reading and Writing content domains and skills",
+    "domains": {
+      "information_and_ideas": {
+        "id": "information_and_ideas",
+        "title": "Information and Ideas",
+        "description": "Measures comprehension, analysis, and reasoning skills to locate, interpret, evaluate, and integrate information and ideas from texts and informational graphics",
+        "skills": {
+          "command_of_evidence": {
+            "id": "command_of_evidence",
+            "title": "Command of Evidence",
+            "description": "Ability to locate, interpret, and evaluate textual evidence to support analysis and inference",
+            "learning_objectives": [
+              "Identify relevant textual evidence",
+              "Evaluate strength of evidence",
+              "Connect evidence to claims"
+            ]
+          },
+          "inferences": {
+            "id": "inferences",
+            "title": "Inferences",
+            "description": "Drawing logical conclusions from explicit and implicit information in texts",
+            "learning_objectives": [
+              "Make logical inferences from text",
+              "Distinguish between stated and implied information",
+              "Support inferences with textual evidence"
+            ]
+          },
+          "central_ideas_and_details": {
+            "id": "central_ideas_and_details",
+            "title": "Central Ideas and Details",
+            "description": "Identifying main ideas, themes, and supporting details in texts",
+            "learning_objectives": [
+              "Identify central ideas and themes",
+              "Distinguish main ideas from supporting details",
+              "Summarize key information accurately"
+            ]
+          }
+        }
+      },
+      "craft_and_structure": {
+        "id": "craft_and_structure",
+        "title": "Craft and Structure",
+        "description": "Measures comprehension, vocabulary, analysis, and reasoning to understand high-utility words, evaluate texts rhetorically, and make connections",
+        "skills": {
+          "words_in_context": {
+            "id": "words_in_context",
+            "title": "Words in Context",
+            "description": "Understanding meaning of words and phrases based on context clues and usage",
+            "learning_objectives": [
+              "Determine word meaning from context",
+              "Analyze how word choice affects meaning",
+              "Identify shifts in connotation and tone"
+            ]
+          },
+          "text_structure_and_purpose": {
+            "id": "text_structure_and_purpose",
+            "title": "Text Structure and Purpose",
+            "description": "Analyzing how texts are organized and understanding author's purpose and rhetorical strategies",
+            "learning_objectives": [
+              "Identify text structure patterns",
+              "Analyze author's purpose and perspective",
+              "Evaluate rhetorical effectiveness"
+            ]
+          },
+          "cross_text_connections": {
+            "id": "cross_text_connections",
+            "title": "Cross-Text Connections",
+            "description": "Making connections between related texts and synthesizing information across sources",
+            "learning_objectives": [
+              "Compare and contrast multiple texts",
+              "Synthesize information from different sources",
+              "Identify relationships between paired passages"
+            ]
+          }
+        }
+      },
+      "expression_of_ideas": {
+        "id": "expression_of_ideas",
+        "title": "Expression of Ideas",
+        "description": "Measures ability to revise texts to improve effectiveness and meet rhetorical goals",
+        "skills": {
+          "rhetorical_synthesis": {
+            "id": "rhetorical_synthesis",
+            "title": "Rhetorical Synthesis",
+            "description": "Combining information from multiple sources to create coherent, effective written expression",
+            "learning_objectives": [
+              "Synthesize information from multiple sources",
+              "Create coherent arguments",
+              "Adapt writing for specific audiences and purposes"
+            ]
+          },
+          "transitions": {
+            "id": "transitions",
+            "title": "Transitions",
+            "description": "Using appropriate transitional words and phrases to connect ideas and improve flow",
+            "learning_objectives": [
+              "Choose appropriate transition words",
+              "Create logical connections between ideas",
+              "Improve text coherence and flow"
+            ]
+          }
+        }
+      },
+      "standard_english_conventions": {
+        "id": "standard_english_conventions",
+        "title": "Standard English Conventions",
+        "description": "Measures ability to edit text to conform to Standard English sentence structure, usage, and punctuation",
+        "skills": {
+          "boundaries": {
+            "id": "boundaries",
+            "title": "Boundaries (Punctuation)",
+            "description": "Using punctuation correctly to clarify meaning and structure",
+            "learning_objectives": [
+              "Use commas, semicolons, and colons correctly",
+              "Apply appropriate end punctuation",
+              "Punctuate complex sentences properly"
+            ]
+          },
+          "form_structure_and_sense": {
+            "id": "form_structure_and_sense",
+            "title": "Form, Structure, and Sense",
+            "description": "Ensuring grammatical correctness and logical sentence construction",
+            "learning_objectives": [
+              "Maintain subject-verb agreement",
+              "Use correct verb tenses and forms",
+              "Construct clear, logical sentences"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "content_creation_guidelines": {
+    "lesson_structure": {
+      "recommended_slides": "5-7 slides per skill",
+      "slide_types": [
+        "introduction",
+        "concept_explanation",
+        "strategy_steps",
+        "example_walkthrough",
+        "practice_application",
+        "summary_and_next_steps"
+      ]
+    },
+    "instructional_design_principles": {
+      "clarity": "Use clear, concise language appropriate for high school students",
+      "scaffolding": "Build from simple to complex concepts",
+      "active_learning": "Include interactive elements and practice opportunities",
+      "real_world_relevance": "Connect concepts to authentic SAT questions and scenarios"
+    },
+    "validation_rules": {
+      "required_fields": ["title", "learning_objectives", "content"],
+      "content_length": {
+        "min_slides": 3,
+        "max_slides": 10,
+        "recommended_words_per_slide": "50-150"
+      },
+      "strategy_steps": {
+        "min_steps": 3,
+        "max_steps": 7,
+        "recommended_steps": 5
+      }
+    }
+  }
+}
