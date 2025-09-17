@@ -1,8 +1,25 @@
 {
   "version": "1.0",
-  "lastUpdated": "2025-01-17T00:00:00Z",
-  "totalLessons": 0,
-  "lessons": {},
+  "lastUpdated": "2025-09-17T20:41:19.628Z",
+  "totalLessons": 1,
+  "lessons": {
+    "information_and_ideas_inferences_inference-strategy": {
+      "id": "information_and_ideas_inferences_inference-strategy",
+      "title": "Inference Strategy",
+      "domain_id": "information_and_ideas",
+      "domain_title": "Information and Ideas",
+      "skill_id": "inferences",
+      "skill_title": "Inferences",
+      "author": "instructor",
+      "created_at": "2025-09-17T20:41:08.419Z",
+      "updated_at": "2025-09-17T20:41:19.620Z",
+      "published_at": "2025-09-17T20:41:19.619Z",
+      "status": "published",
+      "filepath": "lessons/information_and_ideas/inferences/inference-strategy.json",
+      "slide_count": 2,
+      "learning_objectives_count": 3
+    }
+  },
   "domains": {
     "information_and_ideas": {
       "title": "Information and Ideas",

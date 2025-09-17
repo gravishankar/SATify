@@ -1,0 +1,47 @@
+{
+  "id": "lesson_1758141668419_hl5rn",
+  "domain_id": "information_and_ideas",
+  "domain_title": "Information and Ideas",
+  "skill_id": "inferences",
+  "skill_title": "Inferences",
+  "title": "Inference Strategy",
+  "learning_objectives": [
+    "Make logical inferences from text",
+    "Distinguish between stated and implied information",
+    "Support inferences with textual evidence"
+  ],
+  "slides": [
+    {
+      "id": "intro",
+      "type": "introduction",
+      "title": "Introduction",
+      "content": {
+        "title": "Inference Strategy",
+        "subtitle": "What you'll learn in this lesson",
+        "points": [
+          "Make logical inferences from text",
+          "Distinguish between stated and implied information",
+          "Support inferences with textual evidence"
+        ]
+      }
+    },
+    {
+      "id": "concept",
+      "type": "concept",
+      "title": "Key Concept",
+      "content": {
+        "title": "Main Concept",
+        "explanation": "Add your explanation here...",
+        "example": "Add an example here..."
+      }
+    }
+  ],
+  "created_at": "2025-09-17T20:41:08.419Z",
+  "status": "published",
+  "commitMessage": "Add lesson: Inference Strategy",
+  "published_at": "2025-09-17T20:41:19.619Z",
+  "author": "instructor",
+  "updated_at": "2025-09-17T20:41:19.620Z",
+  "version": "1.0",
+  "format_version": "creator_studio_v1"
+}
