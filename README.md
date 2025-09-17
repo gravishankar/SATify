@@ -23,8 +23,11 @@ A comprehensive, student-friendly SAT practice platform with advanced features i
 - **Study Habit Insights** - Session length, frequency, and consistency tracking
 
 ### 🎓 **Student-Focused Features**
+- **Interactive Learn Mode** - Step-by-step lessons with visual explanations and examples
+- **Seamless Learn-to-Practice Flow** - Navigate from lessons directly to targeted practice
 - **Adaptive Learning** - Questions selected based on individual performance
 - **Detailed Explanations** - Comprehensive solutions for every question
+- **Strategy Breakdown** - Expert techniques and approaches for solving questions
 - **Bookmarking & Flagging** - Save questions for later review
 - **Timed Practice** - Realistic test conditions with countdown timer
 - **Streak Tracking** - Daily practice streak motivation
@@ -106,12 +109,20 @@ Or click **"Continue as Guest"** to try without creating an account.
 - Countdown timer
 - Builds test-taking stamina
 
-#### 📚 **Topic-Specific**
+#### 📚 **Learn Mode**
+- Interactive lessons with step-by-step explanations
+- Visual examples and strategy breakdowns
+- Seamless transition to targeted practice
+- Progress tracking through lesson slides
+
+#### 📚 **Topic-Specific Practice**
 - Focus on specific subjects or skills
 - Choose from 14+ topic areas
 - Perfect for targeted review
 
 ### Keyboard Shortcuts
+
+#### Practice Mode
 - `←/P` - Previous question
 - `→/N` - Next question
 - `Enter/Space` - Submit answer
@@ -120,6 +131,11 @@ Or click **"Continue as Guest"** to try without creating an account.
 - `H` - Show hint
 - `1-5` - Select answer choice
 - `Esc` - Pause practice
+
+#### Learn Mode
+- `←` - Previous lesson slide
+- `→` - Next lesson slide
+- `Esc` - Exit lesson and return to skills grid
 
 ### Analytics Dashboard
 

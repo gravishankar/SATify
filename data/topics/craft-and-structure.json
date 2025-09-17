@@ -1,0 +1,181 @@
+{
+  "id": "craft-and-structure",
+  "title": "Craft and Structure",
+  "subtitle": "Understanding meaning, tone, and structure in context",
+  "category": "Reading & Writing",
+  "difficulty": "medium",
+  "estimatedTime": "8-10 minutes",
+  "description": "Master Words in Context questions by understanding how surrounding text determines the best word choice.",
+
+  "slides": [
+    {
+      "id": "whats-tested",
+      "type": "intro",
+      "layout": "two-column",
+      "title": "What's Tested",
+      "content": {
+        "left": {
+          "icon": "🎯",
+          "text": "Understanding meaning, tone, and structure in context."
+        },
+        "right": {
+          "type": "key-point",
+          "title": "Key Insight:",
+          "text": "The SAT tests whether you can determine the most appropriate word based on the surrounding passage context."
+        }
+      }
+    },
+    {
+      "id": "what-makes-tricky",
+      "type": "explanation",
+      "layout": "two-column",
+      "title": "What Makes This Tricky",
+      "content": {
+        "left": {
+          "icon": "⚠️",
+          "text": "Words may have multiple meanings; only one fits the passage."
+        },
+        "right": {
+          "type": "example-box",
+          "title": "Example:",
+          "text": "The word 'fine' could mean good quality, thin, or a penalty - context determines the right meaning!"
+        }
+      }
+    },
+    {
+      "id": "strategy-steps",
+      "type": "strategy",
+      "layout": "centered",
+      "title": "Strategy Steps",
+      "content": {
+        "icon": "📋",
+        "steps": [
+          {
+            "number": 1,
+            "text": "Context Analysis - Read the sentence and understand the blank's role"
+          },
+          {
+            "number": 2,
+            "text": "Bridge Word - Look for signal words that show relationships"
+          },
+          {
+            "number": 3,
+            "text": "Word Cluster - Predict the type of word needed"
+          },
+          {
+            "number": 4,
+            "text": "Process of Elimination - Rule out obviously wrong choices"
+          },
+          {
+            "number": 5,
+            "text": "Verification - Test your choice by reading the complete sentence"
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-question",
+      "type": "example",
+      "layout": "two-column",
+      "title": "Example Question",
+      "content": {
+        "left": {
+          "icon": "❓",
+          "text": "Let's apply our strategy to solve this step by step!"
+        },
+        "right": {
+          "type": "practice-question",
+          "question": "The scientist's approach was less <strong>_______</strong> than others.",
+          "choices": [
+            "A) unique",
+            "B) derivative",
+            "C) awed",
+            "D) empathetic"
+          ]
+        }
+      }
+    },
+    {
+      "id": "step-by-step-solution",
+      "type": "walkthrough",
+      "layout": "centered",
+      "title": "Step-by-Step Solution",
+      "content": {
+        "icon": "💡",
+        "steps": [
+          {
+            "number": 1,
+            "text": "Context shows \"less _____ than others\" - comparison structure"
+          },
+          {
+            "number": 2,
+            "text": "Predict: something negative or opposite of what others have"
+          },
+          {
+            "number": 3,
+            "text": "Test choices:",
+            "analysis": [
+              {
+                "choice": "derivative",
+                "status": "correct",
+                "explanation": "means unoriginal, fits \"less than others\""
+              },
+              {
+                "choice": "unique",
+                "status": "incorrect",
+                "explanation": "positive, doesn't fit \"less\""
+              },
+              {
+                "choice": "awed/empathetic",
+                "status": "incorrect",
+                "explanation": "don't fit the context"
+              }
+            ]
+          },
+          {
+            "number": 4,
+            "text": "Eliminate obviously wrong answers first to narrow your focus"
+          },
+          {
+            "number": 5,
+            "text": "Verify by reading the complete sentence with your chosen word"
+          }
+        ]
+      }
+    },
+    {
+      "id": "wrap-up",
+      "type": "completion",
+      "layout": "two-column",
+      "title": "Great Job!",
+      "content": {
+        "left": {
+          "icon": "🎉",
+          "takeaway": {
+            "title": "Remember:",
+            "text": "Always test your choice in the sentence context."
+          }
+        },
+        "right": {
+          "text": "You've mastered the fundamentals of Words in Context. Now it's time to practice!",
+          "action": {
+            "type": "practice-button",
+            "text": "🚀 Practice Words in Context Now",
+            "target": "words-in-context",
+            "id": "practiceNow"
+          }
+        }
+      }
+    }
+  ],
+
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "2024-01-15",
+    "createdBy": "SAT Content Team",
+    "reviewedBy": "Education Specialist",
+    "tags": ["vocabulary", "context-clues", "reading-comprehension"],
+    "prerequisites": [],
+    "nextTopics": ["information-and-ideas", "standard-english-conventions"]
+  }
+}

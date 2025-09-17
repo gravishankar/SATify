@@ -1,0 +1,91 @@
+{
+  "_comment": "Topic Template - Copy this file and rename it to create new topics",
+
+  "id": "your-topic-id",
+  "title": "Your Topic Title",
+  "subtitle": "Brief description of what this covers",
+  "category": "Reading & Writing",
+  "difficulty": "easy|medium|hard",
+  "estimatedTime": "X-Y minutes",
+  "description": "Detailed description of what students will learn.",
+
+  "slides": [
+    {
+      "id": "slide-id",
+      "type": "intro|explanation|strategy|example|walkthrough|completion",
+      "layout": "centered|two-column",
+      "title": "Slide Title",
+      "content": {
+        "_comment": "Content structure varies by slide type - see examples below"
+      }
+    }
+  ],
+
+  "_slideTypes": {
+    "intro": {
+      "description": "Opening slide that introduces the concept",
+      "layouts": ["two-column", "centered"],
+      "example": {
+        "layout": "two-column",
+        "content": {
+          "left": {
+            "icon": "🎯",
+            "text": "Main concept explanation"
+          },
+          "right": {
+            "type": "key-point|example-box|key-takeaway",
+            "text": "Supporting information"
+          }
+        }
+      }
+    },
+    "strategy": {
+      "description": "Shows the step-by-step strategy",
+      "layouts": ["centered"],
+      "example": {
+        "layout": "centered",
+        "content": {
+          "steps": [
+            {
+              "number": 1,
+              "title": "Step Title",
+              "description": "What to do in this step"
+            }
+          ]
+        }
+      }
+    },
+    "walkthrough": {
+      "description": "Step-by-step solution example",
+      "layouts": ["centered"],
+      "example": {
+        "layout": "centered",
+        "content": {
+          "steps": [
+            {
+              "number": 1,
+              "description": "What happened in this step",
+              "analysis": [
+                {
+                  "choice": "option name",
+                  "status": "correct|incorrect",
+                  "explanation": "why this choice is right/wrong"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "YYYY-MM-DD",
+    "createdBy": "Content Creator Name",
+    "reviewedBy": "Reviewer Name",
+    "tags": ["tag1", "tag2", "tag3"],
+    "prerequisites": ["prerequisite-topic-id"],
+    "nextTopics": ["next-topic-id"]
+  }
+}

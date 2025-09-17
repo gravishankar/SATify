@@ -38,9 +38,10 @@ class WordsInContextPractice {
             }
         });
 
-        // Strategy button
-        document.getElementById('wicStrategyBtn')?.addEventListener('click', () => {
-            this.showStrategyBreakdown();
+
+        // Learn This Concept button
+        document.getElementById('wicLearnConcept')?.addEventListener('click', () => {
+            this.goToLearnConcept();
         });
 
         // Answer submission
@@ -79,6 +80,33 @@ class WordsInContextPractice {
             if (e.target.closest('.wic-choice')) {
                 e.preventDefault();
                 this.selectChoice(e.target.closest('.wic-choice'));
+            }
+        });
+
+        // Close modal when clicking outside of it (clicks outside the modal panel)
+        document.addEventListener('click', (e) => {
+            const modal = document.getElementById('strategyModal');
+            if (modal && !modal.classList.contains('hidden') && modal.classList.contains('show')) {
+                // Check if click is outside the modal panel area
+                const rect = modal.getBoundingClientRect();
+                const clickX = e.clientX;
+
+                // If click is to the left of the modal panel, close it
+                if (clickX < rect.left) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    this.hideStrategyModal();
+                }
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('strategyModal');
+                if (modal && !modal.classList.contains('hidden')) {
+                    this.hideStrategyModal();
+                }
             }
         });
     }
@@ -309,6 +337,56 @@ class WordsInContextPractice {
     getQuestionTime() {
         if (!this.sessionStartTime) return 0;
         return Math.floor((new Date() - this.sessionStartTime) / 1000);
+    }
+
+    goToLearnConcept() {
+        // Determine current topic from practice context (default to craft-and-structure for now)
+        const currentTopic = this.getCurrentTopic() || 'craft-and-structure';
+
+        console.log(`Navigating to ${currentTopic} lesson...`);
+
+        // Track analytics
+        if (this.app && this.app.analytics) {
+            this.app.analytics.trackEvent('learn_concept_clicked', {
+                skill: currentTopic,
+                from_practice: true,
+                current_accuracy: this.getCurrentAccuracy(),
+                timestamp: new Date().toISOString()
+            });
+        }
+
+        // Navigate to Learn page
+        if (this.app && this.app.navigateTo) {
+            this.app.navigateTo('learn');
+        } else {
+            // Fallback navigation
+            const learnLink = document.querySelector('[data-page="learn"]');
+            if (learnLink) {
+                learnLink.click();
+            }
+        }
+
+        // Start the corresponding lesson from slide 0
+        setTimeout(() => {
+            if (this.app && this.app.learnPage) {
+                this.app.learnPage.startLesson(currentTopic);
+            }
+        }, 100);
+
+        // Show helpful message
+        this.showToast('Review the concept, then come back to practice!', 'info');
+    }
+
+    getCurrentTopic() {
+        // Framework: determine topic from practice context
+        // For now returns default, but can be extended for multiple topics
+        return 'craft-and-structure';
+    }
+
+    getCurrentAccuracy() {
+        const answeredQuestions = this.userAnswers.filter(answer => answer !== undefined).length;
+        const correctAnswers = this.userAnswers.filter(answer => answer && answer.isCorrect).length;
+        return answeredQuestions > 0 ? (correctAnswers / answeredQuestions * 100).toFixed(1) : 0;
     }
 
     showToast(message, type = 'info') {

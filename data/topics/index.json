@@ -1,0 +1,130 @@
+{
+  "categories": {
+    "reading-writing": {
+      "name": "Reading & Writing",
+      "description": "Master the essential skills for SAT Reading & Writing success",
+      "topics": [
+        {
+          "id": "craft-and-structure",
+          "name": "Craft and Structure",
+          "description": "Understanding meaning, tone, and structure in context",
+          "skills": [
+            {
+              "id": "words-in-context",
+              "name": "Words in Context",
+              "description": "Determine word meaning based on context clues",
+              "difficulty": "medium",
+              "estimatedTime": "8-10 minutes"
+            },
+            {
+              "id": "text-structure-purpose",
+              "name": "Text Structure and Purpose",
+              "description": "Analyze how text structure supports purpose",
+              "difficulty": "medium",
+              "estimatedTime": "10-12 minutes"
+            },
+            {
+              "id": "cross-text-connections",
+              "name": "Cross-Text Connections",
+              "description": "Make connections between paired passages",
+              "difficulty": "hard",
+              "estimatedTime": "12-15 minutes"
+            }
+          ]
+        },
+        {
+          "id": "expression-of-ideas",
+          "name": "Expression of Ideas",
+          "description": "Effective communication and idea development",
+          "skills": [
+            {
+              "id": "written-expression",
+              "name": "Written Expression",
+              "description": "Choose the most effective way to express ideas",
+              "difficulty": "medium",
+              "estimatedTime": "8-10 minutes"
+            },
+            {
+              "id": "development",
+              "name": "Development",
+              "description": "Add, revise, or delete content for clarity",
+              "difficulty": "medium",
+              "estimatedTime": "10-12 minutes"
+            },
+            {
+              "id": "organization",
+              "name": "Organization",
+              "description": "Logical sequence and smooth transitions",
+              "difficulty": "medium",
+              "estimatedTime": "8-10 minutes"
+            },
+            {
+              "id": "effective-language-use",
+              "name": "Effective Language Use",
+              "description": "Precision, concision, and style",
+              "difficulty": "hard",
+              "estimatedTime": "10-12 minutes"
+            }
+          ]
+        },
+        {
+          "id": "information-and-ideas",
+          "name": "Information and Ideas",
+          "description": "Comprehension, analysis, and reasoning skills",
+          "skills": [
+            {
+              "id": "central-ideas-details",
+              "name": "Central Ideas and Details",
+              "description": "Identify main ideas and supporting details",
+              "difficulty": "easy",
+              "estimatedTime": "6-8 minutes"
+            },
+            {
+              "id": "command-of-evidence",
+              "name": "Command of Evidence",
+              "description": "Use textual evidence to support analysis",
+              "difficulty": "medium",
+              "estimatedTime": "10-12 minutes"
+            },
+            {
+              "id": "inferences",
+              "name": "Inferences",
+              "description": "Draw logical conclusions from text",
+              "difficulty": "hard",
+              "estimatedTime": "12-15 minutes"
+            }
+          ]
+        },
+        {
+          "id": "standard-english-conventions",
+          "name": "Standard English Conventions",
+          "description": "Grammar, usage, and mechanics",
+          "skills": [
+            {
+              "id": "boundaries",
+              "name": "Boundaries",
+              "description": "Sentence structure and punctuation",
+              "difficulty": "easy",
+              "estimatedTime": "6-8 minutes"
+            },
+            {
+              "id": "form-structure-sense",
+              "name": "Form, Structure, and Sense",
+              "description": "Verb forms, pronouns, and modifiers",
+              "difficulty": "medium",
+              "estimatedTime": "8-10 minutes"
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "2024-01-15",
+    "totalTopics": 4,
+    "totalSkills": 12,
+    "createdBy": "SAT Content Team"
+  }
+}
