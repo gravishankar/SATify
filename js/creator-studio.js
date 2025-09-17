@@ -328,9 +328,12 @@ class CreatorStudio {
         const saveBtn = document.getElementById('saveLesson');
         const publishBtn = document.getElementById('publishLesson');
 
+        // Save button should always be enabled if we have a current lesson
         if (saveBtn) {
-            saveBtn.disabled = !isValid;
+            saveBtn.disabled = !this.currentLesson;
         }
+
+        // Publish button requires full validation
         if (publishBtn) {
             publishBtn.disabled = !isValid;
         }
@@ -695,14 +698,23 @@ class CreatorStudio {
     }
 
     saveLesson() {
-        if (!this.validateCurrentLesson()) {
-            this.showNotification('Please fix validation errors before saving', 'error');
+        if (!this.currentLesson) {
+            this.showNotification('No lesson to save', 'warning');
             return;
         }
 
-        // For now, save to localStorage (later will integrate with GitHub)
+        // Update the lesson with current editor state
+        this.updateLessonFromEditor();
+
+        // Save to localStorage (works on GitHub Pages and locally)
         const lessons = JSON.parse(localStorage.getItem('creator_studio_lessons') || '[]');
         const existingIndex = lessons.findIndex(lesson => lesson.id === this.currentLesson.id);
+
+        // Update timestamps
+        this.currentLesson.updated_at = new Date().toISOString();
+        if (!this.currentLesson.created_at) {
+            this.currentLesson.created_at = new Date().toISOString();
+        }
 
         if (existingIndex >= 0) {
             lessons[existingIndex] = this.currentLesson;
@@ -716,6 +728,23 @@ class CreatorStudio {
         console.log('Total lessons in storage:', lessons.length);
 
         this.showNotification(`Lesson saved to browser storage (${lessons.length} total lessons)`, 'success');
+    }
+
+    updateLessonFromEditor() {
+        // Update lesson title if changed
+        const titleField = document.getElementById('lessonTitle');
+        if (titleField && titleField.value.trim()) {
+            this.currentLesson.title = titleField.value.trim();
+        }
+
+        // Update learning objectives if changed
+        const objectivesField = document.getElementById('learningObjectives');
+        if (objectivesField && objectivesField.value.trim()) {
+            this.currentLesson.learning_objectives = objectivesField.value
+                .split('\n')
+                .filter(obj => obj.trim())
+                .map(obj => obj.trim());
+        }
     }
 
     async publishLesson() {
@@ -740,7 +769,7 @@ class CreatorStudio {
             // Save to localStorage first
             this.saveLesson();
 
-            // Publish to GitHub
+            // Try to publish to GitHub (will fallback gracefully if server not available)
             await this.publishToGitHub();
 
             this.showNotification(`Lesson "${this.currentLesson.title}" published successfully to GitHub!`, 'success');
@@ -749,10 +778,14 @@ class CreatorStudio {
         } catch (error) {
             console.error('Publishing failed:', error);
 
+            // Always save locally even if GitHub publishing fails
+            this.currentLesson.status = 'draft';
+            this.saveLesson();
+
             // Check if this is the expected "API not available" error
-            if (error.message.includes('API not available') || error.message.includes('Manual file placement')) {
-                this.showNotification(`Lesson prepared for manual GitHub commit. Check downloads folder.`, 'warning');
-                console.log('Files have been downloaded for manual commit');
+            if (error.message.includes('API not available') || error.message.includes('Manual file placement') || error.message.includes('Failed to fetch')) {
+                this.showNotification(`Lesson saved locally. For GitHub publishing, use the Node.js server (localhost:3001)`, 'warning');
+                console.log('Lesson saved to localStorage - server not available for GitHub publishing');
             } else {
                 this.showNotification(`Publishing failed: ${error.message}`, 'error');
             }
