@@ -155,9 +155,11 @@ class RoleManager {
 
     // Add development role toggle button
     addRoleToggleButton() {
-        // Check if nav toggle already exists
-        if (document.getElementById('navRoleToggle')) {
-            console.log('Navigation role toggle already exists');
+        // Always try to create navigation toggle
+        const existingNavToggle = document.getElementById('navRoleToggle');
+        if (existingNavToggle) {
+            console.log('Navigation role toggle already exists, updating it');
+            existingNavToggle.textContent = `Switch to ${this.isInstructor() ? 'Student' : 'Instructor'}`;
             return;
         }
 
@@ -182,6 +184,21 @@ class RoleManager {
             console.log('Role toggle button added to navigation');
         } else {
             console.error('Navigation menu not found - cannot add role toggle');
+        }
+
+        // Also ensure settings toggle works
+        this.setupSettingsToggle();
+    }
+
+    // Setup settings page toggle button
+    setupSettingsToggle() {
+        const settingsToggle = document.getElementById('roleToggle');
+        if (settingsToggle) {
+            console.log('Setting up settings page toggle button');
+            settingsToggle.onclick = () => {
+                console.log('Settings role toggle clicked');
+                this.toggleRole();
+            };
         }
     }
 
@@ -213,16 +230,93 @@ class RoleManager {
             };
         }
     }
+
+    // Force ensure navigation toggle exists
+    ensureNavigationToggle() {
+        console.log('Ensuring navigation toggle exists...');
+
+        const nav = document.querySelector('.nav-menu');
+        if (!nav) {
+            console.error('Navigation menu not found!');
+            return;
+        }
+
+        // Remove any existing toggle to avoid duplicates
+        const existing = document.getElementById('navRoleToggle');
+        if (existing) {
+            console.log('Removing existing navigation toggle');
+            existing.remove();
+        }
+
+        // Create new toggle
+        console.log('Creating fresh navigation role toggle...');
+        const toggleContainer = document.createElement('div');
+        toggleContainer.className = 'role-toggle-container';
+
+        const roleToggle = document.createElement('button');
+        roleToggle.id = 'navRoleToggle';
+        roleToggle.className = 'role-toggle-btn';
+        roleToggle.textContent = `Switch to ${this.isInstructor() ? 'Student' : 'Instructor'}`;
+        roleToggle.style.cssText = `
+            padding: 8px 16px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            margin-left: 16px;
+        `;
+
+        roleToggle.addEventListener('click', () => {
+            console.log('Navigation role toggle clicked!');
+            this.toggleRole();
+        });
+
+        toggleContainer.appendChild(roleToggle);
+        nav.appendChild(toggleContainer);
+
+        console.log('Navigation toggle created and added');
+
+        // Also ensure settings toggle works
+        this.ensureSettingsToggle();
+    }
+
+    // Ensure settings toggle works
+    ensureSettingsToggle() {
+        console.log('Ensuring settings toggle works...');
+        const settingsToggle = document.getElementById('roleToggle');
+        if (settingsToggle) {
+            console.log('Found settings toggle, attaching click handler');
+            settingsToggle.onclick = (e) => {
+                e.preventDefault();
+                console.log('Settings role toggle clicked!');
+                this.toggleRole();
+            };
+            // Update text
+            settingsToggle.textContent = `Switch to ${this.isInstructor() ? 'Student' : 'Instructor'}`;
+        } else {
+            console.log('Settings toggle not found yet');
+        }
+    }
 }
 
 // Initialize role manager when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded, initializing role manager...');
     if (!window.roleManager) {
         window.roleManager = new RoleManager();
 
         // Initialize role features after a brief delay to ensure DOM is ready
         setTimeout(() => {
+            console.log('Setting up role features...');
             window.roleManager.initializeRoleFeatures();
+
+            // Force create navigation toggle if it doesn't exist
+            setTimeout(() => {
+                window.roleManager.ensureNavigationToggle();
+            }, 200);
         }, 100);
     }
 });
@@ -231,3 +325,42 @@ document.addEventListener('DOMContentLoaded', () => {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = RoleManager;
 }
+
+// Manual helpers for debugging
+window.debugRoles = {
+    switchToInstructor: () => {
+        console.log('Manually switching to instructor...');
+        if (window.roleManager) {
+            window.roleManager.setRole('instructor');
+            console.log('Switched to instructor mode');
+        } else {
+            console.error('Role manager not found');
+        }
+    },
+    switchToStudent: () => {
+        console.log('Manually switching to student...');
+        if (window.roleManager) {
+            window.roleManager.setRole('student');
+            console.log('Switched to student mode');
+        } else {
+            console.error('Role manager not found');
+        }
+    },
+    forceCreateToggle: () => {
+        console.log('Manually creating toggle...');
+        if (window.roleManager) {
+            window.roleManager.ensureNavigationToggle();
+        } else {
+            console.error('Role manager not found');
+        }
+    },
+    getCurrentRole: () => {
+        if (window.roleManager) {
+            const role = window.roleManager.getCurrentRole();
+            console.log('Current role:', role);
+            return role;
+        } else {
+            console.error('Role manager not found');
+        }
+    }
+};
