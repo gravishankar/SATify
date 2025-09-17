@@ -748,7 +748,14 @@ class CreatorStudio {
 
         } catch (error) {
             console.error('Publishing failed:', error);
-            this.showNotification(`Publishing failed: ${error.message}`, 'error');
+
+            // Check if this is the expected "API not available" error
+            if (error.message.includes('API not available') || error.message.includes('Manual file placement')) {
+                this.showNotification(`Lesson prepared for manual GitHub commit. Check downloads folder.`, 'warning');
+                console.log('Files have been downloaded for manual commit');
+            } else {
+                this.showNotification(`Publishing failed: ${error.message}`, 'error');
+            }
         }
     }
 
