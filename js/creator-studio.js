@@ -328,23 +328,14 @@ class CreatorStudio {
         const saveBtn = document.getElementById('saveLesson');
         const publishBtn = document.getElementById('publishLesson');
 
-        console.log('updateSaveButtonState called:', {
-            isValid,
-            currentLesson: !!this.currentLesson,
-            saveBtn: !!saveBtn,
-            publishBtn: !!publishBtn
-        });
-
         // Save button should always be enabled if we have a current lesson
         if (saveBtn) {
             saveBtn.disabled = !this.currentLesson;
-            console.log('Save button disabled:', saveBtn.disabled);
         }
 
         // Publish button requires full validation
         if (publishBtn) {
             publishBtn.disabled = !isValid;
-            console.log('Publish button disabled:', publishBtn.disabled);
         }
     }
 
@@ -707,9 +698,7 @@ class CreatorStudio {
     }
 
     saveLesson() {
-        console.log('saveLesson called, currentLesson:', this.currentLesson);
         if (!this.currentLesson) {
-            console.log('No current lesson to save');
             this.showNotification('No lesson to save', 'warning');
             return;
         }
@@ -759,8 +748,6 @@ class CreatorStudio {
     }
 
     async publishLesson() {
-        console.log('publishLesson called, currentLesson:', this.currentLesson);
-        console.log('Validation result:', this.validateCurrentLesson());
         if (!this.validateCurrentLesson()) {
             this.showNotification('Please fix validation errors before publishing', 'error');
             return;
