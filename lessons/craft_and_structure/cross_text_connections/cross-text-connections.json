@@ -1,0 +1,47 @@
+{
+  "id": "lesson_1758159549081_p8qck",
+  "domain_id": "craft_and_structure",
+  "domain_title": "Craft and Structure",
+  "skill_id": "cross_text_connections",
+  "skill_title": "Cross-Text Connections",
+  "title": "Cross-Text Connections",
+  "learning_objectives": [
+    "Compare and contrast multiple texts",
+    "Synthesize information from different sources",
+    "Identify relationships between paired passages"
+  ],
+  "slides": [
+    {
+      "id": "intro",
+      "type": "introduction",
+      "title": "Introduction",
+      "content": {
+        "title": "Cross-Text Connections",
+        "subtitle": "What you'll learn in this lesson",
+        "points": [
+          "Compare and contrast multiple texts",
+          "Synthesize information from different sources",
+          "Identify relationships between paired passages"
+        ]
+      }
+    },
+    {
+      "id": "concept",
+      "type": "concept",
+      "title": "Key Concept",
+      "content": {
+        "title": "Main Concept",
+        "explanation": "Add your explanation here...",
+        "example": "Add an example here..."
+      }
+    }
+  ],
+  "created_at": "2025-09-18T01:39:09.081Z",
+  "status": "published",
+  "commitMessage": "Add lesson: Cross-Text Connections",
+  "published_at": "2025-09-18T01:39:16.016Z",
+  "author": "instructor",
+  "updated_at": "2025-09-18T01:39:16.017Z",
+  "version": "1.0",
+  "format_version": "creator_studio_v1"
+}

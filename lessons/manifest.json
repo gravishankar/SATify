@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "lastUpdated": "2025-09-18T01:28:09.676Z",
-  "totalLessons": 3,
+  "lastUpdated": "2025-09-18T01:39:16.026Z",
+  "totalLessons": 4,
   "lessons": {
     "information_and_ideas_inferences_inference-strategy": {
       "id": "information_and_ideas_inferences_inference-strategy",
@@ -48,6 +48,22 @@
       "published_at": "2025-09-18T01:28:09.665Z",
       "status": "published",
       "filepath": "lessons/expression_of_ideas/transitions/test-transitions.json",
+      "slide_count": 2,
+      "learning_objectives_count": 3
+    },
+    "craft_and_structure_cross_text_connections_cross-text-connections": {
+      "id": "craft_and_structure_cross_text_connections_cross-text-connections",
+      "title": "Cross-Text Connections",
+      "domain_id": "craft_and_structure",
+      "domain_title": "Craft and Structure",
+      "skill_id": "cross_text_connections",
+      "skill_title": "Cross-Text Connections",
+      "author": "instructor",
+      "created_at": "2025-09-18T01:39:09.081Z",
+      "updated_at": "2025-09-18T01:39:16.017Z",
+      "published_at": "2025-09-18T01:39:16.016Z",
+      "status": "published",
+      "filepath": "lessons/craft_and_structure/cross_text_connections/cross-text-connections.json",
       "slide_count": 2,
       "learning_objectives_count": 3
     }
