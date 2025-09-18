@@ -659,8 +659,13 @@ class LearnPage {
                 return false;
             }
 
-            // Create a domain overview lesson that lists all available lessons
-            this.createDomainOverviewLesson(domainLessons);
+            // If only one lesson, load it directly
+            if (domainLessons.length === 1) {
+                await this.loadSpecificLesson(domainLessons[0].filepath);
+            } else {
+                // Create a domain overview lesson that lists all available lessons
+                this.createDomainOverviewLesson(domainLessons);
+            }
             return true;
 
         } catch (error) {
