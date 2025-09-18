@@ -19,7 +19,7 @@ class LearnPage {
         const slides = document.querySelectorAll('.lesson-slide');
         const count = slides.length;
         console.log(`Detected ${count} slides in lesson`);
-        return count || 6; // fallback to 6 if no slides found yet
+        return count || 1; // fallback to 1 if no slides found yet
     }
 
     init() {
@@ -681,7 +681,7 @@ class LearnPage {
                     <p>Choose a lesson to begin learning:</p>
                     <div class="lesson-selection-grid">
                         ${lessons.map(lesson => `
-                            <div class="lesson-option" onclick="window.satApp.learnPage.loadSpecificLesson('${lesson.filepath}')">
+                            <div class="lesson-option" onclick="window.learnPage.loadSpecificLesson('${lesson.filepath}')">
                                 <div class="lesson-icon">📖</div>
                                 <h4>${lesson.title}</h4>
                                 <p>${lesson.skill_title}</p>
