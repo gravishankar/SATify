@@ -1095,11 +1095,16 @@ ${JSON.stringify(updatedManifest, null, 2)}
                 <div class="modal-body">
                     <p>Your lesson is ready to publish! Follow these simple steps:</p>
 
-                    <h4>Step 1: Automatic Publishing</h4>
-                    <p>Click the button below to automatically publish your lesson via server-side GitHub API:</p>
-                    <button onclick="publishLessonToGitHub('${btoa(JSON.stringify(lessonData))}')" class="btn btn-primary" style="display: inline-block; margin: 10px 0;">
-                        🚀 Publish Lesson Automatically
-                    </button>
+                    <h4>Step 1: Create GitHub Issue</h4>
+                    <p>Click the button below to create a GitHub issue, then copy and paste the lesson data:</p>
+                    <a href="https://github.com/${repoOwner}/${repoName}/issues/new?title=${encodeURIComponent(issueTitle)}&labels=${encodeURIComponent('creator-studio-lesson,auto-publish')}"
+                       target="_blank" class="btn btn-primary" style="display: inline-block; margin: 10px 0;">
+                        📝 Create GitHub Issue to Publish
+                    </a>
+
+                    <h4>Step 1.5: Copy Lesson Data</h4>
+                    <p>Copy the JSON data below and paste it into the GitHub issue description:</p>
+                    <textarea readonly style="width: 100%; height: 200px; font-family: monospace; font-size: 12px; background: #f8f9fa; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">${JSON.stringify(lessonData, null, 2)}</textarea>
 
                     <h4>Step 2: Wait for Automation</h4>
                     <p>GitHub Actions will automatically:</p>
@@ -1345,31 +1350,6 @@ window.addEventListener('roleChanged', (event) => {
     console.log('Role changed, reinitializing Creator Studio...', event.detail);
     initializeCreatorStudio();
 });
-
-// Global function for automatic GitHub publishing
-window.publishLessonToGitHub = async function(encodedLessonData) {
-    try {
-        const lessonData = JSON.parse(atob(encodedLessonData));
-
-        // Use direct GitHub URL approach that was working before
-        const issueTitle = `Publish Lesson: ${lessonData.title}`;
-        const repoOwner = 'gravishankar';
-        const repoName = 'sat-practice-pro';
-        const labels = 'creator-studio-lesson,auto-publish';
-
-        const issueUrl = `https://github.com/${repoOwner}/${repoName}/issues/new?` +
-            `title=${encodeURIComponent(issueTitle)}&` +
-            `labels=${encodeURIComponent(labels)}`;
-
-        // Open GitHub issue creation page
-        window.open(issueUrl, '_blank');
-
-        alert(`✅ Opening GitHub issue creation page! Copy and paste the lesson data from the Creator Studio into the issue description.`);
-    } catch (error) {
-        console.error('Error publishing lesson:', error);
-        alert(`❌ Error: ${error.message}`);
-    }
-}
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
