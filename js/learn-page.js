@@ -631,7 +631,7 @@ class LearnPage {
 
     isCreatorStudioDomain(skillId) {
         // Creator Studio domains we know about (with underscores as in manifest)
-        const creatorStudioDomains = ['information_and_ideas', 'expression_of_ideas', 'craft_and_structure'];
+        const creatorStudioDomains = ['information_and_ideas', 'expression_of_ideas', 'craft_and_structure', 'standard_english_conventions'];
         return creatorStudioDomains.includes(skillId);
     }
 
