@@ -559,40 +559,25 @@ class LearnPage {
         const skillsGrid = document.querySelector('.skills-grid');
         if (!skillsGrid) return;
 
-        // Update existing cards with "Coming Soon" status
-        const comingSoonCards = skillsGrid.querySelectorAll('.skill-card.coming-soon');
-        comingSoonCards.forEach(card => {
-            const skillTitle = card.querySelector('h3')?.textContent?.toLowerCase();
-            let domainId = null;
+        // Update Information and Ideas card (remove "coming soon")
+        if (lessonsByDomain['information_and_ideas']) {
+            const infoIdeasCard = skillsGrid.querySelector('.skill-card.coming-soon');
+            if (infoIdeasCard) {
+                infoIdeasCard.classList.remove('coming-soon');
+                infoIdeasCard.classList.add('clickable');
+                infoIdeasCard.dataset.skill = 'information_and_ideas';
 
-            // Map card titles to domain IDs
-            if (skillTitle?.includes('information') && skillTitle?.includes('ideas')) {
-                domainId = 'information_and_ideas';
-            } else if (skillTitle?.includes('expression') && skillTitle?.includes('ideas')) {
-                domainId = 'expression_of_ideas';
-            } else if (skillTitle?.includes('craft') && skillTitle?.includes('structure')) {
-                domainId = 'craft_and_structure';
-            } else if (skillTitle?.includes('standard') && skillTitle?.includes('english')) {
-                domainId = 'standard_english_conventions';
-            }
-
-            // If we have lessons for this domain, activate the card
-            if (domainId && lessonsByDomain[domainId]) {
-                card.classList.remove('coming-soon');
-                card.classList.add('clickable');
-                card.dataset.skill = domainId;
-
-                const badge = card.querySelector('.skill-badge');
+                const badge = infoIdeasCard.querySelector('.skill-badge');
                 if (badge) badge.textContent = 'Active';
 
-                const progressText = card.querySelector('.progress-text');
+                const progressText = infoIdeasCard.querySelector('.progress-text');
                 if (progressText) progressText.textContent = 'Start Learning';
 
-                const lessonCount = lessonsByDomain[domainId].lessons.length;
-                const meta = card.querySelector('.skill-meta .questions');
+                const lessonCount = lessonsByDomain['information_and_ideas'].lessons.length;
+                const meta = infoIdeasCard.querySelector('.skill-meta .questions');
                 if (meta) meta.textContent = `📝 ${lessonCount} lessons`;
             }
-        });
+        }
 
         // Add new skill cards for other domains
         Object.entries(lessonsByDomain).forEach(([domainId, domain]) => {
