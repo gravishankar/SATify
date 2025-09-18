@@ -177,6 +177,11 @@ class SATApp {
         });
         
         document.querySelector(`[data-page="${pageId}"]`).classList.add('active');
+
+        // Load lessons when navigating to Learn page
+        if (pageId === 'learn' && window.learnPage) {
+            window.learnPage.loadCreatorStudioLessons();
+        }
     }
 
     showDashboard() {
