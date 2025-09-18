@@ -705,7 +705,7 @@ class LearnPage {
 
     async loadSpecificLesson(filepath) {
         try {
-            console.log('Loading specific lesson:', filepath);
+            console.log('loadSpecificLesson called with:', filepath);
             const response = await fetch(filepath);
             if (!response.ok) {
                 console.error('Failed to load lesson file:', filepath);
