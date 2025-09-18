@@ -1,1 +1,167 @@
-{}
+{
+  "version": "1.0",
+  "lastUpdated": "2025-09-18T17:51:29.180Z",
+  "totalLessons": 7,
+  "lessons": {
+    "expression_of_ideas_rhetorical_synthesis_rhetorical-synthesis": {
+      "id": "expression_of_ideas_rhetorical_synthesis_rhetorical-synthesis",
+      "title": "Rhetorical Synthesis",
+      "domain_id": "expression_of_ideas",
+      "domain_title": "Expression of Ideas",
+      "skill_id": "rhetorical_synthesis",
+      "skill_title": "Rhetorical Synthesis",
+      "author": "instructor",
+      "created_at": "2025-09-18T03:45:14.302Z",
+      "updated_at": "2025-09-18T03:45:32.422Z",
+      "published_at": "2025-09-18T03:45:32.420Z",
+      "status": "published",
+      "filepath": "expression_of_ideas/rhetorical_synthesis/rhetorical-synthesis.json",
+      "slide_count": 6,
+      "learning_objectives_count": 3
+    },
+    "standard_english_conventions_boundaries_boundaries-identification": {
+      "id": "standard_english_conventions_boundaries_boundaries-identification",
+      "title": "Boundaries Identification",
+      "domain_id": "standard_english_conventions",
+      "domain_title": "Standard English Conventions",
+      "skill_id": "boundaries",
+      "skill_title": "Boundaries (Punctuation)",
+      "author": "instructor",
+      "created_at": "2025-09-18T12:45:31.891Z",
+      "updated_at": "2025-09-18T12:45:38.198Z",
+      "published_at": "2025-09-18T12:45:38.197Z",
+      "status": "published",
+      "filepath": "standard_english_conventions/boundaries/boundaries-identification.json",
+      "slide_count": 6,
+      "learning_objectives_count": 3
+    },
+    "craft_and_structure_words_in_context_words-in-context-fundamentals": {
+      "id": "craft_and_structure_words_in_context_words-in-context-fundamentals",
+      "title": "Words in Context Fundamentals",
+      "domain_id": "craft_and_structure",
+      "domain_title": "Craft and Structure",
+      "skill_id": "words_in_context",
+      "skill_title": "Words in Context",
+      "author": "instructor",
+      "created_at": "2025-09-18T16:00:00.000Z",
+      "updated_at": "2025-09-18T16:00:00.000Z",
+      "published_at": "2025-09-18T16:00:00.000Z",
+      "status": "published",
+      "filepath": "craft_and_structure/words_in_context/words-in-context-fundamentals.json",
+      "slide_count": 6,
+      "learning_objectives_count": 3
+    },
+    "standard_english_conventions_form_structure_and_sense_forms": {
+      "id": "standard_english_conventions_form_structure_and_sense_forms",
+      "title": "Forms",
+      "domain_id": "standard_english_conventions",
+      "domain_title": "Standard English Conventions",
+      "skill_id": "form_structure_and_sense",
+      "skill_title": "Form, Structure, and Sense",
+      "author": "instructor",
+      "created_at": "2025-09-18T16:55:27.183Z",
+      "updated_at": "2025-09-18T16:55:40.252Z",
+      "published_at": "2025-09-18T16:55:40.251Z",
+      "status": "published",
+      "filepath": "standard_english_conventions/form_structure_and_sense/forms.json",
+      "slide_count": 6,
+      "learning_objectives_count": 3
+    },
+    "craft_and_structure_words_in_context_new-wic": {
+      "id": "craft_and_structure_words_in_context_new-wic",
+      "title": "New WIC",
+      "domain_id": "craft_and_structure",
+      "domain_title": "Craft and Structure",
+      "skill_id": "words_in_context",
+      "skill_title": "Words in Context",
+      "author": "instructor",
+      "created_at": "2025-09-18T17:24:08.090Z",
+      "updated_at": "2025-09-18T17:24:13.612Z",
+      "published_at": "2025-09-18T17:24:13.611Z",
+      "status": "published",
+      "filepath": "craft_and_structure/words_in_context/new-wic.json",
+      "slide_count": 6,
+      "learning_objectives_count": 3
+    },
+    "standard_english_conventions_boundaries_punctuations": {
+      "id": "standard_english_conventions_boundaries_punctuations",
+      "title": "Punctuations",
+      "domain_id": "standard_english_conventions",
+      "domain_title": "Standard English Conventions",
+      "skill_id": "boundaries",
+      "skill_title": "Boundaries (Punctuation)",
+      "author": "instructor",
+      "created_at": "2025-09-18T14:34:34.328Z",
+      "updated_at": "2025-09-18T17:25:59.543Z",
+      "published_at": "2025-09-18T17:25:59.542Z",
+      "status": "published",
+      "filepath": "standard_english_conventions/boundaries/punctuations.json",
+      "slide_count": 6,
+      "learning_objectives_count": 3
+    },
+    "expression_of_ideas_transitions_transitions": {
+      "id": "expression_of_ideas_transitions_transitions",
+      "title": "Transitions",
+      "domain_id": "expression_of_ideas",
+      "domain_title": "Expression of Ideas",
+      "skill_id": "transitions",
+      "skill_title": "Transitions",
+      "author": "instructor",
+      "created_at": "2025-09-18T17:51:09.682Z",
+      "updated_at": "2025-09-18T17:51:29.180Z",
+      "published_at": "2025-09-18T17:51:29.179Z",
+      "status": "published",
+      "filepath": "expression_of_ideas/transitions/transitions.json",
+      "slide_count": 6,
+      "learning_objectives_count": 3
+    }
+  },
+  "domains": {
+    "expression_of_ideas": {
+      "id": "expression_of_ideas",
+      "title": "Expression of Ideas",
+      "description": "Tests your ability to revise text to improve expression of ideas",
+      "skills": {
+        "rhetorical_synthesis": {
+          "id": "rhetorical_synthesis",
+          "title": "Rhetorical Synthesis",
+          "description": "Synthesize information from multiple sources to create coherent arguments"
+        },
+        "transitions": {
+          "id": "transitions",
+          "title": "Transitions",
+          "description": "Choose appropriate transition words to connect ideas logically"
+        }
+      }
+    },
+    "craft_and_structure": {
+      "id": "craft_and_structure",
+      "title": "Craft and Structure",
+      "description": "Tests your ability to revise text to improve craft and structure",
+      "skills": {
+        "words_in_context": {
+          "id": "words_in_context",
+          "title": "Words in Context",
+          "description": "Determine word meaning from context and choose the best word for a given situation"
+        }
+      }
+    },
+    "standard_english_conventions": {
+      "id": "standard_english_conventions",
+      "title": "Standard English Conventions",
+      "description": "Tests your ability to edit text to conform to standard English conventions",
+      "skills": {
+        "boundaries": {
+          "id": "boundaries",
+          "title": "Boundaries (Punctuation)",
+          "description": "Use punctuation correctly to establish sentence boundaries and clarify meaning"
+        },
+        "form_structure_and_sense": {
+          "id": "form_structure_and_sense",
+          "title": "Form, Structure, and Sense",
+          "description": "Maintain proper grammatical forms, sentence structure, and logical sense"
+        }
+      }
+    }
+  }
+}
