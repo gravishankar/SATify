@@ -1393,6 +1393,117 @@ git push origin main</pre>
         });
 
         this.showNotification(`Found ${lessons.length} lessons in browser storage. Check console for details.`, 'info');
+
+        // Also show lesson library modal with delete functionality
+        this.showLessonLibraryModal(lessons);
+    }
+
+    showLessonLibraryModal(lessons) {
+        const modal = document.createElement('div');
+        modal.className = 'modal-overlay';
+        modal.innerHTML = `
+            <div class="modal-content" style="max-width: 800px; max-height: 80vh; overflow-y: auto;">
+                <div class="modal-header">
+                    <h3>📚 Lesson Library</h3>
+                </div>
+                <div class="modal-body">
+                    ${lessons.length === 0 ?
+                        '<p>No lessons found. Create your first lesson!</p>' :
+                        lessons.map(lesson => `
+                            <div class="lesson-item" style="border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 5px;">
+                                <div style="display: flex; justify-content: between; align-items: start;">
+                                    <div style="flex: 1;">
+                                        <h4>${lesson.title || 'Untitled'}</h4>
+                                        <p><strong>Domain:</strong> ${lesson.domain_title || lesson.domain || 'Unknown'}</p>
+                                        <p><strong>Skill:</strong> ${lesson.skill_title || lesson.skill || 'Unknown'}</p>
+                                        <p><strong>Status:</strong> ${lesson.status || 'Draft'}</p>
+                                        <p><strong>Slides:</strong> ${lesson.slides?.length || 0}</p>
+                                        <p><strong>Created:</strong> ${lesson.created_at ? new Date(lesson.created_at).toLocaleDateString() : 'Unknown'}</p>
+                                    </div>
+                                    <div style="margin-left: 20px;">
+                                        <button class="btn btn-sm btn-secondary" onclick="creatorStudio.editLesson('${lesson.id}')">Edit</button>
+                                        <button class="btn btn-sm btn-danger" onclick="creatorStudio.deleteLesson('${lesson.id}')">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')
+                    }
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" id="closeLessonLibrary">Close</button>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(modal);
+
+        document.getElementById('closeLessonLibrary').onclick = () => {
+            document.body.removeChild(modal);
+        };
+
+        modal.onclick = (e) => {
+            if (e.target === modal) {
+                document.body.removeChild(modal);
+            }
+        };
+    }
+
+    async deleteLesson(lessonId) {
+        if (!confirm('Are you sure you want to delete this lesson? This action cannot be undone.')) {
+            return;
+        }
+
+        try {
+            // Get the lesson details first
+            const lessons = this.getCreatedLessons();
+            const lesson = lessons.find(l => l.id === lessonId);
+
+            if (!lesson) {
+                this.showNotification('Lesson not found', 'error');
+                return;
+            }
+
+            // Remove from localStorage
+            const updatedLessons = lessons.filter(l => l.id !== lessonId);
+            localStorage.setItem('creator_studio_lessons', JSON.stringify(updatedLessons));
+
+            // If lesson was published, also remove from manifest
+            if (lesson.status === 'published') {
+                await this.removeFromManifest(lesson);
+            }
+
+            this.showNotification(`Lesson "${lesson.title}" deleted successfully`, 'success');
+
+            // Refresh the lesson library modal
+            document.querySelector('.modal-overlay')?.remove();
+            this.showLessonLibraryModal(updatedLessons);
+
+        } catch (error) {
+            console.error('Error deleting lesson:', error);
+            this.showNotification(`Error deleting lesson: ${error.message}`, 'error');
+        }
+    }
+
+    async removeFromManifest(lesson) {
+        try {
+            // Fetch current manifest
+            const response = await fetch('lessons/manifest.json');
+            const manifest = await response.json();
+
+            // Remove lesson from manifest
+            if (manifest.lessons && manifest.lessons[lesson.id]) {
+                delete manifest.lessons[lesson.id];
+                manifest.totalLessons = Math.max(0, (manifest.totalLessons || 0) - 1);
+                manifest.lastUpdated = new Date().toISOString();
+            }
+
+            // This would need a server endpoint to update the manifest file
+            // For now, just show instructions to manually remove it
+            this.showNotification(`Lesson removed from local storage. For published lessons, you may need to manually remove from lessons/manifest.json and the lesson file.`, 'warning');
+
+        } catch (error) {
+            console.warn('Could not update manifest automatically:', error);
+        }
     }
 
     resetForm() {

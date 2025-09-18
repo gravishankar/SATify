@@ -1,24 +1,8 @@
 {
   "version": "1.0",
   "lastUpdated": "2025-09-18T14:34:38.730Z",
-  "totalLessons": 2,
+  "totalLessons": 1,
   "lessons": {
-    "information_and_ideas_inferences_kjkkjkj": {
-      "id": "information_and_ideas_inferences_kjkkjkj",
-      "title": "kjkkjkj",
-      "domain_id": "information_and_ideas",
-      "domain_title": "Information and Ideas",
-      "skill_id": "inferences",
-      "skill_title": "Inferences",
-      "author": "instructor",
-      "created_at": "2025-09-18T13:04:01.230Z",
-      "updated_at": "2025-09-18T13:04:06.636Z",
-      "published_at": "2025-09-18T13:04:06.634Z",
-      "status": "published",
-      "filepath": "lessons/information_and_ideas/inferences/kjkkjkj.json",
-      "slide_count": 6,
-      "learning_objectives_count": 3
-    },
     "standard_english_conventions_boundaries_punctuations": {
       "id": "standard_english_conventions_boundaries_punctuations",
       "title": "Punctuations",
