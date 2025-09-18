@@ -136,14 +136,18 @@ class LearnPage {
     async startLesson(skillId) {
         console.log('Starting lesson:', skillId);
 
+        // Convert hyphens to underscores for manifest consistency
+        const domainId = skillId.replace(/-/g, '_');
+        console.log('Converted skillId from', skillId, 'to', domainId);
+
         // Check if this is a Creator Studio lesson domain
         let success = false;
-        console.log('Checking if Creator Studio domain:', skillId);
-        console.log('Is Creator Studio domain?', this.isCreatorStudioDomain(skillId));
+        console.log('Checking if Creator Studio domain:', domainId);
+        console.log('Is Creator Studio domain?', this.isCreatorStudioDomain(domainId));
 
-        if (this.isCreatorStudioDomain(skillId)) {
-            console.log('Loading Creator Studio lessons for:', skillId);
-            success = await this.loadCreatorStudioDomainLessons(skillId);
+        if (this.isCreatorStudioDomain(domainId)) {
+            console.log('Loading Creator Studio lessons for:', domainId);
+            success = await this.loadCreatorStudioDomainLessons(domainId);
         } else {
             console.log('Loading topic content for:', skillId);
             // Load topic content dynamically
