@@ -1379,58 +1379,78 @@ git push origin main</pre>
 
         console.log('Stored lessons:', lessons);
 
-        // Show lesson details in console
-        lessons.forEach((lesson, index) => {
-            console.log(`Lesson ${index + 1}:`, {
-                title: lesson.title,
-                domain: lesson.domain,
-                skill: lesson.skill,
-                status: lesson.status,
-                slides: lesson.slides?.length || 0,
-                created: lesson.created_at,
-                published: lesson.published_at
-            });
-        });
-
-        this.showNotification(`Found ${lessons.length} lessons in browser storage. Check console for details.`, 'info');
-
-        // Also show lesson library modal with delete functionality
-        this.showLessonLibraryModal(lessons);
+        // Show improved lesson library interface
+        this.showLessonListInterface(lessons);
     }
 
-    showLessonLibraryModal(lessons) {
+    showLessonListInterface(lessons) {
         const modal = document.createElement('div');
         modal.className = 'modal-overlay';
+
+        const unpublishedLessons = lessons.filter(l => l.status !== 'published');
+        const showWarning = unpublishedLessons.length > 0;
+
         modal.innerHTML = `
-            <div class="modal-content" style="max-width: 800px; max-height: 80vh; overflow-y: auto;">
+            <div class="modal-content" style="max-width: 900px; max-height: 80vh; overflow-y: auto;">
                 <div class="modal-header">
-                    <h3>📚 Lesson Library</h3>
+                    <h3>📚 Lesson Library (${lessons.length} lessons)</h3>
                 </div>
                 <div class="modal-body">
+                    ${showWarning ? `
+                        <div style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 12px; margin-bottom: 20px; border-radius: 5px;">
+                            <strong>⚠️ Data Persistence Warning:</strong> ${unpublishedLessons.length} lesson(s) are only saved in browser localStorage.
+                            <strong>Publish lessons to permanently save them.</strong> Clear browser data will lose unpublished lessons.
+                        </div>
+                    ` : ''}
+
                     ${lessons.length === 0 ?
                         '<p>No lessons found. Create your first lesson!</p>' :
-                        lessons.map(lesson => `
-                            <div class="lesson-item" style="border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 5px;">
-                                <div style="display: flex; justify-content: between; align-items: start;">
-                                    <div style="flex: 1;">
-                                        <h4>${lesson.title || 'Untitled'}</h4>
-                                        <p><strong>Domain:</strong> ${lesson.domain_title || lesson.domain || 'Unknown'}</p>
-                                        <p><strong>Skill:</strong> ${lesson.skill_title || lesson.skill || 'Unknown'}</p>
-                                        <p><strong>Status:</strong> ${lesson.status || 'Draft'}</p>
-                                        <p><strong>Slides:</strong> ${lesson.slides?.length || 0}</p>
-                                        <p><strong>Created:</strong> ${lesson.created_at ? new Date(lesson.created_at).toLocaleDateString() : 'Unknown'}</p>
+                        `<div class="lesson-list">
+                            ${lessons.map(lesson => {
+                                const isPublished = lesson.status === 'published';
+                                const statusColor = isPublished ? '#28a745' : '#ffc107';
+                                const statusIcon = isPublished ? '✅' : '⚠️';
+
+                                return `
+                                    <div class="lesson-item" style="border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 5px; cursor: pointer; transition: background 0.2s;"
+                                         onmouseover="this.style.background='#f8f9fa'"
+                                         onmouseout="this.style.background='white'"
+                                         onclick="creatorStudio.editLesson('${lesson.id}')">
+                                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                                            <div style="flex: 1;">
+                                                <h4 style="margin: 0 0 8px 0; color: #007bff; text-decoration: underline;">
+                                                    📖 ${lesson.title || 'Untitled Lesson'}
+                                                </h4>
+                                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 14px; color: #666;">
+                                                    <span><strong>Domain:</strong> ${lesson.domain_title || lesson.domain || 'Unknown'}</span>
+                                                    <span><strong>Skill:</strong> ${lesson.skill_title || lesson.skill || 'Unknown'}</span>
+                                                    <span><strong>Slides:</strong> ${lesson.slides?.length || 0} slides</span>
+                                                    <span><strong>Created:</strong> ${lesson.created_at ? new Date(lesson.created_at).toLocaleDateString() : 'Unknown'}</span>
+                                                </div>
+                                                <div style="margin-top: 8px;">
+                                                    <span style="background: ${statusColor}; color: white; padding: 2px 8px; border-radius: 12px; font-size: 12px;">
+                                                        ${statusIcon} ${lesson.status || 'Draft'}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div style="margin-left: 20px; display: flex; gap: 8px;">
+                                                <button class="btn btn-sm btn-primary" onclick="event.stopPropagation(); creatorStudio.editLesson('${lesson.id}')" title="Edit lesson">
+                                                    ✏️ Edit
+                                                </button>
+                                                <button class="btn btn-sm btn-danger" onclick="event.stopPropagation(); creatorStudio.deleteLesson('${lesson.id}')" title="Delete lesson">
+                                                    🗑️ Delete
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div style="margin-left: 20px;">
-                                        <button class="btn btn-sm btn-secondary" onclick="creatorStudio.editLesson('${lesson.id}')">Edit</button>
-                                        <button class="btn btn-sm btn-danger" onclick="creatorStudio.deleteLesson('${lesson.id}')">Delete</button>
-                                    </div>
-                                </div>
-                            </div>
-                        `).join('')
+                                `;
+                            }).join('')}
+                        </div>`
                     }
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" id="closeLessonLibrary">Close</button>
+                    <button class="btn btn-primary" onclick="creatorStudio.showLessonCreation()">➕ Create New Lesson</button>
                 </div>
             </div>
         `;
