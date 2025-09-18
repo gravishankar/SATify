@@ -138,9 +138,14 @@ class LearnPage {
 
         // Check if this is a Creator Studio lesson domain
         let success = false;
+        console.log('Checking if Creator Studio domain:', skillId);
+        console.log('Is Creator Studio domain?', this.isCreatorStudioDomain(skillId));
+
         if (this.isCreatorStudioDomain(skillId)) {
+            console.log('Loading Creator Studio lessons for:', skillId);
             success = await this.loadCreatorStudioDomainLessons(skillId);
         } else {
+            console.log('Loading topic content for:', skillId);
             // Load topic content dynamically
             success = await this.loadTopicContent(skillId);
         }
