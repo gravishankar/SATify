@@ -561,7 +561,7 @@ class LearnPage {
 
             if (!response.ok) {
                 // Fallback to direct manifest file
-                const manifestResponse = await fetch('lessons/manifest.json');
+                const manifestResponse = await fetch(`lessons/manifest.json?v=${Date.now()}`);
                 if (!manifestResponse.ok) {
                     console.warn('Could not load lessons manifest');
                     return;
@@ -636,9 +636,12 @@ class LearnPage {
             }
         }
 
-        // Add new skill cards for other domains
+        // Add new skill cards for other domains (skip domains that are already in HTML)
         Object.entries(lessonsByDomain).forEach(([domainId, domain]) => {
-            if (domainId !== 'information_and_ideas' && domainId !== 'craft_and_structure') {
+            if (domainId !== 'information_and_ideas' &&
+                domainId !== 'craft_and_structure' &&
+                domainId !== 'standard_english_conventions' &&
+                domainId !== 'expression_of_ideas') {
                 this.addSkillCard(skillsGrid, domainId, domain);
             }
         });
@@ -680,8 +683,8 @@ class LearnPage {
 
     async loadCreatorStudioDomainLessons(domainId) {
         try {
-            // Load the lessons manifest to get lessons for this domain
-            const manifestResponse = await fetch('lessons/manifest.json');
+            // Load the lessons manifest to get lessons for this domain (with cache busting)
+            const manifestResponse = await fetch(`lessons/manifest.json?v=${Date.now()}`);
             if (!manifestResponse.ok) {
                 console.error('Could not load lessons manifest');
                 return false;
