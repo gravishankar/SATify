@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "lastUpdated": "2025-09-18T16:55:40.254Z",
-  "totalLessons": 3,
+  "lastUpdated": "2025-09-18T17:24:13.615Z",
+  "totalLessons": 4,
   "lessons": {
     "craft_and_structure_words_in_context_fundamentals": {
       "id": "craft_and_structure_words_in_context_fundamentals",
@@ -48,6 +48,22 @@
       "published_at": "2025-09-18T16:55:40.251Z",
       "status": "published",
       "filepath": "lessons/standard_english_conventions/form_structure_and_sense/forms.json",
+      "slide_count": 6,
+      "learning_objectives_count": 3
+    },
+    "craft_and_structure_words_in_context_new-wic": {
+      "id": "craft_and_structure_words_in_context_new-wic",
+      "title": "New WIC",
+      "domain_id": "craft_and_structure",
+      "domain_title": "Craft and Structure",
+      "skill_id": "words_in_context",
+      "skill_title": "Words in Context",
+      "author": "instructor",
+      "created_at": "2025-09-18T17:24:08.090Z",
+      "updated_at": "2025-09-18T17:24:13.612Z",
+      "published_at": "2025-09-18T17:24:13.611Z",
+      "status": "published",
+      "filepath": "lessons/craft_and_structure/words_in_context/new-wic.json",
       "slide_count": 6,
       "learning_objectives_count": 3
     }
