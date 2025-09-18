@@ -179,7 +179,7 @@ class SATApp {
         document.querySelector(`[data-page="${pageId}"]`).classList.add('active');
 
         // Load lessons when navigating to Learn page
-        if (pageId === 'learn' && window.learnPage) {
+        if (pageId === 'learn' && window.learnPage && typeof window.learnPage.loadCreatorStudioLessons === 'function') {
             window.learnPage.loadCreatorStudioLessons();
         }
     }
