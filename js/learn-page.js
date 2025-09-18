@@ -140,6 +140,9 @@ class LearnPage {
         const domainId = skillId.replace(/-/g, '_');
         console.log('Converted skillId from', skillId, 'to', domainId);
 
+        // Store current domain ID for completion tracking
+        this.currentDomainId = domainId;
+
         // Check if this is a Creator Studio lesson domain
         let success = false;
         console.log('Checking if Creator Studio domain:', domainId);
@@ -275,6 +278,9 @@ class LearnPage {
     nextSlide() {
         if (this.currentSlide < this.totalSlides - 1) {
             this.showSlide(this.currentSlide + 1);
+        } else {
+            // On the last slide, complete the lesson
+            this.completeLesson();
         }
     }
 
@@ -286,6 +292,34 @@ class LearnPage {
 
     goToSlide(slideIndex) {
         this.showSlide(slideIndex);
+    }
+
+    completeLesson() {
+        console.log('Completing lesson...');
+
+        // Mark lesson as completed
+        this.lessonCompleted = true;
+
+        // Update skill progress (determine correct skill ID)
+        const skillId = this.currentDomainId || 'craft_and_structure';
+        this.updateSkillProgress(skillId.replace(/_/g, '-'), 'completed');
+
+        // Show completion notification
+        this.showCompletionToast();
+
+        // Track analytics
+        if (this.app && this.app.analytics) {
+            this.app.analytics.trackEvent('lesson_completed', {
+                skill: skillId,
+                slides_completed: this.totalSlides,
+                timestamp: new Date().toISOString()
+            });
+        }
+
+        // Return to skills grid after a short delay
+        setTimeout(() => {
+            this.showSkillsGrid();
+        }, 2000);
     }
 
     updateNavigation() {
