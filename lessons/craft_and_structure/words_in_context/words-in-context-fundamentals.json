@@ -1,0 +1,114 @@
+{
+  "id": "craft_and_structure_words_in_context_fundamentals",
+  "domain_id": "craft_and_structure",
+  "domain_title": "Craft and Structure",
+  "skill_id": "words_in_context",
+  "skill_title": "Words in Context",
+  "title": "Words in Context Fundamentals",
+  "learning_objectives": [
+    "Understand how context determines word meaning",
+    "Apply the 5-step strategy for solving Words in Context questions",
+    "Practice with real SAT-style examples"
+  ],
+  "slides": [
+    {
+      "id": "whats-tested",
+      "type": "introduction",
+      "title": "What's Tested",
+      "icon": "🎯",
+      "content": {
+        "title": "Words in Context Fundamentals",
+        "subtitle": "Understanding meaning, tone, and structure in context",
+        "points": [
+          "Understanding how surrounding text determines the best word choice",
+          "Working with words that have multiple meanings",
+          "Context analysis and relationship recognition"
+        ]
+      }
+    },
+    {
+      "id": "what-makes-tricky",
+      "type": "concept",
+      "title": "What Makes This Tricky",
+      "icon": "⚠️",
+      "content": {
+        "title": "Common Challenges",
+        "explanation": "Words may have multiple meanings; only one fits the passage context.",
+        "example": "The word 'fine' could mean good quality, thin, or a penalty - context determines the right meaning!"
+      }
+    },
+    {
+      "id": "strategy-steps",
+      "type": "strategy",
+      "title": "Strategy Steps",
+      "icon": "📋",
+      "content": {
+        "title": "5-Step Approach",
+        "steps": [
+          "Step 1: Context Analysis - Read the sentence and understand the blank's role",
+          "Step 2: Bridge Word - Look for signal words that show relationships",
+          "Step 3: Word Cluster - Predict the type of word needed",
+          "Step 4: Process of Elimination - Rule out obviously wrong choices",
+          "Step 5: Verification - Test your choice by reading the complete sentence"
+        ]
+      }
+    },
+    {
+      "id": "example-question",
+      "type": "practice",
+      "title": "Example Question",
+      "icon": "❓",
+      "content": {
+        "title": "Apply the Strategy",
+        "question": "The scientist's approach was less _______ than others.",
+        "choices": [
+          "unique",
+          "derivative",
+          "awed",
+          "empathetic"
+        ],
+        "correct_answer": 1,
+        "explanation": "The word 'derivative' means unoriginal or copied from others. The phrase 'less than others' indicates we need a word that shows the scientist's approach lacked something compared to others. 'Less derivative' would mean more original, which fits the context."
+      }
+    },
+    {
+      "id": "walkthrough",
+      "type": "walkthrough",
+      "title": "Step-by-Step Solution",
+      "icon": "💡",
+      "content": {
+        "title": "Solution Walkthrough",
+        "solution_steps": [
+          "Context shows 'less _____ than others' - comparison structure",
+          "Predict: something that others have more of, scientist has less of",
+          "Test 'derivative': means unoriginal - fits perfectly with 'less than others'",
+          "Eliminate 'unique' (positive, doesn't fit 'less'), 'awed/empathetic' (don't fit context)",
+          "Verify: 'The scientist's approach was less derivative than others' makes sense"
+        ]
+      }
+    },
+    {
+      "id": "wrap-up",
+      "type": "summary",
+      "title": "Great Job!",
+      "icon": "🎉",
+      "content": {
+        "title": "Key Takeaways",
+        "summary": "You've mastered the fundamentals of Words in Context!",
+        "key_points": [
+          "Always test your choice in the sentence context",
+          "Look for signal words that show relationships",
+          "Consider multiple meanings of words"
+        ],
+        "next_steps": "Ready to practice with more Words in Context questions!"
+      }
+    }
+  ],
+  "created_at": "2025-09-18T16:00:00.000Z",
+  "status": "published",
+  "author": "instructor",
+  "updated_at": "2025-09-18T16:00:00.000Z",
+  "published_at": "2025-09-18T16:00:00.000Z",
+  "version": "1.0",
+  "format_version": "creator_studio_v1"
+}
