@@ -372,7 +372,7 @@ class CreatorStudio {
             skill_title: skill.title,
             title: title,
             learning_objectives: objectives.split('\n').filter(obj => obj.trim()),
-            slides: this.createDefaultSlides(),
+            slides: [],
             created_at: new Date().toISOString(),
             status: 'draft'
         };
