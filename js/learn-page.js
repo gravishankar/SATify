@@ -659,9 +659,8 @@ class LearnPage {
                 return false;
             }
 
-            // Always show lesson selection for multiple lessons
-            // For single lesson, still show selection to maintain consistency
-            this.createDomainOverviewLesson(domainLessons);
+            // Show published lesson list interface
+            this.showPublishedLessonList(domainLessons);
             return true;
 
         } catch (error) {
@@ -713,6 +712,66 @@ class LearnPage {
                     });
                 });
             }, 10);
+        }
+    }
+
+    showPublishedLessonList(lessons) {
+        const domainTitle = lessons[0].domain_title;
+
+        // Create lesson list interface for learning
+        const slidesHTML = `
+            <div class="lesson-slide active" data-slide="0">
+                <div class="slide-content centered">
+                    <div class="slide-icon">📚</div>
+                    <h3>${domainTitle} Lessons</h3>
+                    <p>Choose a lesson to begin learning:</p>
+
+                    <div class="published-lesson-list" style="max-width: 600px; margin: 20px auto;">
+                        ${lessons.map(lesson => `
+                            <div class="published-lesson-item"
+                                 style="border: 1px solid #ddd; padding: 20px; margin-bottom: 15px; border-radius: 8px; cursor: pointer; transition: all 0.2s; background: white;"
+                                 onmouseover="this.style.background='#f8f9fa'; this.style.borderColor='#007bff'"
+                                 onmouseout="this.style.background='white'; this.style.borderColor='#ddd'"
+                                 data-lesson-path="${lesson.filepath}">
+
+                                <div style="display: flex; align-items: center; gap: 15px;">
+                                    <div class="lesson-icon" style="font-size: 2em;">📖</div>
+                                    <div style="flex: 1; text-align: left;">
+                                        <h4 style="margin: 0 0 8px 0; color: #007bff;">${lesson.title}</h4>
+                                        <p style="margin: 0 0 8px 0; color: #666; font-size: 14px;">${lesson.skill_title}</p>
+                                        <div style="display: flex; gap: 20px; font-size: 13px; color: #888;">
+                                            <span>📊 ${lesson.slide_count} slides</span>
+                                            <span>🎯 ${lesson.learning_objectives_count} objectives</span>
+                                            <span>✅ Published</span>
+                                        </div>
+                                    </div>
+                                    <div style="color: #007bff; font-size: 1.5em;">→</div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
+                        <p style="color: #666; font-size: 14px;">
+                            💡 Complete lessons to unlock practice sessions
+                        </p>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Update the lesson slides container
+        const slideContainer = document.querySelector('.lesson-slides');
+        if (slideContainer) {
+            slideContainer.innerHTML = slidesHTML;
+
+            // Add click handlers for published lessons
+            slideContainer.addEventListener('click', (e) => {
+                const lessonItem = e.target.closest('.published-lesson-item');
+                if (lessonItem && lessonItem.dataset.lessonPath) {
+                    this.loadSpecificLesson(lessonItem.dataset.lessonPath);
+                }
+            });
         }
     }
 
