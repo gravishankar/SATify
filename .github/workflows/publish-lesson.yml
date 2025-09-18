@@ -33,10 +33,24 @@ jobs:
 
           const issueBody = context.payload.issue.body;
           console.log('Issue body length:', issueBody.length);
+          console.log('Full issue body:');
+          console.log('---START---');
+          console.log(issueBody);
+          console.log('---END---');
 
-          // Extract JSON block
-          const jsonMatch = issueBody.match(/```json\n([\s\S]*?)\n```/);
+          // Extract JSON block - try multiple regex patterns
+          let jsonMatch = issueBody.match(/```json\n([\s\S]*?)\n```/);
           if (!jsonMatch) {
+            // Try without newline after json
+            jsonMatch = issueBody.match(/```json([\s\S]*?)```/);
+          }
+          if (!jsonMatch) {
+            // Try with \r\n line endings
+            jsonMatch = issueBody.match(/```json\r?\n([\s\S]*?)\r?\n```/);
+          }
+          if (!jsonMatch) {
+            console.log('Trying to find any json block...');
+            console.log('Issue body preview:', issueBody.substring(0, 500));
             throw new Error('No ```json block found in issue body');
           }
 

@@ -6,7 +6,7 @@ on:
 
 jobs:
   debug-issue:
-    if: contains(github.event.issue.labels.*.name, 'debug-lesson')
+    if: contains(github.event.issue.labels.*.name, 'debug-lesson') && !contains(github.event.issue.labels.*.name, 'creator-studio-lesson')
     runs-on: ubuntu-latest
     permissions:
       contents: read

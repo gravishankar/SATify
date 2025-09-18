@@ -1194,8 +1194,7 @@ class CreatorStudio {
 
             // Create GitHub issue to trigger the action
             const issueTitle = `Publish Lesson: ${lessonData.title}`;
-            const issueBody = `
-## Creator Studio Lesson Publishing Request
+            const issueBody = `## Creator Studio Lesson Publishing Request
 
 **Lesson Title:** ${lessonData.title}
 **Domain:** ${lessonData.domain_title} (${lessonData.domain_id})
@@ -1214,8 +1213,7 @@ ${JSON.stringify(updatedManifest, null, 2)}
 \`\`\`
 
 ---
-*This issue was automatically created by Creator Studio to publish a lesson.*
-            `.trim();
+*This issue was automatically created by Creator Studio to publish a lesson.*`;
 
             // For GitHub Pages deployment, we'll show instructions to create the issue manually
             // In a more advanced setup, you could use GitHub API with a token
@@ -1247,7 +1245,9 @@ ${JSON.stringify(updatedManifest, null, 2)}
 
                     <h4>Step 1.5: Copy Lesson Data</h4>
                     <p>Copy the JSON data below and paste it into the GitHub issue description:</p>
-                    <textarea readonly style="width: 100%; height: 200px; font-family: monospace; font-size: 12px; background: #f8f9fa; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">${JSON.stringify(lessonData, null, 2)}</textarea>
+                    <textarea readonly style="width: 100%; height: 200px; font-family: monospace; font-size: 12px; background: #f8f9fa; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">\`\`\`json
+${JSON.stringify(lessonData, null, 2)}
+\`\`\`</textarea>
 
                     <h4>Step 2: Wait for Automation</h4>
                     <p>GitHub Actions will automatically:</p>
