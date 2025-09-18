@@ -873,6 +873,63 @@ class CreatorStudio {
         this.showNotification(`Lesson saved to browser storage (${lessons.length} total lessons)`, 'success');
     }
 
+    editLesson(lessonId) {
+        // Load lesson from localStorage for editing
+        const lessons = JSON.parse(localStorage.getItem('creator_studio_lessons') || '[]');
+        const lesson = lessons.find(l => l.id === lessonId);
+
+        if (!lesson) {
+            this.showNotification(`Lesson not found: ${lessonId}`, 'error');
+            return;
+        }
+
+        // Set current lesson for editing
+        this.currentLesson = { ...lesson }; // Create a copy to avoid reference issues
+
+        // Populate the form fields
+        this.populateEditorFromLesson(lesson);
+
+        // Show the lesson editor
+        this.showLessonEditor();
+
+        // Update UI to reflect loaded lesson
+        this.updateSaveButtonState(true);
+        this.showNotification(`Loading lesson: ${lesson.title}`, 'info');
+    }
+
+    populateEditorFromLesson(lesson) {
+        // Populate basic lesson info
+        const titleField = document.getElementById('lessonTitle');
+        if (titleField) titleField.value = lesson.title || '';
+
+        const objectivesField = document.getElementById('learningObjectives');
+        if (objectivesField && lesson.learning_objectives) {
+            objectivesField.value = lesson.learning_objectives.join('\n');
+        }
+
+        // Populate domain and skill dropdowns
+        const domainSelect = document.getElementById('domainSelect');
+        const skillSelect = document.getElementById('skillSelect');
+
+        if (domainSelect && lesson.domain_id) {
+            domainSelect.value = lesson.domain_id;
+            this.onDomainChange(lesson.domain_id);
+
+            // Wait for skill dropdown to populate, then set skill
+            setTimeout(() => {
+                if (skillSelect && lesson.skill_id) {
+                    skillSelect.value = lesson.skill_id;
+                    this.onSkillChange(lesson.skill_id);
+                }
+            }, 100);
+        }
+
+        // Update slides list to reflect loaded lesson
+        setTimeout(() => {
+            this.updateSlidesList();
+        }, 200);
+    }
+
     updateLessonFromEditor() {
         // Update lesson title if changed
         const titleField = document.getElementById('lessonTitle');
