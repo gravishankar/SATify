@@ -372,7 +372,7 @@ class CreatorStudio {
             skill_title: skill.title,
             title: title,
             learning_objectives: objectives.split('\n').filter(obj => obj.trim()),
-            slides: [],
+            slides: this.createDefaultSlides(),
             created_at: new Date().toISOString(),
             status: 'draft'
         };
@@ -391,6 +391,102 @@ class CreatorStudio {
 
     generateLessonId() {
         return 'lesson_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5);
+    }
+
+    createDefaultSlides() {
+        // 6-slide template based on Words in Context Learn section
+        return [
+            {
+                id: 'whats-tested',
+                type: 'introduction',
+                title: "What's Tested",
+                icon: '🎯',
+                content: {
+                    title: this.currentLesson?.title || 'Lesson Title',
+                    subtitle: "What you'll encounter on the SAT",
+                    points: [
+                        'Understanding the skill requirements',
+                        'Common question patterns',
+                        'Key strategies for success'
+                    ]
+                }
+            },
+            {
+                id: 'what-makes-tricky',
+                type: 'concept',
+                title: "What Makes This Tricky",
+                icon: '⚠️',
+                content: {
+                    title: 'Common Challenges',
+                    explanation: 'Students often struggle with...',
+                    pitfalls: [
+                        'Trap answer choices',
+                        'Time pressure effects',
+                        'Overlooking key details'
+                    ]
+                }
+            },
+            {
+                id: 'strategy-steps',
+                type: 'strategy',
+                title: 'Strategy Steps',
+                icon: '📋',
+                content: {
+                    title: 'Step-by-Step Approach',
+                    steps: [
+                        'Step 1: Read and identify',
+                        'Step 2: Analyze the context',
+                        'Step 3: Predict the answer',
+                        'Step 4: Eliminate and choose',
+                        'Step 5: Verify your choice'
+                    ]
+                }
+            },
+            {
+                id: 'example-question',
+                type: 'practice',
+                title: 'Example Question',
+                icon: '❓',
+                content: {
+                    title: 'Try This Example',
+                    question: 'Add a sample question here...',
+                    choices: ['Choice A', 'Choice B', 'Choice C', 'Choice D'],
+                    correct_answer: 0,
+                    explanation: 'Add explanation here...'
+                }
+            },
+            {
+                id: 'walkthrough',
+                type: 'walkthrough',
+                title: 'Walkthrough',
+                icon: '💡',
+                content: {
+                    title: 'Step-by-Step Solution',
+                    solution_steps: [
+                        'First, we identify...',
+                        'Next, we analyze...',
+                        'Then, we eliminate...',
+                        'Finally, we choose...'
+                    ]
+                }
+            },
+            {
+                id: 'wrap-up',
+                type: 'summary',
+                title: 'Wrap-up',
+                icon: '🎉',
+                content: {
+                    title: 'Key Takeaways',
+                    summary: 'Remember these important points:',
+                    key_points: [
+                        'Main strategy to remember',
+                        'Common mistakes to avoid',
+                        'Quick tips for success'
+                    ],
+                    next_steps: 'Ready to practice more questions!'
+                }
+            }
+        ];
     }
 
     addDefaultSlides() {
