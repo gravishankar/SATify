@@ -1076,7 +1076,7 @@ ${JSON.stringify(updatedManifest, null, 2)}
 
             // For GitHub Pages deployment, we'll show instructions to create the issue manually
             // In a more advanced setup, you could use GitHub API with a token
-            this.showGitHubActionsInstructions(issueTitle, issueBody, repoOwner, repoName);
+            this.showGitHubActionsInstructions(issueTitle, issueBody, repoOwner, repoName, lessonData);
 
         } catch (error) {
             console.error('Error setting up GitHub Actions publishing:', error);
@@ -1084,7 +1084,7 @@ ${JSON.stringify(updatedManifest, null, 2)}
         }
     }
 
-    showGitHubActionsInstructions(issueTitle, issueBody, repoOwner, repoName) {
+    showGitHubActionsInstructions(issueTitle, issueBody, repoOwner, repoName, lessonData) {
         const modal = document.createElement('div');
         modal.className = 'modal-overlay';
         modal.innerHTML = `
