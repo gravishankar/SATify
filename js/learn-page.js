@@ -681,7 +681,7 @@ class LearnPage {
                     <p>Choose a lesson to begin learning:</p>
                     <div class="lesson-selection-grid">
                         ${lessons.map(lesson => `
-                            <div class="lesson-option" onclick="window.satApp.learnPage.loadSpecificLesson('${lesson.filepath}')">
+                            <div class="lesson-option" data-lesson-path="${lesson.filepath}" style="cursor: pointer;">
                                 <div class="lesson-icon">📖</div>
                                 <h4>${lesson.title}</h4>
                                 <p>${lesson.skill_title}</p>
@@ -701,6 +701,16 @@ class LearnPage {
         if (slideContainer) {
             slideContainer.innerHTML = slidesHTML;
         }
+
+        // Add event listeners for lesson options
+        document.querySelectorAll('.lesson-option').forEach(option => {
+            option.addEventListener('click', (e) => {
+                const lessonPath = e.currentTarget.dataset.lessonPath;
+                if (lessonPath) {
+                    this.loadSpecificLesson(lessonPath);
+                }
+            });
+        });
     }
 
     async loadSpecificLesson(filepath) {
