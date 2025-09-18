@@ -1,21 +1,21 @@
 {
   "version": "1.0",
-  "lastUpdated": "2025-09-18T12:57:52.184Z",
+  "lastUpdated": "2025-09-18T13:04:06.640Z",
   "totalLessons": 1,
   "lessons": {
-    "standard_english_conventions_form_structure_and_sense_forms": {
-      "id": "standard_english_conventions_form_structure_and_sense_forms",
-      "title": "Forms",
-      "domain_id": "standard_english_conventions",
-      "domain_title": "Standard English Conventions",
-      "skill_id": "form_structure_and_sense",
-      "skill_title": "Form, Structure, and Sense",
+    "information_and_ideas_inferences_kjkkjkj": {
+      "id": "information_and_ideas_inferences_kjkkjkj",
+      "title": "kjkkjkj",
+      "domain_id": "information_and_ideas",
+      "domain_title": "Information and Ideas",
+      "skill_id": "inferences",
+      "skill_title": "Inferences",
       "author": "instructor",
-      "created_at": "2025-09-18T12:57:42.286Z",
-      "updated_at": "2025-09-18T12:57:52.181Z",
-      "published_at": "2025-09-18T12:57:52.180Z",
+      "created_at": "2025-09-18T13:04:01.230Z",
+      "updated_at": "2025-09-18T13:04:06.636Z",
+      "published_at": "2025-09-18T13:04:06.634Z",
       "status": "published",
-      "filepath": "lessons/standard_english_conventions/form_structure_and_sense/forms.json",
+      "filepath": "lessons/information_and_ideas/inferences/kjkkjkj.json",
       "slide_count": 6,
       "learning_objectives_count": 3
     }
