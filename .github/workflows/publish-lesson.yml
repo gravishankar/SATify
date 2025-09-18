@@ -124,7 +124,6 @@ jobs:
              --arg filepath "${{ steps.parse-lesson.outputs.filepath }}" \
              --slurpfile lesson lesson_data.json \
              '.lastUpdated = $timestamp |
-              .totalLessons = (.totalLessons + 1) |
               .lessons[$lesson[0].id] = {
                 id: $lesson[0].id,
                 title: $lesson[0].title,
@@ -140,7 +139,8 @@ jobs:
                 filepath: $filepath,
                 slide_count: ($lesson[0].slides | length),
                 learning_objectives_count: ($lesson[0].learning_objectives | length)
-              }' lessons/manifest.json > temp_manifest.json
+              } |
+              .totalLessons = (.lessons | length)' lessons/manifest.json > temp_manifest.json
           mv temp_manifest.json lessons/manifest.json
         fi
 

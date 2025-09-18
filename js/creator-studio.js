@@ -1110,15 +1110,11 @@ class CreatorStudio {
             format_version: "creator_studio_v1"
         };
 
-        // Update manifest
-        const updatedManifest = await this.updateManifest(lessonData, filepath);
-
-        // Commit to GitHub
+        // Commit to GitHub (manifest will be updated incrementally by GitHub Actions)
         await this.commitToGitHub(
             this.currentLesson.commitMessage,
             lessonData,
-            filepath,
-            updatedManifest
+            filepath
         );
     }
 
@@ -1218,7 +1214,7 @@ class CreatorStudio {
         }
     }
 
-    async commitToGitHub(message, lessonData, filepath, updatedManifest) {
+    async commitToGitHub(message, lessonData, filepath) {
         try {
             console.log('Publishing lesson via GitHub Actions...');
 
@@ -1226,7 +1222,7 @@ class CreatorStudio {
             console.log('Using GitHub Actions approach for static deployment...');
 
             // Fallback to GitHub Actions approach
-            await this.publishViaGitHubActions(message, lessonData, filepath, updatedManifest);
+            await this.publishViaGitHubActions(message, lessonData, filepath);
             return { success: true, method: 'github-actions' };
 
         } catch (error) {
@@ -1234,7 +1230,7 @@ class CreatorStudio {
 
             // Final fallback: prepare files for manual commit
             this.downloadFile(filepath, JSON.stringify(lessonData, null, 2));
-            this.downloadFile('lessons/manifest.json', JSON.stringify(updatedManifest, null, 2));
+            // Note: Manifest will need to be updated manually or via GitHub Actions
 
             // Show user instructions
             this.showManualCommitInstructions(filepath, message);
@@ -1243,7 +1239,7 @@ class CreatorStudio {
         }
     }
 
-    async publishViaGitHubActions(message, lessonData, filepath, updatedManifest) {
+    async publishViaGitHubActions(message, lessonData, filepath) {
         try {
             // Get repository info from current URL or default
             const repoOwner = 'gravishankar'; // You can make this configurable
@@ -1264,10 +1260,7 @@ class CreatorStudio {
 ${JSON.stringify(lessonData, null, 2)}
 \`\`\`
 
-### Manifest Data
-\`\`\`manifest
-${JSON.stringify(updatedManifest, null, 2)}
-\`\`\`
+> **Note:** Manifest will be updated incrementally by GitHub Actions to avoid sync conflicts.
 
 ---
 *This issue was automatically created by Creator Studio to publish a lesson.*`;
