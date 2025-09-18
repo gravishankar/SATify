@@ -1438,6 +1438,7 @@ git push origin main</pre>
         modal.className = 'modal-overlay';
 
         const unpublishedLessons = lessons.filter(l => l.status !== 'published');
+        const publishedLessons = lessons.filter(l => l.status === 'published');
         const showWarning = unpublishedLessons.length > 0;
 
         modal.innerHTML = `
@@ -1448,8 +1449,16 @@ git push origin main</pre>
                 <div class="modal-body">
                     ${showWarning ? `
                         <div style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 12px; margin-bottom: 20px; border-radius: 5px;">
-                            <strong>⚠️ Data Persistence Warning:</strong> ${unpublishedLessons.length} lesson(s) are only saved in browser localStorage.
-                            <strong>Publish lessons to permanently save them.</strong> Clear browser data will lose unpublished lessons.
+                            <strong>📝 Draft Lessons Notice:</strong> You have ${unpublishedLessons.length} draft lesson(s) saved locally.
+                            <br><strong>💡 Tip:</strong> Publish drafts to make them available to all users and save them permanently to the repository.
+                            <br><small style="color: #666;">Drafts are only visible in this Creator Studio and will be lost if browser data is cleared.</small>
+                        </div>
+                    ` : ''}
+
+                    ${publishedLessons.length > 0 ? `
+                        <div style="background: #d4edda; border: 1px solid #c3e6cb; padding: 12px; margin-bottom: 20px; border-radius: 5px;">
+                            <strong>✅ Published Lessons:</strong> ${publishedLessons.length} lesson(s) are published and available to all users.
+                            <br><small style="color: #666;">Published lessons are permanently saved in the repository and visible in the Learn section.</small>
                         </div>
                     ` : ''}
 
