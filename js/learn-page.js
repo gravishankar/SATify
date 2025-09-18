@@ -700,17 +700,19 @@ class LearnPage {
         const slideContainer = document.querySelector('.lesson-slides');
         if (slideContainer) {
             slideContainer.innerHTML = slidesHTML;
-        }
 
-        // Add event listeners for lesson options
-        document.querySelectorAll('.lesson-option').forEach(option => {
-            option.addEventListener('click', (e) => {
-                const lessonPath = e.currentTarget.dataset.lessonPath;
-                if (lessonPath) {
-                    this.loadSpecificLesson(lessonPath);
-                }
-            });
-        });
+            // Add event listeners after DOM update
+            setTimeout(() => {
+                document.querySelectorAll('.lesson-option').forEach(option => {
+                    option.addEventListener('click', (e) => {
+                        const lessonPath = e.currentTarget.dataset.lessonPath;
+                        if (lessonPath) {
+                            this.loadSpecificLesson(lessonPath);
+                        }
+                    });
+                });
+            }, 10);
+        }
     }
 
     async loadSpecificLesson(filepath) {
