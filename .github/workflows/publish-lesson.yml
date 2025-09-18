@@ -33,24 +33,10 @@ jobs:
 
           const issueBody = context.payload.issue.body;
           console.log('Issue body length:', issueBody.length);
-          console.log('Full issue body:');
-          console.log('---START---');
-          console.log(issueBody);
-          console.log('---END---');
 
-          // Extract JSON block - try multiple regex patterns
-          let jsonMatch = issueBody.match(/```json\n([\s\S]*?)\n```/);
+          // Extract JSON block
+          const jsonMatch = issueBody.match(/```json\n([\s\S]*?)\n```/);
           if (!jsonMatch) {
-            // Try without newline after json
-            jsonMatch = issueBody.match(/```json([\s\S]*?)```/);
-          }
-          if (!jsonMatch) {
-            // Try with \r\n line endings
-            jsonMatch = issueBody.match(/```json\r?\n([\s\S]*?)\r?\n```/);
-          }
-          if (!jsonMatch) {
-            console.log('Trying to find any json block...');
-            console.log('Issue body preview:', issueBody.substring(0, 500));
             throw new Error('No ```json block found in issue body');
           }
 
@@ -163,9 +149,6 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "Creator Studio Bot"
 
-        # Pull latest changes to avoid conflicts
-        git pull --rebase origin main
-
         git add "${{ steps.parse-lesson.outputs.filepath }}" lessons/manifest.json
         git commit -m "Add lesson: ${{ steps.parse-lesson.outputs.lesson_title }}
 
@@ -177,17 +160,7 @@ jobs:
 
         Co-Authored-By: Creator Studio Bot <action@github.com>"
 
-        # Push with retry logic
-        for i in {1..3}; do
-          if git push; then
-            echo "Push successful on attempt $i"
-            break
-          else
-            echo "Push failed on attempt $i, retrying..."
-            git pull --rebase origin main
-            sleep 2
-          fi
-        done
+        git push
 
     - name: Comment on issue with success
       uses: actions/github-script@v7
