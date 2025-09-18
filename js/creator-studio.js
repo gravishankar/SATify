@@ -644,48 +644,51 @@ class CreatorStudio {
                 break;
 
             case 'practice':
+                const practiceContent = slide.content || {};
                 formHTML += `
                     <div class="form-group">
                         <label for="slideQuestion">Practice Question:</label>
-                        <textarea id="slideQuestion" rows="4">${slide.content.question || ''}</textarea>
+                        <textarea id="slideQuestion" rows="4">${practiceContent.question || ''}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="slideChoices">Answer Choices (one per line):</label>
-                        <textarea id="slideChoices" rows="4">${(slide.content.choices || []).join('\n')}</textarea>
+                        <textarea id="slideChoices" rows="4">${(practiceContent.choices || []).join('\n')}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="slideCorrectAnswer">Correct Answer (0-3):</label>
-                        <input type="number" id="slideCorrectAnswer" min="0" max="3" value="${slide.content.correct_answer || 0}" />
+                        <input type="number" id="slideCorrectAnswer" min="0" max="3" value="${practiceContent.correct_answer || 0}" />
                     </div>
                     <div class="form-group">
                         <label for="slideExplanation">Explanation:</label>
-                        <textarea id="slideExplanation" rows="4">${slide.content.explanation || ''}</textarea>
+                        <textarea id="slideExplanation" rows="4">${practiceContent.explanation || ''}</textarea>
                     </div>
                 `;
                 break;
 
             case 'walkthrough':
+                const walkthroughContent = slide.content || {};
                 formHTML += `
                     <div class="form-group">
                         <label for="slideSolutionSteps">Solution Steps (one per line):</label>
-                        <textarea id="slideSolutionSteps" rows="6">${(slide.content.solution_steps || []).join('\n')}</textarea>
+                        <textarea id="slideSolutionSteps" rows="6">${(walkthroughContent.solution_steps || []).join('\n')}</textarea>
                     </div>
                 `;
                 break;
 
             case 'summary':
+                const summaryContent = slide.content || {};
                 formHTML += `
                     <div class="form-group">
                         <label for="slideSummary">Summary Text:</label>
-                        <textarea id="slideSummary" rows="3">${slide.content.summary || ''}</textarea>
+                        <textarea id="slideSummary" rows="3">${summaryContent.summary || ''}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="slideKeyPoints">Key Points (one per line):</label>
-                        <textarea id="slideKeyPoints" rows="4">${(slide.content.key_points || []).join('\n')}</textarea>
+                        <textarea id="slideKeyPoints" rows="4">${(summaryContent.key_points || []).join('\n')}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="slideNextSteps">Next Steps:</label>
-                        <input type="text" id="slideNextSteps" value="${slide.content.next_steps || ''}" />
+                        <input type="text" id="slideNextSteps" value="${summaryContent.next_steps || ''}" />
                     </div>
                 `;
                 break;
