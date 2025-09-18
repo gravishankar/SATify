@@ -1117,11 +1117,15 @@ ${JSON.stringify(updatedManifest, null, 2)}
                     <p>Your lesson is ready to publish! Follow these simple steps:</p>
 
                     <h4>Step 1: Create GitHub Issue</h4>
-                    <p>Click the button below to create a GitHub issue that will automatically publish your lesson:</p>
-                    <a href="https://github.com/${repoOwner}/${repoName}/issues/new?title=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(issueBody)}&labels=${encodeURIComponent('creator-studio-lesson,auto-publish')}"
+                    <p>Click the button below to create a GitHub issue, then copy and paste the lesson data:</p>
+                    <a href="https://github.com/${repoOwner}/${repoName}/issues/new?title=${encodeURIComponent(issueTitle)}&labels=${encodeURIComponent('creator-studio-lesson,auto-publish')}"
                        target="_blank" class="btn btn-primary" style="display: inline-block; margin: 10px 0;">
                         📝 Create GitHub Issue to Publish
                     </a>
+
+                    <h4>Step 1.5: Copy Lesson Data</h4>
+                    <p>Copy the JSON data below and paste it into the GitHub issue description:</p>
+                    <textarea readonly style="width: 100%; height: 200px; font-family: monospace; font-size: 12px; background: #f8f9fa; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">${JSON.stringify(lessonData, null, 2)}</textarea>
 
                     <h4>Step 2: Wait for Automation</h4>
                     <p>GitHub Actions will automatically:</p>
