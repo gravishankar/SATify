@@ -1,5 +1,5 @@
 {
-  "id": "lesson_1758200262285_y31j2",
+  "id": "lesson_1758214527183_uqm5n",
   "domain_id": "standard_english_conventions",
   "domain_title": "Standard English Conventions",
   "skill_id": "form_structure_and_sense",
@@ -107,12 +107,12 @@
       }
     }
   ],
-  "created_at": "2025-09-18T12:57:42.286Z",
+  "created_at": "2025-09-18T16:55:27.183Z",
   "status": "published",
   "commitMessage": "Add lesson: Forms",
-  "published_at": "2025-09-18T12:57:52.180Z",
+  "published_at": "2025-09-18T16:55:40.251Z",
   "author": "instructor",
-  "updated_at": "2025-09-18T12:57:52.181Z",
+  "updated_at": "2025-09-18T16:55:40.252Z",
   "version": "1.0",
   "format_version": "creator_studio_v1"
 }

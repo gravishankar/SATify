@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "lastUpdated": "2025-09-18T14:34:38.730Z",
-  "totalLessons": 2,
+  "lastUpdated": "2025-09-18T16:55:40.254Z",
+  "totalLessons": 3,
   "lessons": {
     "craft_and_structure_words_in_context_fundamentals": {
       "id": "craft_and_structure_words_in_context_fundamentals",
@@ -32,6 +32,22 @@
       "published_at": "2025-09-18T14:34:38.695Z",
       "status": "published",
       "filepath": "lessons/standard_english_conventions/boundaries/punctuations.json",
+      "slide_count": 6,
+      "learning_objectives_count": 3
+    },
+    "standard_english_conventions_form_structure_and_sense_forms": {
+      "id": "standard_english_conventions_form_structure_and_sense_forms",
+      "title": "Forms",
+      "domain_id": "standard_english_conventions",
+      "domain_title": "Standard English Conventions",
+      "skill_id": "form_structure_and_sense",
+      "skill_title": "Form, Structure, and Sense",
+      "author": "instructor",
+      "created_at": "2025-09-18T16:55:27.183Z",
+      "updated_at": "2025-09-18T16:55:40.252Z",
+      "published_at": "2025-09-18T16:55:40.251Z",
+      "status": "published",
+      "filepath": "lessons/standard_english_conventions/form_structure_and_sense/forms.json",
       "slide_count": 6,
       "learning_objectives_count": 3
     }
