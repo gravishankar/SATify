@@ -561,7 +561,16 @@ class LearnPage {
 
         // Update Information and Ideas card (remove "coming soon")
         if (lessonsByDomain['information_and_ideas']) {
-            const infoIdeasCard = skillsGrid.querySelector('.skill-card.coming-soon');
+            // Find the specific Information and Ideas card
+            const allCards = skillsGrid.querySelectorAll('.skill-card.coming-soon');
+            let infoIdeasCard = null;
+            allCards.forEach(card => {
+                const title = card.querySelector('h3')?.textContent;
+                if (title && title.includes('Information') && title.includes('Ideas')) {
+                    infoIdeasCard = card;
+                }
+            });
+
             if (infoIdeasCard) {
                 infoIdeasCard.classList.remove('coming-soon');
                 infoIdeasCard.classList.add('clickable');
