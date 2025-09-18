@@ -145,6 +145,32 @@ app.post('/api/write-lesson', async (req, res) => {
     }
 });
 
+// Create GitHub Issue for lesson publishing
+app.post('/api/create-github-issue', async (req, res) => {
+    try {
+        const { title, body, labels } = req.body;
+
+        // Use gh CLI to create the issue
+        const labelsStr = labels.join(',');
+        const command = `gh issue create --title "${title}" --body "${body}" --label "${labelsStr}"`;
+
+        const { stdout } = await execAsync(command);
+        const issueUrl = stdout.trim();
+
+        res.json({
+            success: true,
+            html_url: issueUrl,
+            message: 'GitHub issue created successfully'
+        });
+    } catch (error) {
+        console.error('Error creating GitHub issue:', error);
+        res.status(500).json({
+            error: 'Failed to create GitHub issue',
+            details: error.message
+        });
+    }
+});
+
 // Get lessons manifest
 app.get('/api/lessons', async (req, res) => {
     try {
