@@ -490,28 +490,8 @@ class CreatorStudio {
     }
 
     addDefaultSlides() {
-        const defaultSlides = [
-            {
-                id: 'intro',
-                type: 'introduction',
-                title: 'Introduction',
-                content: {
-                    title: this.currentLesson.title,
-                    subtitle: 'What you\'ll learn in this lesson',
-                    points: this.currentLesson.learning_objectives.slice(0, 3)
-                }
-            },
-            {
-                id: 'concept',
-                type: 'concept',
-                title: 'Key Concept',
-                content: {
-                    title: 'Main Concept',
-                    explanation: 'Add your explanation here...',
-                    example: 'Add an example here...'
-                }
-            }
-        ];
+        // Use the 6-slide template method that's already created
+        const defaultSlides = this.createDefaultSlides();
 
         this.currentLesson.slides = defaultSlides;
         this.updateSlidesList();
