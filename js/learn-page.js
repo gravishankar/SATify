@@ -26,6 +26,7 @@ class LearnPage {
         this.setupEventListeners();
         this.updateProgress();
         this.setupFloatingActionButton();
+        this.loadCreatorStudioLessons();
     }
 
     setupEventListeners() {
@@ -135,10 +136,17 @@ class LearnPage {
     async startLesson(skillId) {
         console.log('Starting lesson:', skillId);
 
-        // Load topic content dynamically
-        const success = await this.loadTopicContent(skillId);
+        // Check if this is a Creator Studio lesson domain
+        let success = false;
+        if (this.isCreatorStudioDomain(skillId)) {
+            success = await this.loadCreatorStudioDomainLessons(skillId);
+        } else {
+            // Load topic content dynamically
+            success = await this.loadTopicContent(skillId);
+        }
+
         if (!success) {
-            console.error('Failed to load topic content');
+            console.error('Failed to load lesson content');
             return;
         }
 
@@ -500,6 +508,261 @@ class LearnPage {
             }
             indicatorContainer.appendChild(indicator);
         }
+    }
+
+    // Load Creator Studio lessons from manifest and integrate into Learn section
+    async loadCreatorStudioLessons() {
+        try {
+            console.log('Loading Creator Studio lessons...');
+            const response = await fetch('/api/lessons');
+
+            if (!response.ok) {
+                // Fallback to direct manifest file
+                const manifestResponse = await fetch('lessons/manifest.json');
+                if (!manifestResponse.ok) {
+                    console.warn('Could not load lessons manifest');
+                    return;
+                }
+                const manifest = await manifestResponse.json();
+                this.integrateLessonsIntoLearnSection(manifest);
+            } else {
+                const manifest = await response.json();
+                this.integrateLessonsIntoLearnSection(manifest);
+            }
+        } catch (error) {
+            console.warn('Error loading Creator Studio lessons:', error);
+        }
+    }
+
+    integrateLessonsIntoLearnSection(manifest) {
+        if (!manifest || !manifest.lessons) return;
+
+        console.log('Integrating lessons into Learn section:', manifest);
+
+        // Group lessons by domain
+        const lessonsByDomain = {};
+        Object.values(manifest.lessons).forEach(lesson => {
+            if (!lessonsByDomain[lesson.domain_id]) {
+                lessonsByDomain[lesson.domain_id] = {
+                    title: lesson.domain_title,
+                    lessons: []
+                };
+            }
+            lessonsByDomain[lesson.domain_id].lessons.push(lesson);
+        });
+
+        // Update skill cards with actual lessons
+        this.updateSkillCardsWithLessons(lessonsByDomain);
+    }
+
+    updateSkillCardsWithLessons(lessonsByDomain) {
+        const skillsGrid = document.querySelector('.skills-grid');
+        if (!skillsGrid) return;
+
+        // Update Information and Ideas card (remove "coming soon")
+        if (lessonsByDomain['information_and_ideas']) {
+            const infoIdeasCard = skillsGrid.querySelector('.skill-card.coming-soon');
+            if (infoIdeasCard) {
+                infoIdeasCard.classList.remove('coming-soon');
+                infoIdeasCard.classList.add('clickable');
+                infoIdeasCard.dataset.skill = 'information-and-ideas';
+
+                const badge = infoIdeasCard.querySelector('.skill-badge');
+                if (badge) badge.textContent = 'Active';
+
+                const progressText = infoIdeasCard.querySelector('.progress-text');
+                if (progressText) progressText.textContent = 'Start Learning';
+
+                const lessonCount = lessonsByDomain['information_and_ideas'].lessons.length;
+                const meta = infoIdeasCard.querySelector('.skill-meta .questions');
+                if (meta) meta.textContent = `📝 ${lessonCount} lessons`;
+            }
+        }
+
+        // Add new skill cards for other domains
+        Object.entries(lessonsByDomain).forEach(([domainId, domain]) => {
+            if (domainId !== 'information_and_ideas' && domainId !== 'craft_and_structure') {
+                this.addSkillCard(skillsGrid, domainId, domain);
+            }
+        });
+    }
+
+    addSkillCard(skillsGrid, domainId, domain) {
+        const lessonCount = domain.lessons.length;
+        const skillCard = document.createElement('div');
+        skillCard.className = 'skill-card clickable';
+        skillCard.dataset.skill = domainId;
+
+        skillCard.innerHTML = `
+            <div class="skill-header">
+                <div class="skill-icon">📚</div>
+                <div class="skill-badge">Active</div>
+            </div>
+            <h3>${domain.title}</h3>
+            <p>Interactive lessons created in Creator Studio</p>
+            <div class="skill-meta">
+                <span class="duration">⏱️ Variable duration</span>
+                <span class="questions">📝 ${lessonCount} lessons</span>
+            </div>
+            <div class="skill-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <span class="progress-text">Start Learning</span>
+            </div>
+        `;
+
+        skillsGrid.appendChild(skillCard);
+    }
+
+    isCreatorStudioDomain(skillId) {
+        // Creator Studio domains we know about
+        const creatorStudioDomains = ['information-and-ideas', 'expression-of-ideas'];
+        return creatorStudioDomains.includes(skillId);
+    }
+
+    async loadCreatorStudioDomainLessons(domainId) {
+        try {
+            // Load the lessons manifest to get lessons for this domain
+            const manifestResponse = await fetch('lessons/manifest.json');
+            if (!manifestResponse.ok) {
+                console.error('Could not load lessons manifest');
+                return false;
+            }
+
+            const manifest = await manifestResponse.json();
+            const domainLessons = Object.values(manifest.lessons).filter(
+                lesson => lesson.domain_id === domainId.replace('-', '_')
+            );
+
+            if (domainLessons.length === 0) {
+                console.error('No lessons found for domain:', domainId);
+                return false;
+            }
+
+            // Create a domain overview lesson that lists all available lessons
+            this.createDomainOverviewLesson(domainLessons);
+            return true;
+
+        } catch (error) {
+            console.error('Error loading Creator Studio domain lessons:', error);
+            return false;
+        }
+    }
+
+    createDomainOverviewLesson(lessons) {
+        const domainTitle = lessons[0].domain_title;
+
+        // Create slides container content
+        const slidesHTML = `
+            <div class="lesson-slide active" data-slide="0">
+                <div class="slide-content centered">
+                    <div class="slide-icon">📚</div>
+                    <h3>${domainTitle} Lessons</h3>
+                    <p>Choose a lesson to begin learning:</p>
+                    <div class="lesson-selection-grid">
+                        ${lessons.map(lesson => `
+                            <div class="lesson-option" onclick="window.satApp.learnPage.loadSpecificLesson('${lesson.filepath}')">
+                                <div class="lesson-icon">📖</div>
+                                <h4>${lesson.title}</h4>
+                                <p>${lesson.skill_title}</p>
+                                <div class="lesson-meta">
+                                    <span>📊 ${lesson.slide_count} slides</span>
+                                    <span>🎯 ${lesson.learning_objectives_count} objectives</span>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Update the lesson slides container
+        const slideContainer = document.querySelector('.lesson-slides');
+        if (slideContainer) {
+            slideContainer.innerHTML = slidesHTML;
+        }
+    }
+
+    async loadSpecificLesson(filepath) {
+        try {
+            console.log('Loading specific lesson:', filepath);
+            const response = await fetch(filepath);
+            if (!response.ok) {
+                console.error('Failed to load lesson file:', filepath);
+                return;
+            }
+
+            const lessonData = await response.json();
+            this.renderCreatorStudioLesson(lessonData);
+
+        } catch (error) {
+            console.error('Error loading specific lesson:', error);
+        }
+    }
+
+    renderCreatorStudioLesson(lessonData) {
+        // Convert Creator Studio lesson format to slides
+        const slidesHTML = lessonData.slides.map((slide, index) => {
+            const isActive = index === 0 ? 'active' : '';
+            return `
+                <div class="lesson-slide ${isActive}" data-slide="${index}">
+                    <div class="slide-content centered">
+                        <div class="slide-icon">${slide.icon || '📖'}</div>
+                        <h3>${slide.title}</h3>
+                        ${this.renderSlideContent(slide)}
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        // Update the lesson slides container
+        const slideContainer = document.querySelector('.lesson-slides');
+        if (slideContainer) {
+            slideContainer.innerHTML = slidesHTML;
+        }
+
+        // Update total slides count
+        this.totalSlides = lessonData.slides.length;
+        this.currentSlide = 0;
+        this.updateProgress();
+    }
+
+    renderSlideContent(slide) {
+        let contentHTML = '';
+
+        if (slide.content) {
+            if (slide.content.points) {
+                contentHTML += `<ul class="slide-points">
+                    ${slide.content.points.map(point => `<li>${point}</li>`).join('')}
+                </ul>`;
+            }
+
+            if (slide.content.steps) {
+                contentHTML += `<ol class="slide-steps">
+                    ${slide.content.steps.map(step => `<li>${step}</li>`).join('')}
+                </ol>`;
+            }
+
+            if (slide.content.explanation) {
+                contentHTML += `<p class="slide-explanation">${slide.content.explanation}</p>`;
+            }
+
+            if (slide.content.question) {
+                contentHTML += `<div class="practice-question">
+                    <p>${slide.content.question}</p>
+                    ${slide.content.choices ? `
+                        <div class="choices-preview">
+                            ${slide.content.choices.map((choice, i) =>
+                                `${String.fromCharCode(65 + i)}) ${choice}`
+                            ).join('<br>')}
+                        </div>
+                    ` : ''}
+                </div>`;
+            }
+        }
+
+        return contentHTML;
     }
 }
 
