@@ -1238,7 +1238,7 @@ ${JSON.stringify(updatedManifest, null, 2)}
 
                     <h4>Step 1: Create GitHub Issue</h4>
                     <p>Click the button below to create a GitHub issue, then copy and paste the lesson data:</p>
-                    <a href="https://github.com/${repoOwner}/${repoName}/issues/new?title=${encodeURIComponent(issueTitle)}&labels=${encodeURIComponent('creator-studio-lesson,auto-publish')}"
+                    <a href="https://github.com/${repoOwner}/${repoName}/issues/new?title=${encodeURIComponent(issueTitle)}&labels=${encodeURIComponent('creator-studio-lesson')}"
                        target="_blank" class="btn btn-primary" style="display: inline-block; margin: 10px 0;">
                         📝 Create GitHub Issue to Publish
                     </a>
