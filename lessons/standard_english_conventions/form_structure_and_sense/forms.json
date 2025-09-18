@@ -1,0 +1,118 @@
+{
+  "id": "lesson_1758200262285_y31j2",
+  "domain_id": "standard_english_conventions",
+  "domain_title": "Standard English Conventions",
+  "skill_id": "form_structure_and_sense",
+  "skill_title": "Form, Structure, and Sense",
+  "title": "Forms",
+  "learning_objectives": [
+    "Maintain subject-verb agreement",
+    "Use correct verb tenses and forms",
+    "Construct clear, logical sentences"
+  ],
+  "slides": [
+    {
+      "id": "whats-tested",
+      "type": "introduction",
+      "title": "What's Tested",
+      "icon": "🎯",
+      "content": {
+        "title": "Forms",
+        "subtitle": "What you'll encounter on the SAT",
+        "points": [
+          "Understanding the skill requirements",
+          "Common question patterns",
+          "Key strategies for success"
+        ]
+      }
+    },
+    {
+      "id": "what-makes-tricky",
+      "type": "concept",
+      "title": "What Makes This Tricky",
+      "icon": "⚠️",
+      "content": {
+        "title": "Common Challenges",
+        "explanation": "Students often struggle with...",
+        "pitfalls": [
+          "Trap answer choices",
+          "Time pressure effects",
+          "Overlooking key details"
+        ]
+      }
+    },
+    {
+      "id": "strategy-steps",
+      "type": "strategy",
+      "title": "Strategy Steps",
+      "icon": "📋",
+      "content": {
+        "title": "Step-by-Step Approach",
+        "steps": [
+          "Step 1: Read and identify",
+          "Step 2: Analyze the context",
+          "Step 3: Predict the answer",
+          "Step 4: Eliminate and choose",
+          "Step 5: Verify your choice"
+        ]
+      }
+    },
+    {
+      "id": "example-question",
+      "type": "practice",
+      "title": "Example Question",
+      "icon": "❓",
+      "content": {
+        "title": "Try This Example",
+        "question": "Add a sample question here...",
+        "choices": [
+          "Choice A",
+          "Choice B",
+          "Choice C",
+          "Choice D"
+        ],
+        "correct_answer": 0,
+        "explanation": "Add explanation here..."
+      }
+    },
+    {
+      "id": "walkthrough",
+      "type": "walkthrough",
+      "title": "Walkthrough",
+      "icon": "💡",
+      "content": {
+        "title": "Step-by-Step Solution",
+        "solution_steps": [
+          "First, we identify...",
+          "Next, we analyze...",
+          "Then, we eliminate...",
+          "Finally, we choose..."
+        ]
+      }
+    },
+    {
+      "id": "wrap-up",
+      "type": "summary",
+      "title": "Wrap-up",
+      "icon": "🎉",
+      "content": {
+        "title": "Key Takeaways",
+        "summary": "Remember these important points:",
+        "key_points": [
+          "Main strategy to remember",
+          "Common mistakes to avoid",
+          "Quick tips for success"
+        ],
+        "next_steps": "Ready to practice more questions!"
+      }
+    }
+  ],
+  "created_at": "2025-09-18T12:57:42.286Z",
+  "status": "published",
+  "commitMessage": "Add lesson: Forms",
+  "published_at": "2025-09-18T12:57:52.180Z",
+  "author": "instructor",
+  "updated_at": "2025-09-18T12:57:52.181Z",
+  "version": "1.0",
+  "format_version": "creator_studio_v1"
+}
