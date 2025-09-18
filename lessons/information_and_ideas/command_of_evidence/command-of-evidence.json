@@ -1,0 +1,118 @@
+{
+  "id": "lesson_1758219838846_qsq7u",
+  "domain_id": "information_and_ideas",
+  "domain_title": "Information and Ideas",
+  "skill_id": "command_of_evidence",
+  "skill_title": "Command of Evidence",
+  "title": "Command of evidence",
+  "learning_objectives": [
+    "Identify relevant textual evidence",
+    "Evaluate strength of evidence",
+    "Connect evidence to claims"
+  ],
+  "slides": [
+    {
+      "id": "whats-tested",
+      "type": "introduction",
+      "title": "What's Tested",
+      "icon": "🎯",
+      "content": {
+        "title": "Command of evidence",
+        "subtitle": "What you'll encounter on the SAT",
+        "points": [
+          "Understanding the skill requirements",
+          "Common question patterns",
+          "Key strategies for success"
+        ]
+      }
+    },
+    {
+      "id": "what-makes-tricky",
+      "type": "concept",
+      "title": "What Makes This Tricky",
+      "icon": "⚠️",
+      "content": {
+        "title": "Common Challenges",
+        "explanation": "Students often struggle with...",
+        "pitfalls": [
+          "Trap answer choices",
+          "Time pressure effects",
+          "Overlooking key details"
+        ]
+      }
+    },
+    {
+      "id": "strategy-steps",
+      "type": "strategy",
+      "title": "Strategy Steps",
+      "icon": "📋",
+      "content": {
+        "title": "Step-by-Step Approach",
+        "steps": [
+          "Step 1: Read and identify",
+          "Step 2: Analyze the context",
+          "Step 3: Predict the answer",
+          "Step 4: Eliminate and choose",
+          "Step 5: Verify your choice"
+        ]
+      }
+    },
+    {
+      "id": "example-question",
+      "type": "practice",
+      "title": "Example Question",
+      "icon": "❓",
+      "content": {
+        "title": "Try This Example",
+        "question": "Add a sample question here...",
+        "choices": [
+          "Choice A",
+          "Choice B",
+          "Choice C",
+          "Choice D"
+        ],
+        "correct_answer": 0,
+        "explanation": "Add explanation here..."
+      }
+    },
+    {
+      "id": "walkthrough",
+      "type": "walkthrough",
+      "title": "Walkthrough",
+      "icon": "💡",
+      "content": {
+        "title": "Step-by-Step Solution",
+        "solution_steps": [
+          "First, we identify...",
+          "Next, we analyze...",
+          "Then, we eliminate...",
+          "Finally, we choose..."
+        ]
+      }
+    },
+    {
+      "id": "wrap-up",
+      "type": "summary",
+      "title": "Wrap-up",
+      "icon": "🎉",
+      "content": {
+        "title": "Key Takeaways",
+        "summary": "Remember these important points:",
+        "key_points": [
+          "Main strategy to remember",
+          "Common mistakes to avoid",
+          "Quick tips for success"
+        ],
+        "next_steps": "Ready to practice more questions!"
+      }
+    }
+  ],
+  "created_at": "2025-09-18T18:23:58.846Z",
+  "status": "published",
+  "commitMessage": "Add lesson: Command of evidence",
+  "published_at": "2025-09-18T18:24:20.168Z",
+  "author": "instructor",
+  "updated_at": "2025-09-18T18:24:20.169Z",
+  "version": "1.0",
+  "format_version": "creator_studio_v1"
+}
