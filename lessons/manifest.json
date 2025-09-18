@@ -15,7 +15,7 @@
       "updated_at": "2025-09-18T03:45:32.422Z",
       "published_at": "2025-09-18T03:45:32.420Z",
       "status": "published",
-      "filepath": "expression_of_ideas/rhetorical_synthesis/rhetorical-synthesis.json",
+      "filepath": "lessons/expression_of_ideas/rhetorical_synthesis/rhetorical-synthesis.json",
       "slide_count": 6,
       "learning_objectives_count": 3
     },
@@ -31,7 +31,7 @@
       "updated_at": "2025-09-18T12:45:38.198Z",
       "published_at": "2025-09-18T12:45:38.197Z",
       "status": "published",
-      "filepath": "standard_english_conventions/boundaries/boundaries-identification.json",
+      "filepath": "lessons/standard_english_conventions/boundaries/boundaries-identification.json",
       "slide_count": 6,
       "learning_objectives_count": 3
     },
@@ -47,7 +47,7 @@
       "updated_at": "2025-09-18T16:00:00.000Z",
       "published_at": "2025-09-18T16:00:00.000Z",
       "status": "published",
-      "filepath": "craft_and_structure/words_in_context/words-in-context-fundamentals.json",
+      "filepath": "lessons/craft_and_structure/words_in_context/words-in-context-fundamentals.json",
       "slide_count": 6,
       "learning_objectives_count": 3
     },
@@ -63,7 +63,7 @@
       "updated_at": "2025-09-18T16:55:40.252Z",
       "published_at": "2025-09-18T16:55:40.251Z",
       "status": "published",
-      "filepath": "standard_english_conventions/form_structure_and_sense/forms.json",
+      "filepath": "lessons/standard_english_conventions/form_structure_and_sense/forms.json",
       "slide_count": 6,
       "learning_objectives_count": 3
     },
@@ -79,7 +79,7 @@
       "updated_at": "2025-09-18T17:24:13.612Z",
       "published_at": "2025-09-18T17:24:13.611Z",
       "status": "published",
-      "filepath": "craft_and_structure/words_in_context/new-wic.json",
+      "filepath": "lessons/craft_and_structure/words_in_context/new-wic.json",
       "slide_count": 6,
       "learning_objectives_count": 3
     },
@@ -95,7 +95,7 @@
       "updated_at": "2025-09-18T17:25:59.543Z",
       "published_at": "2025-09-18T17:25:59.542Z",
       "status": "published",
-      "filepath": "standard_english_conventions/boundaries/punctuations.json",
+      "filepath": "lessons/standard_english_conventions/boundaries/punctuations.json",
       "slide_count": 6,
       "learning_objectives_count": 3
     },
@@ -111,7 +111,7 @@
       "updated_at": "2025-09-18T17:51:29.180Z",
       "published_at": "2025-09-18T17:51:29.179Z",
       "status": "published",
-      "filepath": "expression_of_ideas/transitions/transitions.json",
+      "filepath": "lessons/expression_of_ideas/transitions/transitions.json",
       "slide_count": 6,
       "learning_objectives_count": 3
     }
