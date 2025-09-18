@@ -565,7 +565,7 @@ class LearnPage {
             if (infoIdeasCard) {
                 infoIdeasCard.classList.remove('coming-soon');
                 infoIdeasCard.classList.add('clickable');
-                infoIdeasCard.dataset.skill = 'information-and-ideas';
+                infoIdeasCard.dataset.skill = 'information_and_ideas';
 
                 const badge = infoIdeasCard.querySelector('.skill-badge');
                 if (badge) badge.textContent = 'Active';
@@ -616,8 +616,8 @@ class LearnPage {
     }
 
     isCreatorStudioDomain(skillId) {
-        // Creator Studio domains we know about
-        const creatorStudioDomains = ['information-and-ideas', 'expression-of-ideas'];
+        // Creator Studio domains we know about (with underscores as in manifest)
+        const creatorStudioDomains = ['information_and_ideas', 'expression_of_ideas', 'craft_and_structure'];
         return creatorStudioDomains.includes(skillId);
     }
 
@@ -632,7 +632,7 @@ class LearnPage {
 
             const manifest = await manifestResponse.json();
             const domainLessons = Object.values(manifest.lessons).filter(
-                lesson => lesson.domain_id === domainId.replace('-', '_')
+                lesson => lesson.domain_id === domainId
             );
 
             if (domainLessons.length === 0) {
