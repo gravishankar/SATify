@@ -1435,6 +1435,8 @@ git push origin main</pre>
             return;
         }
 
+        console.log('Local lessons:', localLessons);
+        console.log('Published lessons:', publishedLessons);
         console.log('All lessons (local + published):', allLessons);
 
         // Show improved lesson library interface
@@ -1552,10 +1554,13 @@ git push origin main</pre>
             if (isLocal) {
                 // Delete from localStorage only
                 const lessons = this.getCreatedLessons();
+                console.log('Looking for lesson ID:', lessonId);
+                console.log('Available lesson IDs in localStorage:', lessons.map(l => l.id));
                 const lesson = lessons.find(l => l.id === lessonId);
 
                 if (!lesson) {
-                    this.showNotification('Local lesson not found', 'error');
+                    this.showNotification(`Local lesson not found. ID: ${lessonId}`, 'error');
+                    console.error('Lesson not found in localStorage:', lessonId);
                     return;
                 }
 
