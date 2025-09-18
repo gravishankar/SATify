@@ -1418,19 +1418,27 @@ git push origin main</pre>
         document.getElementById('previewPanel').classList.add('hidden');
     }
 
-    showLessonLibrary() {
+    async showLessonLibrary() {
         console.log('Showing lesson library');
-        const lessons = this.getCreatedLessons();
 
-        if (lessons.length === 0) {
-            this.showNotification('No lessons created yet. Create your first lesson!', 'info');
+        // Get localStorage lessons (drafts)
+        const localLessons = this.getCreatedLessons();
+
+        // Get published lessons from manifest
+        const publishedLessons = await this.getPublishedLessons();
+
+        // Merge lessons, prioritizing localStorage versions for editing
+        const allLessons = this.mergeLessonSources(localLessons, publishedLessons);
+
+        if (allLessons.length === 0) {
+            this.showNotification('No lessons found. Create your first lesson!', 'info');
             return;
         }
 
-        console.log('Stored lessons:', lessons);
+        console.log('All lessons (local + published):', allLessons);
 
         // Show improved lesson library interface
-        this.showLessonListInterface(lessons);
+        this.showLessonListInterface(allLessons);
     }
 
     showLessonListInterface(lessons) {
@@ -1467,8 +1475,10 @@ git push origin main</pre>
                         `<div class="lesson-list">
                             ${lessons.map(lesson => {
                                 const isPublished = lesson.status === 'published';
+                                const isLocal = lesson._source === 'local';
                                 const statusColor = isPublished ? '#28a745' : '#ffc107';
                                 const statusIcon = isPublished ? '✅' : '⚠️';
+                                const sourceLabel = isLocal ? '💾 Local Draft' : '🌐 Published';
 
                                 return `
                                     <div class="lesson-item" style="border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 5px; cursor: pointer; transition: background 0.2s;"
@@ -1486,9 +1496,12 @@ git push origin main</pre>
                                                     <span><strong>Slides:</strong> ${lesson.slides?.length || 0} slides</span>
                                                     <span><strong>Created:</strong> ${lesson.created_at ? new Date(lesson.created_at).toLocaleDateString() : 'Unknown'}</span>
                                                 </div>
-                                                <div style="margin-top: 8px;">
+                                                <div style="margin-top: 8px; display: flex; gap: 8px;">
                                                     <span style="background: ${statusColor}; color: white; padding: 2px 8px; border-radius: 12px; font-size: 12px;">
                                                         ${statusIcon} ${lesson.status || 'Draft'}
+                                                    </span>
+                                                    <span style="background: ${isLocal ? '#6c757d' : '#17a2b8'}; color: white; padding: 2px 8px; border-radius: 12px; font-size: 12px;">
+                                                        ${sourceLabel}
                                                     </span>
                                                 </div>
                                             </div>
@@ -1496,8 +1509,8 @@ git push origin main</pre>
                                                 <button class="btn btn-sm btn-primary" onclick="event.stopPropagation(); creatorStudio.editLesson('${lesson.id}')" title="Edit lesson">
                                                     ✏️ Edit
                                                 </button>
-                                                <button class="btn btn-sm btn-danger" onclick="event.stopPropagation(); creatorStudio.deleteLesson('${lesson.id}')" title="Delete lesson">
-                                                    🗑️ Delete
+                                                <button class="btn btn-sm btn-danger" onclick="event.stopPropagation(); creatorStudio.deleteLesson('${lesson.id}', '${lesson._source}')" title="${isLocal ? 'Delete local draft' : 'Remove from repository'}">
+                                                    🗑️ ${isLocal ? 'Delete' : 'Remove'}
                                                 </button>
                                             </div>
                                         </div>
@@ -1527,35 +1540,38 @@ git push origin main</pre>
         };
     }
 
-    async deleteLesson(lessonId) {
-        if (!confirm('Are you sure you want to delete this lesson? This action cannot be undone.')) {
+    async deleteLesson(lessonId, source = 'local') {
+        const isLocal = source === 'local';
+        const actionText = isLocal ? 'delete this local draft' : 'remove this lesson from the repository';
+
+        if (!confirm(`Are you sure you want to ${actionText}? This action cannot be undone.`)) {
             return;
         }
 
         try {
-            // Get the lesson details first
-            const lessons = this.getCreatedLessons();
-            const lesson = lessons.find(l => l.id === lessonId);
+            if (isLocal) {
+                // Delete from localStorage only
+                const lessons = this.getCreatedLessons();
+                const lesson = lessons.find(l => l.id === lessonId);
 
-            if (!lesson) {
-                this.showNotification('Lesson not found', 'error');
+                if (!lesson) {
+                    this.showNotification('Local lesson not found', 'error');
+                    return;
+                }
+
+                const updatedLessons = lessons.filter(l => l.id !== lessonId);
+                localStorage.setItem('creator_studio_lessons', JSON.stringify(updatedLessons));
+
+                this.showNotification('Local draft deleted successfully', 'success');
+            } else {
+                // Remove from published lessons (would need server-side implementation)
+                this.showNotification('Removing published lessons requires manual repository management for now', 'warning');
                 return;
             }
 
-            // Remove from localStorage
-            const updatedLessons = lessons.filter(l => l.id !== lessonId);
-            localStorage.setItem('creator_studio_lessons', JSON.stringify(updatedLessons));
-
-            // If lesson was published, also remove from manifest
-            if (lesson.status === 'published') {
-                await this.removeFromManifest(lesson);
-            }
-
-            this.showNotification(`Lesson "${lesson.title}" deleted successfully`, 'success');
-
-            // Refresh the lesson library modal
+            // Refresh the lesson library
             document.querySelector('.modal-overlay')?.remove();
-            this.showLessonLibraryModal(updatedLessons);
+            await this.showLessonLibrary();
 
         } catch (error) {
             console.error('Error deleting lesson:', error);
@@ -1627,6 +1643,54 @@ git push origin main</pre>
     // Public methods for integration
     getCreatedLessons() {
         return JSON.parse(localStorage.getItem('creator_studio_lessons') || '[]');
+    }
+
+    async getPublishedLessons() {
+        try {
+            const manifestResponse = await fetch(`lessons/manifest.json?v=${Date.now()}`);
+            if (!manifestResponse.ok) {
+                console.warn('Could not load published lessons manifest');
+                return [];
+            }
+
+            const manifest = await manifestResponse.json();
+            const publishedLessons = Object.values(manifest.lessons || {}).map(lesson => ({
+                ...lesson,
+                _source: 'published', // Mark as published lesson
+                _canEdit: true,       // Can be edited (creates new draft)
+                _canDelete: true      // Can be removed from git
+            }));
+
+            return publishedLessons;
+        } catch (error) {
+            console.error('Error loading published lessons:', error);
+            return [];
+        }
+    }
+
+    mergeLessonSources(localLessons, publishedLessons) {
+        const merged = [];
+        const localIds = new Set();
+
+        // Add all local lessons first (drafts have priority for editing)
+        localLessons.forEach(lesson => {
+            merged.push({
+                ...lesson,
+                _source: 'local',
+                _canEdit: true,
+                _canDelete: true
+            });
+            localIds.add(lesson.id);
+        });
+
+        // Add published lessons that don't have local drafts
+        publishedLessons.forEach(lesson => {
+            if (!localIds.has(lesson.id)) {
+                merged.push(lesson);
+            }
+        });
+
+        return merged;
     }
 
     exportLesson(lessonId) {
