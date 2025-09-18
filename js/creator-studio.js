@@ -1351,34 +1351,20 @@ window.publishLessonToGitHub = async function(encodedLessonData) {
     try {
         const lessonData = JSON.parse(atob(encodedLessonData));
 
-        const response = await fetch('/api/create-github-issue', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                title: `Publish Lesson: ${lessonData.title}`,
-                body: `## Creator Studio Lesson Publishing Request
+        // Use direct GitHub URL approach that was working before
+        const issueTitle = `Publish Lesson: ${lessonData.title}`;
+        const repoOwner = 'gravishankar';
+        const repoName = 'sat-practice-pro';
+        const labels = 'creator-studio-lesson,auto-publish';
 
-**Lesson Title:** ${lessonData.title}
-**Domain:** ${lessonData.domain_title} (${lessonData.domain_id})
-**Skill:** ${lessonData.skill_title} (${lessonData.skill_id})
-**Author:** ${lessonData.author}
+        const issueUrl = `https://github.com/${repoOwner}/${repoName}/issues/new?` +
+            `title=${encodeURIComponent(issueTitle)}&` +
+            `labels=${encodeURIComponent(labels)}`;
 
-\`\`\`json
-${JSON.stringify(lessonData, null, 2)}
-\`\`\``,
-                labels: ['creator-studio-lesson', 'auto-publish']
-            })
-        });
+        // Open GitHub issue creation page
+        window.open(issueUrl, '_blank');
 
-        if (response.ok) {
-            const result = await response.json();
-            alert(`✅ Success! GitHub issue created: ${result.html_url}`);
-            window.open(result.html_url, '_blank');
-        } else {
-            throw new Error(`Failed to create issue: ${response.statusText}`);
-        }
+        alert(`✅ Opening GitHub issue creation page! Copy and paste the lesson data from the Creator Studio into the issue description.`);
     } catch (error) {
         console.error('Error publishing lesson:', error);
         alert(`❌ Error: ${error.message}`);
