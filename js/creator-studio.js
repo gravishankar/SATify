@@ -1675,9 +1675,22 @@ git push origin main</pre>
 
     mergeLessonSources(localLessons, publishedLessons) {
         const merged = [];
-        const localIds = new Set();
+        const localIds = new Set(localLessons.map(l => l.id));
 
-        // Add all local lessons first (drafts have priority for editing)
+        // Add all published lessons first (they are the source of truth)
+        publishedLessons.forEach(lesson => {
+            if (!localIds.has(lesson.id)) {
+                // No local draft exists, show as published
+                merged.push({
+                    ...lesson,
+                    _source: 'published',
+                    _canEdit: true,
+                    _canDelete: true
+                });
+            }
+        });
+
+        // Add local lessons (drafts or modified versions of published lessons)
         localLessons.forEach(lesson => {
             merged.push({
                 ...lesson,
@@ -1685,14 +1698,6 @@ git push origin main</pre>
                 _canEdit: true,
                 _canDelete: true
             });
-            localIds.add(lesson.id);
-        });
-
-        // Add published lessons that don't have local drafts
-        publishedLessons.forEach(lesson => {
-            if (!localIds.has(lesson.id)) {
-                merged.push(lesson);
-            }
         });
 
         return merged;
