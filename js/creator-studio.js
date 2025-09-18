@@ -1022,29 +1022,8 @@ class CreatorStudio {
         try {
             console.log('Publishing lesson via GitHub Actions...');
 
-            // Try server-side API first (if available)
-            try {
-                const response = await fetch('/api/commit-lesson', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        message: message,
-                        lessonData: lessonData,
-                        filepath: filepath,
-                        manifest: updatedManifest
-                    })
-                });
-
-                if (response.ok) {
-                    const result = await response.json();
-                    console.log('Server-side GitHub commit successful:', result);
-                    return result;
-                }
-            } catch (serverError) {
-                console.log('Server API not available, using GitHub Actions approach...');
-            }
+            // Skip server API for GitHub Pages deployment
+            console.log('Using GitHub Actions approach for static deployment...');
 
             // Fallback to GitHub Actions approach
             await this.publishViaGitHubActions(message, lessonData, filepath, updatedManifest);
