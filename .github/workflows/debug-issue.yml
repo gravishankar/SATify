@@ -66,15 +66,12 @@ jobs:
             }
           }
 
-          const body = `🔍 **Debug Results**
-
-**Labels detected:** ${labels}
-**JSON block found:** ${hasJson ? '✅ Yes' : '❌ No'}
-**Manifest block found:** ${hasManifest ? '✅ Yes' : '❌ No'}
-
-${hasJson ? `**Extracted lesson title:** ${lessonTitle}` : '**Issue:** No JSON block detected in issue body'}
-
-This debug workflow ran successfully. If you see this comment, the workflow trigger is working.`;
+          const body = '🔍 **Debug Results**\n\n' +
+            '**Labels detected:** ' + labels + '\n' +
+            '**JSON block found:** ' + (hasJson ? '✅ Yes' : '❌ No') + '\n' +
+            '**Manifest block found:** ' + (hasManifest ? '✅ Yes' : '❌ No') + '\n\n' +
+            (hasJson ? '**Extracted lesson title:** ' + lessonTitle : '**Issue:** No JSON block detected in issue body') + '\n\n' +
+            'This debug workflow ran successfully. If you see this comment, the workflow trigger is working.';
 
           await github.rest.issues.createComment({
             issue_number: context.issue.number,
