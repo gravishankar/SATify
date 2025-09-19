@@ -416,37 +416,84 @@ class LearnPage {
     }
 
     goToPractice() {
-        console.log('Navigating to Words in Context practice...');
+        console.log('Navigating to skill practice...');
+
+        // Get skill code for current lesson
+        const skillCode = this.getSkillCodeFromLesson();
 
         // Track lesson completion
         if (this.app && this.app.analytics) {
             this.app.analytics.trackEvent('lesson_completed', {
-                skill: 'craft-and-structure',
+                skill: skillCode || 'unknown',
                 slides_completed: this.totalSlides,
                 timestamp: new Date().toISOString()
             });
         }
 
-        // Navigate to Words in Context practice and start session
+        // Navigate to skill practice
         if (this.app && this.app.navigateTo) {
-            this.app.navigateTo('words-in-context');
+            this.app.navigateTo('skill-practice');
         } else {
             // Fallback navigation
-            const wordsInContextLink = document.querySelector('[data-page="words-in-context"]');
-            if (wordsInContextLink) {
-                wordsInContextLink.click();
+            const skillPracticeLink = document.querySelector('[data-page="skill-practice"]');
+            if (skillPracticeLink) {
+                skillPracticeLink.click();
             }
         }
 
-        // Start practice session after navigation
-        setTimeout(() => {
-            if (this.app && this.app.wordsInContextPractice) {
-                this.app.wordsInContextPractice.startPracticeSession();
-            }
-        }, 100);
+        // Start skill practice session after navigation
+        if (skillCode) {
+            setTimeout(() => {
+                if (window.skillPracticeUI) {
+                    window.skillPracticeUI.startSkillPractice(skillCode);
+                }
+            }, 100);
+        }
 
         // Show a success message
         this.showCompletionToast();
+    }
+
+    getSkillCodeFromLesson() {
+        if (!this.currentLessonData) return null;
+
+        // Create reverse mapping from lesson to skill codes
+        const lessonToSkillMapping = {
+            'central-ideas': 'CID',
+            'command-of-evidence': 'COE',
+            'inferences': 'INF',
+            'rhetorical-synthesis': 'SYN',
+            'transitions': 'TRA',
+            'words-in-context': 'WIC',
+            'text-structure-and-purpose': 'TSP',
+            'cross-text-connections': 'CTC',
+            'boundaries': 'BOU',
+            'form-structure-and-sense': 'FSS'
+        };
+
+        // Try to match lesson title, skill_id, or other identifiers
+        const lesson = this.currentLessonData;
+
+        // First try matching by title keywords
+        const titleLower = lesson.title?.toLowerCase() || '';
+        if (titleLower.includes('central ideas') || titleLower.includes('main idea')) return 'CID';
+        if (titleLower.includes('evidence') || titleLower.includes('command')) return 'COE';
+        if (titleLower.includes('inference') || titleLower.includes('infer')) return 'INF';
+        if (titleLower.includes('synthesis') || titleLower.includes('rhetorical')) return 'SYN';
+        if (titleLower.includes('transition')) return 'TRA';
+        if (titleLower.includes('words in context') || titleLower.includes('vocabulary')) return 'WIC';
+        if (titleLower.includes('text structure') || titleLower.includes('purpose')) return 'TSP';
+        if (titleLower.includes('cross-text') || titleLower.includes('connection')) return 'CTC';
+        if (titleLower.includes('boundaries') || titleLower.includes('punctuation')) return 'BOU';
+        if (titleLower.includes('form') || titleLower.includes('structure') || titleLower.includes('sense')) return 'FSS';
+
+        // Fallback: try matching by domain for a general practice
+        if (lesson.domain_id === 'information_and_ideas') return 'CID';
+        if (lesson.domain_id === 'expression_of_ideas') return 'SYN';
+        if (lesson.domain_id === 'craft_and_structure') return 'WIC';
+        if (lesson.domain_id === 'standard_english_conventions') return 'BOU';
+
+        return null;
     }
 
     showCompletionToast() {
@@ -844,6 +891,9 @@ class LearnPage {
     }
 
     renderCreatorStudioLesson(lessonData) {
+        // Store current lesson data for practice navigation
+        this.currentLessonData = lessonData;
+
         // Convert Creator Studio lesson format to slides
         const slidesHTML = lessonData.slides.map((slide, index) => {
             const isActive = index === 0 ? 'active' : '';

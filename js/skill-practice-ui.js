@@ -535,7 +535,18 @@ class SkillPracticeUI {
     getSessionDisplayName() {
         const session = this.currentSession;
         if (session.practiceType === 'skill') {
-            return session.skillInfo?.skillTitle || 'Skill Practice';
+            // First try the session's skillInfo
+            if (session.skillInfo?.skillTitle) {
+                return session.skillInfo.skillTitle;
+            }
+
+            // Fallback: get skill info directly from manager config
+            const skillConfig = this.manager?.config?.skillPracticeConfig?.skillMappings?.[session.targetId];
+            if (skillConfig?.skillTitle) {
+                return skillConfig.skillTitle;
+            }
+
+            return 'Skill Practice';
         } else {
             return session.domainInfo?.title || 'Topic Practice';
         }
