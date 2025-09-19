@@ -1,0 +1,126 @@
+{
+  "id": "information_and_ideas_command_of_evidence_evidence",
+  "domain_id": "information_and_ideas",
+  "domain_title": "Information and Ideas",
+  "skill_id": "command_of_evidence",
+  "skill_title": "Command of Evidence",
+  "title": "Citing Textual Evidence",
+  "learning_objectives": [
+    "Select the best evidence to support an answer",
+    "Link reasoning to specific lines",
+    "Eliminate evidence choices that are true but irrelevant",
+    "Anticipate evidence before looking at options"
+  ],
+  "slides": [
+    {
+      "id": "whats-tested",
+      "type": "introduction",
+      "title": "What's Tested",
+      "icon": "🎯",
+      "content": {
+        "title": "Evidence Questions",
+        "subtitle": "Line references matter",
+        "points": [
+          "Identify text evidence that supports a claim",
+          "Link main idea answers with best supporting lines",
+          "Anticipate evidence before looking at choices"
+        ]
+      }
+    },
+    {
+      "id": "what-makes-tricky",
+      "type": "concept",
+      "title": "Why It’s Tricky",
+      "icon": "⚠️",
+      "content": {
+        "title": "Classic Traps",
+        "explanation": "Some evidence lines are true but don’t support the specific claim.",
+        "example": "Main Q: Why is the project effective? Trap evidence: 'The project was costly.' True, but irrelevant."
+      },
+      "trap_alerts": [
+        "Evidence true but irrelevant",
+        "Evidence partially related",
+        "Evidence repeats background detail"
+      ]
+    },
+    {
+      "id": "strategy-steps",
+      "type": "strategy",
+      "title": "4-Step Strategy",
+      "icon": "📋",
+      "content": {
+        "title": "Evidence Mastery",
+        "steps": [
+          "Step 1: Answer the main question first.",
+          "Step 2: Predict what kind of evidence supports it.",
+          "Step 3: Test each line reference: does it PROVE your answer?",
+          "Step 4: Eliminate lines that are true but off-topic."
+        ]
+      }
+    },
+    {
+      "id": "example-question",
+      "type": "practice",
+      "title": "Example Question",
+      "icon": "❓",
+      "content": {
+        "title": "Apply the Strategy",
+        "question": "Which choice provides the best evidence for the answer to the previous question?",
+        "choices": [
+          "Lines 5–7: describing the author’s background",
+          "Lines 12–14: explaining the method’s success",
+          "Lines 20–22: listing unrelated statistics",
+          "Lines 25–27: noting a challenge not central to the claim"
+        ],
+        "correct_answer": 1,
+        "explanation": "Only Lines 12–14 directly support the success of the method. Others are irrelevant or background."
+      },
+      "trap_alerts": [
+        "Background info (author’s bio)",
+        "Irrelevant stats",
+        "Minor challenges"
+      ]
+    },
+    {
+      "id": "walkthrough",
+      "type": "walkthrough",
+      "title": "Step-by-Step Solution",
+      "icon": "💡",
+      "content": {
+        "title": "Solution Walkthrough",
+        "solution_steps": [
+          "Main Q answer: method worked.",
+          "Predict evidence = lines showing success.",
+          "Check choice 1: irrelevant bio.",
+          "Check 2: success lines → correct.",
+          "Check 3: unrelated stats.",
+          "Check 4: side note only.",
+          "Correct: B (Lines 12–14)."
+        ]
+      }
+    },
+    {
+      "id": "wrap-up",
+      "type": "summary",
+      "title": "Key Takeaways",
+      "icon": "🎉",
+      "content": {
+        "title": "Evidence Wins",
+        "summary": "Evidence Qs are about precision: the line must directly prove the answer.",
+        "key_points": [
+          "Answer main Q first.",
+          "Predict evidence.",
+          "Avoid 'true but irrelevant' lines."
+        ],
+        "next_steps": "Practice with linked question sets to build speed."
+      }
+    }
+  ],
+  "created_at": "2025-09-19T01:52:48.000Z",
+  "status": "published",
+  "author": "expert_coach",
+  "updated_at": "2025-09-19T01:52:48.000Z",
+  "published_at": "2025-09-19T01:52:48.000Z",
+  "version": "1.0",
+  "format_version": "creator_studio_v1"
+}

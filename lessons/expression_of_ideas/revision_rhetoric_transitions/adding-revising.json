@@ -1,0 +1,128 @@
+{
+  "id": "expression_of_ideas_revision_rhetoric_transitions_adding-revising",
+  "domain_id": "expression_of_ideas",
+  "domain_title": "Expression of Ideas",
+  "skill_id": "revision_rhetoric_transitions",
+  "skill_title": "Revision, Rhetoric, and Transitions",
+  "title": "Choosing Details for Rhetorical Goals",
+  "learning_objectives": [
+    "Decide when to add, revise, or delete details",
+    "Match details to the author’s purpose",
+    "Eliminate irrelevant or redundant additions",
+    "Avoid traps that add true but off-topic details"
+  ],
+  "slides": [
+    {
+      "id": "whats-tested",
+      "type": "introduction",
+      "title": "What's Tested",
+      "icon": "🎯",
+      "content": {
+        "title": "Adding/Revising/Deleting",
+        "subtitle": "Author’s purpose is key",
+        "points": [
+          "Add only if it supports the author’s goal",
+          "Revise for clarity and relevance",
+          "Delete if redundant or irrelevant"
+        ]
+      }
+    },
+    {
+      "id": "what-makes-tricky",
+      "type": "concept",
+      "title": "Why It’s Tricky",
+      "icon": "⚠️",
+      "content": {
+        "title": "Common Pitfalls",
+        "explanation": "Trap answers suggest adding details that are true but irrelevant, or keeping redundant info.",
+        "example": "Passage about climate policy. Trap: add detail about author’s personal life."
+      },
+      "trap_alerts": [
+        "True but irrelevant",
+        "Redundant detail",
+        "Distracting addition"
+      ]
+    },
+    {
+      "id": "strategy-steps",
+      "type": "strategy",
+      "title": "Erica-Style Strategy",
+      "icon": "📋",
+      "content": {
+        "title": "3-Step Process",
+        "steps": [
+          "Step 1: Ask, 'Does this serve the author’s goal?'",
+          "Step 2: If irrelevant or redundant → delete.",
+          "Step 3: Only add if it directly strengthens argument."
+        ]
+      },
+      "trap_alerts": [
+        "Irrelevant addition",
+        "Keeping redundancy",
+        "Adding trivia"
+      ]
+    },
+    {
+      "id": "example-question",
+      "type": "practice",
+      "title": "Example Question",
+      "icon": "❓",
+      "content": {
+        "title": "Apply the Strategy",
+        "question": "Should the following sentence be added? 'The author once lived near a forest.' (Passage about renewable energy policy)",
+        "choices": [
+          "Yes, because it adds relevant personal context.",
+          "Yes, because it shows the author’s life experience.",
+          "No, because it distracts from the main argument.",
+          "No, because it is redundant with earlier points."
+        ],
+        "correct_answer": 2,
+        "explanation": "Sentence is irrelevant to renewable energy policy. Correct answer = No, distracts."
+      },
+      "trap_alerts": [
+        "A: Pretends relevance",
+        "B: Author biography trap",
+        "D: Redundancy (not true here)"
+      ]
+    },
+    {
+      "id": "walkthrough",
+      "type": "walkthrough",
+      "title": "Step-by-Step Solution",
+      "icon": "💡",
+      "content": {
+        "title": "Solution Walkthrough",
+        "solution_steps": [
+          "Sentence about forest unrelated to energy policy.",
+          "Predict = irrelevant detail → delete.",
+          "Check C: matches → correct.",
+          "Others misstate purpose.",
+          "Correct: C."
+        ]
+      }
+    },
+    {
+      "id": "wrap-up",
+      "type": "summary",
+      "title": "Key Takeaways",
+      "icon": "🎉",
+      "content": {
+        "title": "Detail Mastery",
+        "summary": "Add, revise, delete only if relevant to purpose.",
+        "key_points": [
+          "Irrelevant = delete.",
+          "Redundancy = delete.",
+          "Add only if directly strengthens argument."
+        ],
+        "next_steps": "Practice add/delete drills to sharpen instincts."
+      }
+    }
+  ],
+  "created_at": "2025-09-19T02:06:18.000Z",
+  "status": "published",
+  "author": "expert_coach",
+  "updated_at": "2025-09-19T02:06:18.000Z",
+  "published_at": "2025-09-19T02:06:18.000Z",
+  "version": "1.0",
+  "format_version": "creator_studio_v1"
+}

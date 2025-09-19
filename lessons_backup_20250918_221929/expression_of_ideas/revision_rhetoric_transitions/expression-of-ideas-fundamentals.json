@@ -1,0 +1,118 @@
+{
+  "id": "expression_of_ideas_fundamentals",
+  "domain_id": "expression_of_ideas",
+  "domain_title": "Expression of Ideas",
+  "skill_id": "revision_rhetoric_transitions",
+  "skill_title": "Revision, Rhetoric, and Transitions",
+  "title": "Expression of Ideas Fundamentals",
+  "learning_objectives": [
+    "Revise text for clarity, concision, and effectiveness",
+    "Choose transitions that guide logical flow",
+    "Match rhetorical purpose with content changes",
+    "Spot and avoid common trap distractors"
+  ],
+  "slides": [
+    {
+      "id": "whats-tested",
+      "type": "introduction",
+      "title": "What's Tested",
+      "icon": "\ud83c\udfaf",
+      "content": {
+        "title": "Expression of Ideas",
+        "subtitle": "Editing for effectiveness",
+        "points": [
+          "Improving clarity and precision",
+          "Selecting best transitions",
+          "Maintaining logical flow",
+          "Choosing details that achieve purpose"
+        ]
+      }
+    },
+    {
+      "id": "what-makes-tricky",
+      "type": "concept",
+      "title": "What Makes This Tricky",
+      "icon": "\u26a0\ufe0f",
+      "content": {
+        "title": "Common Pitfalls",
+        "explanation": "Trap choices often add irrelevant but true details, or transitions that sound smooth but don\u2019t fit the logic.",
+        "example": "Using 'however' when the sentence actually continues the idea, not contrasts."
+      }
+    },
+    {
+      "id": "strategy-steps",
+      "type": "strategy",
+      "title": "Strategy Steps",
+      "icon": "\ud83d\udccb",
+      "content": {
+        "title": "4-Step Approach",
+        "steps": [
+          "Step 1: Identify the sentence\u2019s role in the paragraph.",
+          "Step 2: Ask what the author is trying to achieve rhetorically.",
+          "Step 3: Eliminate choices that are true but irrelevant or redundant.",
+          "Step 4: Confirm the transition/detail creates logical flow."
+        ]
+      }
+    },
+    {
+      "id": "example-question",
+      "type": "practice",
+      "title": "Example Question",
+      "icon": "\u2753",
+      "content": {
+        "title": "Apply the Strategy",
+        "question": "Which transition most effectively connects the sentences? 'The new park was designed with eco-friendly materials. ________, it has quickly become a community favorite.'",
+        "choices": [
+          "However",
+          "Therefore",
+          "Meanwhile",
+          "In contrast"
+        ],
+        "correct_answer": 1,
+        "explanation": "'Therefore' correctly shows cause-effect: eco-friendly design \u2192 popularity. 'However' and 'In contrast' suggest opposition; 'Meanwhile' suggests time shift, not causation."
+      }
+    },
+    {
+      "id": "walkthrough",
+      "type": "walkthrough",
+      "title": "Step-by-Step Solution",
+      "icon": "\ud83d\udca1",
+      "content": {
+        "title": "Solution Walkthrough",
+        "solution_steps": [
+          "Sentence 1: eco-friendly design.",
+          "Sentence 2: community favorite \u2192 result.",
+          "Predict: need cause-effect connector.",
+          "Check A: 'However' = wrong logic.",
+          "Check B: 'Therefore' fits cause-effect.",
+          "Check C: 'Meanwhile' = unrelated time link.",
+          "Check D: 'In contrast' = wrong logic.",
+          "Correct: B."
+        ]
+      }
+    },
+    {
+      "id": "wrap-up",
+      "type": "summary",
+      "title": "Great Job!",
+      "icon": "\ud83c\udf89",
+      "content": {
+        "title": "Key Takeaways",
+        "summary": "Expression of Ideas questions measure how well you edit for clarity and rhetoric.",
+        "key_points": [
+          "Every change must serve the author\u2019s goal.",
+          "Transitions test logic, not just smoothness.",
+          "Eliminate choices that add info but don\u2019t fit the purpose."
+        ],
+        "next_steps": "Practice with editing full paragraphs to strengthen skills."
+      }
+    }
+  ],
+  "created_at": "2025-09-19T00:10:26.000Z",
+  "status": "published",
+  "author": "instructor",
+  "updated_at": "2025-09-19T00:10:26.000Z",
+  "published_at": "2025-09-19T00:10:26.000Z",
+  "version": "1.0",
+  "format_version": "creator_studio_v1"
+}

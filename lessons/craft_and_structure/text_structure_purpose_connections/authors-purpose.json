@@ -1,0 +1,125 @@
+{
+  "id": "craft_and_structure_text_structure_purpose_connections_authors-purpose",
+  "domain_id": "craft_and_structure",
+  "domain_title": "Craft and Structure",
+  "skill_id": "text_structure_purpose_connections",
+  "skill_title": "Text Structure, Purpose, and Connections",
+  "title": "Identifying Author’s Purpose",
+  "learning_objectives": [
+    "Determine why the author included a detail or paragraph",
+    "Identify author’s tone and perspective",
+    "Distinguish between purpose and opinion",
+    "Avoid traps that state plausible but unsupported purposes"
+  ],
+  "slides": [
+    {
+      "id": "whats-tested",
+      "type": "introduction",
+      "title": "What's Tested",
+      "icon": "🎯",
+      "content": {
+        "title": "Author’s Purpose",
+        "subtitle": "Why did the author include this?",
+        "points": [
+          "Identify rhetorical function of sentences/paragraphs",
+          "Understand author’s tone and stance",
+          "Differentiate purpose from content"
+        ]
+      }
+    },
+    {
+      "id": "what-makes-tricky",
+      "type": "concept",
+      "title": "Why It’s Tricky",
+      "icon": "⚠️",
+      "content": {
+        "title": "Common Pitfalls",
+        "explanation": "Trap answers suggest purposes that are too broad, too narrow, or irrelevant.",
+        "example": "Passage: 'The author cites data to challenge critics.' Trap: 'The author cites data to summarize key points.'"
+      },
+      "trap_alerts": [
+        "Too broad purpose",
+        "Too narrow",
+        "Irrelevant intention"
+      ]
+    },
+    {
+      "id": "strategy-steps",
+      "type": "strategy",
+      "title": "3-Step Strategy",
+      "icon": "📋",
+      "content": {
+        "title": "Purpose Strategy",
+        "steps": [
+          "Step 1: Ask 'Why is this here?'",
+          "Step 2: Predict purpose in plain English.",
+          "Step 3: Eliminate answers that could be true but don’t match intent."
+        ]
+      }
+    },
+    {
+      "id": "example-question",
+      "type": "practice",
+      "title": "Example Question",
+      "icon": "❓",
+      "content": {
+        "title": "Apply the Strategy",
+        "question": "The author includes the statistic in line 25 primarily to:",
+        "choices": [
+          "Challenge the validity of opposing views",
+          "Provide background information",
+          "Summarize earlier arguments",
+          "Introduce a new research topic"
+        ],
+        "correct_answer": 0,
+        "explanation": "Statistic is used as evidence against critics. Correct = challenge opposing views."
+      },
+      "trap_alerts": [
+        "Background info (not intent)",
+        "Summarizing (wrong role)",
+        "Topic shift (not purpose)"
+      ]
+    },
+    {
+      "id": "walkthrough",
+      "type": "walkthrough",
+      "title": "Step-by-Step Solution",
+      "icon": "💡",
+      "content": {
+        "title": "Solution Walkthrough",
+        "solution_steps": [
+          "Stat used to disprove critics.",
+          "Predict = counter opposing view.",
+          "Check A: matches.",
+          "Check B: background only, wrong.",
+          "Check C: summarize = incorrect.",
+          "Check D: unrelated shift.",
+          "Correct: A."
+        ]
+      }
+    },
+    {
+      "id": "wrap-up",
+      "type": "summary",
+      "title": "Key Takeaways",
+      "icon": "🎉",
+      "content": {
+        "title": "Purpose Mastery",
+        "summary": "Purpose = why included, not what content says.",
+        "key_points": [
+          "Predict before choices.",
+          "Match intent, not just words.",
+          "Beware 'true but irrelevant' traps."
+        ],
+        "next_steps": "Practice rhetorical function sets for mastery."
+      }
+    }
+  ],
+  "created_at": "2025-09-19T01:56:44.000Z",
+  "status": "published",
+  "author": "expert_coach",
+  "updated_at": "2025-09-19T01:56:44.000Z",
+  "published_at": "2025-09-19T01:56:44.000Z",
+  "version": "1.0",
+  "format_version": "creator_studio_v1"
+}

@@ -1,0 +1,123 @@
+{
+  "id": "information_and_ideas_comprehension_analysis_reasoning_data-interpretation",
+  "domain_id": "information_and_ideas",
+  "domain_title": "Information and Ideas",
+  "skill_id": "comprehension_analysis_reasoning",
+  "skill_title": "Comprehension, Analysis, and Reasoning",
+  "title": "Working with Charts and Graphs",
+  "learning_objectives": [
+    "Interpret data in charts, graphs, and tables",
+    "Connect visuals to passage claims",
+    "Eliminate answer choices that misread trends",
+    "Avoid traps with misinterpreted data"
+  ],
+  "slides": [
+    {
+      "id": "whats-tested",
+      "type": "introduction",
+      "title": "What's Tested",
+      "icon": "🎯",
+      "content": {
+        "title": "Data Interpretation",
+        "subtitle": "Visual literacy",
+        "points": [
+          "Read titles, labels, and units carefully",
+          "Identify trends (increase/decrease, compare groups)",
+          "Match visuals with text claims"
+        ]
+      }
+    },
+    {
+      "id": "what-makes-tricky",
+      "type": "concept",
+      "title": "Why It’s Tricky",
+      "icon": "⚠️",
+      "content": {
+        "title": "Classic Traps",
+        "explanation": "Wrong answers often misstate direction of trend or confuse categories.",
+        "example": "Graph shows increase → trap says 'decrease.'"
+      },
+      "trap_alerts": [
+        "Trend reversal",
+        "Category confusion",
+        "Ignoring units/scale"
+      ]
+    },
+    {
+      "id": "strategy-steps",
+      "type": "strategy",
+      "title": "3-Step Strategy",
+      "icon": "📋",
+      "content": {
+        "title": "Visual Strategy",
+        "steps": [
+          "Step 1: Read title + axis labels FIRST.",
+          "Step 2: Summarize the main trend before choices.",
+          "Step 3: Eliminate traps that reverse or distort data."
+        ]
+      }
+    },
+    {
+      "id": "example-question",
+      "type": "practice",
+      "title": "Example Question",
+      "icon": "❓",
+      "content": {
+        "title": "Apply the Strategy",
+        "question": "According to the chart, between 2010 and 2020, crop yields:",
+        "choices": [
+          "Increased steadily",
+          "Decreased steadily",
+          "Remained unchanged",
+          "Fluctuated unpredictably"
+        ],
+        "correct_answer": 0,
+        "explanation": "Chart shows consistent upward trend. Only A matches. Others distort trend."
+      },
+      "trap_alerts": [
+        "Reversing trend",
+        "Exaggerating fluctuations",
+        "Ignoring data"
+      ]
+    },
+    {
+      "id": "walkthrough",
+      "type": "walkthrough",
+      "title": "Step-by-Step Solution",
+      "icon": "💡",
+      "content": {
+        "title": "Solution Walkthrough",
+        "solution_steps": [
+          "Check title: crop yields 2010–2020.",
+          "Y-axis: yields upward trend.",
+          "Predict: steady increase.",
+          "Check choices → A matches, others distort.",
+          "Correct: A."
+        ]
+      }
+    },
+    {
+      "id": "wrap-up",
+      "type": "summary",
+      "title": "Key Takeaways",
+      "icon": "🎉",
+      "content": {
+        "title": "Mastering Data",
+        "summary": "Charts/graphs test careful reading, not math.",
+        "key_points": [
+          "Always read labels/units.",
+          "Summarize trend before choices.",
+          "Beware traps reversing or distorting data."
+        ],
+        "next_steps": "Practice with passage + graph combos for speed."
+      }
+    }
+  ],
+  "created_at": "2025-09-19T01:52:48.000Z",
+  "status": "published",
+  "author": "expert_coach",
+  "updated_at": "2025-09-19T01:52:48.000Z",
+  "published_at": "2025-09-19T01:52:48.000Z",
+  "version": "1.0",
+  "format_version": "creator_studio_v1"
+}

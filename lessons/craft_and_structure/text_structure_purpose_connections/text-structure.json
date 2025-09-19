@@ -1,0 +1,124 @@
+{
+  "id": "craft_and_structure_text_structure_purpose_connections_text-structure",
+  "domain_id": "craft_and_structure",
+  "domain_title": "Craft and Structure",
+  "skill_id": "text_structure_purpose_connections",
+  "skill_title": "Text Structure, Purpose, and Connections",
+  "title": "Analyzing Text Structure",
+  "learning_objectives": [
+    "Understand how parts of a passage relate to the whole",
+    "Identify cause/effect, compare/contrast, and sequencing",
+    "Recognize how structure shapes meaning",
+    "Avoid traps that mislabel relationships"
+  ],
+  "slides": [
+    {
+      "id": "whats-tested",
+      "type": "introduction",
+      "title": "What's Tested",
+      "icon": "🎯",
+      "content": {
+        "title": "Text Structure",
+        "subtitle": "Relationships matter",
+        "points": [
+          "Recognize how a paragraph/line functions in the whole passage",
+          "Identify signal words for cause/effect, contrast, addition",
+          "Match structure to author’s goal"
+        ]
+      }
+    },
+    {
+      "id": "what-makes-tricky",
+      "type": "concept",
+      "title": "Why It’s Tricky",
+      "icon": "⚠️",
+      "content": {
+        "title": "Common Pitfalls",
+        "explanation": "Trap answers confuse contrast with cause/effect, or exaggerate function.",
+        "example": "Sentence shows 'however' (contrast) → trap says it gives an 'example'."
+      },
+      "trap_alerts": [
+        "Wrong relationship (contrast vs. cause)",
+        "Exaggerated purpose",
+        "Misreading transition words"
+      ]
+    },
+    {
+      "id": "strategy-steps",
+      "type": "strategy",
+      "title": "4-Step Strategy",
+      "icon": "📋",
+      "content": {
+        "title": "Structure Mastery",
+        "steps": [
+          "Step 1: Identify signal words (while, but, therefore, for example).",
+          "Step 2: Ask how this piece supports or opposes the main idea.",
+          "Step 3: Predict role before looking at answers.",
+          "Step 4: Eliminate answers that misstate relationship."
+        ]
+      }
+    },
+    {
+      "id": "example-question",
+      "type": "practice",
+      "title": "Example Question",
+      "icon": "❓",
+      "content": {
+        "title": "Apply the Strategy",
+        "question": "The function of the third paragraph is to:",
+        "choices": [
+          "Contrast earlier claims with new evidence",
+          "Summarize the main argument",
+          "Provide unrelated background",
+          "Introduce a counterexample"
+        ],
+        "correct_answer": 0,
+        "explanation": "Paragraph begins with 'However' and presents opposing evidence. Correct answer = contrast."
+      },
+      "trap_alerts": [
+        "Background info (irrelevant)",
+        "Overgeneralizing summary",
+        "Mislabeling evidence as counterexample"
+      ]
+    },
+    {
+      "id": "walkthrough",
+      "type": "walkthrough",
+      "title": "Step-by-Step Solution",
+      "icon": "💡",
+      "content": {
+        "title": "Solution Walkthrough",
+        "solution_steps": [
+          "Paragraph starts 'However' → signal of contrast.",
+          "Content = opposing evidence.",
+          "Predict = contrast earlier claim.",
+          "Check A: matches perfectly → correct.",
+          "Others distort or mislabel."
+        ]
+      }
+    },
+    {
+      "id": "wrap-up",
+      "type": "summary",
+      "title": "Key Takeaways",
+      "icon": "🎉",
+      "content": {
+        "title": "Text Structure Mastery",
+        "summary": "Structure questions ask how a part fits the whole.",
+        "key_points": [
+          "Spot signal words.",
+          "Predict role first.",
+          "Beware traps mislabeling contrast/example."
+        ],
+        "next_steps": "Practice function questions in paired passages."
+      }
+    }
+  ],
+  "created_at": "2025-09-19T01:56:44.000Z",
+  "status": "published",
+  "author": "expert_coach",
+  "updated_at": "2025-09-19T01:56:44.000Z",
+  "published_at": "2025-09-19T01:56:44.000Z",
+  "version": "1.0",
+  "format_version": "creator_studio_v1"
+}

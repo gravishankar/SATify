@@ -1,0 +1,128 @@
+{
+  "id": "standard_english_conventions_grammar_usage_punctuation_verb-tense",
+  "domain_id": "standard_english_conventions",
+  "domain_title": "Standard English Conventions",
+  "skill_id": "grammar_usage_punctuation",
+  "skill_title": "Grammar, Usage, and Punctuation",
+  "title": "Consistent and Correct Verbs",
+  "learning_objectives": [
+    "Ensure verbs agree with subjects",
+    "Maintain consistent tense",
+    "Spot shifts in number or tense",
+    "Avoid traps that sound natural in speech but break grammar"
+  ],
+  "slides": [
+    {
+      "id": "whats-tested",
+      "type": "introduction",
+      "title": "What's Tested",
+      "icon": "🎯",
+      "content": {
+        "title": "Verb Tense & Agreement",
+        "subtitle": "Subject-verb agreement and tense",
+        "points": [
+          "Match verbs with subjects",
+          "Keep consistent tense",
+          "Check tricky plural/singular subjects"
+        ]
+      }
+    },
+    {
+      "id": "what-makes-tricky",
+      "type": "concept",
+      "title": "Why It’s Tricky",
+      "icon": "⚠️",
+      "content": {
+        "title": "Common Pitfalls",
+        "explanation": "SAT loves tricky singular/plural subjects and shifts in tense.",
+        "example": "Trap: 'The team of players are winning.' Correct: 'The team of players is winning.'"
+      },
+      "trap_alerts": [
+        "Singular/plural mismatch",
+        "Tense shift",
+        "Collective noun confusion"
+      ]
+    },
+    {
+      "id": "strategy-steps",
+      "type": "strategy",
+      "title": "Erica-Style Strategy",
+      "icon": "📋",
+      "content": {
+        "title": "3-Step Process",
+        "steps": [
+          "Step 1: Identify the subject (ignore prepositional phrases).",
+          "Step 2: Match verb number and tense.",
+          "Step 3: Eliminate traps that 'sound right' but disagree."
+        ]
+      },
+      "trap_alerts": [
+        "Plural noun near verb misleads",
+        "Tense change mid-sentence",
+        "Collective noun error"
+      ]
+    },
+    {
+      "id": "example-question",
+      "type": "practice",
+      "title": "Example Question",
+      "icon": "❓",
+      "content": {
+        "title": "Apply the Strategy",
+        "question": "Which choice is correct? 'The list of items ____ on the desk.'",
+        "choices": [
+          "are",
+          "is",
+          "were",
+          "have been"
+        ],
+        "correct_answer": 1,
+        "explanation": "Subject = 'list' (singular). Correct verb = 'is'."
+      },
+      "trap_alerts": [
+        "A: Plural verb trap",
+        "C: Wrong tense",
+        "D: Wrong number + tense"
+      ]
+    },
+    {
+      "id": "walkthrough",
+      "type": "walkthrough",
+      "title": "Step-by-Step Solution",
+      "icon": "💡",
+      "content": {
+        "title": "Solution Walkthrough",
+        "solution_steps": [
+          "Subject = 'list' (singular).",
+          "Ignore 'of items'.",
+          "Match = singular verb 'is'.",
+          "Other options mismatch number/tense.",
+          "Correct: B."
+        ]
+      }
+    },
+    {
+      "id": "wrap-up",
+      "type": "summary",
+      "title": "Key Takeaways",
+      "icon": "🎉",
+      "content": {
+        "title": "Verb Mastery",
+        "summary": "Always align subject and verb.",
+        "key_points": [
+          "Ignore prepositional phrases.",
+          "Maintain tense consistency.",
+          "Check collective nouns carefully."
+        ],
+        "next_steps": "Practice with tricky subject-verb pairs."
+      }
+    }
+  ],
+  "created_at": "2025-09-19T02:07:26.000Z",
+  "status": "published",
+  "author": "expert_coach",
+  "updated_at": "2025-09-19T02:07:26.000Z",
+  "published_at": "2025-09-19T02:07:26.000Z",
+  "version": "1.0",
+  "format_version": "creator_studio_v1"
+}

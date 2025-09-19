@@ -1,0 +1,123 @@
+{
+  "id": "information_and_ideas_central_ideas_and_details_details",
+  "domain_id": "information_and_ideas",
+  "domain_title": "Information and Ideas",
+  "skill_id": "central_ideas_and_details",
+  "skill_title": "Central Ideas and Details",
+  "title": "Finding and Interpreting Details",
+  "learning_objectives": [
+    "Locate specific details in a passage",
+    "Differentiate relevant vs. irrelevant information",
+    "Recognize paraphrased evidence",
+    "Avoid detail traps with extreme or distorted wording"
+  ],
+  "slides": [
+    {
+      "id": "whats-tested",
+      "type": "introduction",
+      "title": "What's Tested",
+      "icon": "🎯",
+      "content": {
+        "title": "Supporting Details",
+        "subtitle": "Precision matters",
+        "points": [
+          "Locate information that directly answers the question",
+          "Recognize correct paraphrases",
+          "Ignore background or irrelevant details"
+        ]
+      }
+    },
+    {
+      "id": "what-makes-tricky",
+      "type": "concept",
+      "title": "Why It’s Tricky",
+      "icon": "⚠️",
+      "content": {
+        "title": "Classic Traps",
+        "explanation": "Choices often contain words from the passage but distort meaning or exaggerate importance.",
+        "example": "Passage: 'The policy was debated.' Trap: 'The policy was universally opposed.'"
+      },
+      "trap_alerts": [
+        "Distorted paraphrase",
+        "Overstated importance",
+        "True but irrelevant"
+      ]
+    },
+    {
+      "id": "strategy-steps",
+      "type": "strategy",
+      "title": "3-Step Strategy",
+      "icon": "📋",
+      "content": {
+        "title": "Be Detail-Oriented",
+        "steps": [
+          "Step 1: Go back to the line reference.",
+          "Step 2: Match meaning, not just words.",
+          "Step 3: Eliminate answers that are 'true but not answering the question.'"
+        ]
+      }
+    },
+    {
+      "id": "example-question",
+      "type": "practice",
+      "title": "Example Question",
+      "icon": "❓",
+      "content": {
+        "title": "Apply the Strategy",
+        "question": "According to the passage, one reason the experiment failed was:",
+        "choices": [
+          "The scientists lacked funding.",
+          "The equipment malfunctioned.",
+          "The public opposed the research.",
+          "The experiment violated laws."
+        ],
+        "correct_answer": 1,
+        "explanation": "Only B is explicitly stated. A, C, D are either irrelevant or not mentioned."
+      },
+      "trap_alerts": [
+        "Outside knowledge (funding, opposition, laws)",
+        "Irrelevant detail"
+      ]
+    },
+    {
+      "id": "walkthrough",
+      "type": "walkthrough",
+      "title": "Step-by-Step Solution",
+      "icon": "💡",
+      "content": {
+        "title": "Solution Walkthrough",
+        "solution_steps": [
+          "Locate lines describing experiment failure.",
+          "Text: 'equipment malfunctioned.'",
+          "Check A: not mentioned.",
+          "Check C: irrelevant.",
+          "Check D: unsupported.",
+          "Correct: B."
+        ]
+      }
+    },
+    {
+      "id": "wrap-up",
+      "type": "summary",
+      "title": "Key Takeaways",
+      "icon": "🎉",
+      "content": {
+        "title": "Mastering Details",
+        "summary": "Detail Qs reward precision.",
+        "key_points": [
+          "Always return to passage.",
+          "Match meaning, not wording.",
+          "Eliminate true-but-irrelevant answers."
+        ],
+        "next_steps": "Practice with timed drills to sharpen accuracy."
+      }
+    }
+  ],
+  "created_at": "2025-09-19T01:52:48.000Z",
+  "status": "published",
+  "author": "expert_coach",
+  "updated_at": "2025-09-19T01:52:48.000Z",
+  "published_at": "2025-09-19T01:52:48.000Z",
+  "version": "1.0",
+  "format_version": "creator_studio_v1"
+}

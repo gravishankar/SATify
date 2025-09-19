@@ -1,0 +1,127 @@
+{
+  "id": "craft_and_structure_words_in_context_words-in-context",
+  "domain_id": "craft_and_structure",
+  "domain_title": "Craft and Structure",
+  "skill_id": "words_in_context",
+  "skill_title": "Words in Context",
+  "title": "Understanding Words in Context",
+  "learning_objectives": [
+    "Interpret precise meaning of words and phrases in context",
+    "Differentiate between dictionary definition and contextual meaning",
+    "Recognize tone and connotation shifts",
+    "Avoid traps that 'sound right' but distort meaning"
+  ],
+  "slides": [
+    {
+      "id": "whats-tested",
+      "type": "introduction",
+      "title": "What's Tested",
+      "icon": "🎯",
+      "content": {
+        "title": "Words in Context",
+        "subtitle": "Precision of meaning and tone",
+        "points": [
+          "SAT tests context-specific meaning, not dictionary definition",
+          "Check connotation: positive, negative, neutral",
+          "Look for structural clues around the word"
+        ]
+      }
+    },
+    {
+      "id": "what-makes-tricky",
+      "type": "concept",
+      "title": "Why It’s Tricky",
+      "icon": "⚠️",
+      "content": {
+        "title": "Common Pitfalls",
+        "explanation": "Trap answers often use dictionary meanings or plausible synonyms that don’t fit tone/context.",
+        "example": "‘Novel’ can mean ‘new’ or ‘book’. Only context reveals the right sense."
+      },
+      "trap_alerts": [
+        "Dictionary definition trap",
+        "Synonym that doesn’t fit context",
+        "Tone mismatch"
+      ]
+    },
+    {
+      "id": "strategy-steps",
+      "type": "strategy",
+      "title": "Strategy (Erica style)",
+      "icon": "📋",
+      "content": {
+        "title": "5-Step Process",
+        "steps": [
+          "Step 1: Read the sentence without the word → paraphrase.",
+          "Step 2: Predict meaning before choices.",
+          "Step 3: Check tone/charge (positive, negative, neutral).",
+          "Step 4: Eliminate choices too general or wrong tone.",
+          "Step 5: Verify by rereading with choice inserted."
+        ]
+      }
+    },
+    {
+      "id": "example-question",
+      "type": "practice",
+      "title": "Example Question",
+      "icon": "❓",
+      "content": {
+        "title": "Apply the Strategy",
+        "question": "In the passage, the word 'measured' most nearly means:",
+        "choices": [
+          "calculated",
+          "restrained",
+          "exact",
+          "weighed"
+        ],
+        "correct_answer": 1,
+        "explanation": "Context describes the character’s calm, deliberate response. 'Restrained' fits tone. Others distort meaning."
+      },
+      "trap_alerts": [
+        "Literal definition ('calculated')",
+        "Partial fit ('exact')",
+        "Irrelevant synonym ('weighed')"
+      ]
+    },
+    {
+      "id": "walkthrough",
+      "type": "walkthrough",
+      "title": "Step-by-Step Solution",
+      "icon": "💡",
+      "content": {
+        "title": "Solution Walkthrough",
+        "solution_steps": [
+          "Sentence shows calm, deliberate response → tone = restrained.",
+          "Predict = controlled/calm.",
+          "Check A: too literal.",
+          "Check B: restrained = correct.",
+          "Check C: 'exact' too technical.",
+          "Check D: 'weighed' off-topic.",
+          "Correct: B."
+        ]
+      }
+    },
+    {
+      "id": "wrap-up",
+      "type": "summary",
+      "title": "Key Takeaways",
+      "icon": "🎉",
+      "content": {
+        "title": "Words in Context Mastery",
+        "summary": "Meaning always comes from context, not the dictionary.",
+        "key_points": [
+          "Predict first.",
+          "Match tone and meaning.",
+          "Avoid dictionary-definition traps."
+        ],
+        "next_steps": "Practice with paired word-in-context sets to strengthen tone sensitivity."
+      }
+    }
+  ],
+  "created_at": "2025-09-19T01:56:44.000Z",
+  "status": "published",
+  "author": "expert_coach",
+  "updated_at": "2025-09-19T01:56:44.000Z",
+  "published_at": "2025-09-19T01:56:44.000Z",
+  "version": "1.0",
+  "format_version": "creator_studio_v1"
+}

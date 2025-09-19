@@ -1,0 +1,125 @@
+{
+  "id": "information_and_ideas_central_ideas_and_details_central-ideas",
+  "domain_id": "information_and_ideas",
+  "domain_title": "Information and Ideas",
+  "skill_id": "central_ideas_and_details",
+  "skill_title": "Central Ideas and Details",
+  "title": "Finding the Central Idea",
+  "learning_objectives": [
+    "Identify the central idea or main claim of a passage",
+    "Distinguish central ideas from supporting details",
+    "Use evidence to justify answer choices",
+    "Avoid common traps (too broad, too narrow, or outside the text)"
+  ],
+  "slides": [
+    {
+      "id": "whats-tested",
+      "type": "introduction",
+      "title": "What's Tested",
+      "icon": "🎯",
+      "content": {
+        "title": "Central Ideas & Evidence",
+        "subtitle": "Big-picture understanding",
+        "points": [
+          "Recognize the author’s main claim or purpose",
+          "Differentiate central vs. supporting detail",
+          "Select evidence that directly supports the main claim"
+        ]
+      }
+    },
+    {
+      "id": "what-makes-tricky",
+      "type": "concept",
+      "title": "Why It’s Tricky",
+      "icon": "⚠️",
+      "content": {
+        "title": "Classic Traps",
+        "explanation": "Answers look appealing because they lift words from the passage but distort scope or focus on a minor detail.",
+        "example": "If the passage argues renewable energy is *promising but challenging*, a trap might claim it 'solves all climate problems' — too broad."
+      },
+      "trap_alerts": [
+        "Too broad",
+        "Too narrow",
+        "Outside the text"
+      ]
+    },
+    {
+      "id": "strategy-steps",
+      "type": "strategy",
+      "title": "Strategy (Erica Meltzer style)",
+      "icon": "📋",
+      "content": {
+        "title": "4-Step Process",
+        "steps": [
+          "Step 1: Ask after each paragraph — 'Why is the author telling me this?'",
+          "Step 2: Predict the main idea in 5–7 words before answer choices.",
+          "Step 3: Eliminate answers that exaggerate or miss the scope.",
+          "Step 4: Confirm the correct answer is supported in at least 2 places."
+        ]
+      }
+    },
+    {
+      "id": "example-question",
+      "type": "practice",
+      "title": "Example Question",
+      "icon": "❓",
+      "content": {
+        "title": "Apply the Strategy",
+        "question": "The passage primarily argues that: ",
+        "choices": [
+          "Technological innovation alone can fully solve food shortages.",
+          "A combination of innovation and traditional farming practices offers the most promise.",
+          "Traditional farming should be abandoned in favor of modern techniques.",
+          "Food shortages are unavoidable due to climate change."
+        ],
+        "correct_answer": 1,
+        "explanation": "Only B captures the balanced claim. A is too absolute, C is too extreme, D is out of scope."
+      },
+      "trap_alerts": [
+        "Absolute language ('fully solve')",
+        "Extreme position ('abandon')",
+        "Out-of-scope (climate change)"
+      ]
+    },
+    {
+      "id": "walkthrough",
+      "type": "walkthrough",
+      "title": "Step-by-Step Solution",
+      "icon": "💡",
+      "content": {
+        "title": "Solution Walkthrough",
+        "solution_steps": [
+          "Passage shows success = blend of old + new.",
+          "Predict: balance.",
+          "Check A: too broad/absolute.",
+          "Check C: extreme, unsupported.",
+          "Check D: irrelevant.",
+          "Correct: B = supported, balanced."
+        ]
+      }
+    },
+    {
+      "id": "wrap-up",
+      "type": "summary",
+      "title": "Key Takeaways",
+      "icon": "🎉",
+      "content": {
+        "title": "Mastering Central Ideas",
+        "summary": "Central idea Qs = big picture, not details.",
+        "key_points": [
+          "Predict before choices.",
+          "Beware traps: broad, narrow, outside text.",
+          "Confirm with multiple pieces of evidence."
+        ],
+        "next_steps": "Practice with paired passages for mastery."
+      }
+    }
+  ],
+  "created_at": "2025-09-19T01:52:48.000Z",
+  "status": "published",
+  "author": "expert_coach",
+  "updated_at": "2025-09-19T01:52:48.000Z",
+  "published_at": "2025-09-19T01:52:48.000Z",
+  "version": "1.0",
+  "format_version": "creator_studio_v1"
+}

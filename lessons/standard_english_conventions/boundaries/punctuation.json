@@ -1,0 +1,128 @@
+{
+  "id": "standard_english_conventions_boundaries_punctuation",
+  "domain_id": "standard_english_conventions",
+  "domain_title": "Standard English Conventions",
+  "skill_id": "boundaries",
+  "skill_title": "Boundaries (Punctuation)",
+  "title": "Using Punctuation Correctly",
+  "learning_objectives": [
+    "Use commas, semicolons, colons, and apostrophes correctly",
+    "Recognize when punctuation is optional vs. required",
+    "Avoid traps with unnecessary commas or missing punctuation",
+    "Apply punctuation rules in formal writing context"
+  ],
+  "slides": [
+    {
+      "id": "whats-tested",
+      "type": "introduction",
+      "title": "What's Tested",
+      "icon": "🎯",
+      "content": {
+        "title": "Punctuation",
+        "subtitle": "Master the rules",
+        "points": [
+          "Commas after introductory phrases",
+          "Colons for explanations/lists",
+          "Semicolons join independent clauses",
+          "Apostrophes show possession/contraction"
+        ]
+      }
+    },
+    {
+      "id": "what-makes-tricky",
+      "type": "concept",
+      "title": "Why It’s Tricky",
+      "icon": "⚠️",
+      "content": {
+        "title": "Common Pitfalls",
+        "explanation": "SAT traps exploit overuse/misuse of commas and confusion between colons and semicolons.",
+        "example": "Trap: 'I bought apples, and oranges.' Correct: 'I bought apples and oranges.'"
+      },
+      "trap_alerts": [
+        "Unnecessary comma",
+        "Missing comma",
+        "Wrong colon/semicolon use"
+      ]
+    },
+    {
+      "id": "strategy-steps",
+      "type": "strategy",
+      "title": "Erica-Style Strategy",
+      "icon": "📋",
+      "content": {
+        "title": "3-Step Process",
+        "steps": [
+          "Step 1: Identify the structure (independent vs dependent clause).",
+          "Step 2: Apply punctuation rule (comma, semicolon, colon).",
+          "Step 3: Eliminate unnecessary punctuation."
+        ]
+      },
+      "trap_alerts": [
+        "Comma splice",
+        "Colon misuse",
+        "Extra comma before 'and'"
+      ]
+    },
+    {
+      "id": "example-question",
+      "type": "practice",
+      "title": "Example Question",
+      "icon": "❓",
+      "content": {
+        "title": "Apply the Strategy",
+        "question": "Which choice is correct? 'She has three hobbies____ painting, hiking, and cooking.'",
+        "choices": [
+          ";",
+          " ,",
+          ":",
+          "--"
+        ],
+        "correct_answer": 2,
+        "explanation": "Colon introduces list → correct. Others incorrect."
+      },
+      "trap_alerts": [
+        "A: Wrong semicolon use",
+        "B: Wrong comma",
+        "D: Wrong dash"
+      ]
+    },
+    {
+      "id": "walkthrough",
+      "type": "walkthrough",
+      "title": "Step-by-Step Solution",
+      "icon": "💡",
+      "content": {
+        "title": "Solution Walkthrough",
+        "solution_steps": [
+          "Independent clause before blank.",
+          "Colon introduces list → correct.",
+          "Other punctuation misused.",
+          "Correct: C (:)."
+        ]
+      }
+    },
+    {
+      "id": "wrap-up",
+      "type": "summary",
+      "title": "Key Takeaways",
+      "icon": "🎉",
+      "content": {
+        "title": "Punctuation Mastery",
+        "summary": "SAT punctuation = rules, not style.",
+        "key_points": [
+          "Identify clause structure first.",
+          "Use commas sparingly.",
+          "Semicolons/colons have precise uses."
+        ],
+        "next_steps": "Practice timed punctuation drills."
+      }
+    }
+  ],
+  "created_at": "2025-09-19T02:07:26.000Z",
+  "status": "published",
+  "author": "expert_coach",
+  "updated_at": "2025-09-19T02:07:26.000Z",
+  "published_at": "2025-09-19T02:07:26.000Z",
+  "version": "1.0",
+  "format_version": "creator_studio_v1"
+}

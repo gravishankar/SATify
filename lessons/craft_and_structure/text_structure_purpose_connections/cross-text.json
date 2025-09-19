@@ -1,0 +1,125 @@
+{
+  "id": "craft_and_structure_text_structure_purpose_connections_cross-text",
+  "domain_id": "craft_and_structure",
+  "domain_title": "Craft and Structure",
+  "skill_id": "text_structure_purpose_connections",
+  "skill_title": "Text Structure, Purpose, and Connections",
+  "title": "Comparing Across Texts",
+  "learning_objectives": [
+    "Compare/contrast perspectives across paired passages",
+    "Identify points of agreement/disagreement",
+    "Understand differences in reasoning or evidence",
+    "Avoid traps that misrepresent or exaggerate similarities/differences"
+  ],
+  "slides": [
+    {
+      "id": "whats-tested",
+      "type": "introduction",
+      "title": "What's Tested",
+      "icon": "🎯",
+      "content": {
+        "title": "Cross-Text Connections",
+        "subtitle": "Paired passage analysis",
+        "points": [
+          "Compare arguments, tone, or evidence across texts",
+          "Identify agreements/disagreements",
+          "Recognize different methods or perspectives"
+        ]
+      }
+    },
+    {
+      "id": "what-makes-tricky",
+      "type": "concept",
+      "title": "Why It’s Tricky",
+      "icon": "⚠️",
+      "content": {
+        "title": "Common Pitfalls",
+        "explanation": "Traps exaggerate agreement or invent disagreements.",
+        "example": "Passage A cautious, Passage B optimistic. Trap: 'Both reject innovation' — false."
+      },
+      "trap_alerts": [
+        "Invented disagreement",
+        "Exaggerated agreement",
+        "Ignoring nuance"
+      ]
+    },
+    {
+      "id": "strategy-steps",
+      "type": "strategy",
+      "title": "4-Step Strategy",
+      "icon": "📋",
+      "content": {
+        "title": "Compare & Contrast",
+        "steps": [
+          "Step 1: Summarize each passage separately first.",
+          "Step 2: Predict relationship (agree, disagree, different focus).",
+          "Step 3: Eliminate choices overstating agreement/disagreement.",
+          "Step 4: Verify with evidence in both passages."
+        ]
+      }
+    },
+    {
+      "id": "example-question",
+      "type": "practice",
+      "title": "Example Question",
+      "icon": "❓",
+      "content": {
+        "title": "Apply the Strategy",
+        "question": "Passage A emphasizes caution in adopting new technology, while Passage B emphasizes:",
+        "choices": [
+          "Rejection of technology",
+          "Optimism about innovation",
+          "Concern for costs",
+          "Focus on tradition"
+        ],
+        "correct_answer": 1,
+        "explanation": "Passage B stresses benefits and optimism. Correct = optimism."
+      },
+      "trap_alerts": [
+        "Invented rejection",
+        "Minor concern (costs)",
+        "Different focus (tradition)"
+      ]
+    },
+    {
+      "id": "walkthrough",
+      "type": "walkthrough",
+      "title": "Step-by-Step Solution",
+      "icon": "💡",
+      "content": {
+        "title": "Solution Walkthrough",
+        "solution_steps": [
+          "Summarize A: cautious.",
+          "Summarize B: optimistic.",
+          "Predict: optimism.",
+          "Check B: matches.",
+          "Others exaggerate or distract.",
+          "Correct: B."
+        ]
+      }
+    },
+    {
+      "id": "wrap-up",
+      "type": "summary",
+      "title": "Key Takeaways",
+      "icon": "🎉",
+      "content": {
+        "title": "Cross-Text Mastery",
+        "summary": "Cross-text Qs = relationship, not detail.",
+        "key_points": [
+          "Summarize separately.",
+          "Predict relation.",
+          "Beware exaggerated traps."
+        ],
+        "next_steps": "Practice paired passages regularly to master nuance."
+      }
+    }
+  ],
+  "created_at": "2025-09-19T01:56:44.000Z",
+  "status": "published",
+  "author": "expert_coach",
+  "updated_at": "2025-09-19T01:56:44.000Z",
+  "published_at": "2025-09-19T01:56:44.000Z",
+  "version": "1.0",
+  "format_version": "creator_studio_v1"
+}

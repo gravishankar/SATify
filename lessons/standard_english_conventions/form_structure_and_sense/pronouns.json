@@ -1,0 +1,128 @@
+{
+  "id": "standard_english_conventions_form_structure_and_sense_pronouns",
+  "domain_id": "standard_english_conventions",
+  "domain_title": "Standard English Conventions",
+  "skill_id": "form_structure_and_sense",
+  "skill_title": "Form, Structure, and Sense",
+  "title": "Getting Pronouns Right",
+  "learning_objectives": [
+    "Ensure pronouns agree in number and person",
+    "Check clarity: pronoun must have clear antecedent",
+    "Use correct case (subject, object, possessive)",
+    "Avoid traps with ambiguous or mismatched pronouns"
+  ],
+  "slides": [
+    {
+      "id": "whats-tested",
+      "type": "introduction",
+      "title": "What's Tested",
+      "icon": "🎯",
+      "content": {
+        "title": "Pronouns",
+        "subtitle": "Clarity and agreement",
+        "points": [
+          "Check pronoun/antecedent agreement",
+          "Ensure clarity of reference",
+          "Use correct case"
+        ]
+      }
+    },
+    {
+      "id": "what-makes-tricky",
+      "type": "concept",
+      "title": "Why It’s Tricky",
+      "icon": "⚠️",
+      "content": {
+        "title": "Common Pitfalls",
+        "explanation": "Pronouns without clear antecedents confuse readers.",
+        "example": "Trap: 'They said it was unfair.' → Who is 'they'?"
+      },
+      "trap_alerts": [
+        "Ambiguous antecedent",
+        "Number mismatch",
+        "Wrong case"
+      ]
+    },
+    {
+      "id": "strategy-steps",
+      "type": "strategy",
+      "title": "Erica-Style Strategy",
+      "icon": "📋",
+      "content": {
+        "title": "3-Step Process",
+        "steps": [
+          "Step 1: Identify pronoun → find clear antecedent.",
+          "Step 2: Match number/person.",
+          "Step 3: Choose correct case (he/him, who/whom)."
+        ]
+      },
+      "trap_alerts": [
+        "Pronoun with no clear antecedent",
+        "Plural/singular mismatch",
+        "Case error"
+      ]
+    },
+    {
+      "id": "example-question",
+      "type": "practice",
+      "title": "Example Question",
+      "icon": "❓",
+      "content": {
+        "title": "Apply the Strategy",
+        "question": "Which choice is correct? 'Each student must bring ____ own lunch.'",
+        "choices": [
+          "their",
+          "his or her",
+          "they're",
+          "its"
+        ],
+        "correct_answer": 1,
+        "explanation": "Traditional SAT style = singular 'student' → 'his or her'. Modern SAT sometimes accepts 'their,' but correct here = 'his or her'."
+      },
+      "trap_alerts": [
+        "A: Accepted informally but not traditional SAT",
+        "C: Wrong word (they're)",
+        "D: Wrong number (its)"
+      ]
+    },
+    {
+      "id": "walkthrough",
+      "type": "walkthrough",
+      "title": "Step-by-Step Solution",
+      "icon": "💡",
+      "content": {
+        "title": "Solution Walkthrough",
+        "solution_steps": [
+          "Subject = singular 'student'.",
+          "Pronoun must match singular.",
+          "Correct = 'his or her'.",
+          "Check others: 'their' plural; 'they're' wrong; 'its' wrong gender.",
+          "Correct: B."
+        ]
+      }
+    },
+    {
+      "id": "wrap-up",
+      "type": "summary",
+      "title": "Key Takeaways",
+      "icon": "🎉",
+      "content": {
+        "title": "Pronoun Mastery",
+        "summary": "Pronouns must be clear, correct, consistent.",
+        "key_points": [
+          "Clear antecedent always.",
+          "Number agreement matters.",
+          "Check pronoun case."
+        ],
+        "next_steps": "Practice ambiguous pronoun drills."
+      }
+    }
+  ],
+  "created_at": "2025-09-19T02:07:26.000Z",
+  "status": "published",
+  "author": "expert_coach",
+  "updated_at": "2025-09-19T02:07:26.000Z",
+  "published_at": "2025-09-19T02:07:26.000Z",
+  "version": "1.0",
+  "format_version": "creator_studio_v1"
+}

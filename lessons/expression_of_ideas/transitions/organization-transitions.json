@@ -1,0 +1,131 @@
+{
+  "id": "expression_of_ideas_transitions_organization-transitions",
+  "domain_id": "expression_of_ideas",
+  "domain_title": "Expression of Ideas",
+  "skill_id": "transitions",
+  "skill_title": "Transitions",
+  "title": "Improving Logical Flow",
+  "learning_objectives": [
+    "Choose transitions that fit logic, not just sound smooth",
+    "Identify sentence/paragraph roles in the overall flow",
+    "Strengthen organization by placing sentences where they fit best",
+    "Avoid traps that 'sound right' but misrepresent logic"
+  ],
+  "slides": [
+    {
+      "id": "whats-tested",
+      "type": "introduction",
+      "title": "What's Tested",
+      "icon": "🎯",
+      "content": {
+        "title": "Organization & Transitions",
+        "subtitle": "Logical flow and connections",
+        "points": [
+          "Tested on choosing transitions",
+          "Tested on sentence/paragraph placement",
+          "Logical flow must match meaning, not just sound"
+        ]
+      }
+    },
+    {
+      "id": "what-makes-tricky",
+      "type": "concept",
+      "title": "Why It’s Tricky",
+      "icon": "⚠️",
+      "content": {
+        "title": "Common Pitfalls",
+        "explanation": "Transitions like 'however' or 'therefore' sound smooth but may misrepresent logic.",
+        "example": "'The park was popular. However, it had many visitors.' → Trap: 'However' suggests contrast, but logic = continuation."
+      },
+      "trap_alerts": [
+        "Wrong logical connector",
+        "Smooth-sounding but wrong",
+        "Misplaced sentence"
+      ]
+    },
+    {
+      "id": "strategy-steps",
+      "type": "strategy",
+      "title": "Erica-Style Strategy",
+      "icon": "📋",
+      "content": {
+        "title": "3-Step Process",
+        "steps": [
+          "Step 1: Identify relationship (contrast, cause, addition).",
+          "Step 2: Predict connector before looking at choices.",
+          "Step 3: Eliminate smooth but illogical transitions."
+        ]
+      },
+      "trap_alerts": [
+        "'However' when continuation needed",
+        "'Therefore' without cause",
+        "'Meanwhile' misused for unrelated ideas"
+      ]
+    },
+    {
+      "id": "example-question",
+      "type": "practice",
+      "title": "Example Question",
+      "icon": "❓",
+      "content": {
+        "title": "Apply the Strategy",
+        "question": "Which transition best fits? 'The project was completed ahead of schedule. ________, the team celebrated their success.'",
+        "choices": [
+          "However",
+          "Therefore",
+          "Meanwhile",
+          "In contrast"
+        ],
+        "correct_answer": 1,
+        "explanation": "Logic = cause-effect (completed → celebrated). Correct = 'Therefore'. Others distort logic."
+      },
+      "trap_alerts": [
+        "A: Wrong contrast",
+        "C: Irrelevant time shift",
+        "D: Wrong contrast"
+      ]
+    },
+    {
+      "id": "walkthrough",
+      "type": "walkthrough",
+      "title": "Step-by-Step Solution",
+      "icon": "💡",
+      "content": {
+        "title": "Solution Walkthrough",
+        "solution_steps": [
+          "Sentence 1: success.",
+          "Sentence 2: celebration = effect.",
+          "Predict = cause-effect connector.",
+          "Check A: contrast = wrong.",
+          "Check B: 'Therefore' = correct.",
+          "Check C: time shift = wrong.",
+          "Check D: contrast = wrong.",
+          "Correct: B."
+        ]
+      }
+    },
+    {
+      "id": "wrap-up",
+      "type": "summary",
+      "title": "Key Takeaways",
+      "icon": "🎉",
+      "content": {
+        "title": "Flow Mastery",
+        "summary": "Organization tests logic, not just style.",
+        "key_points": [
+          "Predict transition before choices.",
+          "Check logic, not smoothness.",
+          "Sentence placement = must fit logical order."
+        ],
+        "next_steps": "Practice sentence-ordering sets for mastery."
+      }
+    }
+  ],
+  "created_at": "2025-09-19T02:06:18.000Z",
+  "status": "published",
+  "author": "expert_coach",
+  "updated_at": "2025-09-19T02:06:18.000Z",
+  "published_at": "2025-09-19T02:06:18.000Z",
+  "version": "1.0",
+  "format_version": "creator_studio_v1"
+}

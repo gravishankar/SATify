@@ -1,0 +1,116 @@
+{
+  "id": "information_and_ideas_fundamentals",
+  "domain_id": "information_and_ideas",
+  "domain_title": "Information and Ideas",
+  "skill_id": "comprehension_analysis_reasoning",
+  "skill_title": "Comprehension, Analysis, and Reasoning",
+  "title": "Information and Ideas Fundamentals",
+  "learning_objectives": [
+    "Identify central ideas and supporting details",
+    "Interpret evidence from text and informational graphics",
+    "Recognize cause/effect and compare/contrast structures",
+    "Apply a step-by-step strategy to decode tricky traps"
+  ],
+  "slides": [
+    {
+      "id": "whats-tested",
+      "type": "introduction",
+      "title": "What's Tested",
+      "icon": "\ud83c\udfaf",
+      "content": {
+        "title": "Information and Ideas",
+        "subtitle": "Understanding main ideas, details, and evidence",
+        "points": [
+          "Find the central idea or main claim",
+          "Distinguish between major vs. minor details",
+          "Interpret charts, tables, and graphs linked to passages",
+          "Select evidence that directly supports an answer"
+        ]
+      }
+    },
+    {
+      "id": "what-makes-tricky",
+      "type": "concept",
+      "title": "What Makes This Tricky",
+      "icon": "\u26a0\ufe0f",
+      "content": {
+        "title": "Common Pitfalls",
+        "explanation": "SAT traps often give answers that are too broad, too narrow, or 'sound right' but aren\u2019t supported by the passage.",
+        "example": "A choice might paraphrase the text but exaggerate the scope \u2014 this is a classic trap!"
+      }
+    },
+    {
+      "id": "strategy-steps",
+      "type": "strategy",
+      "title": "Strategy Steps",
+      "icon": "\ud83d\udccb",
+      "content": {
+        "title": "4-Step Approach",
+        "steps": [
+          "Step 1: Read with purpose \u2014 ask, 'What\u2019s the author trying to prove or explain?'",
+          "Step 2: Find text evidence \u2014 underline phrases that show central idea or relationship",
+          "Step 3: Match scope \u2014 eliminate choices that are too extreme, too broad, or too narrow",
+          "Step 4: Verify \u2014 plug the choice back into the question and confirm it\u2019s directly supported"
+        ]
+      }
+    },
+    {
+      "id": "example-question",
+      "type": "practice",
+      "title": "Example Question",
+      "icon": "\u2753",
+      "content": {
+        "title": "Apply the Strategy",
+        "question": "The passage mainly suggests that the success of the new farming method was due to:",
+        "choices": [
+          "the government\u2019s complete financial support",
+          "a combination of traditional practices and scientific innovation",
+          "the willingness of farmers to abandon all old techniques",
+          "a sudden change in climate conditions"
+        ],
+        "correct_answer": 1,
+        "explanation": "Trap A (too absolute: 'complete financial support'); Trap C (too extreme: 'abandon all old techniques'); Trap D (not mentioned). Only B reflects the passage\u2019s balance of tradition and innovation."
+      }
+    },
+    {
+      "id": "walkthrough",
+      "type": "walkthrough",
+      "title": "Step-by-Step Solution",
+      "icon": "\ud83d\udca1",
+      "content": {
+        "title": "Solution Walkthrough",
+        "solution_steps": [
+          "Read: Passage shows success came from blending traditional knowledge with modern science.",
+          "Predict: Answer must highlight both elements.",
+          "Check A: Government support mentioned but not 'complete' \u2014 exaggeration.",
+          "Check C: Farmers didn\u2019t abandon *all* old techniques \u2014 too extreme.",
+          "Check D: Climate wasn\u2019t a factor.",
+          "Correct: B matches perfectly \u2014 balanced, supported, not exaggerated."
+        ]
+      }
+    },
+    {
+      "id": "wrap-up",
+      "type": "summary",
+      "title": "Great Job!",
+      "icon": "\ud83c\udf89",
+      "content": {
+        "title": "Key Takeaways",
+        "summary": "You can now tackle Information and Ideas questions with confidence.",
+        "key_points": [
+          "Central ideas = main message, not minor details",
+          "Always test answers against the passage \u2014 avoid 'sounds right' traps",
+          "Match the scope: not too broad, not too narrow"
+        ],
+        "next_steps": "Practice with paired passages and data charts for mastery."
+      }
+    }
+  ],
+  "created_at": "2025-09-19T00:10:26.000Z",
+  "status": "published",
+  "author": "instructor",
+  "updated_at": "2025-09-19T00:10:26.000Z",
+  "published_at": "2025-09-19T00:10:26.000Z",
+  "version": "1.0",
+  "format_version": "creator_studio_v1"
+}
