@@ -894,6 +894,12 @@ class LearnPage {
         // Store current lesson data for practice navigation
         this.currentLessonData = lessonData;
 
+        // Update the skill page title
+        const skillPageTitle = document.getElementById('skillPageTitle');
+        if (skillPageTitle && lessonData.domain_title) {
+            skillPageTitle.textContent = lessonData.domain_title;
+        }
+
         // Convert Creator Studio lesson format to slides
         const slidesHTML = lessonData.slides.map((slide, index) => {
             const isActive = index === 0 ? 'active' : '';

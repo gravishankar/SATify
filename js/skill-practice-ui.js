@@ -874,14 +874,23 @@ class SkillPracticeUI {
         this.showToast(`Navigating to ${skillInfo.skillTitle} lesson...`);
 
         // Navigate to learn page
-        // This assumes your existing navigation system can handle this
         setTimeout(() => {
-            window.location.hash = `#learn`;
-
-            // If there's a global lesson loader, trigger it
-            if (window.learnPage && window.learnPage.loadDomainLessons) {
-                window.learnPage.loadDomainLessons(domainId);
+            if (this.app && this.app.navigateTo) {
+                this.app.navigateTo('learn');
+            } else {
+                // Fallback navigation
+                const learnLink = document.querySelector('[data-page="learn"]');
+                if (learnLink) {
+                    learnLink.click();
+                }
             }
+
+            // Load the specific domain lessons after navigation
+            setTimeout(() => {
+                if (window.learnPage && window.learnPage.loadDomainLessons) {
+                    window.learnPage.loadDomainLessons(domainId);
+                }
+            }, 100);
         }, 500);
     }
 
