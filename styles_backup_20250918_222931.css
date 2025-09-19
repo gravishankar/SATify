@@ -1481,22 +1481,27 @@ body {
 
 /* Lesson Content Styles */
 .lesson-content {
-  background: #ffffff;
+  background: #f8fafc;
   border-radius: 1rem;
   box-shadow: var(--shadow);
   overflow: hidden;
-  min-height: 500px;
+  min-height: 600px;
   display: flex;
   flex-direction: column;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
 }
 
 .lesson-header {
-  padding: 1rem;
+  padding: 1.5rem 2rem;
   background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 12px;
+  margin-bottom: 1rem;
 }
 
 .lesson-progress-header h2 {
@@ -1529,8 +1534,12 @@ body {
 .lesson-slides {
   position: relative;
   flex: 1;
-  min-height: 400px;
+  min-height: 500px;
   background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin: 0 auto;
+  max-width: 1000px;
 }
 
 .lesson-slide {
@@ -1543,11 +1552,13 @@ body {
   visibility: hidden;
   transform: translateX(20px);
   transition: all 0.3s ease;
-  padding: 2rem;
+  padding: 3rem 2.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: #ffffff;
+  border-radius: 12px;
+  overflow-y: auto;
 }
 
 .lesson-slide.active {
@@ -1557,39 +1568,28 @@ body {
   z-index: 10;
 }
 
-/* Reduce padding on first slide for better spacing */
-.lesson-slide[data-slide="0"] {
-  padding: 1rem 2rem;
-}
-
 .slide-content {
   text-align: center;
   color: #1e293b;
-}
-
-.slide-content.centered {
+  max-width: 800px;
+  margin: 0 auto;
   padding: 1rem 0;
 }
 
-/* Improve spacing for lesson selection screen */
-.published-lesson-list {
-  margin: 1.5rem auto !important;
-  max-width: 700px !important;
-}
-
 .slide-content h3 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   color: #1e293b;
+  line-height: 1.3;
 }
 
 .slide-content p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #1e293b;
-  margin-bottom: 1rem;
-  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #475569;
+  margin-bottom: 1.5rem;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1604,7 +1604,8 @@ body {
 }
 
 .slide-indicators {
-  display: none;
+  display: flex;
+  gap: 0.5rem;
 }
 
 .indicator {
@@ -1640,21 +1641,31 @@ body {
     padding: 1.5rem;
   }
 
-  .lesson-slide {
-    padding: 1rem;
+  .lesson-content {
+    margin: 1rem;
+    padding: 0.5rem;
   }
 
-  /* Reduce padding on first slide for mobile */
-  .lesson-slide[data-slide="0"] {
-    padding: 0.5rem 1rem;
+  .lesson-header {
+    padding: 1rem 1.5rem;
+  }
+
+  .lesson-slide {
+    padding: 2rem 1.5rem;
+  }
+
+  .slide-content {
+    padding: 0.5rem 0;
   }
 
   .slide-content h3 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
   }
 
   .slide-content p {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    line-height: 1.6;
   }
 }
 
@@ -2383,628 +2394,3 @@ body {
 }
 
 /* Dark mode support (future enhancement) */
-
-/* ============================================================================
-   SKILL PRACTICE STYLES
-   ============================================================================ */
-
-/* Skill Practice Page Layout */
-.skill-practice-header {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.skill-practice-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
-}
-
-.skill-practice-header .subtitle {
-    color: var(--text-secondary);
-    font-size: 1.1rem;
-}
-
-/* Practice Mode Selector */
-.practice-mode-selector {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    justify-content: center;
-}
-
-.mode-btn {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.5rem 2rem;
-    border: 2px solid var(--border-color);
-    border-radius: 12px;
-    background: var(--surface-color);
-    cursor: pointer;
-    transition: var(--transition);
-    min-width: 200px;
-}
-
-.mode-btn:hover {
-    border-color: var(--primary-color);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-}
-
-.mode-btn.active {
-    border-color: var(--primary-color);
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    color: white;
-}
-
-.mode-icon {
-    font-size: 2rem;
-}
-
-.mode-info h3 {
-    margin: 0 0 0.25rem 0;
-    font-size: 1.1rem;
-}
-
-.mode-info p {
-    margin: 0;
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
-/* Domains Grid */
-.domains-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.domain-card {
-    background: var(--surface-color);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 1.5rem;
-    transition: var(--transition);
-}
-
-.domain-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--primary-color);
-}
-
-.domain-header {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-}
-
-.domain-icon {
-    font-size: 2rem;
-}
-
-.domain-header h3 {
-    margin: 0;
-    color: var(--text-primary);
-    font-size: 1.25rem;
-}
-
-.domain-description {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-    line-height: 1.5;
-}
-
-.domain-stats {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    font-size: 0.9rem;
-}
-
-.question-count,
-.skill-count {
-    background: var(--bg-color);
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    color: var(--text-secondary);
-}
-
-/* Skills List (Individual Mode) */
-.skills-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.skill-btn {
-    background: var(--bg-color);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 1rem;
-    text-align: left;
-    cursor: pointer;
-    transition: var(--transition);
-    width: 100%;
-}
-
-.skill-btn:hover {
-    background: var(--primary-color);
-    color: white;
-    transform: translateX(4px);
-}
-
-.skill-title {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-}
-
-.skill-description {
-    display: block;
-    font-size: 0.9rem;
-    opacity: 0.8;
-    line-height: 1.4;
-}
-
-/* Topic Practice Button */
-.topic-practice-btn {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 1rem 1.5rem;
-    cursor: pointer;
-    transition: var(--transition);
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-weight: 600;
-}
-
-.topic-practice-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-}
-
-.btn-arrow {
-    font-size: 1.2rem;
-    transition: var(--transition);
-}
-
-.topic-practice-btn:hover .btn-arrow {
-    transform: translateX(4px);
-}
-
-/* Practice Session Views */
-.practice-session {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Strategy Phase */
-.strategy-phase {
-    text-align: center;
-    padding: 2rem;
-}
-
-.strategy-header {
-    margin-bottom: 2rem;
-}
-
-.strategy-header h2 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
-}
-
-.strategy-content {
-    background: var(--surface-color);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    text-align: left;
-}
-
-.strategy-slide {
-    margin-bottom: 2rem;
-}
-
-.strategy-slide:last-child {
-    margin-bottom: 0;
-}
-
-.slide-header h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-}
-
-.strategy-steps,
-.strategy-points {
-    margin: 1rem 0;
-    padding-left: 1.5rem;
-}
-
-.strategy-steps li,
-.strategy-points li {
-    margin-bottom: 0.5rem;
-    line-height: 1.6;
-}
-
-.strategy-actions {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-}
-
-/* Question Phase */
-.question-phase .practice-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.session-info h2 {
-    margin: 0 0 0.5rem 0;
-    color: var(--text-primary);
-}
-
-.session-meta {
-    display: flex;
-    gap: 1rem;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-}
-
-/* Question Panel */
-.question-panel {
-    background: var(--surface-color);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 2rem;
-    margin-bottom: 1rem;
-}
-
-.question-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.question-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: 0.9rem;
-}
-
-.question-number {
-    font-weight: 600;
-    color: var(--text-primary);
-}
-
-.question-type {
-    background: var(--bg-color);
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    color: var(--text-secondary);
-}
-
-.difficulty-badge {
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 0.8rem;
-}
-
-.difficulty-easy {
-    background: #dcfce7;
-    color: #166534;
-}
-
-.difficulty-medium {
-    background: #fef3c7;
-    color: #92400e;
-}
-
-.difficulty-hard {
-    background: #fee2e2;
-    color: #dc2626;
-}
-
-.question-controls {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.btn-icon {
-    background: none;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    padding: 0.5rem;
-    cursor: pointer;
-    transition: var(--transition);
-    font-size: 1rem;
-}
-
-.btn-icon:hover {
-    background: var(--bg-color);
-    border-color: var(--primary-color);
-}
-
-/* Question Content */
-.question-content {
-    margin-bottom: 2rem;
-    line-height: 1.6;
-    font-size: 1rem;
-}
-
-.question-content p {
-    margin-bottom: 1rem;
-}
-
-/* Answer Choices */
-.answer-choices {
-    margin-bottom: 2rem;
-}
-
-.answer-choice {
-    margin-bottom: 0.75rem;
-    cursor: pointer;
-}
-
-.choice-label {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1rem;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background: var(--surface-color);
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.choice-label:hover {
-    border-color: var(--primary-color);
-    background: var(--bg-color);
-}
-
-.answer-choice.correct .choice-label {
-    border-color: var(--success-color);
-    background: #f0fdf4;
-}
-
-.answer-choice.incorrect .choice-label {
-    border-color: var(--danger-color);
-    background: #fef2f2;
-}
-
-.choice-letter {
-    background: var(--bg-color);
-    border: 1px solid var(--border-color);
-    border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    flex-shrink: 0;
-}
-
-.answer-choice.correct .choice-letter {
-    background: var(--success-color);
-    color: white;
-    border-color: var(--success-color);
-}
-
-.answer-choice.incorrect .choice-letter {
-    background: var(--danger-color);
-    color: white;
-    border-color: var(--danger-color);
-}
-
-.choice-text {
-    flex: 1;
-    line-height: 1.5;
-}
-
-/* Hide radio buttons */
-.answer-choice input[type="radio"] {
-    display: none;
-}
-
-/* Question Actions */
-.question-actions {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-}
-
-/* Results Phase */
-.results-phase {
-    text-align: center;
-    padding: 2rem;
-}
-
-.results-header h2 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
-}
-
-.results-overview {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.result-stat {
-    background: var(--surface-color);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 1.5rem;
-    text-align: center;
-}
-
-.stat-value {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.stat-label {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-}
-
-.skill-breakdown {
-    background: var(--surface-color);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 2rem;
-    margin: 2rem 0;
-    text-align: left;
-}
-
-.skill-breakdown h3 {
-    margin-bottom: 1.5rem;
-    text-align: center;
-    color: var(--text-primary);
-}
-
-.skill-result {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    background: var(--bg-color);
-    border-radius: 8px;
-}
-
-.skill-info {
-    flex: 1;
-}
-
-.skill-name {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-}
-
-.skill-score {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-}
-
-.skill-progress {
-    width: 120px;
-    margin-left: 1rem;
-}
-
-.progress-bar {
-    width: 100%;
-    height: 8px;
-    background: var(--border-color);
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--success-color), var(--primary-color));
-    transition: width 0.5s ease;
-}
-
-.results-actions {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin-top: 2rem;
-}
-
-/* Settings Description */
-.setting-description {
-    display: block;
-    color: var(--text-secondary);
-    font-size: 0.8rem;
-    margin-top: 0.25rem;
-    line-height: 1.4;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .practice-mode-selector {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .mode-btn {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .domains-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .question-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-
-    .question-info {
-        flex-wrap: wrap;
-    }
-
-    .question-actions {
-        flex-direction: column;
-    }
-
-    .results-overview {
-        grid-template-columns: 1fr;
-    }
-
-    .skill-result {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-
-    .skill-progress {
-        width: 100%;
-        margin-left: 0;
-    }
-
-    .practice-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-
-    .session-meta {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-}

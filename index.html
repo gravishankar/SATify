@@ -139,6 +139,10 @@
                     <span class="nav-icon">💭</span>
                     Words in Context
                 </a>
+                <a href="#skill-practice" class="nav-link" data-page="skill-practice" id="skillPracticeNavLink" style="display: none;">
+                    <span class="nav-icon">🎯</span>
+                    Skill Practice
+                </a>
                 <a href="#creatorStudio" class="nav-link" data-page="creatorStudio" style="display: none;">
                     <span class="nav-icon">🛠️</span>
                     Creator Studio
@@ -662,6 +666,133 @@
                 </div>
             </div>
         </div>
+
+        <!-- Skill Practice Page -->
+        <div id="skill-practicePage" class="page">
+            <div class="container">
+                <div class="skill-practice-header">
+                    <h1>🎯 Skill Practice</h1>
+                    <p class="subtitle">Practice SAT Reading & Writing by specific skills</p>
+                </div>
+
+                <!-- Skill Selection View -->
+                <div id="skillSelectionView" class="skill-selection">
+                    <div class="practice-mode-selector">
+                        <button class="btn mode-btn active" id="individualSkillMode" data-mode="individual">
+                            <span class="mode-icon">🎯</span>
+                            <div class="mode-info">
+                                <h3>Individual Skills</h3>
+                                <p>Practice one specific skill at a time</p>
+                            </div>
+                        </button>
+                        <button class="btn mode-btn" id="topicPracticeMode" data-mode="topic">
+                            <span class="mode-icon">📚</span>
+                            <div class="mode-info">
+                                <h3>Topic Practice</h3>
+                                <p>Mixed questions from all skills in a domain</p>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="domains-grid" id="domainsGrid">
+                        <!-- Domain cards will be populated here -->
+                    </div>
+                </div>
+
+                <!-- Practice Session View -->
+                <div id="practiceSessionView" class="practice-session hidden">
+                    <!-- Strategy Phase -->
+                    <div id="strategyPhase" class="strategy-phase">
+                        <div class="strategy-header">
+                            <h2 id="strategyTitle">Strategy Overview</h2>
+                            <p id="strategySubtitle">Review key concepts before starting practice</p>
+                        </div>
+                        <div id="strategyContent" class="strategy-content">
+                            <!-- Strategy slides will be loaded here -->
+                        </div>
+                        <div class="strategy-actions">
+                            <button class="btn btn-secondary" id="skipStrategy">Skip Strategy</button>
+                            <button class="btn btn-primary" id="startPractice">Start Practice</button>
+                        </div>
+                    </div>
+
+                    <!-- Question Phase -->
+                    <div id="questionPhase" class="question-phase hidden">
+                        <div class="practice-header">
+                            <div class="session-info">
+                                <h2 id="sessionTitle">Skill Practice</h2>
+                                <div class="session-meta">
+                                    <span id="sessionProgress">Question 1 of 20</span>
+                                    <span id="sessionSkill">Central Ideas and Details</span>
+                                </div>
+                            </div>
+                            <div class="session-controls">
+                                <button class="btn btn-secondary" id="endSession">End Session</button>
+                            </div>
+                        </div>
+
+                        <div class="question-panel">
+                            <div class="question-header">
+                                <div class="question-info">
+                                    <span class="question-number" id="questionNumber">Question 1 of 20</span>
+                                    <span class="question-type" id="skillQuestionType">Central Ideas and Details</span>
+                                    <span class="difficulty-badge" id="skillDifficultyBadge">Medium</span>
+                                </div>
+                                <div class="question-controls">
+                                    <button class="btn-icon" id="skillBookmarkBtn" title="Bookmark">⭐</button>
+                                    <button class="btn-icon" id="skillFlagBtn" title="Flag for review">🚩</button>
+                                    <button class="btn-icon" id="skillHintBtn" title="Show strategy hint">💡</button>
+                                </div>
+                            </div>
+
+                            <div class="question-content" id="skillQuestionContent">
+                                <!-- Question content will be loaded here -->
+                            </div>
+
+                            <div class="answer-choices" id="skillAnswerChoices">
+                                <!-- Answer choices will be loaded here -->
+                            </div>
+
+                            <div class="question-actions">
+                                <button class="btn btn-secondary" id="skillPrevQuestion" disabled>← Previous</button>
+                                <button class="btn btn-primary" id="skillSubmitAnswer">Submit Answer</button>
+                                <button class="btn btn-secondary" id="skillNextQuestion" disabled>Next →</button>
+                            </div>
+                        </div>
+
+                        <div class="explanation-panel hidden" id="skillExplanationPanel">
+                            <div class="explanation-header">
+                                <h3>Explanation</h3>
+                                <button class="btn-close" id="skillCloseExplanation">×</button>
+                            </div>
+                            <div class="explanation-content" id="skillExplanationContent">
+                                <!-- Explanation will be loaded here -->
+                            </div>
+                            <div class="explanation-actions">
+                                <button class="btn btn-secondary" id="reviewStrategy">Review Strategy</button>
+                                <button class="btn btn-primary" id="continueAfterExplanation">Continue</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Results Phase -->
+                    <div id="resultsPhase" class="results-phase hidden">
+                        <div class="results-header">
+                            <h2>🎉 Session Complete!</h2>
+                            <p>Here's how you performed</p>
+                        </div>
+                        <div class="results-summary" id="resultsSummary">
+                            <!-- Results will be populated here -->
+                        </div>
+                        <div class="results-actions">
+                            <button class="btn btn-secondary" id="practiceAgain">Practice Again</button>
+                            <button class="btn btn-primary" id="backToSkills">Choose Another Skill</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Creator Studio Page -->
         <div id="creatorStudioPage" class="page">
             <div class="studio-container">
@@ -936,6 +1067,13 @@
                                 <option value="always">Always Visible</option>
                             </select>
                         </div>
+                        <div class="setting-item">
+                            <label>
+                                <input type="checkbox" id="skillPracticeEnabled">
+                                Enable Skill-Based Practice (Beta)
+                            </label>
+                            <small class="setting-description">Practice questions organized by specific SAT Reading & Writing skills</small>
+                        </div>
                     </div>
 
                     <div class="settings-section">
@@ -1031,6 +1169,8 @@
     <script src="js/words-in-context.js"></script>
     <script src="js/topic-loader.js"></script>
     <script src="js/learn-page.js"></script>
+    <script src="js/skill-practice-manager.js"></script>
+    <script src="js/skill-practice-ui.js"></script>
 
     <!-- Creator Studio Scripts (Instructor Only) -->
     <script src="js/role-manager.js"></script>

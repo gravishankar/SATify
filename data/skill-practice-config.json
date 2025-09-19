@@ -1,0 +1,133 @@
+{
+  "skillPracticeConfig": {
+    "version": "1.0",
+    "lastUpdated": "2025-09-19T12:00:00.000Z",
+    "featureFlags": {
+      "skillPracticeEnabled": false,
+      "topicPracticeEnabled": false,
+      "strategyIntegrationEnabled": false
+    },
+    "skillMappings": {
+      "CID": {
+        "skillCode": "CID",
+        "skillId": "central_ideas_and_details",
+        "skillTitle": "Central Ideas and Details",
+        "domainId": "information_and_ideas",
+        "domainTitle": "Information and Ideas",
+        "description": "Identifying main ideas, themes, and supporting details in texts"
+      },
+      "COE": {
+        "skillCode": "COE",
+        "skillId": "command_of_evidence",
+        "skillTitle": "Command of Evidence",
+        "domainId": "information_and_ideas",
+        "domainTitle": "Information and Ideas",
+        "description": "Ability to locate, interpret, and evaluate textual evidence"
+      },
+      "INF": {
+        "skillCode": "INF",
+        "skillId": "inferences",
+        "skillTitle": "Inferences",
+        "domainId": "information_and_ideas",
+        "domainTitle": "Information and Ideas",
+        "description": "Drawing logical conclusions from explicit and implicit information"
+      },
+      "SYN": {
+        "skillCode": "SYN",
+        "skillId": "rhetorical_synthesis",
+        "skillTitle": "Rhetorical Synthesis",
+        "domainId": "expression_of_ideas",
+        "domainTitle": "Expression of Ideas",
+        "description": "Combining information from multiple sources for effective expression"
+      },
+      "TRA": {
+        "skillCode": "TRA",
+        "skillId": "transitions",
+        "skillTitle": "Transitions",
+        "domainId": "expression_of_ideas",
+        "domainTitle": "Expression of Ideas",
+        "description": "Using appropriate transitional words and phrases to connect ideas"
+      },
+      "WIC": {
+        "skillCode": "WIC",
+        "skillId": "words_in_context",
+        "skillTitle": "Words in Context",
+        "domainId": "craft_and_structure",
+        "domainTitle": "Craft and Structure",
+        "description": "Understanding meaning of words and phrases based on context"
+      },
+      "TSP": {
+        "skillCode": "TSP",
+        "skillId": "text_structure_and_purpose",
+        "skillTitle": "Text Structure and Purpose",
+        "domainId": "craft_and_structure",
+        "domainTitle": "Craft and Structure",
+        "description": "Analyzing how texts are organized and understanding author's purpose"
+      },
+      "CTC": {
+        "skillCode": "CTC",
+        "skillId": "cross_text_connections",
+        "skillTitle": "Cross-Text Connections",
+        "domainId": "craft_and_structure",
+        "domainTitle": "Craft and Structure",
+        "description": "Making connections between related texts and synthesizing information"
+      },
+      "BOU": {
+        "skillCode": "BOU",
+        "skillId": "boundaries",
+        "skillTitle": "Boundaries",
+        "domainId": "standard_english_conventions",
+        "domainTitle": "Standard English Conventions",
+        "description": "Using punctuation correctly to clarify meaning and structure"
+      },
+      "FSS": {
+        "skillCode": "FSS",
+        "skillId": "form_structure_and_sense",
+        "skillTitle": "Form, Structure, and Sense",
+        "domainId": "standard_english_conventions",
+        "domainTitle": "Standard English Conventions",
+        "description": "Ensuring grammatical correctness and logical sentence construction"
+      }
+    },
+    "domainOrganization": {
+      "information_and_ideas": {
+        "title": "Information and Ideas",
+        "skills": ["CID", "COE", "INF"],
+        "questionCount": 291,
+        "description": "Understanding main ideas, details, and evidence"
+      },
+      "expression_of_ideas": {
+        "title": "Expression of Ideas",
+        "skills": ["SYN", "TRA"],
+        "questionCount": 189,
+        "description": "Editing for effectiveness and rhetorical purpose"
+      },
+      "craft_and_structure": {
+        "title": "Craft and Structure",
+        "skills": ["WIC", "TSP", "CTC"],
+        "questionCount": 247,
+        "description": "Understanding vocabulary, structure, and connections"
+      },
+      "standard_english_conventions": {
+        "title": "Standard English Conventions",
+        "skills": ["BOU", "FSS"],
+        "questionCount": 194,
+        "description": "Grammar, usage, and punctuation"
+      }
+    },
+    "dataSettings": {
+      "primaryDataSource": "data/chunks/part-001.json",
+      "fallbackDataSources": ["data/chunks/part-002.json", "data/chunks/part-000.json"],
+      "cacheTimeout": 300000,
+      "questionShuffling": true,
+      "maxQuestionsPerSession": 20
+    },
+    "practiceSettings": {
+      "defaultMode": "individual_skill",
+      "availableModes": ["individual_skill", "topic_practice"],
+      "strategyIntegration": true,
+      "resultsSummary": true,
+      "progressTracking": true
+    }
+  }
+}

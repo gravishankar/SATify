@@ -27,6 +27,11 @@ class SATApp {
             if (window.SATAnalytics) {
                 window.SATAnalytics.init(this);
             }
+
+            // Initialize skill practice module
+            if (window.skillPracticeUI) {
+                await window.skillPracticeUI.initialize();
+            }
         } catch (error) {
             console.error('Failed to initialize app:', error);
             this.showToast('Failed to load application', 'error');
