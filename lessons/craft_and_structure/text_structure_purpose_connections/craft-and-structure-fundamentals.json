@@ -1,0 +1,118 @@
+{
+  "id": "craft_and_structure_fundamentals",
+  "domain_id": "craft_and_structure",
+  "domain_title": "Craft and Structure",
+  "skill_id": "text_structure_purpose_connections",
+  "skill_title": "Text Structure, Purpose, and Connections",
+  "title": "Craft and Structure Fundamentals",
+  "learning_objectives": [
+    "Interpret words in context with precision",
+    "Analyze text structure and author\u2019s purpose",
+    "Recognize relationships across paired texts",
+    "Apply strategies to decode tough distractors"
+  ],
+  "slides": [
+    {
+      "id": "whats-tested",
+      "type": "introduction",
+      "title": "What's Tested",
+      "icon": "\ud83c\udfaf",
+      "content": {
+        "title": "Craft and Structure",
+        "subtitle": "Language, structure, and purpose",
+        "points": [
+          "Meaning of words and phrases in context",
+          "Author\u2019s point of view and purpose",
+          "How structure shapes meaning",
+          "Connections between two related texts"
+        ]
+      }
+    },
+    {
+      "id": "what-makes-tricky",
+      "type": "concept",
+      "title": "What Makes This Tricky",
+      "icon": "\u26a0\ufe0f",
+      "content": {
+        "title": "Common Pitfalls",
+        "explanation": "Trap answers may use a dictionary definition of a word rather than the contextual meaning, or state a plausible purpose that isn\u2019t supported.",
+        "example": "\u2018Novel\u2019 can mean new or literary work \u2014 only context reveals the correct sense."
+      }
+    },
+    {
+      "id": "strategy-steps",
+      "type": "strategy",
+      "title": "Strategy Steps",
+      "icon": "\ud83d\udccb",
+      "content": {
+        "title": "5-Step Approach",
+        "steps": [
+          "Step 1: Clarify \u2014 paraphrase the sentence in your own words.",
+          "Step 2: Purpose \u2014 ask why the author included this sentence/structure.",
+          "Step 3: Predict \u2014 anticipate meaning before looking at options.",
+          "Step 4: Eliminate \u2014 cut answers that are true but not supported by passage purpose.",
+          "Step 5: Verify \u2014 reread with your choice to check coherence."
+        ]
+      }
+    },
+    {
+      "id": "example-question",
+      "type": "practice",
+      "title": "Example Question",
+      "icon": "\u2753",
+      "content": {
+        "title": "Apply the Strategy",
+        "question": "In the passage, the phrase 'a novel approach' most nearly means:",
+        "choices": [
+          "an innovative method",
+          "a method described in a book",
+          "a traditional strategy",
+          "an entertaining idea"
+        ],
+        "correct_answer": 0,
+        "explanation": "Only 'innovative method' fits the context of scientific research. Trap B relies on dictionary meaning. Trap C contradicts 'novel'. Trap D is unrelated."
+      }
+    },
+    {
+      "id": "walkthrough",
+      "type": "walkthrough",
+      "title": "Step-by-Step Solution",
+      "icon": "\ud83d\udca1",
+      "content": {
+        "title": "Solution Walkthrough",
+        "solution_steps": [
+          "Context: research describing a 'novel approach'.",
+          "Predict: must mean new or original.",
+          "Check A: 'innovative method' = correct.",
+          "Check B: literal 'book' meaning doesn\u2019t fit.",
+          "Check C: 'traditional' is opposite of novel.",
+          "Check D: 'entertaining' irrelevant.",
+          "Correct: A fits both meaning and context."
+        ]
+      }
+    },
+    {
+      "id": "wrap-up",
+      "type": "summary",
+      "title": "Great Job!",
+      "icon": "\ud83c\udf89",
+      "content": {
+        "title": "Key Takeaways",
+        "summary": "Craft and Structure questions test how language and structure create meaning.",
+        "key_points": [
+          "Always test words in passage context, not dictionary definitions.",
+          "Author\u2019s purpose is about intent, not personal opinion.",
+          "Paired texts: look for similarities and differences in approach."
+        ],
+        "next_steps": "Practice with dual passages to sharpen comparative analysis."
+      }
+    }
+  ],
+  "created_at": "2025-09-19T00:10:26.000Z",
+  "status": "published",
+  "author": "instructor",
+  "updated_at": "2025-09-19T00:10:26.000Z",
+  "published_at": "2025-09-19T00:10:26.000Z",
+  "version": "1.0",
+  "format_version": "creator_studio_v1"
+}

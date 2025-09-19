@@ -1,0 +1,118 @@
+{
+  "id": "standard_english_conventions_fundamentals",
+  "domain_id": "standard_english_conventions",
+  "domain_title": "Standard English Conventions",
+  "skill_id": "grammar_usage_punctuation",
+  "skill_title": "Grammar, Usage, and Punctuation",
+  "title": "Standard English Conventions Fundamentals",
+  "learning_objectives": [
+    "Apply grammar and usage rules",
+    "Recognize correct sentence boundaries",
+    "Use punctuation accurately",
+    "Avoid traps that mimic speech patterns but break rules"
+  ],
+  "slides": [
+    {
+      "id": "whats-tested",
+      "type": "introduction",
+      "title": "What's Tested",
+      "icon": "\ud83c\udfaf",
+      "content": {
+        "title": "Standard English Conventions",
+        "subtitle": "Grammar and punctuation mastery",
+        "points": [
+          "Sentence boundaries (fragments, run-ons)",
+          "Verb tense and agreement",
+          "Pronoun clarity and agreement",
+          "Punctuation: commas, colons, semicolons, apostrophes"
+        ]
+      }
+    },
+    {
+      "id": "what-makes-tricky",
+      "type": "concept",
+      "title": "What Makes This Tricky",
+      "icon": "\u26a0\ufe0f",
+      "content": {
+        "title": "Common Pitfalls",
+        "explanation": "Trap choices often mimic how people speak casually but ignore grammar rules.",
+        "example": "Run-ons with 'and' or missing commas after introductory phrases are frequent traps."
+      }
+    },
+    {
+      "id": "strategy-steps",
+      "type": "strategy",
+      "title": "Strategy Steps",
+      "icon": "\ud83d\udccb",
+      "content": {
+        "title": "5-Step Approach",
+        "steps": [
+          "Step 1: Spot the grammar focus \u2014 boundary, verb, pronoun, punctuation.",
+          "Step 2: Predict the correction before reading choices.",
+          "Step 3: Eliminate choices that create new errors.",
+          "Step 4: Apply formal written English rules, not spoken patterns.",
+          "Step 5: Reread for clarity and correctness."
+        ]
+      }
+    },
+    {
+      "id": "example-question",
+      "type": "practice",
+      "title": "Example Question",
+      "icon": "\u2753",
+      "content": {
+        "title": "Apply the Strategy",
+        "question": "Which choice correctly completes the sentence? 'The committee members, who were eager to finish the project, ____ working late into the night.'",
+        "choices": [
+          "was",
+          "were",
+          "is",
+          "has been"
+        ],
+        "correct_answer": 1,
+        "explanation": "'Members' is plural \u2192 requires 'were'. Trap A ('was') and C ('is') mismatch in number/tense. Trap D ('has been') is wrong tense."
+      }
+    },
+    {
+      "id": "walkthrough",
+      "type": "walkthrough",
+      "title": "Step-by-Step Solution",
+      "icon": "\ud83d\udca1",
+      "content": {
+        "title": "Solution Walkthrough",
+        "solution_steps": [
+          "Subject: 'members' (plural).",
+          "Verb must agree with plural subject.",
+          "Check A: 'was' = singular \u2192 wrong.",
+          "Check B: 'were' = plural \u2192 correct.",
+          "Check C: 'is' = singular, wrong tense.",
+          "Check D: 'has been' = singular and wrong tense.",
+          "Correct: B."
+        ]
+      }
+    },
+    {
+      "id": "wrap-up",
+      "type": "summary",
+      "title": "Great Job!",
+      "icon": "\ud83c\udf89",
+      "content": {
+        "title": "Key Takeaways",
+        "summary": "Standard English Conventions test the mechanics of formal written English.",
+        "key_points": [
+          "Subject-verb agreement is critical.",
+          "Watch out for run-ons, fragments, and comma misuse.",
+          "Always default to formal written rules, not spoken style."
+        ],
+        "next_steps": "Practice with error-spotting drills for speed and accuracy."
+      }
+    }
+  ],
+  "created_at": "2025-09-19T00:10:26.000Z",
+  "status": "published",
+  "author": "instructor",
+  "updated_at": "2025-09-19T00:10:26.000Z",
+  "published_at": "2025-09-19T00:10:26.000Z",
+  "version": "1.0",
+  "format_version": "creator_studio_v1"
+}

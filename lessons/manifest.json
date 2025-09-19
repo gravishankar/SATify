@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "lastUpdated": "2025-09-18T18:30:00.000Z",
-  "totalLessons": 8,
+  "lastUpdated": "2025-09-19T00:30:00.000Z",
+  "totalLessons": 12,
   "lessons": {
     "expression_of_ideas_rhetorical_synthesis_rhetorical-synthesis": {
       "id": "expression_of_ideas_rhetorical_synthesis_rhetorical-synthesis",
@@ -130,6 +130,70 @@
       "filepath": "lessons/information_and_ideas/command_of_evidence/command-of-evidence.json",
       "slide_count": 6,
       "learning_objectives_count": 3
+    },
+    "information_and_ideas_comprehension_analysis_reasoning_information-and-ideas-fundamentals": {
+      "id": "information_and_ideas_comprehension_analysis_reasoning_information-and-ideas-fundamentals",
+      "title": "Information and Ideas Fundamentals",
+      "domain_id": "information_and_ideas",
+      "domain_title": "Information and Ideas",
+      "skill_id": "comprehension_analysis_reasoning",
+      "skill_title": "Comprehension, Analysis, and Reasoning",
+      "author": "instructor",
+      "created_at": "2025-09-19T00:10:26.000Z",
+      "updated_at": "2025-09-19T00:10:26.000Z",
+      "published_at": "2025-09-19T00:10:26.000Z",
+      "status": "published",
+      "filepath": "lessons/information_and_ideas/comprehension_analysis_reasoning/information-and-ideas-fundamentals.json",
+      "slide_count": 6,
+      "learning_objectives_count": 4
+    },
+    "craft_and_structure_text_structure_purpose_connections_craft-and-structure-fundamentals": {
+      "id": "craft_and_structure_text_structure_purpose_connections_craft-and-structure-fundamentals",
+      "title": "Craft and Structure Fundamentals",
+      "domain_id": "craft_and_structure",
+      "domain_title": "Craft and Structure",
+      "skill_id": "text_structure_purpose_connections",
+      "skill_title": "Text Structure, Purpose, and Connections",
+      "author": "instructor",
+      "created_at": "2025-09-19T00:10:26.000Z",
+      "updated_at": "2025-09-19T00:10:26.000Z",
+      "published_at": "2025-09-19T00:10:26.000Z",
+      "status": "published",
+      "filepath": "lessons/craft_and_structure/text_structure_purpose_connections/craft-and-structure-fundamentals.json",
+      "slide_count": 6,
+      "learning_objectives_count": 4
+    },
+    "expression_of_ideas_revision_rhetoric_transitions_expression-of-ideas-fundamentals": {
+      "id": "expression_of_ideas_revision_rhetoric_transitions_expression-of-ideas-fundamentals",
+      "title": "Expression of Ideas Fundamentals",
+      "domain_id": "expression_of_ideas",
+      "domain_title": "Expression of Ideas",
+      "skill_id": "revision_rhetoric_transitions",
+      "skill_title": "Revision, Rhetoric, and Transitions",
+      "author": "instructor",
+      "created_at": "2025-09-19T00:10:26.000Z",
+      "updated_at": "2025-09-19T00:10:26.000Z",
+      "published_at": "2025-09-19T00:10:26.000Z",
+      "status": "published",
+      "filepath": "lessons/expression_of_ideas/revision_rhetoric_transitions/expression-of-ideas-fundamentals.json",
+      "slide_count": 6,
+      "learning_objectives_count": 4
+    },
+    "standard_english_conventions_grammar_usage_punctuation_standard-english-conventions-fundamentals": {
+      "id": "standard_english_conventions_grammar_usage_punctuation_standard-english-conventions-fundamentals",
+      "title": "Standard English Conventions Fundamentals",
+      "domain_id": "standard_english_conventions",
+      "domain_title": "Standard English Conventions",
+      "skill_id": "grammar_usage_punctuation",
+      "skill_title": "Grammar, Usage, and Punctuation",
+      "author": "instructor",
+      "created_at": "2025-09-19T00:10:26.000Z",
+      "updated_at": "2025-09-19T00:10:26.000Z",
+      "published_at": "2025-09-19T00:10:26.000Z",
+      "status": "published",
+      "filepath": "lessons/standard_english_conventions/grammar_usage_punctuation/standard-english-conventions-fundamentals.json",
+      "slide_count": 6,
+      "learning_objectives_count": 4
     }
   },
   "domains": {
@@ -152,6 +216,11 @@
           "id": "central_ideas_and_details",
           "title": "Central Ideas and Details",
           "description": "Identify main ideas and important supporting details in texts"
+        },
+        "comprehension_analysis_reasoning": {
+          "id": "comprehension_analysis_reasoning",
+          "title": "Comprehension, Analysis, and Reasoning",
+          "description": "Identify central ideas, interpret evidence, and recognize text structures"
         }
       }
     },
@@ -169,6 +238,11 @@
           "id": "transitions",
           "title": "Transitions",
           "description": "Choose appropriate transition words to connect ideas logically"
+        },
+        "revision_rhetoric_transitions": {
+          "id": "revision_rhetoric_transitions",
+          "title": "Revision, Rhetoric, and Transitions",
+          "description": "Revise text for clarity, concision, and effectiveness; choose appropriate transitions"
         }
       }
     },
@@ -186,6 +260,11 @@
           "id": "text_structure_and_purpose",
           "title": "Text Structure and Purpose",
           "description": "Analyze how text structure and purpose affect meaning and reader understanding"
+        },
+        "text_structure_purpose_connections": {
+          "id": "text_structure_purpose_connections",
+          "title": "Text Structure, Purpose, and Connections",
+          "description": "Interpret words in context, analyze text structure and author's purpose, recognize relationships across texts"
         }
       }
     },
@@ -203,6 +282,11 @@
           "id": "form_structure_and_sense",
           "title": "Form, Structure, and Sense",
           "description": "Maintain proper grammatical forms, sentence structure, and logical sense"
+        },
+        "grammar_usage_punctuation": {
+          "id": "grammar_usage_punctuation",
+          "title": "Grammar, Usage, and Punctuation",
+          "description": "Apply grammar and usage rules, recognize correct sentence boundaries, use punctuation accurately"
         }
       }
     }
