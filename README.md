@@ -6,7 +6,7 @@ A comprehensive, student-friendly SAT practice platform with advanced features i
 ![PWA Ready](https://img.shields.io/badge/PWA-Ready-green?style=for-the-badge)
 ![Offline Support](https://img.shields.io/badge/Offline-Support-orange?style=for-the-badge)
 
-## ✨ Feature Lists
+## ✨ Feature List
 
 ### 🎯 **Core Functionality**
 - **2,017 Authentic SAT Questions** - Complete question bank with Math and Reading & Writing
