@@ -1557,9 +1557,24 @@ body {
   z-index: 10;
 }
 
+/* Reduce padding on first slide for better spacing */
+.lesson-slide[data-slide="0"] {
+  padding: 1rem 2rem;
+}
+
 .slide-content {
   text-align: center;
   color: #1e293b;
+}
+
+.slide-content.centered {
+  padding: 1rem 0;
+}
+
+/* Improve spacing for lesson selection screen */
+.published-lesson-list {
+  margin: 1.5rem auto !important;
+  max-width: 700px !important;
 }
 
 .slide-content h3 {
@@ -1589,8 +1604,7 @@ body {
 }
 
 .slide-indicators {
-  display: flex;
-  gap: 0.5rem;
+  display: none;
 }
 
 .indicator {
@@ -1628,6 +1642,11 @@ body {
 
   .lesson-slide {
     padding: 1rem;
+  }
+
+  /* Reduce padding on first slide for mobile */
+  .lesson-slide[data-slide="0"] {
+    padding: 0.5rem 1rem;
   }
 
   .slide-content h3 {
