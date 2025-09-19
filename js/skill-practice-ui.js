@@ -11,6 +11,7 @@ class SkillPracticeUI {
         this.currentSession = null;
         this.elements = {};
         this.isInitialized = false;
+        this.skillToLessonMapping = this.buildSkillToLessonMapping();
     }
 
     async initialize() {
@@ -78,6 +79,19 @@ class SkillPracticeUI {
         this.elements.resultsSummary = document.getElementById('resultsSummary');
         this.elements.practiceAgainBtn = document.getElementById('practiceAgain');
         this.elements.backToSkillsBtn = document.getElementById('backToSkills');
+
+        // Strategy hint modal
+        this.elements.strategyHintModal = document.getElementById('strategyHintModal');
+        this.elements.strategyHintContent = document.getElementById('strategyHintContent');
+        this.elements.closeStrategyHint = document.getElementById('closeStrategyHint');
+        this.elements.gotItBtn = document.getElementById('gotItBtn');
+        this.elements.hintBtn = document.getElementById('skillHintBtn');
+
+        // Lesson navigation
+        this.elements.lessonNavigation = document.getElementById('lessonNavigation');
+
+        // Session controls
+        this.elements.endSessionBtn = document.getElementById('endSession');
     }
 
     setupEventListeners() {
@@ -126,6 +140,31 @@ class SkillPracticeUI {
 
         this.elements.backToSkillsBtn?.addEventListener('click', () => {
             this.backToSkillSelection();
+        });
+
+        // Strategy hint modal
+        this.elements.hintBtn?.addEventListener('click', () => {
+            this.showStrategyHint();
+        });
+
+        this.elements.closeStrategyHint?.addEventListener('click', () => {
+            this.hideStrategyHint();
+        });
+
+        this.elements.gotItBtn?.addEventListener('click', () => {
+            this.hideStrategyHint();
+        });
+
+        // Close modal on backdrop click
+        this.elements.strategyHintModal?.addEventListener('click', (e) => {
+            if (e.target === this.elements.strategyHintModal || e.target.classList.contains('modal-backdrop')) {
+                this.hideStrategyHint();
+            }
+        });
+
+        // Session controls
+        this.elements.endSessionBtn?.addEventListener('click', () => {
+            this.endSession();
         });
     }
 
@@ -384,10 +423,13 @@ class SkillPracticeUI {
         this.startQuestionPhase();
     }
 
-    startQuestionPhase() {
+    async startQuestionPhase() {
         // Hide strategy, show questions
         this.elements.strategyPhase.classList.add('hidden');
         this.elements.questionPhase.classList.remove('hidden');
+
+        // Set up lesson navigation
+        await this.setupLessonNavigation();
 
         // Load first question
         this.loadCurrentQuestion();
@@ -634,6 +676,11 @@ class SkillPracticeUI {
         this.elements.skillSelectionView.classList.remove('hidden');
     }
 
+    endSession() {
+        // End session is the same as going back to skill selection
+        this.backToSkillSelection();
+    }
+
     resetQuestionControls() {
         // Reset answer choices
         document.querySelectorAll('.answer-choice').forEach(choice => {
@@ -650,6 +697,197 @@ class SkillPracticeUI {
         });
 
         this.questionStartTime = Date.now();
+    }
+
+    // Strategy Hint Methods
+    async showStrategyHint() {
+        if (!this.currentSession) {
+            this.showToast('No active session');
+            return;
+        }
+
+        try {
+            let strategy = this.currentSession.strategy;
+
+            if (!strategy) {
+                // Try to load strategy for current skill
+                const practiceType = this.currentSession.practiceType;
+                const targetId = this.currentSession.targetId;
+                strategy = await this.manager.strategyEngine.getStrategyForTarget(practiceType, targetId);
+            }
+
+            if (strategy) {
+                this.displayStrategyHint(strategy);
+            } else {
+                this.showNoStrategyAvailable();
+            }
+        } catch (error) {
+            console.error('Error loading strategy hint:', error);
+            this.showToast('Failed to load strategy hint', 'error');
+        }
+    }
+
+    displayStrategyHint(strategy) {
+        if (!this.elements.strategyHintContent) return;
+
+        // Format strategy content for the hint modal
+        let content = `<h4>${strategy.title || 'Strategy Guide'}</h4>`;
+
+        if (strategy.slides && strategy.slides.length > 0) {
+            strategy.slides.forEach(slide => {
+                if (slide.type === 'strategy' || slide.id.includes('strategy')) {
+                    content += `<div class="strategy-section">`;
+                    if (slide.title) {
+                        content += `<h5>${slide.title}</h5>`;
+                    }
+                    if (slide.content) {
+                        content += this.formatSlideContent(slide.content);
+                    }
+                    content += `</div>`;
+                }
+            });
+        } else {
+            content += `<p>Strategy content is available for this skill. Review the key concepts and approaches for better performance.</p>`;
+        }
+
+        this.elements.strategyHintContent.innerHTML = content;
+        this.elements.strategyHintModal.classList.remove('hidden');
+    }
+
+    showNoStrategyAvailable() {
+        this.elements.strategyHintContent.innerHTML = `
+            <h4>No Strategy Available</h4>
+            <p>Strategy content is not yet available for this skill. Try your best with the current question, and check back later for strategy updates.</p>
+            <p><strong>General Tips:</strong></p>
+            <ul>
+                <li>Read the question carefully</li>
+                <li>Eliminate obviously wrong answers</li>
+                <li>Look for context clues in the passage</li>
+                <li>Choose the best answer based on the given information</li>
+            </ul>
+        `;
+        this.elements.strategyHintModal.classList.remove('hidden');
+    }
+
+    hideStrategyHint() {
+        this.elements.strategyHintModal.classList.add('hidden');
+    }
+
+    // Lesson Navigation Methods
+    buildSkillToLessonMapping() {
+        // Map skill codes to their corresponding lessons
+        return {
+            'CID': 'central-ideas',
+            'COE': 'command-of-evidence',
+            'INF': 'inferences',
+            'SYN': 'rhetorical-synthesis',
+            'TRA': 'transitions',
+            'WIC': 'words-in-context',
+            'TSP': 'text-structure-and-purpose',
+            'CTC': 'cross-text-connections',
+            'BOU': 'boundaries',
+            'FSS': 'form-structure-and-sense'
+        };
+    }
+
+    async setupLessonNavigation() {
+        if (!this.currentSession) return;
+
+        const lessonNavContainer = this.elements.lessonNavigation;
+        if (!lessonNavContainer) return;
+
+        // Clear existing content
+        lessonNavContainer.innerHTML = '';
+
+        let skillCode;
+        if (this.currentSession.practiceType === 'skill') {
+            skillCode = this.currentSession.targetId;
+        } else {
+            // For topic practice, we don't show lesson navigation
+            // as it's mixed skills
+            return;
+        }
+
+        const lessonKey = this.skillToLessonMapping[skillCode];
+        if (lessonKey) {
+            const lessonExists = await this.checkLessonExists(lessonKey);
+            if (lessonExists) {
+                const backButton = this.createBackToLessonButton(lessonKey, skillCode);
+                lessonNavContainer.appendChild(backButton);
+            }
+        }
+    }
+
+    async checkLessonExists(lessonKey) {
+        try {
+            const manifestResponse = await fetch('lessons/manifest.json?v=' + Date.now());
+            if (!manifestResponse.ok) return false;
+
+            const manifest = await manifestResponse.json();
+            const lessons = manifest.lessons || {};
+
+            // Check if lesson exists in manifest
+            return Object.values(lessons).some(lesson =>
+                lesson.filepath.includes(lessonKey) || lesson.id === lessonKey
+            );
+        } catch (error) {
+            console.error('Error checking lesson existence:', error);
+            return false;
+        }
+    }
+
+    createBackToLessonButton(lessonKey, skillCode) {
+        const button = document.createElement('button');
+        button.className = 'lesson-btn';
+        button.innerHTML = `
+            <span class="btn-icon">📚</span>
+            <span class="btn-text">Back to Lesson</span>
+        `;
+
+        button.addEventListener('click', () => {
+            this.navigateToLesson(lessonKey, skillCode);
+        });
+
+        return button;
+    }
+
+    navigateToLesson(lessonKey, skillCode) {
+        // Save current practice progress (optional)
+        this.savePracticeProgress();
+
+        // Navigate to the learn page with the specific lesson
+        const skillInfo = this.manager.config.skillPracticeConfig.skillMappings[skillCode];
+        const domainId = skillInfo.domainId;
+
+        // Show toast to inform user
+        this.showToast(`Navigating to ${skillInfo.skillTitle} lesson...`);
+
+        // Navigate to learn page
+        // This assumes your existing navigation system can handle this
+        setTimeout(() => {
+            window.location.hash = `#learn`;
+
+            // If there's a global lesson loader, trigger it
+            if (window.learnPage && window.learnPage.loadDomainLessons) {
+                window.learnPage.loadDomainLessons(domainId);
+            }
+        }, 500);
+    }
+
+    savePracticeProgress() {
+        if (!this.currentSession) return;
+
+        const progress = {
+            sessionType: this.currentSession.practiceType,
+            targetId: this.currentSession.targetId,
+            currentQuestionIndex: this.currentSession.currentIndex,
+            totalQuestions: this.currentSession.questions.length,
+            answers: this.currentSession.answers,
+            timestamp: new Date().toISOString()
+        };
+
+        // Save to localStorage for potential resume
+        localStorage.setItem('skillPracticeProgress', JSON.stringify(progress));
     }
 
     showLoading(message) {
