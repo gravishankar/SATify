@@ -4,7 +4,7 @@
   "domain_title": "Craft and Structure",
   "skill_id": "words_in_context",
   "skill_title": "Words in Context",
-  "title": "Words in Context Fundamentals",
+  "title": "Words in Context Essentials",
   "learning_objectives": [
     "Understand how context determines word meaning",
     "Apply the 5-step strategy for solving Words in Context questions",
@@ -17,7 +17,7 @@
       "title": "What's Tested",
       "icon": "🎯",
       "content": {
-        "title": "Words in Context Fundamentals",
+        "title": "Words in Context Essentials",
         "subtitle": "Understanding meaning, tone, and structure in context",
         "points": [
           "Understanding how surrounding text determines the best word choice",
