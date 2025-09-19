@@ -873,10 +873,32 @@ class CreatorStudio {
         this.showNotification(`Lesson saved to browser storage (${lessons.length} total lessons)`, 'success');
     }
 
-    editLesson(lessonId) {
-        // Load lesson from localStorage for editing
-        const lessons = JSON.parse(localStorage.getItem('creator_studio_lessons') || '[]');
-        const lesson = lessons.find(l => l.id === lessonId);
+    async editLesson(lessonId) {
+        // First try to load from localStorage (local drafts)
+        const localLessons = JSON.parse(localStorage.getItem('creator_studio_lessons') || '[]');
+        let lesson = localLessons.find(l => l.id === lessonId);
+
+        // If not found locally, try to load from published lessons
+        if (!lesson) {
+            try {
+                const manifestResponse = await fetch(`lessons/manifest.json?v=${Date.now()}`);
+                if (manifestResponse.ok) {
+                    const manifest = await manifestResponse.json();
+                    const publishedLesson = manifest.lessons[lessonId];
+
+                    if (publishedLesson) {
+                        // Load the actual lesson content from the file
+                        const lessonResponse = await fetch(`${publishedLesson.filepath}?v=${Date.now()}`);
+                        if (lessonResponse.ok) {
+                            lesson = await lessonResponse.json();
+                            console.log('Loaded published lesson for editing:', lesson.title);
+                        }
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading published lesson:', error);
+            }
+        }
 
         if (!lesson) {
             this.showNotification(`Lesson not found: ${lessonId}`, 'error');

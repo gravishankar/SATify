@@ -759,6 +759,16 @@ class LearnPage {
     showPublishedLessonList(lessons) {
         const domainTitle = lessons[0].domain_title;
 
+        // Sort lessons to put Fundamentals first
+        const sortedLessons = [...lessons].sort((a, b) => {
+            const aIsFundamentals = a.title.toLowerCase().includes('fundamentals');
+            const bIsFundamentals = b.title.toLowerCase().includes('fundamentals');
+
+            if (aIsFundamentals && !bIsFundamentals) return -1;
+            if (!aIsFundamentals && bIsFundamentals) return 1;
+            return 0; // Keep original order for non-fundamentals
+        });
+
         // Create lesson list interface for learning
         const slidesHTML = `
             <div class="lesson-slide active" data-slide="0">
@@ -768,7 +778,7 @@ class LearnPage {
                     <p>Choose a lesson to begin learning:</p>
 
                     <div class="published-lesson-list" style="max-width: 600px; margin: 20px auto;">
-                        ${lessons.map(lesson => `
+                        ${sortedLessons.map(lesson => `
                             <div class="published-lesson-item"
                                  style="border: 1px solid #ddd; padding: 20px; margin-bottom: 15px; border-radius: 8px; cursor: pointer; transition: all 0.2s; background: white;"
                                  onmouseover="this.style.background='#f8f9fa'; this.style.borderColor='#007bff'"
