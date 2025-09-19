@@ -1437,6 +1437,10 @@ git push origin main</pre>
 
         console.log('Local lessons:', localLessons);
         console.log('Published lessons:', publishedLessons);
+
+        // Check for sync issues - local lessons that should be published
+        this.checkSyncStatus(localLessons, publishedLessons);
+
         console.log('All lessons (local + published):', allLessons);
 
         // Show improved lesson library interface
@@ -1701,6 +1705,79 @@ git push origin main</pre>
         });
 
         return merged;
+    }
+
+    checkSyncStatus(localLessons, publishedLessons) {
+        if (localLessons.length === 0) {
+            console.log('✅ No local lessons - fully synced with GitHub');
+            return;
+        }
+
+        // Check for lessons that exist in both places but might be outdated
+        const publishedTitles = new Set(publishedLessons.map(l => l.title.toLowerCase()));
+        const syncIssues = [];
+
+        localLessons.forEach(local => {
+            const title = (local.title || '').toLowerCase();
+
+            if (publishedTitles.has(title)) {
+                syncIssues.push({
+                    type: 'duplicate',
+                    local: local,
+                    message: `"${local.title}" exists in both localStorage and GitHub`
+                });
+            } else if (local.status === 'published') {
+                syncIssues.push({
+                    type: 'orphaned',
+                    local: local,
+                    message: `"${local.title}" marked as published but not found in GitHub`
+                });
+            }
+        });
+
+        if (syncIssues.length > 0) {
+            console.warn('⚠️ Sync issues detected:', syncIssues);
+            this.suggestSyncResolution(syncIssues);
+        } else {
+            console.log('✅ No sync conflicts detected');
+        }
+    }
+
+    suggestSyncResolution(syncIssues) {
+        const duplicates = syncIssues.filter(issue => issue.type === 'duplicate');
+        const orphaned = syncIssues.filter(issue => issue.type === 'orphaned');
+
+        if (duplicates.length > 0) {
+            console.log(`🔄 Suggestion: Clear ${duplicates.length} duplicate local lesson(s) since GitHub versions exist`);
+        }
+
+        if (orphaned.length > 0) {
+            console.log(`📤 Suggestion: Re-publish ${orphaned.length} orphaned lesson(s) or remove from localStorage`);
+        }
+    }
+
+    async syncWithGitHub() {
+        console.log('🔄 Starting sync with GitHub...');
+
+        const localLessons = this.getCreatedLessons();
+        const publishedLessons = await this.getPublishedLessons();
+
+        // Remove local lessons that exist in GitHub (GitHub takes precedence)
+        const publishedTitles = new Set(publishedLessons.map(l => l.title.toLowerCase()));
+        const cleanedLocal = localLessons.filter(local => {
+            const title = (local.title || '').toLowerCase();
+            return !publishedTitles.has(title);
+        });
+
+        // Update localStorage
+        localStorage.setItem('creator_studio_lessons', JSON.stringify(cleanedLocal));
+
+        console.log(`✅ Sync complete: Removed ${localLessons.length - cleanedLocal.length} duplicate(s) from localStorage`);
+
+        this.showNotification(`Sync complete: GitHub lessons take precedence. Removed ${localLessons.length - cleanedLocal.length} local duplicates.`, 'success');
+
+        // Refresh the lesson library
+        await this.showLessonLibrary();
     }
 
     exportLesson(lessonId) {
