@@ -54,8 +54,9 @@ The SAT Skill Practice Module introduces a comprehensive, skill-based practice s
 ### FR3: Strategy System
 - **FR3.1**: Extract strategy content from existing 20 lessons
 - **FR3.2**: Present strategy before practice session begins
-- **FR3.3**: Allow strategy review during practice (quick reference)
-- **FR3.4**: **[Future]** Strategy Update Tool for content management
+- **FR3.3**: Allow strategy review during practice (quick reference via hint button)
+- **FR3.4**: Strategy hint modal/popup for contextual help during questions
+- **FR3.5**: **[Future]** Strategy Update Tool for content management
 
 ### FR4: Data Management
 - **FR4.1**: Source questions from existing `part-001.json` chunk data
@@ -63,11 +64,17 @@ The SAT Skill Practice Module introduces a comprehensive, skill-based practice s
 - **FR4.3**: Maintain parallel data structure to existing practice system
 - **FR4.4**: Support dynamic question loading and filtering
 
-### FR5: Feature Management
-- **FR5.1**: Feature flag system for gradual rollout
-- **FR5.2**: Student-friendly toggle (avoid technical complexity)
-- **FR5.3**: Graceful fallback to existing practice system
-- **FR5.4**: Administrative control over feature availability
+### FR5: Lesson Integration
+- **FR5.1**: Dynamic "Back to Lesson" navigation from skill practice to corresponding lesson
+- **FR5.2**: Context-aware lesson linking based on skill-to-lesson mapping
+- **FR5.3**: Seamless transition between practice and learning modes
+- **FR5.4**: Lesson availability detection and graceful fallback
+
+### FR6: Feature Management
+- **FR6.1**: Feature flag system for gradual rollout
+- **FR6.2**: Student-friendly toggle (avoid technical complexity)
+- **FR6.3**: Graceful fallback to existing practice system
+- **FR6.4**: Administrative control over feature availability
 
 ## 🎨 User Experience Requirements
 
@@ -85,9 +92,16 @@ The SAT Skill Practice Module introduces a comprehensive, skill-based practice s
 
 ### UX3: Strategy Integration
 - **UX3.1**: Strategy slides before practice (following lesson format)
-- **UX3.2**: Quick strategy reference during practice
-- **UX3.3**: Strategy effectiveness tracking
-- **UX3.4**: Option to review strategy after incorrect answers
+- **UX3.2**: Quick strategy reference during practice via hint button (💡)
+- **UX3.3**: Strategy modal/popup for contextual help without interrupting flow
+- **UX3.4**: Strategy effectiveness tracking
+- **UX3.5**: Option to review strategy after incorrect answers
+
+### UX4: Lesson Integration
+- **UX4.1**: Prominent "Back to Lesson" button in skill practice header
+- **UX4.2**: Context-aware display (only show when lesson exists for skill)
+- **UX4.3**: Smooth transition to lesson without losing practice progress
+- **UX4.4**: Clear visual distinction between practice and lesson modes
 
 ## 📊 Data Requirements
 
@@ -172,7 +186,12 @@ Total: 921 questions across 10 skills
 
 ## 🔮 Future Enhancements
 
-### Planned Features
+### Immediate Enhancements (v1.1)
+- **Strategy Hint System**: Modal/popup for contextual strategy help during practice
+- **Lesson Integration**: Dynamic back-to-lesson navigation with skill mapping
+- **Enhanced Strategy Access**: Improved strategy review capabilities
+
+### Planned Features (v2.0+)
 - **Math Skills Integration**: Extend system to support SAT Math skills
 - **Strategy Update Tool**: Content management interface for strategy updates
 - **Advanced Analytics**: Skill-level performance tracking

@@ -401,6 +401,75 @@ async function extractQuestionsToFiles() {
 }
 ```
 
+### Strategy Hint System Enhancement
+
+```javascript
+class StrategyHintModal {
+    constructor(strategyEngine) {
+        this.strategyEngine = strategyEngine;
+        this.modal = null;
+        this.isVisible = false;
+    }
+
+    async showHint(skillCode) {
+        const strategy = await this.strategyEngine.getStrategyForTarget('skill', skillCode);
+        if (strategy) {
+            this.createModal(strategy);
+            this.showModal();
+        } else {
+            this.showNoStrategyMessage();
+        }
+    }
+
+    createModal(strategy) {
+        this.modal = document.createElement('div');
+        this.modal.className = 'strategy-hint-modal';
+        this.modal.innerHTML = this.formatStrategyContent(strategy);
+        document.body.appendChild(this.modal);
+    }
+}
+```
+
+### Lesson Integration System
+
+```javascript
+class LessonNavigationManager {
+    constructor() {
+        this.skillToLessonMapping = {};
+        this.lessonManifest = null;
+    }
+
+    async initialize() {
+        this.lessonManifest = await this.loadLessonManifest();
+        this.buildSkillToLessonMapping();
+    }
+
+    buildSkillToLessonMapping() {
+        // Map skills to their corresponding lessons
+        const mapping = {
+            'CID': 'central-ideas',
+            'COE': 'command-of-evidence',
+            'WIC': 'words-in-context',
+            // ... complete mapping
+        };
+
+        this.skillToLessonMapping = mapping;
+    }
+
+    getLessonForSkill(skillCode) {
+        return this.skillToLessonMapping[skillCode];
+    }
+
+    createBackToLessonButton(skillCode) {
+        const lessonKey = this.getLessonForSkill(skillCode);
+        if (lessonKey && this.lessonExists(lessonKey)) {
+            return this.createLessonButton(lessonKey);
+        }
+        return null;
+    }
+}
+```
+
 ### Strategy Extraction Process
 ```javascript
 async function extractStrategiesFromLessons() {
@@ -633,8 +702,40 @@ class QuestionCache {
 - [Testing Documentation](./skill-practice-testing.md)
 - [Deployment Guide](./skill-practice-deployment.md)
 
+## 🎨 Enhanced UI Components (v1.1)
+
+### Strategy Hint Modal
+```html
+<div class="strategy-hint-modal hidden" id="strategyHintModal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>💡 Strategy Hint</h3>
+            <button class="btn-close">×</button>
+        </div>
+        <div class="modal-body" id="strategyHintContent">
+            <!-- Strategy content populated here -->
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary">Got it!</button>
+        </div>
+    </div>
+</div>
+```
+
+### Lesson Integration Components
+```html
+<!-- Back to Lesson Button (context-aware) -->
+<div class="lesson-navigation" id="lessonNavigation">
+    <button class="btn btn-outline lesson-btn" id="backToLessonBtn">
+        <span class="btn-icon">📚</span>
+        <span class="btn-text">Back to Lesson</span>
+    </button>
+</div>
+```
+
 ---
 
 **Document Owner**: Development Team
 **Reviewers**: Architecture Team, Product Team
-**Last Updated**: September 19, 2025
+**Last Updated**: September 19, 2025 (Enhanced with v1.1 features)

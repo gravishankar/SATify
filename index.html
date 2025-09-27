@@ -718,7 +718,7 @@
 
                     <!-- Question Phase -->
                     <div id="questionPhase" class="question-phase hidden">
-                        <div class="practice-header">
+                        <div class="practice-header enhanced">
                             <div class="session-info">
                                 <h2 id="sessionTitle">Skill Practice</h2>
                                 <div class="session-meta">
@@ -727,6 +727,9 @@
                                 </div>
                             </div>
                             <div class="session-controls">
+                                <div class="lesson-navigation" id="lessonNavigation">
+                                    <!-- Back to lesson button will be populated here -->
+                                </div>
                                 <button class="btn btn-secondary" id="endSession">End Session</button>
                             </div>
                         </div>
@@ -1115,6 +1118,23 @@
 
     <!-- Toast Notifications -->
     <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Strategy Hint Modal -->
+    <div class="strategy-hint-modal hidden" id="strategyHintModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>💡 Strategy Hint</h3>
+                <button class="btn-close" id="closeStrategyHint">×</button>
+            </div>
+            <div class="modal-body" id="strategyHintContent">
+                <!-- Strategy content populated here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="gotItBtn">Got it!</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Strategy Modal -->
     <div id="strategyModal" class="strategy-modal hidden">

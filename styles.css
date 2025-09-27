@@ -3008,3 +3008,179 @@ body {
         gap: 0.5rem;
     }
 }
+
+/* ============================================================================
+   STRATEGY HINT MODAL
+   ============================================================================ */
+
+.strategy-hint-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.strategy-hint-modal:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+}
+
+.strategy-hint-modal .modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.strategy-hint-modal .modal-content {
+    position: relative;
+    background: var(--surface-color);
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 70vh;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.strategy-hint-modal:not(.hidden) .modal-content {
+    transform: scale(1);
+}
+
+.strategy-hint-modal .modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.strategy-hint-modal .modal-header h3 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+}
+
+.strategy-hint-modal .modal-body {
+    padding: 1.5rem;
+    max-height: 50vh;
+    overflow-y: auto;
+}
+
+.strategy-hint-modal .modal-body h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.strategy-hint-modal .modal-body ol,
+.strategy-hint-modal .modal-body ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.strategy-hint-modal .modal-body li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.strategy-hint-modal .modal-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.strategy-hint-modal .btn-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: var(--transition);
+    padding: 0.25rem;
+}
+
+.strategy-hint-modal .btn-close:hover {
+    color: var(--text-primary);
+}
+
+/* Lesson Navigation Button */
+.lesson-navigation {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.lesson-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+    border-radius: 8px;
+    transition: var(--transition);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.lesson-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+.lesson-btn .btn-icon {
+    font-size: 1rem;
+}
+
+/* Enhanced Practice Header */
+.practice-header.enhanced {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.practice-header.enhanced .session-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .strategy-hint-modal .modal-content {
+        width: 95%;
+        max-height: 80vh;
+    }
+
+    .practice-header.enhanced {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .practice-header.enhanced .session-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
