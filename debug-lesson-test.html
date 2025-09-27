@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Debug Test</title>
+</head>
+<body>
+    <h1>Lesson Loading Debug Test</h1>
+    <div id="results"></div>
+    <div id="lesson-container" style="border: 1px solid #ccc; margin-top: 20px; padding: 20px;">
+        <!-- Lesson will render here -->
+    </div>
+
+    <script>
+        const results = document.getElementById('results');
+
+        function log(message) {
+            console.log(message);
+            results.innerHTML += '<p>' + message + '</p>';
+        }
+
+        // Test 1: Check if files can be loaded
+        async function testFileLoading() {
+            log('=== Testing File Loading ===');
+
+            const testFiles = [
+                'content/lessons/lesson_01.json',
+                './content/lessons/lesson_01.json',
+                '/content/lessons/lesson_01.json'
+            ];
+
+            for (const file of testFiles) {
+                try {
+                    log(`Testing: ${file}`);
+                    const response = await fetch(file);
+                    log(`Response status: ${response.status}`);
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        log(`✅ SUCCESS: Loaded ${file}`);
+                        log(`Lesson title: ${data.title}`);
+                        log(`Slides count: ${data.slides?.length || 0}`);
+                        return { file, data };
+                    } else {
+                        log(`❌ FAILED: ${file} - Status ${response.status}`);
+                    }
+                } catch (error) {
+                    log(`❌ ERROR: ${file} - ${error.message}`);
+                }
+            }
+            return null;
+        }
+
+        // Test 2: Test lesson renderer with loaded data
+        async function testLessonRenderer(lessonData) {
+            log('=== Testing Lesson Renderer ===');
+
+            try {
+                // Create a simple renderer test
+                const container = document.getElementById('lesson-container');
+                container.innerHTML = `
+                    <h2>Lesson: ${lessonData.title}</h2>
+                    <p>Subtitle: ${lessonData.subtitle}</p>
+                    <p>Duration: ${lessonData.duration}</p>
+                    <p>Skill Codes: ${lessonData.skill_codes?.join(', ')}</p>
+                    <h3>Learning Objectives:</h3>
+                    <ul>
+                        ${lessonData.learning_objectives?.map(obj => `<li>${obj}</li>`).join('') || ''}
+                    </ul>
+                    <h3>Slides (${lessonData.slides?.length || 0} total):</h3>
+                    <ul>
+                        ${lessonData.slides?.map(slide => `<li>${slide.type}: ${slide.title}</li>`).join('') || ''}
+                    </ul>
+                `;
+                log('✅ Basic lesson data rendered successfully');
+            } catch (error) {
+                log(`❌ Renderer error: ${error.message}`);
+            }
+        }
+
+        // Run tests
+        (async function runTests() {
+            const result = await testFileLoading();
+            if (result) {
+                await testLessonRenderer(result.data);
+            } else {
+                log('❌ No lesson files could be loaded. Check file paths and server setup.');
+            }
+        })();
+    </script>
+</body>
+</html>

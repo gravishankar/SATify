@@ -38,17 +38,21 @@ class LessonLoader {
 
         const loadPromises = lessonFiles.map(async (filename) => {
             try {
+                console.log(`Attempting to load: content/lessons/${filename}`);
                 const response = await fetch(`content/lessons/${filename}`);
+                console.log(`Response for ${filename}:`, response.status, response.statusText);
+
                 if (!response.ok) {
-                    console.warn(`Failed to load ${filename}: ${response.status}`);
+                    console.warn(`Failed to load ${filename}: ${response.status} ${response.statusText}`);
                     return null;
                 }
 
                 const lessonData = await response.json();
+                console.log(`Successfully loaded lesson: ${lessonData.id} - ${lessonData.title}`);
                 this.lessons.set(lessonData.id, lessonData);
                 return lessonData;
             } catch (error) {
-                console.warn(`Error loading ${filename}:`, error);
+                console.error(`Error loading ${filename}:`, error);
                 return null;
             }
         });

@@ -16,12 +16,20 @@ class ModernLearnPage {
 
     async init() {
         try {
+            console.log('Initializing Modern Learn Page...');
             await this.lessonLoader.initialize();
+            console.log('Lesson loader initialized');
+
             this.setupEventListeners();
+            console.log('Event listeners setup');
+
             await this.setupLessonView();
-            console.log('Modern Learn Page initialized');
+            console.log('Lesson view setup complete');
+
+            console.log('Modern Learn Page initialized successfully');
         } catch (error) {
             console.error('Failed to initialize Modern Learn Page:', error);
+            this.showError('Failed to initialize lessons. Please refresh the page.');
         }
     }
 
@@ -61,15 +69,23 @@ class ModernLearnPage {
     }
 
     getSkillCodeFromId(skillId) {
-        // Map skill IDs to skill codes
+        // Map skill IDs to skill codes - Updated with all available lessons
         const skillMapping = {
             'information-and-ideas': 'CID',
             'craft-and-structure': 'WIC',
-            'expression-of-ideas': 'SYN',
-            'standard-english-conventions': 'BOU'
+            'expression-of-ideas': 'TRA', // Changed to TRA as we have transitions lesson
+            'standard-english-conventions': 'FSS' // Changed to FSS as we have grammar lesson
         };
 
-        return skillMapping[skillId] || null;
+        // Also check alternative mappings for the skills we have lessons for
+        const alternativeMapping = {
+            'information_and_ideas': 'CID',
+            'craft_and_structure': 'WIC',
+            'expression_of_ideas': 'TRA',
+            'standard_english_conventions': 'FSS'
+        };
+
+        return skillMapping[skillId] || alternativeMapping[skillId] || null;
     }
 
     markSkillAsHavingLessons(card, skillCode) {
