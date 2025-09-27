@@ -159,6 +159,7 @@ body {
   padding: 0.5rem;
   border-radius: 0.5rem;
   transition: var(--transition);
+  color: var(--text-primary);
 }
 
 .user-info:hover {
@@ -3115,6 +3116,7 @@ body {
     border-radius: 20px;
     font-size: 0.875rem;
     font-weight: 500;
+    /* White text is safe here - has colored background */
 }
 
 /* Content Type Specific Styles */
@@ -3244,6 +3246,7 @@ body {
     font-weight: 600;
     font-size: 1.125rem;
     flex-shrink: 0;
+    /* White text is safe here - has colored background */
 }
 
 .step-content {
@@ -3320,6 +3323,7 @@ body {
     font-size: 0.875rem;
     font-weight: 500;
     margin-right: 10px;
+    /* White text is safe here - has colored background */
 }
 
 .question-text {
