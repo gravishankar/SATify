@@ -1,5 +1,5 @@
 /**
- * SAT Practice Pro - Authentication Module
+ * SATify - Authentication Module
  * Handles user authentication and account management
  */
 

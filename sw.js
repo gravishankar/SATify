@@ -1,5 +1,5 @@
 /**
- * SAT Practice Pro - Service Worker
+ * SATify - Service Worker
  * Provides offline functionality and caching
  */
 
@@ -279,7 +279,7 @@ self.addEventListener('push', (event) => {
   };
   
   event.waitUntil(
-    self.registration.showNotification('SAT Practice Pro', options)
+    self.registration.showNotification('SATify', options)
   );
 });
 

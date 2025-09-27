@@ -1,5 +1,5 @@
 /**
- * SAT Practice Pro - Practice Module
+ * SATify - Practice Module
  * Advanced practice features and session management
  */
 

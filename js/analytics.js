@@ -1,5 +1,5 @@
 /**
- * SAT Practice Pro - Analytics Module
+ * SATify - Analytics Module
  * Performance tracking, insights, and progress visualization
  */
 

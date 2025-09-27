@@ -1,5 +1,5 @@
 /**
- * SAT Practice Pro - Core Application Logic
+ * SATify - Core Application Logic
  * Modern JavaScript application with comprehensive features
  */
 
