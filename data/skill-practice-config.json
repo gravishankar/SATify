@@ -90,11 +90,11 @@
       }
     },
     "domainOrganization": {
-      "information_and_ideas": {
-        "title": "Information and Ideas",
-        "skills": ["CID", "COE", "INF"],
-        "questionCount": 291,
-        "description": "Understanding main ideas, details, and evidence"
+      "standard_english_conventions": {
+        "title": "Standard English Conventions",
+        "skills": ["BOU", "FSS"],
+        "questionCount": 194,
+        "description": "Grammar, usage, and punctuation"
       },
       "expression_of_ideas": {
         "title": "Expression of Ideas",
@@ -108,11 +108,11 @@
         "questionCount": 247,
         "description": "Understanding vocabulary, structure, and connections"
       },
-      "standard_english_conventions": {
-        "title": "Standard English Conventions",
-        "skills": ["BOU", "FSS"],
-        "questionCount": 194,
-        "description": "Grammar, usage, and punctuation"
+      "information_and_ideas": {
+        "title": "Information and Ideas",
+        "skills": ["CID", "COE", "INF"],
+        "questionCount": 291,
+        "description": "Understanding main ideas, details, and evidence"
       }
     },
     "dataSettings": {
