@@ -393,6 +393,175 @@ class CreatorStudio {
         return 'lesson_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5);
     }
 
+    // Generate lesson in new modern format
+    generateModernLesson(title, skillCode, domainTitle) {
+        return {
+            id: this.generateLessonId(),
+            title: title,
+            subtitle: domainTitle,
+            level: "Foundation",
+            duration: "20-25 min",
+            skill_codes: [skillCode],
+            learning_objectives: [
+                "Master the fundamental concepts",
+                "Apply strategies to SAT questions",
+                "Avoid common traps and mistakes",
+                "Build confidence through practice"
+            ],
+            success_criteria: {
+                mastery_threshold: 0.75,
+                min_accuracy: 0.7,
+                required_slides: "all"
+            },
+            slides: this.createModernSlides(title)
+        };
+    }
+
+    createModernSlides(title) {
+        return [
+            {
+                id: "slide_01",
+                type: "introduction",
+                title: `Welcome to ${title}`,
+                duration_estimate: 180,
+                content: {
+                    heading: "Learning Objectives",
+                    text: `In this lesson, you'll master the essential skills for ${title.toLowerCase()} - a crucial component for SAT success.`,
+                    bullet_points: [
+                        "Understand the key concepts and terminology",
+                        "Learn proven strategies and approaches",
+                        "Practice with authentic SAT question formats",
+                        "Build confidence through guided examples"
+                    ],
+                    visual_element: {
+                        type: "progress_indicator",
+                        total_slides: 5,
+                        estimated_time: "20-25 minutes"
+                    }
+                },
+                interactions: [
+                    {
+                        type: "click_to_continue",
+                        text: "Ready to begin? Click to continue"
+                    }
+                ]
+            },
+            {
+                id: "slide_02",
+                type: "concept_teaching",
+                title: "Key Concepts",
+                duration_estimate: 240,
+                content: {
+                    heading: "Understanding the Fundamentals",
+                    text: "Let's start with the essential concepts you need to master.",
+                    concept_box: {
+                        title: "Important Points",
+                        points: [
+                            "🎯 **Focus on** the main principles",
+                            "📝 **Practice** with varied examples",
+                            "💡 **Apply** strategies consistently",
+                            "🔄 **Review** common mistakes"
+                        ]
+                    }
+                },
+                interactions: [
+                    {
+                        type: "click_to_continue",
+                        text: "Continue to Strategy"
+                    }
+                ]
+            },
+            {
+                id: "slide_03",
+                type: "strategy_teaching",
+                title: "Proven Strategy",
+                duration_estimate: 300,
+                content: {
+                    heading: "Step-by-Step Approach",
+                    strategy_steps: [
+                        {
+                            step: 1,
+                            title: "ANALYZE",
+                            description: "Carefully read and understand the question",
+                            example: "Identify what the question is asking for"
+                        },
+                        {
+                            step: 2,
+                            title: "APPLY",
+                            description: "Use the appropriate strategy or concept",
+                            example: "Follow the systematic approach"
+                        },
+                        {
+                            step: 3,
+                            title: "ANSWER",
+                            description: "Select the best choice and verify",
+                            example: "Double-check your reasoning"
+                        }
+                    ],
+                    memory_aid: "Remember: **A.A.A.** - Analyze, Apply, Answer"
+                },
+                interactions: [
+                    {
+                        type: "step_by_step_reveal",
+                        auto_advance: false
+                    }
+                ]
+            },
+            {
+                id: "slide_04",
+                type: "common_traps",
+                title: "Common Mistakes to Avoid",
+                duration_estimate: 240,
+                content: {
+                    heading: "Watch Out! 🚨",
+                    trap_examples: [
+                        {
+                            trap_type: "Rushing Through",
+                            description: "Moving too quickly without careful analysis",
+                            example: "Take time to understand what's being asked"
+                        },
+                        {
+                            trap_type: "Overthinking",
+                            description: "Making simple questions more complex than needed",
+                            example: "Trust your first instinct when you're confident"
+                        }
+                    ]
+                },
+                interactions: [
+                    {
+                        type: "click_to_continue",
+                        text: "Continue to Summary"
+                    }
+                ]
+            },
+            {
+                id: "slide_05",
+                type: "wrap_up",
+                title: "Lesson Complete!",
+                duration_estimate: 120,
+                content: {
+                    heading: "Key Takeaways",
+                    summary_points: [
+                        "🎯 Master the fundamental concepts",
+                        "📝 Apply the A.A.A. strategy consistently",
+                        "⚠️ Avoid rushing and overthinking",
+                        "💪 Practice regularly to build confidence"
+                    ],
+                    next_steps: {
+                        practice_suggestion: "Ready for practice? Try the skill practice to apply what you've learned!",
+                        confidence_builder: "You now have the tools to tackle these questions with confidence."
+                    }
+                },
+                interactions: [
+                    {
+                        type: "completion_celebration",
+                        celebration_text: "Excellent work! You're ready to apply these skills."
+                    }
+                ]
+            }
+        ];
+    }
+
     createDefaultSlides() {
         // 6-slide template based on Words in Context Learn section
         return [

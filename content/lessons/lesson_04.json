@@ -1,0 +1,398 @@
+{
+  "id": "lesson_04",
+  "title": "Verb Forms, Tense & Agreement",
+  "subtitle": "Form, Structure and Sense",
+  "level": "Foundation",
+  "duration": "25-30 min",
+  "skill_codes": ["FSS"],
+  "learning_objectives": [
+    "Master subject-verb agreement in complex situations",
+    "Use verb tenses consistently and correctly",
+    "Handle tricky agreement scenarios with collective nouns",
+    "Apply verb rules to challenging SAT Writing questions"
+  ],
+  "success_criteria": {
+    "mastery_threshold": 0.75,
+    "min_accuracy": 0.7,
+    "required_slides": "all"
+  },
+  "slides": [
+    {
+      "id": "slide_01",
+      "type": "introduction",
+      "title": "Welcome to Verb Mastery",
+      "duration_estimate": 180,
+      "content": {
+        "heading": "Learning Objectives",
+        "text": "Verbs are the engines of sentences - they drive action and show time. Mastering verb agreement and tense will make your writing powerful and clear.",
+        "bullet_points": [
+          "Conquer subject-verb agreement in complex sentences",
+          "Master consistent verb tense usage",
+          "Handle tricky situations with collective nouns and phrases",
+          "Apply verb strategies to boost SAT Writing performance"
+        ],
+        "visual_element": {
+          "type": "progress_indicator",
+          "total_slides": 9,
+          "estimated_time": "25-30 minutes"
+        }
+      },
+      "interactions": [
+        {
+          "type": "click_to_continue",
+          "text": "Ready to master verbs? Click to continue"
+        }
+      ]
+    },
+    {
+      "id": "slide_02",
+      "type": "concept_teaching",
+      "title": "Subject-Verb Agreement Basics",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "The Fundamental Rule",
+        "text": "Subjects and verbs must agree in number: singular subjects take singular verbs, plural subjects take plural verbs.",
+        "concept_box": {
+          "title": "Agreement Rules",
+          "points": [
+            "👤 **Singular subject** → singular verb (The student studies)",
+            "👥 **Plural subject** → plural verb (The students study)",
+            "🎯 **Find the real subject** - ignore distractors between subject and verb",
+            "⚠️ **Watch prepositional phrases** - they don't change the subject"
+          ]
+        },
+        "examples": {
+          "correct": "The box of papers is heavy. (box = singular subject)",
+          "incorrect": "The box of papers are heavy. (papers is NOT the subject)"
+        }
+      },
+      "interactions": [
+        {
+          "type": "reveal_on_click",
+          "elements": [
+            {
+              "trigger": "Click to see the trick",
+              "reveal": "Cross out prepositional phrases: 'The box [of papers] is heavy.' Now the agreement is obvious!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "slide_03",
+      "type": "strategy_teaching",
+      "title": "The FIND Method for Agreement",
+      "duration_estimate": 300,
+      "content": {
+        "heading": "Strategy: Never Miss Agreement Again",
+        "strategy_steps": [
+          {
+            "step": 1,
+            "title": "FIND the verb",
+            "description": "Locate the action or state of being word",
+            "example": "The team of players (practices/practice) daily → Verb: practices or practice?"
+          },
+          {
+            "step": 2,
+            "title": "IDENTIFY the subject",
+            "description": "Ask 'who or what' performs the action",
+            "example": "What practices? The team → Subject: team (singular)"
+          },
+          {
+            "step": 3,
+            "title": "NARROW down distractors",
+            "description": "Cross out prepositional phrases and interrupting words",
+            "example": "The team [of players] practices → Clear subject-verb pair"
+          },
+          {
+            "step": 4,
+            "title": "DECIDE on agreement",
+            "description": "Match singular subject with singular verb",
+            "example": "Team (singular) practices (singular) ✓"
+          }
+        ],
+        "memory_aid": "**F.I.N.D.** the right verb every time!"
+      },
+      "interactions": [
+        {
+          "type": "step_by_step_reveal",
+          "auto_advance": false
+        }
+      ]
+    },
+    {
+      "id": "slide_04",
+      "type": "concept_teaching",
+      "title": "Tricky Agreement Situations",
+      "duration_estimate": 300,
+      "content": {
+        "heading": "SAT Favorites: Common Tricks",
+        "text": "The SAT loves to test agreement in these challenging scenarios. Master them and you'll ace every verb question!",
+        "concept_box": {
+          "title": "Watch Out For These",
+          "points": [
+            "👥 **Collective nouns** - Usually singular (The team wins, The family agrees)",
+            "📋 **Either/or, Neither/nor** - Agrees with the closest subject",
+            "🔄 **There is/are** - Real subject comes after the verb",
+            "➕ **Along with, as well as** - Don't make subjects plural"
+          ]
+        },
+        "examples": {
+          "collective": "The committee has decided. (committee = one unit)",
+          "either_or": "Either the cats or the dog needs food. (closest subject: dog = singular)"
+        }
+      },
+      "interactions": [
+        {
+          "type": "reveal_on_click",
+          "elements": [
+            {
+              "trigger": "Click for memory tricks",
+              "reveal": "Collective nouns = one group acting together. Either/or = the closer one wins. There is/are = flip the sentence to check."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "slide_05",
+      "type": "guided_example",
+      "title": "Guided Practice: Complex Agreement",
+      "duration_estimate": 360,
+      "content": {
+        "heading": "Let's Solve These Together",
+        "passage": {
+          "text": "The collection of rare books (belong/belongs) to the university library. Neither the students nor the professor (understand/understands) the complex cataloging system. There (is/are) several ancient manuscripts that require special handling. The team of librarians, along with their supervisor, (work/works) tirelessly to preserve these treasures.",
+          "highlight_enabled": true
+        },
+        "guided_questions": [
+          {
+            "step": 1,
+            "question": "What's the subject in the first sentence?",
+            "hint": "Cross out the prepositional phrase 'of rare books'",
+            "answer": "collection (singular)",
+            "explanation": "The collection [of rare books] belongs → collection is singular, so use 'belongs'"
+          },
+          {
+            "step": 2,
+            "question": "Which subject controls the verb in 'Neither...nor'?",
+            "hint": "Look at the subject closest to the verb",
+            "answer": "professor (singular) - closest to verb",
+            "explanation": "Neither/nor construction: verb agrees with the closest subject (professor = singular)"
+          },
+          {
+            "step": 3,
+            "question": "What's the real subject in 'There (is/are)...'?",
+            "hint": "Flip the sentence: 'Several ancient manuscripts _____ there'",
+            "answer": "manuscripts (plural)",
+            "explanation": "There are several manuscripts → manuscripts is plural, so use 'are'"
+          },
+          {
+            "step": 4,
+            "question": "Does 'along with' change the subject?",
+            "hint": "'Along with' is like a prepositional phrase",
+            "answer": "No - team remains singular",
+            "explanation": "The team [along with their supervisor] works → team stays singular"
+          }
+        ]
+      },
+      "interactions": [
+        {
+          "type": "guided_walkthrough",
+          "allow_highlighting": true,
+          "step_validation": true
+        }
+      ]
+    },
+    {
+      "id": "slide_06",
+      "type": "concept_teaching",
+      "title": "Verb Tense Consistency",
+      "duration_estimate": 280,
+      "content": {
+        "heading": "Keeping Time Straight",
+        "text": "Consistent verb tense helps readers follow your timeline. Unnecessary shifts confuse and distract from your message.",
+        "concept_box": {
+          "title": "Tense Consistency Rules",
+          "points": [
+            "⏰ **Stay in one time frame** unless logic requires a shift",
+            "📖 **Match the context** - past events use past tense throughout",
+            "🔄 **Signal time changes** with words like 'now,' 'then,' 'currently'",
+            "✅ **Check for logic** - does the timeline make sense?"
+          ]
+        },
+        "examples": {
+          "consistent": "Maria studied hard and passed her exam with flying colors.",
+          "inconsistent": "Maria studied hard and passes her exam with flying colors."
+        }
+      },
+      "interactions": [
+        {
+          "type": "reveal_on_click",
+          "elements": [
+            {
+              "trigger": "Click for tense timeline tip",
+              "reveal": "Create a mental timeline: if one verb is past, related actions should usually be past too, unless there's a clear reason to shift."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "slide_07",
+      "type": "independent_practice",
+      "title": "Your Turn: Verb Challenge",
+      "duration_estimate": 300,
+      "content": {
+        "heading": "Independent Practice",
+        "passage": {
+          "text": "The group of scientists were excited about their discovery. Each of the researchers have contributed valuable insights, and there was many breakthrough moments during the project. Neither the initial hypothesis nor the final results was what the team had originally expected.",
+          "word_count": 42
+        },
+        "question": {
+          "text": "Which choice corrects all the verb agreement errors?",
+          "options": [
+            "The group of scientists was excited about their discovery. Each of the researchers has contributed valuable insights, and there were many breakthrough moments during the project. Neither the initial hypothesis nor the final results were what the team had originally expected.",
+            "The group of scientists were excited about their discovery. Each of the researchers have contributed valuable insights, and there were many breakthrough moments during the project. Neither the initial hypothesis nor the final results were what the team had originally expected.",
+            "The group of scientists was excited about their discovery. Each of the researchers have contributed valuable insights, and there was many breakthrough moments during the project. Neither the initial hypothesis nor the final results was what the team had originally expected.",
+            "The group of scientists were excited about their discovery. Each of the researchers has contributed valuable insights, and there were many breakthrough moments during the project. Neither the initial hypothesis nor the final results was what the team had originally expected."
+          ],
+          "correct_answer": "A",
+          "explanations": {
+            "A": "✓ Correct! Group (singular) was; Each (singular) has; there were moments (plural); Neither...nor results (closest subject 'results' is plural) were.",
+            "B": "Group should be 'was' (singular), Each should be 'has' (singular).",
+            "C": "Each should be 'has' (singular), there should be 'were' (moments is plural), Neither...nor should be 'were' (results is plural).",
+            "D": "Group should be 'was' (singular), there should be 'were' (moments is plural), Neither...nor should be 'were' (results is plural)."
+          }
+        }
+      },
+      "interactions": [
+        {
+          "type": "multiple_choice_question",
+          "immediate_feedback": true,
+          "allow_retry": true
+        }
+      ]
+    },
+    {
+      "id": "slide_08",
+      "type": "concept_reinforcement",
+      "title": "Key Takeaways",
+      "duration_estimate": 180,
+      "content": {
+        "heading": "Verb Mastery Summary",
+        "key_points": [
+          {
+            "icon": "🎯",
+            "title": "Find the Real Subject",
+            "description": "Cross out distractors like prepositional phrases to identify the true subject."
+          },
+          {
+            "icon": "⚖️",
+            "title": "Match Singular to Singular",
+            "description": "Singular subjects need singular verbs; plural subjects need plural verbs."
+          },
+          {
+            "icon": "🕰️",
+            "title": "Keep Time Consistent",
+            "description": "Stay in one tense unless logic requires a shift in timeline."
+          },
+          {
+            "icon": "🔍",
+            "title": "SAT Strategy",
+            "description": "Use the FIND method and watch for collective nouns, either/or, and there is/are constructions."
+          }
+        ],
+        "next_steps": {
+          "text": "Next: Lesson 5 - Transitions & Flow!",
+          "preview": "Learn to connect ideas smoothly and create logical progression in your writing."
+        }
+      },
+      "interactions": [
+        {
+          "type": "completion_celebration",
+          "unlock_next": "lesson_05"
+        }
+      ]
+    },
+    {
+      "id": "slide_09",
+      "type": "mastery_check",
+      "title": "Mastery Check",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "Final Assessment",
+        "instructions": "Demonstrate your mastery of verb agreement and tense with this comprehensive challenge.",
+        "passage": {
+          "text": "The team of researchers, along with their graduate assistant, were studying climate patterns when they discovered an unexpected trend. Each of their findings have contributed to a growing understanding of global weather systems. There was several factors that influenced their conclusions, and neither the original data nor the recent measurements was sufficient alone. The implications of their work extends far beyond their initial expectations.",
+          "word_count": 65
+        },
+        "question": {
+          "text": "Which choice best corrects all verb errors in the passage?",
+          "options": [
+            "The team of researchers, along with their graduate assistant, was studying climate patterns when they discovered an unexpected trend. Each of their findings has contributed to a growing understanding of global weather systems. There were several factors that influenced their conclusions, and neither the original data nor the recent measurements were sufficient alone. The implications of their work extend far beyond their initial expectations.",
+            "The team of researchers, along with their graduate assistant, were studying climate patterns when they discover an unexpected trend. Each of their findings have contributed to a growing understanding of global weather systems. There were several factors that influenced their conclusions, and neither the original data nor the recent measurements were sufficient alone. The implications of their work extends far beyond their initial expectations.",
+            "The team of researchers, along with their graduate assistant, was studying climate patterns when they discovered an unexpected trend. Each of their findings have contributed to a growing understanding of global weather systems. There was several factors that influenced their conclusions, and neither the original data nor the recent measurements was sufficient alone. The implications of their work extend far beyond their initial expectations.",
+            "The team of researchers, along with their graduate assistant, were studying climate patterns when they discovered an unexpected trend. Each of their findings has contributed to a growing understanding of global weather systems. There were several factors that influenced their conclusions, and neither the original data nor the recent measurements were sufficient alone. The implications of their work extends far beyond their initial expectations."
+          ],
+          "correct_answer": "A",
+          "mastery_question": true
+        }
+      },
+      "interactions": [
+        {
+          "type": "mastery_assessment",
+          "required_for_completion": true,
+          "retry_limit": 3
+        }
+      ]
+    }
+  ],
+  "practice_questions": [
+    {
+      "id": "practice_1",
+      "type": "quick_check",
+      "skill_codes": ["FSS"],
+      "difficulty": "E",
+      "question": "Which sentence has correct subject-verb agreement?",
+      "options": [
+        "The box of supplies are in the closet.",
+        "The box of supplies is in the closet.",
+        "Either the pens or the pencil are missing.",
+        "There is many students in the library."
+      ],
+      "correct_answer": "B"
+    }
+  ],
+  "resources": {
+    "strategy_card": {
+      "title": "Verb Agreement Quick Reference",
+      "steps": [
+        "1. FIND the verb in the sentence",
+        "2. IDENTIFY who or what does the action",
+        "3. NARROW down by crossing out distractors",
+        "4. DECIDE: singular subject = singular verb"
+      ],
+      "tips": [
+        "Collective nouns usually take singular verbs",
+        "Either/or and neither/nor agree with closest subject",
+        "There is/are - real subject comes after verb",
+        "Phrases like 'along with' don't change subject number"
+      ]
+    },
+    "common_mistakes": [
+      "Being distracted by words between subject and verb",
+      "Treating collective nouns as plural",
+      "Missing agreement in there is/are sentences",
+      "Unnecessary tense shifts within paragraphs"
+    ]
+  },
+  "metadata": {
+    "created_date": "2024-12-01",
+    "last_updated": "2024-12-01",
+    "content_version": "1.0",
+    "estimated_completion_time": 1800,
+    "prerequisite_skills": ["lesson_03"],
+    "skill_progression": ["lesson_05"]
+  }
+}

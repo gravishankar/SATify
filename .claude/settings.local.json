@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/gravisha/projects/**)",
+      "Bash(tree:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nRebrand from SAT Practice Pro to SATify and update navigation\n\n- Removed \"Words in Context\" menu item from main navigation\n- Renamed \"Skill Practice\" to \"Lessons\" in main menu\n- Updated all references from \"SAT Practice Pro\" to \"SATify\" across:\n  - HTML title, headers, and brand text\n  - JavaScript module headers and comments\n  - PWA manifest and service worker\n  - Package.json description\n  - CSS header comments\n\n🤖 Generated with [Claude Code](https://claude.ai/code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)",
+      "Bash(git stash:*)",
+      "Bash(git pull:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

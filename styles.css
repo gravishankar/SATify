@@ -3010,6 +3010,630 @@ body {
 }
 
 /* ============================================================================
+   MODERN LESSON RENDERER STYLES
+   ============================================================================ */
+
+.lesson-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.lesson-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: var(--surface-color);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lesson-progress {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.lesson-progress .progress-bar {
+    width: 200px;
+    height: 8px;
+    background: var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.lesson-progress .progress-fill {
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-weight: 600;
+    color: var(--text-secondary);
+    min-width: 60px;
+}
+
+.lesson-exit {
+    margin-left: 20px;
+}
+
+/* Slide Content Styles */
+.lesson-content {
+    flex: 1;
+    margin-bottom: 30px;
+}
+
+.lesson-slide {
+    background: var(--surface-color);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    min-height: 400px;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.slide-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    flex: 1;
+}
+
+.duration-badge {
+    background: var(--primary-color);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Content Type Specific Styles */
+.content-heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+.content-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.objective-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.objective-list li {
+    padding: 10px 0;
+    padding-left: 25px;
+    position: relative;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.objective-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--success-color);
+    font-weight: bold;
+}
+
+.lesson-overview {
+    display: flex;
+    gap: 30px;
+    margin-top: 25px;
+    padding: 20px;
+    background: linear-gradient(135deg, var(--primary-color)10, var(--primary-color)20);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.overview-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.overview-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+}
+
+.overview-value {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Concept Box */
+.concept-box {
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.concept-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+.concept-points {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.concept-points li {
+    padding: 8px 0;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Strategy Steps */
+.strategy-steps {
+    margin: 25px 0;
+}
+
+.strategy-step {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+    padding: 20px;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.strategy-step:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.125rem;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.step-description {
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.step-example {
+    background: #f1f5f9;
+    padding: 12px 16px;
+    border-radius: 6px;
+    border-left: 3px solid var(--primary-color);
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+.memory-aid {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border: 1px solid #f59e0b;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+    color: #92400e;
+}
+
+/* Guided Example Styles */
+.passage-container {
+    margin: 20px 0;
+}
+
+.passage-text {
+    background: #f8fafc;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    line-height: 1.6;
+    font-family: Georgia, serif;
+    color: var(--text-primary);
+}
+
+.guided-questions {
+    margin-top: 30px;
+}
+
+.guided-question {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.question-header {
+    margin-bottom: 15px;
+}
+
+.question-step {
+    background: var(--primary-color);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.question-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    display: inline;
+}
+
+.question-hint {
+    background: #fef3c7;
+    border: 1px solid #f59e0b;
+    border-radius: 6px;
+    padding: 12px;
+    margin: 10px 0;
+    color: #92400e;
+}
+
+.question-answer {
+    background: #f0fdf4;
+    border: 1px solid #10b981;
+    border-radius: 6px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.answer-explanation {
+    margin-top: 10px;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Trap Examples */
+.trap-examples {
+    margin: 20px 0;
+}
+
+.trap-example {
+    background: linear-gradient(135deg, #fef2f2, #fee2e2);
+    border: 1px solid #fca5a5;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.trap-type {
+    color: #dc2626;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.trap-description {
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.trap-example-text {
+    background: rgba(220, 38, 38, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    border-left: 3px solid #dc2626;
+    font-style: italic;
+}
+
+/* Summary and Wrap-up */
+.summary-points {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.summary-points li {
+    padding: 12px 0;
+    padding-left: 30px;
+    position: relative;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+.summary-points li::before {
+    content: attr(data-emoji);
+    position: absolute;
+    left: 0;
+    font-size: 1.25rem;
+}
+
+.next-steps {
+    margin-top: 25px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    border: 1px solid #0ea5e9;
+    border-radius: 8px;
+}
+
+.practice-suggestion {
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.confidence-builder {
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Interactive Elements */
+.reveal-trigger, .reveal-answer-btn, .step-reveal-btn {
+    margin: 15px 0;
+    transition: all 0.2s ease;
+}
+
+.reveal-trigger:hover, .reveal-answer-btn:hover, .step-reveal-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
+}
+
+.reveal-content {
+    background: #f8fafc;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 15px;
+    margin: 15px 0;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Completion and Celebration */
+.completion-celebration {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+    border: 2px solid var(--success-color);
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.celebration-emoji {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.celebration-text {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.lesson-completion {
+    text-align: center;
+    padding: 50px 30px;
+}
+
+.completion-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.completion-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 30px 0;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-top: 5px;
+}
+
+/* Navigation */
+.lesson-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: auto;
+    padding: 20px;
+    background: var(--surface-color);
+    border-radius: 12px;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.lesson-navigation .btn {
+    flex: 1;
+    max-width: 200px;
+}
+
+/* Error States */
+.lesson-error {
+    text-align: center;
+    padding: 50px 30px;
+    color: var(--text-secondary);
+}
+
+.error-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .lesson-wrapper {
+        padding: 15px;
+    }
+
+    .lesson-slide {
+        padding: 20px;
+    }
+
+    .lesson-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+
+    .lesson-progress {
+        justify-content: center;
+    }
+
+    .overview-item, .completion-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .strategy-step {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .step-number {
+        align-self: center;
+    }
+}
+
+/* Modern Learn Page Enhancements */
+.skill-card.has-lessons {
+    border-color: var(--success-color);
+    background: linear-gradient(135deg, var(--surface-color), #f0fdf4);
+}
+
+.skill-card.has-lessons .skill-badge {
+    background: var(--success-color);
+    color: white;
+}
+
+.skill-card.no-lessons {
+    opacity: 0.7;
+}
+
+.skill-card.no-lessons .skill-badge {
+    background: var(--secondary-color);
+}
+
+.start-lesson-btn {
+    margin-top: 10px;
+    width: 100%;
+    font-size: 0.875rem;
+}
+
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    z-index: 10000;
+    animation: slideInRight 0.3s ease;
+}
+
+.toast-info {
+    background: var(--primary-color);
+}
+
+.toast-success {
+    background: var(--success-color);
+}
+
+.toast-error {
+    background: var(--danger-color);
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ============================================================================
    STRATEGY HINT MODAL
    ============================================================================ */
 

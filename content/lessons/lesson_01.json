@@ -1,0 +1,362 @@
+{
+  "id": "lesson_01",
+  "title": "SAT Reading Fundamentals",
+  "subtitle": "Central Ideas & Details",
+  "level": "Foundation",
+  "duration": "20-25 min",
+  "skill_codes": ["CID"],
+  "learning_objectives": [
+    "Identify main ideas in reading passages",
+    "Distinguish between central ideas and supporting details",
+    "Apply strategies for finding topic sentences",
+    "Practice with authentic SAT reading questions"
+  ],
+  "success_criteria": {
+    "mastery_threshold": 0.75,
+    "min_accuracy": 0.7,
+    "required_slides": "all"
+  },
+  "slides": [
+    {
+      "id": "slide_01",
+      "type": "introduction",
+      "title": "Welcome to SAT Reading Fundamentals",
+      "duration_estimate": 180,
+      "content": {
+        "heading": "Learning Objectives",
+        "text": "In this lesson, you'll master the skill of identifying central ideas and supporting details - a crucial foundation for SAT Reading success.",
+        "bullet_points": [
+          "Understand what makes an idea 'central' vs. supporting",
+          "Learn the 3-step method for finding main ideas",
+          "Practice with real SAT passage formats",
+          "Build confidence with guided examples"
+        ],
+        "visual_element": {
+          "type": "progress_indicator",
+          "total_slides": 8,
+          "estimated_time": "20-25 minutes"
+        }
+      },
+      "interactions": [
+        {
+          "type": "click_to_continue",
+          "text": "Ready to begin? Click to continue"
+        }
+      ]
+    },
+    {
+      "id": "slide_02",
+      "type": "concept_teaching",
+      "title": "What is a Central Idea?",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "Understanding Central Ideas",
+        "text": "A central idea is the main point or argument that the author wants to communicate. It's what the entire passage is really about.",
+        "concept_box": {
+          "title": "Key Characteristics",
+          "points": [
+            "🎯 **Broad enough** to cover the whole passage",
+            "📍 **Specific enough** to be meaningful",
+            "💡 **Supported by** most details in the text",
+            "🔄 **Connects** different parts of the passage"
+          ]
+        },
+        "examples": {
+          "good_central_idea": "The passage argues that renewable energy is essential for addressing climate change",
+          "poor_central_idea": "Solar panels are mentioned in paragraph 2"
+        }
+      },
+      "interactions": [
+        {
+          "type": "reveal_on_click",
+          "elements": [
+            {
+              "trigger": "Click to see the difference",
+              "reveal": "Notice how the good central idea captures the author's main argument, while the poor example focuses on just one detail."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "slide_03",
+      "type": "strategy_teaching",
+      "title": "The 3-Step Method",
+      "duration_estimate": 300,
+      "content": {
+        "heading": "Strategy: The Topic-Purpose-Main Idea Method",
+        "strategy_steps": [
+          {
+            "step": 1,
+            "title": "Find the TOPIC",
+            "description": "What is this passage about? (Usually a noun or noun phrase)",
+            "example": "Topic: Renewable energy technologies"
+          },
+          {
+            "step": 2,
+            "title": "Identify the PURPOSE",
+            "description": "Why did the author write this? (To argue, explain, describe, etc.)",
+            "example": "Purpose: To argue for increased investment"
+          },
+          {
+            "step": 3,
+            "title": "Combine for MAIN IDEA",
+            "description": "Put topic + purpose together in one sentence",
+            "example": "Main Idea: The author argues that governments should increase investment in renewable energy technologies"
+          }
+        ],
+        "memory_aid": "Remember: **T.P.M.** - Topic, Purpose, Main idea"
+      },
+      "interactions": [
+        {
+          "type": "step_by_step_reveal",
+          "auto_advance": false
+        }
+      ]
+    },
+    {
+      "id": "slide_04",
+      "type": "guided_example",
+      "title": "Guided Practice: Let's Try It Together",
+      "duration_estimate": 360,
+      "content": {
+        "heading": "Practice Passage",
+        "passage": {
+          "text": "The human brain's ability to recognize faces is truly remarkable. Within milliseconds of seeing a face, we can determine if it belongs to someone we know, assess their emotional state, and even make judgments about their trustworthiness. This rapid processing occurs in a specialized region called the fusiform face area (FFA). Recent neurological studies have revealed that the FFA develops these capabilities through years of exposure and practice, much like learning to read. However, when this region is damaged, individuals may develop prosopagnosia, or 'face blindness,' making it nearly impossible to recognize even familiar faces. Understanding how facial recognition works helps scientists develop better treatments for those with prosopagnosia and insights into how our brains process complex visual information.",
+          "highlight_enabled": true
+        },
+        "guided_questions": [
+          {
+            "step": 1,
+            "question": "What is the TOPIC of this passage?",
+            "hint": "Look for what the passage is mainly discussing - it should be something mentioned throughout.",
+            "answer": "The human brain's facial recognition abilities / The fusiform face area",
+            "explanation": "The entire passage discusses how our brains recognize faces and the specific brain region responsible."
+          },
+          {
+            "step": 2,
+            "question": "What is the author's PURPOSE?",
+            "hint": "Why did they write this? To argue, explain, describe, persuade?",
+            "answer": "To explain how facial recognition works and its importance",
+            "explanation": "The author is explaining the process and significance of facial recognition, not arguing for a particular viewpoint."
+          },
+          {
+            "step": 3,
+            "question": "What is the MAIN IDEA?",
+            "hint": "Combine the topic and purpose into one clear sentence.",
+            "answer": "The passage explains how the human brain's specialized facial recognition system works and why understanding it is important for treating related disorders.",
+            "explanation": "This captures both what the passage is about (facial recognition) and why the author wrote it (to explain the process and its significance)."
+          }
+        ]
+      },
+      "interactions": [
+        {
+          "type": "guided_walkthrough",
+          "allow_highlighting": true,
+          "step_validation": true
+        }
+      ]
+    },
+    {
+      "id": "slide_05",
+      "type": "independent_practice",
+      "title": "Your Turn: Find the Central Idea",
+      "duration_estimate": 300,
+      "content": {
+        "heading": "Independent Practice",
+        "passage": {
+          "text": "Urban vertical farming represents a revolutionary approach to agriculture that could help address food security challenges in growing cities. Unlike traditional farming, vertical farms use stacked layers of crops in controlled indoor environments, allowing year-round production regardless of weather conditions. These facilities employ LED lighting systems, hydroponic or aeroponic growing methods, and precise climate control to optimize plant growth while using 95% less water than conventional farming. Although the initial setup costs are substantial, vertical farms can produce up to 390 times more food per square foot than traditional farms. As urban populations continue to expand and arable land becomes scarcer, vertical farming offers a sustainable solution that brings food production closer to consumers, reduces transportation costs, and minimizes environmental impact.",
+          "word_count": 134
+        },
+        "question": {
+          "text": "Which choice best states the main idea of the passage?",
+          "options": [
+            "Vertical farms use advanced LED lighting and hydroponic systems to grow crops indoors.",
+            "Traditional farming methods are becoming outdated due to climate change and urbanization.",
+            "Vertical farming offers an innovative solution to urban food security challenges through efficient, sustainable agriculture.",
+            "The initial costs of vertical farming are high, but the long-term benefits justify the investment."
+          ],
+          "correct_answer": "C",
+          "explanations": {
+            "A": "This focuses on technical details rather than the overall main idea about solving food security.",
+            "B": "The passage doesn't argue that traditional farming is outdated, just that vertical farming offers advantages.",
+            "C": "✓ Correct! This captures the central argument that vertical farming is a solution to urban food challenges.",
+            "D": "This focuses on costs and benefits but misses the broader point about food security solutions."
+          }
+        }
+      },
+      "interactions": [
+        {
+          "type": "multiple_choice_question",
+          "immediate_feedback": true,
+          "allow_retry": true
+        }
+      ]
+    },
+    {
+      "id": "slide_06",
+      "type": "skill_application",
+      "title": "Apply Your Skills",
+      "duration_estimate": 420,
+      "content": {
+        "heading": "SAT-Style Questions",
+        "instructions": "Now you'll practice with questions that mirror the actual SAT format. Use the T.P.M. method you learned.",
+        "questions": [
+          {
+            "id": "q1",
+            "passage": "The phenomenon of bioluminescence—the production of light by living organisms—has fascinated scientists for centuries. While most people associate this ability with fireflies, bioluminescence is actually most common in marine environments, where up to 90% of organisms in the deep ocean produce their own light. This biological lighting serves various purposes: some species use it to attract prey, others to communicate with potential mates, and still others to confuse or deter predators. Recent research has revealed that bioluminescence evolved independently at least 40 times throughout natural history, suggesting that the ability to produce light provides significant survival advantages. Scientists are now studying these natural light-producing mechanisms to develop new biotechnologies, including more efficient lighting systems and medical imaging techniques.",
+            "question": "The main purpose of the passage is to",
+            "options": [
+              "explain why fireflies are the most well-known bioluminescent organisms",
+              "describe the various functions and significance of bioluminescence in nature",
+              "argue that bioluminescence research should receive more funding",
+              "compare marine bioluminescence to terrestrial bioluminescence"
+            ],
+            "correct_answer": "B",
+            "skill_codes": ["CID"],
+            "difficulty": "M"
+          },
+          {
+            "id": "q2",
+            "passage": "Marie Curie's scientific achievements were groundbreaking not only for their contributions to physics and chemistry but also for breaking gender barriers in science. As the first woman to win a Nobel Prize, the first person to win Nobel Prizes in two different scientific fields, and the first female professor at the University of Paris, Curie's career was marked by numerous firsts. Her discovery of the elements polonium and radium advanced our understanding of radioactivity, a term she coined. Despite facing significant discrimination and skepticism from the male-dominated scientific community, Curie's meticulous research methods and unwavering dedication ultimately earned her worldwide recognition. Her legacy continues to inspire scientists today, particularly women pursuing careers in STEM fields.",
+            "question": "Which choice best describes the central idea of the passage?",
+            "options": [
+              "Marie Curie discovered polonium and radium through careful research methods.",
+              "Women in science continue to face challenges similar to those encountered by Marie Curie.",
+              "Marie Curie's scientific achievements and barrier-breaking career left a lasting impact on science and gender equality.",
+              "The University of Paris was the first institution to hire a female professor in science."
+            ],
+            "correct_answer": "C",
+            "skill_codes": ["CID"],
+            "difficulty": "M"
+          }
+        ]
+      },
+      "interactions": [
+        {
+          "type": "question_sequence",
+          "show_strategy_reminder": true,
+          "track_time": true
+        }
+      ]
+    },
+    {
+      "id": "slide_07",
+      "type": "concept_reinforcement",
+      "title": "Key Takeaways",
+      "duration_estimate": 180,
+      "content": {
+        "heading": "What You've Learned",
+        "key_points": [
+          {
+            "icon": "🎯",
+            "title": "Central Ideas vs. Details",
+            "description": "Central ideas are broad enough to cover the whole passage but specific enough to be meaningful."
+          },
+          {
+            "icon": "📝",
+            "title": "The T.P.M. Method",
+            "description": "Topic + Purpose = Main Idea. This systematic approach works for any reading passage."
+          },
+          {
+            "icon": "🔍",
+            "title": "Supporting Evidence",
+            "description": "Look for details that support the central idea throughout the passage, not just in one paragraph."
+          },
+          {
+            "icon": "⚡",
+            "title": "SAT Strategy",
+            "description": "On the SAT, wrong answers often focus on minor details or are too broad. The correct answer captures the author's main point."
+          }
+        ],
+        "next_steps": {
+          "text": "You're ready to move on to Lesson 2: Grammar Essentials!",
+          "preview": "Next, you'll learn to identify and fix common sentence structure issues that appear on the SAT Writing section."
+        }
+      },
+      "interactions": [
+        {
+          "type": "completion_celebration",
+          "unlock_next": "lesson_02"
+        }
+      ]
+    },
+    {
+      "id": "slide_08",
+      "type": "mastery_check",
+      "title": "Mastery Check",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "Final Assessment",
+        "instructions": "Complete this final question to demonstrate your mastery of central ideas and details.",
+        "passage": {
+          "text": "The concept of 'flow'—a psychological state of complete immersion and focus—was first introduced by psychologist Mihaly Csikszentmihalyi in the 1970s. When experiencing flow, individuals report losing track of time, feeling effortlessly concentrated, and performing at their peak ability. This state occurs when there's a perfect balance between the challenge level of a task and a person's skill level: too easy, and boredom sets in; too difficult, and anxiety takes over. Flow has been observed across diverse activities, from athletic performance to artistic creation to professional work. Understanding flow has practical applications for education, workplace productivity, and personal fulfillment. By designing activities that promote flow states, teachers can enhance student engagement, managers can improve employee satisfaction, and individuals can achieve greater happiness and accomplishment in their daily lives.",
+          "word_count": 142
+        },
+        "question": {
+          "text": "The passage primarily serves to",
+          "options": [
+            "define the concept of flow and explain its applications for improving human performance and satisfaction",
+            "argue that Mihaly Csikszentmihalyi's research on flow should be more widely recognized",
+            "compare flow states experienced in athletic activities versus artistic endeavors",
+            "demonstrate that achieving flow requires finding the perfect balance between challenge and skill"
+          ],
+          "correct_answer": "A",
+          "mastery_question": true
+        }
+      },
+      "interactions": [
+        {
+          "type": "mastery_assessment",
+          "required_for_completion": true,
+          "retry_limit": 3
+        }
+      ]
+    }
+  ],
+  "practice_questions": [
+    {
+      "id": "practice_1",
+      "type": "quick_check",
+      "skill_codes": ["CID"],
+      "difficulty": "E",
+      "question": "In a passage about renewable energy benefits, which would most likely be the central idea?",
+      "options": [
+        "Solar panels were first invented in 1954",
+        "Renewable energy sources offer environmental and economic advantages over fossil fuels",
+        "Wind turbines can be noisy for nearby residents",
+        "The cost of solar installation has decreased"
+      ],
+      "correct_answer": "B"
+    }
+  ],
+  "resources": {
+    "strategy_card": {
+      "title": "Central Ideas Quick Reference",
+      "steps": [
+        "1. Find the TOPIC (what is this about?)",
+        "2. Identify the PURPOSE (why did the author write this?)",
+        "3. Combine for MAIN IDEA (topic + purpose)"
+      ],
+      "tips": [
+        "Central ideas are supported throughout the passage",
+        "Avoid answers that focus on minor details",
+        "Look for the author's main argument or explanation"
+      ]
+    },
+    "common_mistakes": [
+      "Choosing details instead of main ideas",
+      "Picking answers that are too broad or too narrow",
+      "Focusing on the first or last paragraph only",
+      "Confusing the topic with the central idea"
+    ]
+  },
+  "metadata": {
+    "created_date": "2024-12-01",
+    "last_updated": "2024-12-01",
+    "content_version": "1.0",
+    "estimated_completion_time": 1500,
+    "prerequisite_skills": [],
+    "skill_progression": ["lesson_02"]
+  }
+}
