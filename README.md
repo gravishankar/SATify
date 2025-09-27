@@ -1,4 +1,4 @@
-# SAT Practice Pro 📚
+# SATify 📚
 
 A comprehensive, student-friendly SAT practice platform with advanced features including progress tracking, adaptive learning, timed practice, and detailed analytics. Built as a modern Progressive Web App (PWA) that works offline and provides an experience similar to premium SAT prep platforms.
 
