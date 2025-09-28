@@ -251,7 +251,9 @@ class SATAuth {
 
         this.app.currentUser = guestUser;
         this.app.hideAuthModal();
-        this.app.showDashboard();
+        setTimeout(() => {
+            this.app.showHome();
+        }, 10);
         this.app.updateUserInfo();
         this.app.showToast('Continuing as guest - your progress will not be saved', 'warning');
     }

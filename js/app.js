@@ -76,11 +76,17 @@ class SATApp {
     // Authentication & User Management
     checkAuth() {
         const user = localStorage.getItem('satapp_user');
+        console.log('checkAuth() called, user found:', !!user);
         if (user) {
             this.currentUser = JSON.parse(user);
-            this.showHome();
+            console.log('checkAuth() - calling showHome()');
+            // Ensure DOM is ready before navigation
+            setTimeout(() => {
+                this.showHome();
+            }, 10);
             this.updateUserInfo();
         } else {
+            console.log('checkAuth() - no user found, showing auth modal');
             this.showAuthModal();
         }
     }
@@ -103,7 +109,9 @@ class SATApp {
             delete this.currentUser.password;
             localStorage.setItem('satapp_user', JSON.stringify(this.currentUser));
             this.hideAuthModal();
-            this.showHome();
+            setTimeout(() => {
+                this.showHome();
+            }, 10);
             this.updateUserInfo();
             this.showToast('Welcome back!', 'success');
             return true;
@@ -145,7 +153,9 @@ class SATApp {
         localStorage.setItem('satapp_user', JSON.stringify(this.currentUser));
         
         this.hideAuthModal();
-        this.showHome();
+        setTimeout(() => {
+            this.showHome();
+        }, 10);
         this.updateUserInfo();
         this.showToast('Account created successfully!', 'success');
         return true;
