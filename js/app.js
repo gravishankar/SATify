@@ -605,6 +605,31 @@ class SATApp {
         }));
     }
 
+    saveSettings() {
+        // Get current settings from form
+        const theme = document.getElementById('themeSelect')?.value || 'light';
+        const notifications = document.getElementById('notificationsToggle')?.checked || false;
+        const autoAdvance = document.getElementById('autoAdvanceToggle')?.checked || false;
+        const showHints = document.getElementById('showHintsToggle')?.checked || true;
+
+        // Update settings object
+        this.settings = {
+            theme,
+            notifications,
+            autoAdvance,
+            showHints
+        };
+
+        // Save to localStorage
+        localStorage.setItem('satapp_settings', JSON.stringify(this.settings));
+
+        // Show success message
+        this.showToast('Settings saved successfully!', 'success');
+
+        // Navigate back to dashboard
+        this.showPage('dashboard');
+    }
+
     // Event listeners
     setupEventListeners() {
         // Navigation
@@ -676,6 +701,11 @@ class SATApp {
         
         document.getElementById('nextAfterExplanation')?.addEventListener('click', () => {
             this.nextQuestion();
+        });
+
+        // Settings save button
+        document.getElementById('saveSettings')?.addEventListener('click', () => {
+            this.saveSettings();
         });
     }
 

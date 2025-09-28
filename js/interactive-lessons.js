@@ -394,11 +394,29 @@ class InteractiveLessons {
                             display: skillPracticePage ? window.getComputedStyle(skillPracticePage).display : 'N/A'
                         });
 
-                        // Force the skill practice page to be visible
-                        if (skillPracticePage && window.getComputedStyle(skillPracticePage).display === 'none') {
-                            console.log('[Interactive Lessons] Forcing skill practice page to be visible');
-                            skillPracticePage.classList.remove('hidden');
-                            skillPracticePage.style.display = 'block';
+                        // Debug page navigation
+                        if (skillPracticePage) {
+                            console.log('[Interactive Lessons] Skill practice page debug:', {
+                                hasActiveClass: skillPracticePage.classList.contains('active'),
+                                computedDisplay: window.getComputedStyle(skillPracticePage).display,
+                                classList: skillPracticePage.className
+                            });
+
+                            // If page doesn't have active class, ensure it gets it
+                            if (!skillPracticePage.classList.contains('active')) {
+                                console.log('[Interactive Lessons] Page missing active class, re-triggering navigation');
+                                if (window.app && window.app.showPage) {
+                                    window.app.showPage('skill-practice');
+                                }
+
+                                // Double-check after navigation
+                                setTimeout(() => {
+                                    if (!skillPracticePage.classList.contains('active')) {
+                                        console.log('[Interactive Lessons] Navigation failed, manually adding active class');
+                                        skillPracticePage.classList.add('active');
+                                    }
+                                }, 50);
+                            }
                         }
 
                         // Ensure UI is initialized
