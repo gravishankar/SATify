@@ -78,7 +78,7 @@ class SATApp {
         const user = localStorage.getItem('satapp_user');
         if (user) {
             this.currentUser = JSON.parse(user);
-            this.showDashboard();
+            this.showHome();
             this.updateUserInfo();
         } else {
             this.showAuthModal();
@@ -103,7 +103,7 @@ class SATApp {
             delete this.currentUser.password;
             localStorage.setItem('satapp_user', JSON.stringify(this.currentUser));
             this.hideAuthModal();
-            this.showDashboard();
+            this.showHome();
             this.updateUserInfo();
             this.showToast('Welcome back!', 'success');
             return true;
@@ -145,7 +145,7 @@ class SATApp {
         localStorage.setItem('satapp_user', JSON.stringify(this.currentUser));
         
         this.hideAuthModal();
-        this.showDashboard();
+        this.showHome();
         this.updateUserInfo();
         this.showToast('Account created successfully!', 'success');
         return true;
