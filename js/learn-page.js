@@ -1028,16 +1028,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Wait for main app to be available
     const initLearnPage = () => {
         if (window.satApp) {
-            // Initialize both old and new learn page systems
-            window.satApp.learnPage = new LearnPage(window.satApp);
-            window.satApp.modernLearnPage = new ModernLearnPage(window.satApp);
-
-            // Load saved progress
-            window.satApp.learnPage.loadSkillProgress();
-
-            // Set global references
-            window.learnPage = window.satApp.learnPage;
-            window.modernLearnPage = window.satApp.modernLearnPage;
+            // Learn page disabled - lessons backed up
+            // window.satApp.learnPage = new LearnPage(window.satApp);
+            console.log('Learn page lessons have been backed up and disabled');
         } else {
             setTimeout(initLearnPage, 100);
         }

@@ -1,0 +1,195 @@
+{
+  "id": "lesson_01",
+  "title": "SAT Reading Fundamentals",
+  "description": "Master the core concepts of SAT Reading comprehension - central ideas and supporting details",
+  "level": "foundation",
+  "estimatedDuration": "20-25 minutes",
+  "prerequisites": [],
+  "learningObjectives": [
+    "Identify central ideas in complex passages",
+    "Distinguish between main ideas and supporting details",
+    "Apply systematic reading strategies to SAT passages",
+    "Avoid common traps in answer choices"
+  ],
+  "competencyThreshold": 0.75,
+  "version": "1.0",
+  "lastUpdated": "2024-12-01",
+
+  "content": {
+    "slides": [
+      {
+        "id": "intro_01",
+        "type": "introduction",
+        "title": "Welcome to SAT Reading Fundamentals",
+        "duration": "2-3 minutes",
+        "content": {
+          "title": "Central Ideas & Evidence",
+          "subtitle": "Big-picture understanding",
+          "text": "In this lesson, you'll master the foundational skills that are essential for SAT Reading success. We'll focus on identifying central ideas and distinguishing them from supporting details.",
+          "keyPoints": [
+            "Recognize the author's main claim or purpose",
+            "Differentiate central vs. supporting detail",
+            "Select evidence that directly supports the main claim",
+            "Build confidence with systematic strategies"
+          ],
+          "visualAids": {
+            "image": "images/sat-reading-overview.png",
+            "alt": "SAT Reading section overview"
+          }
+        }
+      },
+      {
+        "id": "concept_01",
+        "type": "concept",
+        "title": "Central Ideas vs Supporting Details",
+        "duration": "8-10 minutes",
+        "content": {
+          "title": "Why It's Tricky",
+          "text": "The most fundamental skill in SAT Reading is distinguishing between what the author's main point is versus the specific details they use to support that point. This sounds simple, but test makers deliberately create wrong answers that look appealing.",
+          "explanation": "Answers look appealing because they lift words from the passage but distort scope or focus on a minor detail.",
+          "example": "If the passage argues renewable energy is *promising but challenging*, a trap might claim it 'solves all climate problems' — too broad.",
+          "strategy": {
+            "name": "Topic Sentence Strategy",
+            "steps": [
+              "Step 1: Ask after each paragraph — 'Why is the author telling me this?'",
+              "Step 2: Predict the main idea in 5–7 words before answer choices",
+              "Step 3: Eliminate answers that exaggerate or miss the scope",
+              "Step 4: Confirm the correct answer is supported in at least 2 places"
+            ]
+          },
+          "trapAlerts": [
+            "Too broad - answer choice expands beyond what the passage actually claims",
+            "Too narrow - answer choice focuses on one detail rather than the whole passage",
+            "Outside the text - answer choice brings in information not discussed in the passage"
+          ],
+          "examples": [
+            {
+              "passage": "Scientists have recently discovered that urban gardens not only provide fresh produce for city residents but also help reduce air pollution and create habitats for beneficial insects. While these gardens require initial investment and ongoing maintenance, cities that have implemented community garden programs report improved neighborhood cohesion and reduced grocery costs for participants.",
+              "question": "The passage primarily argues that:",
+              "choices": [
+                "A) Urban gardens completely solve food insecurity in cities",
+                "B) Community gardens provide multiple benefits despite requiring investment",
+                "C) Air pollution can only be reduced through urban gardening",
+                "D) Cities should eliminate traditional parks in favor of gardens"
+              ],
+              "correct": "B",
+              "explanation": "Choice B captures the balanced claim about benefits and costs. A is too absolute ('completely solve'), C is too narrow (only focuses on air pollution), and D introduces information not in the passage."
+            }
+          ]
+        }
+      },
+      {
+        "id": "practice_01",
+        "type": "guided_practice",
+        "title": "Apply Your Knowledge",
+        "duration": "5-7 minutes",
+        "content": {
+          "title": "Guided Practice",
+          "instructions": "Let's practice with a real SAT-style question. Read the passage carefully and apply our 4-step strategy.",
+          "questions": [
+            {
+              "id": "gp_01",
+              "passage": "The resurgence of vinyl records in the digital age presents a fascinating paradox. Despite the convenience and portability of digital music, vinyl sales have grown consistently over the past decade. Music enthusiasts cite the 'warmth' of analog sound and the ritual of playing records as key attractions. However, this revival isn't merely nostalgic—younger generations, who never experienced vinyl's original era, now represent the largest segment of buyers. Record stores report that these new collectors appreciate both the tactile experience and the intentional listening that vinyl encourages, contrasting sharply with the background consumption typical of digital streaming.",
+              "question": "Which choice best identifies the central idea of the passage?",
+              "choices": [
+                "A) Digital music has failed to satisfy serious music listeners",
+                "B) Vinyl records provide superior sound quality to all other formats",
+                "C) The vinyl revival reflects both nostalgic and new appreciation for intentional music experiences",
+                "D) Younger generations prefer outdated technology over modern innovations"
+              ],
+              "correct": "C",
+              "hints": [
+                "Look for the recurring theme across the entire passage",
+                "Notice how the passage discusses both older enthusiasts and younger buyers",
+                "Eliminate choices that are too absolute or miss key elements"
+              ],
+              "explanation": "Choice C captures the passage's main point about the vinyl revival involving both traditional appreciation (older enthusiasts) and new motivations (younger buyers seeking intentional listening). A is too extreme ('failed'), B focuses on one detail (sound quality), and D mischaracterizes the younger generation's motivations."
+            }
+          ]
+        }
+      },
+      {
+        "id": "assessment_01",
+        "type": "mastery_check",
+        "title": "Mastery Assessment",
+        "duration": "8-10 minutes",
+        "content": {
+          "title": "Demonstrate Your Understanding",
+          "instructions": "Complete these questions to demonstrate mastery of central ideas and supporting details. You need 75% accuracy to advance.",
+          "questions": [
+            {
+              "id": "ma_01",
+              "passage": "Recent studies in cognitive psychology suggest that multitasking, long praised as an efficiency skill, may actually hinder productivity and learning. Researchers found that people who frequently switch between tasks take longer to complete each individual task and make more errors. The brain, it appears, requires time to refocus when transitioning between different types of activities. However, not all task-switching is equally problematic. Simple, routine tasks can often be combined effectively, while complex cognitive work suffers significantly from interruption.",
+              "question": "The passage primarily serves to:",
+              "choices": [
+                "A) Promote multitasking as an essential modern skill",
+                "B) Argue that all forms of task-switching reduce productivity",
+                "C) Present research challenging common assumptions about multitasking",
+                "D) Demonstrate that cognitive psychology lacks practical applications"
+              ],
+              "correct": "C",
+              "explanation": "The passage presents research findings that challenge the conventional wisdom about multitasking being beneficial, while also noting nuances (some tasks can be combined). A contradicts the passage, B ignores the exception mentioned, and D is not supported by the text."
+            },
+            {
+              "id": "ma_02",
+              "passage": "Marine biologists studying coral reef ecosystems have discovered that certain fish species serve as 'cleaners,' removing parasites from larger fish. This symbiotic relationship benefits both parties: the cleaner fish obtain food, while their clients receive health benefits. What's remarkable is that these cleaning stations operate on a form of 'trust'—predator fish that would normally eat the cleaners instead patiently wait to be serviced. Some researchers argue this behavior demonstrates basic economic principles in nature, including service quality, customer loyalty, and even 'cheating' when cleaners take bites of healthy tissue instead of just parasites.",
+              "question": "The main point of the passage is that:",
+              "choices": [
+                "A) Cleaner fish have evolved to be immune to predator attacks",
+                "B) Coral reefs contain the most complex ecosystems on Earth",
+                "C) Fish cleaning relationships demonstrate economic-like behaviors in nature",
+                "D) Marine biology research focuses primarily on symbiotic relationships"
+              ],
+              "correct": "C",
+              "explanation": "The passage describes cleaning relationships but emphasizes how they demonstrate economic principles in nature (trust, service quality, customer loyalty, cheating). A is not mentioned, B is too broad, and D mischaracterizes marine biology research focus."
+            }
+          ],
+          "passingScore": 0.75,
+          "remediation": {
+            "belowThreshold": {
+              "message": "Let's review the key concepts before you continue...",
+              "reviewSlides": ["concept_01"],
+              "additionalResources": ["strategies/reading-fundamentals.json"]
+            }
+          }
+        }
+      },
+      {
+        "id": "summary_01",
+        "type": "summary",
+        "title": "Lesson Complete!",
+        "duration": "2-3 minutes",
+        "content": {
+          "title": "Mastering Central Ideas",
+          "text": "Congratulations! You've mastered the fundamental skill of identifying central ideas versus supporting details. This foundation will serve you well throughout your SAT preparation.",
+          "keyTakeaways": [
+            "Central ideas capture the author's main claim or purpose across the entire passage",
+            "Supporting details provide evidence but aren't the main focus",
+            "Systematic strategies improve both accuracy and speed",
+            "Always predict before looking at answer choices"
+          ],
+          "nextSteps": {
+            "nextLesson": "lesson_02",
+            "nextLessonTitle": "Evidence & Support",
+            "practiceRecommendation": "Practice 10 questions on central ideas in the Practice section",
+            "reviewIfNeeded": "Review this lesson if you scored below 80%"
+          }
+        }
+      }
+    ]
+  },
+
+  "metadata": {
+    "skillsTargeted": ["CID"],
+    "questionTypes": ["main_idea", "central_theme", "passage_purpose"],
+    "difficultyProgression": ["easy", "medium", "medium", "hard"],
+    "tags": ["foundation", "reading_comprehension", "central_ideas"],
+    "contentSource": "Adapted from SAT Practice Pro lessons with SATify enhancements",
+    "analytics": {
+      "trackEngagement": true,
+      "trackTimeSpent": true,
+      "trackHintsUsed": true,
+      "trackRetries": true
+    }
+  }
+}

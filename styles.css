@@ -3812,3 +3812,197 @@ body {
         justify-content: space-between;
     }
 }
+
+
+/* ========================================
+   HOMEPAGE HERO STYLES
+   ======================================== */
+
+.hero-container {
+    --brand: #5b6cff;              /* override with your site's accent */
+    --brand-2: #7a5bff;            /* secondary accent */
+    --hero-bg: #ffffff;            /* background */
+    --hero-text: #0f172a;          /* slate-900 */
+    --hero-muted: #475569;         /* slate-600 */
+    --hero-panel: #f8fafc;         /* slate-50 */
+    --hero-ring: rgba(91,108,255,.35);
+    --hero-shadow: 0 10px 30px rgba(2,6,23,.08);
+    --hero-radius: 16px;
+    --hero-maxw: 1100px;
+
+    background: var(--hero-bg);
+    color: var(--hero-text);
+    max-width: var(--hero-maxw);
+    margin: 0 auto;
+    padding: 28px 20px;
+}
+
+/* Hero Header */
+.hero-header {
+    position: relative;
+    padding: 56px 0 28px;
+    text-align: center;
+}
+
+.hero-badge {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--hero-panel), #eef2ff);
+    border: 1px solid #e5e7eb;
+    color: #334155;
+}
+
+.hero-title {
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 16px 0 12px;
+    font-size: clamp(28px, 6vw, 48px);
+}
+
+.hero-subtitle {
+    font-size: clamp(15px, 2.2vw, 18px);
+    color: var(--hero-muted);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* CTA buttons */
+.hero-cta {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+    justify-content: center;
+}
+
+.hero-cta .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 12px;
+    transition: .2s ease;
+    cursor: pointer;
+    border: 1px solid transparent;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.hero-cta .btn-primary {
+    background: linear-gradient(135deg, var(--brand), var(--brand-2));
+    color: #fff;
+    box-shadow: var(--hero-shadow);
+}
+
+.hero-cta .btn-primary:hover {
+    transform: translateY(-1px);
+    filter: saturate(1.05);
+}
+
+.hero-cta .btn-ghost {
+    background: #fff;
+    border-color: #e5e7eb;
+    color: #111827;
+}
+
+.hero-cta .btn-ghost:hover {
+    border-color: #cbd5e1;
+    background: #f8fafc;
+}
+
+/* Three value points */
+.hero-features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin: 30px 0;
+}
+
+@media(min-width: 800px) {
+    .hero-features {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.hero-card {
+    background: var(--hero-panel);
+    border: 1px solid #e5e7eb;
+    border-radius: var(--hero-radius);
+    padding: 18px;
+    box-shadow: var(--hero-shadow);
+}
+
+.hero-card h3 {
+    margin: 0 0 6px;
+    font-size: 18px;
+}
+
+.hero-card p {
+    margin: 0;
+    color: var(--hero-muted);
+    font-size: 15px;
+}
+
+/* Vision/Mission condensed */
+.hero-vm {
+    display: grid;
+    gap: 12px;
+    margin: 18px 0 6px;
+}
+
+.hero-line {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: var(--hero-radius);
+    padding: 14px 16px;
+    margin: 0;
+}
+
+.hero-line strong {
+    color: #111827;
+}
+
+/* Decorative blob (optional) */
+.hero-blob {
+    position: absolute;
+    inset: auto -80px -80px auto;
+    width: 260px;
+    height: 260px;
+    background: radial-gradient(140px 140px at 60% 40%, var(--brand-2), transparent 70%),
+                radial-gradient(140px 140px at 30% 70%, var(--brand), transparent 70%);
+    opacity: .12;
+    filter: blur(18px);
+    pointer-events: none;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .hero-container {
+        padding: 20px 16px;
+    }
+
+    .hero-header {
+        padding: 40px 0 20px;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+
+    .hero-blob {
+        display: none; /* Hide decorative blob on mobile */
+    }
+}

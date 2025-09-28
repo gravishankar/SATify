@@ -7,7 +7,16 @@
       "Bash(git commit -m \"$(cat <<''EOF''\nRebrand from SAT Practice Pro to SATify and update navigation\n\n- Removed \"Words in Context\" menu item from main navigation\n- Renamed \"Skill Practice\" to \"Lessons\" in main menu\n- Updated all references from \"SAT Practice Pro\" to \"SATify\" across:\n  - HTML title, headers, and brand text\n  - JavaScript module headers and comments\n  - PWA manifest and service worker\n  - Package.json description\n  - CSS header comments\n\n🤖 Generated with [Claude Code](https://claude.ai/code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
       "Bash(git push:*)",
       "Bash(git stash:*)",
-      "Bash(git pull:*)"
+      "Bash(git pull:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nImplement modern lesson format and interactive renderer\n\nMajor Features:\n• 📚 New lesson format with rich interactive content\n• 🎨 Advanced lesson renderer supporting all interaction types:\n  - Step-by-step reveals and guided questions\n  - Interactive concept boxes and strategy teaching\n  - Completion celebrations and progress tracking\n• 🔧 Modern lesson loader with skill-based mapping\n• 📱 Enhanced Learn page with seamless lesson integration\n\nTechnical Implementation:\n• Added lesson-renderer.js with comprehensive slide type support\n• Created lesson-loader.js for efficient lesson management\n• Built modern-learn-page.js integrating with existing system\n• Updated Creator Studio with new lesson format generation\n• Added complete CSS styling for responsive lesson experience\n\nContent:\n• Migrated 7 lessons from reference format with skill mapping:\n  - Central Ideas (CID), Grammar (FSS), Punctuation (BOU)\n  - Transitions (TRA), Synthesis (SYN), Words in Context (WIC)\n• Maintained backward compatibility with existing lessons\n• Enhanced UI with lesson availability indicators\n\n🤖 Generated with [Claude Code](https://claude.ai/code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit:*)",
+      "Bash(python3:*)",
+      "Bash(for:*)",
+      "Bash(do echo \"=== $file ===\")",
+      "Bash(grep:*)",
+      "Bash(done)",
+      "Bash(awk:*)",
+      "Read(//Users/gravisha/Downloads/**)"
     ],
     "deny": [],
     "ask": []

@@ -136,6 +136,18 @@ class CreatorStudio {
             this.loadTemplate(e.target.value);
         });
 
+        // Slide editor modal
+        document.getElementById('closeSlideEditor')?.addEventListener('click', () => {
+            this.cancelSlideEdit();
+        });
+
+        // Click outside modal to close
+        document.getElementById('slideEditor')?.addEventListener('click', (e) => {
+            if (e.target.id === 'slideEditor') {
+                this.cancelSlideEdit();
+            }
+        });
+
         // Real-time validation
         this.setupRealTimeValidation();
     }
@@ -720,11 +732,23 @@ class CreatorStudio {
 
     updateSlidesList() {
         const slidesList = document.getElementById('slidesList');
-        if (!slidesList || !this.currentLesson) return;
+        if (!slidesList || !this.currentLesson) {
+            console.log('updateSlidesList failed: slidesList=', !!slidesList, 'currentLesson=', !!this.currentLesson);
+            return;
+        }
 
         slidesList.innerHTML = '';
 
+        console.log('Current lesson slides:', this.currentLesson.slides?.length || 0, 'slides');
+        console.log('Slides data:', this.currentLesson.slides);
+
+        if (!this.currentLesson.slides || this.currentLesson.slides.length === 0) {
+            slidesList.innerHTML = '<p>No slides found in this lesson.</p>';
+            return;
+        }
+
         this.currentLesson.slides.forEach((slide, index) => {
+            console.log(`Rendering slide ${index + 1}:`, slide.title, slide.type);
             const slideItem = document.createElement('div');
             slideItem.className = 'slide-item';
             slideItem.innerHTML = `
@@ -780,16 +804,186 @@ class CreatorStudio {
             case 'introduction':
                 formHTML += `
                     <div class="form-group">
-                        <label for="slideSubtitle">Subtitle:</label>
-                        <input type="text" id="slideSubtitle" value="${slide.content.subtitle || ''}" />
+                        <label for="slideHeading">Heading:</label>
+                        <input type="text" id="slideHeading" value="${slide.content.heading || slide.content.title || ''}" />
                     </div>
                     <div class="form-group">
-                        <label for="slidePoints">Key Points (one per line):</label>
-                        <textarea id="slidePoints" rows="4">${(slide.content.points || []).join('\n')}</textarea>
+                        <label for="slideText">Main Text:</label>
+                        <textarea id="slideText" rows="3">${slide.content.text || ''}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="slideBulletPoints">Bullet Points (one per line):</label>
+                        <textarea id="slideBulletPoints" rows="4">${(slide.content.bullet_points || slide.content.points || []).join('\n')}</textarea>
                     </div>
                 `;
                 break;
 
+            case 'concept_teaching':
+                formHTML += `
+                    <div class="form-group">
+                        <label for="slideHeading">Heading:</label>
+                        <input type="text" id="slideHeading" value="${slide.content.heading || ''}" />
+                    </div>
+                    <div class="form-group">
+                        <label for="slideText">Main Text:</label>
+                        <textarea id="slideText" rows="4">${slide.content.text || ''}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="slideBulletPoints">Bullet Points (one per line):</label>
+                        <textarea id="slideBulletPoints" rows="4">${(slide.content.bullet_points || []).join('\n')}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="slideExamples">Examples (JSON format for objects, comma separated for arrays):</label>
+                        <textarea id="slideExamples" rows="3">${slide.content.examples ? (Array.isArray(slide.content.examples) ? slide.content.examples.join(', ') : JSON.stringify(slide.content.examples, null, 2)) : ''}</textarea>
+                    </div>
+                `;
+                break;
+
+            case 'strategy_teaching':
+                formHTML += `
+                    <div class="form-group">
+                        <label for="slideHeading">Heading:</label>
+                        <input type="text" id="slideHeading" value="${slide.content.heading || ''}" />
+                    </div>
+                    <div class="form-group">
+                        <label for="slideText">Introduction Text:</label>
+                        <textarea id="slideText" rows="3">${slide.content.text || ''}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="slideSteps">Strategy Steps (JSON format - see existing for structure):</label>
+                        <textarea id="slideSteps" rows="6">${JSON.stringify(slide.content.steps || [], null, 2)}</textarea>
+                    </div>
+                `;
+                break;
+
+            case 'guided_example':
+                formHTML += `
+                    <div class="form-group">
+                        <label for="slideHeading">Heading:</label>
+                        <input type="text" id="slideHeading" value="${slide.content.heading || ''}" />
+                    </div>
+                    <div class="form-group">
+                        <label for="slideText">Introduction Text:</label>
+                        <textarea id="slideText" rows="3">${slide.content.text || ''}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="slidePassage">Passage Text:</label>
+                        <textarea id="slidePassage" rows="6">${slide.content.passage || ''}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="slideQuestion">Question:</label>
+                        <textarea id="slideQuestion" rows="3">${slide.content.question || ''}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="slideAnalysis">Analysis Points (one per line):</label>
+                        <textarea id="slideAnalysis" rows="4">${(slide.content.analysis || []).join('\n')}</textarea>
+                    </div>
+                `;
+                break;
+
+            case 'quick_check':
+            case 'independent_practice':
+                formHTML += `
+                    <div class="form-group">
+                        <label for="slideHeading">Heading:</label>
+                        <input type="text" id="slideHeading" value="${slide.content.heading || ''}" />
+                    </div>
+                    <div class="form-group">
+                        <label for="slideText">Instructions:</label>
+                        <textarea id="slideText" rows="3">${slide.content.text || ''}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="slideQuestion">Question:</label>
+                        <textarea id="slideQuestion" rows="4">${slide.content.question || ''}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="slideOptions">Answer Options (one per line):</label>
+                        <textarea id="slideOptions" rows="4">${(slide.content.options || []).join('\n')}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="slideCorrectAnswer">Correct Answer Index (0-based):</label>
+                        <input type="number" id="slideCorrectAnswer" min="0" value="${slide.content.correct_answer || 0}" />
+                    </div>
+                `;
+                break;
+
+            case 'mastery_check':
+                formHTML += `
+                    <div class="form-group">
+                        <label for="slideHeading">Heading:</label>
+                        <input type="text" id="slideHeading" value="${slide.content.heading || ''}" />
+                    </div>
+                    <div class="form-group">
+                        <label for="slideText">Instructions:</label>
+                        <textarea id="slideText" rows="3">${slide.content.text || ''}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="slideQuestions">Questions (JSON format):</label>
+                        <textarea id="slideQuestions" rows="8">${JSON.stringify(slide.content.questions || [], null, 2)}</textarea>
+                    </div>
+                `;
+                break;
+
+            case 'skill_application':
+                formHTML += `
+                    <div class="form-group">
+                        <label for="slideHeading">Heading:</label>
+                        <input type="text" id="slideHeading" value="${slide.content.heading || ''}" />
+                    </div>
+                    <div class="form-group">
+                        <label for="slideText">Instructions:</label>
+                        <textarea id="slideText" rows="3">${slide.content.text || ''}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="slideScenario">Scenario:</label>
+                        <textarea id="slideScenario" rows="4">${slide.content.scenario || ''}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="slideTask">Task:</label>
+                        <textarea id="slideTask" rows="3">${slide.content.task || ''}</textarea>
+                    </div>
+                `;
+                break;
+
+            case 'concept_reinforcement':
+                formHTML += `
+                    <div class="form-group">
+                        <label for="slideHeading">Heading:</label>
+                        <input type="text" id="slideHeading" value="${slide.content.heading || ''}" />
+                    </div>
+                    <div class="form-group">
+                        <label for="slideText">Main Text:</label>
+                        <textarea id="slideText" rows="3">${slide.content.text || ''}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="slideReviewPoints">Review Points (JSON format):</label>
+                        <textarea id="slideReviewPoints" rows="6">${JSON.stringify(slide.content.review_points || [], null, 2)}</textarea>
+                    </div>
+                `;
+                break;
+
+            case 'wrap_up':
+                formHTML += `
+                    <div class="form-group">
+                        <label for="slideHeading">Heading:</label>
+                        <input type="text" id="slideHeading" value="${slide.content.heading || ''}" />
+                    </div>
+                    <div class="form-group">
+                        <label for="slideText">Main Text:</label>
+                        <textarea id="slideText" rows="3">${slide.content.text || ''}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="slideKeyTakeaways">Key Takeaways (JSON format):</label>
+                        <textarea id="slideKeyTakeaways" rows="6">${JSON.stringify(slide.content.key_takeaways || [], null, 2)}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="slideNextSteps">Next Steps:</label>
+                        <input type="text" id="slideNextSteps" value="${slide.content.next_steps || ''}" />
+                    </div>
+                `;
+                break;
+
+            // Keep existing types for backward compatibility
             case 'concept':
                 formHTML += `
                     <div class="form-group">
@@ -861,6 +1055,19 @@ class CreatorStudio {
                     </div>
                 `;
                 break;
+
+            default:
+                formHTML += `
+                    <div class="form-group">
+                        <label>Slide Type: ${slide.type}</label>
+                        <p><em>This slide type requires manual JSON editing. Use the JSON editor below.</em></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="slideContentJson">Content (JSON):</label>
+                        <textarea id="slideContentJson" rows="10">${JSON.stringify(slide.content || {}, null, 2)}</textarea>
+                    </div>
+                `;
+                break;
         }
 
         formHTML += `
@@ -882,10 +1089,114 @@ class CreatorStudio {
         // Update type-specific content
         switch (slide.type) {
             case 'introduction':
-                slide.content.subtitle = document.getElementById('slideSubtitle')?.value || '';
-                slide.content.points = document.getElementById('slidePoints')?.value.split('\n').filter(p => p.trim()) || [];
+                slide.content.heading = document.getElementById('slideHeading')?.value || '';
+                slide.content.text = document.getElementById('slideText')?.value || '';
+                slide.content.bullet_points = document.getElementById('slideBulletPoints')?.value.split('\n').filter(p => p.trim()) || [];
+                // Keep backward compatibility
+                if (document.getElementById('slideSubtitle')) {
+                    slide.content.subtitle = document.getElementById('slideSubtitle')?.value || '';
+                }
+                if (document.getElementById('slidePoints')) {
+                    slide.content.points = document.getElementById('slidePoints')?.value.split('\n').filter(p => p.trim()) || [];
+                }
                 break;
 
+            case 'concept_teaching':
+                slide.content.heading = document.getElementById('slideHeading')?.value || '';
+                slide.content.text = document.getElementById('slideText')?.value || '';
+                slide.content.bullet_points = document.getElementById('slideBulletPoints')?.value.split('\n').filter(p => p.trim()) || [];
+                const examples = document.getElementById('slideExamples')?.value || '';
+                if (examples) {
+                    try {
+                        // Try to parse as JSON first (for objects)
+                        slide.content.examples = JSON.parse(examples);
+                    } catch (e) {
+                        // Fall back to comma-separated array
+                        slide.content.examples = examples.split(',').map(e => e.trim()).filter(e => e);
+                    }
+                } else {
+                    slide.content.examples = [];
+                }
+                break;
+
+            case 'strategy_teaching':
+                slide.content.heading = document.getElementById('slideHeading')?.value || '';
+                slide.content.text = document.getElementById('slideText')?.value || '';
+                try {
+                    const stepsJson = document.getElementById('slideSteps')?.value || '[]';
+                    slide.content.steps = JSON.parse(stepsJson);
+                } catch (e) {
+                    console.error('Invalid JSON for strategy steps:', e);
+                    this.showNotification('Invalid JSON format for strategy steps', 'error');
+                    return;
+                }
+                break;
+
+            case 'guided_example':
+                slide.content.heading = document.getElementById('slideHeading')?.value || '';
+                slide.content.text = document.getElementById('slideText')?.value || '';
+                slide.content.passage = document.getElementById('slidePassage')?.value || '';
+                slide.content.question = document.getElementById('slideQuestion')?.value || '';
+                slide.content.analysis = document.getElementById('slideAnalysis')?.value.split('\n').filter(a => a.trim()) || [];
+                break;
+
+            case 'quick_check':
+            case 'independent_practice':
+                slide.content.heading = document.getElementById('slideHeading')?.value || '';
+                slide.content.text = document.getElementById('slideText')?.value || '';
+                slide.content.question = document.getElementById('slideQuestion')?.value || '';
+                slide.content.options = document.getElementById('slideOptions')?.value.split('\n').filter(o => o.trim()) || [];
+                slide.content.correct_answer = parseInt(document.getElementById('slideCorrectAnswer')?.value) || 0;
+                break;
+
+            case 'mastery_check':
+                slide.content.heading = document.getElementById('slideHeading')?.value || '';
+                slide.content.text = document.getElementById('slideText')?.value || '';
+                try {
+                    const questionsJson = document.getElementById('slideQuestions')?.value || '[]';
+                    slide.content.questions = JSON.parse(questionsJson);
+                } catch (e) {
+                    console.error('Invalid JSON for questions:', e);
+                    this.showNotification('Invalid JSON format for questions', 'error');
+                    return;
+                }
+                break;
+
+            case 'skill_application':
+                slide.content.heading = document.getElementById('slideHeading')?.value || '';
+                slide.content.text = document.getElementById('slideText')?.value || '';
+                slide.content.scenario = document.getElementById('slideScenario')?.value || '';
+                slide.content.task = document.getElementById('slideTask')?.value || '';
+                break;
+
+            case 'concept_reinforcement':
+                slide.content.heading = document.getElementById('slideHeading')?.value || '';
+                slide.content.text = document.getElementById('slideText')?.value || '';
+                try {
+                    const reviewPointsJson = document.getElementById('slideReviewPoints')?.value || '[]';
+                    slide.content.review_points = JSON.parse(reviewPointsJson);
+                } catch (e) {
+                    console.error('Invalid JSON for review points:', e);
+                    this.showNotification('Invalid JSON format for review points', 'error');
+                    return;
+                }
+                break;
+
+            case 'wrap_up':
+                slide.content.heading = document.getElementById('slideHeading')?.value || '';
+                slide.content.text = document.getElementById('slideText')?.value || '';
+                slide.content.next_steps = document.getElementById('slideNextSteps')?.value || '';
+                try {
+                    const takeawaysJson = document.getElementById('slideKeyTakeaways')?.value || '[]';
+                    slide.content.key_takeaways = JSON.parse(takeawaysJson);
+                } catch (e) {
+                    console.error('Invalid JSON for key takeaways:', e);
+                    this.showNotification('Invalid JSON format for key takeaways', 'error');
+                    return;
+                }
+                break;
+
+            // Keep existing types for backward compatibility
             case 'concept':
                 slide.content.explanation = document.getElementById('slideExplanation')?.value || '';
                 slide.content.example = document.getElementById('slideExample')?.value || '';
@@ -911,6 +1222,20 @@ class CreatorStudio {
                 slide.content.key_points = document.getElementById('slideKeyPoints')?.value.split('\n').filter(p => p.trim()) || [];
                 slide.content.next_steps = document.getElementById('slideNextSteps')?.value || '';
                 break;
+
+            default:
+                // Handle unknown slide types with JSON editing
+                if (document.getElementById('slideContentJson')) {
+                    try {
+                        const contentJson = document.getElementById('slideContentJson')?.value || '{}';
+                        slide.content = JSON.parse(contentJson);
+                    } catch (e) {
+                        console.error('Invalid JSON for slide content:', e);
+                        this.showNotification('Invalid JSON format for slide content', 'error');
+                        return;
+                    }
+                }
+                break;
         }
 
         this.updateSlidesList();
@@ -926,17 +1251,23 @@ class CreatorStudio {
     }
 
     togglePreviewMode() {
+        console.log('togglePreviewMode called, current previewMode:', this.previewMode);
         this.previewMode = !this.previewMode;
         const previewPanel = document.getElementById('previewPanel');
         const toggleBtn = document.getElementById('togglePreview');
 
+        console.log('Preview panel found:', !!previewPanel);
+        console.log('Toggle button found:', !!toggleBtn);
+
         if (this.previewMode) {
-            previewPanel.classList.remove('hidden');
-            toggleBtn.textContent = 'Hide Preview';
+            previewPanel?.classList.remove('hidden');
+            if (toggleBtn) toggleBtn.textContent = 'Hide Preview';
+            console.log('Showing preview, calling updatePreview()');
             this.updatePreview();
         } else {
-            previewPanel.classList.add('hidden');
-            toggleBtn.textContent = 'Show Preview';
+            previewPanel?.classList.add('hidden');
+            if (toggleBtn) toggleBtn.textContent = 'Show Preview';
+            console.log('Hiding preview');
         }
     }
 
@@ -946,22 +1277,28 @@ class CreatorStudio {
         const previewContent = document.getElementById('previewContent');
         if (!previewContent) return;
 
+        // Handle both old and new lesson formats
+        const domain = this.currentLesson.domain || this.currentLesson.domain_title || 'Unknown Domain';
+        const skill = this.currentLesson.skill || this.currentLesson.subtitle || (this.currentLesson.skill_codes ? this.currentLesson.skill_codes.join(', ') : 'Unknown Skill');
+        const level = this.currentLesson.level ? ` (${this.currentLesson.level})` : '';
+        const duration = this.currentLesson.duration ? ` • ${this.currentLesson.duration}` : '';
+
         previewContent.innerHTML = `
             <div class="lesson-preview">
                 <h3>${this.currentLesson.title}</h3>
                 <div class="lesson-meta">
-                    <span class="domain">${this.currentLesson.domain}</span>
-                    <span class="skill">${this.currentLesson.skill}</span>
-                    <span class="slides-count">${this.currentLesson.slides.length} slides</span>
+                    <span class="domain">${domain}</span>
+                    <span class="skill">${skill}${level}</span>
+                    <span class="slides-count">${this.currentLesson.slides?.length || 0} slides${duration}</span>
                 </div>
                 <div class="learning-objectives">
                     <h4>Learning Objectives:</h4>
                     <ul>
-                        ${this.currentLesson.learning_objectives.map(obj => `<li>${obj}</li>`).join('')}
+                        ${(this.currentLesson.learning_objectives || []).map(obj => `<li>${obj}</li>`).join('')}
                     </ul>
                 </div>
                 <div class="slides-preview">
-                    ${this.currentLesson.slides.map((slide, index) => this.renderSlidePreview(slide, index)).join('')}
+                    ${(this.currentLesson.slides || []).map((slide, index) => this.renderSlidePreview(slide, index)).join('')}
                 </div>
             </div>
         `;
@@ -982,11 +1319,81 @@ class CreatorStudio {
         switch (slide.type) {
             case 'introduction':
                 return `
-                    <h5>${slide.content.title}</h5>
-                    <p><em>${slide.content.subtitle}</em></p>
+                    <h5>${slide.content.heading || slide.content.title || slide.title}</h5>
+                    <p><em>${slide.content.text || slide.content.subtitle || ''}</em></p>
                     <ul>
-                        ${(slide.content.points || []).map(point => `<li>${point}</li>`).join('')}
+                        ${(slide.content.bullet_points || slide.content.points || []).map(point => `<li>${point}</li>`).join('')}
                     </ul>
+                    ${slide.content.visual_element ? `<p><em>Visual: ${slide.content.visual_element.type}</em></p>` : ''}
+                `;
+
+            case 'concept_teaching':
+                return `
+                    <div class="concept-content">
+                        <h5>${slide.content.heading || slide.title}</h5>
+                        <p><strong>Main Concept:</strong> ${slide.content.text || slide.content.explanation || ''}</p>
+                        ${slide.content.bullet_points ? `<ul>${slide.content.bullet_points.map(point => `<li>${point}</li>`).join('')}</ul>` : ''}
+                        ${slide.content.examples ? `<p><strong>Examples:</strong> ${Array.isArray(slide.content.examples) ? slide.content.examples.join(', ') : slide.content.examples}</p>` : ''}
+                        ${slide.content.key_points ? `<div><strong>Key Points:</strong><ul>${slide.content.key_points.map(point => `<li>${point}</li>`).join('')}</ul></div>` : ''}
+                    </div>
+                `;
+
+            case 'strategy_teaching':
+                return `
+                    <h5>${slide.content.heading || slide.title}</h5>
+                    <p>${slide.content.text || ''}</p>
+                    <ol>
+                        ${(slide.content.steps || []).map(step => `<li><strong>${step.title || step}:</strong> ${step.description || ''}</li>`).join('')}
+                    </ol>
+                    ${slide.content.strategy_tips ? `<p><strong>Tips:</strong> ${Array.isArray(slide.content.strategy_tips) ? slide.content.strategy_tips.join('; ') : slide.content.strategy_tips}</p>` : ''}
+                `;
+
+            case 'guided_example':
+                return `
+                    <h5>${slide.content.heading || slide.title}</h5>
+                    <p>${slide.content.text || ''}</p>
+                    ${slide.content.passage ? `<div class="passage-preview"><strong>Passage:</strong> ${slide.content.passage.substring(0, 200)}...</div>` : ''}
+                    ${slide.content.question ? `<p><strong>Question:</strong> ${slide.content.question}</p>` : ''}
+                    ${slide.content.analysis ? `<div><strong>Analysis:</strong><ul>${slide.content.analysis.map(point => `<li>${point}</li>`).join('')}</ul></div>` : ''}
+                `;
+
+            case 'quick_check':
+            case 'independent_practice':
+                return `
+                    <h5>${slide.content.heading || slide.title}</h5>
+                    <p>${slide.content.text || ''}</p>
+                    ${slide.content.question ? `<p><strong>Question:</strong> ${slide.content.question}</p>` : ''}
+                    ${slide.content.options ? `<ul>${slide.content.options.map((opt, i) => `<li>${String.fromCharCode(65+i)}) ${opt}</li>`).join('')}</ul>` : ''}
+                `;
+
+            case 'mastery_check':
+                return `
+                    <h5>${slide.content.heading || slide.title}</h5>
+                    <p>${slide.content.text || ''}</p>
+                    ${slide.content.questions ? `<p><strong>Questions:</strong> ${slide.content.questions.length} assessment items</p>` : ''}
+                `;
+
+            case 'skill_application':
+                return `
+                    <h5>${slide.content.heading || slide.title}</h5>
+                    <p>${slide.content.text || ''}</p>
+                    ${slide.content.scenario ? `<p><strong>Scenario:</strong> ${slide.content.scenario}</p>` : ''}
+                    ${slide.content.task ? `<p><strong>Task:</strong> ${slide.content.task}</p>` : ''}
+                `;
+
+            case 'concept_reinforcement':
+                return `
+                    <h5>${slide.content.heading || slide.title}</h5>
+                    <p>${slide.content.text || ''}</p>
+                    ${slide.content.review_points ? `<ul>${slide.content.review_points.map(point => `<li>${point.title}: ${point.content}</li>`).join('')}</ul>` : ''}
+                `;
+
+            case 'wrap_up':
+                return `
+                    <h5>${slide.content.heading || slide.title}</h5>
+                    <p>${slide.content.text || ''}</p>
+                    ${slide.content.key_takeaways ? `<div><strong>Key Takeaways:</strong><ul>${slide.content.key_takeaways.map(point => `<li>${point.title}: ${point.content}</li>`).join('')}</ul></div>` : ''}
+                    ${slide.content.next_steps ? `<p><strong>Next Steps:</strong> ${slide.content.next_steps}</p>` : ''}
                 `;
 
             case 'concept':
@@ -1005,7 +1412,14 @@ class CreatorStudio {
                 `;
 
             default:
-                return '<p>Preview not available for this slide type</p>';
+                return `
+                    <div class="generic-slide-preview">
+                        <h5>${slide.title || 'Untitled Slide'}</h5>
+                        <p><em>Slide Type: ${slide.type}</em></p>
+                        ${slide.content ? `<p>${slide.content.text || slide.content.heading || 'Content available but not previewed for this slide type'}</p>` : ''}
+                        ${slide.interactions && slide.interactions.length > 0 ? `<p><em>Interactions: ${slide.interactions.length} element(s)</em></p>` : ''}
+                    </div>
+                `;
         }
     }
 
@@ -1077,6 +1491,10 @@ class CreatorStudio {
         // Set current lesson for editing
         this.currentLesson = { ...lesson }; // Create a copy to avoid reference issues
 
+        console.log('editLesson - loaded lesson:', lesson.title);
+        console.log('editLesson - lesson has slides:', lesson.slides?.length || 0);
+        console.log('editLesson - currentLesson slides:', this.currentLesson.slides?.length || 0);
+
         // Populate the form fields
         this.populateEditorFromLesson(lesson);
 
@@ -1086,6 +1504,11 @@ class CreatorStudio {
         // Update UI to reflect loaded lesson
         this.updateSaveButtonState(true);
         this.showNotification(`Loading lesson: ${lesson.title}`, 'info');
+
+        // Update preview if it's currently visible
+        if (this.previewMode) {
+            this.updatePreview();
+        }
     }
 
     populateEditorFromLesson(lesson) {
@@ -1102,15 +1525,42 @@ class CreatorStudio {
         const domainSelect = document.getElementById('domainSelect');
         const skillSelect = document.getElementById('skillSelect');
 
-        if (domainSelect && lesson.domain_id) {
-            domainSelect.value = lesson.domain_id;
-            this.onDomainChange(lesson.domain_id);
+        // Handle both old format (domain_id, skill_id) and new format (skill_codes)
+        let domainId = lesson.domain_id;
+        let skillId = lesson.skill_id;
+
+        // For new lesson format, map skill_codes to domain_id
+        if (!domainId && lesson.skill_codes && lesson.skill_codes.length > 0) {
+            const skillCode = lesson.skill_codes[0]; // Use first skill code
+            // Map skill codes to domains
+            const skillCodeToDomain = {
+                'CID': 'information_and_ideas',
+                'COE': 'information_and_ideas',
+                'INF': 'information_and_ideas',
+                'SEC': 'standard_english_conventions',
+                'PBC': 'standard_english_conventions',
+                'FSS': 'standard_english_conventions',
+                'EOI': 'expression_of_ideas',
+                'TRA': 'expression_of_ideas',
+                'SYN': 'expression_of_ideas',
+                'WIC': 'craft_and_structure',
+                'TSP': 'craft_and_structure',
+                'CTC': 'craft_and_structure',
+                'BOU': 'standard_english_conventions'
+            };
+            domainId = skillCodeToDomain[skillCode];
+            skillId = skillCode; // Use skill code as skill ID for new format
+        }
+
+        if (domainSelect && domainId) {
+            domainSelect.value = domainId;
+            this.onDomainChange(domainId);
 
             // Wait for skill dropdown to populate, then set skill
             setTimeout(() => {
-                if (skillSelect && lesson.skill_id) {
-                    skillSelect.value = lesson.skill_id;
-                    this.onSkillChange(lesson.skill_id);
+                if (skillSelect && skillId) {
+                    skillSelect.value = skillId;
+                    this.onSkillChange(skillId);
                 }
             }, 100);
         }

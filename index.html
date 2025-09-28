@@ -111,17 +111,17 @@
                 <span class="brand-text">SATify</span>
             </div>
             <div class="nav-menu" id="navMenu">
-                <a href="#dashboard" class="nav-link active" data-page="dashboard">
+                <a href="#home" class="nav-link active" data-page="home">
                     <span class="nav-icon">🏠</span>
+                    Home
+                </a>
+                <a href="#dashboard" class="nav-link" data-page="dashboard">
+                    <span class="nav-icon">📊</span>
                     Dashboard
                 </a>
                 <a href="#skill-practice" class="nav-link" data-page="skill-practice" id="skillPracticeNavLink" style="display: none;">
                     <span class="nav-icon">🎯</span>
                     Lessons
-                </a>
-                <a href="#learn" class="nav-link" data-page="learn">
-                    <span class="nav-icon">🎓</span>
-                    Learn
                 </a>
                 <a href="#practice" class="nav-link" data-page="practice">
                     <span class="nav-icon">📝</span>
@@ -160,8 +160,60 @@
 
     <!-- Main Content Area -->
     <main class="main-content">
+        <!-- Home Page -->
+        <div id="homePage" class="page active">
+            <div class="hero-container">
+                <header class="hero-header" role="banner">
+                    <div class="hero-badge" aria-label="SAT Prep">
+                        <span>🎓 SATify</span>
+                        <span aria-hidden="true">•</span>
+                        <span>SAT Prep</span>
+                    </div>
+
+                    <h1 class="hero-title">Amp Up Your SAT Journey with Smart Strategy.</h1>
+
+                    <p class="hero-subtitle">Simplify prep. Pivot to smarter practice. Boost your confidence. Elevate your score.</p>
+
+                    <nav class="hero-cta" aria-label="primary calls to action">
+                        <a class="btn btn-primary" href="#dashboard" role="button" aria-label="Start my SAT boost" data-page="dashboard">
+                            <span>🚀 Start My SAT Boost</span>
+                        </a>
+                        <a class="btn btn-ghost" href="#practice" role="button" aria-label="See the strategy method" data-page="practice">
+                            <span>🎯 See the Strategy Method</span>
+                        </a>
+                    </nav>
+
+                    <div class="hero-blob" aria-hidden="true"></div>
+                </header>
+
+                <main class="hero-main" role="main">
+                    <!-- Value points -->
+                    <section class="hero-features" aria-label="Key value points">
+                        <article class="hero-card">
+                            <h3>🚀 Elevate Your Prep</h3>
+                            <p>Strategy‑first techniques that cut through test traps.</p>
+                        </article>
+                        <article class="hero-card">
+                            <h3>📚 Simplified Learning</h3>
+                            <p>Clear, structured steps that make prep stress‑free.</p>
+                        </article>
+                        <article class="hero-card">
+                            <h3>📈 Boost Outcomes</h3>
+                            <p>A refined approach designed to maximize performance.</p>
+                        </article>
+                    </section>
+
+                    <!-- Vision + Mission condensed -->
+                    <section class="hero-vm" aria-label="Vision and Mission">
+                        <p class="hero-line"><strong>Vision:</strong> Make SAT prep simple, smart, and strategy‑first — accessible to every student.</p>
+                        <p class="hero-line"><strong>Mission:</strong> Apply proven methods and expert strategies to improve accuracy under pressure, sharpen precision across all difficulty levels, and outsmart SAT traps with confidence.</p>
+                    </section>
+                </main>
+            </div>
+        </div>
+
         <!-- Dashboard Page -->
-        <div id="dashboardPage" class="page active">
+        <div id="dashboardPage" class="page">
             <div class="container">
                 <div class="welcome-section">
                     <h1>Welcome back, <span id="welcomeName">Student</span>!</h1>
@@ -263,10 +315,10 @@
 
                     <!-- Skills Grid -->
                     <div class="skills-grid">
-                        <div class="skill-card clickable" data-skill="standard-english-conventions">
+                        <div class="skill-card coming-soon" data-skill="standard-english-conventions">
                             <div class="skill-header">
                                 <div class="skill-icon">📚</div>
-                                <div class="skill-badge">Active</div>
+                                <div class="skill-badge">Coming Soon</div>
                             </div>
                             <h3>Standard English Conventions</h3>
                             <p>Grammar, punctuation, and writing mechanics</p>
@@ -278,14 +330,14 @@
                                 <div class="progress-bar">
                                     <div class="progress-fill" style="width: 0%"></div>
                                 </div>
-                                <span class="progress-text">Start Learning</span>
+                                <span class="progress-text">Coming Soon</span>
                             </div>
                         </div>
 
-                        <div class="skill-card clickable" data-skill="expression-of-ideas">
+                        <div class="skill-card coming-soon" data-skill="expression-of-ideas">
                             <div class="skill-header">
                                 <div class="skill-icon">✍️</div>
-                                <div class="skill-badge">Active</div>
+                                <div class="skill-badge">Coming Soon</div>
                             </div>
                             <h3>Expression of Ideas</h3>
                             <p>Rhetorical synthesis and transitions</p>
@@ -297,14 +349,14 @@
                                 <div class="progress-bar">
                                     <div class="progress-fill" style="width: 0%"></div>
                                 </div>
-                                <span class="progress-text">Start Learning</span>
+                                <span class="progress-text">Coming Soon</span>
                             </div>
                         </div>
 
-                        <div class="skill-card clickable" data-skill="craft-and-structure">
+                        <div class="skill-card coming-soon" data-skill="craft-and-structure">
                             <div class="skill-header">
                                 <div class="skill-icon">💭</div>
-                                <div class="skill-badge">Active</div>
+                                <div class="skill-badge">Coming Soon</div>
                             </div>
                             <h3>Craft and Structure</h3>
                             <p>Words in context strategies with step-by-step guidance</p>
@@ -316,15 +368,15 @@
                                 <div class="progress-bar">
                                     <div class="progress-fill" style="width: 0%"></div>
                                 </div>
-                                <span class="progress-text">Start Learning</span>
+                                <span class="progress-text">Coming Soon</span>
                             </div>
                         </div>
 
                         <!-- Information and Ideas - Now Active -->
-                        <div class="skill-card clickable" data-skill="information-and-ideas">
+                        <div class="skill-card coming-soon" data-skill="information-and-ideas">
                             <div class="skill-header">
                                 <div class="skill-icon">📝</div>
-                                <div class="skill-badge">Active</div>
+                                <div class="skill-badge">Coming Soon</div>
                             </div>
                             <h3>Information and Ideas</h3>
                             <p>Central ideas, details, and inferences</p>
@@ -336,186 +388,13 @@
                                 <div class="progress-bar">
                                     <div class="progress-fill" style="width: 0%"></div>
                                 </div>
-                                <span class="progress-text">Start Learning</span>
+                                <span class="progress-text">Coming Soon</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
 
-                <!-- Lesson Content (Duolingo/Brilliant style) -->
-                <div id="lessonContent" class="lesson-content hidden">
-                    <div class="lesson-header">
-                        <button id="backToSkills" class="btn btn-ghost">← Back to Skills</button>
-                        <div class="lesson-progress-header">
-                            <h2 id="skillPageTitle">Craft and Structure</h2>
-                            <div class="lesson-progress-bar">
-                                <div class="lesson-progress-fill" style="width: 16.67%"></div>
-                            </div>
-                            <span class="lesson-step">Step 1 of 6</span>
-                        </div>
-                    </div>
-
-                    <div class="lesson-slides">
-                        <!-- Slide 1: What's Tested -->
-                        <div class="lesson-slide active" data-slide="0">
-                            <div class="slide-content two-column">
-                                <div class="slide-left">
-                                    <div class="slide-icon">🎯</div>
-                                    <h3>What's Tested</h3>
-                                    <p>Understanding meaning, tone, and structure in context.</p>
-                                </div>
-                                <div class="slide-right">
-                                    <div class="key-point">
-                                        <strong>Key Insight:</strong> The SAT tests whether you can determine the most appropriate word based on the surrounding passage context.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 2: What Makes This Tricky -->
-                        <div class="lesson-slide" data-slide="1">
-                            <div class="slide-content two-column">
-                                <div class="slide-left">
-                                    <div class="slide-icon">⚠️</div>
-                                    <h3>What Makes This Tricky</h3>
-                                    <p>Words may have multiple meanings; only one fits the passage.</p>
-                                </div>
-                                <div class="slide-right">
-                                    <div class="example-box">
-                                        <strong>Example:</strong> "The word 'fine' could mean good quality, thin, or a penalty - context determines the right meaning!"
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 3: Strategy Steps -->
-                        <div class="lesson-slide" data-slide="2">
-                            <div class="slide-content centered">
-                                <div class="slide-icon">📋</div>
-                                <h3>Strategy Steps</h3>
-                                <div class="strategy-steps">
-                                    <div class="step">
-                                        <span class="step-number">1</span>
-                                        <span class="step-text">Context Analysis - Read the sentence and understand the blank's role</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-number">2</span>
-                                        <span class="step-text">Bridge Word - Look for signal words that show relationships</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-number">3</span>
-                                        <span class="step-text">Word Cluster - Predict the type of word needed</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-number">4</span>
-                                        <span class="step-text">Process of Elimination - Rule out obviously wrong choices</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-number">5</span>
-                                        <span class="step-text">Verification - Test your choice by reading the complete sentence</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 4: Example Question -->
-                        <div class="lesson-slide" data-slide="3">
-                            <div class="slide-content two-column">
-                                <div class="slide-left">
-                                    <div class="slide-icon">❓</div>
-                                    <h3>Example Question</h3>
-                                    <p>Let's apply our strategy to solve this step by step!</p>
-                                </div>
-                                <div class="slide-right">
-                                    <div class="practice-question">
-                                        <p>The scientist's approach was less <strong>_______</strong> than others.</p>
-                                        <div class="choices-preview">
-                                            A) unique<br>
-                                            B) derivative<br>
-                                            C) awed<br>
-                                            D) empathetic
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 5: Walkthrough -->
-                        <div class="lesson-slide" data-slide="4">
-                            <div class="slide-content centered">
-                                <div class="slide-icon">💡</div>
-                                <h3>Step-by-Step Solution</h3>
-                                <div class="walkthrough">
-                                    <div class="step-solution">
-                                        <span class="step-label">Step 1:</span> Context shows "less _____ than others" - comparison structure
-                                    </div>
-                                    <div class="step-solution">
-                                        <span class="step-label">Step 2:</span> Predict: something negative or opposite of what others have
-                                    </div>
-                                    <div class="step-solution">
-                                        <span class="step-label">Step 3:</span> Test choices:
-                                        <div class="choice-analysis">
-                                            <div class="correct">✓ <strong>derivative</strong> - means unoriginal, fits "less than others"</div>
-                                            <div class="incorrect">✗ unique - positive, doesn't fit "less"</div>
-                                            <div class="incorrect">✗ awed/empathetic - don't fit the context</div>
-                                        </div>
-                                    </div>
-                                    <div class="step-solution">
-                                        <span class="step-label">Step 4:</span> Eliminate obviously wrong answers first to narrow your focus
-                                    </div>
-                                    <div class="step-solution">
-                                        <span class="step-label">Step 5:</span> Verify by reading the complete sentence with your chosen word
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 6: Wrap-up -->
-                        <div class="lesson-slide" data-slide="5">
-                            <div class="slide-content two-column">
-                                <div class="slide-left">
-                                    <div class="slide-icon">🎉</div>
-                                    <h3>Great Job!</h3>
-                                    <div class="key-takeaway">
-                                        <strong>Remember:</strong> Always test your choice in the sentence context.
-                                    </div>
-                                </div>
-                                <div class="slide-right">
-                                    <p>You've mastered the fundamentals of Words in Context. Now it's time to practice!</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 6: Practice Now -->
-                    <div class="lesson-slide" data-slide="6">
-                        <div class="slide-content centered">
-                            <h3>🎉 Lesson Complete!</h3>
-                            <p>Great job! You've completed the Craft and Structure lesson.</p>
-                            <div class="lesson-complete">
-                                <button id="practiceNow" class="btn btn-primary btn-large">
-                                    🚀 Start Practice
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Lesson Navigation (Duolingo style) -->
-                    <div class="lesson-navigation">
-                        <button id="prevSlide" class="btn btn-secondary" disabled>← Previous</button>
-                        <div class="slide-indicators">
-                            <span class="indicator active" data-slide="0"></span>
-                            <span class="indicator" data-slide="1"></span>
-                            <span class="indicator" data-slide="2"></span>
-                            <span class="indicator" data-slide="3"></span>
-                            <span class="indicator" data-slide="4"></span>
-                            <span class="indicator" data-slide="5"></span>
-                            <span class="indicator" data-slide="6"></span>
-                        </div>
-                        <button id="nextSlide" class="btn btn-primary">Next →</button>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -926,8 +805,8 @@
 
                 </div>
 
-                <!-- Lesson Editor (Initially Hidden) -->
-                <div class="lesson-editor hidden" id="lessonEditor">
+                <!-- Legacy Lesson Editor (Initially Hidden) -->
+                <div class="lesson-editor hidden" id="legacyLessonEditor">
                     <div class="editor-header">
                         <h2 id="editorTitle">Create New Lesson</h2>
                         <div class="editor-actions">
@@ -935,7 +814,7 @@
                                 <span class="btn-icon">👁️</span>
                                 Preview
                             </button>
-                            <button class="btn btn-success" id="saveLesson">
+                            <button class="btn btn-success" id="legacySaveLesson">
                                 <span class="btn-icon">💾</span>
                                 Save Lesson
                             </button>
@@ -1184,9 +1063,6 @@
     <script src="js/strategy-generator.js"></script>
     <script src="js/words-in-context.js"></script>
     <script src="js/topic-loader.js"></script>
-    <script src="js/lesson-renderer.js"></script>
-    <script src="js/lesson-loader.js"></script>
-    <script src="js/modern-learn-page.js"></script>
     <script src="js/learn-page.js"></script>
     <script src="js/skill-practice-manager.js"></script>
     <script src="js/skill-practice-ui.js"></script>

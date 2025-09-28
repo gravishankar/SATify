@@ -1,0 +1,356 @@
+{
+  "id": "lesson_03",
+  "title": "Punctuation Mastery",
+  "subtitle": "Boundaries & Clarity",
+  "level": "Foundation",
+  "duration": "20-25 min",
+  "skill_codes": ["BOU"],
+  "learning_objectives": [
+    "Master comma usage in complex sentences",
+    "Learn when to use semicolons and colons effectively",
+    "Understand apostrophe rules for possession and contractions",
+    "Apply punctuation strategies to SAT Writing questions"
+  ],
+  "success_criteria": {
+    "mastery_threshold": 0.75,
+    "min_accuracy": 0.7,
+    "required_slides": "all"
+  },
+  "slides": [
+    {
+      "id": "slide_01",
+      "type": "introduction",
+      "title": "Welcome to Punctuation Mastery",
+      "duration_estimate": 180,
+      "content": {
+        "heading": "Learning Objectives",
+        "text": "Punctuation marks are the traffic signals of writing - they guide readers through your ideas clearly and effectively.",
+        "bullet_points": [
+          "Master comma placement in complex sentences",
+          "Learn the power of semicolons and colons",
+          "Conquer apostrophe rules once and for all",
+          "Apply punctuation skills to boost SAT Writing scores"
+        ],
+        "visual_element": {
+          "type": "progress_indicator",
+          "total_slides": 8,
+          "estimated_time": "20-25 minutes"
+        }
+      },
+      "interactions": [
+        {
+          "type": "click_to_continue",
+          "text": "Ready to master punctuation? Click to continue"
+        }
+      ]
+    },
+    {
+      "id": "slide_02",
+      "type": "concept_teaching",
+      "title": "The Comma: Your Best Friend",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "Essential Comma Rules",
+        "text": "Commas create pauses and separate elements, making your writing clearer and easier to follow.",
+        "concept_box": {
+          "title": "The Big 4 Comma Uses",
+          "points": [
+            "📝 **Lists** - Separate items in a series (red, white, and blue)",
+            "🔗 **Joining** - Before conjunctions linking independent clauses",
+            "📍 **Setting off** - Around non-essential information",
+            "🎯 **After** - Following introductory elements"
+          ]
+        },
+        "examples": {
+          "correct": "After studying for hours, Maria, who was determined to succeed, felt confident about the exam.",
+          "incorrect": "After studying for hours Maria who was determined to succeed felt confident about the exam."
+        }
+      },
+      "interactions": [
+        {
+          "type": "reveal_on_click",
+          "elements": [
+            {
+              "trigger": "Click to see comma placement breakdown",
+              "reveal": "Notice: comma after intro (After studying), commas around non-essential info (who was determined), and proper flow throughout."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "slide_03",
+      "type": "strategy_teaching",
+      "title": "The PACE Method for Punctuation",
+      "duration_estimate": 300,
+      "content": {
+        "heading": "Strategy: Systematic Punctuation Check",
+        "strategy_steps": [
+          {
+            "step": 1,
+            "title": "PAUSE - Find natural breaks",
+            "description": "Read aloud to hear where pauses naturally occur",
+            "example": "The student studied hard (pause) and she passed the test."
+          },
+          {
+            "step": 2,
+            "title": "ANALYZE - Identify clause types",
+            "description": "Determine if clauses are independent or dependent",
+            "example": "Independent: 'The student studied hard' + 'she passed' = comma + conjunction"
+          },
+          {
+            "step": 3,
+            "title": "CONNECT - Choose appropriate punctuation",
+            "description": "Select commas, semicolons, or colons based on relationship",
+            "example": "Related ideas of equal weight = semicolon; explanation = colon"
+          },
+          {
+            "step": 4,
+            "title": "EDIT - Remove unnecessary marks",
+            "description": "Eliminate excess punctuation that doesn't serve a purpose",
+            "example": "Avoid comma overload that makes sentences choppy"
+          }
+        ],
+        "memory_aid": "Keep a good **P.A.C.E.** for clear punctuation!"
+      },
+      "interactions": [
+        {
+          "type": "step_by_step_reveal",
+          "auto_advance": false
+        }
+      ]
+    },
+    {
+      "id": "slide_04",
+      "type": "concept_teaching",
+      "title": "Semicolons and Colons: The Power Players",
+      "duration_estimate": 300,
+      "content": {
+        "heading": "Advanced Punctuation Tools",
+        "text": "Semicolons and colons add sophistication and clarity to your writing when used correctly.",
+        "concept_box": {
+          "title": "Semicolon vs. Colon",
+          "points": [
+            "🔄 **Semicolon (;)** - Connects related independent clauses of equal weight",
+            "📋 **Before lists** - Use semicolons when list items contain commas",
+            "➡️ **Colon (:)** - Introduces explanations, lists, or examples",
+            "💡 **After complete thought** - Colons must follow independent clauses"
+          ]
+        },
+        "examples": {
+          "semicolon": "The experiment failed; however, the data was still valuable.",
+          "colon": "The recipe requires three main ingredients: flour, eggs, and milk."
+        }
+      },
+      "interactions": [
+        {
+          "type": "reveal_on_click",
+          "elements": [
+            {
+              "trigger": "Click for memory trick",
+              "reveal": "Semicolon = partial stop (like a comma with more power). Colon = full stop before explanation (like a period that introduces)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "slide_05",
+      "type": "guided_example",
+      "title": "Guided Practice: Apostrophe Mastery",
+      "duration_estimate": 360,
+      "content": {
+        "heading": "Conquer Apostrophe Confusion",
+        "passage": {
+          "text": "The students notebooks were scattered across the librarys tables. Its important to note that the books pages showed signs of heavy use, and many students couldnt find there favorite study spots. The teachers dedication to helping student's succeed was evident in the extra time she spent reviewing everyones work.",
+          "highlight_enabled": true
+        },
+        "guided_questions": [
+          {
+            "step": 1,
+            "question": "Find and fix the POSSESSION errors",
+            "hint": "Look for ownership that needs apostrophes",
+            "answer": "students' notebooks, library's tables, books' pages",
+            "explanation": "Plural possessives (students', books') get apostrophes after the s. Singular possessives (library's) get apostrophe before s."
+          },
+          {
+            "step": 2,
+            "question": "Identify CONTRACTION vs. POSSESSIVE errors",
+            "hint": "Its vs. It's, there vs. they're",
+            "answer": "It's important (contraction), couldn't (correct), their favorite (possessive)",
+            "explanation": "It's = it is, their = possessive pronoun (no apostrophe), couldn't = could not."
+          },
+          {
+            "step": 3,
+            "question": "Fix the final apostrophe error",
+            "hint": "Look at 'student's succeed' and 'everyones'",
+            "answer": "students succeed (no apostrophe), everyone's work",
+            "explanation": "'Students' here is plural, not possessive. 'Everyone's' is possessive and needs an apostrophe."
+          }
+        ]
+      },
+      "interactions": [
+        {
+          "type": "guided_walkthrough",
+          "allow_highlighting": true,
+          "step_validation": true
+        }
+      ]
+    },
+    {
+      "id": "slide_06",
+      "type": "independent_practice",
+      "title": "Your Turn: Punctuation Challenge",
+      "duration_estimate": 300,
+      "content": {
+        "heading": "Independent Practice",
+        "passage": {
+          "text": "The companys new policy affects all employees however some workers arent sure about it's implementation. The managers explanation was clear: all departments must follow the same procedures and everyone's input is valued during the transition.",
+          "word_count": 38
+        },
+        "question": {
+          "text": "Which choice correctly punctuates the passage?",
+          "options": [
+            "The company's new policy affects all employees; however, some workers aren't sure about its implementation. The manager's explanation was clear: all departments must follow the same procedures, and everyone's input is valued during the transition.",
+            "The companys new policy affects all employees, however, some workers aren't sure about it's implementation. The managers explanation was clear: all departments must follow the same procedures and everyones input is valued during the transition.",
+            "The company's new policy affects all employees, however some workers aren't sure about it's implementation. The manager's explanation was clear; all departments must follow the same procedures, and everyone's input is valued during the transition.",
+            "The companies new policy affects all employees; however some workers arent sure about its implementation. The managers explanation was clear: all departments must follow the same procedures and everyones input is valued during the transition."
+          ],
+          "correct_answer": "A",
+          "explanations": {
+            "A": "✓ Correct! All apostrophes and punctuation are properly placed: company's (possessive), semicolon before however, aren't (contraction), its (possessive pronoun), manager's (possessive), colon before explanation, everyone's (possessive).",
+            "B": "Incorrect apostrophe usage: 'it's' should be 'its' (possessive), missing apostrophes in 'companys', 'managers', 'everyones', and comma splice with 'however'.",
+            "C": "Wrong punctuation around 'however' (should be semicolon, not comma), and 'it's' should be 'its'.",
+            "D": "Multiple errors: 'companies' should be 'company's', missing apostrophes, 'arent' should be 'aren't', and 'everyones' should be 'everyone's'."
+          }
+        }
+      },
+      "interactions": [
+        {
+          "type": "multiple_choice_question",
+          "immediate_feedback": true,
+          "allow_retry": true
+        }
+      ]
+    },
+    {
+      "id": "slide_07",
+      "type": "concept_reinforcement",
+      "title": "Key Takeaways",
+      "duration_estimate": 180,
+      "content": {
+        "heading": "Punctuation Mastery Summary",
+        "key_points": [
+          {
+            "icon": "📝",
+            "title": "Comma Essentials",
+            "description": "Use commas for lists, joining clauses, setting off extras, and after introductions."
+          },
+          {
+            "icon": "🔗",
+            "title": "Semicolons & Colons",
+            "description": "Semicolons connect equal ideas; colons introduce explanations or lists."
+          },
+          {
+            "icon": "✨",
+            "title": "Apostrophe Rules",
+            "description": "Possession needs apostrophes; contractions replace missing letters; possessive pronouns don't."
+          },
+          {
+            "icon": "🎯",
+            "title": "SAT Strategy",
+            "description": "Read choices aloud to hear natural pauses and check for common apostrophe tricks."
+          }
+        ],
+        "next_steps": {
+          "text": "Coming up: Lesson 4 - Verb Forms & Agreement!",
+          "preview": "Master verb tenses, subject-verb agreement, and tricky situations that appear on the SAT."
+        }
+      },
+      "interactions": [
+        {
+          "type": "completion_celebration",
+          "unlock_next": "lesson_04"
+        }
+      ]
+    },
+    {
+      "id": "slide_08",
+      "type": "mastery_check",
+      "title": "Mastery Check",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "Final Assessment",
+        "instructions": "Demonstrate your punctuation mastery with this comprehensive challenge.",
+        "passage": {
+          "text": "The students final projects were impressive each one demonstrated creativity and technical skill. However some students couldnt complete there work on time, this created problems for the teachers assessment schedule. The departments new policy is simple: late work results in grade reductions but students can request extensions if they're facing genuine difficulties.",
+          "word_count": 55
+        },
+        "question": {
+          "text": "Which choice best corrects all punctuation errors in the passage?",
+          "options": [
+            "The students' final projects were impressive; each one demonstrated creativity and technical skill. However, some students couldn't complete their work on time, which created problems for the teacher's assessment schedule. The department's new policy is simple: late work results in grade reductions, but students can request extensions if they're facing genuine difficulties.",
+            "The student's final projects were impressive, each one demonstrated creativity and technical skill. However some students couldn't complete there work on time; this created problems for the teachers assessment schedule. The departments new policy is simple: late work results in grade reductions but students can request extensions if there facing genuine difficulties.",
+            "The students final projects were impressive; each one demonstrated creativity and technical skill. However, some students couldn't complete their work on time, this created problems for the teacher's assessment schedule. The department's new policy is simple; late work results in grade reductions, but students can request extensions if they're facing genuine difficulties.",
+            "The students' final projects were impressive each one demonstrated creativity and technical skill. However, some students couldnt complete their work on time, this created problems for the teachers' assessment schedule. The departments new policy is simple: late work results in grade reductions but students can request extensions if they're facing genuine difficulties."
+          ],
+          "correct_answer": "A",
+          "mastery_question": true
+        }
+      },
+      "interactions": [
+        {
+          "type": "mastery_assessment",
+          "required_for_completion": true,
+          "retry_limit": 3
+        }
+      ]
+    }
+  ],
+  "practice_questions": [
+    {
+      "id": "practice_1",
+      "type": "quick_check",
+      "skill_codes": ["BOU"],
+      "difficulty": "E",
+      "question": "Which sentence is correctly punctuated?",
+      "options": [
+        "The cat's toys were scattered around it's favorite sleeping spot.",
+        "The cats toys were scattered around its favorite sleeping spot.",
+        "The cat's toys were scattered around its favorite sleeping spot.",
+        "The cats' toys were scattered around it's favorite sleeping spot."
+      ],
+      "correct_answer": "C"
+    }
+  ],
+  "resources": {
+    "strategy_card": {
+      "title": "Punctuation Quick Reference",
+      "steps": [
+        "1. PAUSE - Find natural breaks",
+        "2. ANALYZE - Identify clause types",
+        "3. CONNECT - Choose correct punctuation",
+        "4. EDIT - Remove unnecessary marks"
+      ],
+      "tips": [
+        "Commas: lists, joining, setting off, after intros",
+        "Semicolons connect equals; colons introduce",
+        "Apostrophes: possession + contractions, not possessive pronouns"
+      ]
+    },
+    "common_mistakes": [
+      "Confusing its/it's and other possessive pronouns",
+      "Using commas around 'however' instead of semicolons",
+      "Forgetting apostrophes in contractions",
+      "Overusing commas or using them incorrectly"
+    ]
+  },
+  "metadata": {
+    "created_date": "2024-12-01",
+    "last_updated": "2024-12-01",
+    "content_version": "1.0",
+    "estimated_completion_time": 1500,
+    "prerequisite_skills": ["lesson_02"],
+    "skill_progression": ["lesson_04"]
+  }
+}

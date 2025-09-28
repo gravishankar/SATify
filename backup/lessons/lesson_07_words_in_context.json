@@ -1,0 +1,222 @@
+{
+  "id": "lesson_07",
+  "title": "Words in Context Mastery",
+  "subtitle": "Precision of Meaning & Tone",
+  "level": "Foundation",
+  "duration": "20-25 min",
+  "skill_codes": ["WIC"],
+  "learning_objectives": [
+    "Interpret precise meaning of words and phrases in context",
+    "Differentiate between dictionary definition and contextual meaning",
+    "Recognize tone and connotation shifts",
+    "Avoid traps that 'sound right' but distort meaning"
+  ],
+  "success_criteria": {
+    "mastery_threshold": 0.75,
+    "min_accuracy": 0.7,
+    "required_slides": "all"
+  },
+  "slides": [
+    {
+      "id": "slide_01",
+      "type": "introduction",
+      "title": "Welcome to Words in Context",
+      "duration_estimate": 180,
+      "content": {
+        "heading": "What's Tested",
+        "text": "The SAT tests your ability to understand words and phrases as they're used in specific contexts, not just their dictionary definitions.",
+        "bullet_points": [
+          "Context-specific meaning takes priority over dictionary definition",
+          "Pay attention to connotation: positive, negative, or neutral tone",
+          "Look for structural clues around the target word",
+          "Avoid traps that sound right but don't fit the context"
+        ],
+        "visual_element": {
+          "type": "progress_indicator",
+          "total_slides": 6,
+          "estimated_time": "20-25 minutes"
+        }
+      },
+      "interactions": [
+        {
+          "type": "click_to_continue",
+          "text": "Ready to master context clues? Click to continue"
+        }
+      ]
+    },
+    {
+      "id": "slide_02",
+      "type": "concept_teaching",
+      "title": "Why Context Matters",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "Context vs. Dictionary Definition",
+        "text": "Many words have multiple meanings. The SAT wants you to choose the meaning that best fits the specific passage context.",
+        "concept_box": {
+          "title": "Key Example",
+          "points": [
+            "📚 **'Novel'** as dictionary word = book, story",
+            "🆕 **'Novel'** in context = new, original, innovative",
+            "🎯 **The right choice** depends entirely on how the author uses it"
+          ]
+        },
+        "examples": {
+          "passage_excerpt": "The scientist's novel approach to the problem yielded unexpected results.",
+          "context_clue": "'Approach to the problem' suggests method/technique, not literature"
+        }
+      },
+      "interactions": [
+        {
+          "type": "reveal_on_click",
+          "elements": [
+            {
+              "trigger": "Click to see why context wins",
+              "reveal": "Here, 'novel approach' clearly means 'new method' because we're talking about scientific problem-solving, not reading a book!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "slide_03",
+      "type": "strategy_teaching",
+      "title": "The Context Clue Strategy",
+      "duration_estimate": 300,
+      "content": {
+        "heading": "3-Step Context Analysis",
+        "strategy_steps": [
+          {
+            "step": 1,
+            "title": "READ THE SENTENCE",
+            "description": "Look at the complete sentence containing the word",
+            "example": "Cover the target word and read around it"
+          },
+          {
+            "step": 2,
+            "title": "CHECK THE TONE",
+            "description": "Is the context positive, negative, or neutral?",
+            "example": "Words like 'fortunately' vs 'unfortunately' shift meaning"
+          },
+          {
+            "step": 3,
+            "title": "SUBSTITUTE & TEST",
+            "description": "Replace with each answer choice and see what fits",
+            "example": "The choice that maintains tone and logic wins"
+          }
+        ],
+        "memory_aid": "Remember: **R.C.S.** - Read, Check tone, Substitute & test"
+      },
+      "interactions": [
+        {
+          "type": "step_by_step_reveal",
+          "auto_advance": false
+        }
+      ]
+    },
+    {
+      "id": "slide_04",
+      "type": "guided_example",
+      "title": "Guided Practice: Let's Apply the Strategy",
+      "duration_estimate": 360,
+      "content": {
+        "heading": "Practice Passage",
+        "passage": {
+          "text": "The detective's investigation was thorough, but the suspect's alibi proved to be **solid**. Despite hours of questioning, she could not find any inconsistencies or weaknesses in his account of the evening's events.",
+          "highlight_enabled": true,
+          "target_word": "solid"
+        },
+        "guided_questions": [
+          {
+            "step": 1,
+            "question": "READ: What is the complete context around 'solid'?",
+            "hint": "Look at what comes before and after the target word.",
+            "answer": "The alibi 'proved to be solid' and there were 'no inconsistencies or weaknesses'",
+            "explanation": "The context is about an alibi that couldn't be broken down or disproven."
+          },
+          {
+            "step": 2,
+            "question": "CHECK TONE: Is this positive or negative for the suspect?",
+            "hint": "Think about whether having a solid alibi helps or hurts the suspect.",
+            "answer": "Positive for the suspect - it protects him from accusation",
+            "explanation": "A solid alibi is good for the suspect because it means his story holds up under scrutiny."
+          },
+          {
+            "step": 3,
+            "question": "SUBSTITUTE: Which meaning of 'solid' fits best?",
+            "hint": "Consider: reliable/strong vs. not liquid vs. three-dimensional",
+            "answer": "Reliable, strong, unshakeable",
+            "explanation": "In this context, 'solid' means the alibi was reliable and couldn't be broken down, not that it was a physical object."
+          }
+        ]
+      },
+      "interactions": [
+        {
+          "type": "step_by_step_reveal",
+          "allow_skip": false
+        }
+      ]
+    },
+    {
+      "id": "slide_05",
+      "type": "common_traps",
+      "title": "Avoid These Common Traps",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "Trap Alert! 🚨",
+        "trap_examples": [
+          {
+            "trap_type": "Dictionary Definition Trap",
+            "description": "Choosing the most common meaning without considering context",
+            "example": "Seeing 'bark' and automatically thinking 'dog sound' when the passage is about trees"
+          },
+          {
+            "trap_type": "Tone Mismatch",
+            "description": "Picking a word that's close in meaning but wrong in tone",
+            "example": "Choosing 'stubborn' instead of 'determined' in a positive context"
+          },
+          {
+            "trap_type": "Sounds Smart Trap",
+            "description": "Selecting sophisticated words that don't actually fit",
+            "example": "Using 'erudite' when the context calls for 'simple'"
+          }
+        ]
+      },
+      "interactions": [
+        {
+          "type": "reveal_on_click",
+          "elements": [
+            {
+              "trigger": "Click for trap-avoiding tip",
+              "reveal": "Always ask: Does this choice maintain the author's intended tone and meaning? If not, it's probably a trap!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "slide_06",
+      "type": "wrap_up",
+      "title": "You've Mastered Words in Context!",
+      "duration_estimate": 120,
+      "content": {
+        "heading": "Key Takeaways",
+        "summary_points": [
+          "🎯 Context always trumps dictionary definition",
+          "🎨 Tone and connotation are crucial clues",
+          "🔍 Use the R.C.S. strategy: Read, Check tone, Substitute & test",
+          "🚫 Avoid traps: dictionary defaults, tone mismatches, 'smart' words"
+        ],
+        "next_steps": {
+          "practice_suggestion": "Ready for practice? Try the Words in Context skill practice to apply what you've learned!",
+          "confidence_builder": "Remember: You now have a systematic approach to tackle any context question."
+        }
+      },
+      "interactions": [
+        {
+          "type": "completion_celebration",
+          "celebration_text": "Excellent work! You're ready to tackle SAT Words in Context questions with confidence."
+        }
+      ]
+    }
+  ]
+}

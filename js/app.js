@@ -189,6 +189,11 @@ class SATApp {
         }
     }
 
+    showHome() {
+        this.showPage('home');
+        // Any home page specific initialization can go here
+    }
+
     showDashboard() {
         this.showPage('dashboard');
         this.updateDashboardStats();
