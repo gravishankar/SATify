@@ -172,16 +172,26 @@ class SATApp {
         document.querySelectorAll('.page').forEach(page => {
             page.classList.remove('active');
         });
-        
+
         // Show target page
-        document.getElementById(pageId + 'Page').classList.add('active');
-        
+        const targetPage = document.getElementById(pageId + 'Page');
+        if (targetPage) {
+            targetPage.classList.add('active');
+        } else {
+            console.error(`Page element not found: ${pageId}Page`);
+        }
+
         // Update nav links
         document.querySelectorAll('.nav-link').forEach(link => {
             link.classList.remove('active');
         });
-        
-        document.querySelector(`[data-page="${pageId}"]`).classList.add('active');
+
+        const navLink = document.querySelector(`[data-page="${pageId}"]`);
+        if (navLink) {
+            navLink.classList.add('active');
+        } else {
+            console.error(`Nav link not found for page: ${pageId}`);
+        }
 
         // Load lessons when navigating to Learn page
         if (pageId === 'learn' && window.learnPage && typeof window.learnPage.loadCreatorStudioLessons === 'function') {
@@ -190,6 +200,7 @@ class SATApp {
     }
 
     showHome() {
+        console.log('showHome() called - redirecting to home page');
         this.showPage('home');
         // Any home page specific initialization can go here
     }
