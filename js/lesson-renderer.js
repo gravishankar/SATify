@@ -138,6 +138,21 @@ class LessonRenderer {
             case 'guided_example':
                 html += this.renderGuidedExampleSlide(slide);
                 break;
+            case 'independent_practice':
+                html += this.renderIndependentPracticeSlide(slide);
+                break;
+            case 'skill_application':
+                html += this.renderSkillApplicationSlide(slide);
+                break;
+            case 'concept_reinforcement':
+                html += this.renderConceptReinforcementSlide(slide);
+                break;
+            case 'mastery_check':
+                html += this.renderMasteryCheckSlide(slide);
+                break;
+            case 'quick_check':
+                html += this.renderQuickCheckSlide(slide);
+                break;
             case 'common_traps':
                 html += this.renderTrapsSlide(slide);
                 break;
@@ -374,6 +389,135 @@ class LessonRenderer {
         return html;
     }
 
+    renderIndependentPracticeSlide(slide) {
+        const content = slide.content;
+        let html = `<div class="slide-content practice-content">`;
+
+        if (content.instructions) {
+            html += `<div class="instructions">${content.instructions}</div>`;
+        }
+
+        if (content.passage) {
+            html += `<div class="passage-text">${content.passage}</div>`;
+        }
+
+        if (content.question) {
+            html += `<div class="practice-question">${content.question}</div>`;
+        }
+
+        if (content.strategy_tip) {
+            html += `<div class="strategy-tip"><strong>Strategy Tip:</strong> ${content.strategy_tip}</div>`;
+        }
+
+        html += '</div>';
+        return html;
+    }
+
+    renderSkillApplicationSlide(slide) {
+        const content = slide.content;
+        let html = `<div class="slide-content application-content">`;
+
+        if (content.heading) {
+            html += `<h3>${content.heading}</h3>`;
+        }
+
+        if (content.text) {
+            html += `<p>${content.text}</p>`;
+        }
+
+        if (content.advanced_techniques) {
+            html += '<div class="advanced-techniques">';
+            content.advanced_techniques.forEach(technique => {
+                html += `
+                    <div class="technique-item">
+                        <h4>${technique.technique}</h4>
+                        <p>${technique.description}</p>
+                        ${technique.example ? `<div class="example">${technique.example}</div>` : ''}
+                    </div>
+                `;
+            });
+            html += '</div>';
+        }
+
+        html += '</div>';
+        return html;
+    }
+
+    renderConceptReinforcementSlide(slide) {
+        const content = slide.content;
+        let html = `<div class="slide-content reinforcement-content">`;
+
+        if (content.heading) {
+            html += `<h3>${content.heading}</h3>`;
+        }
+
+        if (content.key_points) {
+            html += '<ul class="key-points">';
+            content.key_points.forEach(point => {
+                html += `<li>${point}</li>`;
+            });
+            html += '</ul>';
+        }
+
+        if (content.strategy_reminder) {
+            html += `<div class="strategy-reminder"><strong>Strategy Reminder:</strong> ${content.strategy_reminder}</div>`;
+        }
+
+        if (content.expert_insight || content.college_board_insight || content.meltzer_tip) {
+            const insight = content.expert_insight || content.college_board_insight || content.meltzer_tip;
+            html += `<div class="expert-insight">${insight}</div>`;
+        }
+
+        if (content.practice_transition) {
+            html += `
+                <div class="practice-transition">
+                    <p>${content.practice_transition.text}</p>
+                    <button class="btn btn-primary practice-btn" data-skill-code="${content.practice_transition.skill_code}">
+                        ${content.practice_transition.button_text}
+                    </button>
+                </div>
+            `;
+        }
+
+        html += '</div>';
+        return html;
+    }
+
+    renderMasteryCheckSlide(slide) {
+        let html = `<div class="slide-content mastery-content">`;
+
+        html += `<div class="question-text">${slide.question}</div>`;
+
+        html += '<div class="answer-choices">';
+        slide.options.forEach((option, index) => {
+            const letter = String.fromCharCode(65 + index);
+            html += `
+                <div class="choice-item" data-choice="${letter}">
+                    <span class="choice-letter">${letter}</span>
+                    <span class="choice-text">${option}</span>
+                </div>
+            `;
+        });
+        html += '</div>';
+
+        html += `
+            <div class="question-actions">
+                <button class="btn btn-primary submit-answer">Submit Answer</button>
+            </div>
+            <div class="explanation hidden">
+                <h4>Explanation:</h4>
+                <p>${slide.explanation}</p>
+            </div>
+        `;
+
+        html += '</div>';
+        return html;
+    }
+
+    renderQuickCheckSlide(slide) {
+        return this.renderMasteryCheckSlide(slide);
+    }
+
     renderGenericSlide(slide) {
         let html = `<div class="slide-content generic-content">`;
         if (slide.content && slide.content.text) {
@@ -405,6 +549,9 @@ class LessonRenderer {
 
         // Setup reveal answer buttons
         this.setupRevealAnswerButtons();
+
+        // Setup practice transition buttons
+        this.setupPracticeButtons();
     }
 
     setupClickToContinue(interaction) {
@@ -505,6 +652,49 @@ class LessonRenderer {
                 }
             });
         });
+    }
+
+    setupPracticeButtons() {
+        const practiceButtons = document.querySelectorAll('.practice-btn');
+        practiceButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const skillCode = e.target.dataset.skillCode;
+                if (skillCode) {
+                    this.navigateToSkillPractice(skillCode);
+                }
+            });
+        });
+    }
+
+    navigateToSkillPractice(skillCode) {
+        console.log('Navigating to skill practice for:', skillCode);
+
+        // Track lesson completion
+        if (window.satApp && window.satApp.analytics) {
+            window.satApp.analytics.trackEvent('lesson_to_practice_transition', {
+                skill: skillCode,
+                lesson_id: this.currentLesson?.id,
+                timestamp: new Date().toISOString()
+            });
+        }
+
+        // Navigate to skill practice page
+        if (window.satApp && window.satApp.showPage) {
+            window.satApp.showPage('skill-practice');
+        } else {
+            // Fallback navigation
+            const skillPracticeLink = document.querySelector('[data-page="skill-practice"]');
+            if (skillPracticeLink) {
+                skillPracticeLink.click();
+            }
+        }
+
+        // Start skill practice session after navigation
+        setTimeout(() => {
+            if (window.skillPracticeUI) {
+                window.skillPracticeUI.startSkillPractice(skillCode);
+            }
+        }, 100);
     }
 
     nextSlide() {

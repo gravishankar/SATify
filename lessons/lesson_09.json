@@ -1,0 +1,313 @@
+{
+  "id": "lesson_09",
+  "title": "Rhetorical Synthesis",
+  "subtitle": "Combining Sources Effectively",
+  "level": "Foundation",
+  "duration": "20-25 min",
+  "skill_codes": ["SYN"],
+  "learning_objectives": [
+    "Understand how to combine information from multiple sources",
+    "Identify effective rhetorical synthesis in writing",
+    "Recognize logical relationships between sources",
+    "Practice synthesis questions using College Board strategies"
+  ],
+  "success_criteria": {
+    "mastery_threshold": 0.75,
+    "min_accuracy": 0.7,
+    "required_slides": "all"
+  },
+  "slides": [
+    {
+      "id": "slide_01",
+      "type": "introduction",
+      "title": "Welcome to Rhetorical Synthesis",
+      "duration_estimate": 180,
+      "content": {
+        "heading": "Learning Objectives",
+        "text": "In this lesson, you'll master rhetorical synthesis - the skill of effectively combining information from multiple sources to create coherent, well-supported arguments.",
+        "bullet_points": [
+          "Learn how to identify connections between multiple sources",
+          "Master techniques for combining information logically",
+          "Practice recognizing effective synthesis in writing",
+          "Apply College Board's synthesis evaluation criteria"
+        ]
+      },
+      "interactions": [
+        {
+          "type": "progress_indicator",
+          "content": {
+            "current_slide": 1,
+            "total_slides": 8
+          }
+        },
+        {
+          "type": "click_to_continue",
+          "content": {
+            "button_text": "Let's Begin!"
+          }
+        }
+      ]
+    },
+    {
+      "id": "slide_02",
+      "type": "concept_teaching",
+      "title": "Understanding Rhetorical Synthesis",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "What is Rhetorical Synthesis?",
+        "text": "Rhetorical synthesis involves combining information from multiple sources to support a unified argument or present a comprehensive view of a topic.",
+        "main_points": [
+          "Synthesis = combining sources to create new understanding",
+          "Not just summarizing each source separately",
+          "Must show relationships between sources (agreement, disagreement, complementary)",
+          "Creates a coherent argument using multiple perspectives"
+        ],
+        "example": {
+          "topic": "Benefits of urban parks",
+          "source_1": "Study showing parks reduce air pollution",
+          "source_2": "Research on parks improving mental health",
+          "poor_synthesis": "Source 1 says parks reduce pollution. Source 2 says parks help mental health.",
+          "good_synthesis": "Urban parks provide both environmental and psychological benefits, as pollution reduction creates healthier spaces that support community well-being."
+        }
+      },
+      "interactions": [
+        {
+          "type": "reveal_on_click",
+          "content": {
+            "reveal_text": "College Board Focus: Synthesis questions test your ability to see how sources work together, not just what each source says individually."
+          }
+        }
+      ]
+    },
+    {
+      "id": "slide_03",
+      "type": "strategy_teaching",
+      "title": "The LINK Synthesis Strategy",
+      "duration_estimate": 300,
+      "content": {
+        "heading": "LINK Method for Effective Synthesis",
+        "strategy_acronym": "LINK",
+        "strategy_steps": [
+          {
+            "letter": "L",
+            "word": "Locate",
+            "description": "Find the main point or key information in each source"
+          },
+          {
+            "letter": "I",
+            "word": "Identify",
+            "description": "Determine relationships between sources (support, contrast, build upon)"
+          },
+          {
+            "letter": "N",
+            "word": "Note",
+            "description": "Look for overarching themes or patterns across sources"
+          },
+          {
+            "letter": "K",
+            "word": "Knit",
+            "description": "Combine sources to create a unified, coherent message"
+          }
+        ],
+        "relationship_types": [
+          "Complementary: Sources support the same conclusion with different evidence",
+          "Contrasting: Sources present opposing viewpoints or contradictory evidence",
+          "Building: One source expands on or develops ideas from another",
+          "Qualifying: One source adds conditions or limitations to another's claims"
+        ]
+      },
+      "interactions": [
+        {
+          "type": "step_by_step_reveal",
+          "content": {
+            "steps": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "slide_04",
+      "type": "guided_example",
+      "title": "Guided Practice: Synthesis in Action",
+      "duration_estimate": 360,
+      "content": {
+        "scenario": "Topic: The impact of remote work on productivity",
+        "source_a": "A Stanford study found that remote workers are 13% more productive than office workers, with fewer sick days and breaks.",
+        "source_b": "Microsoft's 2023 report shows that remote workers struggle with collaboration, with 56% reporting difficulty connecting with colleagues.",
+        "source_c": "Harvard Business Review notes that productivity varies by job type, with creative roles suffering more in remote settings than analytical roles.",
+        "synthesis_question": "How would you effectively combine these sources to discuss remote work's impact on productivity?",
+        "walkthrough": [
+          {
+            "step": 1,
+            "question": "What does each source contribute?",
+            "answer": "A: quantitative productivity benefits, B: collaboration challenges, C: variation by job type"
+          },
+          {
+            "step": 2,
+            "question": "What relationships exist between sources?",
+            "answer": "A and B present contrasting aspects; C qualifies both by adding job-type variable"
+          },
+          {
+            "step": 3,
+            "question": "What unified message emerges?",
+            "answer": "Remote work's productivity impact is complex, with benefits and challenges varying by job requirements"
+          }
+        ]
+      },
+      "interactions": [
+        {
+          "type": "guided_walkthrough",
+          "content": {
+            "steps": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "slide_05",
+      "type": "independent_practice",
+      "title": "Your Turn: Building Synthesis",
+      "duration_estimate": 300,
+      "content": {
+        "instructions": "Read the three sources and identify the most effective synthesis.",
+        "topic": "Social media's impact on teenagers",
+        "source_1": "Pew Research (2023): 72% of teens check social media daily, with 44% reporting it negatively affects their sleep.",
+        "source_2": "Journal of Adolescent Health: Social media use over 3 hours daily correlates with increased anxiety and depression symptoms.",
+        "source_3": "American Academy of Pediatrics: Social media can provide valuable peer support and educational resources when used mindfully.",
+        "question": "Which synthesis most effectively combines these sources?"
+      },
+      "interactions": [
+        {
+          "type": "multiple_choice_question",
+          "content": {
+            "options": [
+              "Social media is harmful to teenagers and should be banned for those under 18.",
+              "While social media offers benefits like peer support and learning opportunities, heavy usage patterns among teens raise concerns about sleep, anxiety, and depression.",
+              "Most teenagers use social media daily, and some studies show negative effects while others show positive effects.",
+              "The research shows that social media has both positive and negative aspects, so more research is needed."
+            ],
+            "correct": 1,
+            "explanation": "Option B effectively synthesizes all three sources by acknowledging benefits (source 3) while highlighting concerns from usage patterns (source 1) and heavy use effects (source 2). It creates a nuanced, unified perspective."
+          }
+        }
+      ]
+    },
+    {
+      "id": "slide_06",
+      "type": "skill_application",
+      "title": "Advanced Synthesis Techniques",
+      "duration_estimate": 420,
+      "content": {
+        "heading": "Mastering Complex Synthesis",
+        "text": "Learn to handle more sophisticated synthesis scenarios involving multiple viewpoints and nuanced relationships.",
+        "advanced_techniques": [
+          {
+            "technique": "Hierarchical Synthesis",
+            "description": "Organize sources by level of support (primary evidence, secondary support, qualifying conditions)",
+            "example": "Primary: Economic data, Secondary: Expert opinions, Qualifying: Demographic variations"
+          },
+          {
+            "technique": "Chronological Synthesis",
+            "description": "Combine sources to show how understanding has evolved over time",
+            "example": "Early studies showed X, recent research reveals Y, current consensus suggests Z"
+          },
+          {
+            "technique": "Perspective Synthesis",
+            "description": "Balance different stakeholder viewpoints",
+            "example": "Students benefit from X, while teachers face challenges with Y, and parents concern themselves with Z"
+          },
+          {
+            "technique": "Causal Synthesis",
+            "description": "Link sources to show cause-effect relationships",
+            "example": "Source A identifies causes, Source B documents effects, Source C explains mechanisms"
+          }
+        ]
+      },
+      "interactions": [
+        {
+          "type": "question_sequence",
+          "content": {
+            "sequence_length": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "slide_07",
+      "type": "concept_reinforcement",
+      "title": "Synthesis Mastery & Practice Transition",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "Rhetorical Synthesis Excellence",
+        "key_points": [
+          "Effective synthesis shows relationships between sources, not just summaries",
+          "Look for complementary, contrasting, or building patterns",
+          "Create unified messages that acknowledge complexity",
+          "Avoid simply listing what each source says separately"
+        ],
+        "strategy_reminder": "Remember LINK: Locate main points, Identify relationships, Note patterns, Knit together coherently",
+        "college_board_insight": "SAT synthesis questions reward nuanced thinking that combines sources meaningfully rather than mechanically.",
+        "practice_transition": {
+          "text": "Ready to practice synthesis with authentic SAT questions? Let's apply your skills!",
+          "button_text": "Start Skill Practice",
+          "skill_code": "SYN"
+        }
+      },
+      "interactions": [
+        {
+          "type": "completion_celebration",
+          "content": {
+            "message": "Brilliant! You've mastered the art of rhetorical synthesis."
+          }
+        }
+      ]
+    },
+    {
+      "id": "slide_08",
+      "type": "mastery_check",
+      "title": "Synthesis Quick Check",
+      "skill_codes": ["SYN"],
+      "difficulty": "M",
+      "question": "Three sources discuss homework effectiveness: Source 1 shows homework improves test scores, Source 2 reveals homework increases student stress, Source 3 finds homework benefits vary by age group. The most effective synthesis would:",
+      "options": [
+        "Conclude that homework is beneficial because it improves test scores",
+        "State that each source has different findings about homework",
+        "Argue that homework's mixed results suggest a need for age-appropriate, balanced approaches that maximize academic benefits while minimizing stress",
+        "Recommend eliminating homework due to stress concerns"
+      ],
+      "correct_answer": "C",
+      "explanation": "Option C effectively synthesizes all three sources by acknowledging academic benefits (Source 1), addressing stress concerns (Source 2), and incorporating the age variation factor (Source 3) into a nuanced solution."
+    }
+  ],
+  "resources": {
+    "strategy_card": {
+      "title": "Rhetorical Synthesis Quick Reference",
+      "steps": [
+        "1. LOCATE: Find main point in each source",
+        "2. IDENTIFY: Determine relationships between sources",
+        "3. NOTE: Look for overarching themes/patterns",
+        "4. KNIT: Combine into unified, coherent message"
+      ],
+      "tips": [
+        "Show relationships, don't just summarize separately",
+        "Look for complementary, contrasting, or building patterns",
+        "Create nuanced messages that acknowledge complexity",
+        "Effective synthesis = sources working together, not side by side"
+      ]
+    },
+    "common_mistakes": [
+      "Simply summarizing each source without showing connections",
+      "Ignoring contradictions or tensions between sources",
+      "Choosing one source over others instead of synthesizing",
+      "Creating overly simplistic conclusions from complex sources"
+    ]
+  },
+  "metadata": {
+    "created_date": "2024-12-01",
+    "last_updated": "2024-12-01",
+    "content_version": "1.0",
+    "estimated_completion_time": 1500,
+    "prerequisite_skills": ["COE", "TRA"],
+    "skill_progression": ["lesson_10"]
+  }
+}

@@ -16,7 +16,8 @@
       "Bash(grep:*)",
       "Bash(done)",
       "Bash(awk:*)",
-      "Read(//Users/gravisha/Downloads/**)"
+      "Read(//Users/gravisha/Downloads/**)",
+      "Bash(git tag -a \"basic-workflow\" -m \"$(cat <<''EOF''\nSATify Basic Workflow Complete - v1.1\n\nMajor Features Completed:\n🏠 Homepage Integration\n• Professional landing page with optimized layout\n• Mobile-responsive design fitting single viewport\n• Vision/mission display with clear value proposition\n• Strategic call-to-action buttons for Dashboard and Practice\n\n🔐 Authentication Flow Enhancement\n• Login/signup redirects to home page instead of dashboard\n• Fixed timing issues with DOM readiness checks\n• Guest mode support with consistent user experience\n• Comprehensive debugging and error handling\n\n🎨 Design System Consistency\n• Homepage now matches SATify''s existing design patterns\n• Reused existing components (stats-grid, action-btn, dashboard-section)\n• Removed custom CSS in favor of consistent styling\n• Compact layout optimized for mobile and desktop\n\n🧭 Navigation Improvements\n• Home page as default landing after authentication\n• Logical flow: Home → Dashboard/Practice via CTA buttons\n• Improved user onboarding and welcome experience\n• Fixed navigation state management and active link handling\n\n📱 Mobile-First Optimizations\n• Single-column responsive layout on mobile devices\n• Touch-friendly navigation and button sizing\n• Optimized typography and spacing for mobile readability\n• Viewport height optimization for various screen sizes\n\nThis release establishes the foundational user workflow with a welcoming homepage that guides users to their next action, whether that''s accessing their dashboard or jumping straight into practice questions.\nEOF\n)\")"
     ],
     "deny": [],
     "ask": []
