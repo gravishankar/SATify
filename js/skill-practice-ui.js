@@ -299,6 +299,7 @@ class SkillPracticeUI {
 
     async startSkillPractice(skillCode) {
         try {
+            console.log('[SkillPracticeUI] startSkillPractice called with:', skillCode);
             this.showLoading('Starting skill practice...');
 
             const session = await this.manager.startPracticeSession('skill', skillCode, {
@@ -306,8 +307,12 @@ class SkillPracticeUI {
                 shuffle: true
             });
 
+            console.log('[SkillPracticeUI] Session created:', session);
             this.currentSession = session;
+
+            console.log('[SkillPracticeUI] About to call showPracticeSession');
             this.showPracticeSession();
+            console.log('[SkillPracticeUI] showPracticeSession called');
 
         } catch (error) {
             console.error('Error starting skill practice:', error);
@@ -334,14 +339,33 @@ class SkillPracticeUI {
     }
 
     showPracticeSession() {
+        console.log('[SkillPracticeUI] showPracticeSession called');
+        console.log('[SkillPracticeUI] Elements found:', {
+            skillSelectionView: !!this.elements.skillSelectionView,
+            practiceSessionView: !!this.elements.practiceSessionView
+        });
+
         // Hide skill selection, show practice session
-        this.elements.skillSelectionView.classList.add('hidden');
-        this.elements.practiceSessionView.classList.remove('hidden');
+        if (this.elements.skillSelectionView) {
+            this.elements.skillSelectionView.classList.add('hidden');
+            console.log('[SkillPracticeUI] Hidden skill selection view');
+        } else {
+            console.error('[SkillPracticeUI] skillSelectionView element not found!');
+        }
+
+        if (this.elements.practiceSessionView) {
+            this.elements.practiceSessionView.classList.remove('hidden');
+            console.log('[SkillPracticeUI] Showing practice session view');
+        } else {
+            console.error('[SkillPracticeUI] practiceSessionView element not found!');
+        }
 
         // Show strategy phase if strategy is available
         if (this.currentSession.strategy && this.manager.getFeatureFlags().strategyIntegrationEnabled) {
+            console.log('[SkillPracticeUI] Showing strategy phase');
             this.showStrategyPhase();
         } else {
+            console.log('[SkillPracticeUI] Skipping strategy phase');
             this.skipStrategy();
         }
     }
@@ -420,38 +444,92 @@ class SkillPracticeUI {
     }
 
     skipStrategy() {
+        console.log('[SkillPracticeUI] skipStrategy called');
         this.startQuestionPhase();
     }
 
     async startQuestionPhase() {
+        console.log('[SkillPracticeUI] startQuestionPhase called');
+        console.log('[SkillPracticeUI] Question phase elements:', {
+            strategyPhase: !!this.elements.strategyPhase,
+            questionPhase: !!this.elements.questionPhase
+        });
+
         // Hide strategy, show questions
-        this.elements.strategyPhase.classList.add('hidden');
-        this.elements.questionPhase.classList.remove('hidden');
+        if (this.elements.strategyPhase) {
+            this.elements.strategyPhase.classList.add('hidden');
+            console.log('[SkillPracticeUI] Hidden strategy phase');
+        } else {
+            console.error('[SkillPracticeUI] strategyPhase element not found!');
+        }
+
+        if (this.elements.questionPhase) {
+            this.elements.questionPhase.classList.remove('hidden');
+            console.log('[SkillPracticeUI] Showing question phase');
+            console.log('[SkillPracticeUI] Question phase classes after removal:', this.elements.questionPhase.className);
+            console.log('[SkillPracticeUI] Question phase display style:', window.getComputedStyle(this.elements.questionPhase).display);
+
+            // Scroll to the question phase
+            setTimeout(() => {
+                this.elements.questionPhase.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                console.log('[SkillPracticeUI] Scrolled to question phase');
+            }, 100);
+        } else {
+            console.error('[SkillPracticeUI] questionPhase element not found!');
+        }
 
         // Set up lesson navigation
-        await this.setupLessonNavigation();
+        console.log('[SkillPracticeUI] Setting up lesson navigation');
+        try {
+            await this.setupLessonNavigation();
+            console.log('[SkillPracticeUI] Lesson navigation setup completed');
+        } catch (error) {
+            console.error('[SkillPracticeUI] Error in setupLessonNavigation:', error);
+        }
 
         // Load first question
+        console.log('[SkillPracticeUI] About to load first question');
         this.loadCurrentQuestion();
 
         // Update session info
+        console.log('[SkillPracticeUI] About to update session info');
         this.updateSessionInfo();
     }
 
     loadCurrentQuestion() {
+        console.log('[SkillPracticeUI] loadCurrentQuestion called');
         const question = this.manager.getNextQuestion();
+        console.log('[SkillPracticeUI] Question retrieved:', question ? 'Found' : 'Not found');
+
         if (!question) {
+            console.log('[SkillPracticeUI] No question found, showing results');
             this.showResults();
             return;
         }
 
         // Format question for display
         const formattedQuestion = this.manager.questionEngine.formatQuestionForDisplay(question);
+        console.log('[SkillPracticeUI] Formatted question:', formattedQuestion);
 
         // Update question content
-        this.elements.questionContent.innerHTML = formattedQuestion.stem;
+        console.log('[SkillPracticeUI] Updating question content element:', !!this.elements.questionContent);
+        if (this.elements.questionContent) {
+            this.elements.questionContent.innerHTML = formattedQuestion.stem;
+            console.log('[SkillPracticeUI] Question content set. Length:', formattedQuestion.stem.length);
+            console.log('[SkillPracticeUI] Question content element visibility:', {
+                display: window.getComputedStyle(this.elements.questionContent).display,
+                visibility: window.getComputedStyle(this.elements.questionContent).visibility,
+                opacity: window.getComputedStyle(this.elements.questionContent).opacity
+            });
+        } else {
+            console.error('[SkillPracticeUI] questionContent element not found!');
+        }
 
         // Update choices
+        console.log('[SkillPracticeUI] Loading answer choices:', formattedQuestion.choices.length);
         this.loadAnswerChoices(formattedQuestion.choices);
 
         // Update question info
@@ -462,11 +540,20 @@ class SkillPracticeUI {
     }
 
     loadAnswerChoices(choices) {
+        console.log('[SkillPracticeUI] loadAnswerChoices called with', choices.length, 'choices');
         const container = this.elements.answerChoices;
+
+        if (!container) {
+            console.error('[SkillPracticeUI] Answer choices container not found!');
+            return;
+        }
+
         container.innerHTML = '';
+        console.log('[SkillPracticeUI] Answer choices container found and cleared');
 
         if (!choices || choices.length === 0) {
             container.innerHTML = '<p>No answer choices available</p>';
+            console.log('[SkillPracticeUI] No choices available, showing message');
             return;
         }
 
@@ -802,10 +889,18 @@ class SkillPracticeUI {
     }
 
     async setupLessonNavigation() {
-        if (!this.currentSession) return;
+        console.log('[SkillPracticeUI] setupLessonNavigation called');
+
+        if (!this.currentSession) {
+            console.log('[SkillPracticeUI] No current session, returning');
+            return;
+        }
 
         const lessonNavContainer = this.elements.lessonNavigation;
-        if (!lessonNavContainer) return;
+        if (!lessonNavContainer) {
+            console.log('[SkillPracticeUI] No lesson nav container found, returning');
+            return;
+        }
 
         // Clear existing content
         lessonNavContainer.innerHTML = '';
@@ -813,14 +908,19 @@ class SkillPracticeUI {
         let skillCode;
         if (this.currentSession.practiceType === 'skill') {
             skillCode = this.currentSession.targetId;
+            console.log('[SkillPracticeUI] Setting up navigation for skill:', skillCode);
         } else {
             // For topic practice, we don't show lesson navigation
             // as it's mixed skills
+            console.log('[SkillPracticeUI] Topic practice, skipping lesson navigation');
             return;
         }
 
         const lessonKey = this.skillToLessonMapping[skillCode];
+        console.log('[SkillPracticeUI] Lesson key for skill:', lessonKey);
+
         if (lessonKey) {
+            console.log('[SkillPracticeUI] Checking if lesson exists:', lessonKey);
             const lessonExists = await this.checkLessonExists(lessonKey);
             if (lessonExists) {
                 const backButton = this.createBackToLessonButton(lessonKey, skillCode);
