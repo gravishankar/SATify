@@ -1,60 +1,169 @@
 {
+  "id": "lesson_05",
+  "title": "Transitions & Flow",
+  "subtitle": "Expression of Ideas",
+  "level": "Foundation",
+  "duration": "20-25 min",
+  "skill_codes": ["TRA"],
+  "learning_objectives": [
+    "Master transition words for logical flow and rhetorical purpose",
+    "Create coherent paragraph structure—connecting ideas effectively",
+    "Apply strategies for finding the best transition words",
+    "Build confidence through guided practice with real SAT formats"
+  ],
+  "success_criteria": {
+    "mastery_threshold": 0.75,
+    "min_accuracy": 0.7,
+    "required_slides": "all"
+  },
   "slides": [
     {
       "id": "slide_01",
+      "type": "introduction",
+      "title": "Welcome to Transitions & Flow",
+      "duration_estimate": 180,
+      "content": {
+        "heading": "Learning Objectives",
+        "text": "In this lesson, you'll master the skill of identifying and using transitions - connecting words that show relationships between ideas.",
+        "bullet_points": [
+          "Understand what makes transitions effective",
+          "Learn the 3-step method for finding transitions",
+          "Practice with real SAT passage formats",
+          "Build confidence with guided examples"
+        ]
+      },
+      "interactions": [
+        {
+          "type": "click_to_continue",
+          "text": "Ready to begin? Click to continue"
+        }
+      ]
+    },
+    {
+      "id": "slide_02",
       "type": "concept_teaching",
       "title": "What are Transitions?",
       "duration_estimate": 240,
       "content": {
-        "heading": "What are Transitions?",
-        "text": "Transitions = Seamless Connections\\nStep 1: FOLLOW the Logical Flow\\nIdentify the relationship between ideas in sentences\\nExample: Idea 1: Exercise improves health. Idea 2: It reduces stress. → Addition relationship\\nStep 2: LOCATE the best transition\\nChoose words that match the logical relationship\\nExample: Addition: Additionally, exercise reduces stress and improves mental well-being.",
-        "bullet_points": []
-      }
+        "heading": "Understanding Transitions",
+        "text": "Transitions are seamless connections that show relationships between ideas in sentences and paragraphs.",
+        "concept_box": {
+          "title": "Key Characteristics",
+          "points": [
+            "🎯 **Follow the logical flow** - Identify relationships between ideas",
+            "📍 **Locate the best transition** - Choose words that match logical relationships",
+            "💡 **Addition**: Additionally, exercise reduces stress and improves mental well-being",
+            "🔄 **Example**: Idea 1: Exercise improves health. Idea 2: It reduces stress → Addition relationship"
+          ]
+        }
+      },
+      "interactions": [
+        {
+          "type": "reveal_on_click",
+          "elements": [
+            {
+              "trigger": "Click to see the difference",
+              "reveal": "Notice how transitions create seamless connections between related ideas."
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "slide_03",
-      "type": "concept_teaching",
-      "title": "The 3-Step process",
-      "duration_estimate": 240,
+      "type": "strategy_teaching",
+      "title": "The 3-Step Strategy",
+      "duration_estimate": 300,
       "content": {
-        "heading": "The 3-Step process",
-        "text": "Slicing the Steps\\nBefore checking choices…",
-        "bullet_points": [
-          "Step 1 (Context First):",
-          "Simplify the text",
-          "Ditch the noise",
-          "Get to the core of logic",
-          "Step 2 (Predict):",
-          "Guess a basic answer.",
-          "Step 3 (Flaw-Finding): Find the specific flaw in three answers."
+        "heading": "Strategy: Predict & Eliminate Method",
+        "strategy_steps": [
+          {
+            "step": 1,
+            "title": "Context First",
+            "description": "Simplify the text and ditch the noise",
+            "example": "Get to the core of logic"
+          },
+          {
+            "step": 2,
+            "title": "Predict",
+            "description": "Guess a basic answer before looking at choices",
+            "example": "Think about the logical relationship first"
+          },
+          {
+            "step": 3,
+            "title": "Flaw-Finding",
+            "description": "Find the specific flaw in three wrong answers",
+            "example": "Eliminate choices that don't match the logical relationship"
+          }
         ]
-      }
+      },
+      "interactions": [
+        {
+          "type": "step_by_step_reveal",
+          "auto_advance": false
+        }
+      ]
     },
     {
       "id": "slide_04",
       "type": "strategy_teaching",
-      "title": "Strategy First",
+      "title": "Strategy First: Define the Context",
       "duration_estimate": 300,
       "content": {
-        "heading": "Strategy First",
-        "text": "Define the Context\\nGoal: Identify the precise logical relationship.",
-        "bullet_points": [
-          "Step 1 (Idea A): Paraphrase the sentence before the blank.",
-          "Tactic: Ditch the Details. Ignore jargon, names, or numbers.",
-          "Step 2 (Idea B): Paraphrase the sentence after the blank."
+        "heading": "Identify the Precise Logical Relationship",
+        "text": "Goal: Identify the precise logical relationship between ideas.",
+        "strategy_steps": [
+          {
+            "step": 1,
+            "title": "Idea A: Paraphrase the sentence before the blank",
+            "description": "Ditch the Details. Ignore jargon, names, or numbers",
+            "example": "Focus only on the main idea"
+          },
+          {
+            "step": 2,
+            "title": "Idea B: Paraphrase the sentence after the blank",
+            "description": "Get the core meaning without distracting details",
+            "example": "Find the essential relationship"
+          }
         ]
-      }
+      },
+      "interactions": [
+        {
+          "type": "step_by_step_reveal",
+          "auto_advance": false
+        }
+      ]
     },
     {
       "id": "slide_05",
       "type": "concept_teaching",
-      "title": "Strategy Synthesis",
+      "title": "Strategy Synthesis: Common Traps",
       "duration_estimate": 280,
       "content": {
-        "heading": "Strategy Synthesis",
-        "text": "Most Common Red Flags & Logical Traps.\\n| Logical Trap / Red Flag | How the Strategy Addresses It |\\n|---|---|\\n| Trap 1: Choosing a word that \"vibes\" right. | Core Principle 1: \"Move from 'feels right' to 100% provable (no cap).\" |\\n| Trap 2: Getting fooled by complex details. | Slide 3, Tactic: \"Ditch the Details.\" The focus is only on the simple, main ideas (Idea A and Idea B). |\\n| Trap 3: Distinguishing between synonyms. | Slide 4, Tactic 3 (Copycats): If two choices are synonyms, they usually cancel each other out. This forces you to look for a flaw in both. |\\n| Trap 4: Picking a word that is close but not perfect. | Slide 4, Tactic 1 (Rhetorical Purpose Check): The word must match the author’s precise intent—no general vibes allowed! |\\n| Trap 5: The answer is technically correct, but not the best option. | Slide 4, Tactic 2 (Precision Tie-breaker): Forces you to choose the most specific connection every time. |",
-        "bullet_points": []
-      }
+        "heading": "Most Common Red Flags & Logical Traps",
+        "text": "Learn to identify and avoid these common mistakes that trap students.",
+        "concept_box": {
+          "title": "Logical Traps to Avoid",
+          "points": [
+            "🚫 **Trap 1**: Choosing a word that 'vibes' right → **Solution**: Move from 'feels right' to 100% provable",
+            "🚫 **Trap 2**: Getting fooled by complex details → **Solution**: Ditch the Details, focus on simple main ideas",
+            "🚫 **Trap 3**: Distinguishing between synonyms → **Solution**: If two choices are synonyms, both are wrong",
+            "🚫 **Trap 4**: Picking a word that's close but not perfect → **Solution**: Match author's precise intent",
+            "🚫 **Trap 5**: Technically correct but not the best → **Solution**: Choose the most specific connection"
+          ]
+        }
+      },
+      "interactions": [
+        {
+          "type": "reveal_on_click",
+          "elements": [
+            {
+              "trigger": "Click for strategy tips",
+              "reveal": "The 100% Rule: The correct answer is flawless. Every other choice has logical traps."
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "slide_06",
@@ -62,63 +171,133 @@
       "title": "Key Takeaways",
       "duration_estimate": 180,
       "content": {
-        "heading": "Key Takeaways",
-        "text": "Transition Mastery Summary\\nContext vibe is  king.\\nMove from 'feels right' to 100% provable (no cap).\\nThe 100% Rule: The correct answer is flawless.\\nEvery other choice has logical traps.",
-        "bullet_points": []
-      }
+        "heading": "Transition Mastery Summary",
+        "key_points": [
+          {
+            "icon": "👑",
+            "title": "Context is King",
+            "description": "Always understand the relationship between ideas first"
+          },
+          {
+            "icon": "💯",
+            "title": "The 100% Rule",
+            "description": "The correct answer is flawless. Every other choice has logical traps"
+          },
+          {
+            "icon": "🎯",
+            "title": "Move from 'feels right' to provable",
+            "description": "Use logic, not intuition, to eliminate wrong answers"
+          }
+        ]
+      },
+      "interactions": [
+        {
+          "type": "completion_celebration",
+          "unlock_next": "slide_07"
+        }
+      ]
     },
     {
       "id": "slide_07",
       "type": "mastery_check",
-      "title": "Transition Types, A Toolkit",
+      "title": "Transition Types Toolkit",
       "duration_estimate": 240,
       "content": {
-        "heading": "Transition Types, A Toolkit",
-        "text": "Transition Categories\\n➕ **Addition** - Furthermore, additionally, moreover, also\\n🔄 **Contrast** - However, nevertheless, on the other hand, yet\\n📈 **Cause/Effect** - Therefore, consequently, as a result, thus\\n📝 **Example** - For instance, specifically, namely, such as\\n🚀 Slide 8: The Ultimate Win\\nTransitions are the engine of clear writing.\\nMaster them, master the SAT.\\nTurn complex passages into simple logic, then predict and eliminate using logic traps\\nGet that 100% confidence on every Transition question.",
-        "bullet_points": [
-          "Contrast / Concession: However, Nevertheless, In contrast, Granted, Admittedly. (Signals an opposing idea or \"let's be real\" moment.)",
-          "Cause & Effect / Purpose: Therefore, Consequently, As a result, Thus, To this end. (Signals the reason or the outcome.)",
-          "Addition / Reinforcement: Moreover, Furthermore, In addition, Likewise. (Signals one more point on the same topic.)",
-          "Example / Illustration: For example, For instance, Specifically, Namely. (Signals a general idea is being clarified.)",
-          "Summary / Restatement: In short, In sum, To summarize, Ultimately. (Signals the final conclusion or main takeaway.)"
-        ]
-      }
-    },
-    {
-      "id": "slide_09",
-      "type": "guided_practice",
-      "title": "Your Turn: Fix the flow",
-      "duration_estimate": 300,
-      "content": {
-        "heading": "Your Turn: Fix the flow",
-        "text": "",
-        "bullet_points": []
-      }
+        "heading": "Complete Transition Reference",
+        "concept_box": {
+          "title": "Transition Categories",
+          "points": [
+            "➕ **Addition** - Furthermore, additionally, moreover, also",
+            "🔄 **Contrast** - However, nevertheless, on the other hand, yet",
+            "📈 **Cause/Effect** - Therefore, consequently, as a result, thus",
+            "📝 **Example** - For instance, specifically, namely, such as",
+            "⏰ **Sequence** - First, next, finally, meanwhile",
+            "📋 **Summary** - In conclusion, ultimately, in summary, overall"
+          ]
+        },
+        "examples": {
+          "contrast": "However, Nevertheless, In contrast, Granted, Admittedly (signals opposing ideas)",
+          "cause_effect": "Therefore, Consequently, As a result, Thus (signals reason or outcome)",
+          "addition": "Moreover, Furthermore, In addition, Likewise (signals more points on same topic)",
+          "example": "For example, For instance, Specifically, Namely (signals clarification)",
+          "summary": "In short, In sum, To summarize, Ultimately (signals final conclusion)"
+        }
+      },
+      "interactions": [
+        {
+          "type": "mastery_assessment",
+          "required_for_completion": true,
+          "retry_limit": 3
+        }
+      ]
     },
     {
       "id": "slide_08",
-      "type": "independent_practice:_perfect_the_flow",
-      "title": "Your Turn: Perfect the flow",
-      "duration_estimate": 240,
+      "type": "guided_practice",
+      "title": "Your Turn: Master the Flow",
+      "duration_estimate": 300,
       "content": {
-        "heading": "Your Turn: Perfect the flow",
-        "text": "",
-        "bullet_points": []
-      }
+        "heading": "Practice with Real SAT Questions",
+        "text": "Apply everything you've learned to master transition questions with confidence.",
+        "practice_transition": {
+          "text": "Ready to practice what you've learned? Let's apply these skills!",
+          "button": "Start Practice Questions"
+        }
+      },
+      "interactions": [
+        {
+          "type": "practice_transition",
+          "target_skill": "TRA",
+          "practice_type": "skill_practice"
+        }
+      ]
     }
   ],
-  "title": "Transitions & Flow",
-  "id": "lesson_custom",
-  "skill_codes": [],
-  "subtitle": "Transitions",
-  "learning_objectives": [
-    "The Core: Master transition words for logical flow and rhetorical purpose",
-    "The Skill: Create coherent paragraph structure—connecting ideas effectively"
+  "practice_questions": [
+    {
+      "id": "practice_1",
+      "type": "quick_check",
+      "skill_codes": ["TRA"],
+      "difficulty": "E",
+      "question": "Which transition best shows addition?",
+      "options": [
+        "However",
+        "Furthermore",
+        "Therefore",
+        "For example"
+      ],
+      "correct_answer": "B"
+    }
   ],
-  "success_criteria": {
-    "mastery_threshold": 0.75,
-    "min_accuracy": 0.7
+  "resources": {
+    "strategy_card": {
+      "title": "Transitions Quick Reference",
+      "steps": [
+        "1. FOLLOW the logic between ideas",
+        "2. PREDICT the relationship type",
+        "3. ELIMINATE wrong answers using logic traps",
+        "4. CHOOSE the most precise connection"
+      ],
+      "tips": [
+        "Addition: furthermore, additionally, moreover",
+        "Contrast: however, nevertheless, on the other hand",
+        "Cause/Effect: therefore, consequently, as a result",
+        "Example: for instance, specifically, such as"
+      ]
+    },
+    "common_mistakes": [
+      "Choosing transitions that 'feel' right instead of logical matches",
+      "Getting distracted by complex details instead of focusing on core relationships",
+      "Not recognizing when two similar transitions cancel each other out",
+      "Picking technically correct but not most precise answers"
+    ]
   },
-  "level": "Foundation",
-  "duration": "32-48 min"
+  "metadata": {
+    "created_date": "2024-12-01",
+    "last_updated": "2024-12-01",
+    "content_version": "2.0",
+    "estimated_completion_time": 1500,
+    "prerequisite_skills": ["lesson_04"],
+    "skill_progression": ["lesson_06"]
+  }
 }
