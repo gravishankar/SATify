@@ -1,357 +1,124 @@
 {
-  "id": "lesson_05",
-  "title": "Transitions & Flow",
-  "subtitle": "Expression of Ideas",
-  "level": "Foundation",
-  "duration": "20-25 min",
-  "skill_codes": ["EOI"],
-  "learning_objectives": [
-    "Master transitional words and phrases for logical flow",
-    "Create coherent paragraph structure and organization",
-    "Connect ideas effectively within and between sentences",
-    "Apply transition strategies to SAT Writing questions"
-  ],
-  "success_criteria": {
-    "mastery_threshold": 0.75,
-    "min_accuracy": 0.7,
-    "required_slides": "all"
-  },
   "slides": [
     {
       "id": "slide_01",
-      "type": "introduction",
-      "title": "Welcome to Transitions & Flow",
-      "duration_estimate": 180,
-      "content": {
-        "heading": "Learning Objectives",
-        "text": "Smooth transitions are the bridges that connect your ideas, guiding readers effortlessly through your thoughts and arguments.",
-        "bullet_points": [
-          "Master transitional words for different relationships",
-          "Create logical flow within and between paragraphs",
-          "Organize ideas for maximum clarity and impact",
-          "Apply transition strategies to excel on SAT Writing"
-        ],
-        "visual_element": {
-          "type": "progress_indicator",
-          "total_slides": 8,
-          "estimated_time": "20-25 minutes"
-        }
-      },
-      "interactions": [
-        {
-          "type": "click_to_continue",
-          "text": "Ready to create seamless flow? Click to continue"
-        }
-      ]
-    },
-    {
-      "id": "slide_02",
       "type": "concept_teaching",
-      "title": "The Power of Transitions",
+      "title": "What are Transitions?",
       "duration_estimate": 240,
       "content": {
-        "heading": "Why Transitions Matter",
-        "text": "Transitions show relationships between ideas and help readers follow your logic. Without them, writing feels choppy and disconnected.",
-        "concept_box": {
-          "title": "Types of Transition Relationships",
-          "points": [
-            "➕ **Addition** - Furthermore, additionally, moreover, also",
-            "🔄 **Contrast** - However, nevertheless, on the other hand, yet",
-            "📈 **Cause/Effect** - Therefore, consequently, as a result, thus",
-            "📝 **Example** - For instance, specifically, namely, such as"
-          ]
-        },
-        "examples": {
-          "without": "Solar energy is renewable. It reduces carbon emissions. It saves money on electricity bills.",
-          "with": "Solar energy is renewable. Furthermore, it reduces carbon emissions and saves money on electricity bills."
-        }
-      },
-      "interactions": [
-        {
-          "type": "reveal_on_click",
-          "elements": [
-            {
-              "trigger": "Click to see the difference",
-              "reveal": "Notice how 'Furthermore' connects the ideas and shows they're building on each other, rather than just listing separate facts."
-            }
-          ]
-        }
-      ]
+        "heading": "What are Transitions?",
+        "text": "Transitions = Seamless Connections\\nStep 1: FOLLOW the Logical Flow\\nIdentify the relationship between ideas in sentences\\nExample: Idea 1: Exercise improves health. Idea 2: It reduces stress. → Addition relationship\\nStep 2: LOCATE the best transition\\nChoose words that match the logical relationship\\nExample: Addition: Additionally, exercise reduces stress and improves mental well-being.",
+        "bullet_points": []
+      }
     },
     {
       "id": "slide_03",
-      "type": "strategy_teaching",
-      "title": "The FLOW Method for Transitions",
-      "duration_estimate": 300,
+      "type": "concept_teaching",
+      "title": "The 3-Step process",
+      "duration_estimate": 240,
       "content": {
-        "heading": "Strategy: Create Seamless Connections",
-        "strategy_steps": [
-          {
-            "step": 1,
-            "title": "FOLLOW the logic",
-            "description": "Identify the relationship between ideas",
-            "example": "Idea 1: Exercise improves health. Idea 2: It reduces stress. → Addition relationship"
-          },
-          {
-            "step": 2,
-            "title": "LOCATE the best transition",
-            "description": "Choose words that match the logical relationship",
-            "example": "Addition: Additionally, exercise reduces stress and improves mental well-being."
-          },
-          {
-            "step": 3,
-            "title": "ORDER for maximum impact",
-            "description": "Place transitions where they'll guide readers most effectively",
-            "example": "Usually at the beginning of sentences or paragraphs for clear signaling"
-          },
-          {
-            "step": 4,
-            "title": "WEAVE naturally",
-            "description": "Ensure transitions feel organic, not forced",
-            "example": "Avoid overusing transitions - sometimes ideas connect naturally without them"
-          }
-        ],
-        "memory_aid": "Keep your writing in good **F.L.O.W.**!"
-      },
-      "interactions": [
-        {
-          "type": "step_by_step_reveal",
-          "auto_advance": false
-        }
-      ]
+        "heading": "The 3-Step process",
+        "text": "Slicing the Steps\\nBefore checking choices…",
+        "bullet_points": [
+          "Step 1 (Context First):",
+          "Simplify the text",
+          "Ditch the noise",
+          "Get to the core of logic",
+          "Step 2 (Predict):",
+          "Guess a basic answer.",
+          "Step 3 (Flaw-Finding): Find the specific flaw in three answers."
+        ]
+      }
     },
     {
       "id": "slide_04",
-      "type": "concept_teaching",
-      "title": "Advanced Transition Strategies",
-      "duration_estimate": 280,
+      "type": "strategy_teaching",
+      "title": "Strategy First",
+      "duration_estimate": 300,
       "content": {
-        "heading": "Beyond Basic Connectors",
-        "text": "Sophisticated transitions do more than connect - they clarify relationships and enhance meaning.",
-        "concept_box": {
-          "title": "Advanced Techniques",
-          "points": [
-            "🔗 **Transitional phrases** - In light of this evidence, Given these circumstances",
-            "📍 **Referential transitions** - This approach, Such strategies, These findings",
-            "⏱️ **Temporal markers** - Meanwhile, Subsequently, Before long, Eventually",
-            "🎯 **Emphasis transitions** - Indeed, In fact, Notably, Most importantly"
-          ]
-        },
-        "examples": {
-          "basic": "The experiment failed. However, we learned valuable lessons.",
-          "advanced": "The experiment failed to produce expected results. This setback, however, provided valuable insights into the underlying mechanisms."
-        }
-      },
-      "interactions": [
-        {
-          "type": "reveal_on_click",
-          "elements": [
-            {
-              "trigger": "Click for sophistication tip",
-              "reveal": "Advanced transitions often reference specific content ('This setback') rather than just showing logical relationships, making connections clearer and more precise."
-            }
-          ]
-        }
-      ]
+        "heading": "Strategy First",
+        "text": "Define the Context\\nGoal: Identify the precise logical relationship.",
+        "bullet_points": [
+          "Step 1 (Idea A): Paraphrase the sentence before the blank.",
+          "Tactic: Ditch the Details. Ignore jargon, names, or numbers.",
+          "Step 2 (Idea B): Paraphrase the sentence after the blank."
+        ]
+      }
     },
     {
       "id": "slide_05",
-      "type": "guided_example",
-      "title": "Guided Practice: Fix the Flow",
-      "duration_estimate": 360,
+      "type": "concept_teaching",
+      "title": "Strategy Synthesis",
+      "duration_estimate": 280,
       "content": {
-        "heading": "Let's Improve This Passage Together",
-        "passage": {
-          "text": "Climate change poses serious threats to coastal communities. Sea levels are rising at an alarming rate. Many cities are implementing adaptation strategies. Venice has installed flood barriers. Miami is raising roads and buildings. These efforts may not be sufficient. Scientists warn that more dramatic measures will be needed. Entire populations may need to relocate.",
-          "highlight_enabled": true
-        },
-        "guided_questions": [
-          {
-            "step": 1,
-            "question": "What relationship exists between sentences 1 and 2?",
-            "hint": "How does rising sea levels relate to climate threats?",
-            "answer": "Cause/effect or evidence - rising seas are an example of climate threats",
-            "explanation": "Add 'Specifically' or 'For example' to show that rising seas exemplify climate threats."
-          },
-          {
-            "step": 2,
-            "question": "How should sentences 3-5 connect?",
-            "hint": "What's the relationship between adaptation strategies and the specific examples?",
-            "answer": "Example relationship - Venice and Miami are examples of adaptation",
-            "explanation": "Add 'For instance' before Venice, and connect Miami with 'Similarly' or 'Likewise.'"
-          },
-          {
-            "step": 3,
-            "question": "What transition fits before 'These efforts may not be sufficient'?",
-            "hint": "How do insufficient efforts relate to the previous examples?",
-            "answer": "Contrast - despite these efforts, they may not work",
-            "explanation": "'However' or 'Unfortunately' shows the contrast between efforts and their limitations."
-          }
-        ]
-      },
-      "interactions": [
-        {
-          "type": "guided_walkthrough",
-          "allow_highlighting": true,
-          "step_validation": true
-        }
-      ]
+        "heading": "Strategy Synthesis",
+        "text": "Most Common Red Flags & Logical Traps.\\n| Logical Trap / Red Flag | How the Strategy Addresses It |\\n|---|---|\\n| Trap 1: Choosing a word that \"vibes\" right. | Core Principle 1: \"Move from 'feels right' to 100% provable (no cap).\" |\\n| Trap 2: Getting fooled by complex details. | Slide 3, Tactic: \"Ditch the Details.\" The focus is only on the simple, main ideas (Idea A and Idea B). |\\n| Trap 3: Distinguishing between synonyms. | Slide 4, Tactic 3 (Copycats): If two choices are synonyms, they usually cancel each other out. This forces you to look for a flaw in both. |\\n| Trap 4: Picking a word that is close but not perfect. | Slide 4, Tactic 1 (Rhetorical Purpose Check): The word must match the author’s precise intent—no general vibes allowed! |\\n| Trap 5: The answer is technically correct, but not the best option. | Slide 4, Tactic 2 (Precision Tie-breaker): Forces you to choose the most specific connection every time. |",
+        "bullet_points": []
+      }
     },
     {
       "id": "slide_06",
-      "type": "independent_practice",
-      "title": "Your Turn: Perfect the Flow",
-      "duration_estimate": 300,
-      "content": {
-        "heading": "Independent Practice",
-        "passage": {
-          "text": "Artificial intelligence has revolutionized many industries. Healthcare professionals use AI to diagnose diseases more accurately. _____ AI helps financial institutions detect fraud and manage risk. _____ concerns about job displacement and privacy have emerged. _____ these challenges, many experts believe the benefits of AI outweigh the potential drawbacks.",
-          "word_count": 45
-        },
-        "question": {
-          "text": "Which choice provides the best transitions for the blanks in order?",
-          "options": [
-            "However; Therefore; Despite",
-            "Similarly; However; Despite",
-            "Furthermore; Nevertheless; Because of",
-            "For example; In contrast; In spite of"
-          ],
-          "correct_answer": "B",
-          "explanations": {
-            "A": "'However' doesn't fit after the healthcare example - we're adding another example, not contrasting.",
-            "B": "✓ Correct! 'Similarly' shows another example of AI use, 'However' introduces contrasting concerns, 'Despite' acknowledges challenges while showing benefits.",
-            "C": "'Furthermore' works for addition, but 'Because of these challenges' suggests challenges lead to benefits, which is backwards.",
-            "D": "'For example' would need to follow a general statement about AI uses, but the healthcare sentence is already specific."
-          }
-        }
-      },
-      "interactions": [
-        {
-          "type": "multiple_choice_question",
-          "immediate_feedback": true,
-          "allow_retry": true
-        }
-      ]
-    },
-    {
-      "id": "slide_07",
       "type": "concept_reinforcement",
       "title": "Key Takeaways",
       "duration_estimate": 180,
       "content": {
-        "heading": "Transition Mastery Summary",
-        "key_points": [
-          {
-            "icon": "🔗",
-            "title": "Show Relationships",
-            "description": "Transitions reveal how ideas connect: addition, contrast, cause/effect, or example."
-          },
-          {
-            "icon": "🎯",
-            "title": "Match Logic to Language",
-            "description": "Choose transitions that accurately reflect the relationship between ideas."
-          },
-          {
-            "icon": "⚖️",
-            "title": "Balance is Key",
-            "description": "Use enough transitions for clarity, but not so many that they become distracting."
-          },
-          {
-            "icon": "📈",
-            "title": "SAT Strategy",
-            "description": "Read the context carefully - the best transition depends on what comes before and after."
-          }
-        ],
-        "next_steps": {
-          "text": "Foundation complete! Next: Lesson 6 - Text Structure Analysis!",
-          "preview": "Move to intermediate level and learn to analyze how authors organize their ideas for maximum impact."
-        }
-      },
-      "interactions": [
-        {
-          "type": "completion_celebration",
-          "unlock_next": "lesson_06"
-        }
-      ]
+        "heading": "Key Takeaways",
+        "text": "Transition Mastery Summary\\nContext vibe is  king.\\nMove from 'feels right' to 100% provable (no cap).\\nThe 100% Rule: The correct answer is flawless.\\nEvery other choice has logical traps.",
+        "bullet_points": []
+      }
+    },
+    {
+      "id": "slide_07",
+      "type": "mastery_check",
+      "title": "Transition Types, A Toolkit",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "Transition Types, A Toolkit",
+        "text": "Transition Categories\\n➕ **Addition** - Furthermore, additionally, moreover, also\\n🔄 **Contrast** - However, nevertheless, on the other hand, yet\\n📈 **Cause/Effect** - Therefore, consequently, as a result, thus\\n📝 **Example** - For instance, specifically, namely, such as\\n🚀 Slide 8: The Ultimate Win\\nTransitions are the engine of clear writing.\\nMaster them, master the SAT.\\nTurn complex passages into simple logic, then predict and eliminate using logic traps\\nGet that 100% confidence on every Transition question.",
+        "bullet_points": [
+          "Contrast / Concession: However, Nevertheless, In contrast, Granted, Admittedly. (Signals an opposing idea or \"let's be real\" moment.)",
+          "Cause & Effect / Purpose: Therefore, Consequently, As a result, Thus, To this end. (Signals the reason or the outcome.)",
+          "Addition / Reinforcement: Moreover, Furthermore, In addition, Likewise. (Signals one more point on the same topic.)",
+          "Example / Illustration: For example, For instance, Specifically, Namely. (Signals a general idea is being clarified.)",
+          "Summary / Restatement: In short, In sum, To summarize, Ultimately. (Signals the final conclusion or main takeaway.)"
+        ]
+      }
+    },
+    {
+      "id": "slide_09",
+      "type": "guided_practice",
+      "title": "Your Turn: Fix the flow",
+      "duration_estimate": 300,
+      "content": {
+        "heading": "Your Turn: Fix the flow",
+        "text": "",
+        "bullet_points": []
+      }
     },
     {
       "id": "slide_08",
-      "type": "mastery_check",
-      "title": "Mastery Check",
+      "type": "independent_practice:_perfect_the_flow",
+      "title": "Your Turn: Perfect the flow",
       "duration_estimate": 240,
       "content": {
-        "heading": "Final Assessment",
-        "instructions": "Demonstrate your mastery of transitions by improving the flow of this passage.",
-        "passage": {
-          "text": "Renewable energy technologies have advanced significantly in recent years. Solar panel efficiency has improved dramatically. _____ wind turbines generate more power than ever before. _____ these technological improvements, costs have decreased substantially. _____ renewable energy is becoming competitive with fossil fuels. _____ some challenges remain, including energy storage and grid integration issues. _____ governments worldwide are investing heavily in renewable infrastructure to meet climate goals.",
-          "word_count": 65
-        },
-        "question": {
-          "text": "Which choice provides the most effective transitions for ALL the blanks?",
-          "options": [
-            "Similarly; Because of; Therefore; However; Nevertheless",
-            "Furthermore; Due to; As a result; Although; Therefore",
-            "Additionally; Despite; Thus; Moreover; However",
-            "Likewise; Given; Consequently; While; Thus"
-          ],
-          "correct_answer": "B",
-          "mastery_question": true
-        }
-      },
-      "interactions": [
-        {
-          "type": "mastery_assessment",
-          "required_for_completion": true,
-          "retry_limit": 3
-        }
-      ]
+        "heading": "Your Turn: Perfect the flow",
+        "text": "",
+        "bullet_points": []
+      }
     }
   ],
-  "practice_questions": [
-    {
-      "id": "practice_1",
-      "type": "quick_check",
-      "skill_codes": ["EOI"],
-      "difficulty": "E",
-      "question": "Which transition best shows contrast?",
-      "options": [
-        "Furthermore",
-        "However",
-        "Therefore",
-        "For example"
-      ],
-      "correct_answer": "B"
-    }
+  "title": "Transitions & Flow",
+  "id": "lesson_custom",
+  "skill_codes": [],
+  "subtitle": "Transitions",
+  "learning_objectives": [
+    "The Core: Master transition words for logical flow and rhetorical purpose",
+    "The Skill: Create coherent paragraph structure—connecting ideas effectively"
   ],
-  "resources": {
-    "strategy_card": {
-      "title": "Transitions Quick Reference",
-      "steps": [
-        "1. FOLLOW the logic between ideas",
-        "2. LOCATE the right transition type",
-        "3. ORDER for maximum impact",
-        "4. WEAVE naturally into the text"
-      ],
-      "tips": [
-        "Addition: furthermore, additionally, moreover",
-        "Contrast: however, nevertheless, on the other hand",
-        "Cause/Effect: therefore, consequently, as a result",
-        "Example: for instance, specifically, such as"
-      ]
-    },
-    "common_mistakes": [
-      "Using 'however' after semicolons instead of commas",
-      "Overusing transitions where ideas connect naturally",
-      "Choosing transitions that don't match the logical relationship",
-      "Placing transitions awkwardly within sentences"
-    ]
+  "success_criteria": {
+    "mastery_threshold": 0.75,
+    "min_accuracy": 0.7
   },
-  "metadata": {
-    "created_date": "2024-12-01",
-    "last_updated": "2024-12-01",
-    "content_version": "1.0",
-    "estimated_completion_time": 1500,
-    "prerequisite_skills": ["lesson_04"],
-    "skill_progression": ["lesson_06"]
-  }
+  "level": "Foundation",
+  "duration": "32-48 min"
 }
