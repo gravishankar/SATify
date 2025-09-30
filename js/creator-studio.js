@@ -1735,12 +1735,11 @@ class CreatorStudio {
     }
 
     async publishToGitHub() {
-        // Generate filename
-        const domainId = this.currentLesson.domain_id;
-        const skillId = this.currentLesson.skill_id;
-        const lessonName = this.generateFilename(this.currentLesson.title);
-        const filename = `${lessonName}.json`;
-        const filepath = `lessons/${domainId}/${skillId}/${filename}`;
+        // Extract lesson number from lesson ID (e.g., "lesson_05" -> "05")
+        const lessonId = this.currentLesson.id || 'lesson_new';
+        const lessonNumber = lessonId.replace(/^lesson_?/, '') || 'new';
+        const filename = `lesson_${lessonNumber}.json`;
+        const filepath = `lessons/${filename}`;
 
         // Prepare lesson data for GitHub
         const lessonData = {
@@ -1884,7 +1883,7 @@ class CreatorStudio {
         try {
             // Get repository info from current URL or default
             const repoOwner = 'gravishankar'; // You can make this configurable
-            const repoName = 'sat-practice-pro';
+            const repoName = 'SATify';
 
             // Create GitHub issue to trigger the action
             const issueTitle = `Publish Lesson: ${lessonData.title}`;

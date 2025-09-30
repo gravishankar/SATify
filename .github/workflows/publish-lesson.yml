@@ -66,23 +66,16 @@ jobs:
 
           // Get lesson metadata
           const lessonTitle = lessonData.title || 'untitled';
-          const domainId = lessonData.domain_id || 'unknown';
-          const skillId = lessonData.skill_id || 'unknown';
+          const lessonId = lessonData.id || 'lesson_new';
 
           console.log('Parsed data:');
           console.log('  Title:', lessonTitle);
-          console.log('  Domain:', domainId);
-          console.log('  Skill:', skillId);
+          console.log('  Lesson ID:', lessonId);
 
-          // Generate filename
-          const filename = lessonTitle
-            .toLowerCase()
-            .replace(/[^a-z0-9 ]/g, '')
-            .replace(/\s+/g, '-')
-            .replace(/-+/g, '-')
-            .replace(/^-|-$/g, '');
-
-          const filepath = `lessons/${domainId}/${skillId}/${filename}.json`;
+          // Extract lesson number from lesson ID (e.g., "lesson_05" -> "05")
+          const lessonNumber = lessonId.replace(/^lesson_?/, '') || 'new';
+          const filename = `lesson_${lessonNumber}.json`;
+          const filepath = `lessons/${filename}`;
           console.log('Generated filepath:', filepath);
 
           // Write files for next steps
@@ -92,19 +85,32 @@ jobs:
 
           // Set outputs
           core.setOutput('lesson_title', lessonTitle);
-          core.setOutput('domain_id', domainId);
-          core.setOutput('skill_id', skillId);
+          core.setOutput('lesson_id', lessonId);
+          core.setOutput('lesson_number', lessonNumber);
           core.setOutput('filename', filename);
           core.setOutput('filepath', filepath);
 
-    - name: Create lesson directory
+    - name: Create lessons directory and backup existing lesson
       run: |
-        mkdir -p "lessons/${{ steps.parse-lesson.outputs.domain_id }}/${{ steps.parse-lesson.outputs.skill_id }}"
+        mkdir -p "lessons"
+
+        # Check if lesson file already exists and backup if it does
+        if [ -f "${{ steps.parse-lesson.outputs.filepath }}" ]; then
+          echo "Existing lesson found, creating backup..."
+          cp "${{ steps.parse-lesson.outputs.filepath }}" "lessons/lesson_${{ steps.parse-lesson.outputs.lesson_number }}_previous.json"
+          echo "Backup created: lessons/lesson_${{ steps.parse-lesson.outputs.lesson_number }}_previous.json"
+        else
+          echo "No existing lesson found, proceeding with new lesson creation"
+        fi
 
     - name: Write lesson file
       run: |
         cp lesson_data.json "${{ steps.parse-lesson.outputs.filepath }}"
         echo "Lesson file created at: ${{ steps.parse-lesson.outputs.filepath }}"
+
+        # Show what files we have now
+        echo "Current lessons directory contents:"
+        ls -la lessons/lesson_*.json || echo "No lesson files found"
 
     - name: Update manifest
       run: |
@@ -149,12 +155,20 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "Creator Studio Bot"
 
+        # Add all lesson files (new lesson and backup if it exists)
         git add "${{ steps.parse-lesson.outputs.filepath }}" lessons/manifest.json
-        git commit -m "Add lesson: ${{ steps.parse-lesson.outputs.lesson_title }}
+
+        # Add backup file if it exists
+        if [ -f "lessons/lesson_${{ steps.parse-lesson.outputs.lesson_number }}_previous.json" ]; then
+          git add "lessons/lesson_${{ steps.parse-lesson.outputs.lesson_number }}_previous.json"
+          echo "Added backup file to commit"
+        fi
+
+        git commit -m "Add/Update lesson: ${{ steps.parse-lesson.outputs.lesson_title }}
 
         Published via Creator Studio
-        Domain: ${{ steps.parse-lesson.outputs.domain_id }}
-        Skill: ${{ steps.parse-lesson.outputs.skill_id }}
+        Lesson ID: ${{ steps.parse-lesson.outputs.lesson_id }}
+        File: ${{ steps.parse-lesson.outputs.filepath }}
 
         🤖 Generated with Creator Studio
 
@@ -173,14 +187,17 @@ jobs:
             body: `✅ **Lesson Published Successfully!**
 
             **📚 Lesson:** ${{ steps.parse-lesson.outputs.lesson_title }}
+            **🆔 Lesson ID:** ${{ steps.parse-lesson.outputs.lesson_id }}
             **📁 Location:** \`${{ steps.parse-lesson.outputs.filepath }}\`
-            **🏷️ Domain:** ${{ steps.parse-lesson.outputs.domain_id }}
-            **🎯 Skill:** ${{ steps.parse-lesson.outputs.skill_id }}
+            **🔢 Lesson Number:** ${{ steps.parse-lesson.outputs.lesson_number }}
 
             The lesson has been added to the repository and is now available to students.
 
-            [View Lesson File](${{ github.server_url }}/${{ github.repository }}/blob/main/${{ steps.parse-lesson.outputs.filepath }})
-            [View Updated Manifest](${{ github.server_url }}/${{ github.repository }}/blob/main/lessons/manifest.json)`
+            **📄 Files Created/Updated:**
+            - [📝 Lesson File](${{ github.server_url }}/${{ github.repository }}/blob/main/${{ steps.parse-lesson.outputs.filepath }})
+            - [📋 Updated Manifest](${{ github.server_url }}/${{ github.repository }}/blob/main/lessons/manifest.json)
+
+            **💾 Backup:** If a previous version existed, it was backed up as \`lesson_${{ steps.parse-lesson.outputs.lesson_number }}_previous.json\``
           });
 
     - name: Close issue
