@@ -1741,7 +1741,7 @@ class CreatorStudio {
         const filename = `lesson_${lessonNumber}.json`;
         const filepath = `lessons/${filename}`;
 
-        // Prepare lesson data for GitHub
+        // Prepare complete lesson data for GitHub Actions (needs full data to create file)
         const lessonData = {
             ...this.currentLesson,
             created_at: this.currentLesson.created_at || new Date().toISOString(),
@@ -1750,11 +1750,26 @@ class CreatorStudio {
             format_version: "creator_studio_v1"
         };
 
+        // Prepare summary data for GitHub issue (human-readable)
+        const lessonSummary = {
+            id: this.currentLesson.id,
+            title: this.currentLesson.title,
+            subtitle: this.currentLesson.subtitle,
+            level: this.currentLesson.level,
+            duration: this.currentLesson.duration,
+            skill_codes: this.currentLesson.skill_codes,
+            slide_count: this.currentLesson.slides ? this.currentLesson.slides.length : 0,
+            learning_objectives: this.currentLesson.learning_objectives,
+            created_at: lessonData.created_at,
+            updated_at: lessonData.updated_at
+        };
+
         // Commit to GitHub (manifest will be updated incrementally by GitHub Actions)
         await this.commitToGitHub(
             this.currentLesson.commitMessage,
             lessonData,
-            filepath
+            filepath,
+            lessonSummary
         );
     }
 
@@ -1854,7 +1869,7 @@ class CreatorStudio {
         }
     }
 
-    async commitToGitHub(message, lessonData, filepath) {
+    async commitToGitHub(message, lessonData, filepath, lessonSummary = null) {
         try {
             console.log('Publishing lesson via GitHub Actions...');
 
@@ -1862,7 +1877,7 @@ class CreatorStudio {
             console.log('Using GitHub Actions approach for static deployment...');
 
             // Fallback to GitHub Actions approach
-            await this.publishViaGitHubActions(message, lessonData, filepath);
+            await this.publishViaGitHubActions(message, lessonData, filepath, lessonSummary);
             return { success: true, method: 'github-actions' };
 
         } catch (error) {
@@ -1879,7 +1894,7 @@ class CreatorStudio {
         }
     }
 
-    async publishViaGitHubActions(message, lessonData, filepath) {
+    async publishViaGitHubActions(message, lessonData, filepath, lessonSummary = null) {
         try {
             // Get repository info from current URL or default
             const repoOwner = 'gravishankar'; // You can make this configurable
@@ -1895,7 +1910,15 @@ class CreatorStudio {
 **Author:** ${lessonData.author}
 **Commit Message:** ${message}
 
-### Lesson Data
+### Lesson Summary
+- **ID:** ${lessonSummary ? lessonSummary.id : lessonData.id}
+- **Title:** ${lessonSummary ? lessonSummary.title : lessonData.title}
+- **Level:** ${lessonSummary ? lessonSummary.level : lessonData.level}
+- **Duration:** ${lessonSummary ? lessonSummary.duration : lessonData.duration}
+- **Slides:** ${lessonSummary ? lessonSummary.slide_count : 'Unknown'}
+- **Skills:** ${lessonSummary ? lessonSummary.skill_codes?.join(', ') : lessonData.skill_codes?.join(', ') || 'None'}
+
+### Full Lesson Data (for GitHub Actions)
 \`\`\`json
 ${JSON.stringify(lessonData, null, 2)}
 \`\`\`
@@ -1933,8 +1956,17 @@ ${JSON.stringify(lessonData, null, 2)}
                         📝 Create GitHub Issue to Publish
                     </a>
 
-                    <h4>Step 1.5: Copy Lesson Data</h4>
-                    <p>Copy the JSON data below and paste it into the GitHub issue description:</p>
+                    <h4>Step 1.5: Copy Issue Content</h4>
+                    <p>Copy the content below and paste it into the GitHub issue description:</p>
+                    <div style="margin-bottom: 15px;">
+                        <h5>📋 Lesson Summary (for humans):</h5>
+                        <div style="background: #e3f2fd; padding: 10px; border-radius: 4px; margin-bottom: 10px;">
+                            <strong>${lessonSummary ? lessonSummary.title : lessonData.title}</strong><br>
+                            ID: ${lessonSummary ? lessonSummary.id : lessonData.id} |
+                            Level: ${lessonSummary ? lessonSummary.level : lessonData.level} |
+                            Slides: ${lessonSummary ? lessonSummary.slide_count : 'Unknown'}
+                        </div>
+                    </div>
                     <textarea readonly style="width: 100%; height: 200px; font-family: monospace; font-size: 12px; background: #f8f9fa; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">\`\`\`json
 ${JSON.stringify(lessonData, null, 2)}
 \`\`\`</textarea>
