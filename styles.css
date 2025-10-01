@@ -234,7 +234,7 @@ body {
 }
 
 .role-toggle-btn:hover {
-    background: #2563eb;
+    background: #0369a1;
     transform: translateY(-1px);
 }
 
@@ -458,7 +458,7 @@ body {
 }
 
 .action-btn:hover {
-  border-color: #2563eb;
+  border-color: #0369a1;
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
@@ -589,12 +589,12 @@ body {
 }
 
 .choice:hover {
-  border-color: #2563eb;
+  border-color: #0369a1;
   background-color: #f8fafc;
 }
 
 .choice.selected {
-  border-color: #2563eb;
+  border-color: #0369a1;
   background-color: #eff6ff;
 }
 
@@ -640,7 +640,7 @@ body {
 }
 
 .choice.selected .choice-letter {
-  background: #2563eb;
+  background: #0369a1;
   color: white;
 }
 
@@ -812,8 +812,8 @@ body {
 .form-group input:focus,
 .form-group select:focus {
   outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  border-color: #0369a1;
+  box-shadow: 0 0 0 3px rgba(3, 105, 161, 0.1);
 }
 
 .auth-switch {
@@ -823,7 +823,7 @@ body {
 }
 
 .auth-switch a {
-  color: #2563eb;
+  color: #0369a1;
   text-decoration: none;
   font-weight: 600;
 }
@@ -880,7 +880,7 @@ body {
 }
 
 .text-primary {
-  color: #2563eb;
+  color: #0369a1;
 }
 
 .text-secondary {
@@ -992,12 +992,12 @@ body {
 
 .wic-choice:hover {
   background-color: #f1f5f9;
-  border-color: #2563eb;
+  border-color: #0369a1;
 }
 
 .wic-choice.selected {
   background-color: #dbeafe;
-  border-color: #2563eb;
+  border-color: #0369a1;
 }
 
 .wic-choice.correct {
@@ -1440,7 +1440,7 @@ body {
 }
 
 .skill-badge {
-  background: #2563eb;
+  background: #0369a1;
   color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
@@ -1633,12 +1633,12 @@ body {
 }
 
 .indicator.active {
-  background: #2563eb;
+  background: #0369a1;
   transform: scale(1.2);
 }
 
 .indicator:hover {
-  background: #2563eb;
+  background: #0369a1;
   opacity: 0.7;
 }
 
@@ -2023,8 +2023,8 @@ body {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    border-color: #0369a1;
+    box-shadow: 0 0 0 3px rgba(3, 105, 161, 0.1);
 }
 
 .form-group textarea {
@@ -2064,7 +2064,7 @@ body {
 
 .domain-skill-info h4 {
     margin: 0 0 8px 0;
-    color: #2563eb;
+    color: #0369a1;
 }
 
 .domain-skill-info p {
@@ -2189,7 +2189,7 @@ body {
 }
 
 .slide-number {
-    background: #2563eb;
+    background: #0369a1;
     color: white;
     width: 24px;
     height: 24px;
@@ -2295,7 +2295,7 @@ body {
 
 .slide-preview h4 {
     margin: 0 0 12px 0;
-    color: #2563eb;
+    color: #0369a1;
     font-size: 16px;
 }
 
@@ -2340,7 +2340,7 @@ body {
 }
 
 .notification-info {
-    background: #2563eb;
+    background: #0369a1;
 }
 
 /* Responsive Design for Creator Studio */
