@@ -94,9 +94,9 @@ body {
 }
 
 .nav-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -132,11 +132,12 @@ body {
   font-weight: 500;
   opacity: 0.85;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .nav-menu {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .nav-link {
