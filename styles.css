@@ -291,7 +291,7 @@ body {
 
 .settings-section h2 {
     margin: 0 0 20px 0;
-    color: #2563eb;
+    color: #0369a1;
     font-size: 18px;
     border-bottom: 2px solid var(--accent-color);
     padding-bottom: 10px;
@@ -409,7 +409,7 @@ body {
 .stat-content h3 {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #2563eb;
+  color: #0369a1;
   margin-bottom: 0.25rem;
 }
 
@@ -685,7 +685,7 @@ body {
 }
 
 .btn-primary {
-  background: #2563eb;
+  background: #0369a1;
   color: white;
 }
 
@@ -701,8 +701,8 @@ body {
 }
 
 .btn-secondary:hover {
-  border-color: #2563eb;
-  color: #2563eb;
+  border-color: #0369a1;
+  color: #0369a1;
 }
 
 .btn:disabled {
@@ -1102,7 +1102,7 @@ body {
 }
 
 .strategy-pattern h3 {
-  color: #2563eb;
+  color: #0369a1;
   margin-bottom: 0.5rem;
 }
 
@@ -1855,8 +1855,8 @@ body {
 }
 
 .btn-primary:hover:not(:disabled) {
-    background: #2563eb;
-    border-color: #2563eb;
+    background: #0369a1;
+    border-color: #0369a1;
 }
 
 .btn-secondary {
@@ -2075,7 +2075,7 @@ body {
 }
 
 .btn-primary {
-    background: #2563eb;
+    background: #0369a1;
     color: white;
     border: none;
     padding: 12px 24px;
@@ -2249,7 +2249,7 @@ body {
 }
 
 .lesson-preview h3 {
-    color: #2563eb;
+    color: #0369a1;
     margin: 0 0 16px 0;
 }
 
