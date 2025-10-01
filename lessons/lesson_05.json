@@ -357,44 +357,29 @@
     },
     {
       "id": "slide_09",
-      "type": "concept_reinforcement",
-      "title": "The Ultimate Win",
-      "duration_estimate": 120,
-      "content": {
-        "heading": "Own Transitions, Own the SAT",
-        "text": "The Master Strategy transforms transitions from guesswork into a 3-Phase proof system. You'll never second-guess again—just follow the process for 100% confidence every time."
-      }
-    },
-    {
-      "id": "slide_10",
       "type": "guided_practice",
-      "title": "Your Turn: Apply the Master Strategy",
+      "title": "Your Turn: Fix the Flow",
       "duration_estimate": 300,
       "content": {
         "heading": "Guided Practice",
-        "instructions": "Work through examples using the full 3-Phase process with hints guiding you."
+        "instructions": "Work through examples with hints that steer you toward the precise logical link."
       },
       "interactions": [
         {
           "type": "practice_transition",
           "target_skill": "EOI",
-          "practice_type": "guided",
-          "strategy_prompts": [
-            "Phase 1: What's Idea A? What's Idea B?",
-            "Phase 2: What relationship do you predict?",
-            "Phase 3: Why is each wrong answer flawed?"
-          ]
+          "practice_type": "guided"
         }
       ]
     },
     {
-      "id": "slide_11",
+      "id": "slide_10",
       "type": "independent_practice",
-      "title": "Your Turn: Master the Strategy",
+      "title": "Your Turn: Perfect the Flow",
       "duration_estimate": 300,
       "content": {
         "heading": "Independent Practice",
-        "instructions": "Apply the full 3-Phase Master Strategy independently for complete mastery."
+        "instructions": "Apply the full strategy on your own for mastery."
       },
       "interactions": [
         {

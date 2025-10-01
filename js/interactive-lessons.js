@@ -312,249 +312,30 @@ class InteractiveLessons {
     }
 
     renderSlide(slide) {
-        // Based on automation directory's renderSlide function
         console.log('[Interactive Lessons] Rendering slide:', slide);
 
-        if (!slide || !slide.content) {
-            return '<div style="text-align: center; padding: 2rem;">Slide content not found</div>';
-        }
-
-        const content = slide.content;
-        let html = `<div style="margin-bottom: 2rem;">`;
-
-        // Always show slide content
-        html += `<div style="text-align: center; margin-bottom: 1.5rem;">`;
-
-        if (content.heading) {
-            html += `<h3 style="color: #2563eb; margin-bottom: 1rem; font-size: 1.5rem;">${content.heading}</h3>`;
-        }
-
-        if (content.text) {
-            html += `<p style="margin-bottom: 1.5rem; line-height: 1.6; color: #334155;">${content.text}</p>`;
-        }
-
-        if (content.subtitle) {
-            html += `<p style="margin-bottom: 1rem; font-style: italic; color: #64748b;">${content.subtitle}</p>`;
-        }
-
-        html += `</div>`;
-
-        if (content.bullet_points && content.bullet_points.length > 0) {
-            html += `<div style="max-width: 600px; margin: 0 auto 1.5rem;">`;
-            html += `<ul style="text-align: left; list-style-position: inside;">`;
-            content.bullet_points.forEach(point => {
-                html += `<li style="margin-bottom: 0.75rem; padding-left: 0.5rem;">${point}</li>`;
-            });
-            html += `</ul></div>`;
-        }
-
-        // Handle strategy steps (multiple formats)
-        if (content.strategy_steps && content.strategy_steps.length > 0) {
-            html += `<div style="max-width: 700px; margin: 0 auto;">`;
-            content.strategy_steps.forEach((step, index) => {
-                html += `
-                    <div style="
-                        background: white;
-                        border: 1px solid #e2e8f0;
-                        border-radius: 0.5rem;
-                        padding: 1.5rem;
-                        margin-bottom: 1rem;
-                    ">`;
-
-                // Handle different strategy step formats
-                if (step.letter && step.word) {
-                    // Old format
-                    html += `<h5 style="color: #2563eb; margin-bottom: 0.5rem;">${step.letter}: ${step.word}</h5>`;
-                } else if (step.step && step.title) {
-                    // New format
-                    html += `<h5 style="color: #2563eb; margin-bottom: 0.5rem;">Step ${step.step}: ${step.title}</h5>`;
-                }
-
-                if (step.description) {
-                    html += `<p style="margin-bottom: 1rem;">${step.description}</p>`;
-                }
-
-                // Handle points array
-                if (step.points && step.points.length > 0) {
-                    html += `<ul style="margin: 0; padding-left: 1rem;">`;
-                    step.points.forEach(point => {
-                        html += `<li style="margin-bottom: 0.5rem;">${point}</li>`;
-                    });
-                    html += `</ul>`;
-                }
-
-                // Handle examples array
-                if (step.examples && step.examples.length > 0) {
-                    html += `<div style="background: #f8fafc; padding: 1rem; border-radius: 0.25rem; margin-top: 0.5rem;">`;
-                    step.examples.forEach(example => {
-                        html += `<p style="margin: 0.25rem 0; font-style: italic;">${example}</p>`;
-                    });
-                    html += `</div>`;
-                }
-
-                html += `</div>`;
-            });
-            html += `</div>`;
-        }
-
-        // Handle key_points
-        if (content.key_points && content.key_points.length > 0) {
-            html += `<div style="max-width: 600px; margin: 0 auto;">`;
-            content.key_points.forEach(point => {
-                html += `
-                    <div style="
-                        background: #f0f9ff;
-                        border: 1px solid #0284c7;
-                        border-radius: 0.5rem;
-                        padding: 1rem;
-                        margin-bottom: 1rem;
-                    ">
-                        <h6 style="color: #0284c7; margin-bottom: 0.5rem; font-weight: 600;">${point.title || point.icon + ' ' + point.title}</h6>
-                        <p style="margin: 0; color: #334155;">${point.description}</p>
-                    </div>
-                `;
-            });
-            html += `</div>`;
-        }
-
-        // Handle categories (for transition types, etc.)
-        if (content.categories) {
-            html += `<div style="max-width: 700px; margin: 0 auto;">`;
-            Object.keys(content.categories).forEach(category => {
-                html += `
-                    <div style="
-                        background: white;
-                        border: 1px solid #e2e8f0;
-                        border-radius: 0.5rem;
-                        padding: 1rem;
-                        margin-bottom: 1rem;
-                    ">
-                        <h6 style="color: #2563eb; margin-bottom: 0.5rem; font-weight: 600;">${category}</h6>
-                        <p style="margin: 0; color: #64748b;">${content.categories[category].join(', ')}</p>
-                    </div>
-                `;
-            });
-            html += `</div>`;
-        }
-
-        // Handle table structure (for strategy synthesis, etc.)
-        if (content.table && content.table.rows) {
-            html += `<div style="max-width: 800px; margin: 0 auto;">`;
-            html += `<div style="overflow-x: auto;">`;
-            html += `<table style="width: 100%; border-collapse: collapse; background: white; border: 1px solid #e2e8f0; border-radius: 0.5rem;">`;
-
-            // Table header
-            if (content.table.columns) {
-                html += `<thead><tr>`;
-                content.table.columns.forEach(column => {
-                    html += `<th style="padding: 1rem; border-bottom: 2px solid #e2e8f0; background: #f8fafc; font-weight: 600; color: #2563eb;">${column}</th>`;
-                });
-                html += `</tr></thead>`;
+        // Use the generic lesson content renderer
+        if (!window.lessonContentRenderer) {
+            // Fallback if generic renderer is not available
+            console.warn('[Interactive Lessons] Generic renderer not found, using fallback');
+            if (!slide || !slide.content) {
+                return '<div style="text-align: center; padding: 2rem;">Slide content not found</div>';
             }
-
-            // Table body
-            html += `<tbody>`;
-            content.table.rows.forEach((row, index) => {
-                html += `<tr style="${index % 2 === 0 ? 'background: white;' : 'background: #f8fafc;'}">`;
-                row.forEach(cell => {
-                    html += `<td style="padding: 1rem; border-bottom: 1px solid #e2e8f0; vertical-align: top;">${cell}</td>`;
-                });
-                html += `</tr>`;
-            });
-            html += `</tbody></table></div></div>`;
+            return `<div class="slide-fallback">${slide.content.heading || 'Slide content'}</div>`;
         }
 
-        // Handle single example with breakdown
-        if (content.example && content.example.text) {
-            html += `<div style="max-width: 700px; margin: 1.5rem auto;">`;
-
-            // Example text
-            html += `
-                <div style="
-                    background: #fef3c7;
-                    border: 1px solid #f59e0b;
-                    border-radius: 8px;
-                    padding: 1.5rem;
-                    margin-bottom: 1rem;
-                ">
-                    <h6 style="color: #92400e; margin-bottom: 1rem; font-weight: 600;">📝 Example Question</h6>
-                    <p style="margin: 0; color: #451a03; font-style: italic; line-height: 1.6;">${content.example.text}</p>
-                </div>
-            `;
-
-            // Breakdown analysis
-            if (content.example.breakdown) {
-                const breakdown = content.example.breakdown;
-                html += `
-                    <div style="
-                        background: #f0fdf4;
-                        border: 1px solid #22c55e;
-                        border-radius: 8px;
-                        padding: 1.5rem;
-                    ">
-                        <h6 style="color: #166534; margin-bottom: 1rem; font-weight: 600;">🔍 Analysis Breakdown</h6>
-                        <div style="display: grid; gap: 1rem;">
-                `;
-
-                if (breakdown.idea_a) {
-                    html += `
-                        <div style="background: white; padding: 1rem; border-radius: 6px; border-left: 3px solid #3b82f6;">
-                            <strong style="color: #1e40af;">Idea A (Before blank):</strong>
-                            <p style="margin: 0.5rem 0 0 0; color: #374151;">${breakdown.idea_a}</p>
-                        </div>
-                    `;
-                }
-
-                if (breakdown.idea_b) {
-                    html += `
-                        <div style="background: white; padding: 1rem; border-radius: 6px; border-left: 3px solid #8b5cf6;">
-                            <strong style="color: #7c3aed;">Idea B (After blank):</strong>
-                            <p style="margin: 0.5rem 0 0 0; color: #374151;">${breakdown.idea_b}</p>
-                        </div>
-                    `;
-                }
-
-                if (breakdown.relationship) {
-                    html += `
-                        <div style="background: white; padding: 1rem; border-radius: 6px; border-left: 3px solid #10b981;">
-                            <strong style="color: #059669;">Logical Relationship:</strong>
-                            <p style="margin: 0.5rem 0 0 0; color: #374151;">${breakdown.relationship}</p>
-                        </div>
-                    `;
-                }
-
-                html += `</div></div>`;
-            }
-
-            html += `</div>`;
-        }
-
-        // Handle examples object (multiple examples)
-        if (content.examples && typeof content.examples === 'object' && !content.example) {
-            html += `<div style="max-width: 600px; margin: 0 auto;">`;
-            Object.keys(content.examples).forEach(key => {
-                html += `
-                    <div style="
-                        background: #f0f9ff;
-                        border-left: 4px solid #0284c7;
-                        padding: 1rem;
-                        margin-bottom: 1rem;
-                    ">
-                        <h6 style="color: #0284c7; margin-bottom: 0.5rem; font-weight: 600; text-transform: capitalize;">${key.replace('_', ' ')}</h6>
-                        <p style="margin: 0; color: #334155;">${content.examples[key]}</p>
-                    </div>
-                `;
-            });
-            html += `</div>`;
-        }
+        const renderedContent = window.lessonContentRenderer.renderSlideContent(slide);
 
         // Add practice transition button on concept reinforcement slides or last slide
         const isLastSlide = this.currentSlideIndex === this.currentLesson.slides.length - 1;
         console.log('[Interactive Lessons] Rendering slide, current skill code:', this.currentSkillCode, 'isLastSlide:', isLastSlide);
 
-        if (slide.type === 'concept_reinforcement' && content.practice_transition) {
+        let practiceTransitionHtml = '';
+        const content = slide.content;
+
+        if (slide.type === 'concept_reinforcement' && content && content.practice_transition) {
             // Use existing practice transition
-            html += `
+            practiceTransitionHtml = `
                 <div style="
                     background: #2563eb;
                     color: white;
@@ -579,7 +360,7 @@ class InteractiveLessons {
             `;
         } else if (isLastSlide) {
             // Add practice transition to any last slide
-            html += `
+            practiceTransitionHtml = `
                 <div style="
                     background: #2563eb;
                     color: white;
@@ -604,8 +385,7 @@ class InteractiveLessons {
             `;
         }
 
-        html += `</div>`;
-        return html;
+        return renderedContent + practiceTransitionHtml;
     }
 
     setupLessonNavigation(modal) {

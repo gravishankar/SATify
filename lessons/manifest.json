@@ -77,16 +77,16 @@
       "subtitle": "Expression of Ideas",
       "level": "Foundation",
       "duration": "20-25 min",
-      "skill_codes": ["TRA"],
+      "skill_codes": ["EOI"],
       "domain_id": "expression_of_ideas",
       "domain_title": "Expression of Ideas",
       "skill_title": "Transitions",
       "filepath": "lessons/lesson_05.json",
-      "slide_count": 8,
+      "slide_count": 11,
       "learning_objectives_count": 4,
       "status": "published",
       "created_date": "2024-09-27",
-      "last_modified": "2024-12-01"
+      "last_modified": "2025-10-01"
     },
     "lesson_06": {
       "id": "lesson_06",
