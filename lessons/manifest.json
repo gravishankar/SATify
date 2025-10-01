@@ -3,26 +3,9 @@
   "created": "2024-09-27",
   "updated": "2024-12-01",
   "lessons": {
-    "lesson_01": {
-      "id": "lesson_01",
-      "title": "SAT Reading Fundamentals",
-      "subtitle": "Central Ideas & Details",
-      "level": "Foundation",
-      "duration": "20-25 min",
-      "skill_codes": ["CID"],
-      "domain_id": "information_and_ideas",
-      "domain_title": "Information and Ideas",
-      "skill_title": "Central Ideas",
-      "filepath": "lessons/lesson_01.json",
-      "slide_count": 8,
-      "learning_objectives_count": 4,
-      "status": "published",
-      "created_date": "2024-09-27",
-      "last_modified": "2024-09-27"
-    },
     "lesson_02": {
       "id": "lesson_02",
-      "title": "Grammar Essentials",
+      "title": "Sentence Structure",
       "subtitle": "Sentence Structure",
       "level": "Foundation",
       "duration": "20-25 min",
@@ -35,29 +18,13 @@
       "learning_objectives_count": 4,
       "status": "published",
       "created_date": "2024-09-27",
-      "last_modified": "2024-12-01"
-    },
-    "lesson_03": {
-      "id": "lesson_03",
-      "title": "Punctuation Mastery",
-      "subtitle": "Boundaries & Clarity",
-      "level": "Foundation",
-      "duration": "20-25 min",
-      "skill_codes": ["BOU"],
-      "domain_id": "standard_english_conventions",
-      "domain_title": "Standard English Conventions",
-      "skill_title": "Boundaries",
-      "filepath": "lessons/lesson_03.json",
-      "slide_count": 8,
-      "learning_objectives_count": 4,
-      "status": "published",
-      "created_date": "2024-09-27",
-      "last_modified": "2024-12-01"
+      "last_modified": "2024-12-01",
+      "display_order": 1
     },
     "lesson_04": {
       "id": "lesson_04",
-      "title": "Verb Forms, Tense & Agreement",
-      "subtitle": "Grammar Fundamentals",
+      "title": "Forms, Structure and Sense",
+      "subtitle": "Form, Structure and Sense",
       "level": "Foundation",
       "duration": "20-25 min",
       "skill_codes": ["FSS"],
@@ -69,8 +36,28 @@
       "learning_objectives_count": 4,
       "status": "published",
       "created_date": "2024-09-27",
-      "last_modified": "2024-09-27"
+      "last_modified": "2024-09-27",
+      "display_order": 2
     },
+    "lesson_03": {
+      "id": "lesson_03",
+      "title": "Boundaries",
+      "subtitle": "Boundaries",
+      "level": "Foundation",
+      "duration": "20-25 min",
+      "skill_codes": ["BOU"],
+      "domain_id": "standard_english_conventions",
+      "domain_title": "Standard English Conventions",
+      "skill_title": "Boundaries",
+      "filepath": "lessons/lesson_03.json",
+      "slide_count": 8,
+      "learning_objectives_count": 4,
+      "status": "published",
+      "created_date": "2024-09-27",
+      "last_modified": "2024-12-01",
+      "display_order": 3
+    },
+ 
     "lesson_05": {
       "id": "lesson_05",
       "title": "Transitions",
@@ -86,12 +73,49 @@
       "learning_objectives_count": 4,
       "status": "published",
       "created_date": "2024-09-27",
-      "last_modified": "2025-10-01"
+      "last_modified": "2025-10-01",
+      "display_order": 4
+    },
+    "lesson_10": {
+      "id": "lesson_10",
+      "title": "Words in Context",
+      "subtitle": "Words in Context",
+      "level": "Foundation",
+      "duration": "20-25 min",
+      "skill_codes": ["WIC"],
+      "domain_id": "craft_and_structure",
+      "domain_title": "Craft and Structure",
+      "skill_title": "Words in Context",
+      "filepath": "lessons/lesson_10.json",
+      "slide_count": 8,
+      "learning_objectives_count": 4,
+      "status": "published",
+      "created_date": "2024-12-01",
+      "last_modified": "2024-12-01",
+      "display_order": 5
+    },
+    "lesson_01": {
+      "id": "lesson_01",
+      "title": "Central Ideas & Details",
+      "subtitle": "Central Ideas & Details",
+      "level": "Foundation",
+      "duration": "20-25 min",
+      "skill_codes": ["CID"],
+      "domain_id": "information_and_ideas",
+      "domain_title": "Information and Ideas",
+      "skill_title": "Central Ideas",
+      "filepath": "lessons/lesson_01.json",
+      "slide_count": 8,
+      "learning_objectives_count": 4,
+      "status": "published",
+      "created_date": "2024-09-27",
+      "last_modified": "2024-09-27",
+      "display_order": 6
     },
     "lesson_06": {
       "id": "lesson_06",
-      "title": "Text Structure Analysis",
-      "subtitle": "Organization & Purpose",
+      "title": "Text Structure",
+      "subtitle": "Text Structure",
       "level": "Foundation",
       "duration": "20-25 min",
       "skill_codes": ["TSP"],
@@ -103,41 +127,26 @@
       "learning_objectives_count": 4,
       "status": "published",
       "created_date": "2024-09-27",
-      "last_modified": "2024-12-01"
+      "last_modified": "2024-12-01",
+      "display_order": 7
     },
-    "lesson_07": {
-      "id": "lesson_07",
-      "title": "Command of Evidence",
-      "subtitle": "Finding & Using Textual Support",
+    "lesson_12": {
+      "id": "lesson_12",
+      "title": "Purpose",
+      "subtitle": "Purpose",
       "level": "Foundation",
       "duration": "20-25 min",
-      "skill_codes": ["COE"],
-      "domain_id": "information_and_ideas",
-      "domain_title": "Information and Ideas",
-      "skill_title": "Command of Evidence",
-      "filepath": "lessons/lesson_07.json",
+      "skill_codes": ["TSP"],
+      "domain_id": "craft_and_structure",
+      "domain_title": "Craft and Structure",
+      "skill_title": "Text Structure and Purpose",
+      "filepath": "lessons/lesson_06.json",
       "slide_count": 8,
       "learning_objectives_count": 4,
       "status": "published",
-      "created_date": "2024-12-01",
-      "last_modified": "2024-12-01"
-    },
-    "lesson_08": {
-      "id": "lesson_08",
-      "title": "Making Inferences",
-      "subtitle": "Reading Between the Lines",
-      "level": "Foundation",
-      "duration": "20-25 min",
-      "skill_codes": ["INF"],
-      "domain_id": "information_and_ideas",
-      "domain_title": "Information and Ideas",
-      "skill_title": "Inferences",
-      "filepath": "lessons/lesson_08.json",
-      "slide_count": 8,
-      "learning_objectives_count": 4,
-      "status": "published",
-      "created_date": "2024-12-01",
-      "last_modified": "2024-12-01"
+      "created_date": "2024-09-27",
+      "last_modified": "2024-12-01",
+      "display_order": 8
     },
     "lesson_09": {
       "id": "lesson_09",
@@ -154,24 +163,44 @@
       "learning_objectives_count": 4,
       "status": "published",
       "created_date": "2024-12-01",
-      "last_modified": "2024-12-01"
+      "last_modified": "2024-12-01",
+      "display_order": 9
     },
-    "lesson_10": {
-      "id": "lesson_10",
-      "title": "Words in Context",
-      "subtitle": "Mastering Vocabulary Through Context",
+    "lesson_07": {
+      "id": "lesson_07",
+      "title": "Command of Evidence",
+      "subtitle": "Command of Evidence",
       "level": "Foundation",
       "duration": "20-25 min",
-      "skill_codes": ["WIC"],
-      "domain_id": "craft_and_structure",
-      "domain_title": "Craft and Structure",
-      "skill_title": "Words in Context",
-      "filepath": "lessons/lesson_10.json",
+      "skill_codes": ["COE"],
+      "domain_id": "information_and_ideas",
+      "domain_title": "Information and Ideas",
+      "skill_title": "Command of Evidence",
+      "filepath": "lessons/lesson_07.json",
       "slide_count": 8,
       "learning_objectives_count": 4,
       "status": "published",
       "created_date": "2024-12-01",
-      "last_modified": "2024-12-01"
+      "last_modified": "2024-12-01",
+      "display_order": 10
+    },
+    "lesson_08": {
+      "id": "lesson_08",
+      "title": "Making Inferences",
+      "subtitle": "Reading Between the Lines",
+      "level": "Foundation",
+      "duration": "20-25 min",
+      "skill_codes": ["INF"],
+      "domain_id": "information_and_ideas",
+      "domain_title": "Information and Ideas",
+      "skill_title": "Inferences",
+      "filepath": "lessons/lesson_08.json",
+      "slide_count": 8,
+      "learning_objectives_count": 4,
+      "status": "published",
+      "created_date": "2024-12-01",
+      "last_modified": "2024-12-01",
+      "display_order": 11
     },
     "lesson_11": {
       "id": "lesson_11",
@@ -188,14 +217,15 @@
       "learning_objectives_count": 4,
       "status": "published",
       "created_date": "2024-12-01",
-      "last_modified": "2024-12-01"
+      "last_modified": "2024-12-01",
+      "display_order": 12
     }
   },
   "stats": {
-    "total_lessons": 11,
-    "published_lessons": 11,
+    "total_lessons": 12,
+    "published_lessons": 12,
     "draft_lessons": 0,
     "domains_covered": 4,
-    "skill_codes_covered": ["CID", "COE", "INF", "SYN", "TRA", "WIC", "TSP", "CTC", "BOU", "FSS"]
+    "skill_codes_covered": ["CID", "COE", "INF", "SYN", "TRA", "WIC", "TSP", "TSP", "CTC", "BOU", "FSS"]
   }
 }

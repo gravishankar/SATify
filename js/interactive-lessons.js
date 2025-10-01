@@ -66,11 +66,12 @@ class InteractiveLessons {
             duration: lesson.duration,
             level: lesson.level,
             lessonId: lesson.id,
-            domain: lesson.domain_title
+            domain: lesson.domain_title,
+            displayOrder: lesson.display_order || 999
         }));
 
-        // Sort by skill code for consistent ordering
-        skillLessons.sort((a, b) => a.skill.localeCompare(b.skill));
+        // Sort by display_order for custom ordering
+        skillLessons.sort((a, b) => a.displayOrder - b.displayOrder);
 
         // Create HTML for skill cards
         grid.innerHTML = skillLessons.map(lesson => `
