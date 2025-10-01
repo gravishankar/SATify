@@ -4,12 +4,14 @@
   "subtitle": "Expression of Ideas",
   "level": "Foundation",
   "duration": "20-25 min",
-  "skill_codes": ["TRA"],
+  "skill_codes": [
+    "EOI"
+  ],
   "learning_objectives": [
-    "Master transitional words and phrases for logical flow",
-    "Create coherent paragraph structure and organization",
-    "Connect ideas effectively within and between sentences",
-    "Apply transition strategies to SAT Writing questions"
+    "The Core: Master transition words for logical flow and rhetorical purpose",
+    "The Skill: Create coherent paragraph structure—connecting ideas effectively",
+    "The Problem: Multiple logically possible words to test your ability to choose the single most precise and rhetorically correct",
+    "Key Strategy: The 3-Phase Master Strategy for 100% provable answers"
   ],
   "success_criteria": {
     "mastery_threshold": 0.75,
@@ -20,98 +22,62 @@
     {
       "id": "slide_01",
       "type": "introduction",
-      "title": "Welcome to Transitions & Flow",
+      "title": "Learning Objectives",
       "duration_estimate": 180,
       "content": {
-        "heading": "Learning Objectives",
-        "text": "Smooth transitions are the bridges that connect your ideas, guiding readers effortlessly through your thoughts and arguments.",
+        "heading": "The Main Quest",
         "bullet_points": [
-          "Master transitional words for different relationships",
-          "Create logical flow within and between paragraphs",
-          "Organize ideas for maximum clarity and impact",
-          "Apply transition strategies to excel on SAT Writing"
-        ],
-        "visual_element": {
-          "type": "progress_indicator",
-          "total_slides": 8,
-          "estimated_time": "20-25 minutes"
-        }
+          "Decode the flow",
+          "Define the logical bridge",
+          "Apply the 3-Phase Master Strategy for 100% confidence"
+        ]
       },
       "interactions": [
         {
           "type": "click_to_continue",
-          "text": "Ready to create seamless flow? Click to continue"
+          "text": "Ready? Let's begin."
         }
       ]
     },
     {
       "id": "slide_02",
-      "type": "concept_teaching",
-      "title": "The Power of Transitions",
-      "duration_estimate": 240,
-      "content": {
-        "heading": "Why Transitions Matter",
-        "text": "Transitions show relationships between ideas and help readers follow your logic. Without them, writing feels choppy and disconnected.",
-        "concept_box": {
-          "title": "Types of Transition Relationships",
-          "points": [
-            "➕ **Addition** - Furthermore, additionally, moreover, also",
-            "🔄 **Contrast** - However, nevertheless, on the other hand, yet",
-            "📈 **Cause/Effect** - Therefore, consequently, as a result, thus",
-            "📝 **Example** - For instance, specifically, namely, such as"
-          ]
-        },
-        "examples": {
-          "without": "Solar energy is renewable. It reduces carbon emissions. It saves money on electricity bills.",
-          "with": "Solar energy is renewable. Furthermore, it reduces carbon emissions and saves money on electricity bills."
-        }
-      },
-      "interactions": [
-        {
-          "type": "reveal_on_click",
-          "elements": [
-            {
-              "trigger": "Click to see the difference",
-              "reveal": "Notice how 'Furthermore' connects the ideas and shows they're building on each other, rather than just listing separate facts."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "slide_03",
       "type": "strategy_teaching",
-      "title": "The FLOW Method for Transitions",
+      "title": "The Master Strategy: Phase 1",
       "duration_estimate": 300,
       "content": {
-        "heading": "Strategy: Create Seamless Connections",
+        "heading": "PHASE 1: Define the Context",
+        "subtitle": "Ditch the Details—Focus on Core Logic",
         "strategy_steps": [
           {
             "step": 1,
-            "title": "FOLLOW the logic",
-            "description": "Identify the relationship between ideas",
-            "example": "Idea 1: Exercise improves health. Idea 2: It reduces stress. → Addition relationship"
+            "title": "Simplify the Text",
+            "description": "Strip away jargon, names, and complex terminology",
+            "points": [
+              "Idea A (Before blank): What's the core claim?",
+              "Idea B (After blank): What's the core claim?"
+            ]
           },
           {
             "step": 2,
-            "title": "LOCATE the best transition",
-            "description": "Choose words that match the logical relationship",
-            "example": "Addition: Additionally, exercise reduces stress and improves mental well-being."
-          },
-          {
-            "step": 3,
-            "title": "ORDER for maximum impact",
-            "description": "Place transitions where they'll guide readers most effectively",
-            "example": "Usually at the beginning of sentences or paragraphs for clear signaling"
-          },
-          {
-            "step": 4,
-            "title": "WEAVE naturally",
-            "description": "Ensure transitions feel organic, not forced",
-            "example": "Avoid overusing transitions - sometimes ideas connect naturally without them"
+            "title": "Identify the Logical Bridge",
+            "description": "What's the relationship between Idea A and Idea B?",
+            "points": [
+              "Is it Addition? (adding a new point)",
+              "Is it Contrast? (opposing ideas)",
+              "Is it Cause/Effect? (one leads to the other)",
+              "Is it Restatement? (saying the same thing differently)",
+              "Is it Example? (illustrating a point)"
+            ]
           }
         ],
-        "memory_aid": "Keep your writing in good **F.L.O.W.**!"
+        "example": {
+          "text": "Aristotle disagreed, positing that knowledge is best obtained through direct engagement with the material world; ______ sensory experience of the material is the ultimate source of knowledge.",
+          "breakdown": {
+            "idea_a": "Knowledge comes from direct engagement with material world",
+            "idea_b": "Sensory experience is the ultimate source of knowledge",
+            "relationship": "Restatement/Clarification (B defines what A means)"
+          }
+        }
       },
       "interactions": [
         {
@@ -121,117 +87,195 @@
       ]
     },
     {
-      "id": "slide_04",
-      "type": "concept_teaching",
-      "title": "Advanced Transition Strategies",
-      "duration_estimate": 280,
+      "id": "slide_03",
+      "type": "strategy_teaching",
+      "title": "The Master Strategy: Phase 2",
+      "duration_estimate": 240,
       "content": {
-        "heading": "Beyond Basic Connectors",
-        "text": "Sophisticated transitions do more than connect - they clarify relationships and enhance meaning.",
-        "concept_box": {
-          "title": "Advanced Techniques",
-          "points": [
-            "🔗 **Transitional phrases** - In light of this evidence, Given these circumstances",
-            "📍 **Referential transitions** - This approach, Such strategies, These findings",
-            "⏱️ **Temporal markers** - Meanwhile, Subsequently, Before long, Eventually",
-            "🎯 **Emphasis transitions** - Indeed, In fact, Notably, Most importantly"
-          ]
-        },
-        "examples": {
-          "basic": "The experiment failed. However, we learned valuable lessons.",
-          "advanced": "The experiment failed to produce expected results. This setback, however, provided valuable insights into the underlying mechanisms."
-        }
+        "heading": "PHASE 2: Predict & Categorize",
+        "subtitle": "Lock In Your Target Before Looking at Choices",
+        "strategy_steps": [
+          {
+            "step": 1,
+            "title": "Predict a Simple Word",
+            "description": "What simple word would work here?",
+            "examples": [
+              "Addition → 'Also' or 'Additionally'",
+              "Contrast → 'However' or 'But'",
+              "Cause/Effect → 'Therefore' or 'So'",
+              "Restatement → 'In other words' or 'Meaning'",
+              "Example → 'For instance' or 'Specifically'"
+            ]
+          },
+          {
+            "step": 2,
+            "title": "Identify the Category",
+            "description": "Lock in which of the 5 categories you need",
+            "categories": {
+              "Addition": "Furthermore, Additionally, Moreover, Also",
+              "Contrast": "However, Nevertheless, In contrast, On the other hand",
+              "Cause/Effect": "Therefore, Consequently, Thus, As a result",
+              "Restatement": "In other words, That is, Namely, Specifically",
+              "Example": "For example, For instance, Such as"
+            }
+          }
+        ],
+        "key_insight": "🎯 Predicting BEFORE looking at choices prevents the SAT from manipulating your thinking"
       },
       "interactions": [
         {
           "type": "reveal_on_click",
           "elements": [
             {
-              "trigger": "Click for sophistication tip",
-              "reveal": "Advanced transitions often reference specific content ('This setback') rather than just showing logical relationships, making connections clearer and more precise."
+              "trigger": "Show category examples",
+              "reveal": "Having these categories memorized helps you instantly recognize what you need"
             }
           ]
         }
       ]
     },
     {
-      "id": "slide_05",
-      "type": "guided_example",
-      "title": "Guided Practice: Fix the Flow",
-      "duration_estimate": 360,
+      "id": "slide_04",
+      "type": "strategy_teaching",
+      "title": "The Master Strategy: Phase 3",
+      "duration_estimate": 300,
       "content": {
-        "heading": "Let's Improve This Passage Together",
-        "passage": {
-          "text": "Climate change poses serious threats to coastal communities. Sea levels are rising at an alarming rate. Many cities are implementing adaptation strategies. Venice has installed flood barriers. Miami is raising roads and buildings. These efforts may not be sufficient. Scientists warn that more dramatic measures will be needed. Entire populations may need to relocate.",
-          "highlight_enabled": true
+        "heading": "PHASE 3: Flaw-Finding & Validation",
+        "subtitle": "The 100% Rule: Find Why 3 Are Wrong, Prove 1 Is Perfect",
+        "core_principle": {
+          "title": "Context Is King",
+          "description": "We must find the word that is 100% provable—not just 'sounds good'"
         },
-        "guided_questions": [
+        "tactics": [
           {
-            "step": 1,
-            "question": "What relationship exists between sentences 1 and 2?",
-            "hint": "How does rising sea levels relate to climate threats?",
-            "answer": "Cause/effect or evidence - rising seas are an example of climate threats",
-            "explanation": "Add 'Specifically' or 'For example' to show that rising seas exemplify climate threats."
+            "name": "Tactic 1: Rhetorical Purpose Check",
+            "description": "Does the word match the author's precise intent?",
+            "application": "Test each choice against your target category from Phase 2",
+            "red_flags": [
+              "Wrong purpose (e.g., concession when you need restatement)",
+              "Close but not precise (e.g., 'granted' vs 'however')"
+            ]
           },
           {
-            "step": 2,
-            "question": "How should sentences 3-5 connect?",
-            "hint": "What's the relationship between adaptation strategies and the specific examples?",
-            "answer": "Example relationship - Venice and Miami are examples of adaptation",
-            "explanation": "Add 'For instance' before Venice, and connect Miami with 'Similarly' or 'Likewise.'"
+            "name": "Tactic 2: Copycat Elimination",
+            "description": "If two choices are synonyms, they usually both cancel out",
+            "example": "If 'furthermore' and 'moreover' are both options, look elsewhere"
           },
           {
-            "step": 3,
-            "question": "What transition fits before 'These efforts may not be sufficient'?",
-            "hint": "How do insufficient efforts relate to the previous examples?",
-            "answer": "Contrast - despite these efforts, they may not work",
-            "explanation": "'However' or 'Unfortunately' shows the contrast between efforts and their limitations."
+            "name": "Tactic 3: Precision Tie-breaker",
+            "description": "When multiple seem to work, choose the most specific match",
+            "example": "If both work logically, which one matches the exact rhetorical move?"
+          }
+        ],
+        "worked_example": {
+          "question": "Aristotle disagreed... ______ sensory experience is the ultimate source.",
+          "choices": {
+            "A": {
+              "text": "regardless",
+              "category": "Contradiction/Override",
+              "flaw": "Wrong purpose—signals 'despite facts', not restatement"
+            },
+            "B": {
+              "text": "admittedly",
+              "category": "Concession",
+              "flaw": "Wrong purpose—signals reluctant agreement, not clarification"
+            },
+            "C": {
+              "text": "in other words",
+              "category": "Restatement",
+              "validation": "✅ Perfect match—signals clarification of the same idea"
+            },
+            "D": {
+              "text": "meanwhile",
+              "category": "Parallel/Time shift",
+              "flaw": "Wrong logic—ideas are directly related, not parallel"
+            }
+          }
+        }
+      },
+      "interactions": [
+        {
+          "type": "interactive_elimination",
+          "show_flaw_analysis": true
+        }
+      ]
+    },
+    {
+      "id": "slide_05",
+      "type": "concept_teaching",
+      "title": "What are Transitions?",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "Transitions = Seamless Connections",
+        "steps": [
+          {
+            "step": "Step 1: FOLLOW the Logical Flow",
+            "detail": "Identify the relationship between ideas in sentences."
+          },
+          {
+            "step": "Step 2: LOCATE the best transition",
+            "detail": "Choose words that match the logical relationship."
+          }
+        ],
+        "examples": [
+          {
+            "label": "Relationship ID",
+            "text": "Idea 1: Exercise improves health. Idea 2: It reduces stress. → Addition relationship"
+          },
+          {
+            "label": "Matched Transition",
+            "text": "Addition: Additionally, exercise reduces stress and improves mental well-being."
           }
         ]
       },
       "interactions": [
         {
-          "type": "guided_walkthrough",
-          "allow_highlighting": true,
-          "step_validation": true
+          "type": "reveal_on_click",
+          "elements": [
+            {
+              "trigger": "Show why these work",
+              "reveal": "Transitions create seamless connections aligned to logic."
+            }
+          ]
         }
       ]
     },
     {
       "id": "slide_06",
-      "type": "independent_practice",
-      "title": "Your Turn: Perfect the Flow",
-      "duration_estimate": 300,
+      "type": "concept_teaching",
+      "title": "Strategy Synthesis: Common Traps",
+      "duration_estimate": 280,
       "content": {
-        "heading": "Independent Practice",
-        "passage": {
-          "text": "Artificial intelligence has revolutionized many industries. Healthcare professionals use AI to diagnose diseases more accurately. _____ AI helps financial institutions detect fraud and manage risk. _____ concerns about job displacement and privacy have emerged. _____ these challenges, many experts believe the benefits of AI outweigh the potential drawbacks.",
-          "word_count": 45
-        },
-        "question": {
-          "text": "Which choice provides the best transitions for the blanks in order?",
-          "options": [
-            "However; Therefore; Despite",
-            "Similarly; However; Despite",
-            "Furthermore; Nevertheless; Because of",
-            "For example; In contrast; In spite of"
+        "heading": "Most Common Red Flags & How The Master Strategy Defeats Them",
+        "table": {
+          "columns": [
+            "Logical Trap / Red Flag",
+            "How the Strategy Addresses It"
           ],
-          "correct_answer": "B",
-          "explanations": {
-            "A": "'However' doesn't fit after the healthcare example - we're adding another example, not contrasting.",
-            "B": "✓ Correct! 'Similarly' shows another example of AI use, 'However' introduces contrasting concerns, 'Despite' acknowledges challenges while showing benefits.",
-            "C": "'Furthermore' works for addition, but 'Because of these challenges' suggests challenges lead to benefits, which is backwards.",
-            "D": "'For example' would need to follow a general statement about AI uses, but the healthcare sentence is already specific."
-          }
+          "rows": [
+            [
+              "Trap 1: Choosing a word that 'vibes' right",
+              "Phase 2: Predict BEFORE looking at choices to avoid manipulation"
+            ],
+            [
+              "Trap 2: Getting fooled by complex details",
+              "Phase 1: Ditch the Details—simplify to Idea A and Idea B"
+            ],
+            [
+              "Trap 3: Distinguishing between synonyms",
+              "Phase 3, Tactic 2: Copycats—if two are synonyms, both cancel"
+            ],
+            [
+              "Trap 4: Close but not perfect",
+              "Phase 3, Tactic 1: Rhetorical Purpose Check matches author's intent"
+            ],
+            [
+              "Trap 5: Technically correct but not best",
+              "Phase 3, Tactic 3: Precision Tie-breaker chooses most specific"
+            ]
+          ]
         }
-      },
-      "interactions": [
-        {
-          "type": "multiple_choice_question",
-          "immediate_feedback": true,
-          "allow_retry": true
-        }
-      ]
+      }
     },
     {
       "id": "slide_07",
@@ -239,63 +283,68 @@
       "title": "Key Takeaways",
       "duration_estimate": 180,
       "content": {
-        "heading": "Transition Mastery Summary",
+        "heading": "Master Strategy Summary",
         "key_points": [
           {
-            "icon": "🔗",
-            "title": "Show Relationships",
-            "description": "Transitions reveal how ideas connect: addition, contrast, cause/effect, or example."
+            "title": "Phase 1: Context",
+            "description": "Simplify to core logic—Idea A and Idea B—then identify the relationship"
           },
           {
-            "icon": "🎯",
-            "title": "Match Logic to Language",
-            "description": "Choose transitions that accurately reflect the relationship between ideas."
+            "title": "Phase 2: Predict",
+            "description": "Lock in your target category BEFORE looking at choices"
           },
           {
-            "icon": "⚖️",
-            "title": "Balance is Key",
-            "description": "Use enough transitions for clarity, but not so many that they become distracting."
+            "title": "Phase 3: Flaw-Find",
+            "description": "Find the specific flaw in 3 answers, prove 1 is 100% correct"
           },
           {
-            "icon": "📈",
-            "title": "SAT Strategy",
-            "description": "Read the context carefully - the best transition depends on what comes before and after."
+            "title": "The 100% Rule",
+            "description": "Move from 'feels right' to 100% provable—no guessing"
           }
-        ],
-        "next_steps": {
-          "text": "Foundation complete! Next: Lesson 6 - Text Structure Analysis!",
-          "preview": "Move to intermediate level and learn to analyze how authors organize their ideas for maximum impact."
-        }
-      },
-      "interactions": [
-        {
-          "type": "completion_celebration",
-          "unlock_next": "lesson_06"
-        }
-      ]
+        ]
+      }
     },
     {
       "id": "slide_08",
       "type": "mastery_check",
-      "title": "Mastery Check",
+      "title": "Transition Types: A Toolkit",
       "duration_estimate": 240,
       "content": {
-        "heading": "Final Assessment",
-        "instructions": "Demonstrate your mastery of transitions by improving the flow of this passage.",
-        "passage": {
-          "text": "Renewable energy technologies have advanced significantly in recent years. Solar panel efficiency has improved dramatically. _____ wind turbines generate more power than ever before. _____ these technological improvements, costs have decreased substantially. _____ renewable energy is becoming competitive with fossil fuels. _____ some challenges remain, including energy storage and grid integration issues. _____ governments worldwide are investing heavily in renewable infrastructure to meet climate goals.",
-          "word_count": 65
-        },
-        "question": {
-          "text": "Which choice provides the most effective transitions for ALL the blanks?",
-          "options": [
-            "Similarly; Because of; Therefore; However; Nevertheless",
-            "Furthermore; Due to; As a result; Although; Therefore",
-            "Additionally; Despite; Thus; Moreover; However",
-            "Likewise; Given; Consequently; While; Thus"
+        "heading": "The 5 Core Categories You Must Know",
+        "categories": {
+          "Addition/Continuation": [
+            "Furthermore",
+            "Additionally",
+            "Moreover",
+            "Also"
           ],
-          "correct_answer": "B",
-          "mastery_question": true
+          "Contrast/Reversal": [
+            "However",
+            "Nevertheless",
+            "In contrast",
+            "On the other hand",
+            "Granted",
+            "Admittedly"
+          ],
+          "Cause & Effect": [
+            "Therefore",
+            "Consequently",
+            "As a result",
+            "Thus",
+            "To this end"
+          ],
+          "Restatement/Clarification": [
+            "In other words",
+            "That is",
+            "Namely",
+            "Specifically"
+          ],
+          "Example/Illustration": [
+            "For example",
+            "For instance",
+            "Such as",
+            "Including"
+          ]
         }
       },
       "interactions": [
@@ -305,18 +354,69 @@
           "retry_limit": 3
         }
       ]
+    },
+    {
+      "id": "slide_09",
+      "type": "concept_reinforcement",
+      "title": "The Ultimate Win",
+      "duration_estimate": 120,
+      "content": {
+        "heading": "Own Transitions, Own the SAT",
+        "text": "The Master Strategy transforms transitions from guesswork into a 3-Phase proof system. You'll never second-guess again—just follow the process for 100% confidence every time."
+      }
+    },
+    {
+      "id": "slide_10",
+      "type": "guided_practice",
+      "title": "Your Turn: Apply the Master Strategy",
+      "duration_estimate": 300,
+      "content": {
+        "heading": "Guided Practice",
+        "instructions": "Work through examples using the full 3-Phase process with hints guiding you."
+      },
+      "interactions": [
+        {
+          "type": "practice_transition",
+          "target_skill": "EOI",
+          "practice_type": "guided",
+          "strategy_prompts": [
+            "Phase 1: What's Idea A? What's Idea B?",
+            "Phase 2: What relationship do you predict?",
+            "Phase 3: Why is each wrong answer flawed?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "slide_11",
+      "type": "independent_practice",
+      "title": "Your Turn: Master the Strategy",
+      "duration_estimate": 300,
+      "content": {
+        "heading": "Independent Practice",
+        "instructions": "Apply the full 3-Phase Master Strategy independently for complete mastery."
+      },
+      "interactions": [
+        {
+          "type": "practice_transition",
+          "target_skill": "EOI",
+          "practice_type": "independent"
+        }
+      ]
     }
   ],
   "practice_questions": [
     {
       "id": "practice_1",
       "type": "quick_check",
-      "skill_codes": ["TRA"],
+      "skill_codes": [
+        "EOI"
+      ],
       "difficulty": "E",
-      "question": "Which transition best shows contrast?",
+      "question": "Which transition best shows addition?",
       "options": [
-        "Furthermore",
         "However",
+        "Furthermore",
         "Therefore",
         "For example"
       ],
@@ -325,33 +425,66 @@
   ],
   "resources": {
     "strategy_card": {
-      "title": "Transitions Quick Reference",
-      "steps": [
-        "1. FOLLOW the logic between ideas",
-        "2. LOCATE the right transition type",
-        "3. ORDER for maximum impact",
-        "4. WEAVE naturally into the text"
+      "title": "The 3-Phase Master Strategy",
+      "phases": [
+        {
+          "phase": "1. CONTEXT",
+          "steps": [
+            "Simplify: What's Idea A? What's Idea B?",
+            "Identify: What's the logical bridge?"
+          ]
+        },
+        {
+          "phase": "2. PREDICT",
+          "steps": [
+            "Predict a simple word",
+            "Lock in the category (Addition, Contrast, Cause/Effect, Restatement, Example)"
+          ]
+        },
+        {
+          "phase": "3. FLAW-FIND",
+          "steps": [
+            "Check Rhetorical Purpose: Does it match author's intent?",
+            "Eliminate Copycats: Synonyms cancel out",
+            "Precision Tie-breaker: Choose the most specific match"
+          ]
+        }
       ],
-      "tips": [
-        "Addition: furthermore, additionally, moreover",
-        "Contrast: however, nevertheless, on the other hand",
-        "Cause/Effect: therefore, consequently, as a result",
-        "Example: for instance, specifically, such as"
-      ]
+      "the_100_rule": "The correct answer is 100% provable. The other 3 have specific flaws."
     },
     "common_mistakes": [
-      "Using 'however' after semicolons instead of commas",
-      "Overusing transitions where ideas connect naturally",
-      "Choosing transitions that don't match the logical relationship",
-      "Placing transitions awkwardly within sentences"
-    ]
+      "Choosing transitions that 'feel' right instead of predicting the category first",
+      "Getting distracted by complex details instead of simplifying to core logic",
+      "Not finding the specific flaw in each wrong answer",
+      "Picking technically correct but not most precise answers"
+    ],
+    "category_quick_reference": {
+      "Addition": "furthermore, additionally, moreover, also",
+      "Contrast": "however, nevertheless, on the other hand, in contrast",
+      "Cause/Effect": "therefore, consequently, as a result, thus",
+      "Restatement": "in other words, that is, namely, specifically",
+      "Example": "for instance, for example, such as, including"
+    }
   },
   "metadata": {
     "created_date": "2024-12-01",
-    "last_updated": "2024-12-01",
-    "content_version": "1.0",
-    "estimated_completion_time": 1500,
-    "prerequisite_skills": ["lesson_04"],
-    "skill_progression": ["lesson_06"]
+    "last_updated": "2025-10-01",
+    "content_version": "4.0",
+    "estimated_completion_time": 1620,
+    "prerequisite_skills": [
+      "lesson_04"
+    ],
+    "skill_progression": [
+      "lesson_06"
+    ],
+    "strategy_integration": {
+      "source": "Synthesis of The Black Book, Erica Meltzer, Khan Academy",
+      "key_innovation": "3-Phase Master Strategy with 100% Rule",
+      "slides_added": [
+        "slide_02",
+        "slide_03",
+        "slide_04"
+      ]
+    }
   }
 }

@@ -246,6 +246,10 @@ class InteractiveLessons {
             html += `<p style="margin-bottom: 1.5rem; line-height: 1.6; color: #334155;">${content.text}</p>`;
         }
 
+        if (content.subtitle) {
+            html += `<p style="margin-bottom: 1rem; font-style: italic; color: #64748b;">${content.subtitle}</p>`;
+        }
+
         html += `</div>`;
 
         if (content.bullet_points && content.bullet_points.length > 0) {
@@ -257,6 +261,7 @@ class InteractiveLessons {
             html += `</ul></div>`;
         }
 
+        // Handle strategy steps (multiple formats)
         if (content.strategy_steps && content.strategy_steps.length > 0) {
             html += `<div style="max-width: 700px; margin: 0 auto;">`;
             content.strategy_steps.forEach((step, index) => {
@@ -267,9 +272,124 @@ class InteractiveLessons {
                         border-radius: 0.5rem;
                         padding: 1.5rem;
                         margin-bottom: 1rem;
+                    ">`;
+
+                // Handle different strategy step formats
+                if (step.letter && step.word) {
+                    // Old format
+                    html += `<h5 style="color: #2563eb; margin-bottom: 0.5rem;">${step.letter}: ${step.word}</h5>`;
+                } else if (step.step && step.title) {
+                    // New format
+                    html += `<h5 style="color: #2563eb; margin-bottom: 0.5rem;">Step ${step.step}: ${step.title}</h5>`;
+                }
+
+                if (step.description) {
+                    html += `<p style="margin-bottom: 1rem;">${step.description}</p>`;
+                }
+
+                // Handle points array
+                if (step.points && step.points.length > 0) {
+                    html += `<ul style="margin: 0; padding-left: 1rem;">`;
+                    step.points.forEach(point => {
+                        html += `<li style="margin-bottom: 0.5rem;">${point}</li>`;
+                    });
+                    html += `</ul>`;
+                }
+
+                // Handle examples array
+                if (step.examples && step.examples.length > 0) {
+                    html += `<div style="background: #f8fafc; padding: 1rem; border-radius: 0.25rem; margin-top: 0.5rem;">`;
+                    step.examples.forEach(example => {
+                        html += `<p style="margin: 0.25rem 0; font-style: italic;">${example}</p>`;
+                    });
+                    html += `</div>`;
+                }
+
+                html += `</div>`;
+            });
+            html += `</div>`;
+        }
+
+        // Handle key_points
+        if (content.key_points && content.key_points.length > 0) {
+            html += `<div style="max-width: 600px; margin: 0 auto;">`;
+            content.key_points.forEach(point => {
+                html += `
+                    <div style="
+                        background: #f0f9ff;
+                        border: 1px solid #0284c7;
+                        border-radius: 0.5rem;
+                        padding: 1rem;
+                        margin-bottom: 1rem;
                     ">
-                        <h5 style="color: #2563eb; margin-bottom: 0.5rem;">${step.letter}: ${step.word}</h5>
-                        <p style="margin: 0;">${step.description}</p>
+                        <h6 style="color: #0284c7; margin-bottom: 0.5rem; font-weight: 600;">${point.title || point.icon + ' ' + point.title}</h6>
+                        <p style="margin: 0; color: #334155;">${point.description}</p>
+                    </div>
+                `;
+            });
+            html += `</div>`;
+        }
+
+        // Handle categories (for transition types, etc.)
+        if (content.categories) {
+            html += `<div style="max-width: 700px; margin: 0 auto;">`;
+            Object.keys(content.categories).forEach(category => {
+                html += `
+                    <div style="
+                        background: white;
+                        border: 1px solid #e2e8f0;
+                        border-radius: 0.5rem;
+                        padding: 1rem;
+                        margin-bottom: 1rem;
+                    ">
+                        <h6 style="color: #2563eb; margin-bottom: 0.5rem; font-weight: 600;">${category}</h6>
+                        <p style="margin: 0; color: #64748b;">${content.categories[category].join(', ')}</p>
+                    </div>
+                `;
+            });
+            html += `</div>`;
+        }
+
+        // Handle table structure (for strategy synthesis, etc.)
+        if (content.table && content.table.rows) {
+            html += `<div style="max-width: 800px; margin: 0 auto;">`;
+            html += `<div style="overflow-x: auto;">`;
+            html += `<table style="width: 100%; border-collapse: collapse; background: white; border: 1px solid #e2e8f0; border-radius: 0.5rem;">`;
+
+            // Table header
+            if (content.table.columns) {
+                html += `<thead><tr>`;
+                content.table.columns.forEach(column => {
+                    html += `<th style="padding: 1rem; border-bottom: 2px solid #e2e8f0; background: #f8fafc; font-weight: 600; color: #2563eb;">${column}</th>`;
+                });
+                html += `</tr></thead>`;
+            }
+
+            // Table body
+            html += `<tbody>`;
+            content.table.rows.forEach((row, index) => {
+                html += `<tr style="${index % 2 === 0 ? 'background: white;' : 'background: #f8fafc;'}">`;
+                row.forEach(cell => {
+                    html += `<td style="padding: 1rem; border-bottom: 1px solid #e2e8f0; vertical-align: top;">${cell}</td>`;
+                });
+                html += `</tr>`;
+            });
+            html += `</tbody></table></div></div>`;
+        }
+
+        // Handle examples object
+        if (content.examples && typeof content.examples === 'object') {
+            html += `<div style="max-width: 600px; margin: 0 auto;">`;
+            Object.keys(content.examples).forEach(key => {
+                html += `
+                    <div style="
+                        background: #f0f9ff;
+                        border-left: 4px solid #0284c7;
+                        padding: 1rem;
+                        margin-bottom: 1rem;
+                    ">
+                        <h6 style="color: #0284c7; margin-bottom: 0.5rem; font-weight: 600; text-transform: capitalize;">${key.replace('_', ' ')}</h6>
+                        <p style="margin: 0; color: #334155;">${content.examples[key]}</p>
                     </div>
                 `;
             });
