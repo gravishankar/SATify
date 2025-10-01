@@ -163,7 +163,7 @@ class InteractiveLessons {
                 box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             ">
                 <div style="text-align: center; margin-bottom: 2rem;">
-                    <h2 style="color: #2563eb; margin-bottom: 0.5rem; font-size: 2rem;">${lessonData.title}</h2>
+                    <h2 style="color: #0369a1; margin-bottom: 0.5rem; font-size: 2rem;">${lessonData.title}</h2>
                     <p style="color: #64748b; margin: 0; font-size: 1.1rem;">${lessonData.subtitle}</p>
                     <div style="background: #f0f9ff; padding: 0.5rem 1rem; border-radius: 8px; margin-top: 1rem; display: inline-block;">
                         <span style="color: #0284c7; font-weight: 600;">${lessonData.level}</span> •
@@ -181,7 +181,7 @@ class InteractiveLessons {
                                 border-radius: 8px;
                                 padding: 1rem;
                                 margin-bottom: 0.75rem;
-                                border-left: 4px solid #2563eb;
+                                border-left: 4px solid #0369a1;
                             ">
                                 ${objective}
                             </li>
@@ -191,7 +191,7 @@ class InteractiveLessons {
 
                 <div style="text-align: center;">
                     <button id="startLessonBtn" style="
-                        background: #2563eb;
+                        background: #0369a1;
                         color: white;
                         border: none;
                         padding: 1rem 2rem;
@@ -200,7 +200,7 @@ class InteractiveLessons {
                         font-weight: 600;
                         cursor: pointer;
                         transition: all 0.2s;
-                    " onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">
+                    " onmouseover="this.style.background='#025a85'" onmouseout="this.style.background='#0369a1'">
                         🚀 Start Lesson
                     </button>
                 </div>
@@ -251,7 +251,7 @@ class InteractiveLessons {
                     justify-content: space-between;
                     align-items: center;
                 ">
-                    <h2 style="margin: 0; color: #2563eb;">${lessonData.title}</h2>
+                    <h2 style="margin: 0; color: #0369a1;">${lessonData.title}</h2>
                     <button id="closeLessonModal" style="
                         background: none;
                         border: none;
@@ -291,7 +291,7 @@ class InteractiveLessons {
                     <span id="slideCounter">1 / ${lessonData.slides.length}</span>
 
                     <button id="nextBtn" style="
-                        background: #2563eb;
+                        background: #0369a1;
                         color: white;
                         border: none;
                         padding: 0.75rem 1.5rem;
@@ -337,7 +337,7 @@ class InteractiveLessons {
             // Use existing practice transition
             practiceTransitionHtml = `
                 <div style="
-                    background: #2563eb;
+                    background: #0369a1;
                     color: white;
                     padding: 1.5rem;
                     border-radius: 0.5rem;
@@ -347,7 +347,7 @@ class InteractiveLessons {
                     <p style="margin-bottom: 1rem;">${content.practice_transition.text}</p>
                     <button id="practiceTransitionBtn" data-skill-code="${this.currentSkillCode}" style="
                         background: white;
-                        color: #2563eb;
+                        color: #0369a1;
                         border: none;
                         padding: 0.75rem 1.5rem;
                         border-radius: 0.5rem;
@@ -362,7 +362,7 @@ class InteractiveLessons {
             // Add practice transition to any last slide
             practiceTransitionHtml = `
                 <div style="
-                    background: #2563eb;
+                    background: #0369a1;
                     color: white;
                     padding: 1.5rem;
                     border-radius: 0.5rem;
@@ -372,7 +372,7 @@ class InteractiveLessons {
                     <p style="margin-bottom: 1rem;">Ready to practice what you've learned? Let's apply these skills with real SAT questions!</p>
                     <button id="practiceTransitionBtn" data-skill-code="${this.currentSkillCode}" style="
                         background: white;
-                        color: #2563eb;
+                        color: #0369a1;
                         border: none;
                         padding: 0.75rem 1.5rem;
                         border-radius: 0.5rem;
