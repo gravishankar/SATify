@@ -464,8 +464,73 @@ class InteractiveLessons {
             html += `</tbody></table></div></div>`;
         }
 
-        // Handle examples object
-        if (content.examples && typeof content.examples === 'object') {
+        // Handle single example with breakdown
+        if (content.example && content.example.text) {
+            html += `<div style="max-width: 700px; margin: 1.5rem auto;">`;
+
+            // Example text
+            html += `
+                <div style="
+                    background: #fef3c7;
+                    border: 1px solid #f59e0b;
+                    border-radius: 8px;
+                    padding: 1.5rem;
+                    margin-bottom: 1rem;
+                ">
+                    <h6 style="color: #92400e; margin-bottom: 1rem; font-weight: 600;">📝 Example Question</h6>
+                    <p style="margin: 0; color: #451a03; font-style: italic; line-height: 1.6;">${content.example.text}</p>
+                </div>
+            `;
+
+            // Breakdown analysis
+            if (content.example.breakdown) {
+                const breakdown = content.example.breakdown;
+                html += `
+                    <div style="
+                        background: #f0fdf4;
+                        border: 1px solid #22c55e;
+                        border-radius: 8px;
+                        padding: 1.5rem;
+                    ">
+                        <h6 style="color: #166534; margin-bottom: 1rem; font-weight: 600;">🔍 Analysis Breakdown</h6>
+                        <div style="display: grid; gap: 1rem;">
+                `;
+
+                if (breakdown.idea_a) {
+                    html += `
+                        <div style="background: white; padding: 1rem; border-radius: 6px; border-left: 3px solid #3b82f6;">
+                            <strong style="color: #1e40af;">Idea A (Before blank):</strong>
+                            <p style="margin: 0.5rem 0 0 0; color: #374151;">${breakdown.idea_a}</p>
+                        </div>
+                    `;
+                }
+
+                if (breakdown.idea_b) {
+                    html += `
+                        <div style="background: white; padding: 1rem; border-radius: 6px; border-left: 3px solid #8b5cf6;">
+                            <strong style="color: #7c3aed;">Idea B (After blank):</strong>
+                            <p style="margin: 0.5rem 0 0 0; color: #374151;">${breakdown.idea_b}</p>
+                        </div>
+                    `;
+                }
+
+                if (breakdown.relationship) {
+                    html += `
+                        <div style="background: white; padding: 1rem; border-radius: 6px; border-left: 3px solid #10b981;">
+                            <strong style="color: #059669;">Logical Relationship:</strong>
+                            <p style="margin: 0.5rem 0 0 0; color: #374151;">${breakdown.relationship}</p>
+                        </div>
+                    `;
+                }
+
+                html += `</div></div>`;
+            }
+
+            html += `</div>`;
+        }
+
+        // Handle examples object (multiple examples)
+        if (content.examples && typeof content.examples === 'object' && !content.example) {
             html += `<div style="max-width: 600px; margin: 0 auto;">`;
             Object.keys(content.examples).forEach(key => {
                 html += `
