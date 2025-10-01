@@ -3,9 +3,9 @@
  * Provides offline functionality and caching
  */
 
-const CACHE_NAME = 'sat-practice-pro-v1';
-const STATIC_CACHE_NAME = 'sat-practice-static-v1';
-const DATA_CACHE_NAME = 'sat-practice-data-v1';
+const CACHE_NAME = 'satify-v2';
+const STATIC_CACHE_NAME = 'satify-static-v2';
+const DATA_CACHE_NAME = 'satify-data-v2';
 
 // Static assets to cache immediately
 const STATIC_ASSETS = [

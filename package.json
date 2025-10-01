@@ -1,7 +1,7 @@
 {
-  "name": "sat-practice-pro",
+  "name": "satify",
   "version": "1.0.0",
-  "description": "SATify with Creator Studio",
+  "description": "SATify - Simple, smart, strategy-first SAT prep",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
