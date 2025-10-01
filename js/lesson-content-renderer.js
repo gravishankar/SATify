@@ -577,6 +577,14 @@ class LessonContentRenderer {
                     ">${workedExample.question}</p>
                 </div>
 
+                <p style="
+                    text-align: center;
+                    color: ${colors.deepOcean};
+                    font-weight: 600;
+                    margin: ${spacing.md} 0;
+                    font-size: 0.95rem;
+                ">👆 Click each answer choice to reveal category and analysis</p>
+
                 <div id="${exampleId}" style="margin-top: ${spacing.lg};">
                     ${this.renderProgressiveChoices(workedExample.choices, exampleId)}
                 </div>
@@ -602,7 +610,7 @@ class LessonContentRenderer {
 
             html += `
                 <div class="choice-card"
-                     onclick="window.lessonRenderer.revealChoice('${choiceId}')"
+                     onclick="window.lessonContentRenderer.revealChoice('${choiceId}')"
                      style="
                         background: ${colors.oceanMist};
                         border: 2px solid ${colors.turquoise};
