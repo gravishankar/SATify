@@ -1,0 +1,124 @@
+{
+  "slides": [
+    {
+      "id": "slide_01",
+      "type": "concept_teaching",
+      "title": "What are Transitions?",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "What are Transitions?",
+        "text": "Transitions = Seamless Connections\\nStep 1: FOLLOW the Logical Flow\\nIdentify the relationship between ideas in sentences\\nExample: Idea 1: Exercise improves health. Idea 2: It reduces stress. → Addition relationship\\nStep 2: LOCATE the best transition\\nChoose words that match the logical relationship\\nExample: Addition: Additionally, exercise reduces stress and improves mental well-being.",
+        "bullet_points": []
+      }
+    },
+    {
+      "id": "slide_03",
+      "type": "concept_teaching",
+      "title": "The 3-Step process",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "The 3-Step process",
+        "text": "Slicing the Steps\\nBefore checking choices…",
+        "bullet_points": [
+          "Step 1 (Context First):",
+          "Simplify the text",
+          "Ditch the noise",
+          "Get to the core of logic",
+          "Step 2 (Predict):",
+          "Guess a basic answer.",
+          "Step 3 (Flaw-Finding): Find the specific flaw in three answers."
+        ]
+      }
+    },
+    {
+      "id": "slide_04",
+      "type": "strategy_teaching",
+      "title": "Strategy First",
+      "duration_estimate": 300,
+      "content": {
+        "heading": "Strategy First",
+        "text": "Define the Context\\nGoal: Identify the precise logical relationship.",
+        "bullet_points": [
+          "Step 1 (Idea A): Paraphrase the sentence before the blank.",
+          "Tactic: Ditch the Details. Ignore jargon, names, or numbers.",
+          "Step 2 (Idea B): Paraphrase the sentence after the blank."
+        ]
+      }
+    },
+    {
+      "id": "slide_05",
+      "type": "concept_teaching",
+      "title": "Strategy Synthesis",
+      "duration_estimate": 280,
+      "content": {
+        "heading": "Strategy Synthesis",
+        "text": "Most Common Red Flags & Logical Traps.\\n| Logical Trap / Red Flag | How the Strategy Addresses It |\\n|---|---|\\n| Trap 1: Choosing a word that \"vibes\" right. | Core Principle 1: \"Move from 'feels right' to 100% provable (no cap).\" |\\n| Trap 2: Getting fooled by complex details. | Slide 3, Tactic: \"Ditch the Details.\" The focus is only on the simple, main ideas (Idea A and Idea B). |\\n| Trap 3: Distinguishing between synonyms. | Slide 4, Tactic 3 (Copycats): If two choices are synonyms, they usually cancel each other out. This forces you to look for a flaw in both. |\\n| Trap 4: Picking a word that is close but not perfect. | Slide 4, Tactic 1 (Rhetorical Purpose Check): The word must match the author’s precise intent—no general vibes allowed! |\\n| Trap 5: The answer is technically correct, but not the best option. | Slide 4, Tactic 2 (Precision Tie-breaker): Forces you to choose the most specific connection every time. |",
+        "bullet_points": []
+      }
+    },
+    {
+      "id": "slide_06",
+      "type": "concept_reinforcement",
+      "title": "Key Takeaways",
+      "duration_estimate": 180,
+      "content": {
+        "heading": "Key Takeaways",
+        "text": "Transition Mastery Summary\\nContext vibe is  king.\\nMove from 'feels right' to 100% provable (no cap).\\nThe 100% Rule: The correct answer is flawless.\\nEvery other choice has logical traps.",
+        "bullet_points": []
+      }
+    },
+    {
+      "id": "slide_07",
+      "type": "mastery_check",
+      "title": "Transition Types, A Toolkit",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "Transition Types, A Toolkit",
+        "text": "Transition Categories\\n➕ **Addition** - Furthermore, additionally, moreover, also\\n🔄 **Contrast** - However, nevertheless, on the other hand, yet\\n📈 **Cause/Effect** - Therefore, consequently, as a result, thus\\n📝 **Example** - For instance, specifically, namely, such as\\n🚀 Slide 8: The Ultimate Win\\nTransitions are the engine of clear writing.\\nMaster them, master the SAT.\\nTurn complex passages into simple logic, then predict and eliminate using logic traps\\nGet that 100% confidence on every Transition question.",
+        "bullet_points": [
+          "Contrast / Concession: However, Nevertheless, In contrast, Granted, Admittedly. (Signals an opposing idea or \"let's be real\" moment.)",
+          "Cause & Effect / Purpose: Therefore, Consequently, As a result, Thus, To this end. (Signals the reason or the outcome.)",
+          "Addition / Reinforcement: Moreover, Furthermore, In addition, Likewise. (Signals one more point on the same topic.)",
+          "Example / Illustration: For example, For instance, Specifically, Namely. (Signals a general idea is being clarified.)",
+          "Summary / Restatement: In short, In sum, To summarize, Ultimately. (Signals the final conclusion or main takeaway.)"
+        ]
+      }
+    },
+    {
+      "id": "slide_09",
+      "type": "guided_practice",
+      "title": "Your Turn: Fix the flow",
+      "duration_estimate": 300,
+      "content": {
+        "heading": "Your Turn: Fix the flow",
+        "text": "",
+        "bullet_points": []
+      }
+    },
+    {
+      "id": "slide_08",
+      "type": "independent_practice:_perfect_the_flow",
+      "title": "Your Turn: Perfect the flow",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "Your Turn: Perfect the flow",
+        "text": "",
+        "bullet_points": []
+      }
+    }
+  ],
+  "title": "Transitions & Flow",
+  "id": "lesson_transitions_flow",
+  "skill_codes": ["TRA"],
+  "subtitle": "Transitions",
+  "learning_objectives": [
+    "The Core: Master transition words for logical flow and rhetorical purpose",
+    "The Skill: Create coherent paragraph structure—connecting ideas effectively"
+  ],
+  "success_criteria": {
+    "mastery_threshold": 0.75,
+    "min_accuracy": 0.7
+  },
+  "level": "Foundation",
+  "duration": "32-48 min"
+}

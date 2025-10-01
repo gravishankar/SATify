@@ -1,0 +1,128 @@
+{
+  "id": "lesson_01",
+  "title": "SAT Reading Fundamentals",
+  "subtitle": "Central Ideas & Details",
+  "level": "Foundation",
+  "duration": "20-25 min",
+  "skill_codes": [
+    "CID"
+  ],
+  "learning_objectives": [
+    "1. Identify main ideas in reading passages",
+    "2. Distinguish between central ideas and supporting details",
+    "3. Apply strategies for finding topic sentences",
+    "4. Practice with authentic SAT reading questions"
+  ],
+  "success_criteria": {
+    "mastery_threshold": 0.75,
+    "minimum_accuracy": "0.7",
+    "required_slides": "all"
+  },
+  "slides": [
+    {
+      "id": "slide_01",
+      "type": "introduction",
+      "title": "Welcome to SAT Reading Fundamentals",
+      "duration_estimate": 180,
+      "content": {
+        "heading": "Learning Objectives",
+        "text": "In this lesson, you'll master the skill of identifying central ideas and supporting details - a crucial foundation for SAT Reading success.",
+        "bullet_points": [
+          "Understand what makes an idea 'central' vs. supporting",
+          "Learn the 3-step method for finding main ideas",
+          "Practice with real SAT passage formats",
+          "Build confidence with guided examples"
+        ]
+      },
+      "interactions": []
+    },
+    {
+      "id": "slide_02",
+      "type": "concept_teaching",
+      "title": "What is a Central Idea?",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "Understanding Central Ideas",
+        "text": "A central idea is the main point or argument that the author wants to communicate. It's what the entire passage is really about."
+      },
+      "interactions": []
+    },
+    {
+      "id": "slide_03",
+      "type": "strategy_teaching",
+      "title": "The 3-Step Method",
+      "duration_estimate": 300,
+      "content": {
+        "heading": "Strategy: The Topic-Purpose-Main Idea Method",
+        "strategy_steps": [
+          {
+            "step": 1,
+            "title": "Find the TOPIC",
+            "description": ""
+          },
+          {
+            "step": 2,
+            "title": "Identify the PURPOSE",
+            "description": ""
+          },
+          {
+            "step": 3,
+            "title": "Combine for MAIN IDEA",
+            "description": ""
+          }
+        ]
+      },
+      "interactions": []
+    },
+    {
+      "id": "slide_04",
+      "type": "guided_example",
+      "title": "Guided Practice: Let's Try It Together",
+      "duration_estimate": 360,
+      "content": {
+        "heading": "Practice Passage"
+      },
+      "interactions": []
+    },
+    {
+      "id": "slide_05",
+      "type": "independent_practice",
+      "title": "Your Turn: Find the Central Idea",
+      "duration_estimate": 300,
+      "content": {
+        "heading": "Independent Practice"
+      },
+      "interactions": []
+    },
+    {
+      "id": "slide_06",
+      "type": "skill_application",
+      "title": "Apply Your Skills",
+      "duration_estimate": 420,
+      "content": {
+        "heading": "SAT-Style Questions"
+      },
+      "interactions": []
+    },
+    {
+      "id": "slide_07",
+      "type": "concept_reinforcement",
+      "title": "Key Takeaways",
+      "duration_estimate": 180,
+      "content": {
+        "heading": "What You've Learned"
+      },
+      "interactions": []
+    },
+    {
+      "id": "slide_08",
+      "type": "mastery_check",
+      "title": "Mastery Check",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "Final Assessment"
+      },
+      "interactions": []
+    }
+  ]
+}

@@ -33,7 +33,8 @@ class LessonLoader {
             'lesson_04.json',
             'lesson_05.json',
             'lesson_06.json',
-            'lesson_07_words_in_context.json'
+            'lesson_07_words_in_context.json',
+            'lesson_transitions_flow.json'
         ];
 
         const loadPromises = lessonFiles.map(async (filename) => {

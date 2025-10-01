@@ -25,11 +25,12 @@
       "title": "Learning Objectives",
       "duration_estimate": 180,
       "content": {
-        "heading": "The Main Quest",
+        "heading": "What You'll Master",
         "bullet_points": [
-          "Decode the flow",
-          "Define the logical bridge",
-          "Apply the 3-Phase Master Strategy for 100% confidence"
+          "The Core: Master transition words for logical flow and rhetorical purpose",
+          "The Skill: Create coherent paragraph structure—connecting ideas effectively",
+          "The Problem: Multiple logically possible words to test your ability to choose the single most precise and rhetorically correct",
+          "Key Strategy: The 3-Phase Master Strategy for 100% provable answers"
         ]
       },
       "interactions": [
@@ -357,29 +358,44 @@
     },
     {
       "id": "slide_09",
+      "type": "concept_reinforcement",
+      "title": "The Ultimate Win",
+      "duration_estimate": 120,
+      "content": {
+        "heading": "Own Transitions, Own the SAT",
+        "text": "The Master Strategy transforms transitions from guesswork into a 3-Phase proof system. You'll never second-guess again—just follow the process for 100% confidence every time."
+      }
+    },
+    {
+      "id": "slide_10",
       "type": "guided_practice",
-      "title": "Your Turn: Fix the Flow",
+      "title": "Your Turn: Apply the Master Strategy",
       "duration_estimate": 300,
       "content": {
         "heading": "Guided Practice",
-        "instructions": "Work through examples with hints that steer you toward the precise logical link."
+        "instructions": "Work through examples using the full 3-Phase process with hints guiding you."
       },
       "interactions": [
         {
           "type": "practice_transition",
           "target_skill": "EOI",
-          "practice_type": "guided"
+          "practice_type": "guided",
+          "strategy_prompts": [
+            "Phase 1: What's Idea A? What's Idea B?",
+            "Phase 2: What relationship do you predict?",
+            "Phase 3: Why is each wrong answer flawed?"
+          ]
         }
       ]
     },
     {
-      "id": "slide_10",
+      "id": "slide_11",
       "type": "independent_practice",
-      "title": "Your Turn: Perfect the Flow",
+      "title": "Your Turn: Master the Strategy",
       "duration_estimate": 300,
       "content": {
         "heading": "Independent Practice",
-        "instructions": "Apply the full strategy on your own for mastery."
+        "instructions": "Apply the full 3-Phase Master Strategy independently for complete mastery."
       },
       "interactions": [
         {

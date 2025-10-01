@@ -1,0 +1,124 @@
+﻿Transitions
+Expression of Ideas
+Lesson Information
+ID
+	lesson_05
+	Level
+	Foundation
+	Duration
+	20-25 min
+	Skill Codes
+	EOI
+	
+
+	
+
+	Strategy-First: Transitions
+Your Learning Objective: (The Main Quest)
+The Core: Master transition words for logical flow and rhetorical purpose 
+The Skill: Create coherent paragraph structure—connecting ideas effectively
+The Problem:  Multiple logically possible words to test your ability to choose the single most precise and rhetorically correct
+Key Strategy: Predict & Eliminate to define the logical bridge.
+Success Criteria
+Mastery Threshold: 0.75
+Minimum Accuracy: 0.7
+Required Slides: all
+________________
+
+
+Lesson Slides: 
+🧠Slide 1: Learning Objectives
+ID: slide_01
+The Main Quest
+* Decode the flow 
+ * Define the logical bridge.
+   * Apply key strategies connecting ideas effectively
+Slide 2: What are Transitions?
+ID: slide_02
+Transitions = Seamless Connections
+Step 1: FOLLOW the Logical Flow
+Identify the relationship between ideas in sentences
+Example: Idea 1: Exercise improves health. Idea 2: It reduces stress. → Addition relationship
+Step 2: LOCATE the best transition
+Choose words that match the logical relationship
+Example: Addition: Additionally, exercise reduces stress and improves mental well-being.
+Slide 3: The 3-Step process 
+Slicing the Steps
+ID: slide_03
+Type: concept_teaching
+Duration: 240 seconds
+Before checking choices…
+ * Step 1 (Context First): 
+* Simplify the text
+* Ditch the noise 
+* Get to the core of logic 
+ * Step 2 (Predict):
+* Guess a basic answer.
+ * Step 3 (Flaw-Finding): Find the specific flaw in three answers.
+Slide 4: Strategy First
+Define the Context 
+ID: slide_04
+Type: strategy_teaching
+Duration: 300 seconds
+* Goal: Identify the precise logical relationship.
+ * Step 1 (Idea A): Paraphrase the sentence before the blank.
+   * Tactic: Ditch the Details. Ignore jargon, names, or numbers.
+ * Step 2 (Idea B): Paraphrase the sentence after the blank.
+Slide 5: Strategy Synthesis 
+ID: slide_05
+Type: concept_teaching
+Duration: 280 seconds
+Most Common Red Flags & Logical Traps.
+| Logical Trap / Red Flag | How the Strategy Addresses It |
+|---|---|
+| Trap 1: Choosing a word that "vibes" right. | Core Principle 1: "Move from 'feels right' to 100% provable (no cap)." |
+| Trap 2: Getting fooled by complex details. | Slide 3, Tactic: "Ditch the Details." The focus is only on the simple, main ideas (Idea A and Idea B). |
+| Trap 3: Distinguishing between synonyms. | Slide 4, Tactic 3 (Copycats): If two choices are synonyms, they usually cancel each other out. This forces you to look for a flaw in both. |
+| Trap 4: Picking a word that is close but not perfect. | Slide 4, Tactic 1 (Rhetorical Purpose Check): The word must match the author’s precise intent—no general vibes allowed! |
+| Trap 5: The answer is technically correct, but not the best option. | Slide 4, Tactic 2 (Precision Tie-breaker): Forces you to choose the most specific connection every time. |
+
+
+Slide 6: Key Takeaways
+ID: slide_06
+Type: concept_reinforcement
+Duration: 180 seconds
+Transition Mastery Summary
+* Context  is  king.
+* Move from 'feels right' to 100% provable (no cap).
+* The 100% Rule: The correct answer is flawless.
+* Every other choice has logical traps.
+
+
+Slide 7: Transition Types, A Toolkit
+ID: slide_07
+Type: mastery_check
+Duration: 240 seconds 
+Transition Categories 
+➕ **Addition** - Furthermore, additionally, moreover, also
+🔄 **Contrast** - However, nevertheless, on the other hand, yet
+📈 **Cause/Effect** - Therefore, consequently, as a result, thus
+📝 **Example** - For instance, specifically, namely, such as
+ * Contrast / Concession: However, Nevertheless, In contrast, Granted, Admittedly. (Signals an opposing idea or "let's be real" moment.)
+ * Cause & Effect / Purpose: Therefore, Consequently, As a result, Thus, To this end. (Signals the reason or the outcome.)
+ * Addition / Reinforcement: Moreover, Furthermore, In addition, Likewise. (Signals one more point on the same topic.)
+ * Example / Illustration: For example, For instance, Specifically, Namely. (Signals a general idea is being clarified.)
+ * Summary / Restatement: In short, In sum, To summarize, Ultimately. (Signals the final conclusion or main takeaway.)
+
+
+🚀 Slide 8: The Ultimate Win
+ID: slide_08
+* Transitions are the engine of clear writing. 
+* Master them, master the SAT.
+* Turn complex passages into simple logic, then predict and eliminate using logic traps
+* Get that 100% confidence on every Transition question.
+
+
+Slide 9: Your Turn: Perfect the flow 
+ID: slide_09
+Type: Independent Practice: Perfect the Flow
+
+
+Slide 10: Your Turn: Fix the flow 
+ID: slide_10
+Type: Guided Practice
+Duration: 300 seconds

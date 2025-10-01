@@ -347,6 +347,15 @@ class LessonConverter:
 
     def _parse_text_content(self, text_content: str) -> Dict[str, Any]:
         """Parse editable text content back to JSON lesson data."""
+        # First, try to detect if this is the standard SATify format
+        if '# LESSON INFORMATION' in text_content or '## SLIDE:' in text_content:
+            return self._parse_standard_format(text_content)
+        else:
+            # Try to parse as custom format
+            return self._parse_custom_format(text_content)
+
+    def _parse_standard_format(self, text_content: str) -> Dict[str, Any]:
+        """Parse standard SATify lesson text format."""
         lines = text_content.split('\\n')
         lesson_data = {}
         current_section = None
@@ -431,6 +440,112 @@ class LessonConverter:
             slides.append(current_slide)
 
         lesson_data['slides'] = slides
+        return lesson_data
+
+    def _parse_custom_format(self, text_content: str) -> Dict[str, Any]:
+        """Parse custom lesson format like the one in prabha directory."""
+        lines = [line.strip() for line in text_content.split('\\n') if line.strip()]
+        lesson_data = {
+            'slides': []
+        }
+
+        slides = []
+        current_slide = None
+        slide_counter = 1
+
+        i = 0
+        while i < len(lines):
+            line = lines[i]
+
+            # Check for lesson title (first meaningful line)
+            if i == 0 and not lesson_data.get('title'):
+                lesson_data['title'] = line
+                lesson_data['id'] = 'lesson_custom'
+                lesson_data['skill_codes'] = []
+
+            # Look for lesson information section
+            elif 'Lesson Information' in line:
+                i += 1
+                continue
+            elif line.startswith('Strategy-First:'):
+                lesson_data['subtitle'] = line.replace('Strategy-First:', '').strip()
+            elif 'Your Learning Objective:' in line or 'The Core:' in line:
+                if not lesson_data.get('learning_objectives'):
+                    lesson_data['learning_objectives'] = []
+                if i + 1 < len(lines):
+                    lesson_data['learning_objectives'].append(lines[i + 1])
+            elif 'Mastery Threshold:' in line:
+                if not lesson_data.get('success_criteria'):
+                    lesson_data['success_criteria'] = {}
+                lesson_data['success_criteria']['mastery_threshold'] = float(line.split(':')[1].strip())
+            elif 'Minimum Accuracy:' in line:
+                if not lesson_data.get('success_criteria'):
+                    lesson_data['success_criteria'] = {}
+                lesson_data['success_criteria']['min_accuracy'] = float(line.split(':')[1].strip())
+
+            # Look for slide markers
+            elif line.startswith('Slide ') and ':' in line:
+                # Save previous slide
+                if current_slide:
+                    slides.append(current_slide)
+
+                # Create new slide
+                slide_title = line.split(':', 1)[1].strip()
+                current_slide = {
+                    'id': f'slide_{slide_counter:02d}',
+                    'type': 'concept_teaching',  # Default type
+                    'title': slide_title,
+                    'duration_estimate': 240,  # Default duration
+                    'content': {
+                        'heading': slide_title,
+                        'text': '',
+                        'bullet_points': []
+                    }
+                }
+                slide_counter += 1
+
+            # Look for slide metadata
+            elif current_slide and line.startswith('ID:'):
+                current_slide['id'] = line.split(':', 1)[1].strip()
+            elif current_slide and line.startswith('Type:'):
+                slide_type = line.split(':', 1)[1].strip().lower().replace(' ', '_')
+                current_slide['type'] = slide_type
+            elif current_slide and line.startswith('Duration:'):
+                duration_str = line.split(':', 1)[1].strip()
+                try:
+                    duration = int(duration_str.split()[0])
+                    current_slide['duration_estimate'] = duration
+                except:
+                    pass
+
+            # Collect slide content
+            elif current_slide:
+                if line.startswith('*') or line.startswith('•'):
+                    # Bullet point
+                    bullet = line.lstrip('*• ').strip()
+                    if bullet:
+                        current_slide['content']['bullet_points'].append(bullet)
+                elif line and not line.startswith('Slide '):
+                    # Regular content text
+                    if current_slide['content']['text']:
+                        current_slide['content']['text'] += '\\n' + line
+                    else:
+                        current_slide['content']['text'] = line
+
+            i += 1
+
+        # Don't forget the last slide
+        if current_slide:
+            slides.append(current_slide)
+
+        lesson_data['slides'] = slides
+
+        # Set some defaults if not found
+        if not lesson_data.get('level'):
+            lesson_data['level'] = 'Foundation'
+        if not lesson_data.get('duration'):
+            lesson_data['duration'] = f'{len(slides) * 4}-{len(slides) * 6} min'
+
         return lesson_data
 
     def _parse_slide_header(self, lines: List[str], start_idx: int) -> Dict[str, Any]:
