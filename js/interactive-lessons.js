@@ -130,7 +130,94 @@ class InteractiveLessons {
     }
 
     showLessonPlayer(lessonData) {
-        // Create modal overlay (based on automation directory's simple.html)
+        // First show learning objectives intro
+        this.showLearningObjectives(lessonData);
+    }
+
+    showLearningObjectives(lessonData) {
+        // Create learning objectives intro modal
+        const objectivesModal = document.createElement('div');
+        objectivesModal.id = 'objectivesModal';
+        objectivesModal.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+        `;
+
+        objectivesModal.innerHTML = `
+            <div style="
+                background: white;
+                border-radius: 16px;
+                padding: 2rem;
+                max-width: 600px;
+                width: 90%;
+                max-height: 80vh;
+                overflow-y: auto;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            ">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h2 style="color: #2563eb; margin-bottom: 0.5rem; font-size: 2rem;">${lessonData.title}</h2>
+                    <p style="color: #64748b; margin: 0; font-size: 1.1rem;">${lessonData.subtitle}</p>
+                    <div style="background: #f0f9ff; padding: 0.5rem 1rem; border-radius: 8px; margin-top: 1rem; display: inline-block;">
+                        <span style="color: #0284c7; font-weight: 600;">${lessonData.level}</span> •
+                        <span style="color: #0284c7;">${lessonData.duration}</span>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="color: #1e293b; margin-bottom: 1rem; font-size: 1.3rem;">📚 Learning Objectives</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        ${lessonData.learning_objectives.map(objective => `
+                            <li style="
+                                background: #f8fafc;
+                                border: 1px solid #e2e8f0;
+                                border-radius: 8px;
+                                padding: 1rem;
+                                margin-bottom: 0.75rem;
+                                border-left: 4px solid #2563eb;
+                            ">
+                                ${objective}
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+
+                <div style="text-align: center;">
+                    <button id="startLessonBtn" style="
+                        background: #2563eb;
+                        color: white;
+                        border: none;
+                        padding: 1rem 2rem;
+                        border-radius: 8px;
+                        font-size: 1.1rem;
+                        font-weight: 600;
+                        cursor: pointer;
+                        transition: all 0.2s;
+                    " onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">
+                        🚀 Start Lesson
+                    </button>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(objectivesModal);
+
+        // Add click handler for start lesson button
+        document.getElementById('startLessonBtn').addEventListener('click', () => {
+            document.body.removeChild(objectivesModal);
+            this.showActualLesson(lessonData);
+        });
+    }
+
+    showActualLesson(lessonData) {
+        // Create main lesson modal overlay (based on automation directory's simple.html)
         const modal = document.createElement('div');
         modal.id = 'lessonModal';
         modal.style.cssText = `
