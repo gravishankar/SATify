@@ -116,8 +116,22 @@ body {
   font-size: 1.5rem;
 }
 
+.brand-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
 .brand-text {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+
+.brand-tagline {
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.85;
+  line-height: 1;
 }
 
 .nav-menu {
