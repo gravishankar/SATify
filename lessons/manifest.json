@@ -73,11 +73,11 @@
     },
     "lesson_05": {
       "id": "lesson_05",
-      "title": "Transitions & Flow",
+      "title": "Transitions",
       "subtitle": "Expression of Ideas",
       "level": "Foundation",
       "duration": "20-25 min",
-      "skill_codes": ["EOI"],
+      "skill_codes": ["TRA"],
       "domain_id": "expression_of_ideas",
       "domain_title": "Expression of Ideas",
       "skill_title": "Transitions",
