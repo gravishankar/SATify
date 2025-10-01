@@ -108,7 +108,7 @@ body {
   align-items: center;
   gap: 0.5rem;
   font-weight: 700;
-  color: #2563eb;
+  color: #0369a1;
   text-decoration: none;
 }
 
@@ -154,7 +154,7 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-  color: #2563eb;
+  color: #0369a1;
   background-color: #f1f5f9;
 }
 
