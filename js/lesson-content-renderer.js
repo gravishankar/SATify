@@ -904,33 +904,60 @@ class LessonContentRenderer {
     }
 
     renderExamples(examples) {
-        // Handle examples object (different from single example)
+        // Handle examples - can be array or object
         const { colors, spacing, borderRadius } = this.seaTheme;
         let html = `<div style="margin: 0 0 ${spacing.xl} 0;">`;
 
-        Object.entries(examples).forEach(([key, value]) => {
-            html += `
-                <div style="
-                    background: ${colors.sand};
-                    border-left: 4px solid #f59e0b;
-                    padding: ${spacing.lg};
-                    margin: 0 0 ${spacing.lg} 0;
-                    border-radius: 0 ${borderRadius.md} ${borderRadius.md} 0;
-                ">
-                    <h6 style="
-                        color: #92400e;
-                        margin: 0 0 ${spacing.sm} 0;
-                        font-weight: 600;
-                        text-transform: capitalize;
-                    ">${key.replace('_', ' ')}</h6>
-                    <p style="
-                        color: #451a03;
-                        margin: 0;
-                        line-height: 1.6;
-                    ">${value}</p>
-                </div>
-            `;
-        });
+        // Check if examples is an array with label/text structure
+        if (Array.isArray(examples)) {
+            examples.forEach(example => {
+                html += `
+                    <div style="
+                        background: ${colors.sand};
+                        border-left: 4px solid #f59e0b;
+                        padding: ${spacing.lg};
+                        margin: 0 0 ${spacing.lg} 0;
+                        border-radius: 0 ${borderRadius.md} ${borderRadius.md} 0;
+                    ">
+                        <h6 style="
+                            color: #92400e;
+                            margin: 0 0 ${spacing.sm} 0;
+                            font-weight: 600;
+                        ">${example.label || 'Example'}</h6>
+                        <p style="
+                            color: #451a03;
+                            margin: 0;
+                            line-height: 1.6;
+                        ">${example.text || example}</p>
+                    </div>
+                `;
+            });
+        } else {
+            // Handle object format
+            Object.entries(examples).forEach(([key, value]) => {
+                html += `
+                    <div style="
+                        background: ${colors.sand};
+                        border-left: 4px solid #f59e0b;
+                        padding: ${spacing.lg};
+                        margin: 0 0 ${spacing.lg} 0;
+                        border-radius: 0 ${borderRadius.md} ${borderRadius.md} 0;
+                    ">
+                        <h6 style="
+                            color: #92400e;
+                            margin: 0 0 ${spacing.sm} 0;
+                            font-weight: 600;
+                            text-transform: capitalize;
+                        ">${key.replace('_', ' ')}</h6>
+                        <p style="
+                            color: #451a03;
+                            margin: 0;
+                            line-height: 1.6;
+                        ">${value}</p>
+                    </div>
+                `;
+            });
+        }
 
         html += `</div>`;
         return html;
