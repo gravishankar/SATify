@@ -58,7 +58,7 @@
     </div>
 
     <!-- Lesson Content Container -->
-    <div id="lesson-container"></div>
+    <div id="lesson-container" style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;"></div>
 
     <!-- Load lesson renderer -->
     <script src="js/lesson-content-renderer.js"></script>
@@ -85,11 +85,64 @@
                 const lesson = JSON.parse(lessonData);
                 console.log('📝 Loaded preview lesson:', lesson);
 
-                // Create a lesson renderer instance
-                const renderer = new LessonContentRenderer('lesson-container');
+                // Render lesson metadata
+                let html = `
+                    <div style="background: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                        <h1 style="color: #0369a1; font-size: 2rem; margin-bottom: 0.5rem;">${lesson.title}</h1>
+                        <p style="color: #64748b; font-size: 1.1rem; margin-bottom: 1.5rem;">${lesson.subtitle || ''}</p>
 
-                // Load the lesson
-                renderer.loadLesson(lesson);
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                            <div>
+                                <strong style="color: #0369a1;">Level:</strong><br>
+                                <span style="color: #475569;">${lesson.level || 'N/A'}</span>
+                            </div>
+                            <div>
+                                <strong style="color: #0369a1;">Duration:</strong><br>
+                                <span style="color: #475569;">${lesson.duration || 'N/A'}</span>
+                            </div>
+                            <div>
+                                <strong style="color: #0369a1;">Skills:</strong><br>
+                                <span style="color: #475569;">${lesson.skill_codes?.join(', ') || 'N/A'}</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <strong style="color: #0369a1; font-size: 1.1rem;">🎯 Learning Objectives:</strong>
+                            <ul style="margin-top: 0.75rem; padding-left: 1.5rem; color: #475569;">
+                                ${lesson.learning_objectives?.map(obj => `<li style="margin: 0.5rem 0;">${obj}</li>`).join('') || '<li>No objectives defined</li>'}
+                            </ul>
+                        </div>
+                    </div>
+                `;
+
+                // Render each slide
+                const renderer = new LessonContentRenderer();
+                const slides = lesson.slides || [];
+
+                html += `<div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">`;
+                html += `<h2 style="color: #0369a1; margin-bottom: 1.5rem;">📑 Lesson Content (${slides.length} slides)</h2>`;
+
+                if (slides.length === 0) {
+                    html += `<p style="color: #94a3b8; text-align: center; padding: 2rem;">No slides in this lesson yet.</p>`;
+                } else {
+                    slides.forEach((slide, index) => {
+                        html += `
+                            <div style="border: 2px solid #e2e8f0; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                                <div style="background: #0369a1; color: white; padding: 0.75rem 1rem; margin: -1.5rem -1.5rem 1rem -1.5rem; border-radius: 6px 6px 0 0;">
+                                    <strong>Slide ${index + 1}: ${slide.title || 'Untitled'}</strong>
+                                    <span style="opacity: 0.8; margin-left: 1rem; font-size: 0.9rem;">(${slide.type || 'unknown'})</span>
+                                </div>
+                                <div style="margin-top: 1rem;">
+                                    ${renderer.renderSlideContent(slide)}
+                                </div>
+                            </div>
+                        `;
+                    });
+                }
+
+                html += `</div>`;
+
+                document.getElementById('lesson-container').innerHTML = html;
 
                 // Update page title
                 document.title = `Preview: ${lesson.title} - SATify`;
@@ -101,6 +154,7 @@
                     <div style="text-align: center; padding: 4rem; color: #ef4444;">
                         <h2>❌ Preview Error</h2>
                         <p>${error.message}</p>
+                        <pre style="text-align: left; background: #fee; padding: 1rem; border-radius: 4px; overflow: auto;">${error.stack}</pre>
                         <button onclick="window.close()" style="margin-top: 1rem; padding: 0.75rem 1.5rem; background: #ef4444; color: white; border: none; border-radius: 6px; cursor: pointer;">
                             Close Preview
                         </button>
