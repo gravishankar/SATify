@@ -199,11 +199,165 @@ app.get('/api/lessons', async (req, res) => {
     }
 });
 
+// Save draft endpoint
+app.post('/api/save-draft', async (req, res) => {
+    try {
+        console.log('📝 Saving draft lesson...');
+        const lesson = req.body;
+
+        if (!lesson.id) {
+            return res.status(400).json({ error: 'Lesson ID is required' });
+        }
+
+        // Save to drafts folder
+        const draftPath = path.join(__dirname, 'lessons', 'drafts', `${lesson.id}.json`);
+        await fs.writeFile(draftPath, JSON.stringify(lesson, null, 2));
+
+        // Create version snapshot
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+        const versionPath = path.join(__dirname, 'lessons', 'drafts', 'versions', `${lesson.id}_${timestamp}.json`);
+        await fs.writeFile(versionPath, JSON.stringify(lesson, null, 2));
+
+        console.log(`✅ Draft saved: ${draftPath}`);
+        console.log(`📸 Version snapshot: ${versionPath}`);
+
+        res.json({
+            success: true,
+            message: 'Draft saved successfully',
+            paths: {
+                draft: draftPath,
+                version: versionPath
+            }
+        });
+    } catch (error) {
+        console.error('❌ Error saving draft:', error);
+        res.status(500).json({
+            error: 'Failed to save draft',
+            details: error.message
+        });
+    }
+});
+
+// Load draft endpoint
+app.get('/api/load-draft/:lessonId', async (req, res) => {
+    try {
+        const { lessonId } = req.params;
+        const draftPath = path.join(__dirname, 'lessons', 'drafts', `${lessonId}.json`);
+
+        const content = await fs.readFile(draftPath, 'utf-8');
+        const lesson = JSON.parse(content);
+
+        res.json(lesson);
+    } catch (error) {
+        console.error('Error loading draft:', error);
+        res.status(404).json({
+            error: 'Draft not found',
+            details: error.message
+        });
+    }
+});
+
+// List versions endpoint
+app.get('/api/versions/:lessonId', async (req, res) => {
+    try {
+        const { lessonId } = req.params;
+        const versionsDir = path.join(__dirname, 'lessons', 'drafts', 'versions');
+        const files = await fs.readdir(versionsDir);
+
+        const versions = files
+            .filter(f => f.startsWith(lessonId) && f.endsWith('.json'))
+            .map(f => {
+                const match = f.match(/_(\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2})/);
+                return {
+                    filename: f,
+                    timestamp: match ? match[1].replace(/-/g, ':').replace('T', ' ') : 'unknown'
+                };
+            })
+            .sort((a, b) => b.timestamp.localeCompare(a.timestamp));
+
+        res.json(versions);
+    } catch (error) {
+        console.error('Error listing versions:', error);
+        res.status(500).json({
+            error: 'Failed to list versions',
+            details: error.message
+        });
+    }
+});
+
+// Publish draft endpoint (admin only)
+app.post('/api/publish-lesson', async (req, res) => {
+    try {
+        console.log('📢 Publishing lesson...');
+        const { lessonId } = req.body;
+
+        const draftPath = path.join(__dirname, 'lessons', 'drafts', `${lessonId}.json`);
+        const publishPath = path.join(__dirname, 'lessons', `${lessonId}.json`);
+
+        // Backup current published version
+        try {
+            const currentContent = await fs.readFile(publishPath, 'utf-8');
+            const backupPath = path.join(__dirname, 'lessons', 'backup', 'published', `${lessonId}_backup.json`);
+            await fs.writeFile(backupPath, currentContent);
+            console.log(`💾 Backup created: ${backupPath}`);
+        } catch (err) {
+            console.log('No existing published version to backup');
+        }
+
+        // Copy draft to published
+        const draftContent = await fs.readFile(draftPath, 'utf-8');
+        await fs.writeFile(publishPath, draftContent);
+
+        console.log(`✅ Lesson published: ${publishPath}`);
+
+        res.json({
+            success: true,
+            message: 'Lesson published successfully',
+            publishPath
+        });
+    } catch (error) {
+        console.error('❌ Error publishing lesson:', error);
+        res.status(500).json({
+            error: 'Failed to publish lesson',
+            details: error.message
+        });
+    }
+});
+
+// Rollback endpoint
+app.post('/api/rollback-lesson', async (req, res) => {
+    try {
+        console.log('⏪ Rolling back lesson...');
+        const { lessonId } = req.body;
+
+        const backupPath = path.join(__dirname, 'lessons', 'backup', 'published', `${lessonId}_backup.json`);
+        const publishPath = path.join(__dirname, 'lessons', `${lessonId}.json`);
+
+        // Restore from backup
+        const backupContent = await fs.readFile(backupPath, 'utf-8');
+        await fs.writeFile(publishPath, backupContent);
+
+        console.log(`✅ Lesson rolled back: ${publishPath}`);
+
+        res.json({
+            success: true,
+            message: 'Lesson rolled back successfully'
+        });
+    } catch (error) {
+        console.error('❌ Error rolling back lesson:', error);
+        res.status(500).json({
+            error: 'Failed to rollback lesson',
+            details: error.message
+        });
+    }
+});
+
 // Start server
 app.listen(PORT, () => {
     console.log(`Creator Studio Server running on port ${PORT}`);
     console.log(`Health check: http://localhost:${PORT}/api/health`);
     console.log('Ready to handle lesson publishing requests');
+    console.log('📝 Draft API endpoints available');
 });
 
 // Graceful shutdown
