@@ -1,0 +1,475 @@
+{
+  "id": "lesson_05",
+  "title": "Transitions & Flow",
+  "subtitle": "Expression of Ideas",
+  "level": "Foundation",
+  "duration": "20-25 min",
+  "skill_codes": [
+    "TRA"
+  ],
+  "learning_objectives": [
+    "The Core: Master transition words for logical flow and rhetorical purpose",
+    "The Skill: Create coherent paragraph structure—connecting ideas effectively",
+    "The Problem: Multiple logically possible words to test your ability to choose the single most precise and rhetorically correct",
+    "Key Strategy: The 3-Phase Master Strategy for 100% provable answers"
+  ],
+  "success_criteria": {
+    "mastery_threshold": 0.75,
+    "min_accuracy": 0.7,
+    "required_slides": "all"
+  },
+  "slides": [
+    {
+      "id": "slide_01",
+      "type": "introduction",
+      "title": "Learning Objectives",
+      "duration_estimate": 180,
+      "content": {
+        "heading": "The Main Quest",
+        "bullet_points": [
+          "Decode the flow",
+          "Define the logical bridge",
+          "Apply the 3-Phase Master Strategy for 100% confidence"
+        ]
+      },
+      "interactions": [
+        {
+          "type": "click_to_continue",
+          "text": "Ready? Let's begin."
+        }
+      ]
+    },
+    {
+      "id": "slide_02",
+      "type": "strategy_teaching",
+      "title": "The Master Strategy: Phase 1",
+      "duration_estimate": 300,
+      "content": {
+        "heading": "PHASE 1: Define the Context",
+        "subtitle": "Ditch the Details—Focus on Core Logic",
+        "strategy_steps": [
+          {
+            "step": 1,
+            "title": "Simplify the Text",
+            "description": "Strip away jargon, names, and complex terminology",
+            "points": [
+              "Idea A (Before blank): What's the core claim?",
+              "Idea B (After blank): What's the core claim?"
+            ]
+          },
+          {
+            "step": 2,
+            "title": "Identify the Logical Bridge",
+            "description": "What's the relationship between Idea A and Idea B?",
+            "points": [
+              "Is it Addition? (adding a new point)",
+              "Is it Contrast? (opposing ideas)",
+              "Is it Cause/Effect? (one leads to the other)",
+              "Is it Restatement? (saying the same thing differently)",
+              "Is it Example? (illustrating a point)"
+            ]
+          }
+        ],
+        "example": {
+          "text": "Aristotle disagreed, positing that knowledge is best obtained through direct engagement with the material world; ______ sensory experience of the material is the ultimate source of knowledge.",
+          "breakdown": {
+            "idea_a": "Knowledge comes from direct engagement with material world",
+            "idea_b": "Sensory experience is the ultimate source of knowledge",
+            "relationship": "Restatement/Clarification (B defines what A means)"
+          }
+        }
+      },
+      "interactions": [
+        {
+          "type": "step_by_step_reveal",
+          "auto_advance": false
+        }
+      ]
+    },
+    {
+      "id": "slide_03",
+      "type": "strategy_teaching",
+      "title": "The Master Strategy: Phase 2",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "PHASE 2: Predict & Categorize",
+        "subtitle": "Lock In Your Target Before Looking at Choices",
+        "strategy_steps": [
+          {
+            "step": 1,
+            "title": "Predict a Simple Word",
+            "description": "What simple word would work here?",
+            "examples": [
+              "Addition → 'Also' or 'Additionally'",
+              "Contrast → 'However' or 'But'",
+              "Cause/Effect → 'Therefore' or 'So'",
+              "Restatement → 'In other words' or 'Meaning'",
+              "Example → 'For instance' or 'Specifically'"
+            ]
+          },
+          {
+            "step": 2,
+            "title": "Identify the Category",
+            "description": "Lock in which of the 5 categories you need",
+            "categories": {
+              "Addition": "Furthermore, Additionally, Moreover, Also",
+              "Contrast": "However, Nevertheless, In contrast, On the other hand",
+              "Cause/Effect": "Therefore, Consequently, Thus, As a result",
+              "Restatement": "In other words, That is, Namely, Specifically",
+              "Example": "For example, For instance, Such as"
+            }
+          }
+        ],
+        "key_insight": "🎯 Predicting BEFORE looking at choices prevents the SAT from manipulating your thinking"
+      },
+      "interactions": [
+        {
+          "type": "reveal_on_click",
+          "elements": [
+            {
+              "trigger": "Show category examples",
+              "reveal": "Having these categories memorized helps you instantly recognize what you need"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "slide_04",
+      "type": "strategy_teaching",
+      "title": "The Master Strategy: Phase 3",
+      "duration_estimate": 300,
+      "content": {
+        "heading": "PHASE 3: Flaw-Finding & Validation",
+        "subtitle": "The 100% Rule: Find Why 3 Are Wrong, Prove 1 Is Perfect",
+        "core_principle": {
+          "title": "Context Is King",
+          "description": "We must find the word that is 100% provable—not just 'sounds good'"
+        },
+        "tactics": [
+          {
+            "name": "Tactic 1: Rhetorical Purpose Check",
+            "description": "Does the word match the author's precise intent?",
+            "application": "Test each choice against your target category from Phase 2",
+            "red_flags": [
+              "Wrong purpose (e.g., concession when you need restatement)",
+              "Close but not precise (e.g., 'granted' vs 'however')"
+            ]
+          },
+          {
+            "name": "Tactic 2: Copycat Elimination",
+            "description": "If two choices are synonyms, they usually both cancel out",
+            "example": "If 'furthermore' and 'moreover' are both options, look elsewhere"
+          },
+          {
+            "name": "Tactic 3: Precision Tie-breaker",
+            "description": "When multiple seem to work, choose the most specific match",
+            "example": "If both work logically, which one matches the exact rhetorical move?"
+          }
+        ],
+        "worked_example": {
+          "question": "Aristotle disagreed... ______ sensory experience is the ultimate source.",
+          "choices": {
+            "A": {
+              "text": "regardless",
+              "category": "Contradiction/Override",
+              "flaw": "Wrong purpose—signals 'despite facts', not restatement"
+            },
+            "B": {
+              "text": "admittedly",
+              "category": "Concession",
+              "flaw": "Wrong purpose—signals reluctant agreement, not clarification"
+            },
+            "C": {
+              "text": "in other words",
+              "category": "Restatement",
+              "validation": "✅ Perfect match—signals clarification of the same idea"
+            },
+            "D": {
+              "text": "meanwhile",
+              "category": "Parallel/Time shift",
+              "flaw": "Wrong logic—ideas are directly related, not parallel"
+            }
+          }
+        }
+      },
+      "interactions": [
+        {
+          "type": "interactive_elimination",
+          "show_flaw_analysis": true
+        }
+      ]
+    },
+    {
+      "id": "slide_05",
+      "type": "concept_teaching",
+      "title": "What are Transitions?",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "Transitions = Seamless Connections",
+        "steps": [
+          {
+            "step": "Step 1: FOLLOW the Logical Flow",
+            "detail": "Identify the relationship between ideas in sentences."
+          },
+          {
+            "step": "Step 2: LOCATE the best transition",
+            "detail": "Choose words that match the logical relationship."
+          }
+        ],
+        "examples": [
+          {
+            "label": "Relationship ID",
+            "text": "Idea 1: Exercise improves health. Idea 2: It reduces stress. → Addition relationship"
+          },
+          {
+            "label": "Matched Transition",
+            "text": "Addition: Additionally, exercise reduces stress and improves mental well-being."
+          }
+        ]
+      },
+      "interactions": [
+        {
+          "type": "reveal_on_click",
+          "elements": [
+            {
+              "trigger": "Show why these work",
+              "reveal": "Transitions create seamless connections aligned to logic."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "slide_06",
+      "type": "concept_teaching",
+      "title": "Strategy Synthesis: Common Traps",
+      "duration_estimate": 280,
+      "content": {
+        "heading": "Most Common Red Flags & How The Master Strategy Defeats Them",
+        "table": {
+          "columns": [
+            "Logical Trap / Red Flag",
+            "How the Strategy Addresses It"
+          ],
+          "rows": [
+            [
+              "Trap 1: Choosing a word that 'vibes' right",
+              "Phase 2: Predict BEFORE looking at choices to avoid manipulation"
+            ],
+            [
+              "Trap 2: Getting fooled by complex details",
+              "Phase 1: Ditch the Details—simplify to Idea A and Idea B"
+            ],
+            [
+              "Trap 3: Distinguishing between synonyms",
+              "Phase 3, Tactic 2: Copycats—if two are synonyms, both cancel"
+            ],
+            [
+              "Trap 4: Close but not perfect",
+              "Phase 3, Tactic 1: Rhetorical Purpose Check matches author's intent"
+            ],
+            [
+              "Trap 5: Technically correct but not best",
+              "Phase 3, Tactic 3: Precision Tie-breaker chooses most specific"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "slide_07",
+      "type": "concept_reinforcement",
+      "title": "Key Takeaways",
+      "duration_estimate": 180,
+      "content": {
+        "heading": "Master Strategy Summary",
+        "key_points": [
+          {
+            "title": "Phase 1: Context",
+            "description": "Simplify to core logic—Idea A and Idea B—then identify the relationship"
+          },
+          {
+            "title": "Phase 2: Predict",
+            "description": "Lock in your target category BEFORE looking at choices"
+          },
+          {
+            "title": "Phase 3: Flaw-Find",
+            "description": "Find the specific flaw in 3 answers, prove 1 is 100% correct"
+          },
+          {
+            "title": "The 100% Rule",
+            "description": "Move from 'feels right' to 100% provable—no guessing"
+          }
+        ]
+      }
+    },
+    {
+      "id": "slide_08",
+      "type": "mastery_check",
+      "title": "Transition Types: A Toolkit",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "The 5 Core Categories You Must Know",
+        "categories": {
+          "Addition/Continuation": [
+            "Furthermore",
+            "Additionally",
+            "Moreover",
+            "Also"
+          ],
+          "Contrast/Reversal": [
+            "However",
+            "Nevertheless",
+            "In contrast",
+            "On the other hand",
+            "Granted",
+            "Admittedly"
+          ],
+          "Cause & Effect": [
+            "Therefore",
+            "Consequently",
+            "As a result",
+            "Thus",
+            "To this end"
+          ],
+          "Restatement/Clarification": [
+            "In other words",
+            "That is",
+            "Namely",
+            "Specifically"
+          ],
+          "Example/Illustration": [
+            "For example",
+            "For instance",
+            "Such as",
+            "Including"
+          ]
+        }
+      },
+      "interactions": [
+        {
+          "type": "mastery_assessment",
+          "required_for_completion": true,
+          "retry_limit": 3
+        }
+      ]
+    },
+    {
+      "id": "slide_09",
+      "type": "guided_practice",
+      "title": "Your Turn: Fix the Flow",
+      "duration_estimate": 300,
+      "content": {
+        "heading": "Guided Practice",
+        "instructions": "Work through examples with hints that steer you toward the precise logical link."
+      },
+      "interactions": [
+        {
+          "type": "practice_transition",
+          "target_skill": "EOI",
+          "practice_type": "guided"
+        }
+      ]
+    },
+    {
+      "id": "slide_10",
+      "type": "independent_practice",
+      "title": "Your Turn: Perfect the Flow",
+      "duration_estimate": 300,
+      "content": {
+        "heading": "Independent Practice",
+        "instructions": "Apply the full strategy on your own for mastery."
+      },
+      "interactions": [
+        {
+          "type": "practice_transition",
+          "target_skill": "EOI",
+          "practice_type": "independent"
+        }
+      ]
+    }
+  ],
+  "practice_questions": [
+    {
+      "id": "practice_1",
+      "type": "quick_check",
+      "skill_codes": [
+        "EOI"
+      ],
+      "difficulty": "E",
+      "question": "Which transition best shows addition?",
+      "options": [
+        "However",
+        "Furthermore",
+        "Therefore",
+        "For example"
+      ],
+      "correct_answer": "B"
+    }
+  ],
+  "resources": {
+    "strategy_card": {
+      "title": "The 3-Phase Master Strategy",
+      "phases": [
+        {
+          "phase": "1. CONTEXT",
+          "steps": [
+            "Simplify: What's Idea A? What's Idea B?",
+            "Identify: What's the logical bridge?"
+          ]
+        },
+        {
+          "phase": "2. PREDICT",
+          "steps": [
+            "Predict a simple word",
+            "Lock in the category (Addition, Contrast, Cause/Effect, Restatement, Example)"
+          ]
+        },
+        {
+          "phase": "3. FLAW-FIND",
+          "steps": [
+            "Check Rhetorical Purpose: Does it match author's intent?",
+            "Eliminate Copycats: Synonyms cancel out",
+            "Precision Tie-breaker: Choose the most specific match"
+          ]
+        }
+      ],
+      "the_100_rule": "The correct answer is 100% provable. The other 3 have specific flaws."
+    },
+    "common_mistakes": [
+      "Choosing transitions that 'feel' right instead of predicting the category first",
+      "Getting distracted by complex details instead of simplifying to core logic",
+      "Not finding the specific flaw in each wrong answer",
+      "Picking technically correct but not most precise answers"
+    ],
+    "category_quick_reference": {
+      "Addition": "furthermore, additionally, moreover, also",
+      "Contrast": "however, nevertheless, on the other hand, in contrast",
+      "Cause/Effect": "therefore, consequently, as a result, thus",
+      "Restatement": "in other words, that is, namely, specifically",
+      "Example": "for instance, for example, such as, including"
+    }
+  },
+  "metadata": {
+    "created_date": "2024-12-01",
+    "last_updated": "2025-10-01",
+    "content_version": "4.0",
+    "estimated_completion_time": 1620,
+    "prerequisite_skills": [
+      "lesson_04"
+    ],
+    "skill_progression": [
+      "lesson_06"
+    ],
+    "strategy_integration": {
+      "source": "Synthesis of The Black Book, Erica Meltzer, Khan Academy",
+      "key_innovation": "3-Phase Master Strategy with 100% Rule",
+      "slides_added": [
+        "slide_02",
+        "slide_03",
+        "slide_04"
+      ]
+    }
+  }
+}

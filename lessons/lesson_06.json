@@ -1,15 +1,15 @@
 {
   "id": "lesson_06",
-  "title": "Text Structure Analysis",
-  "subtitle": "Organization & Development",
+  "title": "Text Structure & Organization",
+  "subtitle": "Expression of Ideas",
   "level": "Foundation",
   "duration": "25-30 min",
   "skill_codes": ["EOI"],
   "learning_objectives": [
-    "Identify common organizational patterns in passages",
-    "Analyze how authors develop and support their ideas",
-    "Understand the relationship between structure and purpose",
-    "Apply structural analysis to SAT Writing questions"
+    "The Core: Master how authors organize and develop ideas",
+    "The Skill: Identify organizational patterns and their rhetorical purposes",
+    "The Problem: Multiple structures may seem logical—choose the one that best serves author's purpose",
+    "Key Strategy: The 3-Phase STRUCTURE Strategy for 100% provable answers"
   ],
   "success_criteria": {
     "mastery_threshold": 0.75,
@@ -20,99 +20,167 @@
     {
       "id": "slide_01",
       "type": "introduction",
-      "title": "Welcome to Text Structure Analysis",
+      "title": "Learning Objectives",
       "duration_estimate": 180,
       "content": {
-        "heading": "Learning Objectives",
-        "text": "Understanding how authors organize their ideas is key to comprehending complex texts and answering SAT questions effectively.",
+        "heading": "The Main Quest",
         "bullet_points": [
-          "Recognize common organizational patterns and structures",
-          "Analyze how authors develop and support their main ideas",
-          "Understand the connection between structure and purpose",
-          "Master text structure questions on the SAT Writing section"
-        ],
-        "visual_element": {
-          "type": "progress_indicator",
-          "total_slides": 9,
-          "estimated_time": "25-30 minutes"
-        }
+          "Decode the five core organizational patterns",
+          "Connect structure to rhetorical purpose",
+          "Apply the 3-Phase STRUCTURE Strategy",
+          "Identify how ideas develop throughout passages"
+        ]
       },
       "interactions": [
         {
           "type": "click_to_continue",
-          "text": "Ready to analyze text structure? Click to continue"
+          "text": "Ready? Let's begin."
         }
       ]
     },
     {
       "id": "slide_02",
-      "type": "concept_teaching",
-      "title": "Common Organizational Patterns",
-      "duration_estimate": 280,
+      "type": "strategy_teaching",
+      "title": "The Master Strategy: Phase 1",
+      "duration_estimate": 340,
       "content": {
-        "heading": "How Authors Structure Ideas",
-        "text": "Authors use predictable patterns to organize information and guide readers through their arguments or explanations.",
-        "concept_box": {
-          "title": "The Big 5 Organizational Patterns",
-          "points": [
-            "📊 **Chronological** - Events in time order (first, then, finally)",
-            "🔄 **Compare/Contrast** - Similarities and differences between ideas",
-            "🎯 **Problem/Solution** - Issue presented, then resolution proposed",
-            "📈 **Cause/Effect** - Actions and their consequences or results",
-            "🏗️ **General to Specific** - Broad concept narrowed to details"
-          ]
+        "heading": "PHASE 1: Identify the Organizational Pattern",
+        "subtitle": "The Five Core Patterns You Must Know",
+        "core_principle": {
+          "title": "Structure = Author's Blueprint",
+          "description": "Authors organize ideas deliberately to achieve specific rhetorical purposes. Master these five patterns and you'll predict how passages unfold."
         },
-        "examples": {
-          "chronological": "The development of smartphones began in the 1990s. First, early devices combined phones with PDAs. Then, touchscreens revolutionized the interface.",
-          "problem_solution": "Urban traffic congestion costs billions annually. Cities are implementing smart traffic systems to optimize flow and reduce delays."
-        }
-      },
-      "interactions": [
-        {
-          "type": "reveal_on_click",
-          "elements": [
+        "organizational_patterns": [
+          {
+            "pattern": "CHRONOLOGICAL / SEQUENCE",
+            "definition": "Events or steps presented in time order",
+            "purpose": "Show development, progression, or process over time",
+            "signal_words": ["first", "then", "next", "finally", "before", "after", "during", "while", "eventually", "subsequently"],
+            "examples": [
+              {
+                "topic": "Development of smartphones",
+                "structure": "Early devices (1990s) → Touchscreens (2000s) → Modern capabilities (present)",
+                "why_this_structure": "Shows technological evolution over time"
+              },
+              {
+                "topic": "Scientific experiment",
+                "structure": "Hypothesis → Method → Results → Conclusion",
+                "why_this_structure": "Follows research process chronologically"
+              }
+            ],
+            "key_insight": "Use chronological when TIME or SEQUENCE is central to understanding"
+          },
+          {
+            "pattern": "COMPARE/CONTRAST",
+            "definition": "Examines similarities and/or differences between subjects",
+            "purpose": "Highlight distinctions, help readers make informed choices, show relationships",
+            "signal_words": ["similarly", "likewise", "in contrast", "however", "on the other hand", "while", "whereas", "both", "neither", "unlike"],
+            "structures": [
+              {
+                "type": "Point-by-Point",
+                "description": "Alternates between subjects for each point",
+                "example": "Point 1: A vs B, Point 2: A vs B, Point 3: A vs B"
+              },
+              {
+                "type": "Block",
+                "description": "Discusses all of A, then all of B",
+                "example": "All about A → Transition → All about B"
+              }
+            ],
+            "examples": [
+              {
+                "topic": "Traditional vs. vertical farming",
+                "structure": "Traditional methods → Contrast → Vertical farming advantages",
+                "why_this_structure": "Emphasizes differences to argue for new approach"
+              }
+            ],
+            "key_insight": "Use compare/contrast to show how subjects relate or differ"
+          },
+          {
+            "pattern": "PROBLEM/SOLUTION",
+            "definition": "Presents an issue, then proposes resolution(s)",
+            "purpose": "Persuade readers that action is needed and possible",
+            "signal_words": ["problem", "issue", "challenge", "difficulty", "solution", "answer", "resolve", "address", "to solve this"],
+            "typical_structure": [
+              "1. Establish the problem (severity, impact)",
+              "2. Explain causes or context",
+              "3. Present solution(s)",
+              "4. Discuss implementation or effectiveness"
+            ],
+            "examples": [
+              {
+                "topic": "Urban traffic congestion",
+                "structure": "Problem: Traffic costs billions → Solution: Smart traffic systems → Results: Reduced congestion",
+                "why_this_structure": "Convinces readers solution is viable and necessary"
+              }
+            ],
+            "key_insight": "Problem/solution is inherently persuasive—pushes for change"
+          },
+          {
+            "pattern": "CAUSE/EFFECT",
+            "definition": "Shows how one event or condition leads to another",
+            "purpose": "Explain relationships, demonstrate consequences, predict outcomes",
+            "signal_words": ["because", "since", "as a result", "therefore", "consequently", "thus", "leads to", "causes", "effects", "due to"],
+            "variations": [
+              {
+                "type": "Single Cause → Multiple Effects",
+                "example": "Climate change (cause) → Rising seas, extreme weather, species migration (effects)"
+              },
+              {
+                "type": "Multiple Causes → Single Effect",
+                "example": "Poor diet, lack of exercise, genetics (causes) → Heart disease (effect)"
+              },
+              {
+                "type": "Chain",
+                "example": "A causes B → B causes C → C causes D"
+              }
+            ],
+            "key_insight": "Cause/effect explains WHY something happens and WHAT results"
+          },
+          {
+            "pattern": "GENERAL TO SPECIFIC (or Specific to General)",
+            "definition": "Moves from broad concepts to detailed examples, or vice versa",
+            "purpose": "Build understanding systematically, provide evidence for claims",
+            "structures": [
+              {
+                "direction": "General → Specific",
+                "description": "Broad claim → Supporting details/examples",
+                "example": "Flow state improves performance (general) → Athletes, artists, workers examples (specific)"
+              },
+              {
+                "direction": "Specific → General",
+                "description": "Examples/details → Broader conclusion",
+                "example": "Multiple case studies (specific) → Overall pattern conclusion (general)"
+              }
+            ],
+            "key_insight": "This pattern builds logical arguments through evidence"
+          }
+        ],
+        "detection_strategy": {
+          "title": "How to Identify Patterns Quickly",
+          "steps": [
             {
-              "trigger": "Click to see structure signals",
-              "reveal": "Look for signal words: chronological (first, next, finally), compare/contrast (however, similarly), cause/effect (therefore, as a result)."
+              "step": 1,
+              "action": "Read opening and closing sentences",
+              "why": "Authors often signal structure at beginning and end"
+            },
+            {
+              "step": 2,
+              "action": "Look for signal words",
+              "why": "Transition words reveal relationships between ideas"
+            },
+            {
+              "step": 3,
+              "action": "Count how many main subjects",
+              "why": "One subject = likely chronological/general-to-specific. Two+ = likely compare/contrast"
+            },
+            {
+              "step": 4,
+              "action": "Check if passage presents a challenge",
+              "why": "If problem mentioned = likely problem/solution"
             }
           ]
         }
-      ]
-    },
-    {
-      "id": "slide_03",
-      "type": "strategy_teaching",
-      "title": "The MAPS Method for Structure Analysis",
-      "duration_estimate": 320,
-      "content": {
-        "heading": "Strategy: Navigate Any Text Structure",
-        "strategy_steps": [
-          {
-            "step": 1,
-            "title": "MAIN IDEA - Identify the central point",
-            "description": "What is the author's primary message or argument?",
-            "example": "Climate change requires immediate global action → Main idea established"
-          },
-          {
-            "step": 2,
-            "title": "ARRANGE - Find the organizational pattern",
-            "description": "How does the author organize supporting information?",
-            "example": "Problem (climate effects) → Solution (renewable energy) → Problem/Solution pattern"
-          },
-          {
-            "step": 3,
-            "title": "PURPOSE - Understand why this structure",
-            "description": "Why did the author choose this organizational approach?",
-            "example": "Problem/Solution structure persuades readers that action is both necessary and possible"
-          },
-          {
-            "step": 4,
-            "title": "SUPPORT - Analyze how ideas are developed",
-            "description": "What evidence, examples, or details support the main points?",
-            "example": "Statistics, expert quotes, and case studies strengthen the argument"
-          }
-        ],
-        "memory_aid": "Use **M.A.P.S.** to navigate any text structure!"
       },
       "interactions": [
         {
@@ -122,27 +190,117 @@
       ]
     },
     {
-      "id": "slide_04",
-      "type": "concept_teaching",
-      "title": "Analyzing Development Strategies",
-      "duration_estimate": 300,
+      "id": "slide_03",
+      "type": "strategy_teaching",
+      "title": "The Master Strategy: Phase 2",
+      "duration_estimate": 320,
       "content": {
-        "heading": "How Authors Build Their Ideas",
-        "text": "Beyond organizational patterns, authors use specific strategies to develop and strengthen their points throughout a text.",
-        "concept_box": {
-          "title": "Development Strategies",
-          "points": [
-            "📚 **Examples & Illustrations** - Concrete instances that clarify abstract concepts",
-            "📊 **Data & Statistics** - Numerical evidence to support claims",
-            "👨‍🔬 **Expert Opinion** - Authoritative voices to add credibility",
-            "📖 **Anecdotes & Stories** - Personal narratives to engage readers",
-            "🔍 **Definition & Explanation** - Clear terminology and clarification",
-            "⚖️ **Acknowledgment of Counterarguments** - Addressing opposing views"
-          ]
+        "heading": "PHASE 2: Connect Structure to Purpose",
+        "subtitle": "Why Did the Author Choose This Organization?",
+        "core_principle": {
+          "title": "Structure Serves Purpose",
+          "description": "Authors don't choose structures randomly. Each pattern creates specific effects and serves particular rhetorical goals."
         },
-        "examples": {
-          "weak_development": "Social media is harmful. It causes problems. People should use it less.",
-          "strong_development": "Social media platforms have documented negative effects on teen mental health (data). Dr. Smith's research shows increased anxiety rates (expert opinion). Take Sarah, who experienced cyberbullying (anecdote). However, social media also provides valuable connections (counterargument acknowledgment)."
+        "structure_purpose_connections": [
+          {
+            "structure": "CHRONOLOGICAL",
+            "purposes": [
+              {
+                "purpose": "Show development/evolution",
+                "example": "Trace history of technology to show progress",
+                "effect_on_reader": "Readers see how things changed over time"
+              },
+              {
+                "purpose": "Explain process or procedure",
+                "example": "Scientific method step-by-step",
+                "effect_on_reader": "Readers understand sequence and can replicate"
+              },
+              {
+                "purpose": "Create narrative engagement",
+                "example": "Tell story of discovery",
+                "effect_on_reader": "Readers follow journey, build suspense"
+              }
+            ]
+          },
+          {
+            "structure": "COMPARE/CONTRAST",
+            "purposes": [
+              {
+                "purpose": "Help readers make informed decisions",
+                "example": "Compare treatment options to guide choice",
+                "effect_on_reader": "Readers can evaluate alternatives"
+              },
+              {
+                "purpose": "Highlight unique features",
+                "example": "Show what makes new approach different",
+                "effect_on_reader": "Readers appreciate innovation"
+              },
+              {
+                "purpose": "Challenge misconceptions",
+                "example": "Contrast common belief with reality",
+                "effect_on_reader": "Readers reconsider assumptions"
+              }
+            ]
+          },
+          {
+            "structure": "PROBLEM/SOLUTION",
+            "purposes": [
+              {
+                "purpose": "Persuade readers action is necessary",
+                "example": "Show severity of issue, then viable fix",
+                "effect_on_reader": "Readers feel urgency and hope"
+              },
+              {
+                "purpose": "Demonstrate effectiveness of approach",
+                "example": "Problem → Solution → Positive results",
+                "effect_on_reader": "Readers trust the solution works"
+              }
+            ]
+          },
+          {
+            "structure": "CAUSE/EFFECT",
+            "purposes": [
+              {
+                "purpose": "Explain why phenomena occur",
+                "example": "What causes climate patterns",
+                "effect_on_reader": "Readers understand mechanisms"
+              },
+              {
+                "purpose": "Predict future outcomes",
+                "example": "If X continues, Y will result",
+                "effect_on_reader": "Readers anticipate consequences"
+              },
+              {
+                "purpose": "Assign responsibility",
+                "example": "These factors led to this result",
+                "effect_on_reader": "Readers understand accountability"
+              }
+            ]
+          },
+          {
+            "structure": "GENERAL TO SPECIFIC",
+            "purposes": [
+              {
+                "purpose": "Build logical argument with evidence",
+                "example": "Claim → Multiple supporting examples",
+                "effect_on_reader": "Readers see claim is well-supported"
+              },
+              {
+                "purpose": "Make abstract concepts concrete",
+                "example": "Complex theory → Relatable examples",
+                "effect_on_reader": "Readers grasp difficult ideas"
+              }
+            ]
+          }
+        ],
+        "analysis_questions": {
+          "title": "Key Questions for Phase 2",
+          "questions": [
+            "What is the author trying to accomplish? (inform, persuade, explain, analyze)",
+            "How does this structure help achieve that goal?",
+            "What effect does this organization have on the reader?",
+            "Could a different structure achieve the same purpose? Why or why not?"
+          ]
         }
       },
       "interactions": [
@@ -150,52 +308,188 @@
           "type": "reveal_on_click",
           "elements": [
             {
-              "trigger": "Click for development evaluation tip",
-              "reveal": "Strong development uses multiple strategies and provides specific, relevant support rather than vague generalizations."
+              "trigger": "Show Critical Insight",
+              "reveal": "SAT questions often ask WHY an author used a particular structure. The answer always connects to rhetorical purpose—what the author wants readers to understand or do."
             }
           ]
         }
       ]
     },
     {
+      "id": "slide_04",
+      "type": "strategy_teaching",
+      "title": "The Master Strategy: Phase 3",
+      "duration_estimate": 300,
+      "content": {
+        "heading": "PHASE 3: Analyze Development Strategies",
+        "subtitle": "How Authors Build and Support Ideas",
+        "core_principle": {
+          "title": "Development = Substance",
+          "description": "Beyond overall structure, authors use specific strategies to develop individual points and support claims throughout passages."
+        },
+        "development_strategies": [
+          {
+            "strategy": "EXAMPLES & ILLUSTRATIONS",
+            "definition": "Concrete instances that clarify abstract concepts",
+            "when_used": "Make difficult ideas accessible, prove general claims",
+            "strength_indicators": [
+              "Specific, detailed examples (not vague generalities)",
+              "Examples directly relevant to the claim",
+              "Multiple examples showing pattern"
+            ],
+            "example": {
+              "weak": "Social media affects mental health.",
+              "strong": "Studies link 3+ hours daily social media use to 60% higher depression risk among teens."
+            }
+          },
+          {
+            "strategy": "DATA & STATISTICS",
+            "definition": "Numerical evidence supporting claims",
+            "when_used": "Provide objective support, show magnitude/scope",
+            "strength_indicators": [
+              "Specific numbers (not 'many' or 'some')",
+              "Credible sources for data",
+              "Data directly supports the point"
+            ],
+            "example": {
+              "weak": "Vertical farms are more efficient.",
+              "strong": "Vertical farms produce 390 times more food per square foot while using 95% less water."
+            }
+          },
+          {
+            "strategy": "EXPERT OPINION & AUTHORITY",
+            "definition": "Credible voices adding weight to arguments",
+            "when_used": "Establish credibility, provide specialized knowledge",
+            "strength_indicators": [
+              "Experts have relevant credentials",
+              "Opinions align with evidence",
+              "Authority is established (not just 'researchers say')"
+            ]
+          },
+          {
+            "strategy": "DEFINITION & EXPLANATION",
+            "definition": "Clarifying terms and concepts",
+            "when_used": "Ensure reader understanding, establish shared vocabulary",
+            "strength_indicators": [
+              "Clear, accessible definitions",
+              "Explanation builds from known to unknown",
+              "Technical terms defined before use"
+            ]
+          },
+          {
+            "strategy": "ANECDOTES & NARRATIVES",
+            "definition": "Personal stories or scenarios",
+            "when_used": "Create emotional connection, make abstract personal",
+            "strength_indicators": [
+              "Story illustrates larger point",
+              "Details are vivid and specific",
+              "Anecdote enhances, doesn't replace, other evidence"
+            ],
+            "caution": "Anecdotes alone don't prove general claims—need broader evidence"
+          },
+          {
+            "strategy": "ACKNOWLEDGMENT OF COUNTERARGUMENTS",
+            "definition": "Addressing opposing views or limitations",
+            "when_used": "Strengthen argument by showing awareness of complexity",
+            "strength_indicators": [
+              "Fairly represents opposing view",
+              "Explains why counterargument is outweighed",
+              "Shows nuanced thinking"
+            ],
+            "example": "While vertical farms have high initial costs (acknowledgment), long-term efficiency gains justify investment (refutation)."
+          }
+        ],
+        "evaluation_criteria": {
+          "title": "Assessing Development Quality",
+          "strong_development": [
+            "Uses multiple development strategies",
+            "Evidence is specific and relevant",
+            "Connections between evidence and claims are explicit",
+            "Addresses potential objections or limitations"
+          ],
+          "weak_development": [
+            "Relies on vague generalizations",
+            "Single type of evidence (only examples OR only stats)",
+            "Assumes connections without explaining them",
+            "Ignores obvious counterarguments"
+          ]
+        }
+      },
+      "interactions": [
+        {
+          "type": "interactive_elimination",
+          "show_flaw_analysis": true
+        }
+      ]
+    },
+    {
       "id": "slide_05",
       "type": "guided_example",
-      "title": "Guided Practice: Structure Detective",
-      "duration_estimate": 400,
+      "title": "Guided Practice: The Strategy in Action",
+      "duration_estimate": 420,
       "content": {
-        "heading": "Let's Analyze This Passage Together",
-        "passage": {
-          "text": "The rise of electric vehicles represents a fundamental shift in transportation technology. Initially, electric cars faced significant challenges: limited range, long charging times, and high costs deterred consumers. However, recent advances have addressed these concerns. Battery technology has improved dramatically, with some vehicles now traveling over 300 miles on a single charge. Charging infrastructure has expanded rapidly, making long-distance travel feasible. Most importantly, government incentives and falling battery costs have made electric vehicles increasingly affordable. As a result, sales have surged from 50,000 units in 2012 to over 300,000 in 2021. This trend suggests that electric vehicles will soon become mainstream, fundamentally transforming the automotive industry.",
-          "highlight_enabled": true
-        },
-        "guided_questions": [
+        "heading": "Let's Apply All 3 Phases Together",
+        "passage": "The rise of electric vehicles represents a fundamental shift in transportation technology. Initially, electric cars faced significant challenges: limited range, long charging times, and high costs deterred consumers. However, recent advances have addressed these concerns. Battery technology has improved dramatically, with some vehicles now traveling over 300 miles on a single charge. Charging infrastructure has expanded rapidly, making long-distance travel feasible. Most importantly, government incentives and falling battery costs have made electric vehicles increasingly affordable. As a result, sales have surged from 50,000 units in 2012 to over 300,000 in 2021. This trend suggests that electric vehicles will soon become mainstream, fundamentally transforming the automotive industry.",
+        "question": "The author structures this passage primarily to:",
+        "walkthrough": [
           {
+            "phase": "PHASE 1: Identify Pattern",
             "step": 1,
-            "question": "What is the main idea of this passage?",
-            "hint": "Look at the opening and closing sentences for the central claim",
-            "answer": "Electric vehicles represent a fundamental shift in transportation and are becoming mainstream",
-            "explanation": "The passage opens with 'fundamental shift' and closes with 'fundamentally transforming,' establishing the main idea."
-          },
-          {
-            "step": 2,
             "question": "What organizational pattern does the author use?",
-            "hint": "How does the author move from problems to solutions?",
-            "answer": "Problem/Solution pattern",
-            "explanation": "The author presents initial challenges (problems) then shows how advances addressed each concern (solutions)."
+            "answer": "PROBLEM/SOLUTION",
+            "reasoning": "Structure: Opening claim → Initial problems → Solutions to each problem → Positive results → Future prediction"
           },
           {
+            "phase": "PHASE 1: Verify Pattern",
+            "step": 2,
+            "question": "What signal words confirm this?",
+            "answer": "'challenges,' 'however,' 'addressed these concerns,' 'as a result'",
+            "reasoning": "These transitions show problem → solution → outcome progression"
+          },
+          {
+            "phase": "PHASE 2: Connect to Purpose",
             "step": 3,
-            "question": "How does the author develop the solution section?",
-            "hint": "What types of evidence support the claim that problems were solved?",
-            "answer": "Specific examples (300-mile range), data (infrastructure expansion), and statistics (sales figures)",
-            "explanation": "The author uses concrete details and numerical evidence to demonstrate progress."
+            "question": "WHY did the author choose problem/solution structure?",
+            "answer": "To show how obstacles were overcome, building case that EVs are now viable",
+            "reasoning": "Problem/solution persuades readers by demonstrating progression from challenges to success"
           },
           {
+            "phase": "PHASE 3: Analyze Development",
             "step": 4,
-            "question": "Why is this structure effective for the author's purpose?",
-            "hint": "How does problem/solution structure support the main claim?",
-            "answer": "It shows progression from obstacles to success, supporting the claim of fundamental transformation",
-            "explanation": "By demonstrating how each problem was solved, the author builds a convincing case for ongoing transformation."
+            "question": "What development strategies strengthen this passage?",
+            "answer": "Specific data (300 miles, sales numbers), acknowledgment of initial problems, cause-effect explanation",
+            "reasoning": "Numbers make claims concrete; acknowledging past problems shows honesty; results show solutions work"
+          },
+          {
+            "step": 5,
+            "question": "Now evaluate answer choices",
+            "options_analysis": [
+              {
+                "option": "A",
+                "text": "Present a chronological history of electric vehicle development",
+                "trap_type": "WRONG STRUCTURE",
+                "flaw": "While passage mentions timeline, primary structure is problem/solution, not chronological. Time markers serve to show when solutions emerged, not to trace history."
+              },
+              {
+                "option": "B",
+                "text": "Compare advantages and disadvantages of electric vehicles",
+                "trap_type": "WRONG STRUCTURE",
+                "flaw": "Passage doesn't compare pros and cons—it shows how cons (problems) were eliminated. Not a balanced comparison."
+              },
+              {
+                "option": "C",
+                "text": "Challenge common misconceptions and present alternative explanation",
+                "trap_type": "WRONG PURPOSE",
+                "flaw": "Passage doesn't mention or refute misconceptions. It presents problems that were real, not mistaken beliefs."
+              },
+              {
+                "option": "D",
+                "text": "Describe initial obstacles to electric vehicle adoption and explain how those obstacles have been addressed",
+                "trap_type": "NONE—CORRECT",
+                "validation": "✓ Accurately identifies problem/solution structure. 'Initial obstacles' = problems, 'how those obstacles have been addressed' = solutions. Matches passage organization perfectly."
+              }
+            ],
+            "correct_answer": "D"
           }
         ]
       },
@@ -209,113 +503,104 @@
     },
     {
       "id": "slide_06",
-      "type": "concept_teaching",
-      "title": "Structure and Purpose Connection",
-      "duration_estimate": 260,
+      "type": "independent_practice",
+      "title": "Your Turn: Apply the STRUCTURE Strategy",
+      "duration_estimate": 360,
       "content": {
-        "heading": "Why Structure Matters",
-        "text": "Authors don't choose organizational patterns randomly - each structure serves specific purposes and creates particular effects on readers.",
-        "concept_box": {
-          "title": "Structure-Purpose Relationships",
-          "points": [
-            "⏰ **Chronological** → Shows development over time, emphasizes progress or change",
-            "⚖️ **Compare/Contrast** → Highlights differences, helps readers make informed choices",
-            "🔧 **Problem/Solution** → Persuades readers that action is needed and possible",
-            "🔄 **Cause/Effect** → Demonstrates relationships, predicts outcomes",
-            "📐 **General to Specific** → Builds understanding from broad concepts to details"
-          ]
-        },
-        "examples": {
-          "scientific": "A research paper uses general-to-specific structure to guide readers from broad hypothesis to detailed experimental results.",
-          "persuasive": "An editorial uses problem/solution structure to convince readers that a proposed policy change is necessary and beneficial."
-        }
+        "heading": "Independent Practice",
+        "instructions": "Use all 3 phases: Identify Pattern → Connect to Purpose → Analyze Development",
+        "passage": "Procrastination affects nearly everyone, yet its underlying causes are often misunderstood. Many people believe procrastinators are simply lazy or lack willpower. Research reveals a more complex picture. Studies show that procrastination stems from emotional regulation issues rather than time management problems. When faced with tasks that trigger negative emotions—boredom, anxiety, or frustration—people delay to avoid these feelings. This pattern creates a cycle: temporary relief from negative emotions reinforces the procrastination behavior, making it more likely to occur again. Understanding this emotional component suggests new approaches to overcoming procrastination. Instead of focusing solely on time management techniques, effective strategies should address the emotional triggers that lead to delay.",
+        "question": "The author structures this passage primarily to:",
+        "strategy_reminder": "Phase 1: What's the pattern? Problem/solution? Compare/contrast? General to specific? Phase 2: Why this structure—what's the author's purpose? Phase 3: How does development support it?"
       },
       "interactions": [
         {
-          "type": "reveal_on_click",
-          "elements": [
-            {
-              "trigger": "Click for SAT connection",
-              "reveal": "On the SAT, questions often ask why an author chose a particular structure or how it serves their purpose - understanding these connections is crucial."
-            }
-          ]
+          "type": "multiple_choice_question",
+          "content": {
+            "options": [
+              "Present a chronological history of procrastination research",
+              "Compare different types of procrastination behaviors",
+              "Challenge a common misconception and present an alternative explanation",
+              "Describe the process by which procrastination develops over time"
+            ],
+            "correct": 2,
+            "explanation": "Let's apply the 3 phases:\n\nPHASE 1: Pattern identification:\n- Opening: 'causes are often misunderstood'\n- Middle: 'Many people believe X' (misconception) → 'Research reveals' (correction)\n- Structure: Common belief → Research-based alternative\n\nPHASE 2: Purpose connection:\n- Author challenges misconception (lazy/lack willpower) and replaces with evidence-based explanation (emotional regulation)\n- This structure corrects reader understanding\n\nPHASE 3: Development analysis:\n- Contrasts mistaken belief with research findings\n- Explains mechanism (emotional triggers → avoidance → cycle)\n- Concludes with implications (new intervention approaches)\n\nC: ✓ CORRECT—'Challenge common misconception' (lazy/willpower) + 'present alternative explanation' (emotional regulation)\n\nA: ✗ No chronological history—focuses on conceptual correction, not timeline\n\nB: ✗ Doesn't compare types of procrastination—discusses one cause for all procrastination\n\nD: ✗ While passage mentions cycle, primary structure is misconception/correction, not process description"
+          }
         }
       ]
     },
     {
       "id": "slide_07",
-      "type": "independent_practice",
-      "title": "Your Turn: Structure Analysis",
-      "duration_estimate": 360,
+      "type": "concept_teaching",
+      "title": "Strategy Synthesis: Structure Pattern Summary",
+      "duration_estimate": 280,
       "content": {
-        "heading": "Independent Practice",
-        "passage": {
-          "text": "Procrastination affects nearly everyone, yet its underlying causes are often misunderstood. Many people believe procrastinators are simply lazy or lack willpower. Research reveals a more complex picture. Dr. Pychyl's studies show that procrastination stems from emotional regulation issues rather than time management problems. When faced with tasks that trigger negative emotions - boredom, anxiety, or frustration - people delay to avoid these feelings. This pattern creates a cycle: temporary relief from negative emotions reinforces the procrastination behavior, making it more likely to occur again. Understanding this emotional component suggests new approaches to overcoming procrastination. Instead of focusing solely on time management techniques, effective strategies should address the emotional triggers that lead to delay.",
-          "word_count": 135
+        "heading": "Master These Patterns—Identify Structure Instantly",
+        "table": {
+          "columns": ["Pattern", "Purpose", "Signal Words", "Quick Test"],
+          "rows": [
+            [
+              "Chronological",
+              "Show development over time or sequence of steps",
+              "first, then, next, eventually, before, after",
+              "Are events/steps in time order?"
+            ],
+            [
+              "Compare/Contrast",
+              "Highlight similarities/differences between subjects",
+              "similarly, however, in contrast, while, unlike",
+              "Are two+ subjects being examined?"
+            ],
+            [
+              "Problem/Solution",
+              "Persuade that action is needed and possible",
+              "problem, challenge, solution, address, resolve",
+              "Is an issue presented then fixed?"
+            ],
+            [
+              "Cause/Effect",
+              "Explain why things happen or predict outcomes",
+              "because, therefore, as a result, leads to, causes",
+              "Does X lead to Y or explain why?"
+            ],
+            [
+              "General/Specific",
+              "Build logical argument with evidence",
+              "for example, specifically, such as, including",
+              "Does it move from claim to evidence?"
+            ]
+          ]
         },
-        "question": {
-          "text": "The author structures this passage primarily to:",
-          "options": [
-            "Present a chronological history of procrastination research",
-            "Compare different types of procrastination behaviors",
-            "Challenge a common misconception and present an alternative explanation",
-            "Describe the process by which procrastination develops over time"
-          ],
-          "correct_answer": "C",
-          "explanations": {
-            "A": "The passage doesn't trace research chronologically - it focuses on challenging beliefs rather than historical development.",
-            "B": "The passage doesn't compare different types of procrastination - it addresses the underlying cause of procrastination generally.",
-            "C": "✓ Correct! The author first presents the common misconception ('lazy or lack willpower'), then provides research-based alternative explanation (emotional regulation issues).",
-            "D": "While the passage mentions a cycle, the primary structure is misconception/correction rather than process description."
-          }
-        }
-      },
-      "interactions": [
-        {
-          "type": "multiple_choice_question",
-          "immediate_feedback": true,
-          "allow_retry": true
-        }
-      ]
+        "expert_insight": "Structure and purpose always connect. Problem/solution persuades. Compare/contrast helps evaluate. Cause/effect explains. Chronological shows progression. General-to-specific builds logical cases."
+      }
     },
     {
       "id": "slide_08",
       "type": "concept_reinforcement",
-      "title": "Key Takeaways",
-      "duration_estimate": 200,
+      "title": "Key Takeaways & Practice Transition",
+      "duration_estimate": 240,
       "content": {
-        "heading": "Text Structure Mastery Summary",
+        "heading": "Text Structure & Organization Mastery",
         "key_points": [
-          {
-            "icon": "🗺️",
-            "title": "Recognize Patterns",
-            "description": "Identify chronological, compare/contrast, problem/solution, cause/effect, and general-to-specific structures."
-          },
-          {
-            "icon": "🎯",
-            "title": "Connect Structure to Purpose",
-            "description": "Understand why authors choose specific organizational patterns to achieve their goals."
-          },
-          {
-            "icon": "🔍",
-            "title": "Analyze Development",
-            "description": "Examine how authors use examples, data, expert opinion, and other strategies to build their ideas."
-          },
-          {
-            "icon": "📚",
-            "title": "SAT Strategy",
-            "description": "Use the MAPS method to systematically analyze any text's structure and development."
-          }
+          "Phase 1: Identify one of five core patterns using signal words and overall flow",
+          "Phase 2: Connect structure to purpose—why did author choose this organization?",
+          "Phase 3: Analyze how development strategies (examples, data, definitions) support structure",
+          "The 100% Rule: Structure always serves rhetorical purpose—it's never random"
         ],
-        "next_steps": {
-          "text": "Foundation complete! Ready for Intermediate Level!",
-          "preview": "You've mastered the fundamentals. Next level covers advanced reading strategies, complex writing techniques, and challenging practice."
+        "strategy_reminder": "Remember STRUCTURE: Survey pattern, Trace purpose, Review development, Understand connections, Connect to answers, Test against passage, Understand rhetorical effect, Remember author's goal, Eliminate mismatches",
+        "expert_insight": "When questions ask about structure, wrong answers often name incorrect patterns (chronological instead of problem/solution) or miss the connection to purpose (history vs. persuasion).",
+        "practice_transition": {
+          "text": "Ready to apply your mastery? Let's practice with authentic SAT structure questions!",
+          "button_text": "Start Skill Practice",
+          "skill_code": "EOI"
         }
       },
       "interactions": [
         {
           "type": "completion_celebration",
-          "unlock_next": "intermediate_level"
+          "content": {
+            "message": "Outstanding! You've mastered text structure and organization with surgical precision."
+          }
         }
       ]
     },
@@ -323,80 +608,77 @@
       "id": "slide_09",
       "type": "mastery_check",
       "title": "Mastery Check",
-      "duration_estimate": 300,
-      "content": {
-        "heading": "Final Assessment",
-        "instructions": "Demonstrate your mastery of text structure analysis with this comprehensive challenge.",
-        "passage": {
-          "text": "The concept of sustainable cities has evolved significantly over the past two decades. Initially, urban planners focused primarily on reducing energy consumption through green buildings and efficient transportation. While these efforts produced modest improvements, they failed to address the fundamental challenge of urban growth. Cities continued expanding outward, consuming natural habitats and requiring extensive infrastructure. Recently, however, a new approach has emerged: the '15-minute city' concept. This model organizes urban areas so residents can access most daily needs - work, school, healthcare, and recreation - within a 15-minute walk or bike ride. Paris mayor Anne Hidalgo has championed this approach, transforming neighborhoods by adding bike lanes, local businesses, and community services. Early results are promising: reduced traffic congestion, improved air quality, and stronger community connections. Barcelona and Melbourne have implemented similar strategies with comparable success. This shift from efficiency-focused to accessibility-focused planning represents a paradigm change in sustainable urban development.",
-          "word_count": 155
-        },
-        "question": {
-          "text": "The passage is structured primarily to:",
-          "options": [
-            "Trace the chronological development of sustainable city planning from past approaches to current innovations",
-            "Compare the advantages and disadvantages of different sustainable city models",
-            "Present a problem with traditional sustainable city approaches and describe an emerging solution",
-            "Argue that the 15-minute city concept is superior to all previous urban planning strategies"
-          ],
-          "correct_answer": "C",
-          "mastery_question": true
-        }
-      },
-      "interactions": [
-        {
-          "type": "mastery_assessment",
-          "required_for_completion": true,
-          "retry_limit": 3
-        }
-      ]
-    }
-  ],
-  "practice_questions": [
-    {
-      "id": "practice_1",
-      "type": "quick_check",
       "skill_codes": ["EOI"],
-      "difficulty": "E",
-      "question": "Which organizational pattern presents an issue followed by a remedy?",
+      "difficulty": "M",
+      "question": "The concept of sustainable cities has evolved significantly over the past two decades. Initially, urban planners focused primarily on reducing energy consumption through green buildings and efficient transportation. While these efforts produced modest improvements, they failed to address the fundamental challenge of urban growth. Cities continued expanding outward, consuming natural habitats and requiring extensive infrastructure. Recently, however, a new approach has emerged: the '15-minute city' concept. This model organizes urban areas so residents can access most daily needs—work, school, healthcare, and recreation—within a 15-minute walk or bike ride. Paris mayor Anne Hidalgo has championed this approach, transforming neighborhoods by adding bike lanes, local businesses, and community services. Early results are promising: reduced traffic congestion, improved air quality, and stronger community connections. Barcelona and Melbourne have implemented similar strategies with comparable success. This shift from efficiency-focused to accessibility-focused planning represents a paradigm change in sustainable urban development.\n\nThe passage is structured primarily to:",
       "options": [
-        "Chronological",
-        "Compare/Contrast",
-        "Problem/Solution",
-        "Cause/Effect"
+        "Trace the chronological development of sustainable city planning from past approaches to current innovations",
+        "Compare the advantages and disadvantages of different sustainable city models",
+        "Present a problem with traditional sustainable city approaches and describe an emerging solution",
+        "Argue that the 15-minute city concept is superior to all previous urban planning strategies"
       ],
-      "correct_answer": "C"
+      "correct_answer": "C",
+      "explanation": "Phase analysis:\n\nPHASE 1—Pattern: PROBLEM/SOLUTION\nStructure breakdown:\n- Initial approaches and their limitations (PROBLEM)\n- 'failed to address fundamental challenge'\n- 'however, a new approach has emerged' (SOLUTION)\n- Evidence of solution working (results)\n\nPHASE 2—Purpose: Persuade that new approach solves what old approach missed\n- Shows inadequacy of efficiency-only focus\n- Presents accessibility model as solution\n- Provides evidence of effectiveness\n\nPHASE 3—Development:\n- Specific examples (Paris, Barcelona, Melbourne)\n- Concrete results (traffic, air quality, community)\n- Contrasts old focus (efficiency) with new (accessibility)\n\nC: ✓ CORRECT—Accurately identifies problem/solution structure\n\nA: ✗ While passage mentions timeline, primary structure is problem/solution, not chronological history. Time serves to show when solution emerged.\n\nB: ✗ Not comparing pros/cons of different models—showing how new model solves old model's problems. Not a balanced comparison.\n\nD: ✗ TOO STRONG—passage presents new approach as better for specific unaddressed issues, not 'superior to ALL previous strategies.' Doesn't claim old approaches were worthless."
     }
   ],
   "resources": {
     "strategy_card": {
-      "title": "Text Structure Quick Reference",
-      "steps": [
-        "1. MAIN IDEA - Identify the central point",
-        "2. ARRANGE - Find the organizational pattern",
-        "3. PURPOSE - Understand why this structure",
-        "4. SUPPORT - Analyze how ideas are developed"
+      "title": "The STRUCTURE Strategy Quick Reference",
+      "phases": [
+        {
+          "phase": "1. IDENTIFY PATTERN",
+          "steps": [
+            "Read opening and closing for clues",
+            "Look for signal words",
+            "Count main subjects (one vs. multiple)",
+            "Check if problem is mentioned",
+            "Classify: Chronological, Compare/Contrast, Problem/Solution, Cause/Effect, or General/Specific"
+          ]
+        },
+        {
+          "phase": "2. CONNECT TO PURPOSE",
+          "steps": [
+            "Ask: What is author trying to accomplish?",
+            "Match structure to purpose (persuade, explain, analyze, inform)",
+            "Identify how structure creates specific reader effects"
+          ]
+        },
+        {
+          "phase": "3. ANALYZE DEVELOPMENT",
+          "steps": [
+            "Identify development strategies used",
+            "Check for: examples, data, expert opinion, definitions, counterarguments",
+            "Verify strategies support the structure"
+          ]
+        }
       ],
-      "tips": [
-        "Look for signal words that indicate organizational patterns",
-        "Consider how structure serves the author's purpose",
-        "Analyze multiple development strategies working together",
-        "Connect structure to the main argument or message"
-      ]
+      "the_100_rule": "Structure always serves purpose. Problem/solution persuades. Compare/contrast evaluates. Cause/effect explains. Chronological shows progression. General/specific proves claims."
     },
     "common_mistakes": [
-      "Confusing chronological order with cause/effect relationships",
-      "Missing the connection between structure and author's purpose",
-      "Focusing on details instead of overall organizational pattern",
-      "Overlooking transition words that signal structure"
-    ]
+      "Confusing chronological mentions with chronological structure",
+      "Missing that problem/solution is persuasive, not just informative",
+      "Choosing 'compare' when passage actually shows problem then solution",
+      "Forgetting to connect structure choice to author's rhetorical purpose"
+    ],
+    "structure_quick_reference": {
+      "Chronological": "Time order → Shows development/process",
+      "Compare/Contrast": "Two+ subjects → Highlights differences/similarities",
+      "Problem/Solution": "Issue → Fix → Persuades action is needed",
+      "Cause/Effect": "X leads to Y → Explains why or predicts",
+      "General/Specific": "Claim → Evidence → Builds logical argument"
+    }
   },
   "metadata": {
     "created_date": "2024-12-01",
-    "last_updated": "2024-12-01",
-    "content_version": "1.0",
+    "last_updated": "2025-01-02",
+    "content_version": "2.0",
     "estimated_completion_time": 1800,
     "prerequisite_skills": ["lesson_05"],
-    "skill_progression": ["intermediate_level"]
+    "skill_progression": ["lesson_07"],
+    "strategy_integration": {
+      "source": "Expert SAT strategies synthesis",
+      "key_innovation": "3-Phase STRUCTURE Strategy: Identify Pattern → Connect to Purpose → Analyze Development",
+      "slides_enhanced": ["slide_02", "slide_03", "slide_04", "slide_05"]
+    }
   }
 }

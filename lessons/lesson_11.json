@@ -6,10 +6,10 @@
   "duration": "20-25 min",
   "skill_codes": ["CTC"],
   "learning_objectives": [
-    "Identify relationships between paired passages",
-    "Compare and contrast different authors' perspectives",
-    "Analyze how texts build upon or challenge each other",
-    "Master College Board's cross-text question strategies"
+    "The Core: Master analyzing how paired texts relate to each other",
+    "The Skill: Identify relationship types—agreement, disagreement, complement, build, qualify",
+    "The Problem: Distinguish nuanced relationships from simple agree/disagree",
+    "Key Strategy: The 3-Phase RELATE Strategy for 100% provable text relationships"
   ],
   "success_criteria": {
     "mastery_threshold": 0.75,
@@ -20,247 +20,442 @@
     {
       "id": "slide_01",
       "type": "introduction",
-      "title": "Welcome to Cross-Text Connections",
+      "title": "Learning Objectives",
       "duration_estimate": 180,
       "content": {
-        "heading": "Learning Objectives",
-        "text": "In this lesson, you'll master analyzing relationships between multiple texts - a key skill for understanding how different authors approach the same topic.",
+        "heading": "The Main Quest",
         "bullet_points": [
-          "Learn to identify different types of text relationships",
-          "Master comparison and contrast techniques for paired passages",
-          "Practice analyzing how authors build on or challenge each other's ideas",
-          "Apply systematic strategies for cross-text questions"
+          "Decode relationships between paired passages",
+          "Master the five relationship patterns",
+          "Apply the 3-Phase RELATE Strategy",
+          "Identify nuanced connections, not just agree/disagree"
         ]
       },
       "interactions": [
         {
-          "type": "progress_indicator",
-          "content": {
-            "current_slide": 1,
-            "total_slides": 8
-          }
-        },
-        {
           "type": "click_to_continue",
-          "content": {
-            "button_text": "Let's Begin!"
-          }
+          "text": "Ready? Let's begin."
         }
       ]
     },
     {
       "id": "slide_02",
-      "type": "concept_teaching",
-      "title": "Understanding Cross-Text Connections",
-      "duration_estimate": 240,
+      "type": "strategy_teaching",
+      "title": "The Master Strategy: Phase 1",
+      "duration_estimate": 320,
       "content": {
-        "heading": "What Are Cross-Text Connections?",
-        "text": "Cross-text connections involve analyzing how two or more texts relate to each other when discussing similar topics, themes, or issues.",
-        "main_points": [
-          "Texts may agree, disagree, or present different aspects of the same topic",
-          "Authors may use different evidence to support similar conclusions",
-          "One text may provide context or background for another",
-          "Texts may represent different time periods, perspectives, or approaches"
+        "heading": "PHASE 1: Compare Topics and Angles",
+        "subtitle": "What Is Each Text Actually About?",
+        "core_principle": {
+          "title": "Foundation: Same Topic, Different Angles",
+          "description": "Cross-text questions pair passages on the same general topic. Understanding what SPECIFIC angle each takes is the foundation for identifying their relationship."
+        },
+        "strategy_steps": [
+          {
+            "step": 1,
+            "title": "Identify Shared Topic",
+            "description": "What general subject do both texts address?",
+            "examples": [
+              {
+                "passage_1": "Benefits of reading physical books",
+                "passage_2": "Benefits of digital books",
+                "shared_topic": "Reading formats / Book types"
+              },
+              {
+                "passage_1": "AI tutoring systems improve math scores",
+                "passage_2": "Risks of AI in education (reduced interaction, privacy)",
+                "shared_topic": "AI in education"
+              }
+            ]
+          },
+          {
+            "step": 2,
+            "title": "Identify Each Text's Specific Angle",
+            "description": "What particular aspect or perspective does each text focus on?",
+            "example": {
+              "topic": "Urban gardens",
+              "text_1_angle": "Crime reduction and safety benefits",
+              "text_2_angle": "Nutrition and health benefits",
+              "note": "Same topic, complementary angles"
+            }
+          },
+          {
+            "step": 3,
+            "title": "Note Each Text's Position/Claim",
+            "description": "What is each author arguing or explaining?",
+            "positions": [
+              "Argues for/against something",
+              "Explains how something works",
+              "Presents benefits or drawbacks",
+              "Describes a phenomenon or trend"
+            ],
+            "example": {
+              "text_1": "Physical books provide better comprehension (argues benefit)",
+              "text_2": "Digital books offer accessibility advantages (argues different benefit)"
+            }
+          }
         ],
-        "relationship_types": [
-          "Agreement: Both texts support the same position with different evidence",
-          "Disagreement: Texts present opposing viewpoints or contradictory evidence",
-          "Complementary: Texts focus on different aspects of the same topic",
-          "Sequential: One text builds on or updates information from another",
-          "Contextual: One text provides background for understanding another"
-        ]
+        "worked_example": {
+          "topic": "Vertical farming",
+          "text_1": {
+            "angle": "Food security solution for growing cities",
+            "position": "Vertical farming addresses urban food challenges",
+            "key_points": "Year-round production, 390x more food per sq ft, reduces transportation"
+          },
+          "text_2": {
+            "angle": "Economic challenges of vertical farming",
+            "position": "High initial costs limit widespread adoption",
+            "key_points": "Substantial setup costs, energy expenses, limited to high-value crops"
+          },
+          "relationship_preview": "Complementary but with tension—both focus on vertical farming, one emphasizes potential, other emphasizes barriers"
+        }
       },
       "interactions": [
         {
-          "type": "reveal_on_click",
-          "content": {
-            "reveal_text": "College Board Focus: Questions test your ability to see relationships between texts, not just understand each text individually."
-          }
+          "type": "step_by_step_reveal",
+          "auto_advance": false
         }
       ]
     },
     {
       "id": "slide_03",
       "type": "strategy_teaching",
-      "title": "The CONNECT Strategy",
-      "duration_estimate": 300,
+      "title": "The Master Strategy: Phase 2",
+      "duration_estimate": 340,
       "content": {
-        "heading": "CONNECT Method for Cross-Text Analysis",
-        "strategy_acronym": "CONNECT",
-        "strategy_steps": [
+        "heading": "PHASE 2: Outline Positions",
+        "subtitle": "Map What Each Author Claims",
+        "core_principle": {
+          "title": "Position = Author's Core Argument or Explanation",
+          "description": "Before identifying relationships, clarify exactly what each author is saying. Position includes both the claim and the reasoning/evidence."
+        },
+        "position_mapping": [
           {
-            "letter": "C",
-            "word": "Compare",
-            "description": "Identify the main topic and purpose of each text"
+            "element": "MAIN CLAIM",
+            "description": "The central point author wants to make",
+            "example": "Text 1: Physical books improve comprehension"
           },
           {
-            "letter": "O",
-            "word": "Outline",
-            "description": "Note each author's main argument or position"
+            "element": "KEY EVIDENCE",
+            "description": "Primary support for the claim",
+            "example": "Text 1: 20% better recall with print, tactile experience aids learning"
           },
           {
-            "letter": "N",
-            "word": "Notice",
-            "description": "Look for areas of agreement and disagreement"
+            "element": "SCOPE",
+            "description": "How broad or limited is the claim?",
+            "examples": [
+              "Absolute: 'Physical books are always better'",
+              "Qualified: 'Physical books show advantages in comprehension'",
+              "Conditional: 'Physical books benefit certain types of reading'"
+            ]
           },
           {
-            "letter": "N",
-            "word": "Note",
-            "description": "Identify different types of evidence each author uses"
-          },
-          {
-            "letter": "E",
-            "word": "Evaluate",
-            "description": "Determine the overall relationship between texts"
-          },
-          {
-            "letter": "C",
-            "word": "Choose",
-            "description": "Select the answer that best describes the relationship"
-          },
-          {
-            "letter": "T",
-            "word": "Test",
-            "description": "Verify your answer against both texts"
+            "element": "TONE/STANCE",
+            "description": "How definitive or tentative is the author?",
+            "spectrum": "Strongly advocating → Presenting balanced view → Raising questions"
           }
-        ]
+        ],
+        "comparison_framework": {
+          "title": "Side-by-Side Position Mapping",
+          "template": {
+            "text_1": {
+              "claim": "[What does Text 1 argue?]",
+              "evidence": "[What support does it provide?]",
+              "scope": "[How broad is the claim?]"
+            },
+            "text_2": {
+              "claim": "[What does Text 2 argue?]",
+              "evidence": "[What support does it provide?]",
+              "scope": "[How broad is the claim?]"
+            },
+            "overlap": "[Do they address same aspects or different?]",
+            "tension": "[Do claims conflict or complement?]"
+          }
+        },
+        "worked_example": {
+          "texts": "Physical books vs. Digital books",
+          "text_1_position": {
+            "claim": "Physical books provide better comprehension and retention",
+            "evidence": "20% better recall, tactile experience important",
+            "scope": "Focuses on cognitive/learning benefits",
+            "tone": "Advocates for physical books based on research"
+          },
+          "text_2_position": {
+            "claim": "Digital books offer practical advantages that outweigh comprehension differences",
+            "evidence": "Accessibility features, environmental benefits, cost-effectiveness, comprehension gap decreases with practice",
+            "scope": "Acknowledges Text 1's points but argues other factors more important",
+            "tone": "Balanced view favoring digital for practical reasons"
+          },
+          "relationship": "Nuanced disagreement—Text 2 ACKNOWLEDGES Text 1's comprehension point but argues other factors outweigh it"
+        }
       },
       "interactions": [
         {
-          "type": "step_by_step_reveal",
-          "content": {
-            "steps": 7
-          }
+          "type": "reveal_on_click",
+          "elements": [
+            {
+              "trigger": "Show Critical Insight",
+              "reveal": "Texts rarely completely agree or completely disagree. Most relationships are nuanced—one acknowledges the other's points but emphasizes different aspects or draws different conclusions."
+            }
+          ]
         }
       ]
     },
     {
       "id": "slide_04",
-      "type": "guided_example",
-      "title": "Guided Practice: Analyzing Text Relationships",
-      "duration_estimate": 360,
+      "type": "strategy_teaching",
+      "title": "The Master Strategy: Phase 3",
+      "duration_estimate": 300,
       "content": {
-        "scenario": "Topic: The benefits of reading physical books vs. digital books",
-        "text_a_summary": "Text A: Argues that physical books provide better comprehension and retention. Cites studies showing 20% better recall with print books and discusses the importance of tactile experience in learning.",
-        "text_b_summary": "Text B: Acknowledges that print books have advantages but emphasizes digital books' accessibility features, environmental benefits, and cost-effectiveness. Notes that comprehension differences decrease with practice.",
-        "question": "How would you describe the relationship between these texts?",
+        "heading": "PHASE 3: Navigate Relationship Types",
+        "subtitle": "The Five Core Relationship Patterns",
+        "relationship_types": [
+          {
+            "type": "COMPLETE AGREEMENT",
+            "definition": "Both texts support same conclusion with similar or different evidence",
+            "rare_on_sat": "Uncommon—SAT prefers nuanced relationships",
+            "structure": "Text 1: Claims X with evidence A. Text 2: Also claims X with evidence B.",
+            "example": {
+              "text_1": "Urban gardens reduce crime (data from Detroit)",
+              "text_2": "Urban gardens reduce crime (data from Philadelphia)",
+              "relationship": "Both support same claim with independent evidence"
+            }
+          },
+          {
+            "type": "COMPLEMENTARY (Different Aspects)",
+            "definition": "Texts focus on different dimensions of same topic without contradicting",
+            "common_on_sat": "Very common—tests ability to see how texts work together",
+            "structure": "Text 1: Addresses aspect A. Text 2: Addresses aspect B. Both contribute to understanding topic.",
+            "example": {
+              "text_1": "Urban gardens provide crime reduction benefits",
+              "text_2": "Urban gardens provide nutrition and health benefits",
+              "relationship": "Complementary—different benefits, both support value of urban gardens"
+            },
+            "signal": "Neither contradicts the other; each adds unique piece"
+          },
+          {
+            "type": "QUALIFIED AGREEMENT",
+            "definition": "One text agrees with another but adds conditions, limitations, or complexity",
+            "structure": "Text 1: Makes claim X. Text 2: Agrees X is true BUT adds important qualifications.",
+            "example": {
+              "text_1": "Homework improves student performance",
+              "text_2": "Homework benefits exist BUT vary by age—effective for high school, minimal for elementary",
+              "relationship": "Text 2 doesn't reject Text 1 but adds crucial 'when/where' conditions"
+            },
+            "key_words": "While generally true, depends on, varies by, with the caveat"
+          },
+          {
+            "type": "PARTIAL DISAGREEMENT / COUNTERBALANCE",
+            "definition": "Text acknowledges some points from other but emphasizes different conclusion",
+            "most_common_on_sat": "This is the SAT's favorite—tests nuanced thinking",
+            "structure": "Text 1: Claims X. Text 2: Acknowledges X has merit BUT argues Y is more important or Y counterbalances X.",
+            "example": {
+              "text_1": "AI tutoring improves learning outcomes (30% better math scores)",
+              "text_2": "While AI shows benefits, risks include reduced human interaction, privacy concerns, over-dependence",
+              "relationship": "Text 2 doesn't deny benefits but presents important counterbalancing concerns"
+            },
+            "key_distinction": "NOT complete disagreement—Text 2 acknowledges Text 1's points while adding critical balance"
+          },
+          {
+            "type": "COMPLETE DISAGREEMENT",
+            "definition": "Texts reach opposite conclusions or contradict each other's core claims",
+            "rare_on_sat": "Less common—most relationships are more nuanced",
+            "structure": "Text 1: Claims X. Text 2: Directly contradicts, claiming NOT X.",
+            "example": {
+              "text_1": "Remote work increases productivity universally",
+              "text_2": "Remote work decreases productivity across all job types",
+              "note": "True disagreement would involve direct contradiction, not just different emphasis"
+            }
+          }
+        ],
+        "identification_flowchart": {
+          "title": "How to Identify Relationship",
+          "questions": [
+            {
+              "q": "Do texts reach same or opposite conclusions?",
+              "same": "Go to Q2",
+              "opposite": "Likely disagreement—but check if partial"
+            },
+            {
+              "q": "Do texts address same aspects or different aspects?",
+              "same": "Likely agreement or qualified agreement",
+              "different": "Likely complementary"
+            },
+            {
+              "q": "Does one text acknowledge the other's points?",
+              "yes": "Likely qualified agreement or partial disagreement",
+              "no": "Check if truly independent or actually contrasting"
+            },
+            {
+              "q": "Does one text add 'but,' 'however,' or conditions?",
+              "yes": "Partial disagreement or qualified agreement",
+              "no": "Complementary or complete agreement"
+            }
+          ]
+        }
+      },
+      "interactions": [
+        {
+          "type": "interactive_elimination",
+          "show_flaw_analysis": true
+        }
+      ]
+    },
+    {
+      "id": "slide_05",
+      "type": "guided_example",
+      "title": "Guided Practice: The Strategy in Action",
+      "duration_estimate": 420,
+      "content": {
+        "heading": "Let's Apply All 3 Phases Together",
+        "passage_1": "AI tutoring systems can provide personalized learning experiences, adapting to individual student needs and providing instant feedback. Research shows 30% improvement in math scores when students use AI tutors consistently.",
+        "passage_2": "While AI tutoring shows promise, it raises concerns about reduced human interaction in education, student data privacy, and the risk of students becoming over-dependent on technology for learning.",
+        "question": "Which best describes how Passage 2 relates to Passage 1?",
         "walkthrough": [
           {
+            "phase": "PHASE 1: Compare Topics",
             "step": 1,
-            "question": "What is each text's main position?",
-            "answer": "A: favors physical books for comprehension; B: balanced view favoring digital for practical reasons"
+            "question": "What is the shared topic and each text's angle?",
+            "answer": "Topic: AI in education | Text 1 angle: Benefits/effectiveness | Text 2 angle: Risks/concerns",
+            "reasoning": "Both discuss AI tutoring but from different perspectives"
           },
           {
+            "phase": "PHASE 2: Outline Positions",
             "step": 2,
-            "question": "Do they completely disagree?",
-            "answer": "No - B acknowledges A's points about comprehension advantages"
+            "question": "Map each text's position",
+            "text_1_position": "AI tutoring provides benefits (personalization, feedback) with proven results (30% improvement)",
+            "text_2_position": "AI tutoring has promise ('while...shows promise') BUT presents important concerns (interaction, privacy, dependence)",
+            "key_observation": "Text 2 ACKNOWLEDGES benefits ('shows promise') but emphasizes risks"
           },
           {
+            "phase": "PHASE 3: Navigate Relationship",
             "step": 3,
-            "question": "What's the overall relationship?",
-            "answer": "Nuanced disagreement - B acknowledges A's points but argues other factors outweigh them"
+            "question": "Evaluate relationship options",
+            "options_analysis": [
+              {
+                "option": "A",
+                "text": "Passage 2 completely contradicts Passage 1's claims about AI effectiveness",
+                "analysis": "✗ WRONG—Text 2 acknowledges promise/benefits, doesn't contradict the 30% improvement claim"
+              },
+              {
+                "option": "B",
+                "text": "Passage 2 provides additional evidence supporting Passage 1's arguments",
+                "analysis": "✗ WRONG—Text 2 doesn't provide supporting evidence; it raises concerns/counterpoints"
+              },
+              {
+                "option": "C",
+                "text": "Passage 2 presents important concerns that balance Passage 1's optimistic view",
+                "analysis": "✓ CORRECT—PARTIAL DISAGREEMENT/COUNTERBALANCE type: Text 2 acknowledges benefits but presents counterbalancing concerns (human interaction, privacy, dependence)"
+              },
+              {
+                "option": "D",
+                "text": "Passage 2 discusses an entirely different aspect of AI that doesn't relate to Passage 1",
+                "analysis": "✗ WRONG—Both discuss AI tutoring; Text 2 directly addresses implications of what Text 1 describes"
+              }
+            ],
+            "correct_answer": "C"
           }
         ]
       },
       "interactions": [
         {
           "type": "guided_walkthrough",
-          "content": {
-            "steps": 3
-          }
+          "allow_highlighting": true,
+          "step_validation": true
         }
       ]
     },
     {
-      "id": "slide_05",
+      "id": "slide_06",
       "type": "independent_practice",
-      "title": "Your Turn: Cross-Text Analysis",
-      "duration_estimate": 300,
+      "title": "Your Turn: Apply the RELATE Strategy",
+      "duration_estimate": 360,
       "content": {
-        "instructions": "Read these text summaries and identify their relationship using the CONNECT method.",
-        "scenario": "Topic: The role of artificial intelligence in education",
-        "text_1": "Passage 1 discusses how AI tutoring systems can provide personalized learning experiences, adapting to individual student needs and providing instant feedback. The author presents data showing 30% improvement in math scores.",
-        "text_2": "Passage 2 examines potential risks of AI in education, including reduced human interaction, privacy concerns with student data, and the risk of over-dependence on technology for learning.",
-        "question": "Which best describes how Passage 2 relates to Passage 1?",
-        "strategy_tip": "Use CONNECT: Compare purposes, Outline positions, Notice agreements/disagreements."
+        "heading": "Independent Practice",
+        "instructions": "Use all 3 phases: Compare Topics → Outline Positions → Navigate Relationships",
+        "passage_1": "Urban gardens significantly benefit communities by reducing crime rates. Research in Detroit found neighborhoods with community gardens saw 40% reduction in crime, creating safer environments for families.",
+        "passage_2": "Community gardens build social connections and provide fresh food access to urban residents. Participants report stronger neighborhood bonds and 78% improvement in household nutrition.",
+        "question": "How do these passages relate?",
+        "strategy_reminder": "Phase 1: What's each text's angle? Phase 2: What does each claim? Phase 3: Same conclusion? Different aspects? Acknowledge each other?"
       },
       "interactions": [
         {
           "type": "multiple_choice_question",
           "content": {
             "options": [
-              "Passage 2 completely contradicts Passage 1's claims about AI effectiveness",
-              "Passage 2 provides additional evidence supporting Passage 1's arguments",
-              "Passage 2 presents important concerns that balance Passage 1's optimistic view",
-              "Passage 2 discusses an entirely different aspect of AI that doesn't relate to Passage 1"
+              "Passage 2 contradicts Passage 1's claims about urban gardens",
+              "Passage 2 provides different evidence supporting the overall benefits of urban gardens",
+              "Passage 2 proves that Passage 1's data about crime is incorrect",
+              "The passages discuss completely unrelated aspects of urban gardens"
             ],
-            "correct": 2,
-            "explanation": "Passage 2 doesn't contradict the effectiveness data from Passage 1, but presents important counterbalancing concerns (human interaction, privacy, over-dependence) that provide a more complete view of AI in education."
-          }
-        }
-      ]
-    },
-    {
-      "id": "slide_06",
-      "type": "skill_application",
-      "title": "Advanced Cross-Text Techniques",
-      "duration_estimate": 420,
-      "content": {
-        "heading": "Mastering Complex Text Relationships",
-        "text": "Learn to handle sophisticated cross-text scenarios involving multiple perspectives, historical contexts, and evolving ideas.",
-        "advanced_patterns": [
-          {
-            "pattern": "Historical Progression",
-            "description": "Texts show how understanding has evolved over time",
-            "example": "Text 1: 1990s view of internet privacy; Text 2: Current perspective after social media emergence",
-            "key_clues": "Dates, phrases like 'initially,' 'now,' 'recent developments'"
-          },
-          {
-            "pattern": "Disciplinary Perspectives",
-            "description": "Different fields examine the same phenomenon",
-            "example": "Text 1: Economist's view of remote work; Text 2: Psychologist's view of remote work",
-            "key_clues": "Different types of evidence, methodologies, terminology"
-          },
-          {
-            "pattern": "Scale Variation",
-            "description": "Texts examine different scales of the same issue",
-            "example": "Text 1: Individual impacts of climate change; Text 2: Global policy responses",
-            "key_clues": "Individual vs. collective focus, micro vs. macro perspectives"
-          },
-          {
-            "pattern": "Solution Sequencing",
-            "description": "Texts present different approaches to solving the same problem",
-            "example": "Text 1: Technology solutions to traffic; Text 2: Urban planning solutions",
-            "key_clues": "Different solution types, various implementation approaches"
-          }
-        ]
-      },
-      "interactions": [
-        {
-          "type": "question_sequence",
-          "content": {
-            "sequence_length": 4
+            "correct": 1,
+            "explanation": "Let's apply the 3 phases:\n\nPHASE 1—Topics and angles:\nShared topic: Urban gardens' value\nText 1 angle: Safety/crime reduction benefits\nText 2 angle: Social connection and nutrition benefits\n\nPHASE 2—Positions:\nText 1: Urban gardens reduce crime (40% reduction data)\nText 2: Urban gardens build community and improve nutrition (social bonds, 78% improvement)\nNeither contradicts the other—different aspects\n\nPHASE 3—Relationship type:\n\nA: ✗ WRONG—No contradiction. Text 2 doesn't address crime at all, so can't contradict Text 1's crime claims\n\nB: ✓ CORRECT—COMPLEMENTARY relationship: Both support value of urban gardens but focus on different benefits (safety vs. social/health). Different evidence (crime data vs. nutrition data) supporting overarching conclusion that urban gardens benefit communities\n\nC: ✗ WRONG—Text 2 doesn't discuss crime data, so can't prove it incorrect\n\nD: ✗ WRONG—Both relate to urban gardens' community benefits, just different dimensions. They're related and complementary, not unrelated"
           }
         }
       ]
     },
     {
       "id": "slide_07",
+      "type": "concept_teaching",
+      "title": "Strategy Synthesis: Relationship Pattern Summary",
+      "duration_estimate": 280,
+      "content": {
+        "heading": "Master These Patterns—Identify Relationships Instantly",
+        "table": {
+          "columns": ["Relationship Type", "Key Characteristic", "Signal Words", "Example"],
+          "rows": [
+            [
+              "Complete Agreement",
+              "Both reach same conclusion",
+              "Similarly, likewise, also supports",
+              "Both texts argue X is beneficial with different evidence"
+            ],
+            [
+              "Complementary",
+              "Different aspects, no contradiction",
+              "Additionally, another benefit, also addresses",
+              "Text 1: crime benefits, Text 2: health benefits"
+            ],
+            [
+              "Qualified Agreement",
+              "Agrees but adds conditions",
+              "While generally true, depends on, varies by",
+              "Text 1: X is effective; Text 2: X effective BUT varies by age"
+            ],
+            [
+              "Partial Disagreement",
+              "Acknowledges points but counterbalances",
+              "While X shows promise, however, raises concerns",
+              "Text 1: benefits; Text 2: acknowledges benefits BUT emphasizes risks"
+            ],
+            [
+              "Complete Disagreement",
+              "Reaches opposite conclusions",
+              "Contradicts, opposes, argues against",
+              "Text 1: X increases Y; Text 2: X decreases Y"
+            ]
+          ]
+        },
+        "expert_insight": "SAT favors nuanced relationships—complementary and partial disagreement are most common. Avoid seeing only complete agreement or complete disagreement."
+      }
+    },
+    {
+      "id": "slide_08",
       "type": "concept_reinforcement",
-      "title": "Cross-Text Mastery & Practice Transition",
+      "title": "Key Takeaways & Practice Transition",
       "duration_estimate": 240,
       "content": {
-        "heading": "Cross-Text Connection Excellence",
+        "heading": "Cross-Text Connection Mastery",
         "key_points": [
-          "Analyze relationships between texts, not just individual text content",
-          "Look for agreement, disagreement, complementary perspectives, or building ideas",
-          "Consider different types of evidence and approaches authors use",
-          "Recognize that texts can partially agree while differing on specific aspects"
+          "Phase 1: Compare topics and identify each text's specific angle—what aspect each focuses on",
+          "Phase 2: Outline each text's position—claim, evidence, scope, and tone",
+          "Phase 3: Navigate relationship type—most are complementary or partial disagreement, not complete agree/disagree",
+          "The 100% Rule: Focus on HOW texts relate, not just what each says individually. Nuanced relationships are most common."
         ],
-        "strategy_reminder": "Remember CONNECT: Compare topics, Outline positions, Notice agreements/disagreements, Note evidence types, Evaluate relationships, Choose best answer, Test against both texts",
-        "college_board_insight": "Cross-text questions reward nuanced understanding of how authors relate to each other's ideas, not black-and-white agreement/disagreement.",
+        "strategy_reminder": "Remember RELATE: Read both passages, Examine each angle, List positions clearly, Assess overlap and tension, Test relationship type, Eliminate oversimplified options",
+        "expert_insight": "Common traps: (1) Seeing only complete agreement/disagreement when relationship is nuanced, (2) Missing complementary relationships, (3) Analyzing texts separately instead of their relationship.",
         "practice_transition": {
-          "text": "Ready to practice cross-text analysis with authentic SAT paired passages? Let's apply your skills!",
+          "text": "Ready to apply your mastery? Let's practice with authentic SAT cross-text questions!",
           "button_text": "Start Skill Practice",
           "skill_code": "CTC"
         }
@@ -269,15 +464,15 @@
         {
           "type": "completion_celebration",
           "content": {
-            "message": "Outstanding! You've mastered the art of cross-text analysis."
+            "message": "Outstanding! You've mastered cross-text connections with surgical precision."
           }
         }
       ]
     },
     {
-      "id": "slide_08",
+      "id": "slide_09",
       "type": "mastery_check",
-      "title": "Cross-Text Quick Check",
+      "title": "Mastery Check",
       "skill_codes": ["CTC"],
       "difficulty": "M",
       "question": "Passage 1 argues that urban gardens increase property values by 10% and reduce crime. Passage 2 discusses how urban gardens build community connections and provide fresh food access. How do these passages relate?",
@@ -288,41 +483,67 @@
         "The passages discuss completely unrelated aspects of urban gardens"
       ],
       "correct_answer": "B",
-      "explanation": "Both passages support urban gardens' benefits but focus on different advantages: Passage 1 emphasizes economic/safety benefits while Passage 2 emphasizes social/health benefits. They complement rather than contradict each other."
+      "explanation": "Phase analysis:\n\nPHASE 1—Topics and angles:\nShared topic: Urban gardens\nPassage 1 angle: Economic and safety benefits (property values, crime)\nPassage 2 angle: Social and health benefits (community, food access)\n\nPHASE 2—Positions:\nPassage 1 position: Urban gardens provide economic/safety value (10% property increase, crime reduction)\nPassage 2 position: Urban gardens provide social/health value (community bonds, nutrition access)\nNo contradiction—different dimensions of benefits\n\nPHASE 3—Relationship:\n\nA: ✗ WRONG—No contradiction. Passage 2 doesn't address property values or crime, so can't contradict those claims\n\nB: ✓ CORRECT—COMPLEMENTARY relationship: Both support value of urban gardens with different evidence. Passage 1 provides economic/safety evidence, Passage 2 provides social/health evidence. Together they create fuller picture of benefits.\n\nC: ✗ WRONG—Passage 2 doesn't mention property values, so can't prove data incorrect\n\nD: ✗ WRONG—Both discuss urban gardens' community benefits, just different types. Related and complementary, not unrelated."
     }
   ],
   "resources": {
     "strategy_card": {
-      "title": "Cross-Text Connections Quick Reference",
-      "steps": [
-        "1. COMPARE: Identify main topic and purpose of each text",
-        "2. OUTLINE: Note each author's position/argument",
-        "3. NOTICE: Look for agreements and disagreements",
-        "4. NOTE: Identify different evidence types",
-        "5. EVALUATE: Determine overall relationship",
-        "6. CHOOSE: Select best relationship description",
-        "7. TEST: Verify answer against both texts"
+      "title": "The RELATE Strategy Quick Reference",
+      "phases": [
+        {
+          "phase": "1. COMPARE TOPICS",
+          "steps": [
+            "Identify shared topic",
+            "Note each text's specific angle/focus",
+            "Determine scope of each text"
+          ]
+        },
+        {
+          "phase": "2. OUTLINE POSITIONS",
+          "steps": [
+            "Map each text's main claim",
+            "Note key evidence provided",
+            "Check if positions acknowledge each other"
+          ]
+        },
+        {
+          "phase": "3. NAVIGATE RELATIONSHIPS",
+          "steps": [
+            "Complete Agreement: Same conclusion, similar/different evidence",
+            "Complementary: Different aspects, no contradiction",
+            "Qualified Agreement: Agrees but adds conditions",
+            "Partial Disagreement: Acknowledges but counterbalances",
+            "Complete Disagreement: Opposite conclusions"
+          ]
+        }
       ],
-      "tips": [
-        "Focus on relationships between texts, not just individual content",
-        "Look for agreement, disagreement, complementary, or building patterns",
-        "Consider partial agreement with specific differences",
-        "Note different types of evidence and approaches used"
-      ]
+      "the_100_rule": "Most relationships are nuanced—complementary or partial disagreement. Avoid oversimplifying to complete agree/disagree."
     },
     "common_mistakes": [
-      "Analyzing each text separately instead of their relationship",
       "Seeing only complete agreement or complete disagreement",
-      "Missing complementary relationships where texts discuss different aspects",
-      "Ignoring how one text might build upon or qualify another's claims"
-    ]
+      "Missing complementary relationships where texts address different aspects",
+      "Analyzing each text separately instead of their relationship",
+      "Ignoring acknowledgments one text makes of another's points"
+    ],
+    "relationship_quick_reference": {
+      "Most Common": "Complementary (different aspects) or Partial Disagreement (acknowledges but counterbalances)",
+      "Complementary": "Different dimensions, both support broader conclusion",
+      "Partial Disagreement": "Text 2 acknowledges Text 1's points BUT emphasizes concerns/alternatives",
+      "Qualified": "Agrees generally but adds 'when/where/how' conditions",
+      "Key Test": "Does one text acknowledge the other's points? If yes → likely qualified or partial, not complete disagree"
+    }
   },
   "metadata": {
     "created_date": "2024-12-01",
-    "last_updated": "2024-12-01",
-    "content_version": "1.0",
-    "estimated_completion_time": 1500,
-    "prerequisite_skills": ["CID", "COE", "WIC"],
-    "skill_progression": []
+    "last_updated": "2025-01-02",
+    "content_version": "2.0",
+    "estimated_completion_time": 1680,
+    "prerequisite_skills": ["lesson_10"],
+    "skill_progression": [],
+    "strategy_integration": {
+      "source": "Expert SAT strategies synthesis",
+      "key_innovation": "3-Phase RELATE Strategy: Compare Topics → Outline Positions → Navigate Relationships",
+      "slides_enhanced": ["slide_02", "slide_03", "slide_04", "slide_05"]
+    }
   }
 }

@@ -6,10 +6,10 @@
   "duration": "20-25 min",
   "skill_codes": ["PBC"],
   "learning_objectives": [
-    "Master comma usage in complex sentences",
-    "Learn when to use semicolons and colons effectively",
-    "Understand apostrophe rules for possession and contractions",
-    "Apply punctuation strategies to SAT Writing questions"
+    "The Core: Master comma, semicolon, colon, and apostrophe rules",
+    "The Skill: Apply punctuation to create clear boundaries between ideas",
+    "The Problem: Multiple technically correct options testing your precision",
+    "Key Strategy: The 3-Phase PAUSE Strategy for 100% provable punctuation"
   ],
   "success_criteria": {
     "mastery_threshold": 0.75,
@@ -20,98 +20,89 @@
     {
       "id": "slide_01",
       "type": "introduction",
-      "title": "Welcome to Punctuation Mastery",
+      "title": "Learning Objectives",
       "duration_estimate": 180,
       "content": {
-        "heading": "Learning Objectives",
-        "text": "Punctuation marks are the traffic signals of writing - they guide readers through your ideas clearly and effectively.",
+        "heading": "The Main Quest",
         "bullet_points": [
-          "Master comma placement in complex sentences",
-          "Learn the power of semicolons and colons",
-          "Conquer apostrophe rules once and for all",
-          "Apply punctuation skills to boost SAT Writing scores"
-        ],
-        "visual_element": {
-          "type": "progress_indicator",
-          "total_slides": 8,
-          "estimated_time": "20-25 minutes"
-        }
+          "Decode when each punctuation mark is required",
+          "Master the apostrophe vs. no apostrophe decision",
+          "Apply the 3-Phase PAUSE Strategy for certainty",
+          "Eliminate incorrect punctuation with surgical precision"
+        ]
       },
       "interactions": [
         {
           "type": "click_to_continue",
-          "text": "Ready to master punctuation? Click to continue"
+          "text": "Ready? Let's begin."
         }
       ]
     },
     {
       "id": "slide_02",
-      "type": "concept_teaching",
-      "title": "The Comma: Your Best Friend",
-      "duration_estimate": 240,
-      "content": {
-        "heading": "Essential Comma Rules",
-        "text": "Commas create pauses and separate elements, making your writing clearer and easier to follow.",
-        "concept_box": {
-          "title": "The Big 4 Comma Uses",
-          "points": [
-            "📝 **Lists** - Separate items in a series (red, white, and blue)",
-            "🔗 **Joining** - Before conjunctions linking independent clauses",
-            "📍 **Setting off** - Around non-essential information",
-            "🎯 **After** - Following introductory elements"
-          ]
-        },
-        "examples": {
-          "correct": "After studying for hours, Maria, who was determined to succeed, felt confident about the exam.",
-          "incorrect": "After studying for hours Maria who was determined to succeed felt confident about the exam."
-        }
-      },
-      "interactions": [
-        {
-          "type": "reveal_on_click",
-          "elements": [
-            {
-              "trigger": "Click to see comma placement breakdown",
-              "reveal": "Notice: comma after intro (After studying), commas around non-essential info (who was determined), and proper flow throughout."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "slide_03",
       "type": "strategy_teaching",
-      "title": "The PACE Method for Punctuation",
-      "duration_estimate": 300,
+      "title": "The Master Strategy: Phase 1",
+      "duration_estimate": 320,
       "content": {
-        "heading": "Strategy: Systematic Punctuation Check",
+        "heading": "PHASE 1: Identify the Clause Structure",
+        "subtitle": "Independent vs. Dependent—Everything Flows From This",
+        "core_principle": {
+          "title": "The Foundation",
+          "description": "Punctuation rules depend on whether you're connecting independent clauses, dependent clauses, or neither. Master this distinction and punctuation becomes predictable."
+        },
+        "clause_types": [
+          {
+            "type": "INDEPENDENT CLAUSE",
+            "definition": "Can stand alone as complete sentence (Subject + Verb + Complete Thought)",
+            "examples": [
+              "The students studied hard.",
+              "She passed the exam.",
+              "Renewable energy is growing rapidly."
+            ],
+            "key_test": "Could this be a sentence by itself? If YES → independent"
+          },
+          {
+            "type": "DEPENDENT CLAUSE",
+            "definition": "Has subject + verb BUT cannot stand alone (starts with subordinating word)",
+            "examples": [
+              "Although the students studied hard",
+              "When she passed the exam",
+              "Because renewable energy is growing rapidly"
+            ],
+            "subordinating_words": "because, although, when, if, since, while, unless, until, after, before, though",
+            "key_test": "Could this be a sentence by itself? If NO → dependent"
+          },
+          {
+            "type": "PHRASE",
+            "definition": "Group of words lacking subject-verb combination",
+            "examples": [
+              "After the game",
+              "Running through the park",
+              "With great enthusiasm"
+            ],
+            "key_test": "Does this have a subject AND verb? If NO → phrase"
+          }
+        ],
         "strategy_steps": [
           {
             "step": 1,
-            "title": "PAUSE - Find natural breaks",
-            "description": "Read aloud to hear where pauses naturally occur",
-            "example": "The student studied hard (pause) and she passed the test."
+            "title": "Find the Verbs",
+            "description": "Locate all finite verbs in the sentence",
+            "example": "The team won the game, they celebrated afterwards. → verbs: 'won,' 'celebrated'"
           },
           {
             "step": 2,
-            "title": "ANALYZE - Identify clause types",
-            "description": "Determine if clauses are independent or dependent",
-            "example": "Independent: 'The student studied hard' + 'she passed' = comma + conjunction"
+            "title": "Identify the Clauses",
+            "description": "Group each verb with its subject",
+            "example": "Clause 1: 'The team won the game' | Clause 2: 'they celebrated afterwards'"
           },
           {
             "step": 3,
-            "title": "CONNECT - Choose appropriate punctuation",
-            "description": "Select commas, semicolons, or colons based on relationship",
-            "example": "Related ideas of equal weight = semicolon; explanation = colon"
-          },
-          {
-            "step": 4,
-            "title": "EDIT - Remove unnecessary marks",
-            "description": "Eliminate excess punctuation that doesn't serve a purpose",
-            "example": "Avoid comma overload that makes sentences choppy"
+            "title": "Test Independence",
+            "description": "Could each clause stand alone?",
+            "example": "Both can stand alone → BOTH INDEPENDENT → Need strong punctuation between them"
           }
-        ],
-        "memory_aid": "Keep a good **P.A.C.E.** for clear punctuation!"
+        ]
       },
       "interactions": [
         {
@@ -121,71 +112,289 @@
       ]
     },
     {
-      "id": "slide_04",
-      "type": "concept_teaching",
-      "title": "Semicolons and Colons: The Power Players",
-      "duration_estimate": 300,
+      "id": "slide_03",
+      "type": "strategy_teaching",
+      "title": "The Master Strategy: Phase 2",
+      "duration_estimate": 340,
       "content": {
-        "heading": "Advanced Punctuation Tools",
-        "text": "Semicolons and colons add sophistication and clarity to your writing when used correctly.",
-        "concept_box": {
-          "title": "Semicolon vs. Colon",
-          "points": [
-            "🔄 **Semicolon (;)** - Connects related independent clauses of equal weight",
-            "📋 **Before lists** - Use semicolons when list items contain commas",
-            "➡️ **Colon (:)** - Introduces explanations, lists, or examples",
-            "💡 **After complete thought** - Colons must follow independent clauses"
-          ]
-        },
-        "examples": {
-          "semicolon": "The experiment failed; however, the data was still valuable.",
-          "colon": "The recipe requires three main ingredients: flour, eggs, and milk."
-        }
+        "heading": "PHASE 2: Apply the Punctuation Rules",
+        "subtitle": "Master the Four Core Patterns",
+        "punctuation_rules": [
+          {
+            "pattern": "INDEPENDENT + INDEPENDENT",
+            "rule": "Must use STRONG punctuation",
+            "options": [
+              {
+                "mark": "PERIOD",
+                "when": "Ideas are distinct",
+                "example": "The experiment succeeded. The team celebrated."
+              },
+              {
+                "mark": "SEMICOLON",
+                "when": "Ideas are closely related",
+                "example": "The experiment succeeded; the team had worked for months.",
+                "note": "Semicolons show connection—use when ideas flow together logically"
+              },
+              {
+                "mark": "COMMA + COORDINATING CONJUNCTION",
+                "when": "Need to show specific relationship",
+                "example": "The experiment succeeded, and the team celebrated.",
+                "conjunctions": "FANBOYS: for, and, nor, but, or, yet, so"
+              }
+            ],
+            "deadly_error": "COMMA ALONE between independent clauses = COMMA SPLICE (automatic wrong answer)"
+          },
+          {
+            "pattern": "DEPENDENT + INDEPENDENT",
+            "rule": "Use COMMA after dependent clause when it comes first",
+            "examples": [
+              {
+                "correct": "Although the test was difficult, most students passed.",
+                "structure": "[Dependent], [Independent]"
+              },
+              {
+                "correct": "Most students passed although the test was difficult.",
+                "structure": "[Independent] [Dependent] — NO COMMA when dependent comes second"
+              }
+            ]
+          },
+          {
+            "pattern": "INTRODUCTORY ELEMENT + MAIN CLAUSE",
+            "rule": "Use COMMA after introductory phrase or word",
+            "examples": [
+              "After studying for hours, Maria felt confident.",
+              "However, the results were surprising.",
+              "In the morning, we'll discuss the plan."
+            ],
+            "note": "Short intros (2-3 words) sometimes skip comma, but when in doubt, use it"
+          },
+          {
+            "pattern": "NON-ESSENTIAL INFORMATION",
+            "rule": "Set off with COMMAS (or dashes) on BOTH sides",
+            "examples": [
+              "The scientist, who was determined to succeed, worked tirelessly.",
+              "Maria, the team leader, presented the findings.",
+              "The experiment, conducted over three years, produced valuable data."
+            ],
+            "test": "Can you remove the part between commas and still have complete sentence? If YES → non-essential, needs commas"
+          }
+        ],
+        "special_punctuation": [
+          {
+            "mark": "COLON (:)",
+            "rule": "Introduces list, explanation, or example AFTER INDEPENDENT CLAUSE",
+            "requirements": [
+              "Must come after complete sentence",
+              "What follows explains, lists, or exemplifies what came before"
+            ],
+            "examples": [
+              {
+                "correct": "The recipe requires three ingredients: flour, eggs, and milk.",
+                "why": "Complete sentence before colon, list after"
+              },
+              {
+                "incorrect": "The ingredients are: flour, eggs, and milk.",
+                "why": "NOT a complete sentence before colon"
+              }
+            ]
+          },
+          {
+            "mark": "SEMICOLON (;)",
+            "two_uses": [
+              {
+                "use": "Connect closely related independent clauses",
+                "example": "The experiment failed; the data was still valuable."
+              },
+              {
+                "use": "Separate items in complex lists (when items contain commas)",
+                "example": "The conference had attendees from Paris, France; London, England; and Berlin, Germany."
+              }
+            ]
+          }
+        ]
       },
       "interactions": [
         {
           "type": "reveal_on_click",
           "elements": [
             {
-              "trigger": "Click for memory trick",
-              "reveal": "Semicolon = partial stop (like a comma with more power). Colon = full stop before explanation (like a period that introduces)."
+              "trigger": "Show Critical Rule",
+              "reveal": "Comma between independent clauses WITHOUT conjunction = automatic error. This is SAT's #1 punctuation trap."
             }
           ]
         }
       ]
     },
     {
+      "id": "slide_04",
+      "type": "strategy_teaching",
+      "title": "The Master Strategy: Phase 3 - Apostrophes",
+      "duration_estimate": 300,
+      "content": {
+        "heading": "PHASE 3: Master Apostrophe Rules",
+        "subtitle": "The 100% Rule: Possession vs. Plural vs. Contraction",
+        "core_principle": {
+          "title": "Three Uses, Three Rules",
+          "description": "Apostrophes have exactly three jobs. Learn these and you'll never miss an apostrophe question."
+        },
+        "apostrophe_uses": [
+          {
+            "use": "POSSESSION",
+            "rule": "Shows ownership—something belongs to someone/something",
+            "rules": [
+              {
+                "case": "Singular noun",
+                "rule": "Add 's",
+                "examples": ["the student's notebook", "the company's policy", "Maria's discovery"]
+              },
+              {
+                "case": "Plural noun ending in s",
+                "rule": "Add only '",
+                "examples": ["the students' notebooks", "the companies' policies", "the workers' rights"]
+              },
+              {
+                "case": "Plural noun NOT ending in s",
+                "rule": "Add 's",
+                "examples": ["the children's toys", "the people's choice", "the women's conference"]
+              }
+            ],
+            "key_test": "Ask: Does something belong to this noun? If YES → needs apostrophe"
+          },
+          {
+            "use": "CONTRACTIONS",
+            "rule": "Replaces missing letters when combining two words",
+            "examples": [
+              "it is / it has → it's",
+              "they are → they're",
+              "who is / who has → who's",
+              "cannot → can't",
+              "will not → won't"
+            ],
+            "key_test": "Can you expand this to two words? If YES → contraction needs apostrophe"
+          },
+          {
+            "use": "NO APOSTROPHE",
+            "rule": "Possessive pronouns NEVER use apostrophes",
+            "pronouns": ["its", "whose", "hers", "yours", "ours", "theirs"],
+            "deadly_errors": [
+              {
+                "wrong": "it's",
+                "when_wrong": "Trying to show possession",
+                "correct": "its",
+                "example": "The dog wagged its tail. (NOT it's)"
+              },
+              {
+                "wrong": "who's",
+                "when_wrong": "Trying to show possession",
+                "correct": "whose",
+                "example": "Whose book is this? (NOT who's)"
+              },
+              {
+                "wrong": "their's / your's / her's",
+                "when_wrong": "Never correct—possessive pronouns don't use apostrophes",
+                "correct": "theirs / yours / hers"
+              }
+            ],
+            "note": "Simple plurals NEVER use apostrophes: dogs, books, students (NOT dog's, book's, student's unless showing possession)"
+          }
+        ],
+        "decision_tree": {
+          "title": "The Apostrophe Decision Process",
+          "steps": [
+            {
+              "question": "Is it a contraction?",
+              "if_yes": "Use apostrophe (it's = it is)",
+              "if_no": "Go to next question"
+            },
+            {
+              "question": "Is it showing possession?",
+              "if_yes": "Check if it's a possessive pronoun",
+              "sub_check": {
+                "if_pronoun": "NO apostrophe (its, whose, theirs)",
+                "if_noun": "USE apostrophe (student's, Maria's, children's)"
+              },
+              "if_no": "NO apostrophe (simple plural: students, books)"
+            }
+          ]
+        }
+      },
+      "interactions": [
+        {
+          "type": "interactive_elimination",
+          "show_flaw_analysis": true
+        }
+      ]
+    },
+    {
       "id": "slide_05",
       "type": "guided_example",
-      "title": "Guided Practice: Apostrophe Mastery",
-      "duration_estimate": 360,
+      "title": "Guided Practice: The Strategy in Action",
+      "duration_estimate": 420,
       "content": {
-        "heading": "Conquer Apostrophe Confusion",
-        "passage": {
-          "text": "The students notebooks were scattered across the librarys tables. Its important to note that the books pages showed signs of heavy use, and many students couldnt find there favorite study spots. The teachers dedication to helping student's succeed was evident in the extra time she spent reviewing everyones work.",
-          "highlight_enabled": true
-        },
-        "guided_questions": [
+        "heading": "Let's Apply All 3 Phases Together",
+        "passage": "The companys new policy affects all employees however some workers arent sure about it's implementation. The managers explanation was clear: all departments must follow the same procedures and everyone's input is valued during the transition.",
+        "question": "Which choice correctly punctuates the passage?",
+        "walkthrough": [
           {
+            "phase": "PHASE 1: Identify Clause Structure",
             "step": 1,
-            "question": "Find and fix the POSSESSION errors",
-            "hint": "Look for ownership that needs apostrophes",
-            "answer": "students' notebooks, library's tables, books' pages",
-            "explanation": "Plural possessives (students', books') get apostrophes after the s. Singular possessives (library's) get apostrophe before s."
+            "question": "How many independent clauses in sentence 1?",
+            "answer": "TWO: 'The companys new policy affects all employees' + 'some workers arent sure about it's implementation'",
+            "reasoning": "Both can stand alone as complete sentences"
           },
           {
+            "phase": "PHASE 2: Apply Punctuation Rules",
             "step": 2,
-            "question": "Identify CONTRACTION vs. POSSESSIVE errors",
-            "hint": "Its vs. It's, there vs. they're",
-            "answer": "It's important (contraction), couldn't (correct), their favorite (possessive)",
-            "explanation": "It's = it is, their = possessive pronoun (no apostrophe), couldn't = could not."
+            "question": "What punctuation is between these independent clauses?",
+            "answer": "Just 'however' with no punctuation—this is a RUN-ON",
+            "reasoning": "Independent + Independent needs strong punctuation. 'However' is a transition word, NOT a conjunction. Must be: period/semicolon before 'however,' comma after"
           },
           {
+            "phase": "PHASE 3: Check Apostrophes",
             "step": 3,
-            "question": "Fix the final apostrophe error",
-            "hint": "Look at 'student's succeed' and 'everyones'",
-            "answer": "students succeed (no apostrophe), everyone's work",
-            "explanation": "'Students' here is plural, not possessive. 'Everyone's' is possessive and needs an apostrophe."
+            "question": "Find ALL apostrophe errors",
+            "answer": "Multiple errors: companys, arent, it's, managers, everyone's",
+            "analysis": [
+              "'companys' → company's (possession: policy belongs to company)",
+              "'arent' → aren't (contraction: are not)",
+              "'it's' → its (possessive pronoun—NO apostrophe)",
+              "'managers' → manager's (possession: explanation belongs to manager)",
+              "'everyone's' → everyone's (CORRECT—possession: input belongs to everyone)"
+            ]
+          },
+          {
+            "phase": "PHASE 2: Check Colon Usage",
+            "step": 4,
+            "question": "Is the colon used correctly?",
+            "answer": "YES—'The manager's explanation was clear' is complete sentence, and colon introduces the explanation",
+            "reasoning": "Colon requires complete sentence before it ✓"
+          },
+          {
+            "step": 5,
+            "question": "Now evaluate the answer choices",
+            "options_analysis": [
+              {
+                "option": "A",
+                "text": "The company's new policy affects all employees; however, some workers aren't sure about its implementation. The manager's explanation was clear: all departments must follow the same procedures, and everyone's input is valued during the transition.",
+                "analysis": "✓ CORRECT—Fixes all errors:\n- company's (possession) ✓\n- semicolon before however ✓\n- comma after however ✓\n- aren't (contraction) ✓\n- its (possessive pronoun, no apostrophe) ✓\n- manager's (possession) ✓\n- colon usage correct ✓\n- everyone's (possession) ✓"
+              },
+              {
+                "option": "B",
+                "text": "The companys new policy affects all employees, however, some workers aren't sure about it's implementation...",
+                "analysis": "✗ Multiple errors:\n- Missing apostrophe in 'companys'\n- Comma splice (comma before 'however' with independent clauses)\n- Wrong 'it's' (should be 'its')\n- Missing other apostrophes"
+              },
+              {
+                "option": "C",
+                "text": "The company's new policy affects all employees, however some workers aren't sure about it's implementation...",
+                "analysis": "✗ Errors:\n- Comma splice (comma alone between independent clauses)\n- Missing comma after 'however'\n- Wrong 'it's' (should be 'its')"
+              },
+              {
+                "option": "D",
+                "text": "The companies new policy affects all employees; however some workers arent sure about its implementation...",
+                "analysis": "✗ Errors:\n- Wrong 'companies' (should be company's—singular possession)\n- Missing apostrophe in 'arent'\n- Missing comma after 'however'\n- Missing other apostrophes"
+              }
+            ],
+            "correct_answer": "A"
           }
         ]
       },
@@ -200,157 +409,189 @@
     {
       "id": "slide_06",
       "type": "independent_practice",
-      "title": "Your Turn: Punctuation Challenge",
-      "duration_estimate": 300,
+      "title": "Your Turn: Apply the PAUSE Strategy",
+      "duration_estimate": 360,
       "content": {
         "heading": "Independent Practice",
-        "passage": {
-          "text": "The companys new policy affects all employees however some workers arent sure about it's implementation. The managers explanation was clear: all departments must follow the same procedures and everyone's input is valued during the transition.",
-          "word_count": 38
-        },
-        "question": {
-          "text": "Which choice correctly punctuates the passage?",
-          "options": [
-            "The company's new policy affects all employees; however, some workers aren't sure about its implementation. The manager's explanation was clear: all departments must follow the same procedures, and everyone's input is valued during the transition.",
-            "The companys new policy affects all employees, however, some workers aren't sure about it's implementation. The managers explanation was clear: all departments must follow the same procedures and everyones input is valued during the transition.",
-            "The company's new policy affects all employees, however some workers aren't sure about it's implementation. The manager's explanation was clear; all departments must follow the same procedures, and everyone's input is valued during the transition.",
-            "The companies new policy affects all employees; however some workers arent sure about its implementation. The managers explanation was clear: all departments must follow the same procedures and everyones input is valued during the transition."
-          ],
-          "correct_answer": "A",
-          "explanations": {
-            "A": "✓ Correct! All apostrophes and punctuation are properly placed: company's (possessive), semicolon before however, aren't (contraction), its (possessive pronoun), manager's (possessive), colon before explanation, everyone's (possessive).",
-            "B": "Incorrect apostrophe usage: 'it's' should be 'its' (possessive), missing apostrophes in 'companys', 'managers', 'everyones', and comma splice with 'however'.",
-            "C": "Wrong punctuation around 'however' (should be semicolon, not comma), and 'it's' should be 'its'.",
-            "D": "Multiple errors: 'companies' should be 'company's', missing apostrophes, 'arent' should be 'aren't', and 'everyones' should be 'everyone's'."
-          }
-        }
+        "instructions": "Use all 3 phases: Identify Clauses → Apply Rules → Check Apostrophes",
+        "passage": "The students final projects were impressive each one demonstrated creativity and technical skill. However some students couldnt complete there work on time, this created problems for the teachers assessment schedule. The departments new policy is simple: late work results in grade reductions but students can request extensions if they're facing genuine difficulties.",
+        "question": "Which choice best corrects all punctuation errors in the passage?",
+        "strategy_reminder": "Phase 1: Count independent clauses. Phase 2: Strong punctuation between them? Phase 3: Check every apostrophe—possession, contraction, or neither?"
       },
       "interactions": [
         {
           "type": "multiple_choice_question",
-          "immediate_feedback": true,
-          "allow_retry": true
+          "content": {
+            "options": [
+              "The students' final projects were impressive; each one demonstrated creativity and technical skill. However, some students couldn't complete their work on time, which created problems for the teacher's assessment schedule. The department's new policy is simple: late work results in grade reductions, but students can request extensions if they're facing genuine difficulties.",
+              "The student's final projects were impressive, each one demonstrated creativity and technical skill. However some students couldn't complete there work on time; this created problems for the teachers assessment schedule. The departments new policy is simple: late work results in grade reductions but students can request extensions if there facing genuine difficulties.",
+              "The students final projects were impressive; each one demonstrated creativity and technical skill. However, some students couldn't complete their work on time, this created problems for the teacher's assessment schedule. The department's new policy is simple; late work results in grade reductions, but students can request extensions if they're facing genuine difficulties.",
+              "The students' final projects were impressive each one demonstrated creativity and technical skill. However, some students couldnt complete their work on time, this created problems for the teachers' assessment schedule. The departments new policy is simple: late work results in grade reductions but students can request extensions if they're facing genuine difficulties."
+            ],
+            "correct": 0,
+            "explanation": "Let's apply the 3 phases:\n\nPHASE 1: Sentence 1 has TWO independent clauses ('projects were impressive' + 'each one demonstrated')\n\nPHASE 2: Need strong punctuation between independent clauses\n\nPHASE 3: Apostrophe analysis:\n- 'students' final projects' = plural possession (projects belong to multiple students) → students'\n- 'couldn't' = contraction (could not) → couldn't\n- 'there' vs 'their' = possessive needed → their\n- 'teacher's assessment' = singular possession → teacher's\n- 'department's policy' = singular possession → department's\n- 'they're' = contraction (they are) → they're\n\nA: ✓ CORRECT—All errors fixed: students' (plural possession), semicolon between independent clauses, couldn't, their, teacher's, department's, comma before 'but', they're\n\nB: Multiple errors—'student's' wrong (should be plural), comma splice, wrong 'there', missing apostrophes\n\nC: Wrong 'there' (should be 'their'), comma splice with 'this created'\n\nD: No punctuation between independent clauses (run-on), missing 'couldn't' apostrophe"
+          }
         }
       ]
     },
     {
       "id": "slide_07",
-      "type": "concept_reinforcement",
-      "title": "Key Takeaways",
-      "duration_estimate": 180,
+      "type": "concept_teaching",
+      "title": "Strategy Synthesis: Punctuation Pattern Summary",
+      "duration_estimate": 280,
       "content": {
-        "heading": "Punctuation Mastery Summary",
+        "heading": "Master These Patterns—Perfect Punctuation Every Time",
+        "table": {
+          "columns": ["Situation", "Rule", "Example"],
+          "rows": [
+            [
+              "Independent + Independent",
+              "Period, semicolon, OR comma+conjunction (NEVER comma alone)",
+              "X. Y  /  X; Y  /  X, and Y"
+            ],
+            [
+              "Dependent + Independent",
+              "Comma after dependent if it comes first (no comma if second)",
+              "Although X, Y  /  Y although X"
+            ],
+            [
+              "Introductory element",
+              "Comma after intro phrase/word",
+              "However, X  /  In the morning, X"
+            ],
+            [
+              "Non-essential info",
+              "Commas on BOTH sides",
+              "X, which Y, Z"
+            ],
+            [
+              "Colon usage",
+              "After complete sentence, introduces list/explanation",
+              "X requires three things: A, B, C"
+            ],
+            [
+              "Possession (noun)",
+              "Add 's (singular) or ' (plural ending in s)",
+              "student's book / students' books"
+            ],
+            [
+              "Possession (pronoun)",
+              "NO apostrophe",
+              "its, whose, theirs (NOT it's, who's)"
+            ],
+            [
+              "Contraction",
+              "Apostrophe replaces missing letters",
+              "it's = it is, can't = cannot"
+            ]
+          ]
+        },
+        "expert_insight": "The comma splice (comma alone between independent clauses) is SAT's most common punctuation trap. When you see 'X, however Y' or 'X, this Y'—it's almost always wrong."
+      }
+    },
+    {
+      "id": "slide_08",
+      "type": "concept_reinforcement",
+      "title": "Key Takeaways & Practice Transition",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "Punctuation Mastery",
         "key_points": [
-          {
-            "icon": "📝",
-            "title": "Comma Essentials",
-            "description": "Use commas for lists, joining clauses, setting off extras, and after introductions."
-          },
-          {
-            "icon": "🔗",
-            "title": "Semicolons & Colons",
-            "description": "Semicolons connect equal ideas; colons introduce explanations or lists."
-          },
-          {
-            "icon": "✨",
-            "title": "Apostrophe Rules",
-            "description": "Possession needs apostrophes; contractions replace missing letters; possessive pronouns don't."
-          },
-          {
-            "icon": "🎯",
-            "title": "SAT Strategy",
-            "description": "Read choices aloud to hear natural pauses and check for common apostrophe tricks."
-          }
+          "Phase 1: Identify clause structure—independent vs. dependent determines punctuation",
+          "Phase 2: Independent + Independent needs STRONG punctuation (never comma alone)",
+          "Phase 3: Apostrophes have THREE uses—possession (nouns only), contractions, and possessive pronouns (NO apostrophe)",
+          "The 100% Rule: 'However' and 'therefore' are NOT conjunctions—need semicolon or period before them"
         ],
-        "next_steps": {
-          "text": "Coming up: Lesson 4 - Verb Forms & Agreement!",
-          "preview": "Master verb tenses, subject-verb agreement, and tricky situations that appear on the SAT."
+        "strategy_reminder": "Remember PAUSE: Parse clauses, Apply punctuation rules, Understand apostrophe rules, Select correct option, Eliminate errors",
+        "expert_insight": "On the SAT, possessive pronouns (its, whose, theirs) NEVER have apostrophes. Contractions (it's, who's, they're) ALWAYS do.",
+        "practice_transition": {
+          "text": "Ready to apply your mastery? Let's practice with authentic SAT punctuation questions!",
+          "button_text": "Start Skill Practice",
+          "skill_code": "PBC"
         }
       },
       "interactions": [
         {
           "type": "completion_celebration",
-          "unlock_next": "lesson_04"
+          "content": {
+            "message": "Outstanding! You've mastered punctuation with surgical precision."
+          }
         }
       ]
     },
     {
-      "id": "slide_08",
+      "id": "slide_09",
       "type": "mastery_check",
       "title": "Mastery Check",
-      "duration_estimate": 240,
-      "content": {
-        "heading": "Final Assessment",
-        "instructions": "Demonstrate your punctuation mastery with this comprehensive challenge.",
-        "passage": {
-          "text": "The students final projects were impressive each one demonstrated creativity and technical skill. However some students couldnt complete there work on time, this created problems for the teachers assessment schedule. The departments new policy is simple: late work results in grade reductions but students can request extensions if they're facing genuine difficulties.",
-          "word_count": 55
-        },
-        "question": {
-          "text": "Which choice best corrects all punctuation errors in the passage?",
-          "options": [
-            "The students' final projects were impressive; each one demonstrated creativity and technical skill. However, some students couldn't complete their work on time, which created problems for the teacher's assessment schedule. The department's new policy is simple: late work results in grade reductions, but students can request extensions if they're facing genuine difficulties.",
-            "The student's final projects were impressive, each one demonstrated creativity and technical skill. However some students couldn't complete there work on time; this created problems for the teachers assessment schedule. The departments new policy is simple: late work results in grade reductions but students can request extensions if there facing genuine difficulties.",
-            "The students final projects were impressive; each one demonstrated creativity and technical skill. However, some students couldn't complete their work on time, this created problems for the teacher's assessment schedule. The department's new policy is simple; late work results in grade reductions, but students can request extensions if they're facing genuine difficulties.",
-            "The students' final projects were impressive each one demonstrated creativity and technical skill. However, some students couldnt complete their work on time, this created problems for the teachers' assessment schedule. The departments new policy is simple: late work results in grade reductions but students can request extensions if they're facing genuine difficulties."
-          ],
-          "correct_answer": "A",
-          "mastery_question": true
-        }
-      },
-      "interactions": [
-        {
-          "type": "mastery_assessment",
-          "required_for_completion": true,
-          "retry_limit": 3
-        }
-      ]
-    }
-  ],
-  "practice_questions": [
-    {
-      "id": "practice_1",
-      "type": "quick_check",
       "skill_codes": ["PBC"],
-      "difficulty": "E",
-      "question": "Which sentence is correctly punctuated?",
+      "difficulty": "M",
+      "question": "The students final projects were impressive each one demonstrated creativity and technical skill. However some students couldnt complete there work on time, this created problems for the teachers assessment schedule. The departments new policy is simple: late work results in grade reductions but students can request extensions if they're facing genuine difficulties.\n\nWhich choice best corrects all punctuation errors in the passage?",
       "options": [
-        "The cat's toys were scattered around it's favorite sleeping spot.",
-        "The cats toys were scattered around its favorite sleeping spot.",
-        "The cat's toys were scattered around its favorite sleeping spot.",
-        "The cats' toys were scattered around it's favorite sleeping spot."
+        "The students' final projects were impressive; each one demonstrated creativity and technical skill. However, some students couldn't complete their work on time, which created problems for the teacher's assessment schedule. The department's new policy is simple: late work results in grade reductions, but students can request extensions if they're facing genuine difficulties.",
+        "The student's final projects were impressive, each one demonstrated creativity and technical skill. However some students couldn't complete there work on time; this created problems for the teachers assessment schedule. The departments new policy is simple: late work results in grade reductions but students can request extensions if there facing genuine difficulties.",
+        "The students final projects were impressive; each one demonstrated creativity and technical skill. However, some students couldn't complete their work on time, this created problems for the teacher's assessment schedule. The department's new policy is simple; late work results in grade reductions, but students can request extensions if they're facing genuine difficulties.",
+        "The students' final projects were impressive each one demonstrated creativity and technical skill. However, some students couldnt complete their work on time, this created problems for the teachers' assessment schedule. The departments new policy is simple: late work results in grade reductions but students can request extensions if they're facing genuine difficulties."
       ],
-      "correct_answer": "C"
+      "correct_answer": "A",
+      "explanation": "Error analysis:\n\nSentence 1: Two independent clauses ('impressive' / 'demonstrated') need strong punctuation → semicolon ✓\n'students' final projects' = plural possession → students' ✓\n\nSentence 2: Comma after 'However' ✓\n'couldnt' = contraction → couldn't ✓\n'there' = wrong word, need possessive → their ✓\n'teachers assessment' = singular possession → teacher's ✓\nComma splice with 'this created' → fix with 'which created' (subordination) ✓\n\nSentence 3: 'departments' = singular possession → department's ✓\nColon correct (after complete sentence) ✓\nNeed comma before 'but' (joining independent clauses) ✓\n'they're' = contraction (they are) ✓\n\nA: ✓ CORRECT—All errors fixed\n\nB: 'student's' should be 'students'' (plural), wrong 'there' (twice), missing apostrophes\n\nC: Wrong 'there', comma splice remains with 'this created', semicolon incorrect before 'late work'\n\nD: Run-on in sentence 1, missing 'couldn't' apostrophe, comma splice in sentence 2"
     }
   ],
   "resources": {
     "strategy_card": {
-      "title": "Punctuation Quick Reference",
-      "steps": [
-        "1. PAUSE - Find natural breaks",
-        "2. ANALYZE - Identify clause types",
-        "3. CONNECT - Choose correct punctuation",
-        "4. EDIT - Remove unnecessary marks"
+      "title": "The PAUSE Strategy Quick Reference",
+      "phases": [
+        {
+          "phase": "1. PARSE CLAUSES",
+          "steps": [
+            "Find all verbs and identify clauses",
+            "Test: Can each clause stand alone?",
+            "Classify: Independent, dependent, or phrase"
+          ]
+        },
+        {
+          "phase": "2. APPLY PUNCTUATION RULES",
+          "steps": [
+            "Independent + Independent: period, semicolon, or comma+conjunction",
+            "Dependent first: comma after it",
+            "Introductory element: comma after",
+            "Non-essential info: commas on both sides"
+          ]
+        },
+        {
+          "phase": "3. CHECK APOSTROPHES",
+          "steps": [
+            "Possession (noun): add 's or '",
+            "Contraction: apostrophe for missing letters",
+            "Possessive pronoun: NO apostrophe (its, whose, theirs)"
+          ]
+        }
       ],
-      "tips": [
-        "Commas: lists, joining, setting off, after intros",
-        "Semicolons connect equals; colons introduce",
-        "Apostrophes: possession + contractions, not possessive pronouns"
-      ]
+      "the_100_rule": "Comma alone between independent clauses = automatic error. Possessive pronouns (its, whose, theirs) NEVER have apostrophes."
     },
     "common_mistakes": [
-      "Confusing its/it's and other possessive pronouns",
-      "Using commas around 'however' instead of semicolons",
-      "Forgetting apostrophes in contractions",
-      "Overusing commas or using them incorrectly"
-    ]
+      "Comma splice between independent clauses (especially with 'however,' 'therefore,' 'this')",
+      "Using 'it's' for possession (should be 'its')",
+      "Using 'whose' contraction (should be 'who's' for 'who is')",
+      "Forgetting commas after introductory elements"
+    ],
+    "punctuation_quick_reference": {
+      "Comma Splice": "Independent, independent → WRONG | Use: period, semicolon, or comma+conjunction",
+      "Apostrophe Test": "Contraction? → Use apostrophe | Pronoun possession? → NO apostrophe | Noun possession? → Use apostrophe",
+      "Colon Rule": "Must follow complete sentence, introduces list/explanation",
+      "However/Therefore": "Need semicolon or period BEFORE these words when joining independent clauses"
+    }
   },
   "metadata": {
     "created_date": "2024-12-01",
-    "last_updated": "2024-12-01",
-    "content_version": "1.0",
-    "estimated_completion_time": 1500,
+    "last_updated": "2025-01-02",
+    "content_version": "2.0",
+    "estimated_completion_time": 1680,
     "prerequisite_skills": ["lesson_02"],
-    "skill_progression": ["lesson_04"]
+    "skill_progression": ["lesson_04"],
+    "strategy_integration": {
+      "source": "Expert SAT strategies synthesis",
+      "key_innovation": "3-Phase PAUSE Strategy: Parse Clauses → Apply Rules → Check Apostrophes",
+      "slides_enhanced": ["slide_02", "slide_03", "slide_04", "slide_05"]
+    }
   }
 }

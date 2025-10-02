@@ -6,10 +6,10 @@
   "duration": "20-25 min",
   "skill_codes": ["SYN"],
   "learning_objectives": [
-    "Understand how to combine information from multiple sources",
-    "Identify effective rhetorical synthesis in writing",
-    "Recognize logical relationships between sources",
-    "Practice synthesis questions using College Board strategies"
+    "The Core: Master combining multiple sources into coherent arguments",
+    "The Skill: Show relationships between sources, not just summarize them",
+    "The Problem: Distinguish between synthesis and separate summaries",
+    "Key Strategy: The 3-Phase BLEND Strategy for 100% provable synthesis"
   ],
   "success_criteria": {
     "mastery_threshold": 0.75,
@@ -20,235 +20,464 @@
     {
       "id": "slide_01",
       "type": "introduction",
-      "title": "Welcome to Rhetorical Synthesis",
+      "title": "Learning Objectives",
       "duration_estimate": 180,
       "content": {
-        "heading": "Learning Objectives",
-        "text": "In this lesson, you'll master rhetorical synthesis - the skill of effectively combining information from multiple sources to create coherent, well-supported arguments.",
+        "heading": "The Main Quest",
         "bullet_points": [
-          "Learn how to identify connections between multiple sources",
-          "Master techniques for combining information logically",
-          "Practice recognizing effective synthesis in writing",
-          "Apply College Board's synthesis evaluation criteria"
+          "Decode what makes synthesis vs. summary",
+          "Master the five relationship types between sources",
+          "Apply the 3-Phase BLEND Strategy",
+          "Create unified messages from multiple sources"
         ]
       },
       "interactions": [
         {
-          "type": "progress_indicator",
-          "content": {
-            "current_slide": 1,
-            "total_slides": 8
-          }
-        },
-        {
           "type": "click_to_continue",
-          "content": {
-            "button_text": "Let's Begin!"
-          }
+          "text": "Ready? Let's begin."
         }
       ]
     },
     {
       "id": "slide_02",
-      "type": "concept_teaching",
-      "title": "Understanding Rhetorical Synthesis",
-      "duration_estimate": 240,
+      "type": "strategy_teaching",
+      "title": "The Master Strategy: Phase 1",
+      "duration_estimate": 320,
       "content": {
-        "heading": "What is Rhetorical Synthesis?",
-        "text": "Rhetorical synthesis involves combining information from multiple sources to support a unified argument or present a comprehensive view of a topic.",
-        "main_points": [
-          "Synthesis = combining sources to create new understanding",
-          "Not just summarizing each source separately",
-          "Must show relationships between sources (agreement, disagreement, complementary)",
-          "Creates a coherent argument using multiple perspectives"
+        "heading": "PHASE 1: Locate Main Points",
+        "subtitle": "What Does Each Source Actually Say?",
+        "core_principle": {
+          "title": "Foundation Before Synthesis",
+          "description": "You can't synthesize sources until you understand what each one actually claims. Start by identifying the core point of each source."
+        },
+        "strategy_steps": [
+          {
+            "step": 1,
+            "title": "Extract Each Source's Main Claim",
+            "description": "Identify the central point or key finding in each source",
+            "examples": [
+              {
+                "topic": "Remote work productivity",
+                "source_1": "Stanford study: Remote workers 13% more productive, fewer sick days",
+                "main_point_1": "Remote work increases productivity",
+                "source_2": "Microsoft report: 56% of remote workers report difficulty connecting with colleagues",
+                "main_point_2": "Remote work creates collaboration challenges"
+              }
+            ]
+          },
+          {
+            "step": 2,
+            "title": "Note Key Evidence from Each",
+            "description": "Identify the type of support each source provides",
+            "evidence_types": [
+              "Quantitative data (percentages, numbers)",
+              "Research findings (study results)",
+              "Expert opinions",
+              "Specific examples",
+              "Causal explanations"
+            ]
+          },
+          {
+            "step": 3,
+            "title": "Identify What's Unique to Each Source",
+            "description": "What does this source contribute that others don't?",
+            "example": {
+              "source_a": "Provides productivity data",
+              "source_b": "Addresses collaboration issues",
+              "source_c": "Adds job-type variable (creative vs. analytical)",
+              "unique_contributions": "Each adds a different dimension to understanding remote work"
+            }
+          }
         ],
-        "example": {
-          "topic": "Benefits of urban parks",
-          "source_1": "Study showing parks reduce air pollution",
-          "source_2": "Research on parks improving mental health",
-          "poor_synthesis": "Source 1 says parks reduce pollution. Source 2 says parks help mental health.",
-          "good_synthesis": "Urban parks provide both environmental and psychological benefits, as pollution reduction creates healthier spaces that support community well-being."
+        "worked_example": {
+          "topic": "Social media and teenagers",
+          "sources": [
+            {
+              "source": "Pew Research (2023)",
+              "main_point": "72% of teens check social media daily; 44% report sleep problems",
+              "contribution": "Quantifies usage patterns and one negative effect"
+            },
+            {
+              "source": "Journal of Adolescent Health",
+              "main_point": "3+ hours daily correlates with increased anxiety/depression",
+              "contribution": "Links heavy usage to specific mental health outcomes"
+            },
+            {
+              "source": "American Academy of Pediatrics",
+              "main_point": "Social media can provide peer support and educational resources when used mindfully",
+              "contribution": "Presents positive potential with condition (mindful use)"
+            }
+          ]
         }
       },
       "interactions": [
         {
-          "type": "reveal_on_click",
-          "content": {
-            "reveal_text": "College Board Focus: Synthesis questions test your ability to see how sources work together, not just what each source says individually."
-          }
+          "type": "step_by_step_reveal",
+          "auto_advance": false
         }
       ]
     },
     {
       "id": "slide_03",
       "type": "strategy_teaching",
-      "title": "The LINK Synthesis Strategy",
-      "duration_estimate": 300,
+      "title": "The Master Strategy: Phase 2",
+      "duration_estimate": 340,
       "content": {
-        "heading": "LINK Method for Effective Synthesis",
-        "strategy_acronym": "LINK",
-        "strategy_steps": [
+        "heading": "PHASE 2: Identify Relationships",
+        "subtitle": "How Do Sources Connect to Each Other?",
+        "core_principle": {
+          "title": "Synthesis = Showing Connections",
+          "description": "The heart of synthesis is identifying how sources relate: Do they support, contrast, build upon, or qualify each other?"
+        },
+        "relationship_types": [
           {
-            "letter": "L",
-            "word": "Locate",
-            "description": "Find the main point or key information in each source"
+            "type": "COMPLEMENTARY / SUPPORT",
+            "definition": "Sources support same conclusion with different evidence",
+            "structure": "Both argue X, but use different support",
+            "example": {
+              "topic": "Urban gardens benefits",
+              "source_1": "Crime reduction data",
+              "source_2": "Nutrition improvement data",
+              "relationship": "Both show benefits, different dimensions",
+              "synthesis": "Urban gardens provide both safety and health benefits"
+            },
+            "signal_phrases": ["Additionally", "Furthermore", "Similarly", "Also supports", "Another benefit"]
           },
           {
-            "letter": "I",
-            "word": "Identify",
-            "description": "Determine relationships between sources (support, contrast, build upon)"
+            "type": "CONTRASTING / DISAGREEMENT",
+            "definition": "Sources present opposing viewpoints or contradictory evidence",
+            "structure": "Source X argues Y, Source Z argues opposite",
+            "example": {
+              "topic": "Remote work productivity",
+              "source_1": "Remote work increases productivity (data)",
+              "source_2": "Remote work harms collaboration (survey)",
+              "relationship": "Tension between benefits and drawbacks",
+              "synthesis": "Remote work shows productivity gains but collaboration challenges"
+            },
+            "signal_phrases": ["However", "In contrast", "While X argues", "On the other hand", "Despite"]
           },
           {
-            "letter": "N",
-            "word": "Note",
-            "description": "Look for overarching themes or patterns across sources"
+            "type": "BUILDING / EXPANDING",
+            "definition": "One source expands on or develops ideas from another",
+            "structure": "Source X establishes foundation, Source Y adds complexity/detail",
+            "example": {
+              "topic": "Bioluminescence",
+              "source_1": "Bioluminescence serves survival purposes (general claim)",
+              "source_2": "Evolved independently 40 times, suggesting strong advantages (specific evidence strengthening claim)",
+              "relationship": "Second source provides evidence supporting and deepening first",
+              "synthesis": "Bioluminescence's survival value is evidenced by its repeated evolution"
+            },
+            "signal_phrases": ["Building on this", "Further evidence", "This is supported by", "Moreover"]
           },
           {
-            "letter": "K",
-            "word": "Knit",
-            "description": "Combine sources to create a unified, coherent message"
+            "type": "QUALIFYING / LIMITING",
+            "definition": "One source adds conditions or limitations to another's claims",
+            "structure": "Source X makes claim, Source Y shows when/where it applies",
+            "example": {
+              "topic": "Homework effectiveness",
+              "source_1": "Homework improves test scores (general claim)",
+              "source_2": "Benefits vary by age—most effective for high school, minimal for elementary (qualification)",
+              "relationship": "Second source doesn't contradict but adds important conditions",
+              "synthesis": "Homework benefits exist but depend on student age and development"
+            },
+            "signal_phrases": ["Though", "While generally true", "With the caveat that", "However, this depends on"]
+          },
+          {
+            "type": "CONTEXTUAL / EXPLANATORY",
+            "definition": "One source provides background/context for understanding another",
+            "structure": "Source X gives context, Source Y presents main findings",
+            "example": {
+              "topic": "Urban planning shifts",
+              "source_1": "Traditional planning focused on efficiency (historical context)",
+              "source_2": "New '15-minute city' focuses on accessibility (current innovation)",
+              "relationship": "First provides context for understanding significance of second",
+              "synthesis": "Urban planning has shifted from efficiency-focused to accessibility-focused approaches"
+            },
+            "signal_phrases": ["Given this background", "In this context", "Understanding this helps explain"]
           }
         ],
-        "relationship_types": [
-          "Complementary: Sources support the same conclusion with different evidence",
-          "Contrasting: Sources present opposing viewpoints or contradictory evidence",
-          "Building: One source expands on or develops ideas from another",
-          "Qualifying: One source adds conditions or limitations to another's claims"
-        ]
+        "identification_process": {
+          "title": "How to Identify Relationships",
+          "steps": [
+            {
+              "step": 1,
+              "question": "Do sources reach same or different conclusions?",
+              "same": "Likely complementary or building",
+              "different": "Likely contrasting or qualifying"
+            },
+            {
+              "step": 2,
+              "question": "Does one source add details to another?",
+              "if_yes": "Likely building relationship"
+            },
+            {
+              "step": 3,
+              "question": "Does one source limit/condition another's claim?",
+              "if_yes": "Likely qualifying relationship"
+            },
+            {
+              "step": 4,
+              "question": "Do sources focus on different aspects of same topic?",
+              "if_yes": "Likely complementary (each contributes different piece)"
+            }
+          ]
+        }
       },
       "interactions": [
         {
-          "type": "step_by_step_reveal",
-          "content": {
-            "steps": 4
-          }
+          "type": "reveal_on_click",
+          "elements": [
+            {
+              "trigger": "Show Critical Insight",
+              "reveal": "The SAT tests whether you understand HOW sources work together, not just what each says. Wrong answers often list sources separately instead of showing relationships."
+            }
+          ]
         }
       ]
     },
     {
       "id": "slide_04",
-      "type": "guided_example",
-      "title": "Guided Practice: Synthesis in Action",
-      "duration_estimate": 360,
+      "type": "strategy_teaching",
+      "title": "The Master Strategy: Phase 3",
+      "duration_estimate": 300,
       "content": {
-        "scenario": "Topic: The impact of remote work on productivity",
-        "source_a": "A Stanford study found that remote workers are 13% more productive than office workers, with fewer sick days and breaks.",
-        "source_b": "Microsoft's 2023 report shows that remote workers struggle with collaboration, with 56% reporting difficulty connecting with colleagues.",
-        "source_c": "Harvard Business Review notes that productivity varies by job type, with creative roles suffering more in remote settings than analytical roles.",
-        "synthesis_question": "How would you effectively combine these sources to discuss remote work's impact on productivity?",
+        "heading": "PHASE 3: Navigate Integration",
+        "subtitle": "Create Unified Messages from Multiple Sources",
+        "core_principle": {
+          "title": "Synthesis vs. Summary",
+          "description": "Summary = listing what each source says separately. Synthesis = showing how sources work together to create unified understanding."
+        },
+        "synthesis_principles": [
+          {
+            "principle": "INTEGRATE, Don't Separate",
+            "weak": "Source 1 says X. Source 2 says Y. Source 3 says Z.",
+            "strong": "Multiple factors contribute to X: Y (Source 1) and Z (Source 2) work together to create W (integrated understanding).",
+            "why_better": "Shows how sources connect rather than listing them"
+          },
+          {
+            "principle": "ACKNOWLEDGE Complexity",
+            "weak": "Research shows clear benefits",
+            "strong": "Research reveals both benefits (Source A) and challenges (Source B), with outcomes varying by context (Source C)",
+            "why_better": "Captures nuance rather than oversimplifying"
+          },
+          {
+            "principle": "USE Sources to Support Unified Point",
+            "weak": "Source 1 found X. Source 2 studied Y.",
+            "strong": "Evidence from multiple disciplines supports conclusion Z (combining Sources 1 and 2)",
+            "why_better": "Sources serve a larger argument rather than standing alone"
+          },
+          {
+            "principle": "SHOW Rather Than Tell Relationships",
+            "weak": "Sources 1 and 2 agree",
+            "strong": "Both economic data (Source 1) and consumer behavior patterns (Source 2) indicate growing adoption",
+            "why_better": "Demonstrates agreement through specifics"
+          }
+        ],
+        "common_synthesis_errors": [
+          {
+            "error": "SEPARATE SUMMARIES",
+            "description": "Lists what each source says without showing connections",
+            "example": "Source 1 discusses productivity. Source 2 discusses collaboration. Source 3 discusses job types.",
+            "fix": "Remote work's impact on productivity (Source 1) must be considered alongside collaboration challenges (Source 2), with effects varying by job type (Source 3)."
+          },
+          {
+            "error": "CHOOSING ONE SOURCE OVER OTHERS",
+            "description": "Emphasizes one source while ignoring others",
+            "example": "Based on Source 1's productivity data, remote work is clearly beneficial.",
+            "fix": "Remote work shows productivity gains (Source 1) but presents collaboration trade-offs (Source 2) that vary by role (Source 3)."
+          },
+          {
+            "error": "IGNORING CONTRADICTIONS",
+            "description": "Glosses over tensions between sources",
+            "example": "All research supports renewable energy adoption.",
+            "fix": "While cost reductions drive adoption (Source 1), infrastructure challenges remain (Source 2), creating uneven implementation (Source 3)."
+          },
+          {
+            "error": "OVERLY SIMPLISTIC CONCLUSIONS",
+            "description": "Forces complex sources into simple 'good' or 'bad' judgment",
+            "example": "Sources prove social media is harmful to teens.",
+            "fix": "Social media presents risks of anxiety/sleep issues (Sources 1-2) alongside potential benefits when used mindfully (Source 3)."
+          }
+        ],
+        "the_integration_test": {
+          "title": "Is This True Synthesis?",
+          "questions": [
+            "Does it show HOW sources relate (not just list them)?",
+            "Does it acknowledge complexity and nuance?",
+            "Does it create unified understanding greater than sum of parts?",
+            "Could someone understand source relationships from this?"
+          ]
+        }
+      },
+      "interactions": [
+        {
+          "type": "interactive_elimination",
+          "show_flaw_analysis": true
+        }
+      ]
+    },
+    {
+      "id": "slide_05",
+      "type": "guided_example",
+      "title": "Guided Practice: The Strategy in Action",
+      "duration_estimate": 420,
+      "content": {
+        "heading": "Let's Apply All 3 Phases Together",
+        "topic": "Social media's impact on teenagers",
+        "sources": [
+          "Source 1 - Pew Research (2023): 72% of teens check social media daily, with 44% reporting it negatively affects their sleep.",
+          "Source 2 - Journal of Adolescent Health: Social media use over 3 hours daily correlates with increased anxiety and depression symptoms.",
+          "Source 3 - American Academy of Pediatrics: Social media can provide valuable peer support and educational resources when used mindfully."
+        ],
+        "question": "Which synthesis most effectively combines these sources?",
         "walkthrough": [
           {
+            "phase": "PHASE 1: Locate Main Points",
             "step": 1,
             "question": "What does each source contribute?",
-            "answer": "A: quantitative productivity benefits, B: collaboration challenges, C: variation by job type"
+            "answer": "Source 1: Usage patterns + sleep problems | Source 2: Heavy use + mental health issues | Source 3: Potential benefits with mindful use",
+            "reasoning": "Each addresses different aspect: prevalence/one effect, mental health correlation, positive potential"
           },
           {
+            "phase": "PHASE 2: Identify Relationships",
             "step": 2,
-            "question": "What relationships exist between sources?",
-            "answer": "A and B present contrasting aspects; C qualifies both by adding job-type variable"
+            "question": "How do sources relate to each other?",
+            "answer": "Sources 1-2 present concerns (complementary negative findings), Source 3 qualifies with conditional benefits",
+            "reasoning": "First two align on concerns; third doesn't contradict but adds important nuance"
           },
           {
+            "phase": "PHASE 3: Navigate Integration",
             "step": 3,
-            "question": "What unified message emerges?",
-            "answer": "Remote work's productivity impact is complex, with benefits and challenges varying by job requirements"
+            "question": "Evaluate synthesis options",
+            "options_analysis": [
+              {
+                "option": "A",
+                "text": "Social media is harmful to teenagers and should be banned for those under 18.",
+                "analysis": "✗ IGNORES Source 3 entirely, oversimplifies to 'ban,' doesn't acknowledge complexity"
+              },
+              {
+                "option": "B",
+                "text": "While social media offers benefits like peer support and learning opportunities, heavy usage patterns among teens raise concerns about sleep, anxiety, and depression.",
+                "analysis": "✓ CORRECT—Acknowledges benefits (Source 3) while highlighting concerns from usage patterns (Source 1) and heavy use effects (Source 2). Creates nuanced, unified perspective."
+              },
+              {
+                "option": "C",
+                "text": "Most teenagers use social media daily, and some studies show negative effects while others show positive effects.",
+                "analysis": "✗ SEPARATE SUMMARIES—Lists findings but doesn't show relationships. Vague 'some...others' doesn't integrate sources."
+              },
+              {
+                "option": "D",
+                "text": "The research shows that social media has both positive and negative aspects, so more research is needed.",
+                "analysis": "✗ OVERLY VAGUE—Doesn't specify what aspects or which sources. 'More research needed' is cop-out that doesn't synthesize what we have."
+              }
+            ],
+            "correct_answer": "B"
           }
         ]
       },
       "interactions": [
         {
           "type": "guided_walkthrough",
-          "content": {
-            "steps": 3
-          }
+          "allow_highlighting": true,
+          "step_validation": true
         }
       ]
     },
     {
-      "id": "slide_05",
+      "id": "slide_06",
       "type": "independent_practice",
-      "title": "Your Turn: Building Synthesis",
-      "duration_estimate": 300,
+      "title": "Your Turn: Apply the BLEND Strategy",
+      "duration_estimate": 360,
       "content": {
-        "instructions": "Read the three sources and identify the most effective synthesis.",
-        "topic": "Social media's impact on teenagers",
-        "source_1": "Pew Research (2023): 72% of teens check social media daily, with 44% reporting it negatively affects their sleep.",
-        "source_2": "Journal of Adolescent Health: Social media use over 3 hours daily correlates with increased anxiety and depression symptoms.",
-        "source_3": "American Academy of Pediatrics: Social media can provide valuable peer support and educational resources when used mindfully.",
-        "question": "Which synthesis most effectively combines these sources?"
+        "heading": "Independent Practice",
+        "instructions": "Use all 3 phases: Locate Points → Identify Relationships → Navigate Integration",
+        "topic": "Homework effectiveness",
+        "sources": [
+          "Source 1: Studies show homework improves test scores and reinforces classroom learning.",
+          "Source 2: Research reveals homework increases student stress levels and reduces family time.",
+          "Source 3: Analysis finds homework benefits vary significantly by age group—most effective for high school students, minimal impact for elementary students."
+        ],
+        "question": "The most effective synthesis would:",
+        "strategy_reminder": "Phase 1: What does each source say? Phase 2: How do they relate (support/contrast/qualify)? Phase 3: Show how they work together, don't just list them."
       },
       "interactions": [
         {
           "type": "multiple_choice_question",
           "content": {
             "options": [
-              "Social media is harmful to teenagers and should be banned for those under 18.",
-              "While social media offers benefits like peer support and learning opportunities, heavy usage patterns among teens raise concerns about sleep, anxiety, and depression.",
-              "Most teenagers use social media daily, and some studies show negative effects while others show positive effects.",
-              "The research shows that social media has both positive and negative aspects, so more research is needed."
+              "Conclude that homework is beneficial because it improves test scores",
+              "State that each source has different findings about homework",
+              "Argue that homework's mixed results suggest a need for age-appropriate, balanced approaches that maximize academic benefits while minimizing stress",
+              "Recommend eliminating homework due to stress concerns"
             ],
-            "correct": 1,
-            "explanation": "Option B effectively synthesizes all three sources by acknowledging benefits (source 3) while highlighting concerns from usage patterns (source 1) and heavy use effects (source 2). It creates a nuanced, unified perspective."
-          }
-        }
-      ]
-    },
-    {
-      "id": "slide_06",
-      "type": "skill_application",
-      "title": "Advanced Synthesis Techniques",
-      "duration_estimate": 420,
-      "content": {
-        "heading": "Mastering Complex Synthesis",
-        "text": "Learn to handle more sophisticated synthesis scenarios involving multiple viewpoints and nuanced relationships.",
-        "advanced_techniques": [
-          {
-            "technique": "Hierarchical Synthesis",
-            "description": "Organize sources by level of support (primary evidence, secondary support, qualifying conditions)",
-            "example": "Primary: Economic data, Secondary: Expert opinions, Qualifying: Demographic variations"
-          },
-          {
-            "technique": "Chronological Synthesis",
-            "description": "Combine sources to show how understanding has evolved over time",
-            "example": "Early studies showed X, recent research reveals Y, current consensus suggests Z"
-          },
-          {
-            "technique": "Perspective Synthesis",
-            "description": "Balance different stakeholder viewpoints",
-            "example": "Students benefit from X, while teachers face challenges with Y, and parents concern themselves with Z"
-          },
-          {
-            "technique": "Causal Synthesis",
-            "description": "Link sources to show cause-effect relationships",
-            "example": "Source A identifies causes, Source B documents effects, Source C explains mechanisms"
-          }
-        ]
-      },
-      "interactions": [
-        {
-          "type": "question_sequence",
-          "content": {
-            "sequence_length": 3
+            "correct": 2,
+            "explanation": "Let's apply the 3 phases:\n\nPHASE 1—Main points:\nSource 1: Academic benefits (test scores, learning)\nSource 2: Stress costs (stress, family time)\nSource 3: Age variation (effective high school, not elementary)\n\nPHASE 2—Relationships:\nSources 1-2: CONTRASTING (benefits vs. costs)\nSource 3: QUALIFYING (adds 'when/where' condition to both 1 and 2)\n\nPHASE 3—Integration evaluation:\n\nA: ✗ CHOOSING ONE SOURCE—Ignores Sources 2 and 3, oversimplifies\n\nB: ✗ SEPARATE SUMMARIES—'Each source has different findings' lists but doesn't synthesize\n\nC: ✓ CORRECT—Synthesizes all three: acknowledges 'mixed results' (integrates 1 and 2's tension), incorporates 'age-appropriate' (Source 3's qualification), balances 'academic benefits' (1) with 'minimizing stress' (2)\n\nD: ✗ CHOOSING ONE SOURCE—Emphasizes Source 2, ignores 1 and 3"
           }
         }
       ]
     },
     {
       "id": "slide_07",
+      "type": "concept_teaching",
+      "title": "Strategy Synthesis: Integration Pattern Summary",
+      "duration_estimate": 280,
+      "content": {
+        "heading": "Master These Patterns—Perfect Synthesis Every Time",
+        "table": {
+          "columns": ["Relationship", "How Sources Connect", "Synthesis Language", "Example"],
+          "rows": [
+            [
+              "Complementary",
+              "Different evidence, same conclusion",
+              "Both...and, Multiple factors, Various aspects",
+              "Both economic (Source A) and social (Source B) factors drive adoption"
+            ],
+            [
+              "Contrasting",
+              "Opposing findings or viewpoints",
+              "While...however, Despite benefits...challenges, Trade-offs between",
+              "While productivity increases (Source A), collaboration suffers (Source B)"
+            ],
+            [
+              "Building",
+              "One expands/strengthens another",
+              "Further evidence, This is supported by, Building on",
+              "Initial findings (Source A) are strengthened by additional research (Source B)"
+            ],
+            [
+              "Qualifying",
+              "One adds conditions to another",
+              "Depends on, Varies by, With the caveat, Though generally",
+              "Benefits exist (Source A) but vary by age (Source B)"
+            ],
+            [
+              "Contextual",
+              "One provides background for other",
+              "Given this context, Understanding...helps explain, Historically...now",
+              "Traditional approaches (Source A) have shifted to new models (Source B)"
+            ]
+          ]
+        },
+        "expert_insight": "Effective synthesis shows relationships through specifics, acknowledges complexity, and creates unified understanding greater than listing sources separately."
+      }
+    },
+    {
+      "id": "slide_08",
       "type": "concept_reinforcement",
-      "title": "Synthesis Mastery & Practice Transition",
+      "title": "Key Takeaways & Practice Transition",
       "duration_estimate": 240,
       "content": {
-        "heading": "Rhetorical Synthesis Excellence",
+        "heading": "Rhetorical Synthesis Mastery",
         "key_points": [
-          "Effective synthesis shows relationships between sources, not just summaries",
-          "Look for complementary, contrasting, or building patterns",
-          "Create unified messages that acknowledge complexity",
-          "Avoid simply listing what each source says separately"
+          "Phase 1: Locate main point and unique contribution of each source",
+          "Phase 2: Identify relationship type—complementary, contrasting, building, qualifying, or contextual",
+          "Phase 3: Integrate sources to show how they work together, don't just summarize separately",
+          "The 100% Rule: True synthesis creates unified understanding by showing source relationships explicitly"
         ],
-        "strategy_reminder": "Remember LINK: Locate main points, Identify relationships, Note patterns, Knit together coherently",
-        "college_board_insight": "SAT synthesis questions reward nuanced thinking that combines sources meaningfully rather than mechanically.",
+        "strategy_reminder": "Remember BLEND: Begin with main points, Link sources by relationship, Evaluate how they connect, Navigate to unified message, Demonstrate integration not separation",
+        "expert_insight": "Common errors: (1) Separate summaries instead of integration, (2) Ignoring contradictions, (3) Choosing one source over others, (4) Oversimplifying complex relationships.",
         "practice_transition": {
-          "text": "Ready to practice synthesis with authentic SAT questions? Let's apply your skills!",
+          "text": "Ready to apply your mastery? Let's practice with authentic SAT synthesis questions!",
           "button_text": "Start Skill Practice",
           "skill_code": "SYN"
         }
@@ -257,15 +486,15 @@
         {
           "type": "completion_celebration",
           "content": {
-            "message": "Brilliant! You've mastered the art of rhetorical synthesis."
+            "message": "Outstanding! You've mastered rhetorical synthesis with surgical precision."
           }
         }
       ]
     },
     {
-      "id": "slide_08",
+      "id": "slide_09",
       "type": "mastery_check",
-      "title": "Synthesis Quick Check",
+      "title": "Mastery Check",
       "skill_codes": ["SYN"],
       "difficulty": "M",
       "question": "Three sources discuss homework effectiveness: Source 1 shows homework improves test scores, Source 2 reveals homework increases student stress, Source 3 finds homework benefits vary by age group. The most effective synthesis would:",
@@ -276,38 +505,68 @@
         "Recommend eliminating homework due to stress concerns"
       ],
       "correct_answer": "C",
-      "explanation": "Option C effectively synthesizes all three sources by acknowledging academic benefits (Source 1), addressing stress concerns (Source 2), and incorporating the age variation factor (Source 3) into a nuanced solution."
+      "explanation": "Phase analysis:\n\nPHASE 1—Source contributions:\nSource 1: Academic benefit evidence\nSource 2: Stress cost evidence  \nSource 3: Age variation factor\n\nPHASE 2—Relationships:\nSources 1-2: CONTRASTING (tension between benefits and costs)\nSource 3: QUALIFYING (adds condition affecting both 1 and 2)\n\nPHASE 3—Integration:\n\nA: ✗ CHOOSING ONE SOURCE ONLY—Ignores Sources 2 and 3 entirely\n\nB: ✗ SEPARATE SUMMARIES—'Each source has different findings' lists but doesn't show how they relate or what unified message emerges\n\nC: ✓ CORRECT—True synthesis: 'mixed results' acknowledges 1 vs. 2 tension, 'age-appropriate' incorporates Source 3's qualification, 'balanced approaches' integrates both benefits (1) and stress concerns (2) into unified solution\n\nD: ✗ CHOOSING ONE SOURCE ONLY—Emphasizes Source 2, dismisses 1 and 3's important contributions"
     }
   ],
   "resources": {
     "strategy_card": {
-      "title": "Rhetorical Synthesis Quick Reference",
-      "steps": [
-        "1. LOCATE: Find main point in each source",
-        "2. IDENTIFY: Determine relationships between sources",
-        "3. NOTE: Look for overarching themes/patterns",
-        "4. KNIT: Combine into unified, coherent message"
+      "title": "The BLEND Strategy Quick Reference",
+      "phases": [
+        {
+          "phase": "1. LOCATE POINTS",
+          "steps": [
+            "Extract each source's main claim",
+            "Note key evidence from each",
+            "Identify unique contribution of each source"
+          ]
+        },
+        {
+          "phase": "2. IDENTIFY RELATIONSHIPS",
+          "steps": [
+            "Complementary: Same conclusion, different evidence",
+            "Contrasting: Opposing findings or viewpoints",
+            "Building: One expands/strengthens another",
+            "Qualifying: One adds conditions to another",
+            "Contextual: One provides background for other"
+          ]
+        },
+        {
+          "phase": "3. NAVIGATE INTEGRATION",
+          "steps": [
+            "Show HOW sources relate (don't just list)",
+            "Acknowledge complexity and nuance",
+            "Create unified message greater than parts",
+            "Avoid: separate summaries, choosing one source, ignoring contradictions"
+          ]
+        }
       ],
-      "tips": [
-        "Show relationships, don't just summarize separately",
-        "Look for complementary, contrasting, or building patterns",
-        "Create nuanced messages that acknowledge complexity",
-        "Effective synthesis = sources working together, not side by side"
-      ]
+      "the_100_rule": "True synthesis shows source relationships explicitly and creates unified understanding. Listing sources separately = not synthesis."
     },
     "common_mistakes": [
-      "Simply summarizing each source without showing connections",
+      "Simply summarizing each source separately without showing connections",
       "Ignoring contradictions or tensions between sources",
-      "Choosing one source over others instead of synthesizing",
+      "Choosing one source's perspective while dismissing others",
       "Creating overly simplistic conclusions from complex sources"
-    ]
+    ],
+    "synthesis_quick_reference": {
+      "True Synthesis": "Shows how sources work together → unified message",
+      "Separate Summary": "Lists what each says → no integration",
+      "Complementary": "Different evidence, same conclusion",
+      "Contrasting": "Opposing findings → acknowledge both",
+      "Qualifying": "One adds 'when/where' conditions to another"
+    }
   },
   "metadata": {
     "created_date": "2024-12-01",
-    "last_updated": "2024-12-01",
-    "content_version": "1.0",
-    "estimated_completion_time": 1500,
-    "prerequisite_skills": ["COE", "TRA"],
-    "skill_progression": ["lesson_10"]
+    "last_updated": "2025-01-02",
+    "content_version": "2.0",
+    "estimated_completion_time": 1680,
+    "prerequisite_skills": ["lesson_08"],
+    "skill_progression": ["lesson_10"],
+    "strategy_integration": {
+      "source": "Expert SAT strategies synthesis",
+      "key_innovation": "3-Phase BLEND Strategy: Locate Points → Identify Relationships → Navigate Integration",
+      "slides_enhanced": ["slide_02", "slide_03", "slide_04", "slide_05"]
+    }
   }
 }

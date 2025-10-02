@@ -1,0 +1,328 @@
+{
+  "id": "lesson_11",
+  "title": "Cross-Text Connections",
+  "subtitle": "Analyzing Relationships Between Texts",
+  "level": "Foundation",
+  "duration": "20-25 min",
+  "skill_codes": ["CTC"],
+  "learning_objectives": [
+    "Identify relationships between paired passages",
+    "Compare and contrast different authors' perspectives",
+    "Analyze how texts build upon or challenge each other",
+    "Master College Board's cross-text question strategies"
+  ],
+  "success_criteria": {
+    "mastery_threshold": 0.75,
+    "min_accuracy": 0.7,
+    "required_slides": "all"
+  },
+  "slides": [
+    {
+      "id": "slide_01",
+      "type": "introduction",
+      "title": "Welcome to Cross-Text Connections",
+      "duration_estimate": 180,
+      "content": {
+        "heading": "Learning Objectives",
+        "text": "In this lesson, you'll master analyzing relationships between multiple texts - a key skill for understanding how different authors approach the same topic.",
+        "bullet_points": [
+          "Learn to identify different types of text relationships",
+          "Master comparison and contrast techniques for paired passages",
+          "Practice analyzing how authors build on or challenge each other's ideas",
+          "Apply systematic strategies for cross-text questions"
+        ]
+      },
+      "interactions": [
+        {
+          "type": "progress_indicator",
+          "content": {
+            "current_slide": 1,
+            "total_slides": 8
+          }
+        },
+        {
+          "type": "click_to_continue",
+          "content": {
+            "button_text": "Let's Begin!"
+          }
+        }
+      ]
+    },
+    {
+      "id": "slide_02",
+      "type": "concept_teaching",
+      "title": "Understanding Cross-Text Connections",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "What Are Cross-Text Connections?",
+        "text": "Cross-text connections involve analyzing how two or more texts relate to each other when discussing similar topics, themes, or issues.",
+        "main_points": [
+          "Texts may agree, disagree, or present different aspects of the same topic",
+          "Authors may use different evidence to support similar conclusions",
+          "One text may provide context or background for another",
+          "Texts may represent different time periods, perspectives, or approaches"
+        ],
+        "relationship_types": [
+          "Agreement: Both texts support the same position with different evidence",
+          "Disagreement: Texts present opposing viewpoints or contradictory evidence",
+          "Complementary: Texts focus on different aspects of the same topic",
+          "Sequential: One text builds on or updates information from another",
+          "Contextual: One text provides background for understanding another"
+        ]
+      },
+      "interactions": [
+        {
+          "type": "reveal_on_click",
+          "content": {
+            "reveal_text": "College Board Focus: Questions test your ability to see relationships between texts, not just understand each text individually."
+          }
+        }
+      ]
+    },
+    {
+      "id": "slide_03",
+      "type": "strategy_teaching",
+      "title": "The CONNECT Strategy",
+      "duration_estimate": 300,
+      "content": {
+        "heading": "CONNECT Method for Cross-Text Analysis",
+        "strategy_acronym": "CONNECT",
+        "strategy_steps": [
+          {
+            "letter": "C",
+            "word": "Compare",
+            "description": "Identify the main topic and purpose of each text"
+          },
+          {
+            "letter": "O",
+            "word": "Outline",
+            "description": "Note each author's main argument or position"
+          },
+          {
+            "letter": "N",
+            "word": "Notice",
+            "description": "Look for areas of agreement and disagreement"
+          },
+          {
+            "letter": "N",
+            "word": "Note",
+            "description": "Identify different types of evidence each author uses"
+          },
+          {
+            "letter": "E",
+            "word": "Evaluate",
+            "description": "Determine the overall relationship between texts"
+          },
+          {
+            "letter": "C",
+            "word": "Choose",
+            "description": "Select the answer that best describes the relationship"
+          },
+          {
+            "letter": "T",
+            "word": "Test",
+            "description": "Verify your answer against both texts"
+          }
+        ]
+      },
+      "interactions": [
+        {
+          "type": "step_by_step_reveal",
+          "content": {
+            "steps": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "slide_04",
+      "type": "guided_example",
+      "title": "Guided Practice: Analyzing Text Relationships",
+      "duration_estimate": 360,
+      "content": {
+        "scenario": "Topic: The benefits of reading physical books vs. digital books",
+        "text_a_summary": "Text A: Argues that physical books provide better comprehension and retention. Cites studies showing 20% better recall with print books and discusses the importance of tactile experience in learning.",
+        "text_b_summary": "Text B: Acknowledges that print books have advantages but emphasizes digital books' accessibility features, environmental benefits, and cost-effectiveness. Notes that comprehension differences decrease with practice.",
+        "question": "How would you describe the relationship between these texts?",
+        "walkthrough": [
+          {
+            "step": 1,
+            "question": "What is each text's main position?",
+            "answer": "A: favors physical books for comprehension; B: balanced view favoring digital for practical reasons"
+          },
+          {
+            "step": 2,
+            "question": "Do they completely disagree?",
+            "answer": "No - B acknowledges A's points about comprehension advantages"
+          },
+          {
+            "step": 3,
+            "question": "What's the overall relationship?",
+            "answer": "Nuanced disagreement - B acknowledges A's points but argues other factors outweigh them"
+          }
+        ]
+      },
+      "interactions": [
+        {
+          "type": "guided_walkthrough",
+          "content": {
+            "steps": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "slide_05",
+      "type": "independent_practice",
+      "title": "Your Turn: Cross-Text Analysis",
+      "duration_estimate": 300,
+      "content": {
+        "instructions": "Read these text summaries and identify their relationship using the CONNECT method.",
+        "scenario": "Topic: The role of artificial intelligence in education",
+        "text_1": "Passage 1 discusses how AI tutoring systems can provide personalized learning experiences, adapting to individual student needs and providing instant feedback. The author presents data showing 30% improvement in math scores.",
+        "text_2": "Passage 2 examines potential risks of AI in education, including reduced human interaction, privacy concerns with student data, and the risk of over-dependence on technology for learning.",
+        "question": "Which best describes how Passage 2 relates to Passage 1?",
+        "strategy_tip": "Use CONNECT: Compare purposes, Outline positions, Notice agreements/disagreements."
+      },
+      "interactions": [
+        {
+          "type": "multiple_choice_question",
+          "content": {
+            "options": [
+              "Passage 2 completely contradicts Passage 1's claims about AI effectiveness",
+              "Passage 2 provides additional evidence supporting Passage 1's arguments",
+              "Passage 2 presents important concerns that balance Passage 1's optimistic view",
+              "Passage 2 discusses an entirely different aspect of AI that doesn't relate to Passage 1"
+            ],
+            "correct": 2,
+            "explanation": "Passage 2 doesn't contradict the effectiveness data from Passage 1, but presents important counterbalancing concerns (human interaction, privacy, over-dependence) that provide a more complete view of AI in education."
+          }
+        }
+      ]
+    },
+    {
+      "id": "slide_06",
+      "type": "skill_application",
+      "title": "Advanced Cross-Text Techniques",
+      "duration_estimate": 420,
+      "content": {
+        "heading": "Mastering Complex Text Relationships",
+        "text": "Learn to handle sophisticated cross-text scenarios involving multiple perspectives, historical contexts, and evolving ideas.",
+        "advanced_patterns": [
+          {
+            "pattern": "Historical Progression",
+            "description": "Texts show how understanding has evolved over time",
+            "example": "Text 1: 1990s view of internet privacy; Text 2: Current perspective after social media emergence",
+            "key_clues": "Dates, phrases like 'initially,' 'now,' 'recent developments'"
+          },
+          {
+            "pattern": "Disciplinary Perspectives",
+            "description": "Different fields examine the same phenomenon",
+            "example": "Text 1: Economist's view of remote work; Text 2: Psychologist's view of remote work",
+            "key_clues": "Different types of evidence, methodologies, terminology"
+          },
+          {
+            "pattern": "Scale Variation",
+            "description": "Texts examine different scales of the same issue",
+            "example": "Text 1: Individual impacts of climate change; Text 2: Global policy responses",
+            "key_clues": "Individual vs. collective focus, micro vs. macro perspectives"
+          },
+          {
+            "pattern": "Solution Sequencing",
+            "description": "Texts present different approaches to solving the same problem",
+            "example": "Text 1: Technology solutions to traffic; Text 2: Urban planning solutions",
+            "key_clues": "Different solution types, various implementation approaches"
+          }
+        ]
+      },
+      "interactions": [
+        {
+          "type": "question_sequence",
+          "content": {
+            "sequence_length": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "slide_07",
+      "type": "concept_reinforcement",
+      "title": "Cross-Text Mastery & Practice Transition",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "Cross-Text Connection Excellence",
+        "key_points": [
+          "Analyze relationships between texts, not just individual text content",
+          "Look for agreement, disagreement, complementary perspectives, or building ideas",
+          "Consider different types of evidence and approaches authors use",
+          "Recognize that texts can partially agree while differing on specific aspects"
+        ],
+        "strategy_reminder": "Remember CONNECT: Compare topics, Outline positions, Notice agreements/disagreements, Note evidence types, Evaluate relationships, Choose best answer, Test against both texts",
+        "college_board_insight": "Cross-text questions reward nuanced understanding of how authors relate to each other's ideas, not black-and-white agreement/disagreement.",
+        "practice_transition": {
+          "text": "Ready to practice cross-text analysis with authentic SAT paired passages? Let's apply your skills!",
+          "button_text": "Start Skill Practice",
+          "skill_code": "CTC"
+        }
+      },
+      "interactions": [
+        {
+          "type": "completion_celebration",
+          "content": {
+            "message": "Outstanding! You've mastered the art of cross-text analysis."
+          }
+        }
+      ]
+    },
+    {
+      "id": "slide_08",
+      "type": "mastery_check",
+      "title": "Cross-Text Quick Check",
+      "skill_codes": ["CTC"],
+      "difficulty": "M",
+      "question": "Passage 1 argues that urban gardens increase property values by 10% and reduce crime. Passage 2 discusses how urban gardens build community connections and provide fresh food access. How do these passages relate?",
+      "options": [
+        "Passage 2 contradicts Passage 1's claims about urban gardens",
+        "Passage 2 provides different evidence supporting the overall benefits of urban gardens",
+        "Passage 2 proves that Passage 1's data about property values is incorrect",
+        "The passages discuss completely unrelated aspects of urban gardens"
+      ],
+      "correct_answer": "B",
+      "explanation": "Both passages support urban gardens' benefits but focus on different advantages: Passage 1 emphasizes economic/safety benefits while Passage 2 emphasizes social/health benefits. They complement rather than contradict each other."
+    }
+  ],
+  "resources": {
+    "strategy_card": {
+      "title": "Cross-Text Connections Quick Reference",
+      "steps": [
+        "1. COMPARE: Identify main topic and purpose of each text",
+        "2. OUTLINE: Note each author's position/argument",
+        "3. NOTICE: Look for agreements and disagreements",
+        "4. NOTE: Identify different evidence types",
+        "5. EVALUATE: Determine overall relationship",
+        "6. CHOOSE: Select best relationship description",
+        "7. TEST: Verify answer against both texts"
+      ],
+      "tips": [
+        "Focus on relationships between texts, not just individual content",
+        "Look for agreement, disagreement, complementary, or building patterns",
+        "Consider partial agreement with specific differences",
+        "Note different types of evidence and approaches used"
+      ]
+    },
+    "common_mistakes": [
+      "Analyzing each text separately instead of their relationship",
+      "Seeing only complete agreement or complete disagreement",
+      "Missing complementary relationships where texts discuss different aspects",
+      "Ignoring how one text might build upon or qualify another's claims"
+    ]
+  },
+  "metadata": {
+    "created_date": "2024-12-01",
+    "last_updated": "2024-12-01",
+    "content_version": "1.0",
+    "estimated_completion_time": 1500,
+    "prerequisite_skills": ["CID", "COE", "WIC"],
+    "skill_progression": []
+  }
+}

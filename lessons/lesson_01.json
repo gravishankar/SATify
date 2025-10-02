@@ -1,15 +1,15 @@
 {
   "id": "lesson_01",
-  "title": "SAT Reading Fundamentals",
-  "subtitle": "Central Ideas & Details",
+  "title": "Central Ideas & Details",
+  "subtitle": "Reading & Writing Foundation",
   "level": "Foundation",
   "duration": "20-25 min",
   "skill_codes": ["CID"],
   "learning_objectives": [
-    "Identify main ideas in reading passages",
-    "Distinguish between central ideas and supporting details",
-    "Apply strategies for finding topic sentences",
-    "Practice with authentic SAT reading questions"
+    "The Core: Master identifying main ideas vs. supporting details",
+    "The Skill: Distinguish between what a passage is about vs. what it says",
+    "The Problem: Answer choices designed to confuse topic with main idea",
+    "Key Strategy: The 3-Phase MAIN Strategy for 100% provable main ideas"
   ],
   "success_criteria": {
     "mastery_threshold": 0.75,
@@ -20,92 +20,63 @@
     {
       "id": "slide_01",
       "type": "introduction",
-      "title": "Welcome to SAT Reading Fundamentals",
+      "title": "Learning Objectives",
       "duration_estimate": 180,
       "content": {
-        "heading": "Learning Objectives",
-        "text": "In this lesson, you'll master the skill of identifying central ideas and supporting details - a crucial foundation for SAT Reading success.",
+        "heading": "The Main Quest",
         "bullet_points": [
-          "Understand what makes an idea 'central' vs. supporting",
-          "Learn the 3-step method for finding main ideas",
-          "Practice with real SAT passage formats",
-          "Build confidence with guided examples"
-        ],
-        "visual_element": {
-          "type": "progress_indicator",
-          "total_slides": 8,
-          "estimated_time": "20-25 minutes"
-        }
+          "Decode the difference between topic and main idea",
+          "Master the author's purpose analysis",
+          "Apply the 3-Phase MAIN Strategy for certainty",
+          "Eliminate trap answers with surgical precision"
+        ]
       },
       "interactions": [
         {
           "type": "click_to_continue",
-          "text": "Ready to begin? Click to continue"
+          "text": "Ready? Let's begin."
         }
       ]
     },
     {
       "id": "slide_02",
-      "type": "concept_teaching",
-      "title": "What is a Central Idea?",
-      "duration_estimate": 240,
-      "content": {
-        "heading": "Understanding Central Ideas",
-        "text": "A central idea is the main point or argument that the author wants to communicate. It's what the entire passage is really about.",
-        "concept_box": {
-          "title": "Key Characteristics",
-          "points": [
-            "🎯 **Broad enough** to cover the whole passage",
-            "📍 **Specific enough** to be meaningful",
-            "💡 **Supported by** most details in the text",
-            "🔄 **Connects** different parts of the passage"
-          ]
-        },
-        "examples": {
-          "good_central_idea": "The passage argues that renewable energy is essential for addressing climate change",
-          "poor_central_idea": "Solar panels are mentioned in paragraph 2"
-        }
-      },
-      "interactions": [
-        {
-          "type": "reveal_on_click",
-          "elements": [
-            {
-              "trigger": "Click to see the difference",
-              "reveal": "Notice how the good central idea captures the author's main argument, while the poor example focuses on just one detail."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "slide_03",
       "type": "strategy_teaching",
-      "title": "The 3-Step Method",
+      "title": "The Master Strategy: Phase 1",
       "duration_estimate": 300,
       "content": {
-        "heading": "Strategy: The Topic-Purpose-Main Idea Method",
+        "heading": "PHASE 1: Map the Territory",
+        "subtitle": "Find What vs. Why",
         "strategy_steps": [
           {
             "step": 1,
-            "title": "Find the TOPIC",
-            "description": "What is this passage about? (Usually a noun or noun phrase)",
-            "example": "Topic: Renewable energy technologies"
+            "title": "Identify the TOPIC",
+            "description": "What is this passage discussing? (Usually a noun/noun phrase)",
+            "points": [
+              "The topic answers: 'What is this about?'",
+              "Look for repeated concepts, not just repeated words",
+              "Topic is concrete: renewable energy, facial recognition, urban farming"
+            ]
           },
           {
             "step": 2,
-            "title": "Identify the PURPOSE",
-            "description": "Why did the author write this? (To argue, explain, describe, etc.)",
-            "example": "Purpose: To argue for increased investment"
-          },
-          {
-            "step": 3,
-            "title": "Combine for MAIN IDEA",
-            "description": "Put topic + purpose together in one sentence",
-            "example": "Main Idea: The author argues that governments should increase investment in renewable energy technologies"
+            "title": "Find the ANGLE",
+            "description": "What specific aspect of the topic does the author focus on?",
+            "points": [
+              "Not just 'renewable energy' but 'economic benefits of renewable energy'",
+              "Not just 'social media' but 'social media's impact on teen mental health'",
+              "The angle narrows the topic to what the author specifically addresses"
+            ]
           }
         ],
-        "memory_aid": "Remember: **T.P.M.** - Topic, Purpose, Main idea"
+        "example": {
+          "text": "Passage about urban vertical farming addressing food security challenges in cities.",
+          "breakdown": {
+            "topic": "Urban vertical farming",
+            "angle": "How it solves food security challenges",
+            "note": "The passage isn't about vertical farming in general—it's specifically about its role in food security"
+          }
+        },
+        "key_insight": "The topic is WHAT the passage discusses. The angle is WHICH ASPECT the author focuses on."
       },
       "interactions": [
         {
@@ -115,37 +86,212 @@
       ]
     },
     {
-      "id": "slide_04",
-      "type": "guided_example",
-      "title": "Guided Practice: Let's Try It Together",
-      "duration_estimate": 360,
+      "id": "slide_03",
+      "type": "strategy_teaching",
+      "title": "The Master Strategy: Phase 2",
+      "duration_estimate": 300,
       "content": {
-        "heading": "Practice Passage",
-        "passage": {
-          "text": "The human brain's ability to recognize faces is truly remarkable. Within milliseconds of seeing a face, we can determine if it belongs to someone we know, assess their emotional state, and even make judgments about their trustworthiness. This rapid processing occurs in a specialized region called the fusiform face area (FFA). Recent neurological studies have revealed that the FFA develops these capabilities through years of exposure and practice, much like learning to read. However, when this region is damaged, individuals may develop prosopagnosia, or 'face blindness,' making it nearly impossible to recognize even familiar faces. Understanding how facial recognition works helps scientists develop better treatments for those with prosopagnosia and insights into how our brains process complex visual information.",
-          "highlight_enabled": true
+        "heading": "PHASE 2: Decode the Purpose",
+        "subtitle": "The Author's Intent",
+        "core_principle": {
+          "title": "Purpose Is King",
+          "description": "The main idea = Topic + Author's Purpose. Purpose answers WHY the author wrote this."
         },
-        "guided_questions": [
+        "purpose_categories": [
+          {
+            "purpose": "To ARGUE/PERSUADE",
+            "signals": "Should, must, need to, important that, essential, critical",
+            "example": "Author argues governments should increase renewable energy investment"
+          },
+          {
+            "purpose": "To EXPLAIN/INFORM",
+            "signals": "How, why, what causes, the process, the mechanism",
+            "example": "Author explains how facial recognition works in the brain"
+          },
+          {
+            "purpose": "To DESCRIBE/PRESENT",
+            "signals": "Neutral presentation, characteristics, features, aspects",
+            "example": "Author describes the various functions of bioluminescence"
+          },
+          {
+            "purpose": "To ANALYZE/COMPARE",
+            "signals": "Similarities, differences, in contrast, both, while",
+            "example": "Author analyzes differences between traditional and vertical farming"
+          }
+        ],
+        "strategy_steps": [
           {
             "step": 1,
-            "question": "What is the TOPIC of this passage?",
-            "hint": "Look for what the passage is mainly discussing - it should be something mentioned throughout.",
-            "answer": "The human brain's facial recognition abilities / The fusiform face area",
-            "explanation": "The entire passage discusses how our brains recognize faces and the specific brain region responsible."
+            "title": "Read the Opening & Closing",
+            "description": "Authors often state purpose explicitly at beginning or end",
+            "example": "Opening: 'The phenomenon of bioluminescence has fascinated scientists...' → Purpose: To explain/inform"
           },
           {
             "step": 2,
-            "question": "What is the author's PURPOSE?",
-            "hint": "Why did they write this? To argue, explain, describe, persuade?",
-            "answer": "To explain how facial recognition works and its importance",
-            "explanation": "The author is explaining the process and significance of facial recognition, not arguing for a particular viewpoint."
+            "title": "Check the Tone",
+            "description": "Is the author neutral, advocating, questioning, critiquing?",
+            "example": "Neutral tone → explain/inform. Advocating tone → argue/persuade"
           },
           {
             "step": 3,
-            "question": "What is the MAIN IDEA?",
-            "hint": "Combine the topic and purpose into one clear sentence.",
-            "answer": "The passage explains how the human brain's specialized facial recognition system works and why understanding it is important for treating related disorders.",
-            "explanation": "This captures both what the passage is about (facial recognition) and why the author wrote it (to explain the process and its significance)."
+            "title": "Look for Purpose Signal Words",
+            "description": "Words like 'should,' 'important,' 'critical' signal argument",
+            "example": "'Understanding flow has practical applications...' → Purpose: to explain applications"
+          }
+        ]
+      },
+      "interactions": [
+        {
+          "type": "reveal_on_click",
+          "elements": [
+            {
+              "trigger": "Show Key Insight",
+              "reveal": "The SAT never asks about random details. Main idea questions test whether you understand what the author is DOING, not just what they're SAYING. Purpose > topic."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "slide_04",
+      "type": "strategy_teaching",
+      "title": "The Master Strategy: Phase 3",
+      "duration_estimate": 320,
+      "content": {
+        "heading": "PHASE 3: Eliminate with Surgical Precision",
+        "subtitle": "The 100% Rule: Find Why 3 Are Wrong, Prove 1 Is Perfect",
+        "core_principle": {
+          "title": "College Board's Trap Patterns",
+          "description": "Wrong answers follow predictable patterns. Learn these and you'll never fall for them again."
+        },
+        "trap_types": [
+          {
+            "trap": "TOO NARROW (Detail Trap)",
+            "description": "Focuses on one paragraph or example, not the whole passage",
+            "example": "Passage about vertical farming → Wrong: 'Vertical farms use 95% less water'",
+            "why_wrong": "This is a supporting detail, not the main idea about food security"
+          },
+          {
+            "trap": "TOO BROAD (Overgeneralization)",
+            "description": "So general it could apply to many passages",
+            "example": "Passage about facial recognition → Wrong: 'The brain processes information'",
+            "why_wrong": "Too vague—doesn't capture the specific focus on facial recognition"
+          },
+          {
+            "trap": "TOPIC, NOT MAIN IDEA",
+            "description": "States what the passage is about, but not the author's point",
+            "example": "Passage arguing for renewable energy → Wrong: 'The passage discusses renewable energy'",
+            "why_wrong": "This states the topic but misses the PURPOSE (to argue for investment)"
+          },
+          {
+            "trap": "WRONG PURPOSE",
+            "description": "Correct topic but wrong author intent",
+            "example": "Passage explaining flow → Wrong: 'The passage argues flow is better than other states'",
+            "why_wrong": "Author explains flow, doesn't argue it's superior"
+          },
+          {
+            "trap": "NOT MENTIONED/DISTORTION",
+            "description": "Introduces ideas not in the passage or twists what's there",
+            "example": "Passage on Curie's achievements → Wrong: 'Discrimination prevented Curie's success'",
+            "why_wrong": "Passage says she faced discrimination but ultimately succeeded"
+          }
+        ],
+        "elimination_process": [
+          {
+            "step": 1,
+            "title": "Check Coverage",
+            "question": "Does this answer cover the WHOLE passage or just part?",
+            "action": "Eliminate answers that focus on one paragraph/detail"
+          },
+          {
+            "step": 2,
+            "title": "Verify Purpose Match",
+            "question": "Does this answer reflect the author's PURPOSE (argue, explain, describe)?",
+            "action": "Eliminate answers with wrong purpose verbs"
+          },
+          {
+            "step": 3,
+            "title": "Test Specificity",
+            "question": "Is this specific enough to be meaningful but broad enough to cover everything?",
+            "action": "Eliminate too broad (vague) or too narrow (detail-focused) answers"
+          },
+          {
+            "step": 4,
+            "title": "Confirm 100% Accuracy",
+            "question": "Can I point to evidence throughout the passage for this?",
+            "action": "The correct answer should be supported by multiple parts of the passage"
+          }
+        ]
+      },
+      "interactions": [
+        {
+          "type": "interactive_elimination",
+          "show_flaw_analysis": true
+        }
+      ]
+    },
+    {
+      "id": "slide_05",
+      "type": "guided_example",
+      "title": "Guided Practice: The Strategy in Action",
+      "duration_estimate": 400,
+      "content": {
+        "heading": "Let's Apply All 3 Phases Together",
+        "passage": "The phenomenon of bioluminescence—the production of light by living organisms—has fascinated scientists for centuries. While most people associate this ability with fireflies, bioluminescence is actually most common in marine environments, where up to 90% of organisms in the deep ocean produce their own light. This biological lighting serves various purposes: some species use it to attract prey, others to communicate with potential mates, and still others to confuse or deter predators. Recent research has revealed that bioluminescence evolved independently at least 40 times throughout natural history, suggesting that the ability to produce light provides significant survival advantages. Scientists are now studying these natural light-producing mechanisms to develop new biotechnologies, including more efficient lighting systems and medical imaging techniques.",
+        "question": "The main purpose of the passage is to:",
+        "walkthrough": [
+          {
+            "phase": "PHASE 1: Map Territory",
+            "step": 1,
+            "question": "What is the TOPIC?",
+            "answer": "Bioluminescence (biological light production)",
+            "reasoning": "The passage repeatedly discusses bioluminescence throughout—in title, examples, functions, and applications"
+          },
+          {
+            "phase": "PHASE 1: Map Territory",
+            "step": 2,
+            "question": "What is the ANGLE?",
+            "answer": "The various functions and significance of bioluminescence",
+            "reasoning": "The passage covers multiple aspects: where it occurs, what purposes it serves, evolutionary significance, and applications"
+          },
+          {
+            "phase": "PHASE 2: Decode Purpose",
+            "step": 3,
+            "question": "What is the author's PURPOSE?",
+            "answer": "To EXPLAIN/INFORM about bioluminescence's functions and importance",
+            "reasoning": "Neutral, informative tone. No argument or advocacy. Uses explanatory language: 'serves various purposes,' 'revealed that,' 'suggesting that'"
+          },
+          {
+            "phase": "PHASE 3: Eliminate Traps",
+            "step": 4,
+            "question": "Now let's eliminate wrong answers using our trap patterns",
+            "options_analysis": [
+              {
+                "option": "A",
+                "text": "explain why fireflies are the most well-known bioluminescent organisms",
+                "trap_type": "TOO NARROW + WRONG FOCUS",
+                "flaw": "Fireflies mentioned briefly in one sentence. Passage isn't explaining WHY they're well-known—just noting most people associate bioluminescence with them before moving to the real focus (marine environments)"
+              },
+              {
+                "option": "B",
+                "text": "describe the various functions and significance of bioluminescence in nature",
+                "trap_type": "NONE—THIS IS CORRECT",
+                "validation": "✓ Covers whole passage (functions: prey, communication, defense; significance: evolutionary advantages, biotech applications). ✓ Correct purpose (describe/explain). ✓ Right specificity level"
+              },
+              {
+                "option": "C",
+                "text": "argue that bioluminescence research should receive more funding",
+                "trap_type": "WRONG PURPOSE",
+                "flaw": "Author never argues for anything. No 'should,' 'must,' 'need to.' Passage explains what scientists are doing, doesn't advocate for more research"
+              },
+              {
+                "option": "D",
+                "text": "compare marine bioluminescence to terrestrial bioluminescence",
+                "trap_type": "NOT THE STRUCTURE + TOO NARROW",
+                "flaw": "Passage mentions marine vs. terrestrial briefly but doesn't compare them systematically. The focus is on functions and significance, not comparison"
+              }
+            ],
+            "correct_answer": "B"
           }
         ]
       },
@@ -158,205 +304,177 @@
       ]
     },
     {
-      "id": "slide_05",
+      "id": "slide_06",
       "type": "independent_practice",
-      "title": "Your Turn: Find the Central Idea",
-      "duration_estimate": 300,
+      "title": "Your Turn: Apply the MAIN Strategy",
+      "duration_estimate": 360,
       "content": {
         "heading": "Independent Practice",
-        "passage": {
-          "text": "Urban vertical farming represents a revolutionary approach to agriculture that could help address food security challenges in growing cities. Unlike traditional farming, vertical farms use stacked layers of crops in controlled indoor environments, allowing year-round production regardless of weather conditions. These facilities employ LED lighting systems, hydroponic or aeroponic growing methods, and precise climate control to optimize plant growth while using 95% less water than conventional farming. Although the initial setup costs are substantial, vertical farms can produce up to 390 times more food per square foot than traditional farms. As urban populations continue to expand and arable land becomes scarcer, vertical farming offers a sustainable solution that brings food production closer to consumers, reduces transportation costs, and minimizes environmental impact.",
-          "word_count": 134
-        },
-        "question": {
-          "text": "Which choice best states the main idea of the passage?",
-          "options": [
-            "Vertical farms use advanced LED lighting and hydroponic systems to grow crops indoors.",
-            "Traditional farming methods are becoming outdated due to climate change and urbanization.",
-            "Vertical farming offers an innovative solution to urban food security challenges through efficient, sustainable agriculture.",
-            "The initial costs of vertical farming are high, but the long-term benefits justify the investment."
-          ],
-          "correct_answer": "C",
-          "explanations": {
-            "A": "This focuses on technical details rather than the overall main idea about solving food security.",
-            "B": "The passage doesn't argue that traditional farming is outdated, just that vertical farming offers advantages.",
-            "C": "✓ Correct! This captures the central argument that vertical farming is a solution to urban food challenges.",
-            "D": "This focuses on costs and benefits but misses the broader point about food security solutions."
-          }
-        }
+        "instructions": "Use all 3 phases: Map Territory → Decode Purpose → Eliminate Traps",
+        "passage": "Urban vertical farming represents a revolutionary approach to agriculture that could help address food security challenges in growing cities. Unlike traditional farming, vertical farms use stacked layers of crops in controlled indoor environments, allowing year-round production regardless of weather conditions. These facilities employ LED lighting systems, hydroponic or aeroponic growing methods, and precise climate control to optimize plant growth while using 95% less water than conventional farming. Although the initial setup costs are substantial, vertical farms can produce up to 390 times more food per square foot than traditional farms. As urban populations continue to expand and arable land becomes scarcer, vertical farming offers a sustainable solution that brings food production closer to consumers, reduces transportation costs, and minimizes environmental impact.",
+        "question": "Which choice best states the main idea of the passage?",
+        "strategy_reminder": "Phase 1: Topic = vertical farming. Angle = ? Purpose = argue/explain? Phase 2: Check tone and signal words. Phase 3: Eliminate using trap patterns."
       },
       "interactions": [
         {
           "type": "multiple_choice_question",
-          "immediate_feedback": true,
-          "allow_retry": true
-        }
-      ]
-    },
-    {
-      "id": "slide_06",
-      "type": "skill_application",
-      "title": "Apply Your Skills",
-      "duration_estimate": 420,
-      "content": {
-        "heading": "SAT-Style Questions",
-        "instructions": "Now you'll practice with questions that mirror the actual SAT format. Use the T.P.M. method you learned.",
-        "questions": [
-          {
-            "id": "q1",
-            "passage": "The phenomenon of bioluminescence—the production of light by living organisms—has fascinated scientists for centuries. While most people associate this ability with fireflies, bioluminescence is actually most common in marine environments, where up to 90% of organisms in the deep ocean produce their own light. This biological lighting serves various purposes: some species use it to attract prey, others to communicate with potential mates, and still others to confuse or deter predators. Recent research has revealed that bioluminescence evolved independently at least 40 times throughout natural history, suggesting that the ability to produce light provides significant survival advantages. Scientists are now studying these natural light-producing mechanisms to develop new biotechnologies, including more efficient lighting systems and medical imaging techniques.",
-            "question": "The main purpose of the passage is to",
+          "content": {
             "options": [
-              "explain why fireflies are the most well-known bioluminescent organisms",
-              "describe the various functions and significance of bioluminescence in nature",
-              "argue that bioluminescence research should receive more funding",
-              "compare marine bioluminescence to terrestrial bioluminescence"
+              "Vertical farms use advanced LED lighting and hydroponic systems to grow crops indoors.",
+              "Traditional farming methods are becoming outdated due to climate change and urbanization.",
+              "Vertical farming offers an innovative solution to urban food security challenges through efficient, sustainable agriculture.",
+              "The initial costs of vertical farming are high, but the long-term benefits justify the investment."
             ],
-            "correct_answer": "B",
-            "skill_codes": ["CID"],
-            "difficulty": "M"
-          },
-          {
-            "id": "q2",
-            "passage": "Marie Curie's scientific achievements were groundbreaking not only for their contributions to physics and chemistry but also for breaking gender barriers in science. As the first woman to win a Nobel Prize, the first person to win Nobel Prizes in two different scientific fields, and the first female professor at the University of Paris, Curie's career was marked by numerous firsts. Her discovery of the elements polonium and radium advanced our understanding of radioactivity, a term she coined. Despite facing significant discrimination and skepticism from the male-dominated scientific community, Curie's meticulous research methods and unwavering dedication ultimately earned her worldwide recognition. Her legacy continues to inspire scientists today, particularly women pursuing careers in STEM fields.",
-            "question": "Which choice best describes the central idea of the passage?",
-            "options": [
-              "Marie Curie discovered polonium and radium through careful research methods.",
-              "Women in science continue to face challenges similar to those encountered by Marie Curie.",
-              "Marie Curie's scientific achievements and barrier-breaking career left a lasting impact on science and gender equality.",
-              "The University of Paris was the first institution to hire a female professor in science."
-            ],
-            "correct_answer": "C",
-            "skill_codes": ["CID"],
-            "difficulty": "M"
+            "correct": 2,
+            "explanation": "Let's apply Phase 3 elimination:\n\nA: TOO NARROW trap—focuses on technical details (LED, hydroponics) from one part, misses the main point about food security solutions.\n\nB: DISTORTION trap—passage doesn't argue traditional farming is 'becoming outdated.' It presents vertical farming as a solution to specific urban challenges.\n\nC: ✓ CORRECT—Covers whole passage (Topic: vertical farming + Purpose: to present/explain it as a solution to food security). Matches the opening claim and final sentence.\n\nD: TOO NARROW trap—costs mentioned in one sentence. Passage focus is food security solution, not cost-benefit analysis."
           }
-        ]
-      },
-      "interactions": [
-        {
-          "type": "question_sequence",
-          "show_strategy_reminder": true,
-          "track_time": true
         }
       ]
     },
     {
       "id": "slide_07",
-      "type": "concept_reinforcement",
-      "title": "Key Takeaways",
-      "duration_estimate": 180,
+      "type": "concept_teaching",
+      "title": "Strategy Synthesis: Trap Pattern Summary",
+      "duration_estimate": 280,
       "content": {
-        "heading": "What You've Learned",
+        "heading": "Master These Traps—Never Fall for Them Again",
+        "table": {
+          "columns": ["Trap Pattern", "How to Spot It", "How to Eliminate It"],
+          "rows": [
+            [
+              "TOO NARROW (Detail)",
+              "Focuses on one paragraph, one example, or specific data",
+              "Ask: Does this cover the WHOLE passage or just one part?"
+            ],
+            [
+              "TOO BROAD (Vague)",
+              "So general it could apply to many passages",
+              "Ask: Is this specific enough to distinguish THIS passage from others?"
+            ],
+            [
+              "TOPIC NOT MAIN IDEA",
+              "Says what passage is 'about' without the author's point",
+              "Ask: Does this include the author's PURPOSE, not just the subject?"
+            ],
+            [
+              "WRONG PURPOSE",
+              "Correct topic but wrong verb (argue vs. explain, etc.)",
+              "Ask: Does the verb match the author's actual intent?"
+            ],
+            [
+              "DISTORTION",
+              "Twists what the passage says or adds ideas not present",
+              "Ask: Can I point to specific evidence for every part of this?"
+            ]
+          ]
+        },
+        "expert_insight": "The correct answer will feel almost boring—it simply, accurately states what the author is doing without drama or distortion."
+      }
+    },
+    {
+      "id": "slide_08",
+      "type": "concept_reinforcement",
+      "title": "Key Takeaways & Practice Transition",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "Central Ideas & Details Mastery",
         "key_points": [
-          {
-            "icon": "🎯",
-            "title": "Central Ideas vs. Details",
-            "description": "Central ideas are broad enough to cover the whole passage but specific enough to be meaningful."
-          },
-          {
-            "icon": "📝",
-            "title": "The T.P.M. Method",
-            "description": "Topic + Purpose = Main Idea. This systematic approach works for any reading passage."
-          },
-          {
-            "icon": "🔍",
-            "title": "Supporting Evidence",
-            "description": "Look for details that support the central idea throughout the passage, not just in one paragraph."
-          },
-          {
-            "icon": "⚡",
-            "title": "SAT Strategy",
-            "description": "On the SAT, wrong answers often focus on minor details or are too broad. The correct answer captures the author's main point."
-          }
+          "Phase 1: Map Territory—identify topic and angle (what specific aspect)",
+          "Phase 2: Decode Purpose—determine why author wrote this (argue, explain, describe, analyze)",
+          "Phase 3: Eliminate Traps—use the 5 trap patterns to eliminate 3 wrong answers",
+          "The 100% Rule: Correct answer covers whole passage, matches purpose, supported throughout"
         ],
-        "next_steps": {
-          "text": "You're ready to move on to Lesson 2: Grammar Essentials!",
-          "preview": "Next, you'll learn to identify and fix common sentence structure issues that appear on the SAT Writing section."
+        "strategy_reminder": "Remember MAIN: Map territory, Analyze purpose, Identify traps, Name the answer that's 100% provable",
+        "expert_insight": "SAT Reading tests whether you understand what the author is DOING, not just what they're SAYING. Purpose > topic.",
+        "practice_transition": {
+          "text": "Ready to apply your mastery? Let's practice with authentic SAT main idea questions!",
+          "button_text": "Start Skill Practice",
+          "skill_code": "CID"
         }
       },
       "interactions": [
         {
           "type": "completion_celebration",
-          "unlock_next": "lesson_02"
+          "content": {
+            "message": "Outstanding! You've mastered the art of identifying main ideas with surgical precision."
+          }
         }
       ]
     },
     {
-      "id": "slide_08",
+      "id": "slide_09",
       "type": "mastery_check",
       "title": "Mastery Check",
-      "duration_estimate": 240,
-      "content": {
-        "heading": "Final Assessment",
-        "instructions": "Complete this final question to demonstrate your mastery of central ideas and details.",
-        "passage": {
-          "text": "The concept of 'flow'—a psychological state of complete immersion and focus—was first introduced by psychologist Mihaly Csikszentmihalyi in the 1970s. When experiencing flow, individuals report losing track of time, feeling effortlessly concentrated, and performing at their peak ability. This state occurs when there's a perfect balance between the challenge level of a task and a person's skill level: too easy, and boredom sets in; too difficult, and anxiety takes over. Flow has been observed across diverse activities, from athletic performance to artistic creation to professional work. Understanding flow has practical applications for education, workplace productivity, and personal fulfillment. By designing activities that promote flow states, teachers can enhance student engagement, managers can improve employee satisfaction, and individuals can achieve greater happiness and accomplishment in their daily lives.",
-          "word_count": 142
-        },
-        "question": {
-          "text": "The passage primarily serves to",
-          "options": [
-            "define the concept of flow and explain its applications for improving human performance and satisfaction",
-            "argue that Mihaly Csikszentmihalyi's research on flow should be more widely recognized",
-            "compare flow states experienced in athletic activities versus artistic endeavors",
-            "demonstrate that achieving flow requires finding the perfect balance between challenge and skill"
-          ],
-          "correct_answer": "A",
-          "mastery_question": true
-        }
-      },
-      "interactions": [
-        {
-          "type": "mastery_assessment",
-          "required_for_completion": true,
-          "retry_limit": 3
-        }
-      ]
-    }
-  ],
-  "practice_questions": [
-    {
-      "id": "practice_1",
-      "type": "quick_check",
       "skill_codes": ["CID"],
-      "difficulty": "E",
-      "question": "In a passage about renewable energy benefits, which would most likely be the central idea?",
+      "difficulty": "M",
+      "question": "The concept of 'flow'—a psychological state of complete immersion and focus—was first introduced by psychologist Mihaly Csikszentmihalyi in the 1970s. When experiencing flow, individuals report losing track of time, feeling effortlessly concentrated, and performing at their peak ability. This state occurs when there's a perfect balance between the challenge level of a task and a person's skill level: too easy, and boredom sets in; too difficult, and anxiety takes over. Flow has been observed across diverse activities, from athletic performance to artistic creation to professional work. Understanding flow has practical applications for education, workplace productivity, and personal fulfillment. By designing activities that promote flow states, teachers can enhance student engagement, managers can improve employee satisfaction, and individuals can achieve greater happiness and accomplishment in their daily lives.\n\nThe passage primarily serves to:",
       "options": [
-        "Solar panels were first invented in 1954",
-        "Renewable energy sources offer environmental and economic advantages over fossil fuels",
-        "Wind turbines can be noisy for nearby residents",
-        "The cost of solar installation has decreased"
+        "define the concept of flow and explain its applications for improving human performance and satisfaction",
+        "argue that Mihaly Csikszentmihalyi's research on flow should be more widely recognized",
+        "compare flow states experienced in athletic activities versus artistic endeavors",
+        "demonstrate that achieving flow requires finding the perfect balance between challenge and skill"
       ],
-      "correct_answer": "B"
+      "correct_answer": "A",
+      "explanation": "Phase 3 Elimination:\n\nA: ✓ CORRECT—Topic: flow concept. Purpose: to define and explain applications. Covers whole passage (definition, characteristics, conditions, applications across domains).\n\nB: WRONG PURPOSE trap—Author explains flow, doesn't argue researcher needs recognition. No 'should,' no advocacy.\n\nC: WRONG STRUCTURE trap—Passage mentions athletics and arts as examples but doesn't compare them. Focus is on defining flow and explaining applications.\n\nD: TOO NARROW trap—Balance of challenge/skill is ONE condition for flow (mentioned in middle), not the main idea of entire passage. Misses the applications focus in second half."
     }
   ],
   "resources": {
     "strategy_card": {
-      "title": "Central Ideas Quick Reference",
-      "steps": [
-        "1. Find the TOPIC (what is this about?)",
-        "2. Identify the PURPOSE (why did the author write this?)",
-        "3. Combine for MAIN IDEA (topic + purpose)"
+      "title": "The MAIN Strategy Quick Reference",
+      "phases": [
+        {
+          "phase": "1. MAP TERRITORY",
+          "steps": [
+            "Identify TOPIC: What is this about?",
+            "Find ANGLE: Which specific aspect?"
+          ]
+        },
+        {
+          "phase": "2. ANALYZE PURPOSE",
+          "steps": [
+            "Check opening & closing for purpose clues",
+            "Identify purpose: argue, explain, describe, analyze",
+            "Verify with tone and signal words"
+          ]
+        },
+        {
+          "phase": "3. IDENTIFY TRAPS",
+          "steps": [
+            "Eliminate TOO NARROW (details)",
+            "Eliminate TOO BROAD (vague)",
+            "Eliminate TOPIC WITHOUT PURPOSE",
+            "Eliminate WRONG PURPOSE verb",
+            "Eliminate DISTORTIONS"
+          ]
+        }
       ],
-      "tips": [
-        "Central ideas are supported throughout the passage",
-        "Avoid answers that focus on minor details",
-        "Look for the author's main argument or explanation"
-      ]
+      "the_100_rule": "The correct answer covers the whole passage, matches the author's purpose, and is supported throughout. The other 3 have specific, identifiable flaws."
     },
     "common_mistakes": [
-      "Choosing details instead of main ideas",
-      "Picking answers that are too broad or too narrow",
-      "Focusing on the first or last paragraph only",
-      "Confusing the topic with the central idea"
-    ]
+      "Choosing detail-focused answers instead of passage-wide main ideas",
+      "Selecting correct topic but wrong purpose (e.g., 'explains' vs. 'argues')",
+      "Falling for answers that are too broad or too narrow",
+      "Missing the author's PURPOSE and only identifying the subject"
+    ],
+    "trap_quick_reference": {
+      "Too Narrow": "Focus on one part/detail → Ask: Covers whole passage?",
+      "Too Broad": "Vague, generic claim → Ask: Specific to THIS passage?",
+      "Topic Not Main": "States subject without purpose → Ask: Includes WHY author wrote?",
+      "Wrong Purpose": "Wrong verb (argue/explain/etc.) → Ask: Matches author's intent?",
+      "Distortion": "Twists or adds ideas → Ask: All parts supported by text?"
+    }
   },
   "metadata": {
     "created_date": "2024-12-01",
-    "last_updated": "2024-12-01",
-    "content_version": "1.0",
-    "estimated_completion_time": 1500,
+    "last_updated": "2025-01-02",
+    "content_version": "2.0",
+    "estimated_completion_time": 1680,
     "prerequisite_skills": [],
-    "skill_progression": ["lesson_02"]
+    "skill_progression": ["lesson_02"],
+    "strategy_integration": {
+      "source": "Expert SAT strategies synthesis",
+      "key_innovation": "3-Phase MAIN Strategy: Map Territory → Analyze Purpose → Identify Traps",
+      "slides_enhanced": ["slide_02", "slide_03", "slide_04", "slide_05"]
+    }
   }
 }

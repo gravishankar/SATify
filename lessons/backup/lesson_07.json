@@ -1,0 +1,296 @@
+{
+  "id": "lesson_07",
+  "title": "Command of Evidence",
+  "subtitle": "Finding & Using Textual Support",
+  "level": "Foundation",
+  "duration": "20-25 min",
+  "skill_codes": ["COE"],
+  "learning_objectives": [
+    "Locate relevant evidence to support claims",
+    "Evaluate the strength of textual evidence",
+    "Connect evidence to central ideas and arguments",
+    "Practice with authentic SAT Command of Evidence questions"
+  ],
+  "success_criteria": {
+    "mastery_threshold": 0.75,
+    "min_accuracy": 0.7,
+    "required_slides": "all"
+  },
+  "slides": [
+    {
+      "id": "slide_01",
+      "type": "introduction",
+      "title": "Welcome to Command of Evidence",
+      "duration_estimate": 180,
+      "content": {
+        "heading": "Learning Objectives",
+        "text": "In this lesson, you'll master finding and using textual evidence - a critical skill for supporting arguments and understanding author's claims.",
+        "bullet_points": [
+          "Learn how to locate relevant evidence in passages",
+          "Understand different types of evidence (examples, data, quotes)",
+          "Practice connecting evidence to main ideas",
+          "Apply evidence evaluation strategies"
+        ]
+      },
+      "interactions": [
+        {
+          "type": "progress_indicator",
+          "content": {
+            "current_slide": 1,
+            "total_slides": 8
+          }
+        },
+        {
+          "type": "click_to_continue",
+          "content": {
+            "button_text": "Let's Begin!"
+          }
+        }
+      ]
+    },
+    {
+      "id": "slide_02",
+      "type": "concept_teaching",
+      "title": "What is Command of Evidence?",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "Understanding Textual Evidence",
+        "text": "Command of Evidence questions ask you to identify which part of a passage best supports a given claim or conclusion.",
+        "main_points": [
+          "Evidence = specific details, examples, or quotes that support a point",
+          "Must be directly stated in the passage (not implied)",
+          "Should clearly support the claim being made",
+          "Often includes data, statistics, expert opinions, or concrete examples"
+        ],
+        "example": {
+          "setup": "If a passage argues 'Exercise improves mental health'",
+          "good_evidence": "Studies show 30 minutes of daily exercise reduces anxiety by 25%",
+          "poor_evidence": "Many people feel better after working out"
+        }
+      },
+      "interactions": [
+        {
+          "type": "reveal_on_click",
+          "content": {
+            "reveal_text": "The key is finding SPECIFIC, MEASURABLE support rather than general statements."
+          }
+        }
+      ]
+    },
+    {
+      "id": "slide_03",
+      "type": "strategy_teaching",
+      "title": "3-Step Evidence Strategy",
+      "duration_estimate": 300,
+      "content": {
+        "heading": "FIND Strategy for Evidence",
+        "strategy_acronym": "FIND",
+        "strategy_steps": [
+          {
+            "letter": "F",
+            "word": "Focus",
+            "description": "Read the claim or conclusion carefully"
+          },
+          {
+            "letter": "I",
+            "word": "Identify",
+            "description": "Look for specific details that relate to the claim"
+          },
+          {
+            "letter": "N",
+            "word": "Note",
+            "description": "Check that the evidence directly supports the point"
+          },
+          {
+            "letter": "D",
+            "word": "Decide",
+            "description": "Choose the most specific and relevant evidence"
+          }
+        ]
+      },
+      "interactions": [
+        {
+          "type": "step_by_step_reveal",
+          "content": {
+            "steps": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "slide_04",
+      "type": "guided_example",
+      "title": "Guided Practice: Finding Evidence",
+      "duration_estimate": 360,
+      "content": {
+        "passage": "Recent studies indicate that urban gardens significantly benefit local communities. Dr. Sarah Chen's research in Detroit found that neighborhoods with community gardens saw a 40% reduction in crime rates. Additionally, these gardens provide fresh produce to families, with 78% of participating households reporting improved nutrition. The social aspect is equally important, as residents form lasting friendships through shared gardening activities.",
+        "claim": "Urban gardens provide multiple benefits to communities",
+        "evidence_options": [
+          "Neighborhoods with community gardens saw a 40% reduction in crime rates",
+          "78% of participating households reported improved nutrition",
+          "Dr. Sarah Chen conducted research in Detroit",
+          "Residents form lasting friendships through shared activities"
+        ],
+        "walkthrough": [
+          {
+            "step": 1,
+            "question": "What is the main claim?",
+            "answer": "Urban gardens provide multiple benefits to communities"
+          },
+          {
+            "step": 2,
+            "question": "Which evidence gives specific data about benefits?",
+            "answer": "40% reduction in crime rates and 78% improved nutrition"
+          },
+          {
+            "step": 3,
+            "question": "Why are these stronger than general statements?",
+            "answer": "They provide measurable, specific data rather than vague claims"
+          }
+        ]
+      },
+      "interactions": [
+        {
+          "type": "guided_walkthrough",
+          "content": {
+            "steps": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "slide_05",
+      "type": "independent_practice",
+      "title": "Your Turn: Evidence Selection",
+      "duration_estimate": 300,
+      "content": {
+        "instructions": "Read the passage and identify the best evidence for the given claim.",
+        "passage": "Renewable energy adoption has accelerated dramatically in recent years. Solar panel costs have dropped 85% since 2010, making installation affordable for average homeowners. Wind energy now provides 8% of total US electricity generation, up from just 1% in 2000. Government incentives, including tax credits up to $7,500 for solar installations, have further encouraged adoption. Energy companies report that renewable sources now compete directly with fossil fuels on price.",
+        "claim": "Economic factors are driving renewable energy adoption",
+        "question": "Which sentence provides the strongest evidence for this claim?"
+      },
+      "interactions": [
+        {
+          "type": "multiple_choice_question",
+          "content": {
+            "options": [
+              "Solar panel costs have dropped 85% since 2010",
+              "Wind energy now provides 8% of total US electricity",
+              "Government incentives include tax credits up to $7,500",
+              "Renewable sources now compete directly with fossil fuels on price"
+            ],
+            "correct": 0,
+            "explanation": "The 85% cost drop provides specific economic data showing how financial factors drive adoption."
+          }
+        }
+      ]
+    },
+    {
+      "id": "slide_06",
+      "type": "skill_application",
+      "title": "Advanced Evidence Evaluation",
+      "duration_estimate": 420,
+      "content": {
+        "heading": "Comparing Evidence Strength",
+        "text": "Not all evidence is equally strong. Learn to evaluate and rank evidence based on specificity and relevance.",
+        "evidence_ranking": {
+          "strongest": "Specific data, statistics, research results",
+          "moderate": "Expert opinions, case studies, examples",
+          "weakest": "General statements, personal anecdotes, unsupported claims"
+        },
+        "practice_scenarios": [
+          {
+            "claim": "Social media affects teen mental health",
+            "evidence_a": "Many teens spend hours on social media daily",
+            "evidence_b": "Studies link 3+ hours of daily social media use to 60% higher depression risk",
+            "better_choice": "B - provides specific data and measurable correlation"
+          }
+        ]
+      },
+      "interactions": [
+        {
+          "type": "question_sequence",
+          "content": {
+            "sequence_length": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "slide_07",
+      "type": "concept_reinforcement",
+      "title": "Key Takeaways & Practice Transition",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "Command of Evidence Mastery",
+        "key_points": [
+          "Strong evidence is specific and measurable",
+          "Look for data, statistics, and concrete examples",
+          "Evidence must directly support the given claim",
+          "Avoid general statements or unsupported opinions"
+        ],
+        "strategy_reminder": "Remember FIND: Focus on the claim, Identify relevant details, Note direct connections, Decide on the strongest evidence",
+        "practice_transition": {
+          "text": "Ready to apply your skills? Let's practice with real SAT questions that test your command of evidence!",
+          "button_text": "Start Skill Practice",
+          "skill_code": "COE"
+        }
+      },
+      "interactions": [
+        {
+          "type": "completion_celebration",
+          "content": {
+            "message": "Excellent! You've mastered the fundamentals of Command of Evidence."
+          }
+        }
+      ]
+    },
+    {
+      "id": "slide_08",
+      "type": "mastery_check",
+      "title": "Quick Knowledge Check",
+      "skill_codes": ["COE"],
+      "difficulty": "E",
+      "question": "A passage claims 'Meditation reduces stress in students.' Which would be the STRONGEST evidence?",
+      "options": [
+        "Students often feel calmer after meditating",
+        "Meditation has been practiced for thousands of years",
+        "A study of 200 students found 15-minute daily meditation reduced cortisol levels by 30%",
+        "Many teachers recommend meditation for stress relief"
+      ],
+      "correct_answer": "C",
+      "explanation": "Option C provides specific, measurable data (200 students, 15 minutes, 30% reduction) that directly supports the claim about stress reduction."
+    }
+  ],
+  "resources": {
+    "strategy_card": {
+      "title": "Command of Evidence Quick Reference",
+      "steps": [
+        "1. FOCUS: Read the claim carefully",
+        "2. IDENTIFY: Find specific supporting details",
+        "3. NOTE: Check direct connection to claim",
+        "4. DECIDE: Choose most specific evidence"
+      ],
+      "tips": [
+        "Look for numbers, percentages, research results",
+        "Avoid general statements or opinions",
+        "Evidence must be explicitly stated in passage",
+        "Stronger evidence = more specific data"
+      ]
+    },
+    "common_mistakes": [
+      "Choosing general statements over specific data",
+      "Picking evidence that doesn't directly support the claim",
+      "Confusing correlation with causation",
+      "Selecting opinions instead of facts"
+    ]
+  },
+  "metadata": {
+    "created_date": "2024-12-01",
+    "last_updated": "2024-12-01",
+    "content_version": "1.0",
+    "estimated_completion_time": 1500,
+    "prerequisite_skills": ["CID"],
+    "skill_progression": ["lesson_08"]
+  }
+}

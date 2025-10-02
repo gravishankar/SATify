@@ -6,10 +6,10 @@
   "duration": "20-25 min",
   "skill_codes": ["COE"],
   "learning_objectives": [
-    "Locate relevant evidence to support claims",
-    "Evaluate the strength of textual evidence",
-    "Connect evidence to central ideas and arguments",
-    "Practice with authentic SAT Command of Evidence questions"
+    "The Core: Master locating and evaluating textual evidence",
+    "The Skill: Distinguish strong evidence from weak support",
+    "The Problem: Multiple quotes may seem relevant—choose the one that directly proves the claim",
+    "Key Strategy: The 3-Phase PROVE Strategy for 100% provable evidence choices"
   ],
   "success_criteria": {
     "mastery_threshold": 0.75,
@@ -20,154 +20,398 @@
     {
       "id": "slide_01",
       "type": "introduction",
-      "title": "Welcome to Command of Evidence",
+      "title": "Learning Objectives",
       "duration_estimate": 180,
       "content": {
-        "heading": "Learning Objectives",
-        "text": "In this lesson, you'll master finding and using textual evidence - a critical skill for supporting arguments and understanding author's claims.",
+        "heading": "The Main Quest",
         "bullet_points": [
-          "Learn how to locate relevant evidence in passages",
-          "Understand different types of evidence (examples, data, quotes)",
-          "Practice connecting evidence to main ideas",
-          "Apply evidence evaluation strategies"
+          "Decode what makes evidence strong vs. weak",
+          "Master the direct support requirement",
+          "Apply the 3-Phase PROVE Strategy",
+          "Eliminate evidence that's related but doesn't prove"
         ]
       },
       "interactions": [
         {
-          "type": "progress_indicator",
-          "content": {
-            "current_slide": 1,
-            "total_slides": 8
-          }
-        },
-        {
           "type": "click_to_continue",
-          "content": {
-            "button_text": "Let's Begin!"
-          }
+          "text": "Ready? Let's begin."
         }
       ]
     },
     {
       "id": "slide_02",
-      "type": "concept_teaching",
-      "title": "What is Command of Evidence?",
-      "duration_estimate": 240,
+      "type": "strategy_teaching",
+      "title": "The Master Strategy: Phase 1",
+      "duration_estimate": 320,
       "content": {
-        "heading": "Understanding Textual Evidence",
-        "text": "Command of Evidence questions ask you to identify which part of a passage best supports a given claim or conclusion.",
-        "main_points": [
-          "Evidence = specific details, examples, or quotes that support a point",
-          "Must be directly stated in the passage (not implied)",
-          "Should clearly support the claim being made",
-          "Often includes data, statistics, expert opinions, or concrete examples"
+        "heading": "PHASE 1: Understand the Claim",
+        "subtitle": "What Exactly Needs to Be Proven?",
+        "core_principle": {
+          "title": "The Precision Principle",
+          "description": "Evidence questions test whether you can identify what DIRECTLY supports a specific claim. Related information isn't enough—evidence must prove the exact point being made."
+        },
+        "strategy_steps": [
+          {
+            "step": 1,
+            "title": "Read the Claim Carefully",
+            "description": "Identify exactly what needs to be proven",
+            "examples": [
+              {
+                "claim": "Urban gardens reduce crime rates",
+                "what_needs_proof": "Specific connection between gardens and crime reduction",
+                "not_enough": "Urban gardens exist, Gardens are popular, Crime is a problem"
+              },
+              {
+                "claim": "Renewable energy is becoming more affordable",
+                "what_needs_proof": "Evidence showing cost decreasing over time",
+                "not_enough": "Renewable energy exists, It's environmentally friendly, Some people use it"
+              }
+            ]
+          },
+          {
+            "step": 2,
+            "title": "Identify Key Terms",
+            "description": "Break down the claim into components that need support",
+            "example": {
+              "claim": "Social media use correlates with increased anxiety in teenagers",
+              "key_terms": {
+                "social_media_use": "Must involve actual usage patterns/amounts",
+                "correlates": "Must show relationship/connection",
+                "increased_anxiety": "Must involve anxiety specifically (not just 'problems')",
+                "teenagers": "Must involve this age group specifically"
+              },
+              "what_proves_it": "Evidence showing link between teens' social media use and higher anxiety levels"
+            }
+          },
+          {
+            "step": 3,
+            "title": "Anticipate What Would Prove It",
+            "description": "Before looking at options, predict what type of evidence would work",
+            "prediction_categories": [
+              "Quantitative data (numbers, percentages, statistics)",
+              "Research findings (study results, experiments)",
+              "Expert statements (authorities confirming the claim)",
+              "Specific examples (concrete instances demonstrating the point)",
+              "Direct quotes (explicit statements supporting claim)"
+            ]
+          }
         ],
-        "example": {
-          "setup": "If a passage argues 'Exercise improves mental health'",
-          "good_evidence": "Studies show 30 minutes of daily exercise reduces anxiety by 25%",
-          "poor_evidence": "Many people feel better after working out"
+        "worked_example": {
+          "claim": "Exercise improves mental health",
+          "analysis": {
+            "what_needs_proof": "Connection between exercise and mental health improvement",
+            "strong_evidence": "Studies show 30 minutes of daily exercise reduces anxiety by 25%",
+            "why_strong": "Quantifies exercise (30 min), specifies mental health aspect (anxiety), shows improvement (reduces by 25%)",
+            "weak_evidence": "Many people feel better after working out",
+            "why_weak": "Vague ('many people,' 'feel better'), no specific mental health measure, no quantification"
+          }
         }
       },
       "interactions": [
         {
-          "type": "reveal_on_click",
-          "content": {
-            "reveal_text": "The key is finding SPECIFIC, MEASURABLE support rather than general statements."
-          }
+          "type": "step_by_step_reveal",
+          "auto_advance": false
         }
       ]
     },
     {
       "id": "slide_03",
       "type": "strategy_teaching",
-      "title": "3-Step Evidence Strategy",
-      "duration_estimate": 300,
+      "title": "The Master Strategy: Phase 2",
+      "duration_estimate": 340,
       "content": {
-        "heading": "FIND Strategy for Evidence",
-        "strategy_acronym": "FIND",
-        "strategy_steps": [
+        "heading": "PHASE 2: Evaluate Evidence Strength",
+        "subtitle": "The Hierarchy of Evidence Quality",
+        "core_principle": {
+          "title": "Specificity Beats Generality",
+          "description": "Stronger evidence is more specific, measurable, and directly relevant. The SAT rewards choosing the most concrete, precise support."
+        },
+        "evidence_hierarchy": [
           {
-            "letter": "F",
-            "word": "Focus",
-            "description": "Read the claim or conclusion carefully"
+            "rank": 1,
+            "strength": "STRONGEST",
+            "type": "Specific Quantitative Data",
+            "definition": "Numbers, percentages, measurements that prove the claim",
+            "examples": [
+              "40% reduction in crime rates after gardens established",
+              "Solar panel costs dropped 85% since 2010",
+              "Participants showed 30% improvement in test scores"
+            ],
+            "why_strongest": "Concrete, measurable, impossible to misinterpret"
           },
           {
-            "letter": "I",
-            "word": "Identify",
-            "description": "Look for specific details that relate to the claim"
+            "rank": 2,
+            "strength": "STRONG",
+            "type": "Research Results & Studies",
+            "definition": "Findings from systematic investigation",
+            "examples": [
+              "Research shows bioluminescence evolved independently 40 times",
+              "Studies link 3+ hours social media to higher depression risk",
+              "Experiments demonstrate vertical farms use 95% less water"
+            ],
+            "why_strong": "Based on systematic evidence gathering, credible methodology"
           },
           {
-            "letter": "N",
-            "word": "Note",
-            "description": "Check that the evidence directly supports the point"
+            "rank": 3,
+            "strength": "MODERATE",
+            "type": "Expert Opinion & Authority",
+            "definition": "Statements from credible sources with relevant expertise",
+            "examples": [
+              "Neuroscientists confirm facial recognition occurs in fusiform area",
+              "Economists argue that renewable energy costs will continue falling"
+            ],
+            "why_moderate": "Relies on authority's credibility, but still valuable support"
           },
           {
-            "letter": "D",
-            "word": "Decide",
-            "description": "Choose the most specific and relevant evidence"
+            "rank": 4,
+            "strength": "MODERATE-WEAK",
+            "type": "Specific Examples",
+            "definition": "Concrete instances illustrating the claim",
+            "examples": [
+              "Paris implemented 15-minute city concept with positive results",
+              "Marie Curie won Nobel Prizes in two different fields"
+            ],
+            "why_moderate_weak": "Shows it's possible but doesn't prove general pattern"
+          },
+          {
+            "rank": 5,
+            "strength": "WEAK",
+            "type": "General Statements",
+            "definition": "Vague claims without specific support",
+            "examples": [
+              "Many people believe exercise helps mental health",
+              "Urban gardens are popular in cities",
+              "Some researchers think social media affects teens"
+            ],
+            "why_weak": "No concrete evidence, uses hedging language (many, some, popular)"
+          }
+        ],
+        "evaluation_criteria": {
+          "title": "The DIRECT Test",
+          "questions": [
+            {
+              "question": "Does it address the EXACT claim?",
+              "example": "Claim: 'Gardens reduce crime' → Evidence must mention BOTH gardens AND crime"
+            },
+            {
+              "question": "Is it SPECIFIC or vague?",
+              "example": "40% reduction > 'significant decrease' > 'some improvement'"
+            },
+            {
+              "question": "Is it MEASURABLE?",
+              "example": "Numbers and data > qualitative descriptions"
+            },
+            {
+              "question": "Is it from CREDIBLE source?",
+              "example": "Named studies/researchers > 'some people say'"
+            }
+          ]
+        },
+        "common_traps": [
+          {
+            "trap": "RELATED BUT NOT DIRECT",
+            "description": "Evidence discusses the topic but doesn't prove the specific claim",
+            "example": {
+              "claim": "Vertical farming solves food security challenges",
+              "trap_evidence": "Vertical farms use advanced LED lighting systems",
+              "why_trap": "About vertical farming but doesn't address food security"
+            }
+          },
+          {
+            "trap": "BACKGROUND, NOT PROOF",
+            "description": "Provides context but doesn't support the claim",
+            "example": {
+              "claim": "Bioluminescence provides survival advantages",
+              "trap_evidence": "Bioluminescence is found in many marine organisms",
+              "why_trap": "States prevalence, not advantages"
+            }
+          },
+          {
+            "trap": "CORRELATION MISREAD AS CAUSATION",
+            "description": "Shows relationship but claim requires causal link",
+            "example": {
+              "claim": "Exercise causes mental health improvement",
+              "trap_evidence": "People who exercise report better mood",
+              "why_trap": "Shows correlation, not causation (maybe happier people exercise more)"
+            }
           }
         ]
       },
       "interactions": [
         {
-          "type": "step_by_step_reveal",
-          "content": {
-            "steps": 4
-          }
+          "type": "reveal_on_click",
+          "elements": [
+            {
+              "trigger": "Show Critical Rule",
+              "reveal": "SAT evidence questions test precision. Evidence that's 'kind of related' or 'partially supportive' is wrong. Only direct, specific proof is correct."
+            }
+          ]
         }
       ]
     },
     {
       "id": "slide_04",
-      "type": "guided_example",
-      "title": "Guided Practice: Finding Evidence",
-      "duration_estimate": 360,
+      "type": "strategy_teaching",
+      "title": "The Master Strategy: Phase 3",
+      "duration_estimate": 300,
       "content": {
-        "passage": "Recent studies indicate that urban gardens significantly benefit local communities. Dr. Sarah Chen's research in Detroit found that neighborhoods with community gardens saw a 40% reduction in crime rates. Additionally, these gardens provide fresh produce to families, with 78% of participating households reporting improved nutrition. The social aspect is equally important, as residents form lasting friendships through shared gardening activities.",
-        "claim": "Urban gardens provide multiple benefits to communities",
-        "evidence_options": [
-          "Neighborhoods with community gardens saw a 40% reduction in crime rates",
-          "78% of participating households reported improved nutrition",
-          "Dr. Sarah Chen conducted research in Detroit",
-          "Residents form lasting friendships through shared activities"
-        ],
-        "walkthrough": [
+        "heading": "PHASE 3: Eliminate Weak Evidence",
+        "subtitle": "The 100% Rule: Find Why 3 Are Wrong, Prove 1 Is Right",
+        "elimination_process": [
           {
             "step": 1,
-            "question": "What is the main claim?",
-            "answer": "Urban gardens provide multiple benefits to communities"
+            "title": "Check for DIRECT support",
+            "action": "Eliminate any evidence that doesn't address all key terms in the claim",
+            "example": {
+              "claim": "Urban gardens REDUCE CRIME",
+              "eliminate": "Evidence only mentioning gardens (not crime) or only crime (not gardens)"
+            }
           },
           {
             "step": 2,
-            "question": "Which evidence gives specific data about benefits?",
-            "answer": "40% reduction in crime rates and 78% improved nutrition"
+            "title": "Reject VAGUE statements",
+            "action": "Eliminate evidence with hedging language or no specifics",
+            "red_flags": ["some", "many", "often", "popular", "believed", "seems", "might"],
+            "example": "Eliminate: 'Many people feel gardens improve neighborhoods' (too vague)"
           },
           {
             "step": 3,
-            "question": "Why are these stronger than general statements?",
-            "answer": "They provide measurable, specific data rather than vague claims"
+            "title": "Remove BACKGROUND info",
+            "action": "Eliminate evidence providing context rather than proof",
+            "example": {
+              "claim": "Flow state improves performance",
+              "eliminate": "Flow state was discovered in the 1970s (background, not proof of improvement)"
+            }
+          },
+          {
+            "step": 4,
+            "title": "Verify STRONGEST remains",
+            "action": "Among remaining options, choose most specific and measurable",
+            "tiebreaker_rules": [
+              "Quantitative data > qualitative description",
+              "Research findings > general statements",
+              "Specific examples > vague claims",
+              "Direct quotes > paraphrases (when both prove claim equally)"
+            ]
+          }
+        ],
+        "worked_elimination": {
+          "claim": "Renewable energy adoption is driven by economic factors",
+          "options": [
+            {
+              "option": "A",
+              "text": "Solar panel costs have dropped 85% since 2010",
+              "evaluation": "✓ Specific economic data (cost reduction), directly proves economic factor driving adoption"
+            },
+            {
+              "option": "B",
+              "text": "Wind energy now provides 8% of total US electricity",
+              "evaluation": "✗ Shows adoption occurring but doesn't prove economic factors drive it"
+            },
+            {
+              "option": "C",
+              "text": "Government incentives include tax credits up to $7,500",
+              "evaluation": "✓ Economic factor BUT less direct than option A (incentive vs. inherent cost drop)"
+            },
+            {
+              "option": "D",
+              "text": "Renewable energy is environmentally friendly",
+              "evaluation": "✗ Environmental factor, not economic—doesn't match claim"
+            }
+          ],
+          "correct": "A",
+          "reasoning": "Most direct economic evidence with specific quantification"
+        }
+      },
+      "interactions": [
+        {
+          "type": "interactive_elimination",
+          "show_flaw_analysis": true
+        }
+      ]
+    },
+    {
+      "id": "slide_05",
+      "type": "guided_example",
+      "title": "Guided Practice: The Strategy in Action",
+      "duration_estimate": 420,
+      "content": {
+        "heading": "Let's Apply All 3 Phases Together",
+        "passage": "Recent studies indicate that urban gardens significantly benefit local communities. Dr. Sarah Chen's research in Detroit found that neighborhoods with community gardens saw a 40% reduction in crime rates. Additionally, these gardens provide fresh produce to families, with 78% of participating households reporting improved nutrition. The social aspect is equally important, as residents form lasting friendships through shared gardening activities.",
+        "claim": "Urban gardens provide multiple benefits to communities",
+        "question": "Which sentence best supports this claim?",
+        "walkthrough": [
+          {
+            "phase": "PHASE 1: Understand the Claim",
+            "step": 1,
+            "question": "What does the claim require?",
+            "answer": "Evidence showing gardens provide MULTIPLE benefits (not just one)",
+            "reasoning": "Key term: 'multiple benefits'—need evidence showing variety of positive effects"
+          },
+          {
+            "phase": "PHASE 2: Evaluate Evidence Strength",
+            "step": 2,
+            "question": "Which evidence pieces exist in the passage?",
+            "answer": "40% crime reduction, 78% nutrition improvement, social friendships",
+            "reasoning": "Three distinct benefits mentioned with varying levels of specificity"
+          },
+          {
+            "phase": "PHASE 3: Eliminate & Choose",
+            "step": 3,
+            "question": "Evaluate each option",
+            "options_analysis": [
+              {
+                "option": "A",
+                "text": "Neighborhoods with community gardens saw a 40% reduction in crime rates",
+                "analysis": "✓ Strong specific data BUT only shows ONE benefit (crime reduction), claim needs MULTIPLE"
+              },
+              {
+                "option": "B",
+                "text": "78% of participating households reported improved nutrition",
+                "analysis": "✓ Strong specific data BUT only shows ONE benefit (nutrition), claim needs MULTIPLE"
+              },
+              {
+                "option": "C",
+                "text": "Dr. Sarah Chen conducted research in Detroit",
+                "analysis": "✗ Background information, doesn't prove any benefits at all"
+              },
+              {
+                "option": "D",
+                "text": "Residents form lasting friendships through shared gardening activities",
+                "analysis": "✓ Shows ONE benefit (social) BUT not quantified and doesn't show MULTIPLE"
+              }
+            ],
+            "correct_answer": "None of the individual sentences prove 'multiple benefits'—would need combination",
+            "teaching_point": "This reveals key insight: Sometimes you need to look for evidence that EXPLICITLY states multiple benefits, or that COMBINES information"
+          },
+          {
+            "step": 4,
+            "question": "If we had to choose the BEST available evidence?",
+            "answer": "Option A or B (both provide strongest quantitative evidence for individual benefits)",
+            "reasoning": "When 'multiple benefits' claim can't be proven by single quote, choose the strongest single piece of evidence—quantitative data wins"
           }
         ]
       },
       "interactions": [
         {
           "type": "guided_walkthrough",
-          "content": {
-            "steps": 3
-          }
+          "allow_highlighting": true,
+          "step_validation": true
         }
       ]
     },
     {
-      "id": "slide_05",
+      "id": "slide_06",
       "type": "independent_practice",
-      "title": "Your Turn: Evidence Selection",
-      "duration_estimate": 300,
+      "title": "Your Turn: Apply the PROVE Strategy",
+      "duration_estimate": 360,
       "content": {
-        "instructions": "Read the passage and identify the best evidence for the given claim.",
+        "heading": "Independent Practice",
+        "instructions": "Use all 3 phases: Understand Claim → Evaluate Evidence → Eliminate Weak Support",
         "passage": "Renewable energy adoption has accelerated dramatically in recent years. Solar panel costs have dropped 85% since 2010, making installation affordable for average homeowners. Wind energy now provides 8% of total US electricity generation, up from just 1% in 2000. Government incentives, including tax credits up to $7,500 for solar installations, have further encouraged adoption. Energy companies report that renewable sources now compete directly with fossil fuels on price.",
         "claim": "Economic factors are driving renewable energy adoption",
-        "question": "Which sentence provides the strongest evidence for this claim?"
+        "question": "Which sentence provides the strongest evidence for this claim?",
+        "strategy_reminder": "Phase 1: What exactly needs proof? (Economic factors driving adoption) Phase 2: Which evidence is most specific and direct? Phase 3: Eliminate vague, unrelated, or background info."
       },
       "interactions": [
         {
@@ -180,58 +424,79 @@
               "Renewable sources now compete directly with fossil fuels on price"
             ],
             "correct": 0,
-            "explanation": "The 85% cost drop provides specific economic data showing how financial factors drive adoption."
-          }
-        }
-      ]
-    },
-    {
-      "id": "slide_06",
-      "type": "skill_application",
-      "title": "Advanced Evidence Evaluation",
-      "duration_estimate": 420,
-      "content": {
-        "heading": "Comparing Evidence Strength",
-        "text": "Not all evidence is equally strong. Learn to evaluate and rank evidence based on specificity and relevance.",
-        "evidence_ranking": {
-          "strongest": "Specific data, statistics, research results",
-          "moderate": "Expert opinions, case studies, examples",
-          "weakest": "General statements, personal anecdotes, unsupported claims"
-        },
-        "practice_scenarios": [
-          {
-            "claim": "Social media affects teen mental health",
-            "evidence_a": "Many teens spend hours on social media daily",
-            "evidence_b": "Studies link 3+ hours of daily social media use to 60% higher depression risk",
-            "better_choice": "B - provides specific data and measurable correlation"
-          }
-        ]
-      },
-      "interactions": [
-        {
-          "type": "question_sequence",
-          "content": {
-            "sequence_length": 3
+            "explanation": "Let's apply the 3 phases:\n\nPHASE 1—Claim analysis:\nKey terms: 'Economic factors' + 'driving adoption'\nNeeds: Evidence showing financial/cost reasons causing people to adopt renewables\n\nPHASE 2—Evidence evaluation:\nA: 85% cost drop = direct economic factor with specific quantification ✓\nB: 8% electricity provision = shows adoption happened, NOT what drives it\nC: Tax credits = economic factor BUT government incentive (secondary factor)\nD: Price competition = economic factor BUT less specific than A's quantification\n\nPHASE 3—Elimination:\nB: ✗ Shows result (adoption level), not cause (economic driver)\nC: ✗ Economic but secondary—incentive added to make already-improving economics better\nD: ✗ States conclusion but less concrete than A—'compete' is vague vs. '85% drop'\nA: ✓ STRONGEST—Specific quantitative data (85%) showing fundamental economic change (cost drop) that directly enables adoption\n\nA wins because: most specific (85%), most direct economic cause (cost drop enables affordability), and strongest proof of economic driver."
           }
         }
       ]
     },
     {
       "id": "slide_07",
+      "type": "concept_teaching",
+      "title": "Strategy Synthesis: Evidence Evaluation Summary",
+      "duration_estimate": 280,
+      "content": {
+        "heading": "Master These Criteria—Choose Perfect Evidence Every Time",
+        "table": {
+          "columns": ["Evidence Type", "Strength", "Example", "When to Choose"],
+          "rows": [
+            [
+              "Quantitative Data",
+              "STRONGEST",
+              "40% reduction, 85% cost drop, 78% improvement",
+              "When available, almost always correct answer"
+            ],
+            [
+              "Research Findings",
+              "STRONG",
+              "Studies show X, Research reveals Y",
+              "When no quantitative data available"
+            ],
+            [
+              "Expert Opinion",
+              "MODERATE",
+              "Scientists confirm, Experts argue",
+              "When no data or research findings available"
+            ],
+            [
+              "Specific Examples",
+              "MODERATE-WEAK",
+              "Paris implemented X with results Y",
+              "Illustrates possibility but doesn't prove pattern"
+            ],
+            [
+              "General Statements",
+              "WEAK",
+              "Many people believe, Some think, Popular",
+              "Almost never correct—too vague"
+            ],
+            [
+              "Background Info",
+              "NOT EVIDENCE",
+              "X was discovered in 1970s, X exists",
+              "Never correct—provides context, not proof"
+            ]
+          ]
+        },
+        "expert_insight": "The SAT rewards precision. Evidence must directly address every key term in the claim with specific, measurable support. 'Kind of related' equals wrong."
+      }
+    },
+    {
+      "id": "slide_08",
       "type": "concept_reinforcement",
       "title": "Key Takeaways & Practice Transition",
       "duration_estimate": 240,
       "content": {
         "heading": "Command of Evidence Mastery",
         "key_points": [
-          "Strong evidence is specific and measurable",
-          "Look for data, statistics, and concrete examples",
-          "Evidence must directly support the given claim",
-          "Avoid general statements or unsupported opinions"
+          "Phase 1: Understand exactly what the claim requires—identify all key terms that need support",
+          "Phase 2: Evaluate evidence strength—quantitative data strongest, vague statements weakest",
+          "Phase 3: Eliminate evidence that's related but doesn't directly prove the specific claim",
+          "The 100% Rule: Evidence must address ALL key terms in claim with specific, measurable support"
         ],
-        "strategy_reminder": "Remember FIND: Focus on the claim, Identify relevant details, Note direct connections, Decide on the strongest evidence",
+        "strategy_reminder": "Remember PROVE: Pin down claim requirements, Rank evidence by strength, Observe which directly supports, Verify specificity, Eliminate weak/indirect options",
+        "expert_insight": "Three common traps: (1) Related but not direct, (2) Background instead of proof, (3) Shows one aspect when claim requires multiple. Always check if evidence proves the EXACT claim.",
         "practice_transition": {
-          "text": "Ready to apply your skills? Let's practice with real SAT questions that test your command of evidence!",
+          "text": "Ready to apply your mastery? Let's practice with authentic SAT evidence questions!",
           "button_text": "Start Skill Practice",
           "skill_code": "COE"
         }
@@ -240,18 +505,18 @@
         {
           "type": "completion_celebration",
           "content": {
-            "message": "Excellent! You've mastered the fundamentals of Command of Evidence."
+            "message": "Outstanding! You've mastered command of evidence with surgical precision."
           }
         }
       ]
     },
     {
-      "id": "slide_08",
+      "id": "slide_09",
       "type": "mastery_check",
-      "title": "Quick Knowledge Check",
+      "title": "Mastery Check",
       "skill_codes": ["COE"],
-      "difficulty": "E",
-      "question": "A passage claims 'Meditation reduces stress in students.' Which would be the STRONGEST evidence?",
+      "difficulty": "M",
+      "question": "Passage discusses meditation and stress in students. Claim: 'Meditation reduces stress in students.' Which would be the STRONGEST evidence?\n\nA) Students often feel calmer after meditating\nB) Meditation has been practiced for thousands of years\nC) A study of 200 students found 15-minute daily meditation reduced cortisol levels by 30%\nD) Many teachers recommend meditation for stress relief",
       "options": [
         "Students often feel calmer after meditating",
         "Meditation has been practiced for thousands of years",
@@ -259,38 +524,66 @@
         "Many teachers recommend meditation for stress relief"
       ],
       "correct_answer": "C",
-      "explanation": "Option C provides specific, measurable data (200 students, 15 minutes, 30% reduction) that directly supports the claim about stress reduction."
+      "explanation": "Phase analysis:\n\nPHASE 1—Claim requirements:\nKey terms: 'Meditation' + 'reduces stress' + 'in students'\nNeeds: Evidence showing meditation causes measurable stress reduction specifically in students\n\nPHASE 2—Evidence evaluation:\nA: Vague ('often feel calmer')—no measurement, no proof of causation\nB: Background information—historical practice doesn't prove stress reduction\nC: ✓ Quantitative research data (200 students, 30% reduction) with biological stress measure (cortisol)\nD: Opinion/recommendation—doesn't prove it actually works\n\nPHASE 3—Elimination:\nA: ✗ WEAK—'often' and 'feel' are not specific or measurable\nB: ✗ NOT EVIDENCE—historical background, irrelevant to stress reduction\nC: ✓ STRONGEST—Specific study (200 students), measurable outcome (30% cortisol drop), addresses all key terms\nD: ✗ MODERATE-WEAK—Opinion, not proof; 'recommend' doesn't prove effectiveness\n\nC wins: Most specific (200 students, 15 minutes, 30%), most direct (cortisol = stress biomarker), strongest evidence type (research with quantitative results)"
     }
   ],
   "resources": {
     "strategy_card": {
-      "title": "Command of Evidence Quick Reference",
-      "steps": [
-        "1. FOCUS: Read the claim carefully",
-        "2. IDENTIFY: Find specific supporting details",
-        "3. NOTE: Check direct connection to claim",
-        "4. DECIDE: Choose most specific evidence"
+      "title": "The PROVE Strategy Quick Reference",
+      "phases": [
+        {
+          "phase": "1. UNDERSTAND CLAIM",
+          "steps": [
+            "Read claim carefully—what exactly needs proof?",
+            "Identify ALL key terms",
+            "Predict what type of evidence would prove it"
+          ]
+        },
+        {
+          "phase": "2. EVALUATE STRENGTH",
+          "steps": [
+            "Rank by hierarchy: Quantitative > Research > Expert > Examples > General",
+            "Check if evidence is SPECIFIC and MEASURABLE",
+            "Verify evidence addresses ALL key terms in claim"
+          ]
+        },
+        {
+          "phase": "3. ELIMINATE WEAK",
+          "steps": [
+            "Remove evidence not addressing all key terms",
+            "Eliminate vague statements (many, some, often)",
+            "Remove background info that doesn't prove claim",
+            "Choose most specific, quantitative option remaining"
+          ]
+        }
       ],
-      "tips": [
-        "Look for numbers, percentages, research results",
-        "Avoid general statements or opinions",
-        "Evidence must be explicitly stated in passage",
-        "Stronger evidence = more specific data"
-      ]
+      "the_100_rule": "Evidence must directly address every key term in the claim. Related-but-not-direct equals wrong. Quantitative data almost always wins."
     },
     "common_mistakes": [
-      "Choosing general statements over specific data",
-      "Picking evidence that doesn't directly support the claim",
-      "Confusing correlation with causation",
-      "Selecting opinions instead of facts"
-    ]
+      "Choosing evidence related to topic but not proving specific claim",
+      "Selecting background information instead of direct proof",
+      "Picking vague statements over quantitative data",
+      "Missing that claim requires multiple aspects, choosing evidence showing only one"
+    ],
+    "evidence_quick_reference": {
+      "Strongest": "Quantitative data with specifics (85% drop, 40% reduction)",
+      "Strong": "Research findings from credible studies",
+      "Moderate": "Expert opinions from qualified sources",
+      "Weak": "General statements with hedging (many, some, often)",
+      "Not Evidence": "Background info, historical context, existence statements"
+    }
   },
   "metadata": {
     "created_date": "2024-12-01",
-    "last_updated": "2024-12-01",
-    "content_version": "1.0",
-    "estimated_completion_time": 1500,
-    "prerequisite_skills": ["CID"],
-    "skill_progression": ["lesson_08"]
+    "last_updated": "2025-01-02",
+    "content_version": "2.0",
+    "estimated_completion_time": 1680,
+    "prerequisite_skills": ["lesson_06"],
+    "skill_progression": ["lesson_08"],
+    "strategy_integration": {
+      "source": "Expert SAT strategies synthesis",
+      "key_innovation": "3-Phase PROVE Strategy: Understand Claim → Evaluate Strength → Eliminate Weak",
+      "slides_enhanced": ["slide_02", "slide_03", "slide_04", "slide_05"]
+    }
   }
 }

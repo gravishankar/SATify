@@ -6,10 +6,10 @@
   "duration": "20-25 min",
   "skill_codes": ["INF"],
   "learning_objectives": [
-    "Distinguish between explicit and implicit information",
-    "Make logical inferences based on textual evidence",
-    "Avoid overreaching beyond what the passage supports",
-    "Practice inference questions using proven SAT strategies"
+    "The Core: Master logical inferences from textual evidence",
+    "The Skill: Take exactly one step beyond what's stated",
+    "The Problem: Distinguish between logical conclusions and overreaching assumptions",
+    "Key Strategy: The 3-Phase INFER Strategy for 100% provable inferences"
   ],
   "success_criteria": {
     "mastery_threshold": 0.75,
@@ -20,156 +20,351 @@
     {
       "id": "slide_01",
       "type": "introduction",
-      "title": "Welcome to Making Inferences",
+      "title": "Learning Objectives",
       "duration_estimate": 180,
       "content": {
-        "heading": "Learning Objectives",
-        "text": "In this lesson, you'll master the skill of making logical inferences - reading between the lines to understand what authors suggest without directly stating.",
+        "heading": "The Main Quest",
         "bullet_points": [
-          "Learn the difference between stated facts and inferences",
-          "Master the 'one step away' inference rule",
-          "Practice avoiding inference traps and overreaching",
-          "Apply Erica Meltzer's proven inference strategies"
+          "Decode explicit vs. implicit information",
+          "Master the 'one step away' rule",
+          "Apply the 3-Phase INFER Strategy",
+          "Eliminate overreach and extreme conclusions"
         ]
       },
       "interactions": [
         {
-          "type": "progress_indicator",
-          "content": {
-            "current_slide": 1,
-            "total_slides": 8
-          }
-        },
-        {
           "type": "click_to_continue",
-          "content": {
-            "button_text": "Let's Begin!"
-          }
+          "text": "Ready? Let's begin."
         }
       ]
     },
     {
       "id": "slide_02",
-      "type": "concept_teaching",
-      "title": "What Are Inferences?",
-      "duration_estimate": 240,
+      "type": "strategy_teaching",
+      "title": "The Master Strategy: Phase 1",
+      "duration_estimate": 320,
       "content": {
-        "heading": "Understanding Logical Inferences",
-        "text": "An inference is a logical conclusion drawn from evidence and reasoning, not from explicit statements. SAT inferences must be 'one step away' from what's directly stated.",
-        "main_points": [
-          "Inference = What the passage suggests but doesn't explicitly say",
-          "Must be supported by specific textual evidence",
-          "Should be the most logical conclusion, not just possible",
-          "Avoid extreme inferences or unsupported leaps"
+        "heading": "PHASE 1: Read Literally First",
+        "subtitle": "What Does the Passage Actually State?",
+        "core_principle": {
+          "title": "The Foundation Rule",
+          "description": "Valid inferences build on explicit statements. Before inferring anything, identify exactly what the passage DOES say."
+        },
+        "strategy_steps": [
+          {
+            "step": 1,
+            "title": "Identify Explicit Statements",
+            "description": "What facts does the passage directly state?",
+            "examples": [
+              {
+                "text": "Sarah checked her watch for the third time and tapped her foot impatiently.",
+                "explicit": "Sarah checked watch (3 times), tapped foot",
+                "not_explicit": "Why she's doing this, what she's waiting for, her personality"
+              },
+              {
+                "text": "The funding was cut after eight years of research. Dr. Martinez spent three months writing grant proposals. Only one of twelve applications succeeded.",
+                "explicit": "Funding cut, 8 years research, 3 months on grants, 1/12 success",
+                "not_explicit": "How she feels, whether she'll continue, if the work is important"
+              }
+            ]
+          },
+          {
+            "step": 2,
+            "title": "Separate Facts from Interpretations",
+            "description": "Distinguish what's stated from what you're inferring",
+            "comparison": [
+              {
+                "stated": "Sales increased from 50,000 to 300,000 units",
+                "inference": "The product became more popular",
+                "note": "The inference is reasonable but goes beyond stated fact"
+              },
+              {
+                "stated": "She spent every weekend there for six months",
+                "inference": "She was dedicated/committed to the project",
+                "note": "Dedication is inferred from consistent action"
+              }
+            ]
+          },
+          {
+            "step": 3,
+            "title": "Note What's NOT Said",
+            "description": "Be aware of information gaps—don't fill them with assumptions",
+            "example": {
+              "text": "The experiment failed; however, the data was still valuable.",
+              "what_we_know": "Experiment didn't succeed, data has value",
+              "what_we_dont_know": "Why it failed, what they expected, what they'll do next, how valuable the data is"
+            }
+          }
         ],
-        "example": {
-          "passage_line": "Sarah checked her watch for the third time and tapped her foot impatiently.",
-          "explicit": "Sarah checked her watch and tapped her foot",
-          "inference": "Sarah is waiting for someone/something and feeling impatient",
-          "overreach": "Sarah is always impatient"
-        }
+        "key_insight": "Solid inferences require solid foundations. If you can't point to specific evidence for each part of an inference, it's probably overreach."
       },
       "interactions": [
         {
-          "type": "reveal_on_click",
-          "content": {
-            "reveal_text": "College Board Key: Valid inferences are supported by evidence and require only minimal logical steps."
-          }
+          "type": "step_by_step_reveal",
+          "auto_advance": false
         }
       ]
     },
     {
       "id": "slide_03",
       "type": "strategy_teaching",
-      "title": "The STEP Inference Strategy",
-      "duration_estimate": 300,
+      "title": "The Master Strategy: Phase 2",
+      "duration_estimate": 340,
       "content": {
-        "heading": "STEP Method (Based on Erica Meltzer's Approach)",
-        "strategy_acronym": "STEP",
-        "strategy_steps": [
+        "heading": "PHASE 2: Take One Logical Step",
+        "subtitle": "The 'One Step Away' Rule",
+        "core_principle": {
+          "title": "The SAT Inference Standard",
+          "description": "Valid SAT inferences require exactly ONE logical step from stated evidence. Multiple-step reasoning chains are always wrong."
+        },
+        "one_step_examples": [
           {
-            "letter": "S",
-            "word": "Spot",
-            "description": "Identify the relevant evidence in the passage"
+            "evidence": "Sarah checked her watch for the third time and tapped her foot impatiently.",
+            "one_step_inference": "Sarah is waiting for something/someone and feeling impatient",
+            "why_valid": "Checking watch repeatedly + impatient action = one logical step to conclusion about waiting",
+            "overreach": "Sarah is always impatient / Sarah has anxiety / Sarah's meeting is important",
+            "why_overreach": "Requires multiple steps or outside knowledge beyond what's stated"
           },
           {
-            "letter": "T",
-            "word": "Think",
-            "description": "Consider what this evidence logically suggests"
+            "evidence": "After eight years, funding was cut. Dr. Martinez spent three months writing grants. Only 1 of 12 applications succeeded.",
+            "one_step_inference": "Securing research funding was difficult and competitive",
+            "why_valid": "Low success rate (1/12) + time investment (3 months) = directly indicates difficulty",
+            "overreach": "Dr. Martinez will give up / The research wasn't important / Funding agencies are unfair",
+            "why_overreach": "Goes beyond evidence—assumes future actions, value judgments, or causation"
           },
           {
-            "letter": "E",
-            "word": "Eliminate",
-            "description": "Remove extreme or unsupported answer choices"
-          },
-          {
-            "letter": "P",
-            "word": "Pick",
-            "description": "Choose the most reasonable, text-supported inference"
+            "evidence": "Maria walked through the empty theater and immediately began sketching renovation plans. She spent every weekend there for six months.",
+            "one_step_inference": "Maria has a vision for the theater and is actively pursuing it",
+            "why_valid": "Immediate planning + consistent presence = shows intent and commitment",
+            "overreach": "Maria will definitely succeed / Maria has unlimited funds / Maria is a professional renovator",
+            "why_overreach": "Predicts future, assumes resources, or adds details not in passage"
           }
         ],
-        "key_principle": "One Step Rule: Valid SAT inferences require only ONE logical step from the evidence."
+        "the_step_test": {
+          "title": "How to Verify 'One Step'",
+          "questions": [
+            "Can I draw a direct line from evidence to conclusion?",
+            "Does this require assuming additional facts not in the passage?",
+            "Am I making one inference or chaining multiple inferences together?",
+            "Would someone reading ONLY the passage reach this same conclusion?"
+          ],
+          "red_flags": [
+            "If you need to think 'well, if this, then that, which means...' → too many steps",
+            "If you're using outside knowledge (how funding works, what theaters cost) → wrong",
+            "If you're predicting the future (what will happen) → usually overreach",
+            "If inference uses extreme language (always, never, all, none) → likely wrong"
+          ]
+        },
+        "valid_vs_invalid": [
+          {
+            "evidence": "Scientists worldwide are studying bioluminescence to develop new biotechnologies.",
+            "valid": "Bioluminescence has potential technological applications",
+            "invalid": "Bioluminescence will revolutionize technology / All scientists study bioluminescence",
+            "why": "Valid stays close to text (studying for applications). Invalid adds certainty/scope not stated."
+          },
+          {
+            "evidence": "Despite facing discrimination, Curie's meticulous research earned worldwide recognition.",
+            "valid": "Curie overcame obstacles through quality work",
+            "invalid": "Discrimination prevented Curie from achieving more / All scientists faced discrimination",
+            "why": "Valid reflects stated facts. Invalid distorts (passage says she DID succeed despite discrimination)."
+          }
+        ]
       },
       "interactions": [
         {
-          "type": "step_by_step_reveal",
-          "content": {
-            "steps": 4
-          }
+          "type": "reveal_on_click",
+          "elements": [
+            {
+              "trigger": "Show Critical Rule",
+              "reveal": "If you have to think really hard about why an answer might be right, it's probably wrong. Valid inferences feel almost obvious—they're the natural conclusion from stated evidence."
+            }
+          ]
         }
       ]
     },
     {
       "id": "slide_04",
-      "type": "guided_example",
-      "title": "Guided Practice: Making Valid Inferences",
-      "duration_estimate": 360,
+      "type": "strategy_teaching",
+      "title": "The Master Strategy: Phase 3",
+      "duration_estimate": 300,
       "content": {
+        "heading": "PHASE 3: Eliminate Overreach",
+        "subtitle": "The Four Deadly Inference Traps",
+        "trap_types": [
+          {
+            "trap": "EXTREME LANGUAGE",
+            "definition": "Answers using absolute terms rarely supported by passages",
+            "red_flag_words": ["always", "never", "all", "none", "every", "only", "must", "impossible", "certainly"],
+            "why_wrong": "Passages rarely provide evidence for absolute claims—they discuss specific situations",
+            "examples": [
+              {
+                "evidence": "One scientist's experiment succeeded after years of work",
+                "wrong": "All scientists who work hard succeed",
+                "why": "Adds 'all' (not supported) and oversimplifies causation"
+              },
+              {
+                "evidence": "Urban gardens reduced crime in some Detroit neighborhoods",
+                "wrong": "Urban gardens always reduce crime",
+                "why": "Changes 'some' to 'always'—unsupported generalization"
+              }
+            ]
+          },
+          {
+            "trap": "MULTIPLE-STEP REASONING",
+            "definition": "Requires chaining multiple inferences together",
+            "how_to_spot": "If you think 'X suggests Y, which means Z' → too many steps",
+            "examples": [
+              {
+                "evidence": "Character is nervous before presentation",
+                "one_step": "Character feels anxiety about the presentation",
+                "overreach": "Character has social anxiety disorder",
+                "why_overreach": "Step 1: nervous before presentation → Step 2: pattern of anxiety → Step 3: clinical diagnosis (3 steps)"
+              }
+            ]
+          },
+          {
+            "trap": "OUTSIDE KNOWLEDGE",
+            "definition": "Uses information not provided in the passage",
+            "why_wrong": "SAT tests reading comprehension, not general knowledge",
+            "examples": [
+              {
+                "passage_topic": "Rome expanded its territory",
+                "wrong_inference": "Rome used advanced military tactics typical of the era",
+                "why_wrong": "Requires knowing Roman history—not stated in passage"
+              },
+              {
+                "passage_topic": "Vertical farms use less water",
+                "wrong_inference": "Vertical farms are better because water scarcity is a global crisis",
+                "why_wrong": "Water scarcity context not in passage—using outside knowledge"
+              }
+            ]
+          },
+          {
+            "trap": "OPPOSITE/DISTORTION",
+            "definition": "Twists or reverses what passage actually states",
+            "examples": [
+              {
+                "passage_says": "Despite facing discrimination, Curie ultimately succeeded",
+                "wrong": "Discrimination prevented Curie's success",
+                "why_wrong": "Passage says OPPOSITE—she succeeded despite discrimination"
+              },
+              {
+                "passage_says": "Initial challenges were addressed through recent advances",
+                "wrong": "Challenges remain unresolved",
+                "why_wrong": "Passage says challenges WERE addressed"
+              }
+            ]
+          }
+        ],
+        "elimination_process": {
+          "title": "The 3-Question Filter",
+          "questions": [
+            {
+              "question": "Is this one step from stated evidence?",
+              "if_no": "Eliminate—requires multiple inferences or assumptions"
+            },
+            {
+              "question": "Does it use absolute/extreme language?",
+              "if_yes": "Probably eliminate—passages rarely support absolutes"
+            },
+            {
+              "question": "Can I point to specific text supporting EVERY part of this?",
+              "if_no": "Eliminate—uses outside knowledge or adds unsupported details"
+            }
+          ]
+        }
+      },
+      "interactions": [
+        {
+          "type": "interactive_elimination",
+          "show_flaw_analysis": true
+        }
+      ]
+    },
+    {
+      "id": "slide_05",
+      "type": "guided_example",
+      "title": "Guided Practice: The Strategy in Action",
+      "duration_estimate": 420,
+      "content": {
+        "heading": "Let's Apply All 3 Phases Together",
         "passage": "Dr. Martinez had been working on the enzyme research for eight years when the funding was suddenly cut. She spent the next three months writing grant proposals and reaching out to private foundations. Despite submitting twelve applications, only one small foundation responded positively, offering just enough funding to continue for six more months.",
         "question": "The passage most strongly suggests that Dr. Martinez:",
-        "evidence_analysis": [
-          "Evidence 1: Working 8 years when funding cut = long-term commitment",
-          "Evidence 2: Spent 3 months writing grants = persistent effort",
-          "Evidence 3: Only 1 of 12 applications succeeded = difficulty securing funding",
-          "Evidence 4: Only 6 months of funding = precarious situation"
-        ],
         "walkthrough": [
           {
+            "phase": "PHASE 1: Read Literally",
             "step": 1,
-            "question": "What does 8 years + continued grant writing suggest?",
-            "answer": "Dr. Martinez is deeply committed to her research"
+            "question": "What does the passage explicitly state?",
+            "answer": "Facts: 8 years work, funding cut, 3 months writing grants, 12 applications, 1 success, 6 months funding",
+            "reasoning": "These are directly stated—no interpretation needed"
           },
           {
+            "phase": "PHASE 2: Take One Step",
             "step": 2,
-            "question": "What does 1 success out of 12 applications suggest?",
-            "answer": "Research funding is competitive and difficult to obtain"
+            "question": "What can we infer from '8 years work' + 'continued writing grants after cut'?",
+            "answer": "She's committed to/invested in this research",
+            "reasoning": "One step: lengthy dedication + persistence after setback = commitment"
           },
           {
+            "phase": "PHASE 2: Take One Step",
             "step": 3,
-            "question": "What's the most reasonable inference?",
-            "answer": "Dr. Martinez faces significant challenges continuing her important work"
+            "question": "What can we infer from '1 success out of 12 applications'?",
+            "answer": "Obtaining funding is difficult/competitive",
+            "reasoning": "One step: low success rate = competitive environment"
+          },
+          {
+            "phase": "PHASE 3: Eliminate Options",
+            "step": 4,
+            "question": "Evaluate answer choices using trap patterns",
+            "options_analysis": [
+              {
+                "option": "A",
+                "text": "is deeply committed to her research despite facing significant funding challenges",
+                "trap_check": "Extreme language? No. Multiple steps? No. Outside knowledge? No. Supported? Yes (8 years + persistence + difficulty)",
+                "analysis": "✓ CORRECT—One step from evidence. 'Deeply committed' from 8 years + continued effort. 'Significant challenges' from 1/12 success."
+              },
+              {
+                "option": "B",
+                "text": "will definitely complete her research within the six-month funding period",
+                "trap_check": "FUTURE PREDICTION + absolute ('definitely')",
+                "analysis": "✗ Overreach—passage gives no information about whether she'll complete. 'Definitely' is extreme language."
+              },
+              {
+                "option": "C",
+                "text": "always struggles to secure funding for her projects",
+                "trap_check": "EXTREME LANGUAGE ('always') + OUTSIDE KNOWLEDGE (other projects)",
+                "analysis": "✗ 'Always' unsupported—passage discusses only THIS research. Generalizes beyond evidence."
+              },
+              {
+                "option": "D",
+                "text": "should have applied to more foundations to secure adequate funding",
+                "trap_check": "VALUE JUDGMENT + OUTSIDE KNOWLEDGE",
+                "analysis": "✗ Makes judgment about what she 'should' do—not supported. Uses outside knowledge about how many applications is enough."
+              }
+            ],
+            "correct_answer": "A"
           }
         ]
       },
       "interactions": [
         {
           "type": "guided_walkthrough",
-          "content": {
-            "steps": 3
-          }
+          "allow_highlighting": true,
+          "step_validation": true
         }
       ]
     },
     {
-      "id": "slide_05",
+      "id": "slide_06",
       "type": "independent_practice",
-      "title": "Your Turn: Inference Practice",
-      "duration_estimate": 300,
+      "title": "Your Turn: Apply the INFER Strategy",
+      "duration_estimate": 360,
       "content": {
-        "instructions": "Read the passage and make the most logical inference. Avoid overreaching!",
+        "heading": "Independent Practice",
+        "instructions": "Use all 3 phases: Read Literally → Take One Step → Eliminate Overreach",
         "passage": "The old theater had been empty for two decades, its velvet seats gathering dust and its stage dark. When Maria first walked through the lobby, she immediately began sketching renovation plans on the back of an envelope. She spent every weekend there for the next six months, measuring rooms and researching restoration techniques. Local craftsmen started recognizing her, and several offered to work for reduced rates.",
         "question": "The passage most strongly suggests that Maria:",
-        "strategy_tip": "Use STEP: Spot the evidence, Think about logical conclusions, Eliminate extremes, Pick the best inference."
+        "strategy_reminder": "Phase 1: What's explicitly stated? Phase 2: What's one step away? Phase 3: Check for extreme language, multiple steps, outside knowledge."
       },
       "interactions": [
         {
@@ -182,68 +377,67 @@
               "Has unlimited financial resources for the renovation project"
             ],
             "correct": 1,
-            "explanation": "The evidence (immediate sketching, consistent weekend visits, research, craftsman relationships) suggests Maria has a clear vision and is actively working toward restoration. Options A, C, and D make unsupported assumptions."
-          }
-        }
-      ]
-    },
-    {
-      "id": "slide_06",
-      "type": "skill_application",
-      "title": "Avoiding Inference Traps",
-      "duration_estimate": 420,
-      "content": {
-        "heading": "Common SAT Inference Traps",
-        "text": "Learn to recognize and avoid the most common mistakes in inference questions, based on College Board patterns.",
-        "trap_types": [
-          {
-            "trap": "Extreme Language Trap",
-            "description": "Answers with 'always,' 'never,' 'all,' 'none' are usually wrong",
-            "example": "Passage mentions one scientist's success → Wrong: 'All scientists are successful'"
-          },
-          {
-            "trap": "Overreaching Trap",
-            "description": "Making inferences that require multiple logical steps",
-            "example": "Character is nervous → Wrong: 'Character has anxiety disorder'"
-          },
-          {
-            "trap": "Outside Knowledge Trap",
-            "description": "Using information not provided in the passage",
-            "example": "Passage mentions Rome → Wrong: Answer requires knowing Roman history"
-          },
-          {
-            "trap": "Opposite Inference Trap",
-            "description": "Choosing the opposite of what the passage suggests",
-            "example": "Evidence shows difficulty → Wrong: 'Task was easy'"
-          }
-        ]
-      },
-      "interactions": [
-        {
-          "type": "question_sequence",
-          "content": {
-            "sequence_length": 4
+            "explanation": "Let's apply the 3 phases:\n\nPHASE 1—Stated facts:\n- Theater empty 20 years\n- Maria sketched plans immediately\n- Consistent weekend visits (6 months)\n- Measured/researched restoration\n- Craftsmen recognize her, offer reduced rates\n\nPHASE 2—One-step inferences:\n- Immediate sketching = has vision/plan\n- Consistent presence = commitment\n- Measuring/researching = taking concrete action\n- Craftsman support = making progress\n\nPHASE 3—Eliminate traps:\n\nA: ✗ EXTREME + OUTSIDE KNOWLEDGE—'professional' and 'always works alone' not stated. Makes assumptions about her career.\n\nB: ✓ CORRECT—One step: immediate plans + consistent action = vision + concrete steps. No extreme language, fully supported.\n\nC: ✗ FUTURE PREDICTION + EXTREME—'definitely' and 'within a year' unsupported. Passage doesn't predict success or timeline.\n\nD: ✗ OUTSIDE KNOWLEDGE + ASSUMPTION—'unlimited resources' not stated or implied. Reduced rates might suggest opposite."
           }
         }
       ]
     },
     {
       "id": "slide_07",
+      "type": "concept_teaching",
+      "title": "Strategy Synthesis: Inference Trap Summary",
+      "duration_estimate": 280,
+      "content": {
+        "heading": "Master These Traps—Avoid Overreach Every Time",
+        "table": {
+          "columns": ["Trap Type", "How to Spot", "Example", "How to Avoid"],
+          "rows": [
+            [
+              "Extreme Language",
+              "Always, never, all, none, every, only, must, certainly",
+              "Character is nervous → 'always anxious'",
+              "Choose qualified language (suggests, indicates, seems)"
+            ],
+            [
+              "Multiple Steps",
+              "Requires chain: X means Y, which means Z",
+              "Nervous → pattern → diagnosis (3 steps)",
+              "Stop at first logical step from evidence"
+            ],
+            [
+              "Outside Knowledge",
+              "Uses info not in passage",
+              "Rome expanded → 'used tactics typical of era'",
+              "Point to specific text for every claim"
+            ],
+            [
+              "Opposite/Distortion",
+              "Twists or reverses what passage says",
+              "Succeeded despite X → 'X prevented success'",
+              "Check that inference matches passage direction"
+            ]
+          ]
+        },
+        "expert_insight": "Valid inferences feel almost obvious—they're the natural, reasonable conclusion from stated evidence. If you're working hard to justify an answer, it's probably wrong."
+      }
+    },
+    {
+      "id": "slide_08",
       "type": "concept_reinforcement",
-      "title": "Mastery Summary & Practice Transition",
+      "title": "Key Takeaways & Practice Transition",
       "duration_estimate": 240,
       "content": {
-        "heading": "Inference Skills Mastery",
+        "heading": "Inference Mastery",
         "key_points": [
-          "Valid inferences are only 'one step away' from stated evidence",
-          "Avoid extreme language and unsupported assumptions",
-          "Base inferences on specific textual evidence, not general knowledge",
-          "The most reasonable inference is usually correct, not the most creative"
+          "Phase 1: Read literally first—identify exactly what's stated before inferring anything",
+          "Phase 2: Take one logical step from evidence—never chain multiple inferences",
+          "Phase 3: Eliminate extreme language, multiple-step reasoning, outside knowledge, and distortions",
+          "The 100% Rule: Valid inferences are one step away, feel obvious, and point to specific textual support"
         ],
-        "strategy_reminder": "Remember STEP: Spot evidence, Think logically, Eliminate extremes, Pick the most reasonable inference",
-        "meltzer_tip": "Erica Meltzer's Golden Rule: 'If you have to think really hard about why an answer might be right, it's probably wrong.'",
+        "strategy_reminder": "Remember INFER: Identify explicit statements, Note what's one step away, Find the evidence, Eliminate extreme/multiple-step options, Reach the most reasonable conclusion",
+        "expert_insight": "The most reasonable inference wins, not the most creative. If you're thinking 'Well, maybe if...' then you're probably overreaching.",
         "practice_transition": {
-          "text": "Ready to apply your inference skills? Let's practice with authentic SAT questions!",
+          "text": "Ready to apply your mastery? Let's practice with authentic SAT inference questions!",
           "button_text": "Start Skill Practice",
           "skill_code": "INF"
         }
@@ -252,17 +446,17 @@
         {
           "type": "completion_celebration",
           "content": {
-            "message": "Outstanding! You've mastered the art of making logical inferences."
+            "message": "Outstanding! You've mastered making logical inferences with surgical precision."
           }
         }
       ]
     },
     {
-      "id": "slide_08",
+      "id": "slide_09",
       "type": "mastery_check",
-      "title": "Quick Inference Check",
+      "title": "Mastery Check",
       "skill_codes": ["INF"],
-      "difficulty": "E",
+      "difficulty": "M",
       "question": "A passage states: 'Despite submitting her application two weeks early, Jennifer kept refreshing her email every few minutes and barely slept the night before results were released.' This most strongly suggests that Jennifer:",
       "options": [
         "Always submits applications early and never sleeps well",
@@ -271,38 +465,66 @@
         "Has received rejections from similar applications before"
       ],
       "correct_answer": "B",
-      "explanation": "The evidence (constant email checking, inability to sleep) directly suggests anxiety about results. Options A, C, and D either overreach or make unsupported assumptions."
+      "explanation": "Phase analysis:\n\nPHASE 1—Stated facts:\n- Applied 2 weeks early\n- Constantly checking email\n- Couldn't sleep before results\n\nPHASE 2—One-step inference:\nConstant checking + sleep loss = anxiety about results\nThis is ONE logical step from observable behavior\n\nPHASE 3—Trap elimination:\n\nA: ✗ EXTREME LANGUAGE—'always' and 'never' unsupported. Passage describes THIS application only.\n\nB: ✓ CORRECT—One step from evidence. Repetitive checking + inability to sleep directly suggests anxiety about results. No extreme language, fully supported.\n\nC: ✗ FUTURE PREDICTION + FALSE CAUSATION—'definitely' unsupported. Early application doesn't guarantee acceptance.\n\nD: ✗ OUTSIDE KNOWLEDGE—Past rejections not mentioned or implied. Adds information not in passage."
     }
   ],
   "resources": {
     "strategy_card": {
-      "title": "Inference Quick Reference",
-      "steps": [
-        "1. SPOT: Find the relevant evidence",
-        "2. THINK: What does this logically suggest?",
-        "3. ELIMINATE: Remove extreme or unsupported choices",
-        "4. PICK: Choose the most reasonable inference"
+      "title": "The INFER Strategy Quick Reference",
+      "phases": [
+        {
+          "phase": "1. READ LITERALLY",
+          "steps": [
+            "Identify exactly what passage states",
+            "Separate facts from interpretations",
+            "Note what's NOT said"
+          ]
+        },
+        {
+          "phase": "2. TAKE ONE STEP",
+          "steps": [
+            "Draw direct line from evidence to conclusion",
+            "Stop at first logical inference",
+            "Verify: Would anyone reading this reach same conclusion?"
+          ]
+        },
+        {
+          "phase": "3. ELIMINATE OVERREACH",
+          "steps": [
+            "Remove extreme language (always, never, all, none)",
+            "Eliminate multiple-step reasoning chains",
+            "Remove answers requiring outside knowledge",
+            "Check that inference matches passage direction"
+          ]
+        }
       ],
-      "tips": [
-        "One step rule: Valid inferences are one logical step away",
-        "Avoid extreme language (always, never, all, none)",
-        "Base inferences on passage evidence, not outside knowledge",
-        "Most reasonable answer wins, not most creative"
-      ]
+      "the_100_rule": "Valid inferences are one step away from stated evidence. If you're working hard to justify an answer, it's probably wrong."
     },
     "common_mistakes": [
-      "Making inferences that require multiple logical steps",
+      "Making inferences requiring multiple logical steps",
       "Choosing answers with extreme or absolute language",
       "Using outside knowledge instead of passage evidence",
-      "Overcomplicating simple, logical conclusions"
-    ]
+      "Predicting future events not supported by passage"
+    ],
+    "inference_quick_reference": {
+      "Valid": "One step from evidence, feels obvious, no extreme language",
+      "Extreme Language": "Always, never, all, none → usually wrong",
+      "Multiple Steps": "If X, then Y, then Z → too many steps",
+      "Outside Knowledge": "Uses info not in passage → wrong",
+      "Distortion": "Twists what passage says → wrong"
+    }
   },
   "metadata": {
     "created_date": "2024-12-01",
-    "last_updated": "2024-12-01",
-    "content_version": "1.0",
-    "estimated_completion_time": 1500,
-    "prerequisite_skills": ["CID", "COE"],
-    "skill_progression": ["lesson_09"]
+    "last_updated": "2025-01-02",
+    "content_version": "2.0",
+    "estimated_completion_time": 1680,
+    "prerequisite_skills": ["lesson_07"],
+    "skill_progression": ["lesson_09"],
+    "strategy_integration": {
+      "source": "Expert SAT strategies synthesis",
+      "key_innovation": "3-Phase INFER Strategy: Read Literally → Take One Step → Eliminate Overreach",
+      "slides_enhanced": ["slide_02", "slide_03", "slide_04", "slide_05"]
+    }
   }
 }

@@ -6,10 +6,10 @@
   "duration": "20-25 min",
   "skill_codes": ["WIC"],
   "learning_objectives": [
-    "Use context clues to determine word meanings",
-    "Distinguish between similar word choices based on context",
-    "Identify the most precise word for specific contexts",
-    "Apply Erica Meltzer's context strategy techniques"
+    "The Core: Master choosing precise words based on context clues",
+    "The Skill: Match both meaning AND tone/register",
+    "The Problem: Multiple words may mean 'correct'—choose the most PRECISE fit",
+    "Key Strategy: The 3-Phase SELECT Strategy for 100% provable word choices"
   ],
   "success_criteria": {
     "mastery_threshold": 0.75,
@@ -20,165 +20,385 @@
     {
       "id": "slide_01",
       "type": "introduction",
-      "title": "Welcome to Words in Context",
+      "title": "Learning Objectives",
       "duration_estimate": 180,
       "content": {
-        "heading": "Learning Objectives",
-        "text": "In this lesson, you'll master using context clues to understand vocabulary - a crucial skill for both reading comprehension and precise word choice.",
+        "heading": "The Main Quest",
         "bullet_points": [
-          "Learn to identify and use different types of context clues",
-          "Master the art of choosing the most precise word",
-          "Practice distinguishing between similar words based on context",
-          "Apply proven SAT vocabulary strategies"
+          "Decode context clues for precise word choice",
+          "Master tone and register matching",
+          "Apply the 3-Phase SELECT Strategy",
+          "Choose the MOST precise word, not just any correct word"
         ]
       },
       "interactions": [
         {
-          "type": "progress_indicator",
-          "content": {
-            "current_slide": 1,
-            "total_slides": 8
-          }
-        },
-        {
           "type": "click_to_continue",
-          "content": {
-            "button_text": "Let's Begin!"
-          }
+          "text": "Ready? Let's begin."
         }
       ]
     },
     {
       "id": "slide_02",
-      "type": "concept_teaching",
-      "title": "Understanding Words in Context",
-      "duration_estimate": 240,
+      "type": "strategy_teaching",
+      "title": "The Master Strategy: Phase 1",
+      "duration_estimate": 320,
       "content": {
-        "heading": "Context is King",
-        "text": "SAT Words in Context questions test your ability to determine the precise meaning of words based on how they're used in specific passages. Context always determines the correct answer.",
-        "main_points": [
-          "Context = surrounding words and sentences that give clues to meaning",
-          "Same word can have different meanings in different contexts",
-          "Look for specific clues: definitions, examples, contrasts, cause-effect",
-          "The 'best' answer fits both meaning AND tone of the passage"
+        "heading": "PHASE 1: Cross Out and Read",
+        "subtitle": "What Does the Sentence Need?",
+        "core_principle": {
+          "title": "Context is King",
+          "description": "SAT words-in-context questions test your ability to choose words based on HOW they're used in specific passages. Context always trumps memorized definitions."
+        },
+        "strategy_steps": [
+          {
+            "step": 1,
+            "title": "Cover the Target Word",
+            "description": "Physically or mentally remove the word and read without it",
+            "why": "Forces you to use context instead of being influenced by what's there",
+            "example": {
+              "original": "The scientist's initial hypothesis proved to be completely [erroneous].",
+              "covered": "The scientist's initial hypothesis proved to be completely _______.",
+              "read_without": "Focus on what the blank needs, not what was there"
+            }
+          },
+          {
+            "step": 2,
+            "title": "Read Surrounding Sentences",
+            "description": "Look before and after for context clues",
+            "clue_locations": [
+              "Same sentence (most common)",
+              "Sentence immediately before or after",
+              "Paragraph topic sentence",
+              "Transition words signaling relationships"
+            ],
+            "example": {
+              "text": "The scientist's initial hypothesis proved to be completely _______. After months of rigorous testing, the data contradicted every one of her predictions.",
+              "key_clues": "'data contradicted every one of her predictions' = hypothesis was wrong"
+            }
+          },
+          {
+            "step": 3,
+            "title": "Predict a Simple Word",
+            "description": "What everyday word would fit here?",
+            "predictions": ["wrong", "incorrect", "mistaken", "false"],
+            "why_matters": "Your prediction guides you to the right category of meaning",
+            "note": "Don't worry if your prediction isn't fancy—focus on the concept"
+          }
         ],
-        "example": {
-          "word": "novel",
-          "context_1": "She published her first novel last year.",
-          "meaning_1": "a book-length work of fiction",
-          "context_2": "His novel approach to solving the problem impressed everyone.",
-          "meaning_2": "new and original",
-          "key_insight": "Same word, completely different meanings based on context"
+        "worked_example": {
+          "passage": "Despite its ________ appearance, the abandoned mansion held a strange fascination for local residents. Children would dare each other to approach its weathered gates.",
+          "step_by_step": [
+            "Step 1: Cover word, read: 'Despite its ____ appearance...'",
+            "Step 2: Clues: 'abandoned,' 'dare each other to approach,' 'weathered' → looks scary/uninviting",
+            "Step 3: Predict: 'scary,' 'unwelcoming,' 'threatening'",
+            "Step 4: 'Despite' signals contrast → looks scary BUT holds fascination"
+          ]
         }
       },
       "interactions": [
         {
-          "type": "reveal_on_click",
-          "content": {
-            "reveal_text": "Erica Meltzer's Key Insight: Context clues are more reliable than memorized definitions."
-          }
+          "type": "step_by_step_reveal",
+          "auto_advance": false
         }
       ]
     },
     {
       "id": "slide_03",
       "type": "strategy_teaching",
-      "title": "The CLUE Context Strategy",
-      "duration_estimate": 300,
+      "title": "The Master Strategy: Phase 2",
+      "duration_estimate": 340,
       "content": {
-        "heading": "CLUE Method for Context Mastery",
-        "strategy_acronym": "CLUE",
-        "strategy_steps": [
+        "heading": "PHASE 2: Look for Context Clues",
+        "subtitle": "The Five Types of Clues",
+        "context_clue_types": [
           {
-            "letter": "C",
-            "word": "Cross out",
-            "description": "Cover the word and read the sentence without it"
+            "type": "DEFINITION/RESTATEMENT",
+            "definition": "Passage directly explains or restates the word's meaning",
+            "signal_words": ["or", "that is", "in other words", "means", "refers to"],
+            "example": {
+              "sentence": "The archaeologist's discovery was unprecedented—no similar artifacts had been found in over fifty years.",
+              "clue": "'no similar artifacts...in fifty years' defines unprecedented",
+              "word_meaning": "never happened before"
+            }
           },
           {
-            "letter": "L",
-            "word": "Look",
-            "description": "Find context clues in surrounding sentences"
+            "type": "EXAMPLE/ILLUSTRATION",
+            "definition": "Passage gives examples of the concept",
+            "signal_words": ["such as", "for example", "like", "including"],
+            "example": {
+              "sentence": "The manager's explanation was ________: she outlined all the procedures, clarified each step, and answered every question.",
+              "clues": "Examples of being clear: outlined, clarified, answered",
+              "word_meaning": "thorough," "comprehensive," or "clear"
+            }
           },
           {
-            "letter": "U",
-            "word": "Understand",
-            "description": "Determine what type of word would fit (positive/negative, noun/verb, etc.)"
+            "type": "CONTRAST/ANTONYM",
+            "definition": "Passage shows what the word is NOT",
+            "signal_words": ["but", "however", "unlike", "although", "despite", "while", "in contrast"],
+            "example": {
+              "sentence": "Despite its forbidding appearance, the mansion held fascination.",
+              "clue": "'Despite' signals contrast—looks forbidding BUT creates fascination",
+              "word_meaning": "scary," "unwelcoming," "threatening"
+            }
           },
           {
-            "letter": "E",
-            "word": "Evaluate",
-            "description": "Test each answer choice in context for best fit"
+            "type": "CAUSE-EFFECT",
+            "definition": "Passage shows results of the word's action or meaning",
+            "signal_words": ["because", "since", "therefore", "as a result", "consequently"],
+            "example": {
+              "sentence": "The data was ________; as a result, the team had to revise all their conclusions.",
+              "clue": "Effect: had to revise conclusions → Cause: data was wrong/contradictory",
+              "word_meaning": "contradictory," "flawed," "erroneous"
+            }
+          },
+          {
+            "type": "TONE/MOOD",
+            "definition": "Overall emotional atmosphere suggests meaning",
+            "indicators": ["Formal vs. informal language", "Positive vs. negative context", "Academic vs. casual register"],
+            "example": {
+              "sentence": "The student's ________ approach to studying impressed even the most demanding professors.",
+              "clue": "Positive tone ('impressed'), formal context (professors) → needs positive, academic word",
+              "word_meaning": "rigorous," "meticulous," "systematic" (NOT "cool" or "awesome")"
+            }
           }
         ],
-        "context_clue_types": [
-          "Definition: passage directly explains the word",
-          "Example: passage gives examples of the concept",
-          "Contrast: passage shows what the word is NOT",
-          "Cause-Effect: passage shows results of the word's action",
-          "Tone: overall mood suggests positive or negative meaning"
-        ]
+        "clue_hierarchy": {
+          "title": "Which Clues Are Strongest?",
+          "ranking": [
+            "1. Definition/Restatement (most direct)",
+            "2. Contrast with signal word (very clear)",
+            "3. Examples that illustrate (concrete)",
+            "4. Cause-Effect (shows relationship)",
+            "5. General Tone (least specific but still useful)"
+          ],
+          "strategy": "Use multiple clue types together for strongest answer"
+        }
       },
       "interactions": [
         {
-          "type": "step_by_step_reveal",
-          "content": {
-            "steps": 4
-          }
+          "type": "reveal_on_click",
+          "elements": [
+            {
+              "trigger": "Show Pro Tip",
+              "reveal": "Context clues are more reliable than memorized definitions. Even if you know a word's definition, ALWAYS check that it fits the specific context."
+            }
+          ]
         }
       ]
     },
     {
       "id": "slide_04",
-      "type": "guided_example",
-      "title": "Guided Practice: Context Clues in Action",
-      "duration_estimate": 360,
+      "type": "strategy_teaching",
+      "title": "The Master Strategy: Phase 3",
+      "duration_estimate": 300,
       "content": {
-        "passage": "The scientist's initial hypothesis proved to be completely ________. After months of rigorous testing, the data contradicted every one of her predictions. Rather than being discouraged, she embraced this outcome as an opportunity to develop a more accurate theory.",
-        "question": "Which word best fits the blank?",
-        "context_analysis": [
-          "Clue 1: 'data contradicted every one of her predictions'",
-          "Clue 2: 'proved to be completely [opposite of correct]'",
-          "Clue 3: 'Rather than being discouraged' suggests the result wasn't what she expected",
-          "Tone: Scientific, objective, but acknowledging error"
-        ],
-        "walkthrough": [
+        "heading": "PHASE 3: Evaluate for PRECISION",
+        "subtitle": "Choose the MOST Precise Fit, Not Just Any Correct Word",
+        "core_principle": {
+          "title": "Precision Beats Correctness",
+          "description": "On the SAT, multiple words may be technically correct. The right answer is the one that BEST matches both meaning AND tone/register."
+        },
+        "evaluation_criteria": [
           {
-            "step": 1,
-            "question": "What do the context clues tell us?",
-            "answer": "The hypothesis was wrong - data contradicted her predictions"
+            "criterion": "MEANING Match",
+            "question": "Does this word capture the specific meaning needed?",
+            "levels": [
+              {
+                "level": "Perfect Match",
+                "description": "Word captures exact nuance",
+                "example": "'unprecedented' for 'never seen before in 50 years'"
+              },
+              {
+                "level": "Close Match",
+                "description": "General meaning right but not most specific",
+                "example": "'unusual' for 'never seen before'—true but vague"
+              },
+              {
+                "level": "Wrong Match",
+                "description": "Doesn't fit meaning",
+                "example": "'common' for 'never seen before'"
+              }
+            ]
           },
           {
-            "step": 2,
-            "question": "What tone does the passage have?",
-            "answer": "Scientific and matter-of-fact, not overly emotional"
+            "criterion": "TONE/REGISTER Match",
+            "question": "Does this word match the passage's formality level?",
+            "formal_vs_informal": {
+              "formal_passage": {
+                "indicators": "Academic, scientific, professional context",
+                "choose": "demonstrate, assist, investigate, substantial",
+                "avoid": "show, help, check out, big",
+                "example": "Formal: 'The data demonstrates conclusive evidence' NOT 'The data shows proof'"
+              },
+              "informal_passage": {
+                "indicators": "Conversational, personal narrative, casual context",
+                "choose": "show, help, figure out, big",
+                "avoid": "demonstrate, facilitate, ascertain, substantial",
+                "example": "Informal: 'She helped me figure it out' NOT 'She facilitated my comprehension'"
+              }
+            }
           },
           {
-            "step": 3,
-            "question": "What type of word fits?",
-            "answer": "An adjective meaning 'incorrect' that fits academic tone"
+            "criterion": "INTENSITY Match",
+            "question": "Does the word's strength match the context?",
+            "intensity_scale": {
+              "mild": "annoyed, concerned, unusual",
+              "moderate": "frustrated, worried, rare",
+              "strong": "furious, alarmed, unprecedented"
+            },
+            "example": {
+              "context": "Slightly bothered by noise",
+              "too_weak": "aware",
+              "just_right": "annoyed",
+              "too_strong": "enraged"
+            }
+          },
+          {
+            "criterion": "CONNOTATION Match",
+            "question": "Does the word's emotional association fit?",
+            "positive_negative_neutral": {
+              "positive": "dedicated, ambitious, confident",
+              "neutral": "working, planning, stating",
+              "negative": "obsessed, ruthless, arrogant"
+            },
+            "example": {
+              "context": "Praising someone's work ethic",
+              "wrong": "obsessive" (negative connotation),
+              "right": "dedicated" (positive connotation)"
+            }
           }
         ],
-        "answer_choices": ["erroneous", "devastating", "surprising", "complex"]
+        "precision_tiebreakers": {
+          "title": "When Multiple Words Seem Right",
+          "rules": [
+            {
+              "rule": "Most Specific Wins",
+              "example": "'unprecedented' > 'unusual' (more specific about degree of rarity)"
+            },
+            {
+              "rule": "Best Tone Match Wins",
+              "example": "Academic passage: 'assistance' > 'help' (matches formality)"
+            },
+            {
+              "rule": "Exact Intensity Wins",
+              "example": "Mildly negative context: 'flawed' > 'catastrophic' (matches severity)"
+            }
+          ]
+        },
+        "common_traps": [
+          {
+            "trap": "MEMORIZED DEFINITION",
+            "description": "Choosing word based on what you learned, not what fits",
+            "example": "'Novel' means 'new' BUT in 'She published her first novel,' it means 'book'",
+            "fix": "Always check context, ignore memorized definitions"
+          },
+          {
+            "trap": "FIRST 'CORRECT' ANSWER",
+            "description": "Picking first word that works instead of BEST word",
+            "example": "Both 'unusual' and 'unprecedented' mean 'rare,' but which is MORE precise?",
+            "fix": "Test all options, choose most specific"
+          },
+          {
+            "trap": "IGNORING TONE",
+            "description": "Choosing word with right meaning but wrong formality",
+            "example": "Academic text: 'kids' vs 'children'—'kids' too informal",
+            "fix": "Match passage's register (formal/informal level)"
+          }
+        ]
       },
       "interactions": [
         {
-          "type": "guided_walkthrough",
-          "content": {
-            "steps": 3
-          }
+          "type": "interactive_elimination",
+          "show_flaw_analysis": true
         }
       ]
     },
     {
       "id": "slide_05",
-      "type": "independent_practice",
-      "title": "Your Turn: Word Choice Practice",
-      "duration_estimate": 300,
+      "type": "guided_example",
+      "title": "Guided Practice: The Strategy in Action",
+      "duration_estimate": 420,
       "content": {
-        "instructions": "Use the CLUE method to find the best word for this context.",
+        "heading": "Let's Apply All 3 Phases Together",
+        "passage": "The archaeologist's discovery was truly ________; no similar artifacts had been found in over fifty years of excavations at the site. The find would require completely revising existing theories about the civilization.",
+        "question": "Which word best fits the blank?",
+        "walkthrough": [
+          {
+            "phase": "PHASE 1: Cross Out and Read",
+            "step": 1,
+            "question": "Cover the word and predict what fits",
+            "answer": "Prediction: 'rare,' 'unique,' 'never-before-seen'",
+            "reasoning": "Context shows something hasn't happened in 50+ years"
+          },
+          {
+            "phase": "PHASE 2: Look for Clues",
+            "step": 2,
+            "question": "What clues exist?",
+            "answer": "Definition clue: 'no similar artifacts in over fifty years' directly explains the word",
+            "reasoning": "This is definition/restatement type—most direct clue"
+          },
+          {
+            "phase": "PHASE 3: Evaluate Precision",
+            "step": 3,
+            "question": "Evaluate each option",
+            "options_analysis": [
+              {
+                "option": "A",
+                "text": "significant",
+                "meaning_match": "Partially—important discovery, but doesn't capture 'never before seen' aspect",
+                "tone_match": "Formal tone fits",
+                "precision": "Too vague—doesn't specify the uniqueness",
+                "verdict": "✗ Correct in general but not MOST precise"
+              },
+              {
+                "option": "B",
+                "text": "unprecedented",
+                "meaning_match": "Perfect—'unprecedented' literally means 'never done/seen before'",
+                "tone_match": "Formal, academic—perfect for archaeological context",
+                "precision": "Captures exact nuance: 'no similar artifacts in fifty years' = unprecedented",
+                "verdict": "✓ CORRECT—Most precise match for both meaning and tone"
+              },
+              {
+                "option": "C",
+                "text": "valuable",
+                "meaning_match": "Partially—discovery is important, but doesn't address rarity",
+                "tone_match": "Formal tone fits",
+                "precision": "Misses the key point about being 'never seen before'",
+                "verdict": "✗ True but doesn't match the specific clue"
+              },
+              {
+                "option": "D",
+                "text": "interesting",
+                "meaning_match": "Weakly—too vague and understated",
+                "tone_match": "Too casual for formal archaeological writing",
+                "precision": "Doesn't capture significance or rarity",
+                "verdict": "✗ Wrong tone and too weak"
+              }
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      },
+      "interactions": [
+        {
+          "type": "guided_walkthrough",
+          "allow_highlighting": true,
+          "step_validation": true
+        }
+      ]
+    },
+    {
+      "id": "slide_06",
+      "type": "independent_practice",
+      "title": "Your Turn: Apply the SELECT Strategy",
+      "duration_estimate": 360,
+      "content": {
+        "heading": "Independent Practice",
+        "instructions": "Use all 3 phases: Cross Out → Look for Clues → Evaluate Precision",
         "passage": "Despite its ________ appearance, the abandoned mansion held a strange fascination for local residents. Children would dare each other to approach its weathered gates, and even adults found themselves stealing glances at its crumbling facade during evening walks.",
         "question": "Which word best completes the passage?",
-        "strategy_reminder": "Remember CLUE: Cross out the word, Look for context clues, Understand what fits, Evaluate each choice."
+        "strategy_reminder": "Phase 1: Cover and predict. Phase 2: Find contrast clue ('Despite'). Phase 3: Check meaning, tone, and precision."
       },
       "interactions": [
         {
@@ -191,69 +411,73 @@
               "expensive"
             ],
             "correct": 1,
-            "explanation": "'Forbidding' fits because: (1) contrasts with 'fascination' (despite suggests contrast), (2) matches 'abandoned,' 'weathered,' 'crumbling,' (3) explains why children 'dare each other' to approach - it looks scary/unwelcoming."
-          }
-        }
-      ]
-    },
-    {
-      "id": "slide_06",
-      "type": "skill_application",
-      "title": "Advanced Context Techniques",
-      "duration_estimate": 420,
-      "content": {
-        "heading": "Mastering Subtle Context Distinctions",
-        "text": "Learn to distinguish between similar words based on precise contextual fit and connotation.",
-        "advanced_techniques": [
-          {
-            "technique": "Connotation Matching",
-            "description": "Choose words that match the passage's emotional tone",
-            "example": "Formal passage = 'assistance' not 'help'; Informal = 'help' not 'assistance'"
-          },
-          {
-            "technique": "Intensity Gradation",
-            "description": "Match the word's intensity to context clues",
-            "example": "'annoyed' vs 'furious' vs 'irritated' - context determines intensity level"
-          },
-          {
-            "technique": "Specificity Precision",
-            "description": "Choose the most precise word for the specific situation",
-            "example": "'walk' vs 'stride' vs 'amble' vs 'march' - each implies different manner"
-          },
-          {
-            "technique": "Register Consistency",
-            "description": "Match formal/informal language level of passage",
-            "example": "Academic text uses 'demonstrate' not 'show'; casual text uses 'show' not 'demonstrate'"
-          }
-        ],
-        "meltzer_tip": "When in doubt between two seemingly correct answers, choose the one that better matches the passage's tone and level of formality."
-      },
-      "interactions": [
-        {
-          "type": "question_sequence",
-          "content": {
-            "sequence_length": 3
+            "explanation": "Let's apply the 3 phases:\n\nPHASE 1—Predict: 'scary,' 'unwelcoming,' 'threatening'\n\nPHASE 2—Context clues:\n- CONTRAST clue: 'Despite' signals opposite relationship\n- 'abandoned,' 'weathered,' 'crumbling' = looks uninviting\n- 'dare each other to approach' = scary/challenging\n- 'Despite' = looks X BUT creates fascination (X = something negative)\n\nPHASE 3—Evaluate precision:\n\nA: 'beautiful' ✗ WRONG MEANING—'Despite' wouldn't make sense (beautiful appearance wouldn't contrast with fascination)\n\nB: 'forbidding' ✓ CORRECT\n- MEANING: 'forbidding' = threatening/unwelcoming (matches 'dare each other')\n- TONE: Formal, appropriate for narrative description\n- PRECISION: Captures exact quality that makes children dare each other\n- CONTRAST: 'Despite forbidding appearance...fascination' = perfect opposition\n\nC: 'enormous' ✗ WRONG FOCUS—Size doesn't explain why children 'dare' or why 'despite' is needed\n\nD: 'expensive' ✗ IRRELEVANT—Cost has nothing to do with the context clues about appearance"
           }
         }
       ]
     },
     {
       "id": "slide_07",
+      "type": "concept_teaching",
+      "title": "Strategy Synthesis: Context Clue Summary",
+      "duration_estimate": 280,
+      "content": {
+        "heading": "Master These Patterns—Perfect Word Choice Every Time",
+        "table": {
+          "columns": ["Clue Type", "Signal Words", "What It Tells You", "Example"],
+          "rows": [
+            [
+              "Definition",
+              "or, that is, means, refers to",
+              "Direct explanation of word",
+              "'unprecedented—never seen before'"
+            ],
+            [
+              "Example",
+              "such as, for example, like, including",
+              "Concrete instances of concept",
+              "'thorough: outlined, clarified, answered'"
+            ],
+            [
+              "Contrast",
+              "but, however, despite, although, while",
+              "Shows opposite meaning",
+              "'Despite forbidding...held fascination'"
+            ],
+            [
+              "Cause-Effect",
+              "because, therefore, as a result",
+              "Shows consequences",
+              "'data was wrong; therefore had to revise'"
+            ],
+            [
+              "Tone/Mood",
+              "Overall formality, emotion",
+              "Guides register and connotation",
+              "Academic context → formal word choice"
+            ]
+          ]
+        },
+        "expert_insight": "Most precise word wins. Even if multiple words are technically correct, choose the one that best matches BOTH meaning AND tone for that specific context."
+      }
+    },
+    {
+      "id": "slide_08",
       "type": "concept_reinforcement",
-      "title": "Context Mastery & Practice Transition",
+      "title": "Key Takeaways & Practice Transition",
       "duration_estimate": 240,
       "content": {
-        "heading": "Words in Context Excellence",
+        "heading": "Words in Context Mastery",
         "key_points": [
-          "Context clues are more reliable than memorized definitions",
-          "Consider both meaning and tone when choosing words",
-          "The most precise word wins, not just any correct word",
-          "Match the formality level and emotional tone of the passage"
+          "Phase 1: Cross out target word, read without it, predict simple word that fits",
+          "Phase 2: Look for context clues—definition, example, contrast, cause-effect, or tone",
+          "Phase 3: Evaluate for precision—choose most specific word matching both meaning AND tone",
+          "The 100% Rule: Context clues trump memorized definitions; most precise word wins over any correct word"
         ],
-        "strategy_reminder": "Remember CLUE: Cross out, Look for clues, Understand what fits, Evaluate all choices",
-        "expert_insight": "College Board tests precision: choosing the BEST word for the specific context, not just A correct word.",
+        "strategy_reminder": "Remember SELECT: Study context, Eliminate target word, Look for clues, Evaluate each option, Choose most precise, Test against context",
+        "expert_insight": "Common traps: (1) Using memorized definitions instead of context, (2) Picking first correct answer instead of BEST, (3) Ignoring tone/formality level.",
         "practice_transition": {
-          "text": "Ready to apply your context skills with real SAT vocabulary questions? Let's practice!",
+          "text": "Ready to apply your mastery? Let's practice with authentic SAT vocabulary questions!",
           "button_text": "Start Skill Practice",
           "skill_code": "WIC"
         }
@@ -262,18 +486,18 @@
         {
           "type": "completion_celebration",
           "content": {
-            "message": "Excellent! You've mastered the art of using context to understand words."
+            "message": "Outstanding! You've mastered words in context with surgical precision."
           }
         }
       ]
     },
     {
-      "id": "slide_08",
+      "id": "slide_09",
       "type": "mastery_check",
-      "title": "Context Quick Check",
+      "title": "Mastery Check",
       "skill_codes": ["WIC"],
       "difficulty": "M",
-      "question": "The archaeologist's discovery was truly ________; no similar artifacts had been found in over fifty years of excavations at the site. The find would require completely revising existing theories about the civilization.",
+      "question": "The archaeologist's discovery was truly ________; no similar artifacts had been found in over fifty years of excavations at the site. The find would require completely revising existing theories about the civilization.\n\nWhich word best fits the blank?",
       "options": [
         "significant",
         "unprecedented",
@@ -281,38 +505,67 @@
         "interesting"
       ],
       "correct_answer": "B",
-      "explanation": "'Unprecedented' is most precise: 'no similar artifacts in fifty years' indicates this has never happened before. While 'significant' and 'valuable' are true, 'unprecedented' specifically captures the 'never before seen' aspect emphasized by the context."
+      "explanation": "Phase analysis:\n\nPHASE 1—Predict: 'rare,' 'never-before,' 'unique'\n\nPHASE 2—Context clues:\nDEFINITION CLUE: 'no similar artifacts in over fifty years' directly defines the word\nAlso: 'require completely revising theories' = extremely significant/unusual\n\nPHASE 3—Precision evaluation:\n\nA: 'significant' ✗ PARTIALLY CORRECT but too vague—doesn't capture the 'never before seen' aspect that 'no similar artifacts in fifty years' emphasizes\n\nB: 'unprecedented' ✓ MOST PRECISE\n- MEANING: 'unprecedented' literally = 'never done before,' perfectly matches 'no similar artifacts in fifty years'\n- TONE: Formal, academic—fits archaeological context\n- INTENSITY: Strong enough to match 'revising existing theories'\n- SPECIFICITY: Most precise capture of the uniqueness\n\nC: 'valuable' ✗ WRONG FOCUS—While discovery is valuable, the context clue emphasizes rarity/uniqueness, not worth\n\nD: 'interesting' ✗ TOO WEAK—Understates significance; wrong tone (too casual for formal archaeological writing)"
     }
   ],
   "resources": {
     "strategy_card": {
-      "title": "Words in Context Quick Reference",
-      "steps": [
-        "1. CROSS OUT: Cover the word, read without it",
-        "2. LOOK: Find context clues in surrounding text",
-        "3. UNDERSTAND: Determine word type and tone needed",
-        "4. EVALUATE: Test each choice for best contextual fit"
+      "title": "The SELECT Strategy Quick Reference",
+      "phases": [
+        {
+          "phase": "1. CROSS OUT & READ",
+          "steps": [
+            "Cover the target word",
+            "Read surrounding sentences",
+            "Predict simple word that fits"
+          ]
+        },
+        {
+          "phase": "2. LOOK FOR CLUES",
+          "steps": [
+            "Definition: or, that is, means",
+            "Example: for example, such as, like",
+            "Contrast: but, however, despite, although",
+            "Cause-Effect: because, therefore, as a result",
+            "Tone: formal vs. informal, positive vs. negative"
+          ]
+        },
+        {
+          "phase": "3. EVALUATE PRECISION",
+          "steps": [
+            "Check meaning match (exact vs. vague)",
+            "Check tone match (formal vs. informal)",
+            "Check intensity match (mild vs. strong)",
+            "Choose MOST precise, not just any correct"
+          ]
+        }
       ],
-      "tips": [
-        "Context clues beat memorized definitions every time",
-        "Match both meaning AND tone of the passage",
-        "Most precise word wins, not just any correct word",
-        "Consider formality level and emotional connotation"
-      ]
+      "the_100_rule": "Context clues beat memorized definitions. Most precise word wins over any technically correct word."
     },
     "common_mistakes": [
       "Relying on memorized definitions instead of context",
-      "Ignoring tone and choosing words that don't fit passage mood",
-      "Picking the first 'correct' answer instead of the BEST answer",
+      "Picking first correct answer instead of BEST answer",
+      "Ignoring tone and formality level of passage",
       "Missing subtle context clues in surrounding sentences"
-    ]
+    ],
+    "context_quick_reference": {
+      "Strongest Clues": "Definition/restatement, Contrast with signal word",
+      "Precision Test": "Most specific meaning + best tone match + exact intensity",
+      "Tone Match": "Formal passage → formal word, Informal → informal word",
+      "Common Trap": "Multiple correct meanings → choose most precise for context"
+    }
   },
   "metadata": {
     "created_date": "2024-12-01",
-    "last_updated": "2024-12-01",
-    "content_version": "1.0",
-    "estimated_completion_time": 1500,
-    "prerequisite_skills": ["CID"],
-    "skill_progression": ["lesson_11"]
+    "last_updated": "2025-01-02",
+    "content_version": "2.0",
+    "estimated_completion_time": 1680,
+    "prerequisite_skills": ["lesson_09"],
+    "skill_progression": ["lesson_11"],
+    "strategy_integration": {
+      "source": "Expert SAT strategies synthesis",
+      "key_innovation": "3-Phase SELECT Strategy: Cross Out → Look for Clues → Evaluate Precision",
+      "slides_enhanced": ["slide_02", "slide_03", "slide_04", "slide_05"]
+    }
   }
 }

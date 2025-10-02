@@ -1,15 +1,15 @@
 {
   "id": "lesson_02",
-  "title": "Grammar Essentials",
-  "subtitle": "Sentence Structure",
+  "title": "Sentence Structure",
+  "subtitle": "Grammar Essentials",
   "level": "Foundation",
   "duration": "20-25 min",
   "skill_codes": ["SEC"],
   "learning_objectives": [
-    "Identify and fix sentence structure errors",
-    "Recognize fragments, run-ons, and comma splices",
-    "Apply strategies for combining sentences effectively",
-    "Practice with authentic SAT Writing questions"
+    "The Core: Master complete vs. incomplete sentences",
+    "The Skill: Identify and fix fragments, run-ons, and comma splices",
+    "The Problem: Multiple grammatically possible options testing your precision",
+    "Key Strategy: The 3-Phase COMPLETE Strategy for 100% provable answers"
   ],
   "success_criteria": {
     "mastery_threshold": 0.75,
@@ -20,98 +20,83 @@
     {
       "id": "slide_01",
       "type": "introduction",
-      "title": "Welcome to Grammar Essentials",
+      "title": "Learning Objectives",
       "duration_estimate": 180,
       "content": {
-        "heading": "Learning Objectives",
-        "text": "Strong sentence structure is the foundation of clear communication and essential for SAT Writing success.",
+        "heading": "The Main Quest",
         "bullet_points": [
-          "Master the difference between complete and incomplete sentences",
-          "Learn to spot and fix common sentence errors",
-          "Practice combining sentences for better flow",
-          "Build confidence with SAT-style grammar questions"
-        ],
-        "visual_element": {
-          "type": "progress_indicator",
-          "total_slides": 8,
-          "estimated_time": "20-25 minutes"
-        }
+          "Decode what makes sentences complete",
+          "Spot the three deadly sentence errors instantly",
+          "Apply the 3-Phase COMPLETE Strategy",
+          "Fix errors with the shortest, clearest solution"
+        ]
       },
       "interactions": [
         {
           "type": "click_to_continue",
-          "text": "Ready to master sentence structure? Click to continue"
+          "text": "Ready? Let's begin."
         }
       ]
     },
     {
       "id": "slide_02",
-      "type": "concept_teaching",
-      "title": "What Makes a Complete Sentence?",
-      "duration_estimate": 240,
-      "content": {
-        "heading": "The Building Blocks",
-        "text": "Every complete sentence must have two essential components: a subject (who or what) and a predicate (what they do or are).",
-        "concept_box": {
-          "title": "Complete Sentence Requirements",
-          "points": [
-            "🔍 **Subject** - who or what the sentence is about",
-            "⚡ **Predicate** - contains a verb and tells what the subject does",
-            "💭 **Complete thought** - makes sense on its own",
-            "🎯 **Proper punctuation** - ends with appropriate punctuation"
-          ]
-        },
-        "examples": {
-          "complete": "The students studied diligently for their exams.",
-          "incomplete": "The students studying diligently for their exams."
-        }
-      },
-      "interactions": [
-        {
-          "type": "reveal_on_click",
-          "elements": [
-            {
-              "trigger": "Click to see why one is incomplete",
-              "reveal": "The second example lacks a main verb - 'studying' is a participle, not a complete verb phrase."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "slide_03",
       "type": "strategy_teaching",
-      "title": "The SAVE Method for Sentence Errors",
+      "title": "The Master Strategy: Phase 1",
       "duration_estimate": 300,
       "content": {
-        "heading": "Strategy: Systematic Error Detection",
+        "heading": "PHASE 1: The Completeness Test",
+        "subtitle": "Three Non-Negotiables for Complete Sentences",
+        "core_principle": {
+          "title": "The Foundation Rule",
+          "description": "Every complete sentence must have ALL THREE: Subject + Complete Verb + Complete Thought"
+        },
         "strategy_steps": [
           {
             "step": 1,
-            "title": "SUBJECT - Find the subject",
-            "description": "Identify who or what the sentence is about",
-            "example": "The rapid development of technology → Subject: development"
+            "title": "Find the SUBJECT",
+            "description": "Who or what is performing the action?",
+            "points": [
+              "Subject = the noun/pronoun doing something or being described",
+              "Ask: 'Who or what is this sentence about?'",
+              "Common trap: Subject hidden by prepositional phrases"
+            ],
+            "example": {
+              "sentence": "The students studying for the exam.",
+              "analysis": "Subject: students ✓"
+            }
           },
           {
             "step": 2,
-            "title": "ACTION - Locate the main verb",
-            "description": "Find the action or state of being",
-            "example": "The rapid development of technology has changed → Verb: has changed"
+            "title": "Verify COMPLETE VERB",
+            "description": "Does the verb actually work as the main action?",
+            "points": [
+              "Complete verb = finite verb that works as main action",
+              "Participles (studying, running, being) are NOT complete verbs alone",
+              "Need helping verbs: are studying, have run, is being"
+            ],
+            "example": {
+              "sentence": "The students studying for the exam.",
+              "analysis": "'Studying' is a participle, NOT a complete verb ✗",
+              "fix": "'The students are studying' OR 'The students studied'"
+            }
           },
           {
             "step": 3,
-            "title": "VOICE - Check for complete thought",
-            "description": "Does the sentence express a complete idea?",
-            "example": "The rapid development of technology has changed our lives. → Complete ✓"
-          },
-          {
-            "step": 4,
-            "title": "ENDINGS - Verify proper punctuation",
-            "description": "Ensure the sentence ends appropriately",
-            "example": "Check for periods, question marks, or exclamation points"
+            "title": "Check COMPLETE THOUGHT",
+            "description": "Can this stand alone and make sense?",
+            "points": [
+              "Must express a full idea, not leave reader hanging",
+              "Subordinating words (because, although, when, if) create dependent clauses",
+              "Dependent clauses CANNOT stand alone"
+            ],
+            "example": {
+              "incomplete": "Although renewable energy sources becoming more popular.",
+              "why_wrong": "'Although' makes this dependent—needs main clause",
+              "complete": "Although renewable energy sources are becoming more popular, many countries still rely on fossil fuels."
+            }
           }
         ],
-        "memory_aid": "Remember: **S.A.V.E.** your sentences from common errors!"
+        "key_insight": "If ANY of the three elements is missing, you have a FRAGMENT, not a sentence."
       },
       "interactions": [
         {
@@ -121,37 +106,269 @@
       ]
     },
     {
-      "id": "slide_04",
-      "type": "guided_example",
-      "title": "Guided Practice: Fixing Sentence Errors",
-      "duration_estimate": 360,
+      "id": "slide_03",
+      "type": "strategy_teaching",
+      "title": "The Master Strategy: Phase 2",
+      "duration_estimate": 320,
       "content": {
-        "heading": "Let's Fix These Together",
-        "passage": {
-          "text": "Although renewable energy sources becoming more popular. Many countries still rely heavily on fossil fuels, this creates environmental concerns. Solar panels and wind turbines, which are increasingly efficient. The transition to clean energy requiring significant investment but offering long-term benefits.",
-          "highlight_enabled": true
+        "heading": "PHASE 2: The Three Deadly Errors",
+        "subtitle": "Spot Fragments, Run-Ons, and Comma Splices Instantly",
+        "error_types": [
+          {
+            "error": "FRAGMENT",
+            "definition": "Missing subject, verb, or complete thought",
+            "common_causes": [
+              "Participle instead of complete verb (studying, running, being)",
+              "Subordinating word with no main clause (because, although, when)",
+              "Phrase mistaken for sentence (After the game. In the morning.)"
+            ],
+            "examples": [
+              {
+                "fragment": "The rapid development of technology changing our lives.",
+                "problem": "Participle 'changing'—not complete verb",
+                "fix": "The rapid development of technology IS changing our lives."
+              },
+              {
+                "fragment": "Although the experiment failed.",
+                "problem": "Subordinating word 'although' with no main clause",
+                "fix": "Although the experiment failed, the data was valuable."
+              }
+            ]
+          },
+          {
+            "error": "RUN-ON",
+            "definition": "Two complete sentences incorrectly joined together",
+            "common_causes": [
+              "No punctuation between complete thoughts",
+              "Comma between complete thoughts without conjunction (comma splice)",
+              "Improper use of 'and' to join unrelated ideas"
+            ],
+            "examples": [
+              {
+                "run_on": "The students studied hard they passed the exam.",
+                "problem": "Two complete thoughts with no connection",
+                "fixes": [
+                  "Period: The students studied hard. They passed the exam.",
+                  "Semicolon: The students studied hard; they passed the exam.",
+                  "Comma + conjunction: The students studied hard, and they passed the exam."
+                ]
+              }
+            ]
+          },
+          {
+            "error": "COMMA SPLICE",
+            "definition": "Two complete sentences joined ONLY with a comma (special type of run-on)",
+            "why_deadly": "This is the #1 trap on SAT Writing—looks almost correct",
+            "examples": [
+              {
+                "comma_splice": "Many countries rely on fossil fuels, this creates environmental concerns.",
+                "problem": "Comma alone cannot join two independent clauses",
+                "fixes": [
+                  "Period: Many countries rely on fossil fuels. This creates environmental concerns.",
+                  "Semicolon: Many countries rely on fossil fuels; this creates environmental concerns.",
+                  "Comma + conjunction: Many countries rely on fossil fuels, and this creates environmental concerns.",
+                  "Subordination: Many countries rely on fossil fuels, which creates environmental concerns."
+                ]
+              }
+            ]
+          }
+        ],
+        "detection_strategy": {
+          "title": "The Sentence Count Test",
+          "description": "Count how many COMPLETE THOUGHTS exist. Then check if they're properly connected.",
+          "steps": [
+            "Step 1: Identify subjects and complete verbs",
+            "Step 2: Count complete thoughts (could stand alone?)",
+            "Step 3: If 2+ complete thoughts, check connection method",
+            "Step 4: Verify connection is grammatically valid"
+          ]
+        }
+      },
+      "interactions": [
+        {
+          "type": "reveal_on_click",
+          "elements": [
+            {
+              "trigger": "Show Pro Tip",
+              "reveal": "The SAT loves comma splices with transition words: 'X, however Y' is WRONG. Must be: 'X; however, Y' OR 'X. However, Y'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "slide_04",
+      "type": "strategy_teaching",
+      "title": "The Master Strategy: Phase 3",
+      "duration_estimate": 320,
+      "content": {
+        "heading": "PHASE 3: Fix with Precision",
+        "subtitle": "The 100% Rule: Choose the Shortest, Clearest Fix",
+        "core_principle": {
+          "title": "The SAT Preference",
+          "description": "When multiple fixes are grammatically correct, the SAT rewards the SHORTEST, CLEAREST option that maintains meaning."
         },
-        "guided_questions": [
+        "fixing_fragments": {
+          "title": "Fragment Fixes",
+          "strategies": [
+            {
+              "fix": "Add Complete Verb",
+              "when": "Participle instead of verb",
+              "example": "The students studying → The students are studying / studied"
+            },
+            {
+              "fix": "Remove Subordinator OR Add Main Clause",
+              "when": "Subordinating word creates dependence",
+              "example": "Although it failed → It failed / Although it failed, we learned"
+            },
+            {
+              "fix": "Attach to Previous/Next Sentence",
+              "when": "Fragment naturally belongs with nearby sentence",
+              "example": "Solar panels. Which are efficient. → Solar panels, which are efficient,"
+            }
+          ]
+        },
+        "fixing_run_ons": {
+          "title": "Run-On & Comma Splice Fixes",
+          "strategies": [
+            {
+              "fix": "Period (Two Sentences)",
+              "when": "Ideas are distinct and unrelated",
+              "example": "X, Y → X. Y"
+            },
+            {
+              "fix": "Semicolon",
+              "when": "Ideas are closely related and equally weighted",
+              "example": "X, Y → X; Y"
+            },
+            {
+              "fix": "Comma + Coordinating Conjunction",
+              "when": "Need to show relationship between ideas",
+              "example": "X, Y → X, and/but/so Y",
+              "note": "FANBOYS: for, and, nor, but, or, yet, so"
+            },
+            {
+              "fix": "Subordination",
+              "when": "One idea depends on or modifies the other",
+              "example": "X, Y → X, which Y / X because Y / When X, Y"
+            },
+            {
+              "fix": "Combine with Shared Element",
+              "when": "Ideas share subject or verb",
+              "example": "X is Y, X is Z → X is Y and Z (most concise!)"
+            }
+          ]
+        },
+        "selection_criteria": {
+          "title": "How to Choose When Multiple Fixes Work",
+          "priority_order": [
+            {
+              "rank": 1,
+              "criterion": "SHORTEST",
+              "description": "Fewest words while maintaining clarity and meaning"
+            },
+            {
+              "rank": 2,
+              "criterion": "CLEAREST",
+              "description": "Most direct expression of the relationship between ideas"
+            },
+            {
+              "rank": 3,
+              "criterion": "MAINTAINS MEANING",
+              "description": "Doesn't change what the author intended to say"
+            }
+          ],
+          "example": {
+            "original": "Marie Curie was the first woman to win a Nobel Prize, she was also the first person to win Nobel Prizes in two different scientific fields.",
+            "fix_options": [
+              {
+                "fix": "Marie Curie was the first woman to win a Nobel Prize; she was also the first person to win Nobel Prizes in two different scientific fields.",
+                "evaluation": "Grammatically correct but wordy—keeps 'she was also'"
+              },
+              {
+                "fix": "Marie Curie was the first woman to win a Nobel Prize, and she was also the first person to win Nobel Prizes in two different scientific fields.",
+                "evaluation": "Grammatically correct but even wordier—adds 'and'"
+              },
+              {
+                "fix": "Marie Curie was the first woman to win a Nobel Prize and the first person to win Nobel Prizes in two different scientific fields.",
+                "evaluation": "✓ BEST—shortest, clearest. Shared subject 'Marie Curie' allows combination."
+              }
+            ]
+          }
+        }
+      },
+      "interactions": [
+        {
+          "type": "interactive_elimination",
+          "show_flaw_analysis": true
+        }
+      ]
+    },
+    {
+      "id": "slide_05",
+      "type": "guided_example",
+      "title": "Guided Practice: The Strategy in Action",
+      "duration_estimate": 400,
+      "content": {
+        "heading": "Let's Apply All 3 Phases Together",
+        "passage": "The development of sustainable transportation options becoming increasingly important as cities seek to reduce carbon emissions. Electric vehicles, public transit systems, and bike-sharing programs all contributing to cleaner urban environments.",
+        "question": "Which choice best fixes the sentence structure errors?",
+        "walkthrough": [
           {
+            "phase": "PHASE 1: Completeness Test",
             "step": 1,
-            "question": "Find the FRAGMENT in the first sentence",
-            "hint": "Look for a sentence that doesn't express a complete thought",
-            "answer": "'Although renewable energy sources becoming more popular.' - missing main verb",
-            "explanation": "This has a subject ('sources') but 'becoming' is not a complete verb. It needs 'are becoming' or similar."
+            "question": "Check first sentence: Subject?",
+            "answer": "Subject: development ✓",
+            "reasoning": "'The development [of sustainable transportation options]' is the subject"
           },
           {
+            "phase": "PHASE 1: Completeness Test",
             "step": 2,
-            "question": "Identify the RUN-ON in the second sentence",
-            "hint": "Look for two complete thoughts incorrectly joined",
-            "answer": "Two complete thoughts joined by a comma: 'Many countries...' and 'this creates...'",
-            "explanation": "This is a comma splice - two independent clauses joined only by a comma."
+            "question": "Check first sentence: Complete verb?",
+            "answer": "'Becoming' is a participle, NOT complete verb ✗",
+            "reasoning": "Need 'is becoming' or 'has become' for complete verb"
           },
           {
+            "phase": "PHASE 1: Completeness Test",
             "step": 3,
-            "question": "Spot the final sentence error",
-            "hint": "Check the last sentence for completeness",
-            "answer": "'The transition to clean energy requiring...' - incomplete verb form",
-            "explanation": "'Requiring' should be 'requires' to make this a complete sentence."
+            "question": "Check second sentence: Complete verb?",
+            "answer": "'Contributing' is a participle, NOT complete verb ✗",
+            "reasoning": "Need 'are contributing' or 'contribute' for complete verb"
+          },
+          {
+            "phase": "PHASE 2: Identify Error Type",
+            "step": 4,
+            "question": "What errors exist?",
+            "answer": "TWO FRAGMENTS—both missing complete verbs",
+            "reasoning": "Both sentences have subjects but incomplete verbs (participles)"
+          },
+          {
+            "phase": "PHASE 3: Fix with Precision",
+            "step": 5,
+            "question": "Evaluate the fix options",
+            "options_analysis": [
+              {
+                "option": "A",
+                "text": "The development of sustainable transportation options is becoming increasingly important as cities seek to reduce carbon emissions. Electric vehicles, public transit systems, and bike-sharing programs all contribute to cleaner urban environments.",
+                "analysis": "✓ CORRECT—Fixes both fragments by adding complete verbs: 'is becoming' and 'contribute.' Simple, clear, maintains meaning."
+              },
+              {
+                "option": "B",
+                "text": "The development of sustainable transportation options becoming increasingly important as cities seek to reduce carbon emissions, electric vehicles, public transit systems, and bike-sharing programs all contributing to cleaner urban environments.",
+                "analysis": "✗ Creates ONE MASSIVE FRAGMENT—neither clause has complete verb, and comma splice joins them"
+              },
+              {
+                "option": "C",
+                "text": "The development of sustainable transportation options is becoming increasingly important. As cities seek to reduce carbon emissions, electric vehicles, public transit systems, and bike-sharing programs all contributing to cleaner urban environments.",
+                "analysis": "✗ Fixes first fragment but second remains incomplete—'contributing' still not complete verb"
+              },
+              {
+                "option": "D",
+                "text": "NO CHANGE",
+                "analysis": "✗ Leaves both fragments unfixed"
+              }
+            ],
+            "correct_answer": "A"
           }
         ]
       },
@@ -164,206 +381,165 @@
       ]
     },
     {
-      "id": "slide_05",
+      "id": "slide_06",
       "type": "independent_practice",
-      "title": "Your Turn: Fix the Error",
-      "duration_estimate": 300,
+      "title": "Your Turn: Apply the COMPLETE Strategy",
+      "duration_estimate": 360,
       "content": {
         "heading": "Independent Practice",
-        "passage": {
-          "text": "The concept of artificial intelligence has evolved dramatically over the past decade. With machine learning algorithms becoming more sophisticated, they can now perform tasks that were once thought impossible for computers. However, concerns about AI replacing human jobs, this has led to important discussions about the future of work.",
-          "word_count": 55
-        },
-        "question": {
-          "text": "Which choice best fixes the sentence error in the passage?",
-          "options": [
-            "However, concerns about AI replacing human jobs. This has led to important discussions about the future of work.",
-            "However, concerns about AI replacing human jobs, and this has led to important discussions about the future of work.",
-            "However, concerns about AI replacing human jobs have led to important discussions about the future of work.",
-            "However, concerns about AI replacing human jobs; this has led to important discussions about the future of work."
-          ],
-          "correct_answer": "C",
-          "explanations": {
-            "A": "This creates a sentence fragment - 'concerns about AI replacing human jobs' lacks a main verb.",
-            "B": "This creates a run-on sentence with an unnecessary 'and' conjunction.",
-            "C": "✓ Correct! This fixes the comma splice by combining the ideas into one complete sentence with the verb 'have led.'",
-            "D": "While grammatically correct, this solution is wordier than necessary and less elegant than option C."
-          }
-        }
+        "instructions": "Use all 3 phases: Completeness Test → Identify Error → Fix with Precision",
+        "passage": "The concept of artificial intelligence has evolved dramatically over the past decade. With machine learning algorithms becoming more sophisticated, they can now perform tasks that were once thought impossible for computers. However, concerns about AI replacing human jobs, this has led to important discussions about the future of work.",
+        "question": "Which choice best fixes the sentence error in the passage?",
+        "strategy_reminder": "Phase 1: Check for subject, complete verb, complete thought. Phase 2: Fragment, run-on, or comma splice? Phase 3: Choose shortest, clearest fix."
       },
       "interactions": [
         {
           "type": "multiple_choice_question",
-          "immediate_feedback": true,
-          "allow_retry": true
-        }
-      ]
-    },
-    {
-      "id": "slide_06",
-      "type": "skill_application",
-      "title": "SAT-Style Practice",
-      "duration_estimate": 420,
-      "content": {
-        "heading": "Apply Your Knowledge",
-        "instructions": "These questions mirror the actual SAT format. Use the SAVE method to identify and fix sentence structure errors.",
-        "questions": [
-          {
-            "id": "q1",
-            "passage": "Marie Curie was the first woman to win a Nobel Prize, she was also the first person to win Nobel Prizes in two different scientific fields. Her groundbreaking research on radioactivity. This work laid the foundation for modern atomic physics and led to numerous medical applications.",
-            "question": "Which choice best improves the sentence structure of the passage?",
+          "content": {
             "options": [
-              "Marie Curie was the first woman to win a Nobel Prize; she was also the first person to win Nobel Prizes in two different scientific fields.",
-              "Marie Curie was the first woman to win a Nobel Prize, and she was also the first person to win Nobel Prizes in two different scientific fields.",
-              "Marie Curie was the first woman to win a Nobel Prize and the first person to win Nobel Prizes in two different scientific fields.",
-              "NO CHANGE"
+              "However, concerns about AI replacing human jobs. This has led to important discussions about the future of work.",
+              "However, concerns about AI replacing human jobs, and this has led to important discussions about the future of work.",
+              "However, concerns about AI replacing human jobs have led to important discussions about the future of work.",
+              "However, concerns about AI replacing human jobs; this has led to important discussions about the future of work."
             ],
-            "correct_answer": "C",
-            "skill_codes": ["SEC"],
-            "difficulty": "M"
-          },
-          {
-            "id": "q2",
-            "passage": "The development of sustainable transportation options becoming increasingly important as cities seek to reduce carbon emissions. Electric vehicles, public transit systems, and bike-sharing programs all contributing to cleaner urban environments.",
-            "question": "Which choice best fixes the sentence structure errors?",
-            "options": [
-              "The development of sustainable transportation options is becoming increasingly important as cities seek to reduce carbon emissions. Electric vehicles, public transit systems, and bike-sharing programs all contribute to cleaner urban environments.",
-              "The development of sustainable transportation options becoming increasingly important as cities seek to reduce carbon emissions, electric vehicles, public transit systems, and bike-sharing programs all contributing to cleaner urban environments.",
-              "The development of sustainable transportation options is becoming increasingly important. As cities seek to reduce carbon emissions, electric vehicles, public transit systems, and bike-sharing programs all contributing to cleaner urban environments.",
-              "NO CHANGE"
-            ],
-            "correct_answer": "A",
-            "skill_codes": ["SEC"],
-            "difficulty": "M"
+            "correct": 2,
+            "explanation": "Let's apply the 3 phases:\n\nPHASE 1: Original has 'concerns...jobs, this has led' → Two complete thoughts with comma = COMMA SPLICE\n\nPHASE 2: Error type = Comma splice (two independent clauses joined by comma alone)\n\nPHASE 3: Fix analysis:\nA: ✗ Creates fragment—'concerns about AI replacing human jobs' has no verb\nB: ✗ Adds wordy 'and'—grammatically ok but not shortest\nC: ✓ CORRECT—Combines into one sentence with shared subject 'concerns' and verb 'have led.' Shortest and clearest.\nD: ✗ Grammatically correct but keeps repetitive 'this'—less concise than C"
           }
-        ]
-      },
-      "interactions": [
-        {
-          "type": "question_sequence",
-          "show_strategy_reminder": true,
-          "track_time": true
         }
       ]
     },
     {
       "id": "slide_07",
-      "type": "concept_reinforcement",
-      "title": "Key Takeaways",
-      "duration_estimate": 180,
+      "type": "concept_teaching",
+      "title": "Strategy Synthesis: Error Pattern Summary",
+      "duration_estimate": 280,
       "content": {
-        "heading": "Master These Concepts",
+        "heading": "Master These Patterns—Spot Errors Instantly",
+        "table": {
+          "columns": ["Error Type", "How to Spot It", "How to Fix It"],
+          "rows": [
+            [
+              "FRAGMENT",
+              "Missing subject, incomplete verb (participle), or subordinating word with no main clause",
+              "Add complete verb, remove subordinator, OR attach to nearby sentence"
+            ],
+            [
+              "RUN-ON",
+              "Two complete thoughts with no punctuation between them",
+              "Add period, semicolon, comma+conjunction, OR subordinate one clause"
+            ],
+            [
+              "COMMA SPLICE",
+              "Two complete thoughts joined by comma alone (especially with 'this,' 'however,' 'therefore')",
+              "Change comma to period/semicolon, add conjunction, OR combine with shared element"
+            ]
+          ]
+        },
+        "expert_insight": "On the SAT, when multiple grammatical fixes exist, always choose the SHORTEST option that maintains meaning. Concision wins."
+      }
+    },
+    {
+      "id": "slide_08",
+      "type": "concept_reinforcement",
+      "title": "Key Takeaways & Practice Transition",
+      "duration_estimate": 240,
+      "content": {
+        "heading": "Sentence Structure Mastery",
         "key_points": [
-          {
-            "icon": "🔍",
-            "title": "Complete Sentences",
-            "description": "Every sentence needs a subject, predicate, and complete thought."
-          },
-          {
-            "icon": "⚡",
-            "title": "Common Errors",
-            "description": "Watch for fragments (incomplete thoughts), run-ons (multiple thoughts), and comma splices."
-          },
-          {
-            "icon": "🛠️",
-            "title": "The SAVE Method",
-            "description": "Subject → Action → Voice → Endings. This systematic approach catches most errors."
-          },
-          {
-            "icon": "🎯",
-            "title": "SAT Strategy",
-            "description": "On the SAT, the shortest, clearest option that fixes the error is usually correct."
-          }
+          "Phase 1: Completeness Test—every sentence needs subject + complete verb + complete thought",
+          "Phase 2: Three Deadly Errors—fragments, run-ons, and comma splices (especially with 'however')",
+          "Phase 3: Fix with Precision—choose shortest, clearest option that maintains meaning",
+          "The 100% Rule: Participles (studying, running) are NOT complete verbs alone"
         ],
-        "next_steps": {
-          "text": "Next up: Lesson 3 - Punctuation Mastery!",
-          "preview": "You'll learn to use commas, semicolons, and other punctuation marks to create clear, effective sentences."
+        "strategy_reminder": "Remember COMPLETE: Check parts, Observe structure, Match fixes, Prioritize concision, List flaws, Eliminate errors, Test completeness, Execute shortest fix",
+        "expert_insight": "The SAT rewards students who can identify the most concise, grammatically correct fix. When in doubt, shorter is better.",
+        "practice_transition": {
+          "text": "Ready to apply your mastery? Let's practice with authentic SAT sentence structure questions!",
+          "button_text": "Start Skill Practice",
+          "skill_code": "SEC"
         }
       },
       "interactions": [
         {
           "type": "completion_celebration",
-          "unlock_next": "lesson_03"
+          "content": {
+            "message": "Outstanding! You've mastered sentence structure with surgical precision."
+          }
         }
       ]
     },
     {
-      "id": "slide_08",
+      "id": "slide_09",
       "type": "mastery_check",
       "title": "Mastery Check",
-      "duration_estimate": 240,
-      "content": {
-        "heading": "Final Assessment",
-        "instructions": "Demonstrate your mastery of sentence structure by fixing this complex error.",
-        "passage": {
-          "text": "Climate change representing one of the most significant challenges of our time. Scientists worldwide studying its effects, they have found that rising temperatures are causing more frequent extreme weather events. These findings highlighting the urgent need for global action to reduce greenhouse gas emissions.",
-          "word_count": 45
-        },
-        "question": {
-          "text": "Which choice best fixes all the sentence structure errors in the passage?",
-          "options": [
-            "Climate change represents one of the most significant challenges of our time. Scientists worldwide have studied its effects and found that rising temperatures are causing more frequent extreme weather events. These findings highlight the urgent need for global action to reduce greenhouse gas emissions.",
-            "Climate change representing one of the most significant challenges of our time, scientists worldwide studying its effects, they have found that rising temperatures are causing more frequent extreme weather events, these findings highlighting the urgent need for global action.",
-            "Climate change represents one of the most significant challenges of our time; scientists worldwide studying its effects, they have found that rising temperatures are causing more frequent extreme weather events; these findings highlighting the urgent need for global action.",
-            "Climate change representing one of the most significant challenges of our time. Scientists worldwide studying its effects and finding that rising temperatures are causing more frequent extreme weather events. These findings highlighting the urgent need for global action."
-          ],
-          "correct_answer": "A",
-          "mastery_question": true
-        }
-      },
-      "interactions": [
-        {
-          "type": "mastery_assessment",
-          "required_for_completion": true,
-          "retry_limit": 3
-        }
-      ]
-    }
-  ],
-  "practice_questions": [
-    {
-      "id": "practice_1",
-      "type": "quick_check",
       "skill_codes": ["SEC"],
-      "difficulty": "E",
-      "question": "Which is a complete sentence?",
+      "difficulty": "M",
+      "question": "Climate change representing one of the most significant challenges of our time. Scientists worldwide studying its effects, they have found that rising temperatures are causing more frequent extreme weather events. These findings highlighting the urgent need for global action to reduce greenhouse gas emissions.\n\nWhich choice best fixes all the sentence structure errors in the passage?",
       "options": [
-        "Running through the park on a sunny day.",
-        "Because the weather was perfect for outdoor activities.",
-        "The children played happily in the park.",
-        "After finishing their homework assignments."
+        "Climate change represents one of the most significant challenges of our time. Scientists worldwide have studied its effects and found that rising temperatures are causing more frequent extreme weather events. These findings highlight the urgent need for global action to reduce greenhouse gas emissions.",
+        "Climate change representing one of the most significant challenges of our time, scientists worldwide studying its effects, they have found that rising temperatures are causing more frequent extreme weather events, these findings highlighting the urgent need for global action.",
+        "Climate change represents one of the most significant challenges of our time; scientists worldwide studying its effects, they have found that rising temperatures are causing more frequent extreme weather events; these findings highlighting the urgent need for global action.",
+        "Climate change representing one of the most significant challenges of our time. Scientists worldwide studying its effects and finding that rising temperatures are causing more frequent extreme weather events. These findings highlighting the urgent need for global action."
       ],
-      "correct_answer": "C"
+      "correct_answer": "A",
+      "explanation": "Error analysis:\n\nSentence 1: 'representing' = participle, not complete verb → FRAGMENT\nSentence 2: 'studying its effects, they have found' = comma splice → RUN-ON\nSentence 3: 'highlighting' = participle, not complete verb → FRAGMENT\n\nA: ✓ CORRECT—Fixes all three errors:\n- 'represents' (complete verb)\n- 'have studied...and found' (combines, eliminating comma splice)\n- 'highlight' (complete verb)\nShortest, clearest fix.\n\nB: ✗ Creates one massive run-on with multiple comma splices and fragments\n\nC: ✗ Fixes sentence 1 but leaves participles in 2 and 3—still fragments\n\nD: ✗ All three sentences remain fragments—no complete verbs added"
     }
   ],
   "resources": {
     "strategy_card": {
-      "title": "Sentence Structure Quick Reference",
-      "steps": [
-        "1. SUBJECT - Find who or what",
-        "2. ACTION - Locate the main verb",
-        "3. VOICE - Check for complete thought",
-        "4. ENDINGS - Verify proper punctuation"
+      "title": "The COMPLETE Strategy Quick Reference",
+      "phases": [
+        {
+          "phase": "1. COMPLETENESS TEST",
+          "steps": [
+            "Find SUBJECT: Who/what is this about?",
+            "Verify COMPLETE VERB: Finite verb, not participle",
+            "Check COMPLETE THOUGHT: Can stand alone?"
+          ]
+        },
+        {
+          "phase": "2. IDENTIFY ERROR",
+          "steps": [
+            "FRAGMENT: Missing element or subordinating word",
+            "RUN-ON: Two complete thoughts, no punctuation",
+            "COMMA SPLICE: Two complete thoughts, comma only"
+          ]
+        },
+        {
+          "phase": "3. FIX WITH PRECISION",
+          "steps": [
+            "Evaluate all grammatically correct options",
+            "Choose SHORTEST that maintains meaning",
+            "Prefer combining over separating when possible"
+          ]
+        }
       ],
-      "tips": [
-        "Every sentence needs subject + predicate + complete thought",
-        "Watch for fragments, run-ons, and comma splices",
-        "The simplest correct option is usually best"
-      ]
+      "the_100_rule": "Participles alone (studying, running, becoming) are NOT complete verbs. When multiple fixes work, choose the shortest and clearest."
     },
     "common_mistakes": [
-      "Mistaking participles for complete verbs",
-      "Joining independent clauses with only commas",
-      "Creating sentence fragments with subordinating words",
-      "Using overly complex punctuation when simple works better"
-    ]
+      "Thinking participles are complete verbs (studying vs. are studying)",
+      "Joining independent clauses with comma alone (comma splice)",
+      "Choosing grammatically correct but wordy options over concise ones",
+      "Missing comma splices with transition words like 'however' or 'therefore'"
+    ],
+    "error_quick_reference": {
+      "Fragment": "Missing subject/verb/thought → Add missing part or attach to sentence",
+      "Run-On": "Two complete thoughts, no connection → Add period, semicolon, or conjunction",
+      "Comma Splice": "Two complete thoughts, comma only → Change comma or combine with shared element",
+      "SAT Preference": "When multiple fixes work → Choose shortest, clearest option"
+    }
   },
   "metadata": {
     "created_date": "2024-12-01",
-    "last_updated": "2024-12-01",
-    "content_version": "1.0",
-    "estimated_completion_time": 1500,
+    "last_updated": "2025-01-02",
+    "content_version": "2.0",
+    "estimated_completion_time": 1680,
     "prerequisite_skills": ["lesson_01"],
-    "skill_progression": ["lesson_03"]
+    "skill_progression": ["lesson_03"],
+    "strategy_integration": {
+      "source": "Expert SAT strategies synthesis",
+      "key_innovation": "3-Phase COMPLETE Strategy: Completeness Test → Identify Error → Fix with Precision",
+      "slides_enhanced": ["slide_02", "slide_03", "slide_04", "slide_05"]
+    }
   }
 }
