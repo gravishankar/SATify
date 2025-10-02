@@ -398,13 +398,80 @@ The right panel shows exactly how students will see your lesson.
 
 ### Using Full Preview
 
-1. Click **🚀 Open Full Preview** in the preview panel
-2. A new window opens showing your lesson
-3. Use **Previous** and **Next** buttons to navigate
-4. Experience all interactive features
-5. Close window when done
+The Full Preview gives you a complete view of your lesson exactly as students will see it.
 
-**💡 Tip**: Use full preview to test your lesson before requesting publication!
+**Two Ways to Open Full Preview:**
+
+1. **From Preview Panel**: Click **🚀 Open Full Preview** button at the bottom of the right panel
+2. **From Action Buttons**: Click **👁️ Preview** button in the main action buttons
+
+**What You'll See:**
+
+1. **Preview Window Opens** in a new browser window
+2. **Yellow "DRAFT PREVIEW" Badge** at the top (reminds you this isn't published yet)
+3. **Warning Notice**: Indicates you're viewing draft content
+4. **Lesson Overview Card**:
+   - Full title and subtitle
+   - Level, duration, and skill codes
+   - Complete list of learning objectives
+5. **All Slides Rendered**:
+   - Each slide in its own numbered card
+   - Blue header showing slide number, title, and type
+   - Complete slide content rendered using the same system students see
+   - All 8 slides (or however many your lesson has) displayed in order
+
+**Preview Features:**
+- ✅ Shows **current state** including any unsaved changes
+- ✅ Renders using the **exact same renderer** students use
+- ✅ Displays all **interactive elements** (though clicking won't work in preview)
+- ✅ Shows complete **lesson structure** from start to finish
+- ✅ Named window means clicking preview again **replaces the existing window** (not opening multiple windows)
+
+**How to Use Preview Effectively:**
+
+1. **Before Making Changes**:
+   - Open preview to see current state
+   - Keep window open while editing
+   - Click preview button again after changes to see updates
+
+2. **Testing Your Edits**:
+   - Make a change (e.g., edit a slide)
+   - Click preview (don't need to save first!)
+   - Check if the change looks good
+   - If not, go back and adjust
+   - Repeat until satisfied
+
+3. **Before Requesting Publish**:
+   - Open full preview
+   - Read through every slide
+   - Check for typos, formatting issues
+   - Verify slide order makes sense
+   - Ensure all content displays correctly
+
+**Troubleshooting Preview:**
+
+**Problem**: Preview shows "❌ No Preview Data"
+
+**Solutions**:
+1. Make sure a lesson is loaded first (check left sidebar shows active lesson)
+2. Wait for status to show 🟢 "Lesson loaded"
+3. Then click preview button
+4. If still not working:
+   - Refresh the Creator Studio page
+   - Load the lesson again
+   - Try preview again
+
+**Problem**: Preview shows old content (not my recent changes)
+
+**Solutions**:
+- The preview always shows the current form state, including unsaved changes
+- If you see old content:
+  1. Check if your changes actually saved to the form
+  2. Try clicking on the slide again to verify content
+  3. Refresh and reload the lesson
+  4. Make your changes again and preview
+
+**💡 Tip**: Always use full preview to test your lesson before requesting publication! This ensures students will see exactly what you expect.
 
 ---
 
@@ -649,7 +716,17 @@ A: Not directly yet. You can:
 A: Image support is coming soon! For now, use descriptive text.
 
 **Q: The preview looks different from what I expected. Why?**
-A: Click "🚀 Open Full Preview" to see exactly how students will see it. The preview panel shows a summary view.
+A: The right preview panel shows a summary view with slide cards. Click "🚀 Open Full Preview" to see the complete lesson rendered exactly as students will experience it, with all slide content displayed.
+
+**Q: Preview shows "No Preview Data" error. What's wrong?**
+A: This means no lesson is loaded. Make sure to:
+1. Click on a lesson in the left sidebar first
+2. Wait for it to load (check for 🟢 "Lesson loaded" status)
+3. Then click the preview button
+4. If still not working, refresh the page and try again
+
+**Q: Can I preview unsaved changes?**
+A: Yes! The preview shows the current state of your lesson, including any unsaved changes you've made. This lets you see exactly what you're working on before saving.
 
 ---
 

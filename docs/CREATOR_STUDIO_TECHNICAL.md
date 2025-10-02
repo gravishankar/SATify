@@ -929,6 +929,16 @@ cat lessons/drafts/versions/lesson_05_2025-10-02T02-08-23-551Z.json | python3 -m
 5. Test approve → verify file moves to published
 6. Test reject → verify rejection note saved
 
+**Test Preview Functionality**:
+1. Open Creator Studio
+2. Load a lesson (e.g., lesson_02)
+3. Click "👁️ Preview" button (main action bar)
+4. Verify preview window opens with draft badge
+5. Check all slides render correctly
+6. Click "🚀 Open Full Preview" (in preview panel)
+7. Verify same preview window appears
+8. Test with unsaved changes to verify current state is shown
+
 ---
 
 ## Troubleshooting
@@ -1009,6 +1019,79 @@ npm start
 
 # Test endpoint directly
 curl http://localhost:3001/api/health
+```
+
+#### 6. Preview Shows "No Preview Data"
+**Symptoms**: Preview window shows error message instead of lesson
+
+**Solutions**:
+```javascript
+// Check localStorage keys
+console.log(localStorage.getItem('preview_lesson_data'));
+console.log(localStorage.getItem('preview_lesson_id'));
+
+// If null, the preview button didn't save correctly
+// Verify you loaded a lesson first before clicking preview
+
+// Clear and retry
+localStorage.removeItem('preview_lesson_data');
+localStorage.removeItem('preview_lesson_id');
+// Then reload lesson and try preview again
+```
+
+**Root Causes**:
+- No lesson loaded before clicking preview
+- localStorage keys mismatch (old code used different key names)
+- Browser localStorage disabled or full
+
+**Fix**:
+Ensure both preview functions use same localStorage keys:
+```javascript
+// Both previewLesson() and openFullPreview() must use:
+localStorage.setItem('preview_lesson_data', JSON.stringify(lesson));
+localStorage.setItem('preview_lesson_id', lesson.id);
+```
+
+#### 7. Lesson Loading Error - "event.target is undefined"
+**Symptoms**: Clicking lesson in sidebar shows error, lesson doesn't load
+
+**Solutions**:
+```javascript
+// Ensure onclick passes event object
+onclick="studio.loadLesson('${lesson.id}', event)"
+
+// Function signature must accept event parameter
+async loadLesson(lessonId, event) {
+    // Add null check before using event
+    if (event && event.target) {
+        // Safe to use event.target
+    }
+}
+```
+
+**Root Cause**:
+Function tried to access `event.target` without event parameter being passed.
+
+#### 8. Preview Rendering Error - "renderer.loadLesson is not a function"
+**Symptoms**: Preview opens but shows error instead of lesson content
+
+**Solutions**:
+The `LessonContentRenderer` class only renders individual slides, not full lessons.
+
+**Correct Approach**:
+```javascript
+const renderer = new LessonContentRenderer();
+const slides = lesson.slides || [];
+
+slides.forEach((slide, index) => {
+    const slideHTML = renderer.renderSlideContent(slide);
+    // Append to container
+});
+```
+
+**Do NOT try to call**:
+```javascript
+renderer.loadLesson(lesson);  // ❌ This method doesn't exist
 ```
 
 ### Performance Optimization
