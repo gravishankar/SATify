@@ -489,11 +489,12 @@ class EnhancedCreatorStudio {
     openFullPreview() {
         const lesson = this.getLessonFromForm();
 
-        // Save to localStorage for preview
-        localStorage.setItem('preview_lesson', JSON.stringify(lesson));
+        // Save to localStorage for preview (same keys as previewLesson function)
+        localStorage.setItem('preview_lesson_data', JSON.stringify(lesson));
+        localStorage.setItem('preview_lesson_id', lesson.id);
 
         // Open preview in new window
-        window.open('/preview-lesson.html', '_blank', 'width=1200,height=800');
+        window.open('/preview-lesson.html', 'lesson-preview', 'width=1200,height=800');
     }
 
     setupUnloadWarning() {
