@@ -596,6 +596,11 @@ class LessonContentRenderer {
 
     renderProgressiveChoices(choices, containerId) {
         const { colors, spacing, borderRadius } = this.seaTheme;
+
+        if (!choices || typeof choices !== 'object') {
+            return '<p style="color: #94a3b8; font-style: italic;">No choices available</p>';
+        }
+
         let html = `
             <div style="
                 display: grid;
@@ -715,13 +720,13 @@ class LessonContentRenderer {
         const { colors, spacing, borderRadius } = this.seaTheme;
         let html = `
             <div style="
-                background: ${colors.seaFoam};
-                border: 1px solid #22c55e;
+                background: ${colors.skyBlue};
+                border: 2px solid ${colors.turquoise};
                 border-radius: ${borderRadius.md};
                 padding: ${spacing.lg};
             ">
                 <h6 style="
-                    color: #166534;
+                    color: ${colors.deepOcean};
                     margin: 0 0 ${spacing.md} 0;
                     font-weight: 600;
                 ">🔍 Analysis Breakdown</h6>

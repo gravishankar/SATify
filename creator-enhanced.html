@@ -435,9 +435,15 @@
         <div class="editor-panel">
             <div class="editor-header">
                 <h1>Lesson Editor</h1>
-                <div class="status-indicator saved" id="statusIndicator">
-                    <span id="statusIcon">🟢</span>
-                    <span id="statusText">All changes saved</span>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div class="status-indicator saved" id="statusIndicator">
+                        <span id="statusIcon">🟢</span>
+                        <span id="statusText">All changes saved</span>
+                    </div>
+                    <button class="btn btn-secondary" onclick="backupToGitHub()" id="backupButton" style="padding: 0.5rem 1rem;">
+                        ☁️ Backup to GitHub
+                    </button>
+                    <div id="lastBackupTime" style="font-size: 0.85rem; color: #64748b;"></div>
                 </div>
             </div>
 
@@ -513,6 +519,6 @@
         </div>
     </div>
 
-    <script src="js/creator-enhanced.js"></script>
+    <script src="js/creator-enhanced.js?v=2"></script>
 </body>
 </html>

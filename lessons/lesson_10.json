@@ -129,7 +129,7 @@
             "example": {
               "sentence": "The manager's explanation was ________: she outlined all the procedures, clarified each step, and answered every question.",
               "clues": "Examples of being clear: outlined, clarified, answered",
-              "word_meaning": "thorough," "comprehensive," or "clear"
+              "word_meaning": "thorough, comprehensive, or clear"
             }
           },
           {
@@ -139,7 +139,7 @@
             "example": {
               "sentence": "Despite its forbidding appearance, the mansion held fascination.",
               "clue": "'Despite' signals contrast—looks forbidding BUT creates fascination",
-              "word_meaning": "scary," "unwelcoming," "threatening"
+              "word_meaning": "scary, unwelcoming, threatening"
             }
           },
           {
@@ -149,7 +149,7 @@
             "example": {
               "sentence": "The data was ________; as a result, the team had to revise all their conclusions.",
               "clue": "Effect: had to revise conclusions → Cause: data was wrong/contradictory",
-              "word_meaning": "contradictory," "flawed," "erroneous"
+              "word_meaning": "contradictory, flawed, erroneous"
             }
           },
           {
@@ -159,7 +159,7 @@
             "example": {
               "sentence": "The student's ________ approach to studying impressed even the most demanding professors.",
               "clue": "Positive tone ('impressed'), formal context (professors) → needs positive, academic word",
-              "word_meaning": "rigorous," "meticulous," "systematic" (NOT "cool" or "awesome")"
+              "word_meaning": "rigorous, meticulous, systematic (NOT cool or awesome)"
             }
           }
         ],
@@ -264,8 +264,8 @@
             },
             "example": {
               "context": "Praising someone's work ethic",
-              "wrong": "obsessive" (negative connotation),
-              "right": "dedicated" (positive connotation)"
+              "wrong": "obsessive (negative connotation)",
+              "right": "dedicated (positive connotation)"
             }
           }
         ],
@@ -557,7 +557,7 @@
   },
   "metadata": {
     "created_date": "2024-12-01",
-    "last_updated": "2025-01-02",
+    "last_updated": "2024-12-01",
     "content_version": "2.0",
     "estimated_completion_time": 1680,
     "prerequisite_skills": ["lesson_09"],

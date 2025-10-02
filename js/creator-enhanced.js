@@ -32,7 +32,61 @@ class EnhancedCreatorStudio {
         // Setup beforeunload warning
         this.setupUnloadWarning();
 
+        // Load last backup time
+        this.updateLastBackupTime();
+
         console.log('✅ Enhanced Creator Studio ready');
+    }
+
+    async updateLastBackupTime() {
+        try {
+            const response = await fetch('/api/git-backup-status', {
+                cache: 'no-cache'
+            });
+
+            const timeDisplay = document.getElementById('lastBackupTime');
+            if (!timeDisplay) return;
+
+            if (!response.ok) {
+                // Server doesn't support backup status yet
+                timeDisplay.textContent = '';
+                return;
+            }
+
+            // Check if response is JSON
+            const contentType = response.headers.get('content-type');
+            if (!contentType || !contentType.includes('application/json')) {
+                timeDisplay.textContent = '';
+                return;
+            }
+
+            const data = await response.json();
+
+            if (data.lastBackup) {
+                const backupDate = new Date(data.lastBackup);
+                if (isNaN(backupDate.getTime())) {
+                    timeDisplay.textContent = 'Invalid backup date';
+                    return;
+                }
+                const timeAgo = this.getTimeAgo(backupDate);
+                timeDisplay.textContent = `Last backup: ${timeAgo}`;
+            } else {
+                timeDisplay.textContent = 'No backups yet';
+            }
+        } catch (error) {
+            console.error('Error getting backup status:', error);
+            const timeDisplay = document.getElementById('lastBackupTime');
+            if (timeDisplay) timeDisplay.textContent = '';
+        }
+    }
+
+    getTimeAgo(date) {
+        const seconds = Math.floor((new Date() - date) / 1000);
+
+        if (seconds < 60) return 'just now';
+        if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
+        if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`;
+        return `${Math.floor(seconds / 86400)}d ago`;
     }
 
     async loadLessons() {
@@ -63,6 +117,10 @@ class EnhancedCreatorStudio {
         try {
             this.updateStatus('loading', 'Loading lesson...');
 
+            // Find the lesson metadata from manifest
+            const lessonMeta = this.lessons.find(l => l.id === lessonId);
+            const filepath = lessonMeta?.filepath || `lessons/${lessonId}.json`;
+
             // Try to load draft first, fallback to published
             let lessonData;
             try {
@@ -74,10 +132,10 @@ class EnhancedCreatorStudio {
                     throw new Error('No draft found');
                 }
             } catch {
-                // Load published version
-                const response = await fetch(`lessons/${lessonId}.json`);
+                // Load published version using filepath from manifest
+                const response = await fetch(filepath);
                 lessonData = await response.json();
-                console.log(`📚 Loaded published version of ${lessonId}`);
+                console.log(`📚 Loaded published version of ${lessonId} from ${filepath}`);
             }
 
             this.currentLesson = lessonData;
@@ -836,5 +894,38 @@ function previewLesson() {
 function requestPublish() {
     if (confirm('Request publish? This will send your draft for admin approval.')) {
         alert('Publish request submitted! Admin will review.');
+    }
+}
+
+async function backupToGitHub() {
+    const button = document.getElementById('backupButton');
+    const originalText = button.innerHTML;
+
+    try {
+        button.disabled = true;
+        button.innerHTML = '⏳ Backing up...';
+
+        const response = await fetch('/api/git-backup-drafts', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
+        });
+
+        const data = await response.json();
+
+        if (data.committed) {
+            alert(`✅ Drafts backed up to GitHub!\n\nCommitted at: ${data.timestamp}`);
+        } else {
+            alert('📭 No changes to backup');
+        }
+
+        // Update last backup time
+        studio.updateLastBackupTime();
+
+    } catch (error) {
+        console.error('Backup error:', error);
+        alert(`❌ Backup failed: ${error.message}`);
+    } finally {
+        button.disabled = false;
+        button.innerHTML = originalText;
     }
 }

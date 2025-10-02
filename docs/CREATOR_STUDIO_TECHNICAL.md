@@ -268,6 +268,77 @@ Save lesson draft with automatic version snapshot.
 }
 ```
 
+#### `POST /api/git-backup-drafts`
+Backup all draft lessons to GitHub repository.
+
+**Purpose**: Creates a Git commit with all changes in `lessons/drafts/` folder and pushes to remote repository.
+
+**Request**: No body required (POST only)
+
+**Response**:
+```json
+{
+  "success": true,
+  "message": "Drafts backed up to GitHub successfully",
+  "committed": true,
+  "timestamp": "Oct 2, 2025, 03:45 PM"
+}
+```
+
+**Response (no changes)**:
+```json
+{
+  "success": true,
+  "message": "No draft changes to backup",
+  "committed": false
+}
+```
+
+**Error Response**:
+```json
+{
+  "error": "Failed to backup drafts to GitHub",
+  "details": "error message"
+}
+```
+
+**Implementation Details**:
+- Checks for uncommitted changes with `git status --porcelain lessons/drafts/`
+- Only commits if changes exist
+- Commit message includes timestamp and Claude Code attribution
+- Automatically pushes to `origin main` branch
+- Handles "nothing to commit" gracefully
+
+#### `GET /api/git-backup-status`
+Get the timestamp of the last Git backup.
+
+**Purpose**: Retrieves the last commit time that modified the `lessons/drafts/` folder.
+
+**Request**: No parameters
+
+**Response**:
+```json
+{
+  "lastBackup": "2025-10-02 15:45:23 -0400",
+  "commitMessage": "Backup lesson drafts - Oct 2, 2025, 03:45 PM",
+  "message": "Backup status retrieved"
+}
+```
+
+**Response (no backups)**:
+```json
+{
+  "lastBackup": null,
+  "message": "No backup commits found"
+}
+```
+
+**Implementation Details**:
+- Uses `git log -1 --format="%ai|%s" -- lessons/drafts/`
+- Parses timestamp and commit message
+- Returns null if no backup commits exist
+- Client displays time in "X ago" format (e.g., "5m ago", "2h ago")
+
 **Implementation**:
 ```javascript
 app.post('/api/save-draft', async (req, res) => {
@@ -646,6 +717,18 @@ SATify/
                             ▼
                   Version Snapshot Created
                             │
+                ┌───────────┴───────────┐
+                │                       │
+                ▼                       ▼
+        Hourly Auto-Backup        Manual Backup
+        to GitHub (every 1h)      (☁️ Button)
+                │                       │
+                └───────────┬───────────┘
+                            │
+                            ▼
+                  Git Commit & Push
+                  (Remote Backup)
+                            │
                             ▼
 ┌─────────────────────────────────────────────────────────────┐
 │                   ADMIN REVIEW                              │
@@ -741,7 +824,80 @@ PENDING → REVIEWING → APPROVING → PUBLISHED
 - **Retention**: Indefinite
 - **Recovery**: Admin can restore specific version
 
-#### Layer 4: Pre-Publish Backups
+#### Layer 4: Git Backup to GitHub
+- **Purpose**: Remote backup protection against hardware failure or computer loss
+- **Trigger**:
+  - **Automatic**: Every hour (background task)
+  - **Manual**: Click "☁️ Backup to GitHub" button
+- **Storage**: GitHub repository (`origin main` branch)
+- **Scope**: All files in `lessons/drafts/` folder
+- **Retention**: Indefinite (Git history)
+- **Recovery**: Git restore or clone repository
+- **Implementation**:
+  ```javascript
+  // Hourly auto-backup (server.js)
+  let backupInterval;
+
+  function startAutoBackup() {
+      console.log('🕐 Starting hourly auto-backup to GitHub...');
+
+      backupInterval = setInterval(async () => {
+          const { stdout: statusOutput } = await execAsync('git status --porcelain lessons/drafts/');
+
+          if (statusOutput && statusOutput.trim().length > 0) {
+              await execAsync('git add lessons/drafts/');
+
+              const timestamp = new Date().toLocaleString('en-US', {
+                  timeZone: 'America/New_York',
+                  year: 'numeric',
+                  month: 'short',
+                  day: 'numeric',
+                  hour: '2-digit',
+                  minute: '2-digit'
+              });
+
+              const commitMessage = `Auto-backup lesson drafts - ${timestamp}
+
+  Hourly automatic backup of lesson drafts and version snapshots.
+
+  🤖 Generated with [Claude Code](https://claude.ai/code)
+
+  Co-Authored-By: Claude <noreply@anthropic.com>`;
+
+              await execAsync(`git commit -m "${commitMessage}"`);
+              await execAsync('git push origin main');
+
+              console.log(`✅ Auto-backup completed at ${timestamp}`);
+          }
+      }, 3600000); // 1 hour = 3600000ms
+  }
+
+  // Start on server boot
+  app.listen(PORT, () => {
+      console.log(`Creator Studio Server running on port ${PORT}`);
+      startAutoBackup();
+  });
+
+  // Cleanup on shutdown
+  process.on('SIGTERM', () => {
+      if (backupInterval) clearInterval(backupInterval);
+      process.exit(0);
+  });
+  ```
+- **UI Integration**:
+  - Last backup time displayed in editor header
+  - Time formatted as relative ("5m ago", "2h ago", "3d ago")
+  - Manual backup button with loading state
+  - Success/error alerts on manual backup
+- **Benefits**:
+  - ✅ Protects against hard drive failure
+  - ✅ Protects against computer theft/loss
+  - ✅ Enables recovery on any machine with Git access
+  - ✅ Complete history of all draft changes
+  - ✅ No action required (hourly automatic)
+  - ✅ On-demand backup available (manual button)
+
+#### Layer 5: Pre-Publish Backups
 - **Purpose**: One-click rollback
 - **Trigger**: Before every publish
 - **Storage**: `lessons/backup/published/lesson_XX_backup.json`

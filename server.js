@@ -389,21 +389,180 @@ app.post('/api/reject-lesson', async (req, res) => {
     }
 });
 
+// Git backup endpoint - commit all drafts to GitHub
+app.post('/api/git-backup-drafts', async (req, res) => {
+    try {
+        console.log('☁️ Backing up drafts to GitHub...');
+
+        // Check if there are any changes to commit
+        const { stdout: statusOutput } = await execAsync('git status --porcelain lessons/drafts/');
+
+        if (!statusOutput || statusOutput.trim().length === 0) {
+            console.log('📭 No draft changes to commit');
+            return res.json({
+                success: true,
+                message: 'No draft changes to backup',
+                committed: false
+            });
+        }
+
+        console.log('📝 Found draft changes to commit');
+
+        // Add all draft files
+        await execAsync('git add lessons/drafts/');
+        console.log('✅ Added draft files to git');
+
+        // Create commit with timestamp
+        const timestamp = new Date().toLocaleString('en-US', {
+            timeZone: 'America/New_York',
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+
+        const commitMessage = `Backup lesson drafts - ${timestamp}
+
+Auto-backup of lesson drafts and version snapshots.
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>`;
+
+        await execAsync(`git commit -m "${commitMessage}"`);
+        console.log('✅ Created git commit');
+
+        // Push to GitHub
+        await execAsync('git push origin main');
+        console.log('✅ Pushed to GitHub');
+
+        res.json({
+            success: true,
+            message: 'Drafts backed up to GitHub successfully',
+            committed: true,
+            timestamp
+        });
+
+    } catch (error) {
+        console.error('❌ Error backing up drafts:', error);
+
+        // Check if it's a "nothing to commit" error (which is actually OK)
+        if (error.message.includes('nothing to commit')) {
+            return res.json({
+                success: true,
+                message: 'No changes to backup',
+                committed: false
+            });
+        }
+
+        res.status(500).json({
+            error: 'Failed to backup drafts to GitHub',
+            details: error.message
+        });
+    }
+});
+
+// Get last backup time
+app.get('/api/git-backup-status', async (req, res) => {
+    try {
+        // Get last commit that modified drafts folder
+        const { stdout } = await execAsync('git log -1 --format="%ai|%s" -- lessons/drafts/');
+
+        if (!stdout || stdout.trim().length === 0) {
+            return res.json({
+                lastBackup: null,
+                message: 'No backup commits found'
+            });
+        }
+
+        const [timestamp, message] = stdout.trim().split('|');
+
+        res.json({
+            lastBackup: timestamp,
+            commitMessage: message,
+            message: 'Backup status retrieved'
+        });
+
+    } catch (error) {
+        console.error('Error getting backup status:', error);
+        res.json({
+            lastBackup: null,
+            error: error.message
+        });
+    }
+});
+
+// Hourly auto-backup of drafts to GitHub
+let backupInterval;
+
+function startAutoBackup() {
+    console.log('🕐 Starting hourly auto-backup to GitHub...');
+
+    // Run backup every hour (3600000 ms)
+    backupInterval = setInterval(async () => {
+        try {
+            console.log('⏰ Running scheduled backup...');
+
+            const { stdout: statusOutput } = await execAsync('git status --porcelain lessons/drafts/');
+
+            if (statusOutput && statusOutput.trim().length > 0) {
+                await execAsync('git add lessons/drafts/');
+
+                const timestamp = new Date().toLocaleString('en-US', {
+                    timeZone: 'America/New_York',
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+
+                const commitMessage = `Auto-backup lesson drafts - ${timestamp}
+
+Hourly automatic backup of lesson drafts and version snapshots.
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>`;
+
+                await execAsync(`git commit -m "${commitMessage}"`);
+                await execAsync('git push origin main');
+
+                console.log(`✅ Auto-backup completed at ${timestamp}`);
+            } else {
+                console.log('📭 No changes to backup');
+            }
+        } catch (error) {
+            if (!error.message.includes('nothing to commit')) {
+                console.error('❌ Auto-backup error:', error.message);
+            }
+        }
+    }, 3600000); // 1 hour
+
+    console.log('✅ Auto-backup scheduled (runs every hour)');
+}
+
 // Start server
 app.listen(PORT, () => {
     console.log(`Creator Studio Server running on port ${PORT}`);
     console.log(`Health check: http://localhost:${PORT}/api/health`);
     console.log('Ready to handle lesson publishing requests');
     console.log('📝 Draft API endpoints available');
+
+    // Start auto-backup
+    startAutoBackup();
 });
 
 // Graceful shutdown
 process.on('SIGTERM', () => {
     console.log('Received SIGTERM, shutting down gracefully');
+    if (backupInterval) clearInterval(backupInterval);
     process.exit(0);
 });
 
 process.on('SIGINT', () => {
     console.log('Received SIGINT, shutting down gracefully');
+    if (backupInterval) clearInterval(backupInterval);
     process.exit(0);
 });

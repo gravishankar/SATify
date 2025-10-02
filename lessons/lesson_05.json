@@ -388,6 +388,34 @@
           "practice_type": "independent"
         }
       ]
+    },
+    {
+      "id": "slide_11",
+      "type": "concept_reinforcement",
+      "title": "Mastery Complete",
+      "duration_estimate": 120,
+      "content": {
+        "heading": "You've Mastered Transitions!",
+        "key_points": [
+          "You can now identify logical relationships between ideas",
+          "You predict the category before looking at choices",
+          "You find specific flaws in wrong answers",
+          "You choose the most precise transition every time"
+        ],
+        "practice_transition": {
+          "text": "Ready to practice with real SAT questions?",
+          "button_text": "Start Practice Questions",
+          "skill_code": "TRA"
+        }
+      },
+      "interactions": [
+        {
+          "type": "completion_celebration",
+          "content": {
+            "message": "Excellent work! You've completed the Transitions lesson."
+          }
+        }
+      ]
     }
   ],
   "practice_questions": [

@@ -477,7 +477,7 @@ The Full Preview gives you a complete view of your lesson exactly as students wi
 
 ## Saving Your Work
 
-### Three Ways Your Work is Protected
+### Four Ways Your Work is Protected
 
 #### 1. Auto-Save (Every 30 seconds)
 - Saves to your **browser** automatically
@@ -499,15 +499,27 @@ The Full Preview gives you a complete view of your lesson exactly as students wi
 - Admin can restore any version
 - Unlimited retention
 
+#### 4. Git Backup to GitHub (Automatic + Manual)
+- **Automatic hourly backup** of all drafts to GitHub repository
+- **Manual backup button** for immediate backup on demand
+- Protects against hard drive failure or computer loss
+- Remote backup ensures your work is never lost
+- Last backup time displayed in the editor header
+- **How to use**:
+  - Click "☁️ Backup to GitHub" button for immediate backup
+  - Or wait for automatic hourly backup
+  - Check "Last backup: X ago" to see when last backed up
+
 ### When to Save
 
 | Situation | Action |
 |-----------|--------|
 | Made significant changes | Click "💾 Save Draft" |
 | Taking a break | Click "💾 Save Draft" |
-| Finished editing | Click "💾 Save Draft" |
+| Finished editing | Click "💾 Save Draft" + "☁️ Backup to GitHub" |
 | About to close browser | Click "💾 Save Draft" |
 | Minor changes | Wait for auto-save (30s) |
+| Want remote backup NOW | Click "☁️ Backup to GitHub" |
 
 ### Checking Save Status
 
