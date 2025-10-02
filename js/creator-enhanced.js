@@ -52,14 +52,14 @@ class EnhancedCreatorStudio {
         if (!lessonList) return;
 
         lessonList.innerHTML = this.lessons.map(lesson => `
-            <li class="lesson-item" onclick="studio.loadLesson('${lesson.id}')">
+            <li class="lesson-item" onclick="studio.loadLesson('${lesson.id}', event)">
                 <div class="lesson-title">${lesson.title}</div>
                 <div class="lesson-meta">${lesson.skill_codes.join(', ')} • ${lesson.slide_count} slides</div>
             </li>
         `).join('');
     }
 
-    async loadLesson(lessonId) {
+    async loadLesson(lessonId, event) {
         try {
             this.updateStatus('loading', 'Loading lesson...');
 
@@ -85,9 +85,11 @@ class EnhancedCreatorStudio {
             this.updatePreview();
             this.updateStatus('saved', 'Lesson loaded');
 
-            // Mark active in list
-            document.querySelectorAll('.lesson-item').forEach(item => item.classList.remove('active'));
-            event.target.closest('.lesson-item')?.classList.add('active');
+            // Mark active in list (if event is provided)
+            if (event && event.target) {
+                document.querySelectorAll('.lesson-item').forEach(item => item.classList.remove('active'));
+                event.target.closest('.lesson-item')?.classList.add('active');
+            }
 
         } catch (error) {
             console.error('Error loading lesson:', error);
