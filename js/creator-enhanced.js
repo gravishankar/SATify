@@ -113,9 +113,18 @@ class EnhancedCreatorStudio {
         if (!container) return;
 
         container.innerHTML = slides.map((slide, index) => `
-            <div class="slide-editor" data-slide-index="${index}">
+            <div class="slide-editor"
+                 data-slide-index="${index}"
+                 draggable="true"
+                 ondragstart="studio.handleDragStart(event, ${index})"
+                 ondragover="studio.handleDragOver(event)"
+                 ondrop="studio.handleDrop(event, ${index})"
+                 ondragend="studio.handleDragEnd(event)">
                 <div class="slide-header">
-                    <span class="slide-number">Slide ${index + 1}: ${slide.title || 'Untitled'}</span>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span class="drag-handle" style="cursor: grab; color: #94a3b8; font-size: 1.2rem;">☰</span>
+                        <span class="slide-number">Slide ${index + 1}: ${slide.title || 'Untitled'}</span>
+                    </div>
                     <div class="slide-actions">
                         <button class="slide-btn" onclick="studio.editSlide(${index})">Edit</button>
                         <button class="slide-btn" onclick="studio.deleteSlide(${index})">Delete</button>
@@ -126,6 +135,66 @@ class EnhancedCreatorStudio {
                 </div>
             </div>
         `).join('');
+    }
+
+    // Drag and drop handlers
+    handleDragStart(event, index) {
+        this.draggedIndex = index;
+        event.currentTarget.style.opacity = '0.4';
+        event.dataTransfer.effectAllowed = 'move';
+        event.dataTransfer.setData('text/html', event.currentTarget.innerHTML);
+    }
+
+    handleDragOver(event) {
+        if (event.preventDefault) {
+            event.preventDefault();
+        }
+        event.dataTransfer.dropEffect = 'move';
+        event.currentTarget.style.borderTop = '3px solid #0369a1';
+        return false;
+    }
+
+    handleDrop(event, targetIndex) {
+        if (event.stopPropagation) {
+            event.stopPropagation();
+        }
+
+        event.currentTarget.style.borderTop = '';
+
+        if (this.draggedIndex !== targetIndex && this.draggedIndex !== undefined) {
+            // Reorder slides
+            const slides = this.currentLesson.slides;
+            const draggedSlide = slides[this.draggedIndex];
+
+            // Remove from old position
+            slides.splice(this.draggedIndex, 1);
+
+            // Insert at new position
+            if (this.draggedIndex < targetIndex) {
+                slides.splice(targetIndex - 1, 0, draggedSlide);
+            } else {
+                slides.splice(targetIndex, 0, draggedSlide);
+            }
+
+            // Update UI
+            this.renderSlides(slides);
+            this.hasUnsavedChanges = true;
+            this.updateStatus('unsaved', 'Unsaved changes - slides reordered');
+            this.updatePreview();
+        }
+
+        return false;
+    }
+
+    handleDragEnd(event) {
+        event.currentTarget.style.opacity = '1';
+
+        // Remove all border highlights
+        document.querySelectorAll('.slide-editor').forEach(slide => {
+            slide.style.borderTop = '';
+        });
+
+        this.draggedIndex = undefined;
     }
 
     setupChangeListeners() {
@@ -291,26 +360,138 @@ class EnhancedCreatorStudio {
         const lesson = this.getLessonFromForm();
 
         previewContent.innerHTML = `
-            <h3>${lesson.title || 'Untitled Lesson'}</h3>
-            <p style="color: #64748b; margin-bottom: 1rem;">${lesson.subtitle || ''}</p>
-
-            <div style="margin-bottom: 1rem;">
-                <strong style="color: #0369a1;">Level:</strong> ${lesson.level || 'Not set'}<br>
-                <strong style="color: #0369a1;">Duration:</strong> ${lesson.duration || 'Not set'}<br>
-                <strong style="color: #0369a1;">Skills:</strong> ${lesson.skill_codes.join(', ') || 'None'}
+            <div style="margin-bottom: 1.5rem;">
+                <h3 style="color: #0369a1; font-size: 1.3rem; margin-bottom: 0.5rem;">${lesson.title || 'Untitled Lesson'}</h3>
+                <p style="color: #64748b; font-size: 0.95rem;">${lesson.subtitle || ''}</p>
             </div>
 
-            <div style="margin-top: 1.5rem;">
-                <strong style="color: #0369a1;">Learning Objectives:</strong>
-                <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
-                    ${lesson.learning_objectives.map(obj => `<li style="margin: 0.25rem 0;">${obj}</li>`).join('')}
+            <div style="background: #f8fafc; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; border-left: 3px solid #0369a1;">
+                <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 0.5rem;">
+                    <strong>Level:</strong> ${lesson.level || 'Not set'}
+                </div>
+                <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 0.5rem;">
+                    <strong>Duration:</strong> ${lesson.duration || 'Not set'}
+                </div>
+                <div style="font-size: 0.85rem; color: #64748b;">
+                    <strong>Skills:</strong> ${lesson.skill_codes.join(', ') || 'None'}
+                </div>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <strong style="color: #0369a1; font-size: 1rem; display: block; margin-bottom: 0.75rem;">🎯 Learning Objectives</strong>
+                <ul style="margin: 0; padding-left: 1.5rem; color: #475569;">
+                    ${lesson.learning_objectives.map(obj => `<li style="margin: 0.5rem 0; line-height: 1.5;">${obj}</li>`).join('')}
                 </ul>
             </div>
 
-            <div style="margin-top: 1.5rem;">
-                <strong style="color: #0369a1;">Slides:</strong> ${lesson.slides?.length || 0}
+            <div style="margin-bottom: 1.5rem;">
+                <strong style="color: #0369a1; font-size: 1rem; display: block; margin-bottom: 0.75rem;">📑 Slides (${lesson.slides?.length || 0})</strong>
+                ${this.renderPreviewSlides(lesson.slides || [])}
+            </div>
+
+            <div style="text-align: center; padding: 1.5rem; background: #e0f2fe; border-radius: 8px; margin-top: 1.5rem;">
+                <button onclick="studio.openFullPreview()" style="background: #0369a1; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.95rem;">
+                    🚀 Open Full Preview
+                </button>
             </div>
         `;
+    }
+
+    renderPreviewSlides(slides) {
+        if (!slides || slides.length === 0) {
+            return '<p style="color: #94a3b8; font-style: italic;">No slides yet</p>';
+        }
+
+        return slides.map((slide, index) => {
+            const typeIcons = {
+                'strategy_teaching': '📚',
+                'worked_example': '🎯',
+                'concept_teaching': '💡',
+                'practice_prompt': '✏️',
+                'learning_objectives': '🎯',
+                'introduction': '👋',
+                'content': '📄'
+            };
+
+            const icon = typeIcons[slide.type] || '📄';
+
+            return `
+                <div style="background: white; border: 1px solid #cbd5e1; border-radius: 6px; padding: 1rem; margin-bottom: 0.75rem; transition: all 0.2s;"
+                     onmouseover="this.style.borderColor='#0369a1'; this.style.boxShadow='0 2px 4px rgba(3,105,161,0.1)'"
+                     onmouseout="this.style.borderColor='#cbd5e1'; this.style.boxShadow='none'">
+                    <div style="display: flex; justify-content: space-between; align-items: start;">
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600; color: #1e293b; margin-bottom: 0.25rem;">
+                                ${icon} Slide ${index + 1}: ${slide.title || 'Untitled'}
+                            </div>
+                            <div style="font-size: 0.8rem; color: #64748b;">
+                                Type: ${this.formatSlideType(slide.type)}
+                            </div>
+                        </div>
+                        <button onclick="studio.editSlide(${index})" style="background: #e2e8f0; border: none; padding: 0.5rem 0.75rem; border-radius: 4px; cursor: pointer; font-size: 0.85rem;">
+                            Edit
+                        </button>
+                    </div>
+                    ${this.renderSlidePreviewContent(slide)}
+                </div>
+            `;
+        }).join('');
+    }
+
+    formatSlideType(type) {
+        const typeNames = {
+            'strategy_teaching': 'Strategy Teaching',
+            'worked_example': 'Worked Example',
+            'concept_teaching': 'Concept Teaching',
+            'practice_prompt': 'Practice Prompt',
+            'learning_objectives': 'Learning Objectives',
+            'introduction': 'Introduction',
+            'content': 'Content'
+        };
+        return typeNames[type] || type;
+    }
+
+    renderSlidePreviewContent(slide) {
+        const content = slide.content || {};
+
+        switch(slide.type) {
+            case 'strategy_teaching':
+                return `
+                    <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid #e2e8f0; font-size: 0.85rem;">
+                        <div style="color: #64748b;"><strong>Steps:</strong> ${content.steps?.length || 0}</div>
+                        ${content.main_heading ? `<div style="color: #64748b; margin-top: 0.25rem;"><strong>Heading:</strong> ${content.main_heading}</div>` : ''}
+                    </div>
+                `;
+
+            case 'worked_example':
+                return `
+                    <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid #e2e8f0; font-size: 0.85rem;">
+                        <div style="color: #64748b;"><strong>Choices:</strong> ${content.choices?.length || 0}</div>
+                        ${content.correct_answer ? `<div style="color: #10b981; margin-top: 0.25rem;"><strong>Answer:</strong> ${content.correct_answer}</div>` : ''}
+                    </div>
+                `;
+
+            case 'concept_teaching':
+                return `
+                    <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid #e2e8f0; font-size: 0.85rem;">
+                        ${content.main_concept ? `<div style="color: #64748b;"><strong>Concept:</strong> ${content.main_concept}</div>` : ''}
+                        <div style="color: #64748b; margin-top: 0.25rem;"><strong>Points:</strong> ${content.bullet_points?.length || 0}</div>
+                    </div>
+                `;
+
+            default:
+                return '';
+        }
+    }
+
+    openFullPreview() {
+        const lesson = this.getLessonFromForm();
+
+        // Save to localStorage for preview
+        localStorage.setItem('preview_lesson', JSON.stringify(lesson));
+
+        // Open preview in new window
+        window.open('/preview-lesson.html', '_blank', 'width=1200,height=800');
     }
 
     setupUnloadWarning() {

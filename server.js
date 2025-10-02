@@ -352,6 +352,43 @@ app.post('/api/rollback-lesson', async (req, res) => {
     }
 });
 
+// Reject lesson endpoint
+app.post('/api/reject-lesson', async (req, res) => {
+    try {
+        console.log('❌ Rejecting lesson...');
+        const { lessonId, reason, timestamp } = req.body;
+
+        // Create rejections directory if it doesn't exist
+        const rejectionsDir = path.join(__dirname, 'lessons', 'drafts', 'rejections');
+        await fs.mkdir(rejectionsDir, { recursive: true });
+
+        // Save rejection note
+        const rejectionData = {
+            lessonId,
+            reason,
+            timestamp,
+            reviewer: 'admin'
+        };
+
+        const rejectionPath = path.join(rejectionsDir, `${lessonId}_rejection.json`);
+        await fs.writeFile(rejectionPath, JSON.stringify(rejectionData, null, 2));
+
+        console.log(`✅ Rejection recorded: ${rejectionPath}`);
+
+        res.json({
+            success: true,
+            message: 'Rejection recorded successfully',
+            rejectionPath
+        });
+    } catch (error) {
+        console.error('❌ Error recording rejection:', error);
+        res.status(500).json({
+            error: 'Failed to record rejection',
+            details: error.message
+        });
+    }
+});
+
 // Start server
 app.listen(PORT, () => {
     console.log(`Creator Studio Server running on port ${PORT}`);
