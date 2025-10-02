@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0369a1">
+    <title>Lesson Preview - SATify</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .preview-header {
+            background: linear-gradient(135deg, #0369a1 0%, #025a85 100%);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .preview-header h1 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .preview-badge {
+            background: #fbbf24;
+            color: #78350f;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        .preview-notice {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            margin: 1rem;
+            border-radius: 4px;
+        }
+
+        .preview-notice strong {
+            color: #92400e;
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-header">
+        <h1>🔍 Lesson Preview Mode</h1>
+        <div class="preview-badge">DRAFT PREVIEW</div>
+    </div>
+
+    <div class="preview-notice">
+        <strong>⚠️ Preview Mode:</strong> You're viewing a draft version of this lesson. Changes shown here are not yet published to students.
+    </div>
+
+    <!-- Lesson Content Container -->
+    <div id="lesson-container"></div>
+
+    <!-- Load lesson renderer -->
+    <script src="js/lesson-content-renderer.js"></script>
+    <script>
+        // Load lesson data from localStorage
+        window.addEventListener('DOMContentLoaded', () => {
+            try {
+                const lessonData = localStorage.getItem('preview_lesson_data');
+                const lessonId = localStorage.getItem('preview_lesson_id');
+
+                if (!lessonData) {
+                    document.getElementById('lesson-container').innerHTML = `
+                        <div style="text-align: center; padding: 4rem; color: #64748b;">
+                            <h2>❌ No Preview Data</h2>
+                            <p>Please open preview from the Creator Studio.</p>
+                            <button onclick="window.close()" style="margin-top: 1rem; padding: 0.75rem 1.5rem; background: #0369a1; color: white; border: none; border-radius: 6px; cursor: pointer;">
+                                Close Preview
+                            </button>
+                        </div>
+                    `;
+                    return;
+                }
+
+                const lesson = JSON.parse(lessonData);
+                console.log('📝 Loaded preview lesson:', lesson);
+
+                // Create a lesson renderer instance
+                const renderer = new LessonContentRenderer('lesson-container');
+
+                // Load the lesson
+                renderer.loadLesson(lesson);
+
+                // Update page title
+                document.title = `Preview: ${lesson.title} - SATify`;
+
+                console.log('✅ Preview lesson loaded successfully');
+            } catch (error) {
+                console.error('❌ Error loading preview:', error);
+                document.getElementById('lesson-container').innerHTML = `
+                    <div style="text-align: center; padding: 4rem; color: #ef4444;">
+                        <h2>❌ Preview Error</h2>
+                        <p>${error.message}</p>
+                        <button onclick="window.close()" style="margin-top: 1rem; padding: 0.75rem 1.5rem; background: #ef4444; color: white; border: none; border-radius: 6px; cursor: pointer;">
+                            Close Preview
+                        </button>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>

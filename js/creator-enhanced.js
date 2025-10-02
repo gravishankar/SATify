@@ -814,7 +814,20 @@ function saveDraft() {
 }
 
 function previewLesson() {
-    window.open(`/index.html?preview=${studio.currentLesson?.id}`, '_blank');
+    if (!studio.currentLesson || !studio.currentLesson.id) {
+        alert('Please load or create a lesson first!');
+        return;
+    }
+
+    // Get current lesson state from form
+    const lesson = studio.getLessonFromForm();
+
+    // Save to localStorage for preview
+    localStorage.setItem('preview_lesson_data', JSON.stringify(lesson));
+    localStorage.setItem('preview_lesson_id', lesson.id);
+
+    // Open preview in new window
+    window.open('/preview-lesson.html', 'lesson-preview', 'width=1200,height=800');
 }
 
 function requestPublish() {
