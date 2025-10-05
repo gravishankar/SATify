@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SATify Creator Studio - GitHub Edition</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #f8fafc;
+        }
+
+        .creator-container {
+            display: grid;
+            grid-template-columns: 250px 1fr 400px;
+            height: 100vh;
+            gap: 0;
+        }
+
+        /* Authentication Overlay */
+        .auth-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .auth-modal {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .auth-modal h2 {
+            color: #0369a1;
+            margin-bottom: 1rem;
+        }
+
+        .auth-modal p {
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .auth-modal ol {
+            margin: 1rem 0 1rem 1.5rem;
+            color: #475569;
+        }
+
+        .auth-modal li {
+            margin: 0.5rem 0;
+        }
+
+        .auth-modal button {
+            width: 100%;
+            padding: 0.75rem;
+            background: #0369a1;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .auth-modal button:hover {
+            background: #025a85;
+        }
+
+        /* Left Sidebar - Lesson Selector */
+        .lesson-sidebar {
+            background: #1e293b;
+            color: white;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+
+        .lesson-sidebar h2 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #0369a1;
+        }
+
+        .lesson-list {
+            list-style: none;
+        }
+
+        .lesson-item {
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            background: #334155;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .lesson-item:hover {
+            background: #475569;
+            transform: translateX(4px);
+        }
+
+        .lesson-item.active {
+            background: #0369a1;
+        }
+
+        .lesson-item .lesson-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .lesson-item .lesson-meta {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            margin-top: 0.25rem;
+        }
+
+        .new-lesson-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: #10b981;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 1rem;
+        }
+
+        .new-lesson-btn:hover {
+            background: #059669;
+        }
+
+        /* Center - Editor */
+        .editor-panel {
+            background: white;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .editor-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .editor-header h1 {
+            font-size: 1.5rem;
+            color: #1e293b;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .status-indicator.saved {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .status-indicator.saving {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .status-indicator.unsaved {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .form-section {
+            margin-bottom: 2rem;
+        }
+
+        .form-section h3 {
+            font-size: 1.1rem;
+            color: #0369a1;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            font-family: inherit;
+            resize: vertical;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: #0369a1;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #025a85;
+        }
+
+        .btn-secondary {
+            background: #64748b;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #475569;
+        }
+
+        .btn-success {
+            background: #10b981;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #059669;
+        }
+
+        /* Right Sidebar - Preview */
+        .preview-panel {
+            background: #f1f5f9;
+            padding: 1rem;
+            overflow-y: auto;
+            border-left: 1px solid #cbd5e1;
+        }
+
+        .preview-panel h2 {
+            font-size: 1.1rem;
+            color: #0369a1;
+            margin-bottom: 1rem;
+        }
+
+        .preview-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .preview-content h3 {
+            color: #0369a1;
+            margin-bottom: 0.5rem;
+        }
+
+        .preview-content p {
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        .slide-editor {
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: #f8fafc;
+        }
+
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .slide-number {
+            font-weight: 600;
+            color: #0369a1;
+        }
+
+        .slide-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .slide-btn {
+            padding: 0.25rem 0.75rem;
+            background: #e2e8f0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+        .slide-btn:hover {
+            background: #cbd5e1;
+        }
+
+        /* Slide Editor Modal */
+        .slide-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            animation: fadeIn 0.2s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .slide-modal-content {
+            background: white;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            animation: slideUp 0.3s;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .slide-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .slide-modal-header h2 {
+            color: #0369a1;
+            margin: 0;
+            font-size: 1.3rem;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #64748b;
+            cursor: pointer;
+            padding: 0.25rem 0.5rem;
+            transition: all 0.2s;
+        }
+
+        .modal-close:hover {
+            color: #1e293b;
+            transform: scale(1.1);
+        }
+
+        .slide-modal-body {
+            padding: 1.5rem;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .slide-modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            padding: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+            background: #f8fafc;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+
+        .slide-modal-body .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .slide-modal-body .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .slide-modal-body label {
+            display: block;
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .slide-modal-body input[type="text"],
+        .slide-modal-body select,
+        .slide-modal-body textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+
+        .slide-modal-body input[type="text"]:focus,
+        .slide-modal-body select:focus,
+        .slide-modal-body textarea:focus {
+            outline: none;
+            border-color: #0369a1;
+            box-shadow: 0 0 0 3px rgba(3, 105, 161, 0.1);
+        }
+
+        .slide-modal-body textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .slide-modal-body input[readonly] {
+            background: #f1f5f9;
+            color: #64748b;
+            cursor: not-allowed;
+        }
+
+        .slide-modal-body small {
+            display: block;
+            margin-top: 0.25rem;
+            font-size: 0.8rem;
+        }
+
+        .github-badge {
+            position: fixed;
+            bottom: 1rem;
+            left: 1rem;
+            background: #1e293b;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            z-index: 100;
+        }
+
+        .logout-btn {
+            padding: 0.5rem 1rem;
+            background: #dc2626;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+        .logout-btn:hover {
+            background: #b91c1c;
+        }
+    </style>
+</head>
+<body>
+    <div class="creator-container">
+        <!-- Left Sidebar: Lesson Selector -->
+        <div class="lesson-sidebar">
+            <button class="new-lesson-btn" onclick="createNewLesson()">+ New Lesson</button>
+            <h2>📚 Your Lessons</h2>
+            <ul class="lesson-list" id="lessonList">
+                <!-- Populated by JavaScript -->
+            </ul>
+            <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #475569;">
+                <button class="logout-btn" onclick="logoutGitHub()" style="width: 100%;">🔓 Logout</button>
+            </div>
+        </div>
+
+        <!-- Center: Editor -->
+        <div class="editor-panel">
+            <div class="editor-header">
+                <h1>Lesson Editor <span style="font-size: 0.7rem; color: #64748b;">GitHub Edition</span></h1>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div class="status-indicator saved" id="statusIndicator">
+                        <span id="statusIcon">🟢</span>
+                        <span id="statusText">All changes saved</span>
+                    </div>
+                    <div id="lastBackupTime" style="font-size: 0.85rem; color: #64748b;"></div>
+                </div>
+            </div>
+
+            <form id="lessonForm">
+                <!-- Metadata Section -->
+                <div class="form-section">
+                    <h3>📋 Lesson Metadata</h3>
+
+                    <div class="form-group">
+                        <label for="lessonId">Lesson ID</label>
+                        <input type="text" id="lessonId" placeholder="lesson_01" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lessonTitle">Title *</label>
+                        <input type="text" id="lessonTitle" placeholder="Central Ideas & Details" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lessonSubtitle">Subtitle</label>
+                        <input type="text" id="lessonSubtitle" placeholder="Information and Ideas">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lessonLevel">Level</label>
+                        <select id="lessonLevel">
+                            <option value="Foundation">Foundation</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lessonDuration">Duration</label>
+                        <input type="text" id="lessonDuration" placeholder="20-25 min">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="skillCodes">Skill Codes (comma-separated)</label>
+                        <input type="text" id="skillCodes" placeholder="CID, INF">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="learningObjectives">Learning Objectives (one per line)</label>
+                        <textarea id="learningObjectives" rows="4" placeholder="Enter learning objectives, one per line"></textarea>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button type="button" class="btn btn-secondary" onclick="saveDraft()">💾 Commit to GitHub</button>
+                    <button type="button" class="btn btn-primary" onclick="previewLesson()">👁️ Preview</button>
+                    <button type="button" class="btn btn-success" onclick="requestPublish()">✅ Create Pull Request</button>
+                </div>
+            </form>
+
+            <!-- Slides Section -->
+            <div class="form-section" style="margin-top: 3rem;">
+                <h3>📑 Slides</h3>
+                <div id="slidesContainer">
+                    <!-- Slides will be added here -->
+                </div>
+                <button type="button" class="btn btn-secondary" onclick="studio.addSlide()">+ Add Slide</button>
+            </div>
+        </div>
+
+        <!-- Right Sidebar: Preview -->
+        <div class="preview-panel">
+            <h2>👁️ Live Preview</h2>
+            <div class="preview-content" id="previewContent">
+                <p style="color: #94a3b8; text-align: center;">Select or create a lesson to see preview</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="github-badge">
+        ☁️ Connected to GitHub
+    </div>
+
+    <!-- Load GitHub API Adapter first -->
+    <script src="js/github-api-adapter.js"></script>
+    <!-- Load Creator Studio with GitHub integration -->
+    <script src="js/creator-github.js"></script>
+</body>
+</html>
