@@ -5,10 +5,12 @@
   "level": "Foundation",
   "duration": "15 - 20 min",
   "skill_codes": [],
-  "learning_objectives": [],
+  "learning_objectives": [
+    "Central Ideas and Details Learning Objectives"
+  ],
   "slides": [],
   "metadata": {
-    "last_updated": "2025-10-06T03:56:00.256Z",
+    "last_updated": "2025-10-06T03:57:12.425Z",
     "content_version": "1.0"
   }
 }
