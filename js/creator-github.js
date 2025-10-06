@@ -394,6 +394,12 @@ class EnhancedCreatorStudio {
 
     async saveDraft() {
         try {
+            // Check if a lesson is loaded
+            if (!this.currentLesson || !this.currentLesson.id) {
+                this.showNotification('Please load a lesson first before saving', 'error');
+                return;
+            }
+
             this.updateStatus('saving', 'Saving draft...');
 
             const lesson = this.getLessonFromForm();
@@ -408,12 +414,17 @@ class EnhancedCreatorStudio {
                 this.showNotification('Draft saved to GitHub ✓', 'success');
 
                 // Update SHA for future updates
-                if (result.sha) {
+                if (result.sha && this.currentLesson) {
                     this.currentLesson._sha = result.sha;
                 }
 
                 // Create version snapshot
-                await githubAPI.createVersionSnapshot(lesson);
+                try {
+                    await githubAPI.createVersionSnapshot(lesson);
+                } catch (snapError) {
+                    console.warn('Version snapshot failed:', snapError);
+                    // Don't fail the save if snapshot fails
+                }
 
                 // Clear localStorage after successful GitHub save
                 localStorage.removeItem('satify_draft');
@@ -426,7 +437,7 @@ class EnhancedCreatorStudio {
         } catch (error) {
             console.error('Error saving draft:', error);
             this.updateStatus('unsaved', 'Error saving to GitHub');
-            this.showNotification('Error saving draft - keeping local copy', 'error');
+            this.showNotification(`Error saving draft: ${error.message}`, 'error');
         }
     }
 
