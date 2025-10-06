@@ -223,8 +223,15 @@ class GitHubAPIAdapter {
         const path = `lessons/drafts/${lesson.id}.json`;
 
         // Get current file SHA if it exists
-        const existing = await this.getFile(path);
-        const sha = existing ? existing.sha : null;
+        let sha = null;
+        try {
+            const existing = await this.getFile(path);
+            sha = existing ? existing.sha : null;
+            console.log(`📄 Found existing draft, SHA: ${sha}`);
+        } catch (error) {
+            console.log(`📝 No existing draft found, creating new file`);
+            // File doesn't exist, sha remains null for creation
+        }
 
         const timestamp = new Date().toLocaleString('en-US', {
             timeZone: 'America/New_York',
