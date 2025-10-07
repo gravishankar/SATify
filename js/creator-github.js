@@ -611,8 +611,8 @@ class EnhancedCreatorStudio {
         localStorage.setItem('preview_lesson_data', JSON.stringify(lesson));
         localStorage.setItem('preview_lesson_id', lesson.id);
 
-        // Open preview in new window
-        window.open('/preview-lesson.html', 'lesson-preview', 'width=1200,height=800');
+        // Open preview in new window (relative path for GitHub Pages compatibility)
+        window.open('preview-lesson.html', 'lesson-preview', 'width=1200,height=800');
     }
 
     setupUnloadWarning() {
@@ -947,8 +947,8 @@ function previewLesson() {
     localStorage.setItem('preview_lesson_data', JSON.stringify(lesson));
     localStorage.setItem('preview_lesson_id', lesson.id);
 
-    // Open preview in new window
-    window.open('/preview-lesson.html', 'lesson-preview', 'width=1200,height=800');
+    // Open preview in new window (relative path for GitHub Pages compatibility)
+    window.open('preview-lesson.html', 'lesson-preview', 'width=1200,height=800');
 }
 
 function requestPublish() {
