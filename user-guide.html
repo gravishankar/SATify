@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SATify Creator Studio - User Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background: #f8fafc;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #0369a1;
+            margin-bottom: 0.5rem;
+            border-bottom: 3px solid #0369a1;
+            padding-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #0369a1;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: #475569;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #475569;
+        }
+
+        strong {
+            color: #1e293b;
+            font-weight: 600;
+        }
+
+        code {
+            background: #f1f5f9;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #dc2626;
+        }
+
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: #475569;
+        }
+
+        a {
+            color: #0369a1;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            border: 1px solid #cbd5e1;
+            text-align: left;
+        }
+
+        th {
+            background: #f1f5f9;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #dcfce7;
+            color: #166534;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+
+        .warning {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .info {
+            background: #dbeafe;
+            border-left: 4px solid #0369a1;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .success {
+            background: #dcfce7;
+            border-left: 4px solid #10b981;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .checklist {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .checklist li {
+            list-style: none;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .checklist li:before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+            color: #64748b;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: #0369a1;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .back-button:hover {
+            background: #025a85;
+            text-decoration: none;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #e2e8f0;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="creator-github.html" class="back-button">← Back to Creator Studio</a>
+
+    <div class="container">
+        <h1>📝 SATify Creator Studio - User Guide</h1>
+        <p><strong>For Content Creators and Lesson Authors</strong></p>
+
+        <div class="info">
+            <strong>📖 Quick Navigation:</strong> Use your browser's find feature (Cmd/Ctrl+F) to search this guide.
+        </div>
+
+        <h2>🌐 What is the GitHub Creator Studio?</h2>
+        <p>The GitHub Creator Studio is a <strong>browser-based</strong> lesson editing tool that lets you create and edit SATify lessons from anywhere, without installing software. All changes are automatically saved to GitHub.</p>
+        <p><strong>Access it here:</strong> <a href="https://gravishankar.github.io/SATify/creator-github.html">https://gravishankar.github.io/SATify/creator-github.html</a></p>
+
+        <hr>
+
+        <h2>🚀 Quick Start (5 Minutes)</h2>
+
+        <h3>Step 1: Get Your GitHub Token</h3>
+        <ol>
+            <li>Go to: <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a></li>
+            <li>Click <strong>"Generate new token (classic)"</strong></li>
+            <li>Fill in:
+                <ul>
+                    <li><strong>Note:</strong> <code>SATify Creator Studio</code></li>
+                    <li><strong>Expiration:</strong> 90 days</li>
+                    <li><strong>Scopes:</strong> Check ✅ <strong>repo</strong> (all sub-items)</li>
+                </ul>
+            </li>
+            <li>Click <strong>"Generate token"</strong></li>
+            <li><strong>Copy the token</strong> (save it somewhere safe!)</li>
+        </ol>
+
+        <h3>Step 2: Login to Creator Studio</h3>
+        <ol>
+            <li>Open: <a href="https://gravishankar.github.io/SATify/creator-github.html">Creator Studio</a></li>
+            <li>A popup will ask for your token</li>
+            <li>Paste your token and click OK</li>
+            <li>You're in! 🎉</li>
+        </ol>
+
+        <h3>Step 3: Edit Your First Lesson</h3>
+        <ol>
+            <li><strong>Select a lesson</strong> from the left sidebar</li>
+            <li><strong>Make changes</strong> in the center panel</li>
+            <li><strong>See live preview</strong> on the right</li>
+            <li>Click <strong>"💾 Commit to GitHub"</strong> to save</li>
+            <li>Done! Your changes are saved.</li>
+        </ol>
+
+        <hr>
+
+        <h2>📋 The Interface</h2>
+
+        <h3>Three Panels</h3>
+        <pre>
+┌─────────────┬──────────────────┬─────────────┐
+│   Lessons   │      Editor      │   Preview   │
+│   (Left)    │    (Center)      │   (Right)   │
+│             │                  │             │
+│ • Lesson 1  │ 📋 Metadata      │ 👁️ Live     │
+│ • Lesson 2  │ Title, Level...  │ Preview     │
+│ • Lesson 3  │                  │             │
+│   ...       │ 📑 Slides        │ Shows       │
+│             │ Edit, Delete     │ changes     │
+│             │                  │ instantly   │
+└─────────────┴──────────────────┴─────────────┘
+        </pre>
+
+        <h3>Left Panel: Lesson List</h3>
+        <ul>
+            <li>Click any lesson to load it</li>
+            <li>Shows: Title, Skill Code, Slide Count</li>
+        </ul>
+
+        <h3>Center Panel: Editor</h3>
+        <ul>
+            <li><strong>Top:</strong> Lesson metadata (title, level, objectives, etc.)</li>
+            <li><strong>Bottom:</strong> Slides with Edit/Delete buttons</li>
+            <li><strong>Buttons:</strong>
+                <ul>
+                    <li>💾 <strong>Commit to GitHub</strong> - Save your work</li>
+                    <li>👁️ <strong>Preview</strong> - Open full preview window</li>
+                    <li>✅ <strong>Create Pull Request</strong> - Request to publish</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Right Panel: Live Preview</h3>
+        <ul>
+            <li>Updates as you type</li>
+            <li>Shows metadata and all slides</li>
+            <li>Click <strong>"🚀 Open Full Preview"</strong> to see lesson as students will</li>
+        </ul>
+
+        <hr>
+
+        <h2>✍️ How to Edit a Lesson</h2>
+
+        <h3>Example: Editing "Transitions"</h3>
+
+        <ol>
+            <li><strong>Load the lesson</strong>
+                <ul>
+                    <li>Click "Transitions" in left sidebar</li>
+                    <li>Wait for "🟢 Lesson loaded"</li>
+                </ul>
+            </li>
+            <li><strong>Change metadata</strong> (optional)
+                <ul>
+                    <li>Modify Title, Subtitle, Duration, etc.</li>
+                    <li>See changes update in preview instantly</li>
+                </ul>
+            </li>
+            <li><strong>Edit a slide</strong>
+                <ul>
+                    <li>Scroll to slides section</li>
+                    <li>Click <strong>"Edit"</strong> on any slide</li>
+                    <li>Modal opens with slide details</li>
+                    <li>Make your changes</li>
+                    <li>Click <strong>"Save Slide"</strong></li>
+                </ul>
+            </li>
+            <li><strong>Preview your work</strong>
+                <ul>
+                    <li>Click <strong>"👁️ Preview"</strong> button</li>
+                    <li>New window opens</li>
+                    <li>Navigate through slides</li>
+                    <li>Close when satisfied</li>
+                </ul>
+            </li>
+            <li><strong>Save to GitHub</strong>
+                <ul>
+                    <li>Click <strong>"💾 Commit to GitHub"</strong></li>
+                    <li>Status shows "🟢 Draft saved successfully"</li>
+                    <li>Your changes are now on GitHub!</li>
+                </ul>
+            </li>
+        </ol>
+
+        <hr>
+
+        <h2>🔄 Understanding the Workflow</h2>
+
+        <h3>Draft → Review → Publish</h3>
+
+        <ol>
+            <li><strong>You edit</strong> → Saved to <code>lessons/drafts/</code></li>
+            <li><strong>You request publish</strong> → Creates Pull Request</li>
+            <li><strong>Admin reviews</strong> → Checks changes on GitHub</li>
+            <li><strong>Admin approves</strong> → Lesson goes live to students</li>
+        </ol>
+
+        <div class="success">
+            <strong>Your drafts are SAFE</strong> - they don't affect students until admin approves!
+        </div>
+
+        <hr>
+
+        <h2>💡 Common Tasks</h2>
+
+        <h3>Add a New Slide</h3>
+        <ol>
+            <li>Scroll to <strong>"📑 Slides"</strong> section</li>
+            <li>Click <strong>"+ Add Slide"</strong> button</li>
+            <li>Fill in slide details:
+                <ul>
+                    <li><strong>Type:</strong> Choose slide type (strategy, example, etc.)</li>
+                    <li><strong>Title:</strong> Slide heading</li>
+                    <li><strong>Content:</strong> Slide data (JSON format)</li>
+                </ul>
+            </li>
+            <li>Click <strong>"Save Slide"</strong></li>
+        </ol>
+
+        <h3>Reorder Slides</h3>
+        <ol>
+            <li>Find <strong>☰</strong> (drag handle) on slide</li>
+            <li>Click and hold</li>
+            <li>Drag up or down</li>
+            <li>Release to drop</li>
+            <li>Order auto-saves</li>
+        </ol>
+
+        <h3>Delete a Slide</h3>
+        <ol>
+            <li>Click <strong>"Delete"</strong> on slide</li>
+            <li>Confirm deletion</li>
+            <li>Slide removed (can undo by reloading lesson)</li>
+        </ol>
+
+        <hr>
+
+        <h2>🎯 Slide Types Guide</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Use For</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>strategy_teaching</code></td>
+                    <td>Step-by-step strategies</td>
+                    <td>"The 3-Phase Master Strategy"</td>
+                </tr>
+                <tr>
+                    <td><code>concept_teaching</code></td>
+                    <td>Explaining concepts</td>
+                    <td>"What are Transitions?"</td>
+                </tr>
+                <tr>
+                    <td><code>worked_example</code></td>
+                    <td>Interactive practice</td>
+                    <td>Example with analysis</td>
+                </tr>
+                <tr>
+                    <td><code>practice_prompt</code></td>
+                    <td>Direct to practice</td>
+                    <td>"Ready to practice?"</td>
+                </tr>
+                <tr>
+                    <td><code>learning_objectives</code></td>
+                    <td>Lesson goals</td>
+                    <td>First slide objectives</td>
+                </tr>
+                <tr>
+                    <td><code>concept_reinforcement</code></td>
+                    <td>Summary/recap</td>
+                    <td>Final slide takeaways</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <h2>🛡️ Safety & Security</h2>
+
+        <h3>Your Token</h3>
+        <ul>
+            <li><strong>Stored locally</strong> in your browser only</li>
+            <li><strong>Never shared</strong> with anyone except GitHub</li>
+            <li><strong>Can logout</strong> anytime with 🔓 button</li>
+            <li><strong>Expires</strong> after 90 days (create new one)</li>
+        </ul>
+
+        <h3>Your Changes</h3>
+        <ul>
+            <li><strong>Drafts are private</strong> - only you and admins see them</li>
+            <li><strong>Version history</strong> - every save creates a backup</li>
+            <li><strong>Can't break things</strong> - students see only approved lessons</li>
+        </ul>
+
+        <h3>Best Practices</h3>
+        <ol>
+            <li><strong>Save often</strong> - Click "💾 Commit to GitHub" every 10-15 min</li>
+            <li><strong>Preview before publishing</strong> - Always test with full preview</li>
+            <li><strong>Use clear commit messages</strong> - GitHub tracks who changed what</li>
+            <li><strong>Logout on shared computers</strong> - Click 🔓 Logout button</li>
+        </ol>
+
+        <hr>
+
+        <h2>🆘 Troubleshooting</h2>
+
+        <h3>"Not authenticated" Error</h3>
+        <p><strong>Fix:</strong></p>
+        <ol>
+            <li>Click 🔓 <strong>Logout</strong> button</li>
+            <li>Create new token (Step 1 above)</li>
+            <li>Login again</li>
+        </ol>
+
+        <h3>Preview Not Opening</h3>
+        <p><strong>Fix:</strong></p>
+        <ol>
+            <li>Check popup blocker (allow popups)</li>
+            <li>Hard refresh: <code>Cmd+Shift+R</code> or <code>Ctrl+Shift+R</code></li>
+        </ol>
+
+        <h3>"Failed to load lesson"</h3>
+        <p><strong>Fix:</strong></p>
+        <ol>
+            <li>Check internet connection</li>
+            <li>Refresh page and try again</li>
+            <li>Token might be expired (create new one)</li>
+        </ol>
+
+        <h3>Changes Not Saving</h3>
+        <p><strong>Fix:</strong></p>
+        <ol>
+            <li>Ensure you loaded a lesson first</li>
+            <li>Check GitHub token hasn't expired</li>
+            <li>Try refreshing and re-login</li>
+        </ol>
+
+        <hr>
+
+        <h2>✅ Checklist: Before Requesting Publish</h2>
+
+        <div class="checklist">
+            <p><strong>Use this checklist before clicking "✅ Create Pull Request":</strong></p>
+            <ul>
+                <li>Loaded the lesson and made changes</li>
+                <li>Saved with "💾 Commit to GitHub"</li>
+                <li>Opened full preview (🚀 button)</li>
+                <li>Read through EVERY slide</li>
+                <li>No typos or grammar errors</li>
+                <li>Slide order makes sense</li>
+                <li>Examples are clear and correct</li>
+                <li>Learning objectives match content</li>
+                <li>All required fields filled</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2>🎉 You're Ready!</h2>
+
+        <div class="success">
+            <p><strong>Your first task:</strong></p>
+            <ol>
+                <li>Open: <a href="https://gravishankar.github.io/SATify/creator-github.html">Creator Studio</a></li>
+                <li>Login with your GitHub token</li>
+                <li>Load "Transitions" lesson</li>
+                <li>Change duration from "20-25 min" to "25-30 min"</li>
+                <li>Save with "💾 Commit to GitHub"</li>
+                <li>Check GitHub to see your commit!</li>
+            </ol>
+            <p><strong>Congratulations - you're now a SATify content creator!</strong> 🎨✨</p>
+        </div>
+
+        <hr>
+
+        <p style="text-align: center; color: #64748b; margin-top: 3rem;">
+            <strong>Happy Creating!</strong><br>
+            <em>For advanced features, see the Technical Documentation.</em>
+        </p>
+    </div>
+</body>
+</html>
