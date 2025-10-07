@@ -20,14 +20,25 @@ The **GitHub Edition** of the SATify Creator Studio allows multiple content crea
 
 ## Step 1: Enable GitHub Pages
 
-1. Go to your repository: https://github.com/gravishankar/SATify
-2. Click **Settings** → **Pages** (left sidebar)
-3. Under **Source**, select:
-   - Branch: `main`
-   - Folder: `/ (root)`
-4. Click **Save**
-5. Wait 1-2 minutes for deployment
-6. Your site will be live at: `https://gravishankar.github.io/SATify/`
+### Method A: Using GitHub Actions (Recommended)
+
+1. Go to your repository: https://github.com/gravishankar/SATify/settings/pages
+2. Under **"Build and deployment"**:
+   - **Source**: Select **"GitHub Actions"** from dropdown
+3. The workflow will automatically deploy when you push to `main`
+4. Wait 1-2 minutes for first deployment
+5. Your site will be live at: `https://gravishankar.github.io/SATify/`
+
+### Method B: Deploy from Branch (Alternative)
+
+1. Go to: https://github.com/gravishankar/SATify/settings/pages
+2. Under **"Build and deployment"**:
+   - **Source**: Select **"Deploy from a branch"**
+   - **Branch**: Select `main` and `/ (root)`
+   - Click **"Save"**
+3. Wait 1-2 minutes for deployment
+
+**Note**: If the Save button is disabled, use Method A (GitHub Actions) instead.
 
 ---
 
@@ -240,6 +251,21 @@ git push origin main
 ---
 
 ## Troubleshooting
+
+### 404 Error - "File not found" for creator-github.html
+
+**Problem**: GitHub Pages deployed from old commit without creator-github.html OR Jekyll is processing files
+**Solution**:
+1. Check if `.nojekyll` file exists in root directory
+   - If missing: Create empty `.nojekyll` file and commit
+   - This disables Jekyll processing
+2. Verify GitHub Pages source is set correctly:
+   - Go to: https://github.com/gravishankar/SATify/settings/pages
+   - Source should be: **"GitHub Actions"** or **"Deploy from a branch: main/(root)"**
+3. Force re-deployment:
+   - Make any commit to main branch (e.g., update README)
+   - Wait 2-3 minutes for redeployment
+   - Check: https://gravishankar.github.io/SATify/creator-github.html
 
 ### "Not authenticated" Error
 
