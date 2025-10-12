@@ -138,6 +138,9 @@ class LessonRenderer {
             case 'guided_example':
                 html += this.renderGuidedExampleSlide(slide);
                 break;
+            case 'guided_practice':
+                html += this.renderGuidedPracticeSlide(slide);
+                break;
             case 'independent_practice':
                 html += this.renderIndependentPracticeSlide(slide);
                 break;
@@ -260,6 +263,10 @@ class LessonRenderer {
             html += `<h3 class="content-heading">${content.heading}</h3>`;
         }
 
+        if (content.subtitle) {
+            html += `<h4 class="content-subtitle">${content.subtitle}</h4>`;
+        }
+
         if (content.strategy_steps) {
             html += '<div class="strategy-steps">';
             content.strategy_steps.forEach((step, index) => {
@@ -283,6 +290,15 @@ class LessonRenderer {
                     <strong>💡 Memory Aid:</strong> ${content.memory_aid}
                 </div>
             `;
+        }
+
+        if (content.key_insight) {
+            html += `<div class="key-insight">${content.key_insight}</div>`;
+        }
+
+        // Render worked_example if present (with interactivity enabled)
+        if (content.worked_example) {
+            html += this.renderWorkedExample(content.worked_example, true); // true = interactive
         }
 
         html += '</div>';
@@ -324,6 +340,78 @@ class LessonRenderer {
                         <button class="btn btn-outline reveal-answer-btn" data-target="answer-${index}">Show Answer</button>
                     </div>
                 `;
+            });
+            html += '</div>';
+        }
+
+        html += '</div>';
+        return html;
+    }
+
+    renderGuidedPracticeSlide(slide) {
+        const content = slide.content;
+        let html = `<div class="slide-content guided-practice-content">`;
+
+        if (content.heading) {
+            html += `<h3 class="content-heading">${content.heading}</h3>`;
+        }
+
+        if (content.instructions) {
+            html += `<div class="instructions">${content.instructions}</div>`;
+        }
+
+        // Render worked_example if present
+        if (content.worked_example) {
+            html += this.renderWorkedExample(content.worked_example, false); // false = non-interactive
+        }
+
+        html += '</div>';
+        return html;
+    }
+
+    renderWorkedExample(workedExample, interactive = true) {
+        let html = '<div class="worked-example-container">';
+
+        // Render passage/text if present
+        if (workedExample.text) {
+            html += `
+                <div class="passage-container">
+                    <div class="passage-text">${workedExample.text}</div>
+                </div>
+            `;
+        }
+
+        // Render question
+        if (workedExample.question) {
+            html += `<div class="question-text">${workedExample.question}</div>`;
+        }
+
+        // Render answer choices
+        if (workedExample.choices) {
+            html += '<div class="answer-choices' + (interactive ? '' : ' non-interactive') + '">';
+
+            Object.entries(workedExample.choices).forEach(([key, choice]) => {
+                const choiceText = typeof choice === 'string' ? choice : choice.text;
+                const category = choice.category || '';
+                const flaw = choice.flaw || '';
+                const validation = choice.validation || '';
+
+                html += `
+                    <div class="choice-item ${interactive ? 'interactive' : 'display-only'}" data-choice="${key}">
+                        <span class="choice-letter">${key}</span>
+                        <span class="choice-text">${choiceText}</span>
+                `;
+
+                // Show analysis if provided and in interactive mode
+                if (interactive && (category || flaw || validation)) {
+                    html += '<div class="choice-analysis" style="display: none;">';
+                    if (category) html += `<div class="choice-category"><strong>Category:</strong> ${category}</div>`;
+                    if (flaw) html += `<div class="choice-flaw"><strong>Flaw:</strong> ${flaw}</div>`;
+                    if (validation) html += `<div class="choice-validation">${validation}</div>`;
+                    html += '</div>';
+                }
+
+                html += '</div>';
             });
             html += '</div>';
         }
@@ -544,6 +632,9 @@ class LessonRenderer {
                 case 'completion_celebration':
                     this.setupCompletionCelebration(interaction);
                     break;
+                case 'interactive_elimination':
+                    this.setupInteractiveElimination(interaction);
+                    break;
             }
         }
 
@@ -663,6 +754,34 @@ class LessonRenderer {
                     this.navigateToSkillPractice(skillCode);
                 }
             });
+        });
+    }
+
+    setupInteractiveElimination(interaction) {
+        const choiceItems = document.querySelectorAll('.choice-item.interactive');
+        const correctAnswer = interaction.correct_answer;
+
+        choiceItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const choiceKey = item.dataset.choice;
+                const analysis = item.querySelector('.choice-analysis');
+
+                // Toggle analysis visibility
+                if (analysis) {
+                    const isVisible = analysis.style.display !== 'none';
+                    analysis.style.display = isVisible ? 'none' : 'block';
+                }
+
+                // Add visual feedback
+                if (correctAnswer && choiceKey === correctAnswer) {
+                    item.classList.add('correct-choice');
+                } else {
+                    item.classList.add('viewed-choice');
+                }
+            });
+
+            // Add hover effect for interactive items
+            item.style.cursor = 'pointer';
         });
     }
 

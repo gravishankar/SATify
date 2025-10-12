@@ -3,9 +3,9 @@
  * Provides offline functionality and caching
  */
 
-const CACHE_NAME = 'satify-v2';
-const STATIC_CACHE_NAME = 'satify-static-v2';
-const DATA_CACHE_NAME = 'satify-data-v2';
+const CACHE_NAME = 'satify-v3';
+const STATIC_CACHE_NAME = 'satify-static-v3';
+const DATA_CACHE_NAME = 'satify-data-v3';
 
 // Static assets to cache immediately
 const STATIC_ASSETS = [

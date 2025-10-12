@@ -334,8 +334,11 @@ class InteractiveLessons {
         let practiceTransitionHtml = '';
         const content = slide.content;
 
-        if (slide.type === 'concept_reinforcement' && content && content.practice_transition) {
-            // Use existing practice transition
+        // Check if slide has practice_transition interaction
+        const hasPracticeTransition = slide.interactions && slide.interactions.some(i => i.type === 'practice_transition');
+
+        if ((slide.type === 'concept_reinforcement' || hasPracticeTransition) && content && content.practice_transition) {
+            // Use existing practice transition from content
             practiceTransitionHtml = `
                 <div style="
                     background: #0369a1;
@@ -356,6 +359,32 @@ class InteractiveLessons {
                         font-weight: 600;
                     ">
                         ${content.practice_transition.button_text}
+                    </button>
+                </div>
+            `;
+        } else if (hasPracticeTransition) {
+            // Generate practice transition button from interactions
+            const practiceInteraction = slide.interactions.find(i => i.type === 'practice_transition');
+            practiceTransitionHtml = `
+                <div style="
+                    background: #0369a1;
+                    color: white;
+                    padding: 1.5rem;
+                    border-radius: 0.5rem;
+                    margin-top: 2rem;
+                    text-align: center;
+                ">
+                    <p style="margin-bottom: 1rem;">Ready to practice what you've learned? Let's apply these skills with real SAT questions!</p>
+                    <button id="practiceTransitionBtn" data-skill-code="${practiceInteraction.target_skill}" style="
+                        background: white;
+                        color: #0369a1;
+                        border: none;
+                        padding: 0.75rem 1.5rem;
+                        border-radius: 0.5rem;
+                        cursor: pointer;
+                        font-weight: 600;
+                    ">
+                        Start Practice Questions
                     </button>
                 </div>
             `;

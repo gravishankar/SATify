@@ -4058,3 +4058,179 @@ body {
         gap: 1rem;
     }
 }
+
+/* Worked Example Styles for Lesson Renderer */
+.worked-example-container {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: var(--surface-color);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.worked-example-container .passage-container {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: var(--bg-color);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.worked-example-container .passage-text {
+    line-height: 1.8;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.worked-example-container .question-text {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-size: 1.05rem;
+}
+
+/* Choice Items - Base Styles */
+.choice-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--surface-color);
+    transition: var(--transition);
+}
+
+.choice-item .choice-letter {
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    min-width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.choice-item .choice-text {
+    flex: 1;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* Interactive Choice Items */
+.choice-item.interactive {
+    cursor: pointer;
+}
+
+.choice-item.interactive:hover {
+    border-color: var(--primary-color);
+    background: var(--bg-color);
+    transform: translateX(2px);
+}
+
+.choice-item.interactive:hover .choice-letter {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Non-Interactive (Display Only) Choice Items */
+.choice-item.display-only {
+    cursor: default;
+    opacity: 1;
+}
+
+.choice-item.display-only:hover {
+    border-color: var(--border-color);
+    background: var(--surface-color);
+    transform: none;
+}
+
+.answer-choices.non-interactive .choice-item {
+    cursor: default;
+}
+
+.answer-choices.non-interactive .choice-item:hover {
+    border-color: var(--border-color);
+    background: var(--surface-color);
+    transform: none;
+}
+
+.answer-choices.non-interactive .choice-letter {
+    pointer-events: none;
+}
+
+/* Choice States */
+.choice-item.correct-choice {
+    border-color: var(--success-color);
+    background: #f0fdf4;
+}
+
+.choice-item.correct-choice .choice-letter {
+    background: var(--success-color);
+    color: white;
+    border-color: var(--success-color);
+}
+
+.choice-item.viewed-choice {
+    opacity: 0.7;
+}
+
+/* Choice Analysis */
+.choice-analysis {
+    margin-top: 0.75rem;
+    padding: 1rem;
+    background: var(--bg-color);
+    border-radius: 6px;
+    border-left: 3px solid var(--primary-color);
+    font-size: 0.95rem;
+}
+
+.choice-analysis .choice-category {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.choice-analysis .choice-flaw {
+    margin-bottom: 0.5rem;
+    color: var(--danger-color);
+}
+
+.choice-analysis .choice-validation {
+    color: var(--success-color);
+    font-weight: 500;
+}
+
+/* Content Subtitle */
+.content-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+/* Key Insight */
+.key-insight {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #fef3c7;
+    border-left: 4px solid #f59e0b;
+    border-radius: 6px;
+    color: #92400e;
+    font-weight: 500;
+}
+
+/* Guided Practice Styles */
+.guided-practice-content .instructions {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: var(--bg-color);
+    border-radius: 8px;
+    font-style: italic;
+    color: var(--text-secondary);
+}

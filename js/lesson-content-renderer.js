@@ -56,6 +56,8 @@ class LessonContentRenderer {
             return this.renderEmptySlide();
         }
 
+        console.log('[LessonContentRenderer] renderSlideContent - slide.type:', slide.type, 'slide.id:', slide.id);
+
         const content = slide.content;
         let html = `<div class="sea-slide-container">`;
 
@@ -75,7 +77,8 @@ class LessonContentRenderer {
         }
 
         // Route to specific content renderers based on content structure
-        html += this.renderContentSections(content);
+        // Pass slide type for context-aware rendering
+        html += this.renderContentSections(content, slide.type);
 
         html += `</div>`;
         return html;
@@ -84,7 +87,7 @@ class LessonContentRenderer {
     /**
      * 🌊 Route content to appropriate specialized renderers
      */
-    renderContentSections(content) {
+    renderContentSections(content, slideType) {
         let html = '';
 
         // Progressive rendering of all content types
@@ -106,7 +109,7 @@ class LessonContentRenderer {
 
         renderOrder.forEach(contentType => {
             if (content[contentType]) {
-                html += this.renderByType(contentType, content[contentType]);
+                html += this.renderByType(contentType, content[contentType], slideType);
             }
         });
 
@@ -116,14 +119,14 @@ class LessonContentRenderer {
     /**
      * 🎯 Generic content type router
      */
-    renderByType(type, data) {
+    renderByType(type, data, slideType) {
         const renderers = {
             'core_principle': () => this.renderCorePrinciple(data),
             'strategy_steps': () => this.renderStrategySteps(data),
             'bullet_points': () => this.renderBulletPoints(data),
             'steps': () => this.renderSteps(data),
             'tactics': () => this.renderTactics(data),
-            'worked_example': () => this.renderWorkedExample(data),
+            'worked_example': () => this.renderWorkedExample(data, slideType),
             'example': () => this.renderExample(data),
             'key_points': () => this.renderKeyPoints(data),
             'categories': () => this.renderCategories(data),
@@ -540,9 +543,13 @@ class LessonContentRenderer {
     /**
      * 📊 Worked Example - Progressive Reveal (One-by-One)
      */
-    renderWorkedExample(workedExample) {
+    renderWorkedExample(workedExample, slideType) {
         const { colors, spacing, borderRadius } = this.seaTheme;
         const exampleId = `worked-example-${Date.now()}`;
+
+        // Check if this slide should be non-interactive (guided_practice type)
+        const isInteractive = slideType !== 'guided_practice';
+        console.log('[LessonContentRenderer] renderWorkedExample - slideType:', slideType, 'isInteractive:', isInteractive);
 
         let html = `
             <div style="
@@ -602,7 +609,9 @@ class LessonContentRenderer {
             `;
         }
 
-        html += `
+        // Only show interactive instruction if this is an interactive slide
+        if (isInteractive) {
+            html += `
                 <p style="
                     text-align: center;
                     color: ${colors.deepOcean};
@@ -610,9 +619,12 @@ class LessonContentRenderer {
                     margin: ${spacing.md} 0;
                     font-size: 0.95rem;
                 ">👆 Click each answer choice to reveal category and analysis</p>
+            `;
+        }
 
+        html += `
                 <div id="${exampleId}" style="margin-top: ${spacing.lg};">
-                    ${this.renderProgressiveChoices(workedExample.choices, exampleId)}
+                    ${this.renderProgressiveChoices(workedExample.choices, exampleId, isInteractive)}
                 </div>
             </div>
         `;
@@ -620,7 +632,7 @@ class LessonContentRenderer {
         return html;
     }
 
-    renderProgressiveChoices(choices, containerId) {
+    renderProgressiveChoices(choices, containerId, isInteractive = true) {
         const { colors, spacing, borderRadius } = this.seaTheme;
 
         if (!choices || typeof choices !== 'object') {
@@ -639,20 +651,27 @@ class LessonContentRenderer {
             const isCorrect = choice.validation;
             const choiceId = `${containerId}-choice-${letter}`;
 
+            // Conditionally add onclick and hover effects only if interactive
+            const onclickAttr = isInteractive ? `onclick="window.lessonContentRenderer.revealChoice('${choiceId}')"` : '';
+            const cursorStyle = isInteractive ? 'pointer' : 'default';
+            const hoverEvents = isInteractive
+                ? `onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(6, 182, 212, 0.2)'"
+                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'"`
+                : '';
+
             html += `
                 <div class="choice-card"
-                     onclick="window.lessonContentRenderer.revealChoice('${choiceId}')"
+                     ${onclickAttr}
                      style="
                         background: ${colors.oceanMist};
                         border: 2px solid ${colors.turquoise};
                         border-radius: ${borderRadius.md};
                         padding: ${spacing.lg};
-                        cursor: pointer;
+                        cursor: ${cursorStyle};
                         transition: all 0.3s ease;
                         position: relative;
                     "
-                    onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(6, 182, 212, 0.2)'"
-                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    ${hoverEvents}>
 
                     <div style="
                         font-weight: 600;
@@ -662,6 +681,7 @@ class LessonContentRenderer {
                         ${letter}. ${choice.text}
                     </div>
 
+                    ${isInteractive ? `
                     <div id="${choiceId}-analysis" style="display: none; margin-top: ${spacing.md};">
                         <div style="
                             background: ${isCorrect ? colors.seaFoam : '#fef2f2'};
@@ -674,16 +694,17 @@ class LessonContentRenderer {
                                 font-weight: 600;
                                 margin: 0 0 ${spacing.sm} 0;
                             ">
-                                ${isCorrect ? '✅' : '❌'} ${choice.category}
+                                ${isCorrect ? '✅' : '❌'} ${choice.category || ''}
                             </div>
                             <div style="
                                 color: ${isCorrect ? '#166534' : '#991b1b'};
                                 line-height: 1.5;
                             ">
-                                ${choice.validation || choice.flaw}
+                                ${choice.validation || choice.flaw || ''}
                             </div>
                         </div>
                     </div>
+                    ` : ''}
                 </div>
             `;
         });
