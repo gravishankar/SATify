@@ -64,7 +64,7 @@
       "subtitle": "Expression of Ideas",
       "level": "Foundation",
       "duration": "25-30 min",
-      "skill_codes": ["EOI"],
+      "skill_codes": ["TRA"],
       "domain_id": "expression_of_ideas",
       "domain_title": "Expression of Ideas",
       "skill_title": "Transitions",
@@ -226,6 +226,6 @@
     "published_lessons": 12,
     "draft_lessons": 0,
     "domains_covered": 4,
-    "skill_codes_covered": ["CID", "COE", "INF", "SYN", "TRA", "WIC", "TSP", "TSP", "CTC", "BOU", "FSS"]
+    "skill_codes_covered": ["CID", "COE", "INF", "SYN", "TRA", "WIC", "TSP", "CTC", "BOU", "FSS"]
   }
 }

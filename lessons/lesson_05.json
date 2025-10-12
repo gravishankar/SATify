@@ -5,7 +5,7 @@
   "level": "Foundation",
   "duration": "25-30 min",
   "skill_codes": [
-    "EOI"
+    "TRA"
   ],
   "learning_objectives": [
     "The Core: Master transition words for logical flow and rhetorical purpose",
@@ -425,7 +425,7 @@
       "interactions": [
         {
           "type": "practice_transition",
-          "target_skill": "EOI",
+          "target_skill": "TRA",
           "practice_type": "guided"
         }
       ]
@@ -442,7 +442,7 @@
       "interactions": [
         {
           "type": "practice_transition",
-          "target_skill": "EOI",
+          "target_skill": "TRA",
           "practice_type": "independent"
         }
       ]
@@ -452,7 +452,7 @@
     {
       "id": "frying_pan_1",
       "type": "mastery_check",
-      "skill_codes": ["EOI"],
+      "skill_codes": ["TRA"],
       "difficulty": "M",
       "passage": "When one looks at the dark craggy vistas in Hitoshi Fugo's evocative photo series, one's mind might wander off to the cratered surfaces of faraway planets. ______ it's the series's title, Flying Frying Pan, that brings one back to Earth, reminding the viewer that each photo is actually a close-up view of a familiar household object: a frying pan.",
       "question": "Which choice completes the text with the most logical transition?",
