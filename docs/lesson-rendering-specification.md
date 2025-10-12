@@ -128,29 +128,62 @@ This document outlines the comprehensive JSON structure support and rendering sp
 - Color-coded sections for Idea A (blue), Idea B (purple), Relationship (green)
 
 #### `worked_example`
+
+**Purpose**: Interactive question-and-answer component with click-to-reveal analysis
+
+**Required Fields**:
+- `text` or `question`: The passage/problem text
+- `choices`: Object with keys A, B, C, D containing choice data
+
+**Optional Fields in Each Choice**:
+- `text`: The choice text (required)
+- `category`: Classification of this answer type (optional)
+- `flaw`: Explanation of why this answer is wrong (optional)
+- `validation`: Explanation of why this answer is correct (optional)
+
 ```json
 {
   "worked_example": {
-    "question": "Aristotle disagreed... ______ sensory experience is the ultimate source.",
+    "text": "When one looks at the dark craggy vistas in Hitoshi Fugo's evocative photo series, one's mind might wander off to the cratered surfaces of faraway planets. ______ it's the series's title, Flying Frying Pan, that brings one back to Earth, reminding the viewer that each photo is actually a close-up view of a familiar household object: a frying pan.",
+    "question": "Which choice completes the text with the most logical transition?",
     "choices": {
       "A": {
-        "text": "regardless",
-        "category": "Contradiction/Override",
-        "flaw": "Wrong purpose—signals 'despite facts', not restatement"
+        "text": "Consequently,"
+      },
+      "B": {
+        "text": "Alternatively,"
       },
       "C": {
-        "text": "in other words",
-        "category": "Restatement",
-        "validation": "✅ Perfect match—signals clarification of the same idea"
+        "text": "Ultimately,",
+        "category": "Contrast/Reversal",
+        "validation": "✅ Perfect - signals a reversal from faraway planets back to Earth"
+      },
+      "D": {
+        "text": "Additionally,",
+        "category": "Addition",
+        "flaw": "Wrong purpose—adds new info rather than contrasting ideas"
       }
     }
   }
 }
 ```
-**Rendering**:
-- Interactive choice analysis with expandable sections
-- Flaws highlighted in coral (#f97316)
-- Validations highlighted in sea foam (#a7f3d0)
+
+**Rendering Behavior**:
+- Passage/question text displayed in highlighted yellow box with 📝 icon
+- Instruction text: "👆 Click each answer choice to reveal category and analysis"
+- Interactive clickable choice cards with hover effects
+- Hidden analysis sections revealed on click
+- Flaws highlighted in coral background (#f97316)
+- Validations highlighted in sea foam background (#a7f3d0)
+- Minimum structure: Only `text` field required per choice
+- Enhanced structure: Add `category`, `flaw`, or `validation` for detailed analysis
+
+**Important Notes**:
+- DO NOT use standalone `passage`, `question`, `choices` fields in content
+- ALWAYS wrap them in a `worked_example` object
+- The `text` field in `worked_example` serves as the passage/problem text
+- Each choice must be an object with at least `{ "text": "..." }`
+- Click-to-reveal only works when `category`, `flaw`, or `validation` are present
 
 ### 4. Conceptual Teaching Elements
 

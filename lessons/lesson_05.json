@@ -1,16 +1,16 @@
 {
   "id": "lesson_05",
-  "title": "Transitions & Flow",
+  "title": "Transitions",
   "subtitle": "Expression of Ideas",
   "level": "Foundation",
-  "duration": "20-25 min",
+  "duration": "25-30 min",
   "skill_codes": [
-    "TRA"
+    "EOI"
   ],
   "learning_objectives": [
     "The Core: Master transition words for logical flow and rhetorical purpose",
-    "The Skill: Create coherent paragraph structure—connecting ideas effectively",
-    "The Problem: Multiple logically possible words to test your ability to choose the single most precise and rhetorically correct",
+    "The Skill: Identify not just the main category but the precise subcategory of transitions",
+    "The Problem: Multiple logically possible words that test your ability to choose the single most precise answer",
     "Key Strategy: The 3-Phase Master Strategy for 100% provable answers"
   ],
   "success_criteria": {
@@ -27,8 +27,8 @@
       "content": {
         "heading": "The Main Quest",
         "bullet_points": [
-          "Decode the flow",
-          "Define the logical bridge",
+          "Decode the flow between ideas",
+          "Define the logical bridge with precision",
           "Apply the 3-Phase Master Strategy for 100% confidence"
         ]
       },
@@ -70,14 +70,7 @@
             ]
           }
         ],
-        "example": {
-          "text": "Aristotle disagreed, positing that knowledge is best obtained through direct engagement with the material world; ______ sensory experience of the material is the ultimate source of knowledge.",
-          "breakdown": {
-            "idea_a": "Knowledge comes from direct engagement with material world",
-            "idea_b": "Sensory experience is the ultimate source of knowledge",
-            "relationship": "Restatement/Clarification (B defines what A means)"
-          }
-        }
+        "key_insight": "🎯 Simplifying first prevents complex language from distracting you"
       },
       "interactions": [
         {
@@ -120,7 +113,7 @@
             }
           }
         ],
-        "key_insight": "🎯 Predicting BEFORE looking at choices prevents the SAT from manipulating your thinking"
+        "key_insight": "🎯 Predicting BEFORE looking at choices prevents the test from manipulating your thinking"
       },
       "interactions": [
         {
@@ -166,119 +159,187 @@
             "description": "When multiple seem to work, choose the most specific match",
             "example": "If both work logically, which one matches the exact rhetorical move?"
           }
-        ],
-        "worked_example": {
-          "question": "Aristotle disagreed... ______ sensory experience is the ultimate source.",
-          "choices": {
-            "A": {
-              "text": "regardless",
-              "category": "Contradiction/Override",
-              "flaw": "Wrong purpose—signals 'despite facts', not restatement"
-            },
-            "B": {
-              "text": "admittedly",
-              "category": "Concession",
-              "flaw": "Wrong purpose—signals reluctant agreement, not clarification"
-            },
-            "C": {
-              "text": "in other words",
-              "category": "Restatement",
-              "validation": "✅ Perfect match—signals clarification of the same idea"
-            },
-            "D": {
-              "text": "meanwhile",
-              "category": "Parallel/Time shift",
-              "flaw": "Wrong logic—ideas are directly related, not parallel"
-            }
-          }
-        }
+        ]
       },
       "interactions": [
         {
-          "type": "interactive_elimination",
-          "show_flaw_analysis": true
+          "type": "step_by_step_reveal",
+          "auto_advance": false
         }
       ]
     },
     {
       "id": "slide_05",
       "type": "concept_teaching",
-      "title": "What are Transitions?",
+      "title": "Deep Dive: Subcategories of Contrast",
       "duration_estimate": 240,
       "content": {
-        "heading": "Transitions = Seamless Connections",
-        "steps": [
-          {
-            "step": "Step 1: FOLLOW the Logical Flow",
-            "detail": "Identify the relationship between ideas in sentences."
-          },
-          {
-            "step": "Step 2: LOCATE the best transition",
-            "detail": "Choose words that match the logical relationship."
+        "heading": "Not All Contrast Words Are the Same",
+        "subtitle": "The SAT tests your ability to pick the most PRECISE subcategory",
+        "table": {
+          "columns": ["Subcategory", "Rhetorical Purpose", "Example Words"],
+          "rows": [
+            ["Hard Contradiction", "An instant, abrupt opposition: 'You think X; HOWEVER, it's Y'", "However, but, yet, nevertheless"],
+            ["Progressive Realization", "A journey from false idea to true: 'You think X; ULTIMATELY, you discover Y'", "Ultimately, eventually, in the end"],
+            ["Alternative Perspective", "Presenting equal options: 'Or, from a different viewpoint...'", "Alternatively, on the other hand"],
+            ["Reluctant Concession", "Admitting opposite while maintaining point: 'X is true; ADMITTEDLY, Y is also true'", "Admittedly, granted, to be sure"]
+          ]
+        },
+        "key_insight": "Look for context clues (like 'process language') that reveal the author's exact intent"
+      }
+    },
+    {
+      "id": "slide_06",
+      "type": "guided_practice",
+      "title": "Now Let's Apply It: The Frying Pan Question",
+      "duration_estimate": 180,
+      "content": {
+        "heading": "The Problem",
+        "worked_example": {
+          "text": "When one looks at the dark craggy vistas in Hitoshi Fugo's evocative photo series, one's mind might wander off to the cratered surfaces of faraway planets. ______ it's the series's title, Flying Frying Pan, that brings one back to Earth, reminding the viewer that each photo is actually a close-up view of a familiar household object: a frying pan.",
+          "question": "Which choice completes the text with the most logical transition?",
+          "choices": {
+            "A": {
+              "text": "Consequently,"
+            },
+            "B": {
+              "text": "Alternatively,"
+            },
+            "C": {
+              "text": "Ultimately,"
+            },
+            "D": {
+              "text": "Additionally,"
+            }
           }
-        ],
-        "examples": [
-          {
-            "label": "Relationship ID",
-            "text": "Idea 1: Exercise improves health. Idea 2: It reduces stress. → Addition relationship"
-          },
-          {
-            "label": "Matched Transition",
-            "text": "Addition: Additionally, exercise reduces stress and improves mental well-being."
-          }
-        ]
+        },
+        "instructions": "Let's solve this step-by-step using the 3-Phase Master Strategy"
       },
       "interactions": [
         {
-          "type": "reveal_on_click",
-          "elements": [
-            {
-              "trigger": "Show why these work",
-              "reveal": "Transitions create seamless connections aligned to logic."
-            }
-          ]
+          "type": "click_to_continue",
+          "text": "Apply Phase 1"
         }
       ]
     },
     {
-      "id": "slide_06",
-      "type": "concept_teaching",
-      "title": "Strategy Synthesis: Common Traps",
-      "duration_estimate": 280,
+      "id": "slide_07",
+      "type": "strategy_teaching",
+      "title": "Applying Phase 1 to the Frying Pan",
+      "duration_estimate": 240,
       "content": {
-        "heading": "Most Common Red Flags & How The Master Strategy Defeats Them",
-        "table": {
-          "columns": [
-            "Logical Trap / Red Flag",
-            "How the Strategy Addresses It"
+        "heading": "PHASE 1: Define the Context",
+        "subtitle": "Step 1: Ditch the Details",
+        "analysis": {
+          "ignore": [
+            "'dark craggy vistas' → Ignore (descriptive detail)",
+            "'Hitoshi Fugo's evocative photo series' → Ignore (name/detail)"
           ],
-          "rows": [
-            [
-              "Trap 1: Choosing a word that 'vibes' right",
-              "Phase 2: Predict BEFORE looking at choices to avoid manipulation"
-            ],
-            [
-              "Trap 2: Getting fooled by complex details",
-              "Phase 1: Ditch the Details—simplify to Idea A and Idea B"
-            ],
-            [
-              "Trap 3: Distinguishing between synonyms",
-              "Phase 3, Tactic 2: Copycats—if two are synonyms, both cancel"
-            ],
-            [
-              "Trap 4: Close but not perfect",
-              "Phase 3, Tactic 1: Rhetorical Purpose Check matches author's intent"
-            ],
-            [
-              "Trap 5: Technically correct but not best",
-              "Phase 3, Tactic 3: Precision Tie-breaker chooses most specific"
-            ]
+          "keep": [
+            "'cratered surfaces of faraway planets' → Keep (what you THINK you see)",
+            "'title brings one back to Earth' → Keep (the REALITY)",
+            "'familiar household object: a frying pan' → Keep (the TRUTH)"
           ]
+        },
+        "simplified": {
+          "idea_a": "You look at photos and think: 'outer space'",
+          "idea_b": "The title reveals: 'it's actually a frying pan'",
+          "relationship": "Contrast/Reversal—False impression vs. True reality"
+        },
+        "key_insight": "🎯 The core conflict: What you think it is vs. What it really is"
+      },
+      "interactions": [
+        {
+          "type": "step_by_step_reveal",
+          "auto_advance": false
         }
-      }
+      ]
     },
     {
-      "id": "slide_07",
+      "id": "slide_08",
+      "type": "strategy_teaching",
+      "title": "Applying Phase 2 to the Frying Pan",
+      "duration_estimate": 260,
+      "content": {
+        "heading": "PHASE 2: Predict & Categorize",
+        "subtitle": "Look for Context Clues",
+        "context_clue": {
+          "key_phrase": "'...that BRINGS ONE BACK to Earth...'",
+          "observation": "This is PROCESS LANGUAGE",
+          "analysis": [
+            "Not an instant snap or abrupt change",
+            "This describes a JOURNEY: wandering away → being brought back",
+            "Suggests PROGRESSION, not instant contradiction"
+          ]
+        },
+        "subcategory_match": {
+          "options": [
+            {
+              "name": "Hard Contradiction?",
+              "verdict": "✗ No",
+              "reason": "That's too abrupt for 'brings one back'"
+            },
+            {
+              "name": "Progressive Realization?",
+              "verdict": "✓ YES!",
+              "reason": "Perfectly captures the journey from false idea to final, true understanding"
+            }
+          ]
+        },
+        "prediction": "We need a word like 'Ultimately' or 'Eventually'",
+        "key_insight": "🎯 Target: Contrast/Progressive Realization"
+      },
+      "interactions": [
+        {
+          "type": "reveal_on_click"
+        }
+      ]
+    },
+    {
+      "id": "slide_09",
+      "type": "strategy_teaching",
+      "title": "Applying Phase 3 to the Frying Pan",
+      "duration_estimate": 320,
+      "content": {
+        "heading": "PHASE 3: Flaw-Finding & Validation",
+        "subtitle": "Test each choice against 'Progressive Realization'",
+        "worked_example": {
+          "question": "Frying Pan Question",
+          "choices": {
+            "A": {
+              "text": "Consequently,",
+              "category": "Cause/Effect",
+              "flaw": "Wrong Category. The title doesn't result from the wandering mind; it corrects it."
+            },
+            "B": {
+              "text": "Alternatively,",
+              "category": "Contrast (Alternative Perspective)",
+              "flaw": "Wrong Subcategory. This suggests two equal options. But the 'frying pan' is the single, correct truth, not an alternative."
+            },
+            "C": {
+              "text": "Ultimately,",
+              "category": "Contrast (Progressive Realization)",
+              "validation": "✅ Perfect Match. Signals journey to final, correct understanding, fitting the 'brings one back' context clue perfectly."
+            },
+            "D": {
+              "text": "Additionally,",
+              "category": "Addition",
+              "flaw": "Wrong Category. The two ideas are opposing, not supporting."
+            }
+          }
+        },
+        "key_insight": "🎯 Only 'Ultimately' matches both the category (Contrast) AND subcategory (Progressive Realization)"
+      },
+      "interactions": [
+        {
+          "type": "interactive_elimination",
+          "show_flaw_analysis": true,
+          "correct_answer": "C"
+        }
+      ]
+    },
+    {
+      "id": "slide_10",
       "type": "concept_reinforcement",
       "title": "Key Takeaways",
       "duration_estimate": 180,
@@ -291,26 +352,26 @@
           },
           {
             "title": "Phase 2: Predict",
-            "description": "Lock in your target category BEFORE looking at choices"
+            "description": "Use context clues (like 'process language') to identify the precise subcategory, then predict a word"
           },
           {
             "title": "Phase 3: Flaw-Find",
-            "description": "Find the specific flaw in 3 answers, prove 1 is 100% correct"
+            "description": "Find the specific category or subcategory flaw in 3 answers to prove 1 is 100% correct"
           },
           {
-            "title": "The 100% Rule",
-            "description": "Move from 'feels right' to 100% provable—no guessing"
+            "title": "The Precision Rule",
+            "description": "The correct answer must match the exact rhetorical subcategory, not just the main category"
           }
         ]
       }
     },
     {
-      "id": "slide_08",
+      "id": "slide_11",
       "type": "mastery_check",
-      "title": "Transition Types: A Toolkit",
+      "title": "Transition Toolkit: With Subcategories",
       "duration_estimate": 240,
       "content": {
-        "heading": "The 5 Core Categories You Must Know",
+        "heading": "The Core Categories You Must Know",
         "categories": {
           "Addition/Continuation": [
             "Furthermore",
@@ -319,19 +380,16 @@
             "Also"
           ],
           "Contrast/Reversal": [
-            "However",
-            "Nevertheless",
-            "In contrast",
-            "On the other hand",
-            "Granted",
-            "Admittedly"
+            "Hard: However, Nevertheless",
+            "Progressive: Ultimately, Eventually",
+            "Alternative: Alternatively, On the other hand",
+            "Concession: Admittedly, Granted"
           ],
           "Cause & Effect": [
             "Therefore",
             "Consequently",
             "As a result",
-            "Thus",
-            "To this end"
+            "Thus"
           ],
           "Restatement/Clarification": [
             "In other words",
@@ -356,13 +414,13 @@
       ]
     },
     {
-      "id": "slide_09",
+      "id": "slide_12",
       "type": "guided_practice",
       "title": "Your Turn: Fix the Flow",
       "duration_estimate": 300,
       "content": {
         "heading": "Guided Practice",
-        "instructions": "Work through examples with hints that steer you toward the precise logical link."
+        "instructions": "Apply the 3-Phase Strategy to more problems. Focus on identifying the precise logical link and subcategory."
       },
       "interactions": [
         {
@@ -373,13 +431,13 @@
       ]
     },
     {
-      "id": "slide_10",
+      "id": "slide_13",
       "type": "independent_practice",
       "title": "Your Turn: Perfect the Flow",
       "duration_estimate": 300,
       "content": {
         "heading": "Independent Practice",
-        "instructions": "Apply the full strategy on your own for mastery."
+        "instructions": "Apply the full 3-Phase strategy on your own. Ditch the details, find the subcategory, and prove your answer."
       },
       "interactions": [
         {
@@ -388,52 +446,24 @@
           "practice_type": "independent"
         }
       ]
-    },
-    {
-      "id": "slide_11",
-      "type": "concept_reinforcement",
-      "title": "Mastery Complete",
-      "duration_estimate": 120,
-      "content": {
-        "heading": "You've Mastered Transitions!",
-        "key_points": [
-          "You can now identify logical relationships between ideas",
-          "You predict the category before looking at choices",
-          "You find specific flaws in wrong answers",
-          "You choose the most precise transition every time"
-        ],
-        "practice_transition": {
-          "text": "Ready to practice with real SAT questions?",
-          "button_text": "Start Practice Questions",
-          "skill_code": "TRA"
-        }
-      },
-      "interactions": [
-        {
-          "type": "completion_celebration",
-          "content": {
-            "message": "Excellent work! You've completed the Transitions lesson."
-          }
-        }
-      ]
     }
   ],
   "practice_questions": [
     {
-      "id": "practice_1",
-      "type": "quick_check",
-      "skill_codes": [
-        "EOI"
-      ],
-      "difficulty": "E",
-      "question": "Which transition best shows addition?",
+      "id": "frying_pan_1",
+      "type": "mastery_check",
+      "skill_codes": ["EOI"],
+      "difficulty": "M",
+      "passage": "When one looks at the dark craggy vistas in Hitoshi Fugo's evocative photo series, one's mind might wander off to the cratered surfaces of faraway planets. ______ it's the series's title, Flying Frying Pan, that brings one back to Earth, reminding the viewer that each photo is actually a close-up view of a familiar household object: a frying pan.",
+      "question": "Which choice completes the text with the most logical transition?",
       "options": [
-        "However",
-        "Furthermore",
-        "Therefore",
-        "For example"
+        "Consequently,",
+        "Alternatively,",
+        "Ultimately,",
+        "Additionally,"
       ],
-      "correct_answer": "B"
+      "correct_answer": "C",
+      "explanation": "The relationship is Contrast. The context clue 'brings one back' indicates process language, pointing to the 'Progressive Realization' subcategory. 'Ultimately' fits this perfectly. 'Consequently' (Cause/Effect) and 'Additionally' (Addition) are wrong categories. 'Alternatively' is the wrong subcategory—it suggests equal options, not a correction from false to true."
     }
   ],
   "resources": {
@@ -450,30 +480,31 @@
         {
           "phase": "2. PREDICT",
           "steps": [
-            "Predict a simple word",
-            "Lock in the category (Addition, Contrast, Cause/Effect, Restatement, Example)"
+            "Find Context Clues (e.g., process language)",
+            "Lock in the Category & SUBcategory",
+            "Predict a simple word"
           ]
         },
         {
           "phase": "3. FLAW-FIND",
           "steps": [
-            "Check Rhetorical Purpose: Does it match author's intent?",
-            "Eliminate Copycats: Synonyms cancel out",
-            "Precision Tie-breaker: Choose the most specific match"
+            "Check Rhetorical Purpose: Does it match the subcategory?",
+            "Eliminate choices with specific flaws",
+            "Validate the 100% provable answer"
           ]
         }
       ],
-      "the_100_rule": "The correct answer is 100% provable. The other 3 have specific flaws."
+      "the_100_rule": "The correct answer is 100% provable. The other 3 have specific flaws in their category or subcategory."
     },
     "common_mistakes": [
       "Choosing transitions that 'feel' right instead of predicting the category first",
       "Getting distracted by complex details instead of simplifying to core logic",
-      "Not finding the specific flaw in each wrong answer",
-      "Picking technically correct but not most precise answers"
+      "Missing key context clues like 'process language' that point to the correct subcategory",
+      "Picking a word that fits the main category but not the precise subcategory"
     ],
     "category_quick_reference": {
       "Addition": "furthermore, additionally, moreover, also",
-      "Contrast": "however, nevertheless, on the other hand, in contrast",
+      "Contrast": "Hard (however), Progressive (ultimately), Alternative (alternatively), Concession (admittedly)",
       "Cause/Effect": "therefore, consequently, as a result, thus",
       "Restatement": "in other words, that is, namely, specifically",
       "Example": "for instance, for example, such as, including"
@@ -481,23 +512,15 @@
   },
   "metadata": {
     "created_date": "2024-12-01",
-    "last_updated": "2025-10-01",
-    "content_version": "4.0",
-    "estimated_completion_time": 1620,
-    "prerequisite_skills": [
-      "lesson_04"
-    ],
-    "skill_progression": [
-      "lesson_06"
-    ],
+    "last_updated": "2025-10-12",
+    "content_version": "6.0",
+    "estimated_completion_time": 1860,
+    "prerequisite_skills": ["lesson_04"],
+    "skill_progression": ["lesson_06"],
     "strategy_integration": {
       "source": "Synthesis of The Black Book, Erica Meltzer, Khan Academy",
-      "key_innovation": "3-Phase Master Strategy with 100% Rule",
-      "slides_added": [
-        "slide_02",
-        "slide_03",
-        "slide_04"
-      ]
+      "key_innovation": "3-Phase Master Strategy with emphasis on contrast subcategories and process language",
+      "slides_added": ["slide_05", "slide_06", "slide_07", "slide_08", "slide_09"]
     }
   }
 }

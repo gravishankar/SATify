@@ -154,64 +154,62 @@ SATify supports 6 types of interactive slides:
 ---
 
 #### 2. 🎯 Worked Example
-**Best for**: Interactive practice questions with detailed analysis
+**Best for**: Interactive practice questions with detailed analysis and click-to-reveal feedback
 
 **Contains**:
-- Passage text
-- Question text
-- Multiple choice answers (A, B, C, D)
-- Each choice has:
-  - Category (what type of answer it is)
-  - Flaw (why it's wrong)
-  - Validation (why the correct answer is right)
-- Explanation
+- Passage text (in `text` field)
+- Question text (in `question` field)
+- Multiple choice answers (A, B, C, D) as objects
+- Each choice can have:
+  - `text`: The answer choice text (REQUIRED)
+  - `category`: Classification of answer type (optional - enables click-to-reveal)
+  - `flaw`: Why this answer is wrong (optional - enables click-to-reveal)
+  - `validation`: Why this answer is correct (optional - enables click-to-reveal)
 
-**Example Use**: Demonstrating how to eliminate wrong answers
+**Example Use**: Demonstrating how to eliminate wrong answers with interactive feedback
 
 **How to Create**:
 1. Click "+ Add Slide"
-2. Select "Worked Example"
-3. Fill in:
-   - **Passage Text**: The reading passage
-   - **Question Text**: The question students see
-   - **Answer Choices**: Click to reveal a text area with JSON format:
+2. Select "Worked Example" or edit slide type to `guided_practice` or similar
+3. In the content JSON, use this structure:
    ```json
-   [
-     {
-       "id": "A",
-       "text": "However",
-       "category": "Contrast",
-       "flaw": "The sentences agree, not contrast",
-       "validation": ""
+   {
+     "heading": "The Problem",
+     "worked_example": {
+       "text": "When one looks at the dark craggy vistas in Hitoshi Fugo's evocative photo series, one's mind might wander off to the cratered surfaces of faraway planets. ______ it's the series's title, Flying Frying Pan, that brings one back to Earth, reminding the viewer that each photo is actually a close-up view of a familiar household object: a frying pan.",
+       "question": "Which choice completes the text with the most logical transition?",
+       "choices": {
+         "A": {
+           "text": "Consequently,"
+         },
+         "B": {
+           "text": "Alternatively,"
+         },
+         "C": {
+           "text": "Ultimately,",
+           "category": "Contrast/Reversal",
+           "validation": "✅ Perfect - signals a reversal from faraway planets back to Earth"
+         },
+         "D": {
+           "text": "Additionally,",
+           "category": "Addition",
+           "flaw": "Wrong purpose—adds new info rather than contrasting ideas"
+         }
+       }
      },
-     {
-       "id": "B",
-       "text": "Therefore",
-       "category": "Cause-Effect",
-       "flaw": "No causal relationship exists",
-       "validation": ""
-     },
-     {
-       "id": "C",
-       "text": "Additionally",
-       "category": "Addition",
-       "flaw": "",
-       "validation": "Correctly adds supporting evidence"
-     },
-     {
-       "id": "D",
-       "text": "Instead",
-       "category": "Replacement",
-       "flaw": "No replacement logic present",
-       "validation": ""
-     }
-   ]
+     "instructions": "Let's solve this step-by-step using the 3-Phase Master Strategy"
+   }
    ```
-   - **Correct Answer**: "C"
-   - **Explanation**: Summary of why C is correct
 4. Click "Save Slide"
 
-**💡 Tip**: Students can click on each answer choice to reveal the category, flaw, and validation!
+**💡 Important Tips**:
+- **ALWAYS wrap** passage/question/choices in a `worked_example` object
+- **DO NOT** use standalone `passage`, `question`, `choices` fields - they won't render!
+- The `text` field in `worked_example` is the passage/problem text
+- Each choice MUST be an object with at least `{ "text": "..." }`
+- Students can click on each answer choice to reveal category, flaw, and validation (if provided)
+- Minimum version: Only include `text` field in each choice
+- Enhanced version: Add `category`, `flaw`, or `validation` for interactive reveal
 
 ---
 
