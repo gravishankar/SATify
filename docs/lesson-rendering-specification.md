@@ -169,7 +169,9 @@ This document outlines the comprehensive JSON structure support and rendering sp
 ```
 
 **Rendering Behavior**:
-- Passage/question text displayed in highlighted yellow box with 📝 icon
+- If `text` field present: Passage text displayed in yellow/sand box (#f59e0b border)
+- If `question` field present: Question text displayed in turquoise box (#06b6d4 border), centered, bold italic
+- Both fields can be used together (passage + question) or just one
 - Instruction text: "👆 Click each answer choice to reveal category and analysis"
 - Interactive clickable choice cards with hover effects
 - Hidden analysis sections revealed on click

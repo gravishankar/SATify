@@ -560,23 +560,49 @@ class LessonContentRenderer {
                     margin: 0 0 ${spacing.lg} 0;
                     text-align: center;
                 ">🎯 Worked Example</h4>
+        `;
 
+        // Render passage text if present
+        if (workedExample.text) {
+            html += `
                 <div style="
                     background: ${colors.sand};
                     border: 1px solid #f59e0b;
                     border-radius: ${borderRadius.md};
                     padding: ${spacing.lg};
-                    margin: 0 0 ${spacing.lg} 0;
+                    margin: 0 0 ${spacing.md} 0;
                 ">
                     <p style="
                         color: #451a03;
                         margin: 0;
-                        font-style: italic;
                         line-height: 1.6;
+                    ">${workedExample.text}</p>
+                </div>
+            `;
+        }
+
+        // Render question if present
+        if (workedExample.question) {
+            html += `
+                <div style="
+                    background: ${colors.oceanMist};
+                    border: 1px solid ${colors.turquoise};
+                    border-radius: ${borderRadius.md};
+                    padding: ${spacing.md};
+                    margin: 0 0 ${spacing.lg} 0;
+                ">
+                    <p style="
+                        color: ${colors.deepOcean};
+                        margin: 0;
+                        font-weight: 600;
+                        font-style: italic;
                         text-align: center;
                     ">${workedExample.question}</p>
                 </div>
+            `;
+        }
 
+        html += `
                 <p style="
                     text-align: center;
                     color: ${colors.deepOcean};
